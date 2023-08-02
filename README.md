@@ -2,9 +2,7 @@
  
 <div align="center">
 
-<a href="https://github.com/mia-platform/design-system">
-  <img alt="logo" src="https://avatars.githubusercontent.com/u/10514842" height="144">
-</a>
+<img alt="logo" src="https://github.com/mia-platform/design-system/assets/9254840/cd4ae258-3b90-451d-be5f-d7665a4c2be9" height="96">
 
 # Mia Platform Design System
 
