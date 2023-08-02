@@ -1,21 +1,20 @@
  <!-- Title -->
  
 <div align="center">
-  <a href="https://github.com/Giogia/video-manager">
-    <img alt="logo" src="public/logo.png" height="96">
-  </a>
-  <h1> Mia Platform Design System </h1>
-  <span> React graphical components designed by Mia Platform </span>
-</div>
 
-<br/>
+<a href="https://github.com/mia-platform/design-system">
+  <img alt="logo" src="https://avatars.githubusercontent.com/u/10514842" height="144">
+</a>
 
- <!-- Badges -->
+# Mia Platform Design System
 
-<div align="center">
-  <a href="https://standardjs.com">
-   <img alt="Javascript Style Guide" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg">
-  </a>
+React graphical components designed by Mia Platform
+
+[![Node.js CI][action-status-svg]][github-action]
+[![javascript style guide][standard-mia-svg]][standard-mia]  
+[![Coverage Status][coverall-svg]][coverall-io]
+[![NPM version][npmjs-svg]][npmjs-com]
+  
 </div>
 
 
@@ -52,3 +51,16 @@ yarn dev
 ## License
 
 SEE LICENSE IN LICENSE © [Mia Platform Core Team&lt;core@mia-platform.eu&gt;](https://github.com/mia-platform).
+
+
+
+[action-status-svg]: https://github.com/mia-platform/lc39/actions/workflows/node.js.yml/badge.svg
+[github-action]: https://github.com/mia-platform/lc39/actions/workflows/node.js.yml
+[standard-mia-svg]: https://img.shields.io/badge/code_style-standard--mia-orange.svg
+[standard-mia]: https://github.com/mia-platform/eslint-config-mia
+[coverall-svg]: https://coveralls.io/repos/github/mia-platform/lc39/badge.svg
+[coverall-io]: https://coveralls.io/github/mia-platform/lc39
+[npmjs-svg]: https://img.shields.io/npm/v/@mia-platform/lc39.svg?logo=npm
+[npmjs-com]: https://www.npmjs.com/package/@mia-platform/lc39
+
+[mia-platform]: https://www.mia-platform.eu/
