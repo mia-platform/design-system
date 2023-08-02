@@ -8,7 +8,7 @@
 
 React graphical components designed by Mia Platform
 
-[![Node.js CI][action-status-svg]][github-action]
+[![NPM publish CI][action-status-svg]][github-action]
 [![javascript style guide][standard-mia-svg]][standard-mia]  
 [![Coverage Status][coverall-svg]][coverall-io]
 [![NPM version][npmjs-svg]][npmjs-com]
