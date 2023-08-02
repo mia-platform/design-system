@@ -1,7 +1,7 @@
 {
   "name": "@mia-platform/design-system",
   "packageManager": "yarn@3.6.1",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Mia Platform Design System",
   "author": "Mia Platform Core Team <core@mia-platform.eu>",
