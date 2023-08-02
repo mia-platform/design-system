@@ -52,13 +52,13 @@ SEE LICENSE IN LICENSE © [Mia Platform Core Team&lt;core@mia-platform.eu&gt;](h
 
 
 
-[action-status-svg]: https://github.com/mia-platform/lc39/actions/workflows/node.js.yml/badge.svg
-[github-action]: https://github.com/mia-platform/lc39/actions/workflows/node.js.yml
+[action-status-svg]: https://github.com/mia-platform/design-system/actions/workflows/npm-publish.yml/badge.svg
+[github-action]: https://github.com/mia-platform/design-system/actions/workflows/npm-publish.yml
 [standard-mia-svg]: https://img.shields.io/badge/code_style-standard--mia-orange.svg
 [standard-mia]: https://github.com/mia-platform/eslint-config-mia
-[coverall-svg]: https://coveralls.io/repos/github/mia-platform/lc39/badge.svg
-[coverall-io]: https://coveralls.io/github/mia-platform/lc39
-[npmjs-svg]: https://img.shields.io/npm/v/@mia-platform/lc39.svg?logo=npm
-[npmjs-com]: https://www.npmjs.com/package/@mia-platform/lc39
+[coverall-svg]: https://coveralls.io/repos/github/mia-platform/design-system/badge.svg
+[coverall-io]: https://coveralls.io/github/mia-platform/design-system
+[npmjs-svg]: https://img.shields.io/npm/v/@mia-platform/design-system.svg?logo=npm
+[npmjs-com]: https://www.npmjs.com/package/@mia-platform/design-system
 
 [mia-platform]: https://www.mia-platform.eu/
