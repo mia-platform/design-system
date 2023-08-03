@@ -18,7 +18,7 @@
     "checkonly": "find ./src -name '*.test.tsx' | xargs grep '\\.only'; test $? -eq 123",
     "unit": "jest",
     "coverage": "yarn unit --coverage --watchAll=false --reporters=default",
-    "test": "yarn checkonly && yarn coverage --passWithNoTests"
+    "test": "yarn lint && yarn checkonly && yarn coverage"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -42,5 +42,8 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "eslintConfig": {
+    "extends": "@mia-platform/eslint-config-mia"
   }
 }
