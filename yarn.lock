@@ -970,6 +970,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mia-platform/design-system@workspace:."
   dependencies:
+    "@mia-platform/eslint-config-mia": ^3.0.0
     "@testing-library/jest-dom": ^5.17.0
     "@testing-library/react": ^14.0.0
     "@types/react": ^18.2.15
@@ -988,6 +989,15 @@ __metadata:
     vite: ^4.4.5
   languageName: unknown
   linkType: soft
+
+"@mia-platform/eslint-config-mia@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@mia-platform/eslint-config-mia@npm:3.0.0"
+  peerDependencies:
+    eslint: ">=6.8.0"
+  checksum: 464642086e31de44c90b6c60ad99263428bd40ded5a6115462cbd75ee0e897b633c169b686df953b5b970ccc2d17b69283143775f0ea35f2085d4647cc954e28
+  languageName: node
+  linkType: hard
 
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
