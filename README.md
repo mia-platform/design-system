@@ -28,11 +28,11 @@ yarn add @mia-platform/design-system
 
 ```jsx
 import React from 'react'
-import {Launcher} from '@mia-platform/design-system'
+import {Button} from '@mia-platform/design-system'
 
 const Example = () => {
   return (
-    <Launcher />
+    <Button />
   )
 }
 ```
