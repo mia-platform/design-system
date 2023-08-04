@@ -1,19 +1,19 @@
-import { addons } from '@storybook/manager-api'
+import { addons } from "@storybook/manager-api"
 
-import MiaPlatformTheme from './theme'
+import MiaPlatformTheme from "./theme"
 
 addons.setConfig({
     isFullscreen: false,
     showNav: true,
     showPanel: true,
-    panelPosition: 'bottom',
+    panelPosition: "bottom",
     enableShortcuts: true,
     showToolbar: true,
     selectedPanel: undefined,
-    initialActive: 'sidebar',
+    initialActive: "sidebar",
     sidebar: {
         showRoots: true,
-        collapsedRoots: ['other'],
+        collapsedRoots: ["other"],
     },
     toolbar: {
         title: { hidden: false },
