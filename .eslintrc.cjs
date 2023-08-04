@@ -14,7 +14,8 @@ module.exports = {
   ],
   ignorePatterns: [
     'dist',
-    '.eslintrc.cjs'
+    '.eslintrc.cjs',
+    'src/vite-env.d.ts'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -43,13 +44,21 @@ module.exports = {
     }],
     'react/boolean-prop-naming': ['error', {
       propTypeNames: [
-        'bool', 
+        'bool',
         'mutuallyExclusiveTrueProps'
       ],
       rule: '^(is|has|can)[A-Z]([A-Za-z0-9]?)+',
       message: 'Boolean prop ({{ propName }}) either needs to start with is, has, or can',
       validateNested: true
-    }],    
+    }],
+    'react/function-component-definition': ['error', {
+      namedComponents: 'arrow-function',
+      unnamedComponents: 'function-expression'
+    }],
+    'react/hook-use-state': ['error', { 
+      allowDestructuredState: true
+    }],
+    'react/jsx-child-element-spacing': 'error',
     'react/jsx-closing-bracket-location': ['error', {
       location: 'tag-aligned'
     }],
@@ -73,13 +82,31 @@ module.exports = {
         multi: 1
       }
     }],
-    'react/jsx-sort-props': ['error', {
-      callbacksLast: true
-    }],
     'react/jsx-newline': ['error', {
       prevent: true
     }],
     'react/jsx-no-constructed-context-values': 'error',
-    'react/jsx-no-script-url': 'error'
+    'react/jsx-no-script-url': 'error',
+    'react/jsx-no-useless-fragment': 'error',
+    'react/jsx-one-expression-per-line': ['error', { 
+      allow: 'single-child'
+    }],
+    'react/jsx-props-no-multi-spaces': 'error',
+    'react/jsx-sort-props': ['error', {
+      callbacksLast: true
+    }],
+    'react/jsx-tag-spacing': 'error',
+    'react/no-adjacent-inline-elements': 'error',
+    'react/no-array-index-key': 'error',
+    'react/no-invalid-html-attribute': 'error',
+    'react/no-multi-comp': 'error',
+    'react/no-object-type-as-default-prop': 'error',
+    'react/prefer-stateless-function': 'error',
+    'react/require-default-props': 'error',
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }],
+    'react/sort-default-props': 'error',
   }
-}
+}  
