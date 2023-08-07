@@ -39,33 +39,33 @@ module.exports = {
     }
   },
   rules: {
-    /* Eslint plugin Typescript
-     *
-     * https://typescript-eslint.io/rules
+    /** 
+     * Eslint plugin Typescript
+     * @link https://typescript-eslint.io/rules
      */
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "@typescript-eslint/explicit-function-return-type": ["error", {
       allowExpressions: true
     }],
 
-    /* Eslint plugin React Hooks
-     *
-     * https://legacy.reactjs.org/docs/hooks-rules.html
+    /**
+     * Eslint plugin React Hooks
+     * @link https://legacy.reactjs.org/docs/hooks-rules.html
      */
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn", 
+    "react-hooks/exhaustive-deps": "warn",
 
-    /* Eslint plugin React Refresh
-     *
-     * https://github.com/ArnaudBarre/eslint-plugin-react-refresh
+    /** 
+     * Eslint plugin React Refresh
+     * @link https://github.com/ArnaudBarre/eslint-plugin-react-refresh
      */
     "react-refresh/only-export-components": ["warn", {
       allowConstantExport: true
     }],
 
-    /* Eslint plugin React
-     *
-     * https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules
+    /** 
+     * Eslint plugin React
+     * @link https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules
      */
     "react/boolean-prop-naming": ["error", {
       propTypeNames: ["bool", "mutuallyExclusiveTrueProps"],
