@@ -16,6 +16,7 @@ module.exports = {
   ignorePatterns: [
     "dist",
     ".eslintrc.cjs",
+    "jest.config.js",
     "src/vite-env.d.ts"
   ],
   parser: "@typescript-eslint/parser",

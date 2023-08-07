@@ -1,0 +1,234 @@
+{
+  "palette": {
+    "mode": "light",
+    "common": {
+      "black": "#000000",
+      "white": "#ffffff",
+      "grey": {
+        "50": "#fafafa",
+        "100": "#f5f5f5",
+        "200": "#f0f0f0",
+        "300": "#e6e6e6",
+        "400": "#d9d9d9",
+        "500": "#d4d4d4",
+        "600": "#aaaaaa",
+        "700": "#858585",
+        "800": "#666666",
+        "900": "#444444"
+      }
+    },
+    "primary": {
+      "main": "#1890ff",
+      "light": "#40a9ff",
+      "dark": "#096dd9",
+      "contrastText": "#ffffff"
+    },
+    "action": {
+      "primary": {
+        "active": "#1890ff",
+        "hover": "#40a9ff",
+        "focus": "#40a9ff",
+        "selected": "#096dd9",
+        "disabled": "#f5f5f5"
+      },
+      "secondary": {
+        "active": "#ffffff",
+        "hover": "#40a9ff",
+        "focus": "#40a9ff",
+        "selected": "#096dd9",
+        "disabled": "#f5f5f5"
+      },
+      "danger": {
+        "active": "#f5222d",
+        "hover": "#ff4d4f",
+        "focus": "#f5222d",
+        "selected": "#d9363e",
+        "disabled": "#f5f5f5"
+      }
+    },
+    "secondary": {
+      "main": "#aaaaaa",
+      "light": "#d9d9d9",
+      "dark": "#666666",
+      "contrastText": "#666666"
+    },
+    "error": {
+      "main": "#f5222d",
+      "light": "#ff4d4f",
+      "dark": "#d9363e",
+      "contrastText": "#ffffff"
+    },
+    "warning": {
+      "main": "#ffe58f",
+      "light": "#fffbe6",
+      "dark": "#ff9933",
+      "contrastText": "#666666"
+    },
+    "info": {
+      "main": "#9cdcfe",
+      "light": "#e6f7ff",
+      "dark": "#1890ff",
+      "contrastText": "#666666"
+    },
+    "success": {
+      "main": "#b7eb8f",
+      "light": "#f6ffed",
+      "dark": "#52c41a",
+      "contrastText": "#666666"
+    },
+    "link": {
+      "active": "#1890ff",
+      "hover": "#40a9ff",
+      "focus": "#096dd9",
+      "selected": "#096dd9",
+      "disabled": "#f5f5f5"
+    },
+    "background": {
+      "0": "#ffffff",
+      "100": "#ffffff",
+      "200": "#ffffff",
+      "300": "#ffffff",
+      "400": "#ffffff",
+      "500": "#ffffff"
+    }
+  },
+  "spacing": {
+    "margin": {
+      "xs": "4",
+      "sm": "8",
+      "md": "16",
+      "lg": "24",
+      "xl": "32"
+    },
+    "padding": {
+      "xs": "4",
+      "sm": "8",
+      "md": "16",
+      "lg": "24",
+      "xl": "32"
+    },
+    "gap": {
+      "xs": "4",
+      "sm": "8",
+      "md": "16",
+      "lg": "24",
+      "xl": "32"
+    }
+  },
+  "shape": {
+    "border": {
+      "radius": {
+        "xs": "1",
+        "sm": "2",
+        "md": "4",
+        "lg": "8",
+        "xl": "16"
+      },
+      "width": {
+        "xs": "1",
+        "sm": "2",
+        "md": "4",
+        "lg": "8",
+        "xl": "16"
+      }
+    },
+    "size": {
+      "xs": "1",
+      "sm": "2",
+      "md": "4",
+      "lg": "8",
+      "xl": "16",
+      "2xl": "24",
+      "3xl": "32",
+      "4xl": "64",
+      "5xl": "96"
+    }
+  },
+  "typography": {
+    "h1": {
+      "fontFamily": "Inter",
+      "lineHeight": "32",
+      "fontSize": "24",
+      "fontWeight": "600"
+    },
+    "h2": {
+      "fontFamily": "Inter",
+      "fontWeight": "600",
+      "lineHeight": "32",
+      "fontSize": "20"
+    },
+    "h3": {
+      "fontFamily": "Inter",
+      "fontWeight": "600",
+      "lineHeight": "24",
+      "fontSize": "18"
+    },
+    "h4": {
+      "fontFamily": "Inter",
+      "fontWeight": "600",
+      "lineHeight": "24",
+      "fontSize": "16"
+    },
+    "bodyS": {
+      "fontFamily": "Inter",
+      "fontWeight": "400",
+      "lineHeight": "16",
+      "fontSize": "14"
+    },
+    "bodySBold": {
+      "fontFamily": "Inter",
+      "fontWeight": "600",
+      "lineHeight": "16",
+      "fontSize": "14"
+    },
+    "bodyM": {
+      "fontFamily": "Inter",
+      "fontWeight": "400",
+      "lineHeight": "24",
+      "fontSize": "16"
+    },
+    "bodyMBold": {
+      "fontFamily": "Inter",
+      "fontWeight": "600",
+      "lineHeight": "24",
+      "fontSize": "16"
+    },
+    "bodyL": {
+      "fontFamily": "Inter",
+      "fontWeight": "400",
+      "lineHeight": "24",
+      "fontSize": "18"
+    },
+    "bodyLBold": {
+      "fontFamily": "Inter",
+      "fontWeight": "600",
+      "lineHeight": "24",
+      "fontSize": "18"
+    },
+    "action": {
+      "fontFamily": "Inter",
+      "fontWeight": "400",
+      "lineHeight": "16",
+      "fontSize": "16"
+    },
+    "link": {
+      "fontFamily": "Inter",
+      "fontWeight": "400",
+      "lineHeight": "24",
+      "fontSize": "16",
+      "textDecoration": "underline"
+    },
+    "caption": {
+      "fontFamily": "Inter",
+      "fontWeight": "400",
+      "lineHeight": "12",
+      "fontSize": "12"
+    },
+    "code": {
+      "fontFamily": "Menlo",
+      "fontWeight": "400",
+      "lineHeight": "24",
+      "fontSize": "14"
+    }
+  }
+}
