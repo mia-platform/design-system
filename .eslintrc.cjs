@@ -39,10 +39,34 @@ module.exports = {
     }
   },
   rules: {
+    /* Eslint plugin Typescript
+     *
+     * https://typescript-eslint.io/rules
+     */
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/explicit-function-return-type": ["error", {
+      allowExpressions: true
+    }],
+
+    /* Eslint plugin React Hooks
+     *
+     * https://legacy.reactjs.org/docs/hooks-rules.html
+     */
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn", 
+
+    /* Eslint plugin React Refresh
+     *
+     * https://github.com/ArnaudBarre/eslint-plugin-react-refresh
+     */
     "react-refresh/only-export-components": ["warn", {
       allowConstantExport: true
     }],
+
+    /* Eslint plugin React
+     *
+     * https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules
+     */
     "react/boolean-prop-naming": ["error", {
       propTypeNames: ["bool", "mutuallyExclusiveTrueProps"],
       rule: "^(is|has|can)[A-Z]([A-Za-z0-9]?)+",
