@@ -30,6 +30,8 @@ const ThemeContext = createContext(defaultTheme)
  *
  * @param {ThemeProviderProps} props - The component props.
  * @returns {ReactElement} A component providing the theme to its children.
+ *
+ * @TODO check children wrapper div style does not clash with other divs (e.g. not full height or width)
  */
 const ThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
   const style = useMemo(() => themeToVariables(theme), [theme])
