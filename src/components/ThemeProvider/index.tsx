@@ -1,6 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
-
-import { ReactElement, createContext, useContext, useMemo } from 'react'
+import { ReactElement, createContext, useMemo } from 'react'
 
 import { AntThemeProvider } from './Ant'
 import Theme from '../../themes/schema'
@@ -52,19 +50,7 @@ ThemeProvider.defaultProps = {
   theme: defaultTheme,
 }
 
-/**
- * A hook to access the current theme from the context.
- *
- * @returns {Theme} The current theme.
- */
-const useTheme = (): Theme => {
-  const theme = useContext(ThemeContext)
-
-  return useMemo(() => theme ?? defaultTheme, [theme])
-}
-
 export {
   ThemeProvider,
   ThemeContext,
-  useTheme,
 }
