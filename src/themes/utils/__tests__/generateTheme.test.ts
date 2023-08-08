@@ -1,7 +1,8 @@
-import generateTheme, { GENERATED_FILE, THEMES_DIR } from '../generateTheme'
 
 import { readFileSync, readdirSync } from 'fs'
 import { resolve } from 'path'
+
+import generateTheme, { GENERATED_FILE, THEMES_DIR } from '../generateTheme'
 
 describe('Generate Theme', () => {
   for (const themeName of readdirSync(THEMES_DIR)) {

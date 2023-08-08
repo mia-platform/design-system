@@ -1,7 +1,8 @@
 import React from "react"
 import type { Decorator } from "@storybook/react"
+
 import themes from '../../src/themes'
-import {ThemeProvider} from '../../src/components/ThemeProvider'
+import { ThemeProvider } from '../../src/components/ThemeProvider'
 import { Themes } from "../../src/utils/theme"
 
 const {lightTheme, darkTheme} = themes

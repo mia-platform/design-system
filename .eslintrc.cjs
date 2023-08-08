@@ -30,6 +30,7 @@ module.exports = {
     tsconfigRootDir: __dirname
   },
   plugins: [
+    "import",
     "react",
     "react-refresh",
     "@typescript-eslint"
@@ -40,7 +41,17 @@ module.exports = {
     }
   },
   rules: {
+    "import/order": ["error", {
+      groups: [
+        ["builtin", "external"],
+        ["internal", "parent", "sibling", "index"],
+      ],      
+      "newlines-between": "always"
+    }],
     "no-shadow": "off",
+    "sort-imports": ["error", {
+      allowSeparatedGroups: true
+    }],
 
     /** 
      * Eslint plugin Typescript

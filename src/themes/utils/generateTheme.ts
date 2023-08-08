@@ -2,10 +2,11 @@
 /* eslint-disable func-names */
 
 import { readFileSync, writeFileSync } from 'fs'
-import Theme from '../schema'
 import lodash from 'lodash'
 import { resolve } from 'path'
 import traverse from 'traverse'
+
+import Theme from '../schema'
 
 export const THEMES_DIR = resolve(__dirname, '../files')
 export const THEME_GENERATOR_FILE = 'theme-generator.json'

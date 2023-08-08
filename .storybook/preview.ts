@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react"
+
 import withTheme from "./decorators/theme"
 import themeSwitcher from "./addons/theme"
 

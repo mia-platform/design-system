@@ -2,6 +2,7 @@
 
 import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
+
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from '.'
 

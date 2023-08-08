@@ -1,9 +1,10 @@
 /* eslint-disable func-names */
 /* eslint-disable react/display-name */
 
-import { ThemeProvider, ThemeProviderProps, useTheme } from '..'
 import { render, renderHook } from '@testing-library/react'
 import { ReactElement } from 'react'
+
+import { ThemeProvider, ThemeProviderProps, useTheme } from '..'
 import Theme from '../../../themes/schema'
 import themeToVariables from '../utils/themeToVariables'
 import themes from '../../../themes'
