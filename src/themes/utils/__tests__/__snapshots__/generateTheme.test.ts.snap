@@ -1,5 +1,242 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Generate Theme generates dark theme configuration 1`] = `
+{
+  "palette": {
+    "action": {
+      "danger": {
+        "active": "#f5222d",
+        "disabled": "#f5f5f5",
+        "focus": "#f5222d",
+        "hover": "#ff4d4f",
+        "selected": "#d9363e",
+      },
+      "primary": {
+        "active": "#1890ff",
+        "disabled": "#f5f5f5",
+        "focus": "#40a9ff",
+        "hover": "#40a9ff",
+        "selected": "#096dd9",
+      },
+      "secondary": {
+        "active": "#ffffff",
+        "disabled": "#f5f5f5",
+        "focus": "#40a9ff",
+        "hover": "#40a9ff",
+        "selected": "#096dd9",
+      },
+    },
+    "background": {
+      "0": "#ffffff",
+      "100": "#ffffff",
+      "200": "#ffffff",
+      "300": "#ffffff",
+      "400": "#ffffff",
+      "500": "#ffffff",
+    },
+    "common": {
+      "black": "#000000",
+      "grey": {
+        "100": "#f5f5f5",
+        "200": "#f0f0f0",
+        "300": "#e6e6e6",
+        "400": "#d9d9d9",
+        "50": "#fafafa",
+        "500": "#d4d4d4",
+        "600": "#aaaaaa",
+        "700": "#858585",
+        "800": "#666666",
+        "900": "#444444",
+      },
+      "white": "#ffffff",
+    },
+    "error": {
+      "contrastText": "#ffffff",
+      "dark": "#d9363e",
+      "light": "#ff4d4f",
+      "main": "#f5222d",
+    },
+    "info": {
+      "contrastText": "#666666",
+      "dark": "#1890ff",
+      "light": "#e6f7ff",
+      "main": "#9cdcfe",
+    },
+    "link": {
+      "active": "#1890ff",
+      "disabled": "#f5f5f5",
+      "focus": "#096dd9",
+      "hover": "#40a9ff",
+      "selected": "#096dd9",
+    },
+    "mode": "dark",
+    "primary": {
+      "contrastText": "#ffffff",
+      "dark": "#096dd9",
+      "light": "#40a9ff",
+      "main": "#1890ff",
+    },
+    "secondary": {
+      "contrastText": "#666666",
+      "dark": "#666666",
+      "light": "#d9d9d9",
+      "main": "#aaaaaa",
+    },
+    "success": {
+      "contrastText": "#666666",
+      "dark": "#52c41a",
+      "light": "#f6ffed",
+      "main": "#b7eb8f",
+    },
+    "warning": {
+      "contrastText": "#666666",
+      "dark": "#ff9933",
+      "light": "#fffbe6",
+      "main": "#ffe58f",
+    },
+  },
+  "shape": {
+    "border": {
+      "radius": {
+        "lg": "8",
+        "md": "4",
+        "sm": "2",
+        "xl": "16",
+        "xs": "1",
+      },
+      "width": {
+        "lg": "8",
+        "md": "4",
+        "sm": "2",
+        "xl": "16",
+        "xs": "1",
+      },
+    },
+    "size": {
+      "2xl": "24",
+      "3xl": "32",
+      "4xl": "64",
+      "5xl": "96",
+      "lg": "8",
+      "md": "4",
+      "sm": "2",
+      "xl": "16",
+      "xs": "1",
+    },
+  },
+  "spacing": {
+    "gap": {
+      "lg": "24",
+      "md": "16",
+      "sm": "8",
+      "xl": "32",
+      "xs": "4",
+    },
+    "margin": {
+      "lg": "24",
+      "md": "16",
+      "sm": "8",
+      "xl": "32",
+      "xs": "4",
+    },
+    "padding": {
+      "lg": "24",
+      "md": "16",
+      "sm": "8",
+      "xl": "32",
+      "xs": "4",
+    },
+  },
+  "typography": {
+    "action": {
+      "fontFamily": "Inter",
+      "fontSize": "16",
+      "fontWeight": "400",
+      "lineHeight": "16",
+    },
+    "bodyL": {
+      "fontFamily": "Inter",
+      "fontSize": "18",
+      "fontWeight": "400",
+      "lineHeight": "24",
+    },
+    "bodyLBold": {
+      "fontFamily": "Inter",
+      "fontSize": "18",
+      "fontWeight": "600",
+      "lineHeight": "24",
+    },
+    "bodyM": {
+      "fontFamily": "Inter",
+      "fontSize": "16",
+      "fontWeight": "400",
+      "lineHeight": "24",
+    },
+    "bodyMBold": {
+      "fontFamily": "Inter",
+      "fontSize": "16",
+      "fontWeight": "600",
+      "lineHeight": "24",
+    },
+    "bodyS": {
+      "fontFamily": "Inter",
+      "fontSize": "14",
+      "fontWeight": "400",
+      "lineHeight": "16",
+    },
+    "bodySBold": {
+      "fontFamily": "Inter",
+      "fontSize": "14",
+      "fontWeight": "600",
+      "lineHeight": "16",
+    },
+    "caption": {
+      "fontFamily": "Inter",
+      "fontSize": "12",
+      "fontWeight": "400",
+      "lineHeight": "12",
+    },
+    "code": {
+      "fontFamily": "Menlo",
+      "fontSize": "14",
+      "fontWeight": "400",
+      "lineHeight": "24",
+    },
+    "h1": {
+      "fontFamily": "Inter",
+      "fontSize": "24",
+      "fontWeight": "600",
+      "lineHeight": "32",
+    },
+    "h2": {
+      "fontFamily": "Inter",
+      "fontSize": "20",
+      "fontWeight": "600",
+      "lineHeight": "32",
+    },
+    "h3": {
+      "fontFamily": "Inter",
+      "fontSize": "18",
+      "fontWeight": "600",
+      "lineHeight": "24",
+    },
+    "h4": {
+      "fontFamily": "Inter",
+      "fontSize": "16",
+      "fontWeight": "600",
+      "lineHeight": "24",
+    },
+    "link": {
+      "fontFamily": "Inter",
+      "fontSize": "16",
+      "fontWeight": "400",
+      "lineHeight": "24",
+      "textDecoration": "underline",
+    },
+  },
+}
+`;
+
 exports[`Generate Theme generates light theme configuration 1`] = `
 {
   "palette": {

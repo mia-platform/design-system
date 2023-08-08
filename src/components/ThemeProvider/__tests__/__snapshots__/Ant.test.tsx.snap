@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
+{
+  "algorithm": [Function],
+  "token": {
+    "borderRadius": 4,
+    "colorBgBase": "#ffffff",
+    "colorBgElevated": "#ffffff",
+    "colorBgLayout": "#f0f0f0",
+    "colorError": "#f5222d",
+    "colorInfo": "#9cdcfe",
+    "colorPrimary": "#1890ff",
+    "colorSuccess": "#b7eb8f",
+    "colorTextBase": "#666666",
+    "colorWarning": "#ffe58f",
+    "fontSize": 14,
+    "margin": 16,
+    "padding": 16,
+    "wireframe": false,
+  },
+}
+`;
+
 exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
 {
   "algorithm": [Function],
