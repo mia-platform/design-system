@@ -40,6 +40,8 @@ module.exports = {
     }
   },
   rules: {
+    "no-shadow": "off",
+
     /** 
      * Eslint plugin Typescript
      * @link https://typescript-eslint.io/rules
@@ -48,6 +50,7 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": ["error", {
       allowExpressions: true
     }],
+    "@typescript-eslint/no-shadow": ["error"],
 
     /**
      * Eslint plugin React Hooks

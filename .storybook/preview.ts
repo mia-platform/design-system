@@ -1,4 +1,6 @@
 import type { Preview } from "@storybook/react"
+import withTheme from "./decorators/theme"
+import themeSwitcher from "./addons/theme"
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +12,10 @@ const preview: Preview = {
       },
     },
   },
+  globalTypes: {
+    theme: themeSwitcher
+  },
+  decorators: [withTheme]
 }
 
 export default preview
