@@ -21,12 +21,10 @@ export type ThemeProviderProps = {
 
 const { lightTheme: defaultTheme } = themes
 
-
 /**
  * A context to provide the theme throughout the application.
  */
 const ThemeContext = createContext(defaultTheme)
-
 
 /**
  * Provides theming for the application.
@@ -53,7 +51,6 @@ ThemeProvider.defaultProps = {
   theme: defaultTheme,
 }
 
-
 /**
  * A hook to access the current theme from the context.
  *
@@ -64,7 +61,6 @@ const useTheme = (): Theme => {
 
   return useMemo(() => theme ?? defaultTheme, [theme])
 }
-
 
 export {
   ThemeProvider,

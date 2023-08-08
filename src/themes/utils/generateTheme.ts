@@ -17,8 +17,11 @@ const PARENTHESES = /[{}]/g
 
 const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, theme, file)
 
-/*
- * Resolve interpolated values from global definitions file
+/**
+ * Resolves interpolated values from a global definitions file in the theme.
+ *
+ * @param {Theme} themeValues - The theme values to resolve interpolated values from.
+ * @returns {func} A function that resolves interpolated values.
  */
 const resolveThemeValues = (themeValues: Theme) => (node: string) => {
   if (node.match?.(INTERPOLATED_VALUE)) {
@@ -31,8 +34,11 @@ const resolveThemeValues = (themeValues: Theme) => (node: string) => {
   return node
 }
 
-/*
- * Generate JSON theme configuration from theme files
+/**
+ * Generates a theme based on the provided theme name.
+ *
+ * @param {string} themeName - The name of the theme to generate.
+ * @returns {Promise<void>} A promise that resolves when the theme generation is complete.
  */
 export default async function generateTheme(themeName: string): Promise<void> {
   const structure = await readFileSync(getFile(themeName, THEME_GENERATOR_FILE)).toString()
