@@ -1,7 +1,11 @@
 import lodash from 'lodash'
 
-/*
- * Generate CSS variables from theme configuration
+/**
+ * Converts a theme configuration into CSS variables.
+ *
+ * @param {Theme} theme - The theme configuration to convert.
+ * @param {string} prefix - Incremental prefix composing the CSS variable names (e.g. -, --palette, --palette-primary).
+ * @returns {Record<string, string>} A record of CSS variable names and their corresponding values.
  */
 export default function themeToVariables(theme = {}, prefix = '-'): Record<string, string> {
   const fields = Object.entries(theme)
