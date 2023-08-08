@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 
-import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
+import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd-5'
 import { ReactElement, useMemo } from 'react'
 
 import Theme from '../../themes/schema'

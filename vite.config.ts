@@ -17,18 +17,17 @@ export default defineConfig({
     lib: {
       entry: resolve('src', 'index.ts'),
       name: pkg.name,
-      formats: ['es', 'umd'],
-      fileName: (format) => `${pkg.name}.${format}.js`,
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: [
-        'antd',
+        'antd-5',
         'react',
         'react-dom',
       ],
       output: {
         globals: {
-          antd: 'antd',
+          antd: 'antd-5',
           react: 'React',
           'react-dom': 'ReactDOM',
         },
