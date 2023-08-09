@@ -24,6 +24,22 @@ React graphical components designed by Mia Platform
 yarn add @mia-platform/design-system
 ```
 
+## Dependencies
+
+The Mia Platform Design System has a dependency on Ant Design version 5. However, we understand that different projects might use various versions of Ant Design. To accommodate this flexibility, we've made it possible for you to manage the version of Ant Design used within your own consumer packages.
+
+### Renaming "antd-5" Dependency
+
+In the package.json of your consumer package, you should rename the "antd" dependency as follows to use version 5.x.x of Ant Design:
+
+```json
+{
+  "dependencies": {
+    "antd-5": "npm:antd@5.x.x"
+  }
+}
+```
+
 ## Usage
 
 ```jsx
