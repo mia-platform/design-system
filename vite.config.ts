@@ -3,6 +3,7 @@ import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
 import tsConfigPaths from 'vite-tsconfig-paths'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 import pkg from './package.json'
 
@@ -12,6 +13,7 @@ export default defineConfig({
     react(),
     dts(),
     tsConfigPaths(),
+    visualizer(),
   ],
   build: {
     lib: {

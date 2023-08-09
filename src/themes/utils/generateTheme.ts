@@ -2,7 +2,7 @@
 /* eslint-disable func-names */
 
 import { readFileSync, writeFileSync } from 'fs'
-import lodash from 'lodash'
+import get from 'lodash/get'
 import { resolve } from 'path'
 import traverse from 'traverse'
 
@@ -28,7 +28,7 @@ const resolveThemeValues = (themeValues: Theme) => (node: string) => {
   if (node.match?.(INTERPOLATED_VALUE)) {
     const path = node.replace(PARENTHESES, '').split('.')
 
-    const { value } = lodash.get(themeValues, path) || {}
+    const { value } = get(themeValues, path) || {}
 
     return value
   }

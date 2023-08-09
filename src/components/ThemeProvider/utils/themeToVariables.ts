@@ -1,4 +1,4 @@
-import lodash from 'lodash'
+import isObject from 'lodash/isObject'
 
 /**
  * Converts a theme configuration into CSS variables.
@@ -12,7 +12,7 @@ export default function themeToVariables(theme = {}, prefix = '-'): Record<strin
 
   return fields.reduce((variables, [field, value]) => {
     const fieldName = [prefix, field].join('-')
-    const isNested = lodash.isObject(value)
+    const isNested = isObject(value)
 
     return {
       ...variables,
