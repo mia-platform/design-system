@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
-    "@storybook/addon-a11y": "^7.2.1",
+    "@storybook/addon-a11y": "^7.2.3",
     "@storybook/addon-designs": "^7.0.1",
     "@storybook/addon-essentials": "^7.2.1",
     "@storybook/addon-interactions": "^7.2.1",
