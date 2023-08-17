@@ -65,7 +65,7 @@
     "jest-environment-jsdom": "^29.6.2",
     "jest-watch-typeahead": "^2.2.2",
     "rollup-plugin-visualizer": "^5.9.2",
-    "storybook": "^7.2.1",
+    "storybook": "^7.3.1",
     "traverse": "^0.6.7",
     "ts-jest": "^29.1.1",
     "typescript": "^5.0.2",
