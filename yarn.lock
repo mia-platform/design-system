@@ -2294,9 +2294,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mia-platform/design-system@workspace:.":
+"@mia-platform-internal/console-design-system-react@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@mia-platform/design-system@workspace:."
+  resolution: "@mia-platform-internal/console-design-system-react@workspace:."
   dependencies:
     "@mia-platform/eslint-config-mia": ^3.0.0
     "@storybook/addon-a11y": ^7.2.1

@@ -1,5 +1,5 @@
 {
-  "name": "@mia-platform/design-system",
+  "name": "@mia-platform-internal/console-design-system-react",
   "packageManager": "yarn@3.6.1",
   "version": "0.0.8",
   "type": "module",
@@ -7,11 +7,16 @@
   "module": "dist/design-system.js",
   "description": "Mia Platform Design System",
   "author": "Mia Platform Core Team <core@mia-platform.eu>",
+  "license": "Apache-2.0",
   "contributors": [
     "Daniele Cinà <daniele.cina@mia-platform.eu>",
     "Davide Bianchi <davide.bianchi@mia-platform.eu>",
     "Giovanni Tommasi <giovanni.tommasi@mia-platform.eu>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mia-platform/design-system.git"
+  },
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
@@ -22,7 +27,9 @@
     "coverage": "yarn unit --coverage --watchAll=false --reporters=default",
     "test": "yarn lint && yarn checkonly && yarn coverage",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "addlicense": "addlicense -c 'Mia srl' -s -ignore src/**/*.ts",
+    "check-license": "addlicense -c 'Mia srl' -check -s -ignore src/**/*.ts"
   },
   "dependencies": {
     "antd-5": "npm:antd@5.8.2",
