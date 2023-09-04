@@ -26,7 +26,7 @@ yarn add @mia-platform-internal/console-design-system-react
 
 ```jsx
 import React from 'react'
-import {Button} from '@mia-platform/design-system'
+import {Button} from '@mia-platform-internal/console-design-system-react'
 
 const Example = () => {
   return (
