@@ -33,7 +33,7 @@
     "check-license": "addlicense -c 'Mia srl' -check -s -ignore src/**/*.ts"
   },
   "dependencies": {
-    "antd-5": "npm:antd@5.8.2",
+    "antd": "^5.8.2",
     "lodash.get": "^4.4.2",
     "lodash.isobject": "^3.0.2"
   },

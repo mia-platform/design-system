@@ -2329,7 +2329,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.0.0
     "@vitejs/plugin-react-swc": ^3.3.2
-    antd-5: "npm:antd@5.8.2"
+    antd: ^5.8.2
     eslint: ^8.45.0
     eslint-plugin-import: ^2.28.0
     eslint-plugin-react: ^7.33.1
@@ -5274,9 +5274,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"antd-5@npm:antd@5.8.2":
-  version: 5.8.2
-  resolution: "antd@npm:5.8.2"
+"antd@npm:^5.8.2":
+  version: 5.8.6
+  resolution: "antd@npm:5.8.6"
   dependencies:
     "@ant-design/colors": ^7.0.0
     "@ant-design/cssinjs": ^1.16.0
@@ -5305,15 +5305,15 @@ __metadata:
     rc-mentions: ~2.5.0
     rc-menu: ~9.10.0
     rc-motion: ^2.7.3
-    rc-notification: ~5.0.4
-    rc-pagination: ~3.5.0
-    rc-picker: ~3.12.0
+    rc-notification: ~5.1.1
+    rc-pagination: ~3.6.0
+    rc-picker: ~3.13.0
     rc-progress: ~3.4.1
     rc-rate: ~2.12.0
     rc-resize-observer: ^1.2.0
     rc-segmented: ~2.2.0
     rc-select: ~14.7.1
-    rc-slider: ~10.1.0
+    rc-slider: ~10.2.1
     rc-steps: ~6.0.1
     rc-switch: ~4.1.0
     rc-table: ~7.32.1
@@ -5323,13 +5323,13 @@ __metadata:
     rc-tree: ~5.7.6
     rc-tree-select: ~5.11.0
     rc-upload: ~4.3.0
-    rc-util: ^5.32.0
+    rc-util: ^5.37.0
     scroll-into-view-if-needed: ^3.0.3
     throttle-debounce: ^5.0.0
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 3b6ba5199883cfce264494191edc847b1ad4c9b831fe68a3093013a20a808e508fa1df3353763e206778eb2aaf5b552b7e60a1481cfd0c7e883b4ba96f254a54
+  checksum: eed796b3810b4b3298972fa9541bcd2f7122c6efb3d293ca0a415122ec76a400cca82e4943ba4ceb104bdaa531dbe26f65e42813783f1c1562a6cddc56bf19ec
   languageName: node
   linkType: hard
 
@@ -11328,9 +11328,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-notification@npm:~5.0.4":
-  version: 5.0.5
-  resolution: "rc-notification@npm:5.0.5"
+"rc-notification@npm:~5.1.1":
+  version: 5.1.1
+  resolution: "rc-notification@npm:5.1.1"
   dependencies:
     "@babel/runtime": ^7.10.1
     classnames: 2.x
@@ -11339,7 +11339,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 47aee7887dae4d943303803cb74a908411eabdfcfb5154c82f834e0a4f0b934d07b8933907e513787ffc98de5f66e71537820bc48fb6cf8a24870919e6548036
+  checksum: f8ead9928201fd1f0cdfb7f513b00a692e7a5356ae920313a83258576117ad3dfc2aab79e0ccca541fcab5276b9e241d57d8e8d974e9260464d62b3a446545fb
   languageName: node
   linkType: hard
 
@@ -11358,9 +11358,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-pagination@npm:~3.5.0":
-  version: 3.5.0
-  resolution: "rc-pagination@npm:3.5.0"
+"rc-pagination@npm:~3.6.0":
+  version: 3.6.1
+  resolution: "rc-pagination@npm:3.6.1"
   dependencies:
     "@babel/runtime": ^7.10.1
     classnames: ^2.2.1
@@ -11368,13 +11368,13 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 27ac05cdaf331ba571eb19fdaf79a2e3b6cb3575fce5f011f0de5abbe88db21a4292ef5323abab3a829ff6cda396444c664f88bd55226fa477f473282a8a868e
+  checksum: 12389a94bf60048cd3d8e95c638170646b7405aa30f748b96baee8df7e24d00b9d5b3c75195e3ea7589d08b771f2661d48f2fe7784624e4bdf6b22c290ffef85
   languageName: node
   linkType: hard
 
-"rc-picker@npm:~3.12.0":
-  version: 3.12.0
-  resolution: "rc-picker@npm:3.12.0"
+"rc-picker@npm:~3.13.0":
+  version: 3.13.2
+  resolution: "rc-picker@npm:3.13.2"
   dependencies:
     "@babel/runtime": ^7.10.1
     "@rc-component/trigger": ^1.5.0
@@ -11396,7 +11396,7 @@ __metadata:
       optional: true
     moment:
       optional: true
-  checksum: 59659f928c008098e85bceec39dc263669345ad2fa8fada20ad0ce6e46c08f5c089fd668d090a51e06ac10960d43e23c32fe07bb32d1af2ca08af1473ec3aba8
+  checksum: 5cd6b69cb6275362306246f311eb7dbf64196aa97dc78d22bcb3fe1473ee202ba27c48905e7176ab1c3cc0556297b54140b62ceee9de73457e99964614ecf78d
   languageName: node
   linkType: hard
 
@@ -11476,9 +11476,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-slider@npm:~10.1.0":
-  version: 10.1.1
-  resolution: "rc-slider@npm:10.1.1"
+"rc-slider@npm:~10.2.1":
+  version: 10.2.1
+  resolution: "rc-slider@npm:10.2.1"
   dependencies:
     "@babel/runtime": ^7.10.1
     classnames: ^2.2.5
@@ -11486,7 +11486,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 8df66142f1be00d31aaa45f3cf266fa30d03b70c74c734502389bbfacdb6741e149cd36dc1d3557d9dbb0194ed2733748366d888651d1120098338086419ba2c
+  checksum: 565eb55302c776a7a48bfbe6761f52bab6b0d3ea4f53fc10d32ae9958340708bc5072a9c254bb5ddfa822492093032b94cb03d5e52cdff774e076b90e20b9145
   languageName: node
   linkType: hard
 
@@ -11628,7 +11628,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-util@npm:^5.0.1, rc-util@npm:^5.16.0, rc-util@npm:^5.16.1, rc-util@npm:^5.17.0, rc-util@npm:^5.18.1, rc-util@npm:^5.2.0, rc-util@npm:^5.20.1, rc-util@npm:^5.21.0, rc-util@npm:^5.21.2, rc-util@npm:^5.22.5, rc-util@npm:^5.24.4, rc-util@npm:^5.25.2, rc-util@npm:^5.26.0, rc-util@npm:^5.27.0, rc-util@npm:^5.27.1, rc-util@npm:^5.28.0, rc-util@npm:^5.30.0, rc-util@npm:^5.31.1, rc-util@npm:^5.32.0, rc-util@npm:^5.32.2, rc-util@npm:^5.33.0, rc-util@npm:^5.34.1, rc-util@npm:^5.35.0, rc-util@npm:^5.36.0, rc-util@npm:^5.37.0":
+"rc-util@npm:^5.0.1, rc-util@npm:^5.16.0, rc-util@npm:^5.16.1, rc-util@npm:^5.17.0, rc-util@npm:^5.18.1, rc-util@npm:^5.2.0, rc-util@npm:^5.20.1, rc-util@npm:^5.21.0, rc-util@npm:^5.21.2, rc-util@npm:^5.22.5, rc-util@npm:^5.24.4, rc-util@npm:^5.25.2, rc-util@npm:^5.26.0, rc-util@npm:^5.27.0, rc-util@npm:^5.27.1, rc-util@npm:^5.28.0, rc-util@npm:^5.30.0, rc-util@npm:^5.31.1, rc-util@npm:^5.32.2, rc-util@npm:^5.33.0, rc-util@npm:^5.34.1, rc-util@npm:^5.35.0, rc-util@npm:^5.36.0, rc-util@npm:^5.37.0":
   version: 5.37.0
   resolution: "rc-util@npm:5.37.0"
   dependencies:
