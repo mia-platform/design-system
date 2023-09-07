@@ -61,8 +61,8 @@ yarn addlicense
 
 <!-- Links -->
 
-[action-status-svg]: https://github.com/mia-platform/design-system/actions/workflows/npm-publish.yml/badge.svg
-[github-action]: https://github.com/mia-platform/design-system/actions/workflows/npm-publish.yml
+[action-status-svg]: https://github.com/mia-platform/design-system/actions/workflows/test.yml/badge.svg
+[github-action]: https://github.com/mia-platform/design-system/actions/workflows/test.yml
 [standard-mia-svg]: https://img.shields.io/badge/code_style-standard--mia-orange.svg
 [standard-mia]: https://github.com/mia-platform/eslint-config-mia
 [coverall-svg]: https://coveralls.io/repos/github/mia-platform/design-system/badge.svg
