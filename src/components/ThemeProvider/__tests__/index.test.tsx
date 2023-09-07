@@ -1,6 +1,3 @@
-/* eslint-disable func-names */
-/* eslint-disable react/display-name */
-
 import { ReactElement } from 'react'
 import { render } from '@testing-library/react'
 

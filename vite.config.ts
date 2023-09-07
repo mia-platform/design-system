@@ -19,21 +19,24 @@ export default defineConfig({
     lib: {
       entry: resolve('src', 'index.ts'),
       name: pkg.name,
-      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: [
-        'antd-5',
         'react',
         'react-dom',
       ],
-      output: {
-        globals: {
-          antd: 'antd-5',
-          react: 'React',
-          'react-dom': 'ReactDOM',
+      output: [
+        {
+          dir: 'dist/cjs',
+          format: 'cjs',
+          sourcemap: false,
         },
-      },
+        {
+          dir: 'dist/es',
+          format: 'es',
+          sourcemap: false,
+        },
+      ],
     },
   },
 })
