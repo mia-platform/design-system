@@ -60,7 +60,7 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: ${{ secrets.MIA_NPM_REGISTRY_URL }}
-      - run: npm ci
+      - run: yarn install --frozen-lockfile
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.MIA_NPM_REGISTRY_TOKEN }}
