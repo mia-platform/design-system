@@ -1,17 +1,22 @@
 import type { Preview } from "@storybook/react"
 
-import withTheme from "./decorators/theme"
+import backgrounds from "./addons/backgrounds"
 import themeSwitcher from "./addons/theme"
+import withTheme from "./decorators/theme"
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { 
+      argTypesRegex: "^on[A-Z].*" 
+    },
+    backgrounds,
+    layout: 'centered',
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
+        date: /Date$/
+      }
+    }
   },
   globalTypes: {
     theme: themeSwitcher

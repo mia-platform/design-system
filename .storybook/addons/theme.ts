@@ -1,4 +1,4 @@
-import {Themes, isBrowserTheme} from "../../src/utils/theme"
+import {Themes} from "../../src/utils/theme"
 
 /**
  * The theme switcher configuration for Storybook.
@@ -10,13 +10,11 @@ const themeSwitcher = {
   toolbar: {
     icon: "paintbrush",
     items: [
-      { value: "light", icon: 'circlehollow', title: "Light Theme" },
-      { value: "dark", icon: 'circle', title: "Dark Theme" },
+      { value: Themes.light, icon: 'sun', title: "Light Theme" },
+      { value: Themes.dark, icon: 'moon', title: "Dark Theme" },
     ],
   },
-  defaultValue: isBrowserTheme(Themes.dark) ?
-    Themes.dark :
-    Themes.light
+  defaultValue: Themes.light
 }
 
 export default themeSwitcher
