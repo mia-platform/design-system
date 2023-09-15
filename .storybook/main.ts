@@ -9,19 +9,19 @@ const config: StorybookConfig = {
     "../src/assets"
   ],
   addons: [
-    "@storybook/addon-a11y",
     "@storybook/addon-designs",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
     "@storybook/addon-links",
     "@storybook/addon-onboarding",
+    "@storybook/addon-a11y",
+    "@storybook/addon-interactions",
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
   },
   docs: {
-    autodocs: "tag",
+    autodocs: true,
   },
   features: {
     storyStoreV7: true
