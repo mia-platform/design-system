@@ -1,3 +1,4 @@
+import autoprefixer from 'autoprefixer'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react-swc'
@@ -37,6 +38,11 @@ export default defineConfig({
           sourcemap: false,
         },
       ],
+    },
+  },
+  css: {
+    postcss: {
+      plugins: [autoprefixer],
     },
   },
 })
