@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Component renders category correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light css-dev-only-do-not-override-nnuwmp"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-item-group"
+      role="presentation"
+    >
+      <div
+        class="ant-menu-item-group-title"
+        role="presentation"
+        title="Category"
+      >
+        Category
+      </div>
+      <ul
+        class="ant-menu-item-group-list"
+        role="group"
+      >
+        <li
+          class="ant-menu-item ant-menu-item-only-child"
+          data-menu-id="rc-menu-uuid-test-Category item 1"
+          role="menuitem"
+          style="padding-left: 12px;"
+          tabindex="-1"
+          title="Category Item 1"
+        >
+          <span
+            class="ant-menu-title-content"
+          >
+            Category Item 1
+          </span>
+        </li>
+        <li
+          class="ant-menu-item ant-menu-item-only-child"
+          data-menu-id="rc-menu-uuid-test-Category item 2"
+          role="menuitem"
+          style="padding-left: 12px;"
+          tabindex="-1"
+          title="Category Item 2"
+        >
+          <span
+            class="ant-menu-title-content"
+          >
+            Category Item 2
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders divider correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light css-dev-only-do-not-override-nnuwmp"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-item-divider"
+    />
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders group correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light css-dev-only-do-not-override-nnuwmp"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-submenu ant-menu-submenu-inline"
+      role="none"
+    >
+      <div
+        aria-controls="rc-menu-uuid-test-group-popup"
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="ant-menu-submenu-title"
+        data-menu-id="rc-menu-uuid-test-group"
+        role="menuitem"
+        style="padding-left: 12px;"
+        tabindex="-1"
+      >
+        <span
+          class="ant-menu-title-content"
+        >
+          Group
+        </span>
+        <i
+          class="ant-menu-submenu-arrow"
+        />
+      </div>
+    </li>
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders item correctly 1`] = `
+<li
+  class="ant-menu-item ant-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-item"
+  role="menuitem"
+  style="padding-left: 12px;"
+  tabindex="-1"
+  title="Item"
+>
+  <span
+    class="ant-menu-title-content"
+  >
+    Item
+  </span>
+</li>
+`;

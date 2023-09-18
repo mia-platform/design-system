@@ -1,17 +1,13 @@
 import { Menu as AntMenu, MenuProps as AntMenuProps } from 'antd'
-import { ReactElement } from 'react'
+import { ReactElement, useMemo } from 'react'
 import classnames from 'classnames'
 
+import capitalizeGroupLabels from './Menu.utils'
 import styles from './Menu.module.css'
 
-const { menu, colored, transparent } = styles
+const { menu } = styles
 
-const colorTypes = {
-  colored,
-  transparent,
-}
-
-type MenuProps = {
+export type MenuProps = {
 
   /**
    * The menu groups initially open
@@ -36,10 +32,20 @@ type MenuProps = {
   /**
    * The type of the menu
    *
-   * @remarks vertical menu opens sub-menus as collapsibles
-   * @remarks inline menu opens sub-menus as popovers
+   * vertical: sub-menus open as collapsibles;
+   * inline: sub-menus open as popovers;
    */
   mode?: 'inline' | 'vertical'
+
+  /**
+   * Called when a menu item is clicked
+   */
+  onClick?: () => void
+
+  /**
+   * Called when sub-menus are opened or closed
+   */
+  onOpenChange?: () => void
 
   /**
    * The default open menus
@@ -50,15 +56,11 @@ type MenuProps = {
    * The default selected key
    */
   selectedKey?: string
-
-  /**
-   * Whether the menu is transparent
-   */
-  type?: 'colored' | 'transparent'
 }
 
 /**
- * Primary interaction UI component
+ * UI component for presenting nested lists of elements, organized by group or category
+ *
  * @returns {Menu} Menu component
  */
 export const Menu = ({
@@ -67,22 +69,29 @@ export const Menu = ({
   items,
   isCollapsed,
   mode,
+  onClick,
+  onOpenChange,
   openKeys,
   selectedKey,
-  type,
 }: MenuProps): ReactElement => {
+
+  const formattedItems = useMemo(() => capitalizeGroupLabels(items), [items])
+
   return (
     <AntMenu
-      className={classnames([menu, colorTypes[type!]])}
+      className={classnames([menu])}
       defaultOpenKeys={defaultOpenKeys}
       defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
       inlineCollapsed={isCollapsed}
       inlineIndent={12}
-      items={items}
+      items={formattedItems}
       mode={mode}
       multiple={false}
       openKeys={openKeys}
+      selectable
       selectedKeys={selectedKey ? [selectedKey] : undefined}
+      onClick={onClick}
+      onOpenChange={onOpenChange}
     />
   )
 }
@@ -93,7 +102,8 @@ Menu.defaultProps = {
   isCollapsed: false,
   items: [],
   mode: 'inline' as const,
+  onClick: () => undefined,
+  onOpenChange: () => undefined,
   openKeys: undefined,
   selectedKey: undefined,
-  type: 'color' as const,
 }

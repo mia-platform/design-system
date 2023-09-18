@@ -3,6 +3,7 @@
 import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
+import MenuTheme from '../Menu/Menu.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from '.'
 
@@ -16,7 +17,7 @@ const { defaultAlgorithm, darkAlgorithm } = baseAntTheme
  * @param {string | number} value - The value to parse, either a string or a number.
  * @returns {number | undefined} The parsed number or undefined if parsing is not possible.
  */
-const parse = (value?: string | number): number | undefined => {
+export const parse = (value?: string | number): number | undefined => {
   if (value && typeof value === 'string') { return parseInt(value) }
   if (value && typeof value === 'number') { return value }
   return undefined
@@ -59,6 +60,9 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     // Others
     wireframe: false,
   },
+  components: {
+    Menu: MenuTheme({ spacing, typography }),
+  },
 })
 
 /**
@@ -80,6 +84,8 @@ const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement
     </ConfigProvider>
   )
 }
+
+export type ComponentsTheme = NonNullable<ThemeConfig['components']>
 
 export {
   AntThemeProvider,

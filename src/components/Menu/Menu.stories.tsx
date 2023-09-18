@@ -1,56 +1,97 @@
 import type { Meta, StoryObj } from '@storybook/react'
-// import { action } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions'
 
+import { category, divider, group, item } from './Menu.mocks'
 import { Menu } from './'
+
+const figmaUrl = 'https://www.figma.com/file/0ar6alIEDe8iYCb8kU7Rxd/%5BDS%5D-Console-Mia-Platform?node-id=987%3A10396&mode=dev'
 
 const meta = {
   component: Menu,
   parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/0ar6alIEDe8iYCb8kU7Rxd/%5BDS%5D-Console-Mia-Platform?node-id=987%3A10396&mode=dev',
-    },
+    design: { type: 'figma', url: figmaUrl },
   },
   args: {
     ...Menu.defaultProps,
+    items: [
+      item,
+      divider,
+      category,
+      divider,
+      group,
+    ],
+    onClick: action('click'),
+    onOpenChange: action('open change'),
   },
 } satisfies Meta<typeof Menu>
 
 export default meta
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
-export const Base: Story = {
+export const Inline: Story = {
+  args: meta.args,
+}
+
+export const Vertical: Story = {
   args: {
-    mode: 'inline',
+    ...meta.args,
+    mode: 'vertical',
+  },
+  decorators: [Story => (
+    <div style={{ width: '75%' }}>
+      <Story />
+    </div>
+  )],
+}
+
+export const Category: Story = {
+  args: {
+    items: [category],
+  },
+}
+
+export const Group: Story = {
+  args: {
+    items: [group],
+  },
+}
+
+export const Divider: Story = {
+  args: {
     items: [
-      { label: 'test', key: 'test', style: { background: 'white', boxShadow: 'box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.12)' } },
       {
-        label: 'Test 2',
-        type: 'group',
-        key: 'test2',
-        children: [
-          { label: 'Test 1', key: 'test1' },
-        ],
+        key: 'before divider',
+        label: 'Before Divider',
+        title: 'Before Divider',
       },
-      { type: 'divider' },
-      { label: 'Test 3',
-        type: 'group',
-        children: [
-          { label: 'Test 4', key: 'test4' },
-        ],
+      divider,
+      {
+        key: 'after divider',
+        label: 'After Divider',
+        title: 'After Divider',
       },
     ],
   },
 }
 
+export const Item: Story = {
+  args: {
+    items: [item],
+  },
+}
 
-// const items = [
-//   <Item key="test" label="test" />,
-//   <Category label='test 2'>
-//     <Item key="test 1" label="test 1" />
-//   </Category>,
-//   <Divider />
-//     <Group label='test 3'>
-//       <Item key="test 4" label="test 4" />
-//     </Group>
-// ]
+export const ItemDisabled: Story = {
+  args: {
+    items: [
+      { ...item, disabled: true },
+    ],
+  },
+}
+
+export const ItemDanger: Story = {
+  args: {
+    items: [
+      { ...item, danger: true },
+    ],
+  },
+}
