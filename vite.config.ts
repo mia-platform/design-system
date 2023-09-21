@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
+import svgr from 'vite-plugin-svgr'
 import tsConfigPaths from 'vite-tsconfig-paths'
 import { visualizer } from 'rollup-plugin-visualizer'
 
@@ -12,6 +13,7 @@ export default defineConfig({
   plugins: [
     react(),
     dts(),
+    svgr(),
     tsConfigPaths(),
     visualizer(),
   ],
