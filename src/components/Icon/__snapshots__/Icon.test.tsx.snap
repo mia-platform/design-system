@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon Component renders Ant icon correctly 1`] = `
+<DocumentFragment>
+  <svg
+    alt="AiOutlineHome"
+    fill="currentColor"
+    height="24"
+    id="AiOutlineHome"
+    role="img"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 1024 1024"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Icon Component renders Feather icon correctly 1`] = `
+<DocumentFragment>
+  <svg
+    alt="FiHome"
+    fill="none"
+    height="24"
+    id="FiHome"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+    <polyline
+      points="9 22 9 12 15 12 15 22"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Icon Component renders Phosphor icon correctly 1`] = `
+<DocumentFragment>
+  <svg
+    alt="PiHouse"
+    fill="currentColor"
+    height="24"
+    id="PiHouse"
+    role="img"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 256 256"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Icon Component renders custom icon correctly 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="14"
+    viewBox="0 0 13 14"
+    width="13"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g
+      id="Group 1409"
+    >
+      <path
+        d="M2.28936 1.05835L3.64993 1.84726V3.42508L2.28936 4.20186L0.92758 3.41538V1.84726L2.28936 1.05835ZM2.28936 0L0.0112305 1.31445V3.94455L2.28936 5.26021L4.56628 3.94455V1.31445L2.28936 0Z"
+        fill="currentColor"
+        id="<Tracciato composto>"
+      />
+      <path
+        d="M4.80866 5.42823L6.17286 6.21592V7.79374L4.80866 8.57052L3.44809 7.78525V6.21592L4.80866 5.43065V5.42823ZM4.80866 4.3723L2.53174 5.68432V8.31443L4.80866 9.63008L7.08679 8.31443V5.68432L4.80866 4.36987V4.3723Z"
+        fill="currentColor"
+        id="<Tracciato composto>_2"
+      />
+      <path
+        d="M7.34063 9.79931L8.7012 10.5858V12.1636L7.34063 12.9489L5.97885 12.1563V10.5858L7.34063 9.80053V9.79931ZM7.34063 8.74096L5.0625 10.0554V12.6855L7.34063 14L9.61755 12.6855V10.0554L7.34063 8.73975V8.74096Z"
+        fill="currentColor"
+        id="<Tracciato composto>_3"
+      />
+      <path
+        d="M2.27813 9.79931L3.6387 10.5858V12.1636L2.27813 12.9489L0.917564 12.1563V10.5858L2.27813 9.80053V9.79931ZM2.27813 8.74096L0 10.0554V12.6855L2.27813 14L4.55626 12.6855V10.0554L2.27813 8.73975V8.74096Z"
+        fill="currentColor"
+        id="<Tracciato composto>_4"
+      />
+      <path
+        d="M9.84893 5.54157L11.2107 6.32927V7.90709L9.84893 8.68386L8.48836 7.89859V6.32927L9.84893 5.544V5.54157ZM9.84893 4.48564L7.5708 5.79766V8.42777L9.84893 9.74343L12.1271 8.42777V5.79766L9.84893 4.48322V4.48564Z"
+        fill="currentColor"
+        id="<Tracciato composto>_5"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
