@@ -8,8 +8,15 @@ export default {
   roots: [
     "<rootDir>/src"
   ],
+  setupFilesAfterEnv: [
+    "<rootDir>/src/setupTests.ts"
+  ],
   watchPlugins: [
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
-  ]
+  ],
+  coveragePathIgnorePatterns: [
+    "/node_modules/",
+    "/src/setupTests.ts"
+  ],
 }
