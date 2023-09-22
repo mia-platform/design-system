@@ -82,7 +82,7 @@
     "ts-jest": "^29.1.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
-    "vite-plugin-dts": "^3.5.1",
+    "vite-plugin-dts": "^3.5.4",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "engines": {
