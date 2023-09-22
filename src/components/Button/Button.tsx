@@ -1,9 +1,15 @@
+/* eslint-disable react/require-default-props */
 import { ReactElement, ReactNode } from 'react'
 import { Button as AntButton } from 'antd'
 
+import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './utils'
 import styles from './Button.module.css'
 
-const { ghost } = styles
+const { Primary, Neutral, Danger } = ButtonHierarchies
+const { Left, Right } = ButtonIconPositions
+const { Square } = ButtonShapes
+const { Middle } = ButtonSizes
+const { Filled, Ghost } = ButtonTypes
 
 export type ButtonProps = {
 
@@ -15,7 +21,7 @@ export type ButtonProps = {
   /**
    * Defines the button hierarchy: either 'primary', 'neutral', or 'danger' (default is 'primary')
    */
-  hierarchy?: 'primary' | 'neutral' | 'danger',
+  hierarchy?: ButtonHierarchies,
 
   /**
    * Redirect url of a link button
@@ -30,7 +36,7 @@ export type ButtonProps = {
   /**
    * Defines a position for the button icon (if any): either 'left' or 'right' (default is 'left')
    */
-  iconPosition?: 'left' | 'right',
+  iconPosition?: ButtonIconPositions,
 
   /**
    * Identifies whether the button is disabled or not
@@ -50,12 +56,12 @@ export type ButtonProps = {
   /**
    * Defines the button shape: either 'square' or 'circle' (default is 'square')
    */
-  shape?: 'square' | 'circle',
+  shape?: ButtonShapes,
 
   /**
    * Defines the button size: either 'small', 'middle', or 'large' (default is 'middle')
    */
-  size?: 'small' | 'middle' | 'large',
+  size?: ButtonSizes,
 
   /**
    * Specifies where the linked document will open when the link is clicked (default is '_blank')
@@ -65,7 +71,7 @@ export type ButtonProps = {
   /**
    * Defines the button type: either 'filled', 'outline', or 'ghost' (default is 'filled')
    */
-  type?: 'filled' | 'outline' | 'ghost',
+  type?: ButtonTypes,
 }
 
 /**
@@ -90,36 +96,33 @@ export const Button = ({
 }: ButtonProps): ReactElement => {
   return (
     <AntButton
-      className={type === 'ghost' ? ghost : undefined}
-      danger={hierarchy === 'danger'}
+      className={type === Ghost ? styles['button-ghost'] : undefined}
+      danger={hierarchy === Danger}
       disabled={isDisabled}
-      ghost={type !== 'filled' && hierarchy !== 'neutral'}
+      ghost={type !== Filled && hierarchy !== Neutral}
       href={href}
-      icon={iconPosition === 'left' && icon}
       loading={isLoading}
-      shape={shape === 'square' ? 'default' : 'circle'}
+      rel="noopener noreferrer"
+      shape={shape === Square ? 'default' : 'circle'}
       size={size}
       target={target}
-      type={hierarchy === 'neutral' ? 'default' : 'primary'}
+      type={hierarchy === Neutral ? 'default' : 'primary'}
       onClick={onClick}
     >
+      {iconPosition === Left && icon}
       {children}
-      {iconPosition === 'right' && icon}
+      {iconPosition === Right && icon}
     </AntButton>
   )
 }
 
 Button.defaultProps = {
-  children: undefined,
-  hierarchy: 'primary' as const,
-  href: undefined,
-  icon: undefined,
-  iconPosition: 'left' as const,
+  hierarchy: Primary,
+  iconPosition: Left,
   isDisabled: false,
   isLoading: false,
-  onClick: () => undefined,
-  shape: 'square' as const,
-  size: 'middle' as const,
+  shape: Square,
+  size: Middle,
   target: '_blank' as const,
-  type: 'filled' as const,
+  type: Filled,
 }
