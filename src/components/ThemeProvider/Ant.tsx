@@ -6,7 +6,7 @@ import { ReactElement, useMemo } from 'react'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from '.'
 
-const ANT_PREFIX = 'ant-5'
+const ANT_PREFIX = 'mia-platform'
 
 const { defaultAlgorithm, darkAlgorithm } = baseAntTheme
 
@@ -64,10 +64,11 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
 /**
  * Provides an Ant Design themed environment for the application.
  *
- * @param {ThemeProviderProps} props - The component props.
+ * @param {ThemeProviderProps} props - The theme provider props.
  * @returns {ReactElement} A component providing the Ant Design theme to its children.
  */
 const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
+
   const antTheme = useMemo(() => generateAntTheme(theme), [theme])
 
   return (
