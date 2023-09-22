@@ -69,10 +69,10 @@ export const Icon = ({
   return (
     <IconComponent
       alt={name}
+      aria-label={name}
       className={className}
       color={color ?? defaultColor}
       height={size ?? defaultSize}
-      id={name}
       role={'img'}
       size={size ?? defaultSize}
       width={size ?? defaultSize}
