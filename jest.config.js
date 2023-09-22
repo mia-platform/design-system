@@ -12,7 +12,7 @@ export default {
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
   ],
-  moduleNameMapper: {
-    '\\.svg\\?react$': '<rootDir>/src/mocks/svg.tsx',
+  transform: {
+    "\\.(svg)$": "jest-transformer-svg"
   }
 }

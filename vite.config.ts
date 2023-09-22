@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     react(),
     dts(),
-    svgr(),
+    svgr({ exportAsDefault: true }),
     tsConfigPaths(),
     visualizer(),
   ],

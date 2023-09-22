@@ -4,14 +4,26 @@ import * as PhosphorIcons from 'react-icons/pi'
 import { ReactElement, useContext } from 'react'
 import { IconContext } from 'react-icons'
 
-import MiaPlatform from './assets/MiaPlatform.svg?react'
-import MiaPlatformColored from './assets/MiaPlatformColored.svg?react'
+import MiaPlatform from './assets/MiaPlatform.svg'
+import MiaPlatformColored from './assets/MiaPlatformColored.svg'
 
+/**
+ * Custom icons for brand images.
+ *
+ * @remarks This object should only be used for brand image-related custom SVGs.
+ */
 const customIcons = {
   MiaPlatform,
   MiaPlatformColored,
 } as const
 
+/**
+ * Supported icon packs.
+ *
+ * @see {@link https://github.com/feathericons/feather Feather Icons}
+ * @see {@link https://github.com/phosphor-icons/core Phosphor Icons}
+ * @see {@link https://github.com/ant-design/ant-design-icons Ant Icons}
+ */
 const reactIcons = {
   ...FeatherIcons,
   ...PhosphorIcons,
@@ -39,6 +51,7 @@ export type IconProps = {
 /**
  * UI component for displaying different icon packs (Ant, Feather, Phosphor) and custom SVGs
  *
+ * @link https://react-icons.github.io/react-icons/
  * @returns {Icon} Icon component
  */
 export const Icon = ({
