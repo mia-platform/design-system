@@ -1,6 +1,7 @@
 import { ReactElement, createContext, useMemo } from 'react'
 
 import { AntThemeProvider } from './Ant'
+import { ReactIconsProvider } from './ReactIcons'
 import Theme from '../../themes/schema'
 import themeToVariables from './utils/themeToVariables'
 import themes from '../../themes'
@@ -39,9 +40,11 @@ const ThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement =>
   return (
     <ThemeContext.Provider value={theme!}>
       <AntThemeProvider theme={theme}>
-        <div style={style}>
-          {children}
-        </div>
+        <ReactIconsProvider theme={theme}>
+          <div style={style}>
+            {children}
+          </div>
+        </ReactIconsProvider>
       </AntThemeProvider>
     </ThemeContext.Provider>
   )

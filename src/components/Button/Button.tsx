@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import { ReactElement, ReactNode } from 'react'
 import { Button as AntButton } from 'antd'
 

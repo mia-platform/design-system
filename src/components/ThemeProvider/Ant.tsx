@@ -1,12 +1,10 @@
-/* eslint-disable react-refresh/only-export-components */
-
 import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from '.'
 
-const ANT_PREFIX = 'ant-5'
+const ANT_PREFIX = 'mia-platform'
 
 const { defaultAlgorithm, darkAlgorithm } = baseAntTheme
 
@@ -29,7 +27,6 @@ const parse = (value?: string | number): number | undefined => {
  * @returns {ThemeConfig} The generated Ant theme configuration.
  */
 const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme> = {}): ThemeConfig => ({
-
   algorithm: palette?.mode === 'dark'
     ? darkAlgorithm
     : defaultAlgorithm,
@@ -64,7 +61,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
 /**
  * Provides an Ant Design themed environment for the application.
  *
- * @param {ThemeProviderProps} props - The component props.
+ * @param {ThemeProviderProps} props - The theme provider props.
  * @returns {ReactElement} A component providing the Ant Design theme to its children.
  */
 const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
