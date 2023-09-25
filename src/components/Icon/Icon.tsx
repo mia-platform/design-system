@@ -59,7 +59,6 @@ export const Icon = ({
   size,
   color,
 }: IconProps): ReactElement => {
-
   const { color: defaultColor, size: defaultSize, className } = useContext(IconContext)
 
   const IconComponent = name in customIcons
