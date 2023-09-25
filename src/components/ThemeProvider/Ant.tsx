@@ -66,7 +66,6 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
  * @returns {ReactElement} A component providing the Ant Design theme to its children.
  */
 const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
-
   const antTheme = useMemo(() => generateAntTheme(theme), [theme])
 
   return (

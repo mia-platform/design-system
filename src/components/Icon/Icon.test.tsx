@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react'
 import { Icon } from '.'
 
 describe('Icon Component', () => {
-
   beforeEach(() => {
     jest.resetAllMocks()
   })

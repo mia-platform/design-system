@@ -21,7 +21,6 @@ const generateReactIconsContext = ({ palette }: Partial<Theme> = {}): IconContex
  * @returns {ReactElement} A component providing the React Icons context to its children.
  */
 const ReactIconsProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
-
   const reactIconsTheme = useMemo(() => generateReactIconsContext(theme), [theme])
 
   return (
