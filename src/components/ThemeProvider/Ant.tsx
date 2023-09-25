@@ -27,7 +27,6 @@ const parse = (value?: string | number): number | undefined => {
  * @returns {ThemeConfig} The generated Ant theme configuration.
  */
 const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme> = {}): ThemeConfig => ({
-
   algorithm: palette?.mode === 'dark'
     ? darkAlgorithm
     : defaultAlgorithm,
