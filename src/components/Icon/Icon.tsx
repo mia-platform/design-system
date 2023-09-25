@@ -58,12 +58,13 @@ export const Icon = ({
   name,
   size,
   color,
-}: IconProps): ReactElement => {
+}: IconProps): ReactElement | null => {
   const { color: defaultColor, size: defaultSize, className } = useContext(IconContext)
 
   const IconComponent = name in customIcons
-    ? customIcons[name as keyof typeof customIcons]
-    : reactIcons[name as keyof typeof reactIcons]
+    ? customIcons?.[name as keyof typeof customIcons]
+    : reactIcons?.[name as keyof typeof reactIcons]
+    ?? null
 
   return (
     <IconComponent
