@@ -81,6 +81,5 @@ export const Icon = ({
 }
 
 Icon.defaultProps = {
-  color: undefined,
   size: 24 as const,
 }

@@ -1,5 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
-
 import { ReactElement, useMemo } from 'react'
 import { IconContext } from 'react-icons'
 
