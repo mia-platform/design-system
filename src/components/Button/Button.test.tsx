@@ -8,7 +8,7 @@ const { Neutral, Danger } = ButtonHierarchies
 const { Right } = ButtonIconPositions
 const { Circle } = ButtonShapes
 const { Small, Large } = ButtonSizes
-const { Outline, Ghost } = ButtonTypes
+const { Outlined, Ghost } = ButtonTypes
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 
@@ -23,7 +23,7 @@ describe('Button Component', () => {
   })
 
   test('renders primary outline button correctly', () => {
-    const { asFragment } = render(<Button type={Outline}>{'Button'}</Button>)
+    const { asFragment } = render(<Button type={Outlined}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -33,7 +33,7 @@ describe('Button Component', () => {
   })
 
   test('renders neutral outline button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Neutral} type={Outline}>{'Button'}</Button>)
+    const { asFragment } = render(<Button hierarchy={Neutral} type={Outlined}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -48,7 +48,7 @@ describe('Button Component', () => {
   })
 
   test('renders danger outline button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Danger} type={Outline}>{'Button'}</Button>)
+    const { asFragment } = render(<Button hierarchy={Danger} type={Outlined}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 

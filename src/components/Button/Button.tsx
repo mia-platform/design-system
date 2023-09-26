@@ -64,7 +64,7 @@ export type ButtonProps = {
    * Defines the button shape. Either:
    *
    * - square: square-shaped button with rounded corners;
-   * - circle: fully rounded button.
+   * - circle: fully rounded button, typically used for buttons containing only icon.
    */
   shape?: ButtonShapes,
 
@@ -86,7 +86,7 @@ export type ButtonProps = {
    * Defines the button type. Either:
    *
    * - filled: button with a solid fill, typically used for primary actions;
-   * - outline: medium-emphasis button with a stroke around the button container and no fill,
+   * - outlined: medium-emphasis button with a stroke around the button container and no fill,
    *   typically used for secondary actions;
    * - ghost: transparent button with no stroke, typically used for links.
    */

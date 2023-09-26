@@ -22,6 +22,6 @@ export enum ButtonSizes {
 
 export enum ButtonTypes {
   Filled = 'filled',
-  Outline = 'outline',
+  Outlined = 'outlined',
   Ghost = 'ghost',
 }

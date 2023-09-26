@@ -9,7 +9,7 @@ const { Primary, Neutral, Danger } = ButtonHierarchies
 const { Left, Right } = ButtonIconPositions
 const { Square, Circle } = ButtonShapes
 const { Small, Middle, Large } = ButtonSizes
-const { Filled, Outline, Ghost } = ButtonTypes
+const { Filled, Outlined, Ghost } = ButtonTypes
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 
@@ -37,7 +37,7 @@ export const PrimaryOutline: Story = {
   args: {
     ...meta.args,
     hierarchy: Primary,
-    type: Outline,
+    type: Outlined,
   },
 }
 
@@ -53,7 +53,7 @@ export const NeutralOutline: Story = {
   args: {
     ...meta.args,
     hierarchy: Neutral,
-    type: Outline,
+    type: Outlined,
   },
 }
 
@@ -77,7 +77,7 @@ export const DangerOutline: Story = {
   args: {
     ...meta.args,
     hierarchy: Danger,
-    type: Outline,
+    type: Outlined,
   },
 }
 
