@@ -30,20 +30,20 @@ const reactIcons = {
   ...AntIcons,
 } as const
 
-export type IconProps = {
+export type IconType = {
 
   /**
-   * The color of the icon
+   * The color of the icon.
    */
   color?: string
 
   /**
-   * The name of the icon
+   * The name of the icon.
    */
   name: keyof typeof customIcons | keyof typeof reactIcons
 
   /**
-   * The size of the icon
+   * The size of the icon.
    */
   size?: 16 | 24 | 32 | 48 | 64 | 96
 }
@@ -58,13 +58,20 @@ export const Icon = ({
   name,
   size,
   color,
-}: IconProps): ReactElement | null => {
+}: IconType): ReactElement | null => {
   const { color: defaultColor, size: defaultSize, className } = useContext(IconContext)
 
   const IconComponent = name in customIcons
     ? customIcons?.[name as keyof typeof customIcons]
     : reactIcons?.[name as keyof typeof reactIcons]
-    ?? null
+
+  if (!IconComponent) {
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
+      console.error('icon name not supported')
+    }
+    return null
+  }
 
   return (
     <IconComponent
