@@ -30,7 +30,7 @@ const reactIcons = {
   ...AntIcons,
 } as const
 
-export type IconProps = {
+export type IconType = {
 
   /**
    * The color of the icon.
@@ -58,12 +58,20 @@ export const Icon = ({
   name,
   size,
   color,
-}: IconProps): ReactElement => {
+}: IconType): ReactElement | null => {
   const { color: defaultColor, size: defaultSize, className } = useContext(IconContext)
 
   const IconComponent = name in customIcons
-    ? customIcons[name as keyof typeof customIcons]
-    : reactIcons[name as keyof typeof reactIcons]
+    ? customIcons?.[name as keyof typeof customIcons]
+    : reactIcons?.[name as keyof typeof reactIcons]
+
+  if (!IconComponent) {
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
+      console.error('icon name not supported')
+    }
+    return null
+  }
 
   return (
     <IconComponent
