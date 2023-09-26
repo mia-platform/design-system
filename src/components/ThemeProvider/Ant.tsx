@@ -1,5 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
-
 import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
@@ -29,7 +27,6 @@ const parse = (value?: string | number): number | undefined => {
  * @returns {ThemeConfig} The generated Ant theme configuration.
  */
 const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme> = {}): ThemeConfig => ({
-
   algorithm: palette?.mode === 'dark'
     ? darkAlgorithm
     : defaultAlgorithm,
@@ -68,7 +65,6 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
  * @returns {ReactElement} A component providing the Ant Design theme to its children.
  */
 const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
-
   const antTheme = useMemo(() => generateAntTheme(theme), [theme])
 
   return (

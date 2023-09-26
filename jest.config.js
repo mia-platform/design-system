@@ -15,8 +15,11 @@ export default {
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
   ],
+  transform: {
+    "\\.(svg)$": "jest-transformer-svg"
+  },
   coveragePathIgnorePatterns: [
     "/node_modules/",
     "/src/setupTests.ts"
-  ],
+  ]
 }

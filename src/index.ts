@@ -16,11 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Icon } from './components/Icon'
 import { ThemeProvider } from './components/ThemeProvider'
 import hooks from './hooks'
 import themes from './themes'
 
 export {
+  Icon,
   ThemeProvider,
   hooks,
   themes,
