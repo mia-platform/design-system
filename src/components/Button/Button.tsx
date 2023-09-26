@@ -5,13 +5,15 @@ import classnames from 'classnames'
 import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './Button.types'
 import styles from './Button.module.css'
 
+const { button, buttonSm, buttonMd, buttonLg, buttonGhost, buttonText } = styles
+
 const { Primary, Neutral, Danger } = ButtonHierarchies
 const { Left, Right } = ButtonIconPositions
 const { Square } = ButtonShapes
 const { Small, Middle, Large } = ButtonSizes
 const { Filled, Ghost } = ButtonTypes
 
-export type ButtonProps = {
+export type ButtonType = {
 
   /**
    * The children nodes to be rendered with the button context.
@@ -78,7 +80,10 @@ export type ButtonProps = {
   size?: ButtonSizes,
 
   /**
-   * Specifies where the linked document will open when the link is clicked (default is '_blank').
+   * Specifies where the linked document will open when the link is clicked.
+   * Only usable for link buttons together with the href property.
+   *
+   * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
    */
   target?: string,
 
@@ -112,46 +117,38 @@ export const Button = ({
   size,
   target,
   type,
-}: ButtonProps): ReactElement => {
+}: ButtonType): ReactElement => {
   const buttonClassNames = useMemo(() => (
     [
-      children && size === Small && styles['button-sm'],
-      children && size === Middle && styles['button-md'],
-      children && size === Large && styles['button-lg'],
-      type === Ghost && styles['button-ghost'],
+      button,
+      children && size === Small && buttonSm,
+      children && size === Middle && buttonMd,
+      children && size === Large && buttonLg,
+      type === Ghost && buttonGhost,
     ].filter(Boolean)
   ), [children, size, type])
 
-  const buttonText = useMemo(() => (
-    children && <div className={styles['button-text']}>
-      {children}
-    </div>
-  ), [children])
-
-  const buttonWithIcon = useMemo(() => (
-    <div className={styles['button-with-icon']}>
-      {iconPosition === Left && icon}
-      {buttonText}
-      {iconPosition === Right && icon}
-    </div>
-  ), [buttonText, icon, iconPosition])
-
+  /**
+   * rel: 'noopener noreferrer'
+   *
+   * @link https://github.com/ant-design/ant-design/blob/master/components/button/button.tsx#L259
+   */
   return (
     <AntButton
+      {...href && { href, rel: 'noopener noreferrer', target }}
       className={classnames(buttonClassNames)}
       danger={hierarchy === Danger}
       disabled={isDisabled}
       ghost={type !== Filled && hierarchy !== Neutral}
-      href={href}
       loading={isLoading}
-      rel={'noopener noreferrer'}
       shape={shape === Square ? 'default' : 'circle'}
       size={size}
-      target={target}
       type={hierarchy === Neutral ? 'default' : 'primary'}
       onClick={onClick}
     >
-      {icon ? buttonWithIcon : buttonText}
+      {iconPosition === Left && icon}
+      {children && <div className={buttonText}>{children}</div>}
+      {iconPosition === Right && icon}
     </AntButton>
   )
 }
@@ -163,6 +160,5 @@ Button.defaultProps = {
   isLoading: false,
   shape: Square,
   size: Middle,
-  target: '_blank' as const,
   type: Filled,
 }
