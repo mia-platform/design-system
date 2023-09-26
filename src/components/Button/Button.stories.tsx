@@ -1,21 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { ButtonHierarchies, ButtonShapes, ButtonSizes, ButtonTypes } from './utils'
+import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './Button.types'
 import { Button } from './Button'
+import { Icon } from '../Icon'
 
 const { Primary, Neutral, Danger } = ButtonHierarchies
+const { Left, Right } = ButtonIconPositions
 const { Square, Circle } = ButtonShapes
 const { Small, Middle, Large } = ButtonSizes
 const { Filled, Outline, Ghost } = ButtonTypes
 
-const figmaUrl = 'https://www.figma.com/file/0ar6alIEDe8iYCb8kU7Rxd/%5BDS%5D-Console-Mia-Platform?node-id=2%3A162&mode=dev'
+const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 
 const meta = {
   component: Button,
-  parameters: {
-    design: { type: 'figma', url: figmaUrl },
-  },
   args: {
     ...Button.defaultProps,
     children: 'Button',
@@ -93,7 +92,8 @@ export const DangerGhost: Story = {
 export const SquareShape: Story = {
   args: {
     ...meta.args,
-    children: '+',
+    children: undefined,
+    icon,
     shape: Square,
   },
 }
@@ -101,7 +101,8 @@ export const SquareShape: Story = {
 export const CircleShape: Story = {
   args: {
     ...meta.args,
-    children: '+',
+    children: undefined,
+    icon,
     shape: Circle,
   },
 }
@@ -138,5 +139,21 @@ export const Loading: Story = {
   args: {
     ...meta.args,
     isLoading: true,
+  },
+}
+
+export const WithIconLeft: Story = {
+  args: {
+    ...meta.args,
+    icon,
+    iconPosition: Left,
+  },
+}
+
+export const WithIconRight: Story = {
+  args: {
+    ...meta.args,
+    icon,
+    iconPosition: Right,
   },
 }

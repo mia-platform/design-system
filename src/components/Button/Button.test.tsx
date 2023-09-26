@@ -1,15 +1,18 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 
-import { ButtonHierarchies, ButtonShapes, ButtonSizes, ButtonTypes } from './utils'
+import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './Button.types'
 import { Button } from '.'
+import { Icon } from '../Icon'
 
 const { Neutral, Danger } = ButtonHierarchies
+const { Right } = ButtonIconPositions
 const { Circle } = ButtonShapes
 const { Small, Large } = ButtonSizes
 const { Outline, Ghost } = ButtonTypes
 
-describe('Button Component', () => {
+const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 
+describe('Button Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
@@ -54,13 +57,23 @@ describe('Button Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('renders square button correctly', () => {
+    const { asFragment } = render(<Button icon={icon} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('renders circle button correctly', () => {
-    const { asFragment } = render(<Button shape={Circle}>{'+'}</Button>)
+    const { asFragment } = render(<Button icon={icon} shape={Circle} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders small button correctly', () => {
     const { asFragment } = render(<Button size={Small}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders middle button correctly', () => {
+    const { asFragment } = render(<Button>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -79,6 +92,16 @@ describe('Button Component', () => {
 
   test('renders loading button correctly', () => {
     const { asFragment } = render(<Button isLoading>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders button with icon left correctly', () => {
+    const { asFragment } = render(<Button icon={icon}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders button with icon right correctly', () => {
+    const { asFragment } = render(<Button icon={icon} iconPosition={Right}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 

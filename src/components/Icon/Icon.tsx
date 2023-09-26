@@ -33,17 +33,17 @@ const reactIcons = {
 export type IconProps = {
 
   /**
-   * The color of the icon
+   * The color of the icon.
    */
   color?: string
 
   /**
-   * The name of the icon
+   * The name of the icon.
    */
   name: keyof typeof customIcons | keyof typeof reactIcons
 
   /**
-   * The size of the icon
+   * The size of the icon.
    */
   size?: 16 | 24 | 32 | 48 | 64 | 96
 }

@@ -3,15 +3,95 @@
 exports[`Button Component renders button with href correctly 1`] = `
 <DocumentFragment>
   <a
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary button-md"
     href="https://mia-platform.eu"
     rel="noopener noreferrer"
     target="_blank"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </a>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders button with icon left correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary button-md"
+    rel="noopener noreferrer"
+    target="_blank"
+    type="button"
+  >
+    <div
+      class="button-with-icon"
+    >
+      <svg
+        alt="PiCircleHalfTiltLight"
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+      <div
+        class="button-text"
+      >
+        Button
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders button with icon right correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary button-md"
+    rel="noopener noreferrer"
+    target="_blank"
+    type="button"
+  >
+    <div
+      class="button-with-icon"
+    >
+      <div
+        class="button-text"
+      >
+        Button
+      </div>
+      <svg
+        alt="PiCircleHalfTiltLight"
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+    </div>
+  </button>
 </DocumentFragment>
 `;
 
@@ -23,9 +103,28 @@ exports[`Button Component renders circle button correctly 1`] = `
     target="_blank"
     type="button"
   >
-    <span>
-      +
-    </span>
+    <div
+      class="button-with-icon"
+    >
+      <svg
+        alt="PiCircleHalfTiltLight"
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -33,14 +132,16 @@ exports[`Button Component renders circle button correctly 1`] = `
 exports[`Button Component renders danger filled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-dangerous"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-dangerous button-md"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -48,14 +149,16 @@ exports[`Button Component renders danger filled button correctly 1`] = `
 exports[`Button Component renders danger ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-background-ghost ant-btn-dangerous button-ghost"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-background-ghost ant-btn-dangerous button-md button-ghost"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -63,14 +166,16 @@ exports[`Button Component renders danger ghost button correctly 1`] = `
 exports[`Button Component renders danger outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-background-ghost ant-btn-dangerous"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-background-ghost ant-btn-dangerous button-md"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -78,15 +183,17 @@ exports[`Button Component renders danger outline button correctly 1`] = `
 exports[`Button Component renders disabled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary button-md"
     disabled=""
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -94,14 +201,16 @@ exports[`Button Component renders disabled button correctly 1`] = `
 exports[`Button Component renders large button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-lg"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-lg button-lg"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -109,7 +218,7 @@ exports[`Button Component renders large button correctly 1`] = `
 exports[`Button Component renders loading button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-loading"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-loading button-md"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
@@ -137,9 +246,28 @@ exports[`Button Component renders loading button correctly 1`] = `
         </svg>
       </span>
     </span>
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders middle button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary button-md"
+    rel="noopener noreferrer"
+    target="_blank"
+    type="button"
+  >
+    <div
+      class="button-text"
+    >
+      Button
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -147,14 +275,16 @@ exports[`Button Component renders loading button correctly 1`] = `
 exports[`Button Component renders neutral ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-default button-ghost"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-default button-md button-ghost"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -162,14 +292,16 @@ exports[`Button Component renders neutral ghost button correctly 1`] = `
 exports[`Button Component renders neutral outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-default"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-default button-md"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -177,14 +309,16 @@ exports[`Button Component renders neutral outline button correctly 1`] = `
 exports[`Button Component renders primary filled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary button-md"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -192,14 +326,16 @@ exports[`Button Component renders primary filled button correctly 1`] = `
 exports[`Button Component renders primary ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-background-ghost button-ghost"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-background-ghost button-md button-ghost"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -207,14 +343,16 @@ exports[`Button Component renders primary ghost button correctly 1`] = `
 exports[`Button Component renders primary outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-background-ghost"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-background-ghost button-md"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -222,14 +360,50 @@ exports[`Button Component renders primary outline button correctly 1`] = `
 exports[`Button Component renders small button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-sm"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary ant-btn-sm button-sm"
     rel="noopener noreferrer"
     target="_blank"
     type="button"
   >
-    <span>
+    <div
+      class="button-text"
+    >
       Button
-    </span>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders square button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary"
+    rel="noopener noreferrer"
+    target="_blank"
+    type="button"
+  >
+    <div
+      class="button-with-icon"
+    >
+      <svg
+        alt="PiCircleHalfTiltLight"
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+    </div>
   </button>
 </DocumentFragment>
 `;

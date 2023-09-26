@@ -3,6 +3,11 @@
 exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
 {
   "algorithm": [Function],
+  "components": {
+    "Button": {
+      "contentFontSizeLG": 14,
+    },
+  },
   "token": {
     "borderRadius": 4,
     "colorBgBase": "#ffffff",
@@ -25,6 +30,11 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
 exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
 {
   "algorithm": [Function],
+  "components": {
+    "Button": {
+      "contentFontSizeLG": undefined,
+    },
+  },
   "token": {
     "borderRadius": undefined,
     "colorBgBase": undefined,
@@ -47,6 +57,11 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
 exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
 {
   "algorithm": [Function],
+  "components": {
+    "Button": {
+      "contentFontSizeLG": 14,
+    },
+  },
   "token": {
     "borderRadius": 4,
     "colorBgBase": "#ffffff",

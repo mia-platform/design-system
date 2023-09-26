@@ -1,4 +1,36 @@
+.button-sm {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px !important;
+}
+
+.button-md {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px !important;
+}
+
+.button-lg {
+  display: flex;
+  align-items: center;
+  height: 48px !important;
+  padding: 16px !important;
+}
+
 .button-ghost {
-  border: none;
+  border-color: transparent !important;
   background-color: transparent;
+}
+
+.button-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 14px;
+}
+
+.button-text {
+  padding: 0 4px;
+  line-height: 1;
 }
