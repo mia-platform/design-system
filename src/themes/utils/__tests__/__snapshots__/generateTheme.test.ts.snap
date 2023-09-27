@@ -352,8 +352,9 @@ exports[`Generate Theme generates light theme configuration 1`] = `
     "size": {
       "2xl": "24",
       "3xl": "32",
-      "4xl": "64",
-      "5xl": "96",
+      "4xl": "48",
+      "5xl": "64",
+      "6xl": "96",
       "lg": "8",
       "md": "4",
       "sm": "2",
@@ -387,7 +388,7 @@ exports[`Generate Theme generates light theme configuration 1`] = `
   "typography": {
     "action": {
       "fontFamily": "Inter",
-      "fontSize": "16",
+      "fontSize": "14",
       "fontWeight": "400",
       "lineHeight": "16",
     },

@@ -1,0 +1,32 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing-gap-xs, 4) * 1px);
+}
+
+/* TODO: add 12px padding to theme */
+.buttonSm {
+  padding: calc(var(--spacing-padding-xs, 4) * 1px)
+           calc((var(--spacing-padding-xs, 4) + var(--spacing-padding-sm, 8)) * 1px) !important;
+}
+
+.buttonMd {
+  padding: calc(var(--spacing-padding-sm, 8) * 1px)
+           calc((var(--spacing-padding-xs, 4) + var(--spacing-padding-sm, 8)) * 1px) !important;
+}
+
+.buttonLg {
+  height: calc(var(--shape-size-4xl, 48) * 1px) !important;
+  padding: calc(var(--spacing-padding-md, 16) * 1px) !important;
+}
+
+.buttonGhost {
+  border-color: transparent !important;
+  background-color: transparent;
+}
+
+.buttonText {
+  padding: 0 calc(var(--spacing-padding-xs, 4) * 1px);
+  line-height: calc(var(--shape-size-xs, 1) * 1px);
+}

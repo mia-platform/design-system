@@ -1,6 +1,7 @@
 import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
+import ButtonTheme from '../Button/Button.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from '.'
 
@@ -56,6 +57,9 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     // Others
     wireframe: false,
   },
+  components: {
+    Button: ButtonTheme({ typography }),
+  },
 })
 
 /**
@@ -78,7 +82,10 @@ const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement
   )
 }
 
+export type ComponentsTheme = NonNullable<ThemeConfig['components']>
+
 export {
   AntThemeProvider,
   generateAntTheme,
+  parse,
 }

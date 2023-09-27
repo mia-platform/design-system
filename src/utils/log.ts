@@ -24,7 +24,7 @@
  * @param {string} message - The error message to log.
  * @returns {void}
  */
-function error(message:string): void {
+function error(message: string): void {
   if (process.env.NODE_ENV === 'development') {
     console.error(message)
   }

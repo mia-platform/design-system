@@ -15,6 +15,9 @@ export default {
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
   ],
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy',
+  },
   transform: {
     "\\.(svg)$": "jest-transformer-svg"
   },
