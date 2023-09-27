@@ -16,7 +16,7 @@ const { Filled, Ghost } = ButtonTypes
 export type ButtonType = {
 
   /**
-   * The children nodes to be rendered with the button context.
+   * The children nodes to be rendered within the button context.
    */
   children?: ReactNode,
 
@@ -35,7 +35,7 @@ export type ButtonType = {
   href?: string,
 
   /**
-   * Sets an icon component for the button.
+   * Sets an icon for the button component.
    */
   icon?: ReactNode,
 
@@ -73,9 +73,9 @@ export type ButtonType = {
   /**
    * Defines the button size. Either:
    *
-   * - small: small button - 24px in height;
-   * - middle: middle button - 32px in height;
-   * - large: large button - 48px in height.
+   * - small: small button - 24px in height by default;
+   * - middle: middle button - 32px in height by default;
+   * - large: large button - 48px in height by default.
    */
   size?: ButtonSizes,
 
@@ -99,7 +99,7 @@ export type ButtonType = {
 }
 
 /**
- * UI component for presenting buttons
+ * UI component to perform actions on the page interacting through clicks
  *
  * @link https://ant.design/components/button
  * @returns {Button} Button component
@@ -118,14 +118,14 @@ export const Button = ({
   target,
   type,
 }: ButtonType): ReactElement => {
-  const buttonClassNames = useMemo(() => (
+  const buttonClassNames = useMemo(() => classnames(
     [
       button,
       children && size === Small && buttonSm,
       children && size === Middle && buttonMd,
       children && size === Large && buttonLg,
       type === Ghost && buttonGhost,
-    ].filter(Boolean)
+    ]
   ), [children, size, type])
 
   /**
@@ -135,8 +135,7 @@ export const Button = ({
    */
   return (
     <AntButton
-      {...href && { href, rel: 'noopener noreferrer', target }}
-      className={classnames(buttonClassNames)}
+      className={buttonClassNames}
       danger={hierarchy === Danger}
       disabled={isDisabled}
       ghost={type !== Filled && hierarchy !== Neutral}
@@ -145,6 +144,7 @@ export const Button = ({
       size={size}
       type={hierarchy === Neutral ? 'default' : 'primary'}
       onClick={onClick}
+      {...href && { href, rel: 'noopener noreferrer', target }}
     >
       {iconPosition === Left && icon}
       {children && <div className={buttonText}>{children}</div>}

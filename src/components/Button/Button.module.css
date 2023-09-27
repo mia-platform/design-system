@@ -6,20 +6,14 @@
 }
 
 .buttonSm {
-  display: flex;
-  align-items: center;
   padding: 4px 12px !important;
 }
 
 .buttonMd {
-  display: flex;
-  align-items: center;
   padding: 8px 12px !important;
 }
 
 .buttonLg {
-  display: flex;
-  align-items: center;
   height: 48px !important;
   padding: 16px !important;
 }
