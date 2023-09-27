@@ -10,5 +10,7 @@ import Theme from '../../themes/schema'
  * @returns {Partial<ComponentsTheme>} The generated Button Ant theme configuration.
  */
 export default ({ typography }: Partial<Theme>): ComponentsTheme['Button'] => ({
-  contentFontSizeLG: parse(typography?.bodyS?.fontSize),
+  contentFontSizeSM: parse(typography?.action?.fontSize),
+  contentFontSize: parse(typography?.action?.fontSize),
+  contentFontSizeLG: parse(typography?.action?.fontSize),
 })
