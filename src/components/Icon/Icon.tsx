@@ -6,6 +6,7 @@ import { IconContext } from 'react-icons'
 
 import MiaPlatform from './assets/MiaPlatform.svg'
 import MiaPlatformColored from './assets/MiaPlatformColored.svg'
+import log from '../../utils/log'
 
 /**
  * Custom icons for brand images.
@@ -66,10 +67,7 @@ export const Icon = ({
     : reactIcons?.[name as keyof typeof reactIcons]
 
   if (!IconComponent) {
-    if (process.env.NODE_ENV === 'development') {
-      // eslint-disable-next-line no-console
-      console.error('icon name not supported')
-    }
+    log.error(`icon name ${name} not supported`)
     return null
   }
 
