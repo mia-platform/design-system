@@ -31,7 +31,7 @@ const reactIcons = {
   ...AntIcons,
 } as const
 
-export type IconType = {
+export type IconProps = {
 
   /**
    * The color of the icon.
@@ -59,7 +59,7 @@ export const Icon = ({
   name,
   size,
   color,
-}: IconType): ReactElement | null => {
+}: IconProps): ReactElement | null => {
   const { color: defaultColor, size: defaultSize, className } = useContext(IconContext)
 
   const IconComponent = name in customIcons

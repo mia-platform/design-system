@@ -13,7 +13,7 @@ const { Square } = ButtonShapes
 const { Small, Middle, Large } = ButtonSizes
 const { Filled, Ghost } = ButtonTypes
 
-export type ButtonType = {
+export type ButtonProps = {
 
   /**
    * The children nodes to be rendered within the button context.
@@ -31,6 +31,7 @@ export type ButtonType = {
 
   /**
    * Redirect url of a link button.
+   * For security reasons, the attribute "rel: 'noopener noreferrer'" is always specified.
    */
   href?: string,
 
@@ -117,7 +118,7 @@ export const Button = ({
   size,
   target,
   type,
-}: ButtonType): ReactElement => {
+}: ButtonProps): ReactElement => {
   const buttonClassNames = useMemo(() => classnames(
     [
       button,
@@ -128,11 +129,6 @@ export const Button = ({
     ]
   ), [children, size, type])
 
-  /**
-   * rel: 'noopener noreferrer'
-   *
-   * @link https://github.com/ant-design/ant-design/blob/master/components/button/button.tsx#L259
-   */
   return (
     <AntButton
       className={buttonClassNames}
