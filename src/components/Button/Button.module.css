@@ -7,34 +7,30 @@
 
 /* TODO: add 12px padding to theme */
 .buttonSm {
-  padding: calc(var(--spacing-padding-xs, 4) * 1px)
-           calc((var(--spacing-padding-xs, 4) + var(--spacing-padding-sm, 8)) * 1px) !important;
+  padding-top: calc(var(--spacing-padding-xs, 4) * 1px - 1px) !important;
+  padding-right: calc((var(--spacing-padding-xs, 4) + var(--spacing-padding-sm, 8)) * 1px - 1px) !important;
+  padding-bottom: calc(var(--spacing-padding-xs, 4) * 1px - 1px) !important;
+  padding-left: calc((var(--spacing-padding-xs, 4) + var(--spacing-padding-sm, 8)) * 1px - 1px) !important;
 }
 
 .buttonSmIconOnly {
-  width: calc(var(--shape-size-2xl, 24) * 1px) !important;
-  padding: calc(var(--spacing-padding-xs, 4) * 1px) !important;
+  padding: calc(var(--spacing-padding-xs, 4) * 1px - 1px) !important;
 }
 
 .buttonMd {
-  padding: calc(var(--spacing-padding-sm, 8) * 1px)
-           calc((var(--spacing-padding-xs, 4) + var(--spacing-padding-sm, 8)) * 1px) !important;
+  padding-top: calc(var(--spacing-padding-sm, 8) * 1px - 1px) !important;
+  padding-right: calc((var(--spacing-padding-xs, 4) + var(--spacing-padding-sm, 8)) * 1px - 1px) !important;
+  padding-bottom: calc(var(--spacing-padding-sm, 8) * 1px - 1px) !important;
+  padding-left: calc((var(--spacing-padding-xs, 4) + var(--spacing-padding-sm, 8)) * 1px - 1px) !important;
 }
 
 .buttonMdIconOnly {
-  width: calc(var(--shape-size-3xl, 32) * 1px) !important;
-  padding: calc(var(--spacing-padding-sm, 8) * 1px) !important;
+  padding: calc(var(--spacing-padding-sm, 8) * 1px - 1px) !important;
 }
 
 .buttonLg {
   height: calc(var(--shape-size-4xl, 48) * 1px) !important;
-  padding: calc(var(--spacing-padding-md, 16) * 1px) !important;
-}
-
-.buttonLgIconOnly {
-  width: calc(var(--shape-size-4xl, 48) * 1px) !important;
-  height: calc(var(--shape-size-4xl, 48) * 1px) !important;
-  padding: calc(var(--spacing-padding-sm, 8) * 1px) !important;
+  padding: calc(var(--spacing-padding-md, 16) * 1px - 1px) !important;
 }
 
 .buttonGhost {
