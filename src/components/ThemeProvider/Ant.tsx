@@ -4,6 +4,7 @@ import { ReactElement, useMemo } from 'react'
 import ButtonTheme from '../Button/Button.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from '.'
+import TypographyTheme from '../Typography/Typography.theme'
 
 const ANT_PREFIX = 'mia-platform'
 
@@ -59,6 +60,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
   },
   components: {
     Button: ButtonTheme({ typography }),
+    Typography: TypographyTheme({ typography }),
   },
 })
 
