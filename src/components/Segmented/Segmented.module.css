@@ -13,7 +13,6 @@
   background-color: color-mix(in srgb, var(--palette-common-grey-300, #e6e6e6), transparent 50%);
 }
 
-
 .segmentedOption {
   flex: 1;
   display: flex;

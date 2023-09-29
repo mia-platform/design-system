@@ -55,8 +55,11 @@ export function getOptionKey(option: Option): string {
 /**
  * Retrieves a key from the provided value or options object.
  *
- * @param {Option[]} options - An optional object containing options for key retrieval.
- * @param {string | number} value - The key to retrieve, or an options object containing the key.
+ * @param {Option[]} options - An object containing options for key retrieval.
+ * @param {string | number} value - The key to retrieve, or an options position containing the key.
+ *
+ * - string: retrieves the option with value as key
+ * - number: retrieves the option from options in the value position
  *
  * @returns {string | undefined} The retrieved key, or `undefined` if `key` is falsy.
  */
