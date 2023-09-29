@@ -7,11 +7,11 @@ export const stringOptions = [
 ]
 
 export const labeledOptions = [
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 1', isDisabled: false, key: 'one' },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 2', isDisabled: false, key: 'two' },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 3', isDisabled: true, key: 'three' },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 4', isDisabled: false, key: 'four' },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 5', isDisabled: false, key: 'five' },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 6', isDisabled: false, key: 'six' },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 7', isDisabled: false, key: 'seven' },
+  { icon: <Icon name="MiaPlatform" size={16} />, label: 'Option 1', isDisabled: false, key: 'one' },
+  { icon: <Icon name="PiChartPieSlice" size={16} />, label: 'Option 2', isDisabled: false, key: 'two' },
+  { icon: <Icon name="AiOutlineDesktop" size={16} />, label: 'Option 3', isDisabled: true, key: 'three' },
+  { icon: <Icon name="AiOutlineFieldTime" size={16} />, label: 'Option 4', isDisabled: false, key: 'four' },
+  { icon: <Icon name="AiOutlineLock" size={16} />, label: 'Option 5', isDisabled: false, key: 'five' },
+  { icon: <Icon name="AiOutlineFork" size={16} />, label: 'Option 6', isDisabled: false, key: 'six' },
+  { icon: <Icon name="AiOutlineFilter" size={16} />, label: 'Option 7', isDisabled: false, key: 'seven' },
 ]

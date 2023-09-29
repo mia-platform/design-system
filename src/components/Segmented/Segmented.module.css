@@ -6,12 +6,11 @@
   flex-wrap: wrap;
   user-select: none;
   width: 100%;
-  background-color: rgba(169, 169, 169, 0.25);
-  gap: 2px;
   margin: 0;
-  padding: 2px;
-  padding-top: 1px;
-  border-radius: 4px;
+  gap: 2px; /* does not change with theme */
+  padding: 2px; /* does not change with theme */
+  border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  background-color: color-mix(in srgb, var(--palette-common-grey-300, #e6e6e6), transparent 50%);
 }
 
 
@@ -21,20 +20,20 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-width: 64px;
-  gap: 4px;
-  border-radius: 4px;
-  padding: 8px;
+  gap: calc(var(--spacing-gap-xs, 4) * 1px);
+  padding: calc(var(--spacing-padding-sm, 8) * 1px);
+  min-width: calc(var(--shape-size-5xl, 64) * 1px);
+  border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
   cursor: pointer;
   transition: background-color 0.25s ease-in-out;
 }
 
 .segmentedOption:hover {
-  background-color: #d3d3d3;
+  background-color: color-mix(in srgb, var(--palette-common-grey-600, #aaaaaa), transparent 75%);
 }
 
 .segmentedOption.selected {
-  background-color: white;
+  background-color: var(--palette-common-white, #ffffff);
   box-shadow:
     0 1px 2px 0 rgba(0,0,0,.03), 
     0 1px 6px -1px rgba(0,0,0,.02), 
@@ -43,7 +42,6 @@
 
 .segmentedOption.vertical {
   flex-direction: column;
-  gap: 2px;
 }
 
 .segmentedOption.disabled {

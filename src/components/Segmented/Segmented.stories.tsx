@@ -59,4 +59,42 @@ export const MultiLineVertical: Story = {
   )],
 }
 
+export const CustomBackgrounds: Story = {
+  args: { ...meta.args },
+  decorators: [Story => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div
+        style={{
+          backgroundColor: '#D4E7FF',
+          borderColor: '#D4E7FF',
+          borderRadius: 4,
+          padding: 8,
+        }}
+      >
+        <Story />
+      </div>
+      <div
+        style={{
+          backgroundColor: '#D4FFE7',
+          borderColor: '#D4FFE7',
+          borderRadius: 4,
+          padding: 8,
+        }}
+      >
+        <Story />
+      </div>
+      <div
+        style={{
+          backgroundColor: '#FFD4E7',
+          borderColor: '#FFD4E7',
+          borderRadius: 4,
+          padding: 8,
+        }}
+      >
+        <Story />
+      </div>
+    </div>
+  )],
+}
+
 
