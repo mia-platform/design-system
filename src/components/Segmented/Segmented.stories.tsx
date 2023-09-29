@@ -7,6 +7,10 @@ import { Segmented } from '.'
 
 const meta = {
   component: Segmented,
+  argTypes: {
+    defaultValue: { control: 'text' },
+    value: { control: 'text' },
+  },
   args: {
     ...Segmented.defaultProps,
     onChange: action('onChange'),
@@ -31,6 +35,28 @@ export const Vertical: Story = {
 
 export const Disabled: Story = {
   args: { ...meta.args, isDisabled: true },
+}
+
+export const DefaultValue: Story = {
+  args: { ...meta.args, defaultValue: 'five' },
+}
+
+export const MultiLine: Story = {
+  args: { ...meta.args },
+  decorators: [Story => (
+    <div style={{ width: '40%' }}>
+      <Story />
+    </div>
+  )],
+}
+
+export const MultiLineVertical: Story = {
+  args: { ...meta.args, optionsAlignment: OptionsAlignments.Vertical },
+  decorators: [Story => (
+    <div style={{ width: '40%' }}>
+      <Story />
+    </div>
+  )],
 }
 
 

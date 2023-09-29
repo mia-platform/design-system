@@ -7,11 +7,11 @@ export const stringOptions = [
 ]
 
 export const labeledOptions = [
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 1', isDisabled: false, value: 1 },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 22222', isDisabled: false, value: 2 },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 3333333', isDisabled: true, value: 3 },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 4', isDisabled: false, value: 4 },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 555', isDisabled: false, value: 5 },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 66', isDisabled: false, value: 6 },
-  { icon: <Icon name="MiaPlatform" />, label: 'Option 7', isDisabled: false, value: 7 },
+  { icon: <Icon name="MiaPlatform" />, label: 'Option 1', isDisabled: false, key: 'one' },
+  { icon: <Icon name="MiaPlatform" />, label: 'Option 2', isDisabled: false, key: 'two' },
+  { icon: <Icon name="MiaPlatform" />, label: 'Option 3', isDisabled: true, key: 'three' },
+  { icon: <Icon name="MiaPlatform" />, label: 'Option 4', isDisabled: false, key: 'four' },
+  { icon: <Icon name="MiaPlatform" />, label: 'Option 5', isDisabled: false, key: 'five' },
+  { icon: <Icon name="MiaPlatform" />, label: 'Option 6', isDisabled: false, key: 'six' },
+  { icon: <Icon name="MiaPlatform" />, label: 'Option 7', isDisabled: false, key: 'seven' },
 ]

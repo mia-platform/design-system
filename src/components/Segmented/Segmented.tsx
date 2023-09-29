@@ -2,7 +2,7 @@ import { ReactElement, useState } from 'react'
 import classnames from 'classnames'
 
 import { Option, OptionsAlignments } from './Segmented.types'
-import { getOptionValue, isStringOption } from './Segmented.utils'
+import { getOptionKey, isDisabledOption, isString, isVerticalOption, resolveKey } from './Segmented.utils'
 import styles from './Segmented.module.css'
 
 const { Horizontal, Vertical } = OptionsAlignments
@@ -13,8 +13,8 @@ export type SegmentedProps = {
   /**
    * The option initially selected. Either one of the following:
    *
-   * - string: the value of the option
-   * - number: the position in the array
+   * - string: the key of the initially selected option
+   * - number: the position in the array of the initially selected option
    */
   defaultValue?: string | number
 
@@ -35,13 +35,13 @@ export type SegmentedProps = {
    * - string
    * - object: {
    *
-   *     icon?: ReactNode,
+   *     icon?: ReactNode, The icon of the option
    *
-   *     label: string | number,
+   *     label: ReactNode, The selectable text of the option
    *
-   *     isDisabled?: boolean,
+   *     isDisabled?: boolean, Whether the option is clickable
    *
-   *     value: ReactNode
+   *     key: string, The value associated with the option
    *
    *   }
    */
@@ -58,7 +58,7 @@ export type SegmentedProps = {
  /**
    * The current selected value. Either one of the following:
    *
-   * - string: the value of the selected option
+   * - string: the key of the selected option
    * - number: the position of the selected option in the array
    */
   value?: string | number
@@ -77,15 +77,11 @@ export const Segmented = ({
   optionsAlignment,
   value,
 }: SegmentedProps): ReactElement => {
-  const [selectedValue, setSelectedValue] = useState(defaultValue && (
-    typeof defaultValue === 'string'
-      ? defaultValue
-      : getOptionValue(options[defaultValue])
-  ))
+  const [selectedValue, setSelectedValue] = useState(resolveKey(options, defaultValue))
 
   const handleOptionClick = (option: Option): void => {
-    if (!isDisabled && (isStringOption(option) || !option?.isDisabled)) {
-      setSelectedValue(getOptionValue(option))
+    if (!isDisabledOption(option, isDisabled)) {
+      setSelectedValue(getOptionKey(option))
       if (onChange) {
         onChange(option)
       }
@@ -93,7 +89,7 @@ export const Segmented = ({
   }
 
   return (
-    <div
+    <ul
       className={classnames([
         segmented,
         isDisabled && disabled,
@@ -102,26 +98,22 @@ export const Segmented = ({
     >
       {
         options.map((option) => {
-          const stringOption = isStringOption(option)
-          const currentValue = (value && (typeof value === 'string'
-            ? value
-            : getOptionValue(options[value])
-          )) ?? selectedValue
+          const currentKey = resolveKey(options, value) ?? selectedValue
+          const key = getOptionKey(option)
 
           return (
-            <div
+            <li
               className={classnames([
                 segmentedOption,
-                isDisabled && disabled,
-                (getOptionValue(option)) === currentValue && selected,
-                (stringOption ? false : option?.isDisabled) && disabled,
-                (stringOption ? false : optionsAlignment === Vertical) && vertical,
+                key === currentKey && selected,
+                isVerticalOption(option, optionsAlignment) && vertical,
+                isDisabledOption(option, isDisabled) && disabled,
               ])}
-              key={stringOption ? option : option?.label}
+              key={key}
               onClick={() => handleOptionClick(option)}
             >
               {
-                stringOption
+                isString(option)
                   ? option
                   : (
                     <>
@@ -130,11 +122,11 @@ export const Segmented = ({
                     </>
                   )
               }
-            </div>
+            </li>
           )
         })
       }
-    </div>
+    </ul>
   )
 }
 
