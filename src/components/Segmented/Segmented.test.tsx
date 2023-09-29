@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 
 import { labeledOptions, stringOptions } from './Segmented.mocks'
 import { OptionsAlignments } from './Segmented.types'
@@ -12,11 +12,14 @@ describe('Segmented Component', () => {
   })
 
   describe('labeled options', () => {
-    const [,, selectedOption, , controlledOption] = labeledOptions
+    const [, clickedOption, selectedOption, , controlledOption] = labeledOptions
+
+    const onChange = jest.fn()
 
     const props = {
       defaultValue: selectedOption.key,
       options: labeledOptions,
+      onChange,
     }
 
     test('renders options correctly', () => {
@@ -90,14 +93,26 @@ describe('Segmented Component', () => {
       expect(screen.getByRole('list')).toBeVisible()
       expect(screen.getByRole('listitem', { name: controlledOption.key })).toHaveAttribute('aria-checked', 'true')
     })
+
+    test('calls onChange correctly', () => {
+      render(<Segmented {...props} />)
+
+      fireEvent.click(screen.getByRole('listitem', { name: clickedOption.key }))
+
+      expect(onChange).toBeCalledTimes(1)
+      expect(onChange).toBeCalledWith(clickedOption)
+    })
   })
 
   describe('string options', () => {
-    const [,, selectedOption, , controlledOption] = stringOptions
+    const [, clickedOption, selectedOption, , controlledOption] = stringOptions
+
+    const onChange = jest.fn()
 
     const props = {
       defaultValue: selectedOption,
       options: stringOptions,
+      onChange,
     }
 
     test('renders options correctly', () => {
@@ -170,6 +185,15 @@ describe('Segmented Component', () => {
 
       expect(screen.getByRole('list')).toBeVisible()
       expect(screen.getByRole('listitem', { name: controlledOption })).toHaveAttribute('aria-checked', 'true')
+    })
+
+    test('calls onChange correctly', () => {
+      render(<Segmented {...props} />)
+
+      fireEvent.click(screen.getByRole('listitem', { name: clickedOption }))
+
+      expect(onChange).toBeCalledTimes(1)
+      expect(onChange).toBeCalledWith(clickedOption)
     })
   })
 })
