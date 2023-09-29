@@ -101,13 +101,20 @@ export const Segmented = ({
           const currentKey = resolveKey(options, value) ?? selectedValue
           const key = getOptionKey(option)
 
+          const selectedOption = key === currentKey
+          const verticalOption = isVerticalOption(option, optionsAlignment)
+          const disabledOption = isDisabledOption(option, isDisabled)
+
           return (
             <li
+              aria-checked={Boolean(selectedOption)}
+              aria-disabled={Boolean(disabledOption)}
+              aria-label={key}
               className={classnames([
                 segmentedOption,
-                key === currentKey && selected,
-                isVerticalOption(option, optionsAlignment) && vertical,
-                isDisabledOption(option, isDisabled) && disabled,
+                selectedOption && selected,
+                verticalOption && vertical,
+                disabledOption && disabled,
               ])}
               key={key}
               onClick={() => handleOptionClick(option)}
