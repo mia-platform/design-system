@@ -1,17 +1,17 @@
 # This workflow will do a clean install of node dependencies, build the source code and and then publish a package to npm when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Node.js CI
+name: Test and Publish
 
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - '*'
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
