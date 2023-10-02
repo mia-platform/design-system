@@ -35,7 +35,7 @@ type HXLevel = {
 }
 
 /**
- * UI component to display headers (H1, H2, H3, H4).
+ * UI component for displaying headers (H1, H2, H3, H4).
  *
  * @link https://ant.design/components/typography#typographytitle
  * @returns {HX} HX component

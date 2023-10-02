@@ -1,6 +1,13 @@
 import { ComponentsTheme, parse } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
+/**
+ * Computes the relative line height of a TextFormat element from its absolute line height and font size.
+ *
+ * @param {number} lineHeight - Absolute line height of the TextFormat element.
+ * @param {number} fontSize - Absolute font size of the TextFormat element.
+ * @returns {number | undefined} relative line height (or undefined if one of the absolute values is missing).
+ */
 const getRelativeLineHeight = (lineHeight?: number, fontSize?: number): number | undefined => {
   if (!lineHeight || !fontSize) { return undefined }
 

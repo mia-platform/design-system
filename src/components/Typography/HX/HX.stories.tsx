@@ -1,35 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { customCopyable, customEllipsis } from '../Typography.mocks'
 import { HX } from './HX'
-import { Icon } from '../../Icon'
 import { Typography } from '..'
 import { loremIpsum } from '../../../utils/loremIpsum'
-
-const customEllipsis = {
-  rows: 1,
-  suffix: ' END',
-  expandable: true,
-  symbol: 'Show more',
-}
-
-const customCopyable = {
-  text: 'Custom text to copy',
-  icon: [
-    <Icon
-      color="magenta"
-      key="FiCopy"
-      name="FiCopy"
-      size={16}
-    />,
-    <Icon
-      color="magenta"
-      key="FiCheck"
-      name="FiCheck"
-      size={16}
-    />,
-  ],
-  tooltips: ['Copy to clipboard!', 'Copied to clipboard!'],
-}
 
 const meta = {
   title: 'Components/Typography/HX',

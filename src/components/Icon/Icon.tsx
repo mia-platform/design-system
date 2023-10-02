@@ -50,7 +50,7 @@ export type IconProps = {
 }
 
 /**
- * UI component to display different icon packs (Ant, Feather, Phosphor) and custom SVGs
+ * UI component for displaying different icon packs (Ant, Feather, Phosphor) and custom SVGs
  *
  * @link https://react-icons.github.io/react-icons/
  * @returns {Icon} Icon component
