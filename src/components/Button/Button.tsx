@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './Button.types'
 import styles from './Button.module.css'
 
-const { button, buttonSm, buttonMd, buttonLg, buttonGhost, buttonText } = styles
+const { button, buttonSm, buttonSmIconOnly, buttonMd, buttonMdIconOnly, buttonLg, buttonGhost, buttonText } = styles
 
 const { Primary, Neutral, Danger } = ButtonHierarchies
 const { Left, Right } = ButtonIconPositions
@@ -123,8 +123,10 @@ export const Button = ({
     [
       button,
       children && size === Small && buttonSm,
+      !children && size === Small && buttonSmIconOnly,
       children && size === Middle && buttonMd,
-      children && size === Large && buttonLg,
+      !children && size === Middle && buttonMdIconOnly,
+      size === Large && buttonLg,
       type === Ghost && buttonGhost,
     ]
   ), [children, size, type])
