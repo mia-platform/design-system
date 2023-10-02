@@ -85,7 +85,7 @@ exports[`Button Component renders button with icon right correctly 1`] = `
 exports[`Button Component renders circle button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-circle ant-btn-primary button"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-circle ant-btn-primary button buttonMdIconOnly"
     type="button"
   >
     <svg
@@ -332,7 +332,7 @@ exports[`Button Component renders small button correctly 1`] = `
 exports[`Button Component renders square button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary button"
+    class="ant-btn css-dev-only-do-not-override-1vr7spz ant-btn-primary button buttonMdIconOnly"
     type="button"
   >
     <svg
