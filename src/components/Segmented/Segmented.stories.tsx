@@ -96,5 +96,3 @@ export const CustomBackgrounds: Story = {
     </div>
   )],
 }
-
-

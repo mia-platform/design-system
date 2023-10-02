@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react'
+import { ReactElement, useCallback, useState } from 'react'
 import classnames from 'classnames'
 
 import { Option, OptionsAlignments } from './Segmented.types'
@@ -79,14 +79,14 @@ export const Segmented = ({
 }: SegmentedProps): ReactElement => {
   const [selectedValue, setSelectedValue] = useState(resolveKey(options, defaultValue))
 
-  const handleOptionClick = (option: Option): void => {
-    if (!isDisabledOption(option, isDisabled)) {
+  const handleOptionClick = useCallback((option: Option): void => {
+    if (!isDisabledOption(option, isDisabled!)) {
       setSelectedValue(getOptionKey(option))
       if (onChange) {
         onChange(option)
       }
     }
-  }
+  }, [isDisabled, onChange])
 
   return (
     <ul
@@ -102,8 +102,8 @@ export const Segmented = ({
           const key = getOptionKey(option)
 
           const selectedOption = key === currentKey
-          const verticalOption = isVerticalOption(option, optionsAlignment)
-          const disabledOption = isDisabledOption(option, isDisabled)
+          const verticalOption = isVerticalOption(option, optionsAlignment!)
+          const disabledOption = isDisabledOption(option, isDisabled!)
 
           return (
             <li

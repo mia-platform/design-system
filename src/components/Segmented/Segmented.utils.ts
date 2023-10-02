@@ -1,6 +1,6 @@
 import { Option, OptionsAlignments } from './Segmented.types'
 
-const { Horizontal, Vertical } = OptionsAlignments
+const { Vertical } = OptionsAlignments
 
 /**
  * Type guard function that checks if an element is of type string.
@@ -20,7 +20,7 @@ export function isString(element: Option | number): element is string {
  *
  * @returns {boolean} `true` if the option is disabled, `false` otherwise.
  */
-export function isDisabledOption(option: Option, isDisabled = false): boolean {
+export function isDisabledOption(option: Option, isDisabled: boolean): boolean {
   return isDisabled ?? (
     !isString(option) && option?.isDisabled
   )
@@ -34,7 +34,7 @@ export function isDisabledOption(option: Option, isDisabled = false): boolean {
  *
  * @returns {boolean} `true` if the option should be aligned vertically, `false` otherwise.
  */
-export function isVerticalOption(option: Option, optionsAlignment = Horizontal): boolean {
+export function isVerticalOption(option: Option, optionsAlignment: OptionsAlignments): boolean {
   return (
     !isString(option) && optionsAlignment === Vertical
   )
@@ -55,11 +55,11 @@ export function getOptionKey(option: Option): string {
 /**
  * Retrieves a key from the provided value or options object.
  *
- * @param {Option[]} options - An object containing options for key retrieval.
+ * @param {Option[]} options - An array containing options for key retrieval.
  * @param {string | number} value - The key to retrieve, or an options position containing the key.
  *
  * - string: retrieves the option with value as key
- * - number: retrieves the option from options in the value position
+ * - number: retrieves the option using the value as the position in the options array
  *
  * @returns {string | undefined} The retrieved key, or `undefined` if `key` is falsy.
  */
