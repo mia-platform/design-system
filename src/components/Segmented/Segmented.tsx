@@ -96,43 +96,41 @@ export const Segmented = ({
         optionsAlignment === Vertical && vertical,
       ])}
     >
-      {
-        options.map((option) => {
-          const currentKey = resolveKey(options, value) ?? selectedValue
-          const key = getOptionKey(option)
+      {options.map((option) => {
+        const currentKey = resolveKey(options, value) ?? selectedValue
+        const key = getOptionKey(option)
 
-          const selectedOption = key === currentKey
-          const verticalOption = isVerticalOption(option, optionsAlignment!)
-          const disabledOption = isDisabledOption(option, isDisabled!)
+        const selectedOption = key === currentKey
+        const verticalOption = isVerticalOption(option, optionsAlignment!)
+        const disabledOption = isDisabledOption(option, isDisabled!)
 
-          return (
-            <li
-              aria-checked={Boolean(selectedOption)}
-              aria-disabled={Boolean(disabledOption)}
-              aria-label={key}
-              className={classnames([
-                segmentedOption,
-                selectedOption && selected,
-                verticalOption && vertical,
-                disabledOption && disabled,
-              ])}
-              key={key}
-              onClick={() => handleOptionClick(option)}
-            >
-              {
-                isString(option)
-                  ? option
-                  : (
-                    <>
-                      {option.icon}
-                      {option.label}
-                    </>
-                  )
-              }
-            </li>
-          )
-        })
-      }
+        return (
+          <li
+            aria-checked={Boolean(selectedOption)}
+            aria-disabled={Boolean(disabledOption)}
+            aria-label={key}
+            className={classnames([
+              segmentedOption,
+              selectedOption && selected,
+              verticalOption && vertical,
+              disabledOption && disabled,
+            ])}
+            key={key}
+            onClick={() => handleOptionClick(option)}
+          >
+            {
+              isString(option)
+                ? option
+                : (
+                  <>
+                    {option.icon}
+                    {option.label}
+                  </>
+                )
+            }
+          </li>
+        )
+      })}
     </ul>
   )
 }
