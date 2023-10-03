@@ -1,9 +1,10 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 
+import { Hierarchies, OptionsAlignments } from './Segmented.types'
 import { labeledOptions, stringOptions } from './Segmented.mocks'
-import { OptionsAlignments } from './Segmented.types'
 import { Segmented } from '.'
 
+const { Primary } = Hierarchies
 const { Vertical } = OptionsAlignments
 
 describe('Segmented Component', () => {
@@ -24,6 +25,23 @@ describe('Segmented Component', () => {
 
     test('renders options correctly', () => {
       const { asFragment } = render(<Segmented {...props} />)
+
+      expect(screen.getByRole('list')).toBeVisible()
+
+      labeledOptions.forEach(({ key }) => {
+        const option = screen.getByRole('listitem', { name: key })
+
+        expect(option).toBeVisible()
+        expect(option).toHaveAttribute('aria-disabled', 'false')
+      })
+
+      expect(screen.getByRole('listitem', { name: selectedOption.key })).toHaveAttribute('aria-checked', 'true')
+
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    test('renders primary options correctly', () => {
+      const { asFragment } = render(<Segmented {...props} hierarchy={Primary} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -117,6 +135,23 @@ describe('Segmented Component', () => {
 
     test('renders options correctly', () => {
       const { asFragment } = render(<Segmented {...props} />)
+
+      expect(screen.getByRole('list')).toBeVisible()
+
+      stringOptions.forEach(name => {
+        const option = screen.getByRole('listitem', { name })
+
+        expect(option).toBeVisible()
+        expect(option).toHaveAttribute('aria-disabled', 'false')
+      })
+
+      expect(screen.getByRole('listitem', { name: selectedOption })).toHaveAttribute('aria-checked', 'true')
+
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    test('renders primary options correctly', () => {
+      const { asFragment } = render(<Segmented {...props} hierarchy={Primary} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 

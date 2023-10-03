@@ -1,12 +1,13 @@
 import { ReactElement, useCallback, useState } from 'react'
 import classnames from 'classnames'
 
-import { Option, OptionsAlignments } from './Segmented.types'
+import { Hierarchies, Option, OptionsAlignments } from './Segmented.types'
 import { getOptionKey, isDisabledOption, isString, isVerticalOption, resolveKey } from './Segmented.utils'
 import styles from './Segmented.module.css'
 
+const { Neutral, Primary } = Hierarchies
 const { Horizontal, Vertical } = OptionsAlignments
-const { segmented, segmentedOption, disabled, selected, vertical } = styles
+const { segmented, segmentedOption, primary, disabled, selected, vertical } = styles
 
 export type SegmentedProps = {
 
@@ -17,6 +18,14 @@ export type SegmentedProps = {
    * - number: the position in the array of the initially selected option
    */
   defaultValue?: string | number
+
+ /**
+   * Defines the segmented hierarchy. Either:
+   *
+   * - primary: segmented associated with the most significant (and therefore primary) action on the page;
+   * - neutral: segmented associated with a general purpose action;
+   */
+  hierarchy?: Hierarchies,
 
   /**
    * Determines whether the segmented control is disabled.
@@ -71,6 +80,7 @@ export type SegmentedProps = {
  */
 export const Segmented = ({
   defaultValue,
+  hierarchy,
   isDisabled,
   onChange,
   options,
@@ -94,6 +104,7 @@ export const Segmented = ({
         segmented,
         isDisabled && disabled,
         optionsAlignment === Vertical && vertical,
+        hierarchy === Primary && primary,
       ])}
     >
       {options.map((option) => {
@@ -101,6 +112,7 @@ export const Segmented = ({
         const key = getOptionKey(option)
 
         const selectedOption = key === currentKey
+        const primaryOption = hierarchy === Primary
         const verticalOption = isVerticalOption(option, optionsAlignment!)
         const disabledOption = isDisabledOption(option, isDisabled!)
 
@@ -111,6 +123,7 @@ export const Segmented = ({
             aria-label={key}
             className={classnames([
               segmentedOption,
+              primaryOption && primary,
               selectedOption && selected,
               verticalOption && vertical,
               disabledOption && disabled,
@@ -136,6 +149,7 @@ export const Segmented = ({
 }
 
 Segmented.defaultProps = {
+  hierarchy: Neutral,
   isDisabled: false,
   optionsAlignment: Horizontal,
 }

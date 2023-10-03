@@ -1,5 +1,10 @@
 import { ReactNode } from 'react'
 
+export enum Hierarchies {
+  Primary = 'primary',
+  Neutral = 'neutral',
+}
+
 export enum OptionsAlignments {
   Horizontal = 'horizontal',
   Vertical = 'vertical',

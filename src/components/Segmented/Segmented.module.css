@@ -13,6 +13,10 @@
   background-color: color-mix(in srgb, var(--palette-common-grey-300, #e6e6e6), transparent 50%);
 }
 
+.segmented.primary {
+  background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 85%);
+}
+
 .segmentedOption {
   flex: 1;
   display: flex;
@@ -31,7 +35,11 @@
   background-color: color-mix(in srgb, var(--palette-common-grey-600, #aaaaaa), transparent 75%);
 }
 
-.segmentedOption.selected {
+.segmentedOption.primary:hover {
+  background-color: color-mix(in srgb, var(--palette-primary-main, #aaaaaa), transparent 75%);
+}
+
+.segmentedOption.selected, .segmentedOption.primary.selected {
   background-color: var(--palette-common-white, #ffffff);
   box-shadow:
     0 1px 2px 0 rgba(0,0,0,.03), 

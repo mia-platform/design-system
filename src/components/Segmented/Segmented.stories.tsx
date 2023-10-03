@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
+import { Hierarchies, OptionsAlignments } from './Segmented.types'
 import { labeledOptions, stringOptions } from './Segmented.mocks'
-import { OptionsAlignments } from './Segmented.types'
 import { Segmented } from '.'
 
 const meta = {
@@ -27,6 +27,10 @@ export const LabeledOptions: Story = {
 
 export const StringOptions: Story = {
   args: { ...meta.args, options: stringOptions },
+}
+
+export const Primary: Story = {
+  args: { ...meta.args, hierarchy: Hierarchies.Primary },
 }
 
 export const Vertical: Story = {
@@ -55,44 +59,6 @@ export const MultiLineVertical: Story = {
   decorators: [Story => (
     <div style={{ width: '40%' }}>
       <Story />
-    </div>
-  )],
-}
-
-export const CustomBackgrounds: Story = {
-  args: { ...meta.args },
-  decorators: [Story => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <div
-        style={{
-          backgroundColor: '#D4E7FF',
-          borderColor: '#D4E7FF',
-          borderRadius: 4,
-          padding: 8,
-        }}
-      >
-        <Story />
-      </div>
-      <div
-        style={{
-          backgroundColor: '#D4FFE7',
-          borderColor: '#D4FFE7',
-          borderRadius: 4,
-          padding: 8,
-        }}
-      >
-        <Story />
-      </div>
-      <div
-        style={{
-          backgroundColor: '#FFD4E7',
-          borderColor: '#FFD4E7',
-          borderRadius: 4,
-          padding: 8,
-        }}
-      >
-        <Story />
-      </div>
     </div>
   )],
 }
