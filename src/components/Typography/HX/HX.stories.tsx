@@ -12,6 +12,11 @@ const meta = {
     ...HX.defaultProps,
     children: 'Text',
   },
+  argTypes: {
+    copyable: { control: 'boolean' },
+    ellipsis: { control: 'boolean' },
+    level: { table: { disable: true } },
+  },
 } satisfies Meta<typeof HX>
 
 export default meta
@@ -19,12 +24,14 @@ type Story = StoryObj<typeof meta>
 
 export const HXComponent: Story = {
   args: { ...meta.args, level: 1 },
+  argTypes: {
+    level: { control: 'number', table: { disable: false } },
+  },
 }
 
 export const All = {
   argTypes: {
     children: { table: { disable: true } },
-    level: { table: { disable: true } },
   },
   render: (args: object) => (
     <>
@@ -37,37 +44,24 @@ export const All = {
 }
 
 export const H1 = {
-  argTypes: {
-    level: { table: { disable: true } },
-  },
   render: (args: object) => <Typography.H1 {...args} />,
 }
 
 export const H2 = {
-  argTypes: {
-    level: { table: { disable: true } },
-  },
   render: (args: object) => <Typography.H2 {...args} />,
 }
 
 export const H3 = {
-  argTypes: {
-    level: { table: { disable: true } },
-  },
   render: (args: object) => <Typography.H3 {...args} />,
 }
 
 export const H4 = {
-  argTypes: {
-    level: { table: { disable: true } },
-  },
   render: (args: object) => <Typography.H4 {...args} />,
 }
 
 export const WithEllipsis = {
   argTypes: {
     children: { table: { disable: true } },
-    level: { table: { disable: true } },
   },
   render: (args: object) => (
     <>
@@ -83,7 +77,6 @@ export const WithEllipsisCustom = {
   args: { ...meta.args, ellipsis: customEllipsis },
   argTypes: {
     children: { table: { disable: true } },
-    level: { table: { disable: true } },
   },
   render: (args: object) => (
     <>
@@ -99,7 +92,6 @@ export const Copyable = {
   args: { ...meta.args, copyable: true },
   argTypes: {
     children: { table: { disable: true } },
-    level: { table: { disable: true } },
   },
   render: (args: object) => (
     <>
@@ -115,7 +107,6 @@ export const CopyableCustom = {
   args: { ...meta.args, copyable: customCopyable },
   argTypes: {
     children: { table: { disable: true } },
-    level: { table: { disable: true } },
   },
   render: (args: object) => (
     <>

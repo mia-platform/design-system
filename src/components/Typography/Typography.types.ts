@@ -1,3 +1,4 @@
+import { MouseEventHandler, ReactNode } from 'react'
 import { TooltipProps } from 'antd'
 
 /**
@@ -13,20 +14,27 @@ export type CopyConfig = {
   /**
    * Function called when the text is copied.
    */
-  onCopy?: (event?: React.MouseEvent<HTMLDivElement>) => void;
+  onCopy?: () => void;
 
   /**
-   * Custom copy icon(s): [copyIcon, copiedIcon].
+   * Custom copy icon(s).
+   * It is possible to set a single icon that will become the new copyIcon,
+   * or an array of 2 icons that will replace both copyIcon and copiedIcon.
    */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
 
   /**
-   * Custom tooltip text(s): [copyText, copiedText]. If the attribute is set to false, no tooltip will be shown.
+   * Custom tooltip text(s).
+   * It is possible to set a single string that will become the new copyText,
+   * or an array of 2 strings that will replace both copyText and copiedText.
+   * If the attribute is set to false, no tooltip will be shown.
    */
-  tooltips?: boolean | React.ReactNode;
+  tooltips?: boolean | ReactNode;
 
   /**
    * The Mime Type of the text.
+   *
+   * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
    */
   format?: 'text/plain' | 'text/html';
 }
@@ -54,17 +62,17 @@ export type EllipsisConfig = {
   /**
    * Custom description of the ellipsis (default is 'Expand').
    */
-  symbol?: React.ReactNode;
+  symbol?: ReactNode;
 
   /**
    * Function called when the content is expanded.
    */
-  onExpand?: React.MouseEventHandler<HTMLElement>;
+  onExpand?: MouseEventHandler<HTMLElement>;
 
   /**
    * Function called when the content enters or leaves the ellipsis state.
    */
-  onEllipsis?: (ellipsis: boolean) => void;
+  onEllipsis?: () => void;
 
   /**
    * Whether to display a tooltip on ellipsis. If set to true, a copy icon is shown to the right of the text.
@@ -72,5 +80,5 @@ export type EllipsisConfig = {
    *
    * @link https://ant.design/components/tooltip#common-api
    */
-  tooltip?: React.ReactNode | TooltipProps;
+  tooltip?: ReactNode | TooltipProps;
 }
