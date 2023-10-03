@@ -9,3 +9,7 @@
  * This import should be added to the top of your test files before any other imports.
  */
 import '@testing-library/jest-dom'
+
+jest.mock('@fontsource/inter', () => ({
+  default: () => '@font-face { font-family: "Inter"; src: local("Inter"); };',
+}))
