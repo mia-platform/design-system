@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { customCopyable, customEllipsis } from '../Typography.mocks'
+import { customCopyable, customEllipsis, loremIpsum } from '../Typography.mocks'
 import { HX } from './HX'
 import { Typography } from '..'
-import { loremIpsum } from '../../../utils/loremIpsum'
 
 const meta = {
   title: 'Components/Typography/HX',

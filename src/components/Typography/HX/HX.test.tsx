@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react'
 
-import { customCopyable, customEllipsis } from '../Typography.mocks'
+import { customCopyable, customEllipsis, loremIpsum } from '../Typography.mocks'
 import { Typography } from '..'
-import { loremIpsum } from '../../../utils/loremIpsum'
 
 const { H1, H2, H3, H4 } = Typography
 
