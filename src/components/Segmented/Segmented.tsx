@@ -42,17 +42,11 @@ export type SegmentedProps = {
    * An array of segmented options to be displayed. Either one of the following:
    *
    * - string
-   * - object: {
-   *
-   *     icon?: ReactNode, The icon of the option
-   *
-   *     label: ReactNode, The selectable text of the option
-   *
-   *     isDisabled?: boolean, Whether the option is clickable
-   *
-   *     key: string, The value associated with the option
-   *
-   *   }
+   * - object:
+   *    - icon?: The icon of the option `ReactNode`
+   *    - label: The selectable text of the option `ReactNode`
+   *    - isDisabled?: Whether the option is clickable `boolean`
+   *    - key: The value associated with the option `string`
    */
   options: Option[]
 
