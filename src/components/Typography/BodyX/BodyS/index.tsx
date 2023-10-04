@@ -16,21 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BodyL } from './BodyX/BodyL'
-import { BodyM } from './BodyX/BodyM'
-import { BodyS } from './BodyX/BodyS'
-import { H1 } from './HX/H1'
-import { H2 } from './HX/H2'
-import { H3 } from './HX/H3'
-import { H4 } from './HX/H4'
+import { ReactElement } from 'react'
 
+import { BodyX, BodyXProps } from '../BodyX'
+import { BodySizes } from '../BodyX.types'
 
-export const Typography = {
-  H1,
-  H2,
-  H3,
-  H4,
-  BodyS,
-  BodyM,
-  BodyL,
+const { S } = BodySizes
+
+export const BodyS = (props: BodyXProps): ReactElement => {
+  return <BodyX {...props} size={S} />
 }
