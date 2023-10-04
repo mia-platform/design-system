@@ -81,7 +81,7 @@ export type BodyXProps = {
    * - m: middle - fontSize: 16px, lineHeight: 24px;
    * - l: large - fontSize: 18px, lineHeight: 24px.
    */
-  size?: BodySizes,
+  size: BodySizes,
 
   /**
    * Whether the body font weight is bold.
@@ -102,19 +102,21 @@ export const BodyX = ({
   isBold,
   size,
 }: BodyXProps): ReactElement => {
-  const bodyClassName = useMemo(() => classnames(
-    [
-      size === S && bodyS,
-      size === M && bodyM,
-      size === L && bodyL,
-    ]
-  ), [size])
+  const bodyClassName = useMemo(() => classnames([
+    size === S && bodyS,
+    size === M && bodyM,
+    size === L && bodyL,
+  ]), [size])
+
+  const bodyEllipsis = useMemo(() => (
+    (ellipsis === true && { rows: 2, tooltip: { children } }) || ellipsis
+  ), [children, ellipsis])
 
   return (
     <AntParagraph
       className={bodyClassName}
       copyable={copyable}
-      ellipsis={(ellipsis === true && { rows: 2, tooltip: { children } }) || ellipsis}
+      ellipsis={bodyEllipsis}
       strong={isBold}
     >
       {children}

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode, useMemo } from 'react'
 import { Typography as AntTypography } from 'antd'
 
 import { CopyConfig, EllipsisConfig } from '../Typography.types'
@@ -88,10 +88,14 @@ export const HX = ({
   ellipsis,
   level,
 }: HXProps & HXLevel): ReactElement => {
+  const hEllipsis = useMemo(() => (
+    (ellipsis === true && { rows: 2, tooltip: { children } }) || ellipsis
+  ), [children, ellipsis])
+
   return (
     <AntTitle
       copyable={copyable}
-      ellipsis={(ellipsis === true && { rows: 2, tooltip: { children } }) || ellipsis}
+      ellipsis={hEllipsis}
       level={level}
     >
       {children}
