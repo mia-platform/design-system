@@ -19,7 +19,7 @@
 import themeDefaultStyle from '../themeDefaultStyle'
 import themes from '../../../../themes'
 
-describe('Theme to Variables', () => {
+describe('Theme Default Style', () => {
   test('generate empty theme default style', () => {
     const style = themeDefaultStyle()
 
