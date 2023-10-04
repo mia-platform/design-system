@@ -29,11 +29,10 @@ const DEFAULT_COLOR = '#666666'
 /**
  * Loads the default font-face (Inter) if the theme configuration uses the default font family.
  *
- * @param {Theme} theme - The theme configuration object.
- *
  * @link https://fonts.google.com/specimen/Inter?query=inter
  * @link https://fontsource.org/fonts/inter
  *
+ * @param {Theme} theme - The theme configuration object.
  * @returns {Promise<void>} - A promise that resolves when the font is loaded.
  */
 function loadDefaultFontFace({ typography }: Partial<Theme>): void {
