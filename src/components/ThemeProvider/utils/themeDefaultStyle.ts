@@ -33,7 +33,7 @@ const DEFAULT_COLOR = '#666666'
  * @link https://fontsource.org/fonts/inter
  *
  * @param {Theme} theme - The theme configuration object.
- * @returns {Promise<void>} - A promise that resolves when the font is loaded.
+ * @returns {void}
  */
 function loadDefaultFontFace({ typography }: Partial<Theme>): void {
   const useDefaultFontFace = !typography || Object
