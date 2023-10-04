@@ -16,19 +16,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { generateAntTheme } from '../Ant'
+import { generateReactIconsContext } from '../ReactIcons'
 import themes from '../../../themes'
 
-describe('Generate Ant Theme', () => {
-  test('generate ant theme from empty theme', () => {
-    const variables = generateAntTheme()
+describe('Generate React Icons context', () => {
+  test('generate context from empty theme', () => {
+    const variables = generateReactIconsContext()
 
     expect(variables).toMatchSnapshot()
   })
 
   for (const [themeName, theme] of Object.entries(themes)) {
-    test(`generate ant theme from ${themeName}`, () => {
-      const variables = generateAntTheme(theme)
+    test(`generate context from ${themeName}`, () => {
+      const variables = generateReactIconsContext(theme)
 
       expect(variables).toMatchSnapshot()
     })

@@ -21,10 +21,10 @@ import Theme from '../../../themes/schema'
 /**
  * Default typography settings.
  */
-const DEFAULT_FONT_FAMILY = 'Inter'
-const DEFAULT_FONT_WEIGHT = '400'
-const DEFAULT_FONT_SIZE = '14'
 const DEFAULT_COLOR = '#666666'
+const DEFAULT_FONT_FAMILY = 'Inter'
+const DEFAULT_FONT_SIZE = '14'
+const DEFAULT_FONT_WEIGHT = '400'
 
 /**
  * Loads the default font-face (Inter) if the theme configuration uses the default font family.
@@ -57,9 +57,16 @@ export default function themeDefaultStyle(theme: Partial<Theme> = {}): Record<st
   loadDefaultFontFace(theme)
 
   return {
-    fontFamily: typography?.bodyS?.fontFamily ?? DEFAULT_FONT_FAMILY,
-    fontWeight: typography?.bodyS?.fontWeight ?? DEFAULT_FONT_WEIGHT,
-    fontSize: `${typography?.bodyS?.fontSize ?? DEFAULT_FONT_SIZE}px`,
     color: palette?.common?.grey?.[800] ?? DEFAULT_COLOR,
+    fontFamily: typography?.bodyS?.fontFamily ?? DEFAULT_FONT_FAMILY,
+    fontSize: `${typography?.bodyS?.fontSize ?? DEFAULT_FONT_SIZE}px`,
+    fontWeight: typography?.bodyS?.fontWeight ?? DEFAULT_FONT_WEIGHT,
   }
+}
+
+export {
+  DEFAULT_COLOR,
+  DEFAULT_FONT_FAMILY,
+  DEFAULT_FONT_SIZE,
+  DEFAULT_FONT_WEIGHT,
 }

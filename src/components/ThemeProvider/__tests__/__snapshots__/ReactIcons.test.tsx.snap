@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Generate React Icons context generate context from darkTheme 1`] = `
+{
+  "color": "#666666",
+}
+`;
+
+exports[`Generate React Icons context generate context from empty theme 1`] = `
+{
+  "color": "#666666",
+}
+`;
+
+exports[`Generate React Icons context generate context from lightTheme 1`] = `
+{
+  "color": "#666666",
+}
+`;
