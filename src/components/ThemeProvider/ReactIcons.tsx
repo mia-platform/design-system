@@ -19,6 +19,7 @@
 import { ReactElement, useMemo } from 'react'
 import { IconContext } from 'react-icons'
 
+import { DEFAULT_COLOR } from './utils/themeDefaultStyle'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from '.'
 
@@ -29,7 +30,7 @@ import { ThemeProviderProps } from '.'
  * @returns {IconContext} The generated React Icons context.
  */
 const generateReactIconsContext = ({ palette }: Partial<Theme> = {}): IconContext => ({
-  color: palette?.info?.contrastText,
+  color: palette?.common?.grey?.[800] ?? DEFAULT_COLOR,
 })
 
 /**

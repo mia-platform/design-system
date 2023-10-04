@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Theme Default Style generate darkTheme default style 1`] = `
+{
+  "color": "#666666",
+  "fontFamily": "Inter",
+  "fontSize": "14px",
+  "fontWeight": "400",
+}
+`;
+
+exports[`Theme Default Style generate empty theme default style 1`] = `
+{
+  "color": "#666666",
+  "fontFamily": "Inter",
+  "fontSize": "14px",
+  "fontWeight": "400",
+}
+`;
+
+exports[`Theme Default Style generate lightTheme default style 1`] = `
+{
+  "color": "#666666",
+  "fontFamily": "Inter",
+  "fontSize": "14px",
+  "fontWeight": "400",
+}
+`;

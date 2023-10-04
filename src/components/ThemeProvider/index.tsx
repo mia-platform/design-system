@@ -21,6 +21,7 @@ import { ReactElement, createContext, useMemo } from 'react'
 import { AntThemeProvider } from './Ant'
 import { ReactIconsProvider } from './ReactIcons'
 import Theme from '../../themes/schema'
+import themeDefaultStyle from './utils/themeDefaultStyle'
 import themeToVariables from './utils/themeToVariables'
 import themes from '../../themes'
 
@@ -53,7 +54,7 @@ const ThemeContext = createContext(defaultTheme)
  * @TODO check children wrapper div style does not clash with other divs (e.g. not full height or width)
  */
 const ThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
-  const style = useMemo(() => themeToVariables(theme), [theme])
+  const style = useMemo(() => ({ ...themeDefaultStyle(theme), ...themeToVariables(theme) }), [theme])
 
   return (
     <ThemeContext.Provider value={theme!}>
