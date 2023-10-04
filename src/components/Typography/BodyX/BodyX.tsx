@@ -75,6 +75,14 @@ export type BodyXProps = {
   ellipsis?: boolean | EllipsisConfig,
 
   /**
+   * Whether the body font weight is bold.
+   */
+  isBold?: boolean,
+}
+
+type BodyXSize = {
+
+  /**
    * Defines the body font size and line height. Either:
    *
    * - s: small - fontSize: 14px, lineHeight: 16px;
@@ -82,11 +90,6 @@ export type BodyXProps = {
    * - l: large - fontSize: 18px, lineHeight: 24px.
    */
   size: BodySizes,
-
-  /**
-   * Whether the body font weight is bold.
-   */
-  isBold?: boolean,
 }
 
 /**
@@ -101,7 +104,7 @@ export const BodyX = ({
   ellipsis,
   isBold,
   size,
-}: BodyXProps): ReactElement => {
+}: BodyXProps & BodyXSize): ReactElement => {
   const bodyClassName = useMemo(() => classnames([
     size === S && bodyS,
     size === M && bodyM,

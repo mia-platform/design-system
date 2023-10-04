@@ -35,6 +35,7 @@ const meta = {
   argTypes: {
     copyable: { control: 'boolean' },
     ellipsis: { control: 'boolean' },
+    isBold: { table: { disable: true } },
     size: { table: { disable: true } },
   },
 } satisfies Meta<typeof BodyX>
@@ -45,6 +46,7 @@ type Story = StoryObj<typeof meta>
 export const BodyXComponent: Story = {
   args: { ...meta.args, size: S },
   argTypes: {
+    isBold: { table: { disable: false } },
     size: { table: { disable: false } },
   },
 }
