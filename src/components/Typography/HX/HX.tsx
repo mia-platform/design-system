@@ -35,16 +35,16 @@ export type HXProps = {
    * The attribute is further customizable according to the following data model:
    *
    * `object`:
-   *   - text?: The text to copy. `string`
-   *   - onCopy?: Function called when the text is copied. `() => void`
+   *   - text?: The text to copy. <br>`string`
+   *   - onCopy?: Function called when the text is copied. <br>`() => void`
    *   - icon?: Custom copy icon(s).
    *   It is possible to set a single icon that will become the new copyIcon,
-   *   or an array of 2 icons that will replace both copyIcon and copiedIcon. `ReactNode`
+   *   or an array of 2 icons that will replace both copyIcon and copiedIcon. <br>`ReactNode`
    *   - tooltips?: Custom tooltip text(s).
    *   It is possible to set a single string that will become the new copyText,
    *   or an array of 2 strings that will replace both copyText and copiedText.
-   *   If the attribute is set to false, no tooltip will be shown. `boolean | ReactNode`
-   *   - format?: The Mime Type of the text. `'text/plain' | 'text/html'`
+   *   If the attribute is set to false, no tooltip will be shown. <br>`boolean | ReactNode`
+   *   - format?: The Mime Type of the text. <br>`'text/plain' | 'text/html'`
    */
   copyable?: boolean | CopyConfig,
 
@@ -55,15 +55,15 @@ export type HXProps = {
    *
    * `object`:
    *   - rows?: The maximum number of rows the content can occupy before
-   *   going into ellipsis or being truncated. `number`
-   *   - expandable?: Whether the text is expandable. `boolean`
-   *   - suffix?: Suffix of the ellipsis content. `string`
-   *   - symbol?: Custom description of the ellipsis (default is 'Expand'). `ReactNode`
-   *   - onExpand?: Function called when the content is expanded. `MouseEventHandler<HTMLElement>`
-   *   - onEllipsis?: Function called when the content enters or leaves the ellipsis state. `() => void`
+   *   going into ellipsis or being truncated. <br>`number`
+   *   - expandable?: Whether the text is expandable. <br>`boolean`
+   *   - suffix?: Suffix of the ellipsis content. <br>`string`
+   *   - symbol?: Custom description of the ellipsis (default is 'Expand'). <br>`ReactNode`
+   *   - onExpand?: Function called when the content is expanded. <br>`MouseEventHandler<HTMLElement>`
+   *   - onEllipsis?: Function called when the content enters or leaves the ellipsis state. <br>`() => void`
    *   - tooltip?: Whether to display a tooltip on ellipsis.
    *   If set to true, a copy icon is shown to the right of the text.
-   *   The attribute is further customizable. `ReactNode`
+   *   The attribute is further customizable. <br>`ReactNode`
    */
   ellipsis?: boolean | EllipsisConfig,
 }
