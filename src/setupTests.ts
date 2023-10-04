@@ -13,7 +13,7 @@ import '@testing-library/jest-dom'
 /**
  * Mocks the '@fontsource/inter' module.
  *
- * It can be used to avoid Jest errors when loading the default fontface.
+ * It helps avoid Jest errors when loading the default fontface.
  */
 jest.mock('@fontsource/inter', () => ({
   default: () => `
