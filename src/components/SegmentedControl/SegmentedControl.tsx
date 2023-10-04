@@ -59,8 +59,8 @@ export type SegmentedControlProps = {
  /**
    * An array of segmented options to be displayed. Either one of the following:
    *
-   * - string
-   * - object:
+   * - `string`
+   * - `object`:
    *    - icon?: The icon of the option `ReactNode`
    *    - label: The selectable text of the option `ReactNode`
    *    - isDisabled?: Whether the option is clickable `boolean`
