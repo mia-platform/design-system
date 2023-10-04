@@ -86,7 +86,7 @@ export type BodyXProps = {
   /**
    * Whether the body font weight is bold.
    */
-  isBold?: boolean
+  isBold?: boolean,
 }
 
 /**
