@@ -118,7 +118,7 @@ export type ButtonProps = {
 }
 
 /**
- * UI component to perform actions on the page interacting through clicks
+ * UI component for performing actions on the page interacting through clicks
  *
  * @link https://ant.design/components/button
  * @returns {Button} Button component
