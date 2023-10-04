@@ -25,6 +25,9 @@ import { SegmentedControl } from '.'
 
 const meta = {
   component: SegmentedControl,
+  parameters: {
+    backgrounds: { disable: true },
+  },
   argTypes: {
     defaultValue: { control: 'text' },
     value: { control: 'text' },

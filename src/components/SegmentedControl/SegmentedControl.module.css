@@ -62,7 +62,7 @@
 }
 
 .segmentedOption.primary:active {
-background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 76%);
+  background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 76%);
 }
 
 .segmentedOption.selected, .segmentedOption.primary.selected {
