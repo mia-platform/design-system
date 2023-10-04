@@ -19,22 +19,22 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { Hierarchies, OptionsAlignments } from './Segmented.types'
-import { labeledOptions, stringOptions } from './Segmented.mocks'
-import { Segmented } from '.'
+import { Hierarchies, OptionsAlignments } from './SegmentedControl.types'
+import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
+import { SegmentedControl } from '.'
 
 const meta = {
-  component: Segmented,
+  component: SegmentedControl,
   argTypes: {
     defaultValue: { control: 'text' },
     value: { control: 'text' },
   },
   args: {
-    ...Segmented.defaultProps,
+    ...SegmentedControl.defaultProps,
     onChange: action('onChange'),
     options: labeledOptions,
   },
-} satisfies Meta<typeof Segmented>
+} satisfies Meta<typeof SegmentedControl>
 
 export default meta
 type Story = StoryObj<typeof meta>

@@ -16,4 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export { Segmented } from './Segmented'
+export { SegmentedControl } from './SegmentedControl'

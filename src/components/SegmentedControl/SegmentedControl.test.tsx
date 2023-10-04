@@ -18,14 +18,14 @@
 
 import { fireEvent, render, screen } from '@testing-library/react'
 
-import { Hierarchies, OptionsAlignments } from './Segmented.types'
-import { labeledOptions, stringOptions } from './Segmented.mocks'
-import { Segmented } from '.'
+import { Hierarchies, OptionsAlignments } from './SegmentedControl.types'
+import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
+import { SegmentedControl } from '.'
 
 const { Primary } = Hierarchies
 const { Vertical } = OptionsAlignments
 
-describe('Segmented Component', () => {
+describe('Segmented Control Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
@@ -42,7 +42,7 @@ describe('Segmented Component', () => {
     }
 
     test('renders options correctly', () => {
-      const { asFragment } = render(<Segmented {...props} />)
+      const { asFragment } = render(<SegmentedControl {...props} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -59,7 +59,7 @@ describe('Segmented Component', () => {
     })
 
     test('renders primary options correctly', () => {
-      const { asFragment } = render(<Segmented {...props} hierarchy={Primary} />)
+      const { asFragment } = render(<SegmentedControl {...props} hierarchy={Primary} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -76,7 +76,7 @@ describe('Segmented Component', () => {
     })
 
     test('renders vertical options correctly', () => {
-      const { asFragment } = render(<Segmented {...props} optionsAlignment={Vertical} />)
+      const { asFragment } = render(<SegmentedControl {...props} optionsAlignment={Vertical} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -93,7 +93,7 @@ describe('Segmented Component', () => {
     })
 
     test('renders disabled segmented correctly', () => {
-      const { asFragment } = render(<Segmented {...props} isDisabled />)
+      const { asFragment } = render(<SegmentedControl {...props} isDisabled />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -110,28 +110,28 @@ describe('Segmented Component', () => {
     })
 
     test('select numeric default value correctly', () => {
-      render(<Segmented {...props} defaultValue={2} />)
+      render(<SegmentedControl {...props} defaultValue={2} />)
 
       expect(screen.getByRole('list')).toBeVisible()
       expect(screen.getByRole('listitem', { name: selectedOption.key })).toHaveAttribute('aria-checked', 'true')
     })
 
     test('select value correctly', () => {
-      render(<Segmented {...props} value={controlledOption.key} />)
+      render(<SegmentedControl {...props} value={controlledOption.key} />)
 
       expect(screen.getByRole('list')).toBeVisible()
       expect(screen.getByRole('listitem', { name: controlledOption.key })).toHaveAttribute('aria-checked', 'true')
     })
 
     test('select numeric value correctly', () => {
-      render(<Segmented {...props} value={4} />)
+      render(<SegmentedControl {...props} value={4} />)
 
       expect(screen.getByRole('list')).toBeVisible()
       expect(screen.getByRole('listitem', { name: controlledOption.key })).toHaveAttribute('aria-checked', 'true')
     })
 
     test('calls onChange correctly', () => {
-      render(<Segmented {...props} />)
+      render(<SegmentedControl {...props} />)
 
       fireEvent.click(screen.getByRole('listitem', { name: clickedOption.key }))
 
@@ -152,7 +152,7 @@ describe('Segmented Component', () => {
     }
 
     test('renders options correctly', () => {
-      const { asFragment } = render(<Segmented {...props} />)
+      const { asFragment } = render(<SegmentedControl {...props} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -169,7 +169,7 @@ describe('Segmented Component', () => {
     })
 
     test('renders primary options correctly', () => {
-      const { asFragment } = render(<Segmented {...props} hierarchy={Primary} />)
+      const { asFragment } = render(<SegmentedControl {...props} hierarchy={Primary} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -186,7 +186,7 @@ describe('Segmented Component', () => {
     })
 
     test('renders vertical options correctly', () => {
-      const { asFragment } = render(<Segmented {...props} optionsAlignment={Vertical} />)
+      const { asFragment } = render(<SegmentedControl {...props} optionsAlignment={Vertical} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -203,7 +203,7 @@ describe('Segmented Component', () => {
     })
 
     test('renders disabled segmented correctly', () => {
-      const { asFragment } = render(<Segmented {...props} isDisabled />)
+      const { asFragment } = render(<SegmentedControl {...props} isDisabled />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -220,28 +220,28 @@ describe('Segmented Component', () => {
     })
 
     test('select numeric default value correctly', () => {
-      render(<Segmented {...props} defaultValue={2} />)
+      render(<SegmentedControl {...props} defaultValue={2} />)
 
       expect(screen.getByRole('list')).toBeVisible()
       expect(screen.getByRole('listitem', { name: selectedOption })).toHaveAttribute('aria-checked', 'true')
     })
 
     test('select value correctly', () => {
-      render(<Segmented {...props} value={controlledOption} />)
+      render(<SegmentedControl {...props} value={controlledOption} />)
 
       expect(screen.getByRole('list')).toBeVisible()
       expect(screen.getByRole('listitem', { name: controlledOption })).toHaveAttribute('aria-checked', 'true')
     })
 
     test('select numeric value correctly', () => {
-      render(<Segmented {...props} value={4} />)
+      render(<SegmentedControl {...props} value={4} />)
 
       expect(screen.getByRole('list')).toBeVisible()
       expect(screen.getByRole('listitem', { name: controlledOption })).toHaveAttribute('aria-checked', 'true')
     })
 
     test('calls onChange correctly', () => {
-      render(<Segmented {...props} />)
+      render(<SegmentedControl {...props} />)
 
       fireEvent.click(screen.getByRole('listitem', { name: clickedOption }))
 

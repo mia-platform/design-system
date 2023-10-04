@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Option, OptionsAlignments } from './Segmented.types'
+import { Option, OptionsAlignments } from './SegmentedControl.types'
 
 const { Vertical } = OptionsAlignments
 

@@ -19,15 +19,15 @@
 import { ReactElement, useCallback, useState } from 'react'
 import classnames from 'classnames'
 
-import { Hierarchies, Option, OptionsAlignments } from './Segmented.types'
-import { getOptionKey, isDisabledOption, isString, isVerticalOption, resolveKey } from './Segmented.utils'
-import styles from './Segmented.module.css'
+import { Hierarchies, Option, OptionsAlignments } from './SegmentedControl.types'
+import { getOptionKey, isDisabledOption, isString, isVerticalOption, resolveKey } from './SegmentedControl.utils'
+import styles from './SegmentedControl.module.css'
 
 const { Neutral, Primary } = Hierarchies
 const { Horizontal, Vertical } = OptionsAlignments
 const { segmented, segmentedOption, primary, disabled, selected, vertical } = styles
 
-export type SegmentedProps = {
+export type SegmentedControlProps = {
 
   /**
    * The option initially selected. Either one of the following:
@@ -88,9 +88,9 @@ export type SegmentedProps = {
 /**
  * UI component for displaying selectable segmented options
  *
- * @returns {Segmented} Segmented component
+ * @returns {SegmentedControl} SegmentedControl component
  */
-export const Segmented = ({
+export const SegmentedControl = ({
   defaultValue,
   hierarchy,
   isDisabled,
@@ -98,7 +98,7 @@ export const Segmented = ({
   options,
   optionsAlignment,
   value,
-}: SegmentedProps): ReactElement => {
+}: SegmentedControlProps): ReactElement => {
   const [selectedValue, setSelectedValue] = useState(resolveKey(options, defaultValue))
 
   const handleOptionClick = useCallback((option: Option): void => {
@@ -160,7 +160,7 @@ export const Segmented = ({
   )
 }
 
-Segmented.defaultProps = {
+SegmentedControl.defaultProps = {
   hierarchy: Neutral,
   isDisabled: false,
   optionsAlignment: Horizontal,
