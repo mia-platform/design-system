@@ -24,6 +24,7 @@ import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
 import { SegmentedControl } from '.'
 
 const meta = {
+  title: 'components/Segmented Control',
   component: SegmentedControl,
   parameters: {
     backgrounds: { disable: true },
