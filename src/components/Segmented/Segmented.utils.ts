@@ -39,9 +39,7 @@ export function isString(element: Option | number): element is string {
  * @returns {boolean} `true` if the option is disabled, `false` otherwise.
  */
 export function isDisabledOption(option: Option, isDisabled: boolean): boolean {
-  return isDisabled ?? (
-    !isString(option) && option?.isDisabled
-  )
+  return isDisabled ?? (!isString(option) && option?.isDisabled)
 }
 
 /**
@@ -53,9 +51,7 @@ export function isDisabledOption(option: Option, isDisabled: boolean): boolean {
  * @returns {boolean} `true` if the option should be aligned vertically, `false` otherwise.
  */
 export function isVerticalOption(option: Option, optionsAlignment: OptionsAlignments): boolean {
-  return (
-    !isString(option) && optionsAlignment === Vertical
-  )
+  return !isString(option) && optionsAlignment === Vertical
 }
 
 /**
