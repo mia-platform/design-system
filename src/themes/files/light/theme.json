@@ -148,9 +148,9 @@
   "typography": {
     "h1": {
       "fontFamily": "Inter",
+      "fontWeight": "600",
       "lineHeight": "32",
-      "fontSize": "24",
-      "fontWeight": "600"
+      "fontSize": "24"
     },
     "h2": {
       "fontFamily": "Inter",

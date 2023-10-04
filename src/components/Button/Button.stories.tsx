@@ -20,7 +20,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './Button.types'
-import { Button } from './Button'
+import { Button } from '.'
 import { Icon } from '../Icon'
 
 const { Primary, Neutral, Danger } = ButtonHierarchies
