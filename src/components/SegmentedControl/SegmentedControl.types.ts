@@ -16,18 +16,37 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Button } from './components/Button'
-import { Icon } from './components/Icon'
-import { SegmentedControl } from './components/SegmentedControl'
-import { ThemeProvider } from './components/ThemeProvider'
-import hooks from './hooks'
-import themes from './themes'
+import { ReactNode } from 'react'
 
-export {
-  Button,
-  Icon,
-  SegmentedControl,
-  ThemeProvider,
-  hooks,
-  themes,
+export enum Hierarchies {
+  Primary = 'primary',
+  Neutral = 'neutral',
+}
+
+export enum OptionsAlignments {
+  Horizontal = 'horizontal',
+  Vertical = 'vertical',
+}
+
+export type Option = string | {
+
+  /**
+   * The icon of the option
+   */
+  icon?: ReactNode,
+
+  /**
+   * Whether the option is clickable
+   */
+  isDisabled?: boolean,
+
+  /**
+   * The selectable text of the option
+   */
+  label: ReactNode,
+
+  /**
+   * The value associated with the option
+   */
+  key: string,
 }
