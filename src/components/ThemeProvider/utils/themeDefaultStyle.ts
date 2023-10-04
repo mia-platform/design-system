@@ -36,8 +36,8 @@ const DEFAULT_COLOR = '#666666'
  * @returns {Promise<void>} - A promise that resolves when the font is loaded.
  */
 function loadDefaultFontFace({ typography }: Partial<Theme>): void {
-  const useDefaultFontFace = Object
-    .values(typography ?? {})
+  const useDefaultFontFace = !typography || Object
+    .values(typography)
     .some(({ fontFamily }) => fontFamily === DEFAULT_FONT_FAMILY)
 
   if (useDefaultFontFace) {
