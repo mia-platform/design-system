@@ -22,6 +22,16 @@ import { customCopyable, customEllipsis, loremIpsum } from '../Typography.mocks'
 import { HX } from './HX'
 import { Typography } from '..'
 
+const h1LongText = ['H1', loremIpsum].join(' | ')
+const h2LongText = ['H2', loremIpsum].join(' | ')
+const h3LongText = ['H3', loremIpsum].join(' | ')
+const h4LongText = ['H4', loremIpsum].join(' | ')
+
+const h1EllipsisWithTooltip = { rows: 2, tooltip: h1LongText }
+const h2EllipsisWithTooltip = { rows: 2, tooltip: h2LongText }
+const h3EllipsisWithTooltip = { rows: 2, tooltip: h3LongText }
+const h4EllipsisWithTooltip = { rows: 2, tooltip: h4LongText }
+
 const meta = {
   title: 'Components/Typography/HX',
   component: HX,
@@ -76,16 +86,16 @@ export const H4 = {
   render: (args: object) => <Typography.H4 {...args} />,
 }
 
-export const WithEllipsis = {
+export const WithEllipsisWithTooltip = {
   argTypes: {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
     <>
-      <Typography.H1 {...args}>{['H1', loremIpsum].join(' | ')}</Typography.H1>
-      <Typography.H2 {...args}>{['H2', loremIpsum].join(' | ')}</Typography.H2>
-      <Typography.H3 {...args}>{['H3', loremIpsum].join(' | ')}</Typography.H3>
-      <Typography.H4 {...args}>{['H4', loremIpsum].join(' | ')}</Typography.H4>
+      <Typography.H1 {...args} ellipsis={h1EllipsisWithTooltip}>{h1LongText}</Typography.H1>
+      <Typography.H2 {...args} ellipsis={h2EllipsisWithTooltip}>{h2LongText}</Typography.H2>
+      <Typography.H3 {...args} ellipsis={h3EllipsisWithTooltip}>{h3LongText}</Typography.H3>
+      <Typography.H4 {...args} ellipsis={h4EllipsisWithTooltip}>{h4LongText}</Typography.H4>
     </>
   ),
 }
@@ -97,10 +107,10 @@ export const WithEllipsisCustom = {
   },
   render: (args: object) => (
     <>
-      <Typography.H1 {...args}>{['H1', loremIpsum].join(' | ')}</Typography.H1>
-      <Typography.H2 {...args}>{['H2', loremIpsum].join(' | ')}</Typography.H2>
-      <Typography.H3 {...args}>{['H3', loremIpsum].join(' | ')}</Typography.H3>
-      <Typography.H4 {...args}>{['H4', loremIpsum].join(' | ')}</Typography.H4>
+      <Typography.H1 {...args}>{h1LongText}</Typography.H1>
+      <Typography.H2 {...args}>{h2LongText}</Typography.H2>
+      <Typography.H3 {...args}>{h3LongText}</Typography.H3>
+      <Typography.H4 {...args}>{h4LongText}</Typography.H4>
     </>
   ),
 }

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode, useMemo } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { Typography as AntTypography } from 'antd'
 
 import { CopyConfig, EllipsisConfig } from '../Typography.types'
@@ -49,9 +49,8 @@ export type HXProps = {
   copyable?: boolean | CopyConfig,
 
   /**
-   * Displays ellipsis when text overflows. By default, the text will be truncated if it
-   * exceeds the length of 2 rows, showing all informational content in a tooltip.
-   * The attribute is further customizable according to the following data model:
+   * Displays ellipsis when text overflows.
+   * The attribute is customizable according to the following data model:
    *
    * `object`:
    *   - rows?: The maximum number of rows the content can occupy before
@@ -88,14 +87,10 @@ export const HX = ({
   ellipsis,
   level,
 }: HXProps & HXLevel): ReactElement => {
-  const hEllipsis = useMemo(() => (
-    (ellipsis === true && { rows: 2, tooltip: { children } }) || ellipsis
-  ), [children, ellipsis])
-
   return (
     <AntTitle
       copyable={copyable}
-      ellipsis={hEllipsis}
+      ellipsis={ellipsis}
       level={level}
     >
       {children}
@@ -105,5 +100,5 @@ export const HX = ({
 
 HX.defaultProps = {
   copyable: false,
-  ellipsis: true,
+  ellipsis: false,
 }

@@ -56,9 +56,8 @@ export type BodyXProps = {
   copyable?: boolean | CopyConfig,
 
   /**
-   * Displays ellipsis when text overflows. By default, the text will be truncated if it
-   * exceeds the length of 2 rows, showing all informational content in a tooltip.
-   * The attribute is further customizable according to the following data model:
+   * Displays ellipsis when text overflows.
+   * The attribute is customizable according to the following data model:
    *
    * `object`:
    *   - rows?: The maximum number of rows the content can occupy before
@@ -85,9 +84,9 @@ type BodyXSize = {
   /**
    * Defines the body font size and line height. Either:
    *
-   * - s: small - fontSize: 14px, lineHeight: 16px;
-   * - m: middle - fontSize: 16px, lineHeight: 24px;
-   * - l: large - fontSize: 18px, lineHeight: 24px.
+   * - s: small - fontSize: 14px, lineHeight: 16px by default;
+   * - m: middle - fontSize: 16px, lineHeight: 24px by default;
+   * - l: large - fontSize: 18px, lineHeight: 24px by default.
    */
   size: BodySizes,
 }
@@ -111,15 +110,11 @@ export const BodyX = ({
     size === L && bodyL,
   ]), [size])
 
-  const bodyEllipsis = useMemo(() => (
-    (ellipsis === true && { rows: 2, tooltip: { children } }) || ellipsis
-  ), [children, ellipsis])
-
   return (
     <AntParagraph
       className={bodyClassName}
       copyable={copyable}
-      ellipsis={bodyEllipsis}
+      ellipsis={ellipsis}
       strong={isBold}
     >
       {children}
@@ -129,6 +124,6 @@ export const BodyX = ({
 
 BodyX.defaultProps = {
   copyable: false,
-  ellipsis: true,
+  ellipsis: false,
   isBold: false,
 }

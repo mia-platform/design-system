@@ -25,6 +25,20 @@ import { Typography } from '..'
 
 const { S } = BodySizes
 
+const bodySLongText = ['BodyS', loremIpsum].join(' | ')
+const bodyMLongText = ['BodyM', loremIpsum].join(' | ')
+const bodyLLongText = ['BodyL', loremIpsum].join(' | ')
+const bodySBoldLongText = ['BodyS Bold', loremIpsum].join(' | ')
+const bodyMBoldLongText = ['BodyM Bold', loremIpsum].join(' | ')
+const bodyLBoldLongText = ['BodyL Bold', loremIpsum].join(' | ')
+
+const bodySEllipsisWithTooltip = { rows: 3, tooltip: bodySLongText }
+const bodyMEllipsisWithTooltip = { rows: 3, tooltip: bodyMLongText }
+const bodyLEllipsisWithTooltip = { rows: 3, tooltip: bodyLLongText }
+const bodySBoldEllipsisWithTooltip = { rows: 3, tooltip: bodySBoldLongText }
+const bodyMBoldEllipsisWithTooltip = { rows: 3, tooltip: bodyMBoldLongText }
+const bodyLBoldEllipsisWithTooltip = { rows: 3, tooltip: bodyLBoldLongText }
+
 const meta = {
   title: 'Components/Typography/BodyX',
   component: BodyX,
@@ -91,18 +105,18 @@ export const BodyLBold = {
   render: (args: object) => <Typography.BodyL {...args} isBold />,
 }
 
-export const WithEllipsis = {
+export const WithEllipsisWithTooltip = {
   argTypes: {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
     <>
-      <Typography.BodyS {...args}>{['BodyS', loremIpsum].join(' | ')}</Typography.BodyS>
-      <Typography.BodyS {...args} isBold>{['BodyS Bold', loremIpsum].join(' | ')}</Typography.BodyS>
-      <Typography.BodyM {...args}>{['BodyM', loremIpsum].join(' | ')}</Typography.BodyM>
-      <Typography.BodyM {...args} isBold>{['BodyM Bold', loremIpsum].join(' | ')}</Typography.BodyM>
-      <Typography.BodyL {...args}>{['BodyL', loremIpsum].join(' | ')}</Typography.BodyL>
-      <Typography.BodyL {...args} isBold>{['BodyL Bold', loremIpsum].join(' | ')}</Typography.BodyL>
+      <Typography.BodyS {...args} ellipsis={bodySEllipsisWithTooltip}>{bodySLongText}</Typography.BodyS>
+      <Typography.BodyS {...args} ellipsis={bodySBoldEllipsisWithTooltip} isBold>{bodySBoldLongText}</Typography.BodyS>
+      <Typography.BodyM {...args} ellipsis={bodyMEllipsisWithTooltip}>{bodyMLongText}</Typography.BodyM>
+      <Typography.BodyM {...args} ellipsis={bodyMBoldEllipsisWithTooltip} isBold>{bodyMBoldLongText}</Typography.BodyM>
+      <Typography.BodyL {...args} ellipsis={bodyLEllipsisWithTooltip}>{bodyLLongText}</Typography.BodyL>
+      <Typography.BodyL {...args} ellipsis={bodyLBoldEllipsisWithTooltip} isBold>{bodyLBoldLongText}</Typography.BodyL>
     </>
   ),
 }
@@ -114,12 +128,12 @@ export const WithEllipsisCustom = {
   },
   render: (args: object) => (
     <>
-      <Typography.BodyS {...args}>{['BodyS', loremIpsum].join(' | ')}</Typography.BodyS>
-      <Typography.BodyS {...args} isBold>{['BodyS Bold', loremIpsum].join(' | ')}</Typography.BodyS>
-      <Typography.BodyM {...args}>{['BodyM', loremIpsum].join(' | ')}</Typography.BodyM>
-      <Typography.BodyM {...args} isBold>{['BodyM Bold', loremIpsum].join(' | ')}</Typography.BodyM>
-      <Typography.BodyL {...args}>{['BodyL', loremIpsum].join(' | ')}</Typography.BodyL>
-      <Typography.BodyL {...args} isBold>{['BodyL Bold', loremIpsum].join(' | ')}</Typography.BodyL>
+      <Typography.BodyS {...args}>{bodySLongText}</Typography.BodyS>
+      <Typography.BodyS {...args} isBold>{bodySBoldLongText}</Typography.BodyS>
+      <Typography.BodyM {...args}>{bodyMLongText}</Typography.BodyM>
+      <Typography.BodyM {...args} isBold>{bodyMBoldLongText}</Typography.BodyM>
+      <Typography.BodyL {...args}>{bodyLLongText}</Typography.BodyL>
+      <Typography.BodyL {...args} isBold>{bodyLBoldLongText}</Typography.BodyL>
     </>
   ),
 }
