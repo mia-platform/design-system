@@ -18,6 +18,8 @@
 
 import { Icon } from '../Icon'
 
+export const fontUrl = 'https://fontsource.org/fonts/inter'
+
 export const customEllipsis = {
   rows: 1,
   suffix: ' END',

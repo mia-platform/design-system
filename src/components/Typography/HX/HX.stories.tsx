@@ -18,7 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { customCopyable, customEllipsis, loremIpsum } from '../Typography.mocks'
+import { customCopyable, customEllipsis, fontUrl, loremIpsum } from '../Typography.mocks'
 import { HX } from './HX'
 import { Typography } from '..'
 
@@ -35,6 +35,9 @@ const h4EllipsisWithTooltip = { rows: 2, tooltip: h4LongText }
 const meta = {
   title: 'Components/Typography/HX',
   component: HX,
+  parameters: {
+    design: { type: 'iframe', name: 'Font Definition', url: fontUrl },
+  },
   args: {
     ...HX.defaultProps,
     children: 'Text',
@@ -50,7 +53,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const HXComponent: Story = {
-  args: { ...meta.args, level: 1 },
+  args: { ...meta.args, level: 1, role: 'h1' },
   argTypes: {
     level: { control: 'number', table: { disable: false } },
   },

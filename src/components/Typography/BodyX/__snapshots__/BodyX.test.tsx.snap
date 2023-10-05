@@ -4,6 +4,7 @@ exports[`BodyX Component renders BodyL Bold correctly 1`] = `
 <DocumentFragment>
   <div
     class="ant-typography bodyL css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     <strong>
       Text
@@ -16,6 +17,7 @@ exports[`BodyX Component renders BodyL correctly 1`] = `
 <DocumentFragment>
   <div
     class="ant-typography bodyL css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     Text
   </div>
@@ -26,6 +28,7 @@ exports[`BodyX Component renders BodyM Bold correctly 1`] = `
 <DocumentFragment>
   <div
     class="ant-typography bodyM css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     <strong>
       Text
@@ -38,6 +41,7 @@ exports[`BodyX Component renders BodyM correctly 1`] = `
 <DocumentFragment>
   <div
     class="ant-typography bodyM css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     Text
   </div>
@@ -48,6 +52,7 @@ exports[`BodyX Component renders BodyS Bold correctly 1`] = `
 <DocumentFragment>
   <div
     class="ant-typography bodyS css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     <strong>
       Text
@@ -60,6 +65,7 @@ exports[`BodyX Component renders BodyS correctly 1`] = `
 <DocumentFragment>
   <div
     class="ant-typography bodyS css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     Text
   </div>
@@ -70,6 +76,7 @@ exports[`BodyX Component renders copyable correctly 1`] = `
 <DocumentFragment>
   <div
     class="ant-typography bodyS css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
@@ -115,6 +122,7 @@ exports[`BodyX Component renders custom copyable correctly 1`] = `
 <DocumentFragment>
   <div
     class="ant-typography bodyS css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
@@ -178,6 +186,7 @@ Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet
 Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
 Ut in feugiat nunc, in eleifend ex."
     class="ant-typography ant-typography-ellipsis ant-typography-single-line bodyS css-dev-only-do-not-override-1vr7spz"
+    role="paragraph"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.

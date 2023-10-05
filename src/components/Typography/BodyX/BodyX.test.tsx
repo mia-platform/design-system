@@ -31,7 +31,7 @@ describe('BodyX Component', () => {
   test('renders BodyS correctly', () => {
     const { asFragment } = render(<BodyS>{'Text'}</BodyS>)
 
-    const text = screen.getByText('Text')
+    const text = screen.getByRole('paragraph')
     expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
@@ -40,7 +40,7 @@ describe('BodyX Component', () => {
   test('renders BodyM correctly', () => {
     const { asFragment } = render(<BodyM>{'Text'}</BodyM>)
 
-    const text = screen.getByText('Text')
+    const text = screen.getByRole('paragraph')
     expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
@@ -49,7 +49,7 @@ describe('BodyX Component', () => {
   test('renders BodyL correctly', () => {
     const { asFragment } = render(<BodyL>{'Text'}</BodyL>)
 
-    const text = screen.getByText('Text')
+    const text = screen.getByRole('paragraph')
     expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
@@ -58,7 +58,7 @@ describe('BodyX Component', () => {
   test('renders BodyS Bold correctly', () => {
     const { asFragment } = render(<BodyS isBold>{'Text'}</BodyS>)
 
-    const text = screen.getByText('Text')
+    const text = screen.getByRole('paragraph')
     expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
@@ -67,7 +67,7 @@ describe('BodyX Component', () => {
   test('renders BodyM Bold correctly', () => {
     const { asFragment } = render(<BodyM isBold>{'Text'}</BodyM>)
 
-    const text = screen.getByText('Text')
+    const text = screen.getByRole('paragraph')
     expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
@@ -76,7 +76,7 @@ describe('BodyX Component', () => {
   test('renders BodyL Bold correctly', () => {
     const { asFragment } = render(<BodyL isBold>{'Text'}</BodyL>)
 
-    const text = screen.getByText('Text')
+    const text = screen.getByRole('paragraph')
     expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()

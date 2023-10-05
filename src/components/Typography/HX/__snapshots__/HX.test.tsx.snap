@@ -3,7 +3,9 @@
 exports[`HX Component renders H1 correctly 1`] = `
 <DocumentFragment>
   <h1
+    aria-label="Text"
     class="ant-typography css-dev-only-do-not-override-1vr7spz"
+    role="h1"
   >
     Text
   </h1>
@@ -13,7 +15,9 @@ exports[`HX Component renders H1 correctly 1`] = `
 exports[`HX Component renders H2 correctly 1`] = `
 <DocumentFragment>
   <h2
+    aria-label="Text"
     class="ant-typography css-dev-only-do-not-override-1vr7spz"
+    role="h2"
   >
     Text
   </h2>
@@ -23,7 +27,9 @@ exports[`HX Component renders H2 correctly 1`] = `
 exports[`HX Component renders H3 correctly 1`] = `
 <DocumentFragment>
   <h3
+    aria-label="Text"
     class="ant-typography css-dev-only-do-not-override-1vr7spz"
+    role="h3"
   >
     Text
   </h3>
@@ -33,7 +39,9 @@ exports[`HX Component renders H3 correctly 1`] = `
 exports[`HX Component renders H4 correctly 1`] = `
 <DocumentFragment>
   <h4
+    aria-label="Text"
     class="ant-typography css-dev-only-do-not-override-1vr7spz"
+    role="h4"
   >
     Text
   </h4>
@@ -43,7 +51,17 @@ exports[`HX Component renders H4 correctly 1`] = `
 exports[`HX Component renders copyable correctly 1`] = `
 <DocumentFragment>
   <h1
+    aria-label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
+Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
+Quisque ornare interdum massa blandit accumsan. Morbi viverra, urna ut consequat maximus, risus eros molestie augue, at posuere lacus nunc id ex.
+Aenean et ante augue. Donec vitae pretium tellus, mattis placerat nisl. Phasellus dolor urna, porttitor a tempus at, scelerisque id nisi.
+In ac libero quis neque tempor iaculis sit amet non sapien. Aenean quis neque varius, efficitur erat et, faucibus tortor.
+Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
+Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
+Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
+Ut in feugiat nunc, in eleifend ex."
     class="ant-typography css-dev-only-do-not-override-1vr7spz"
+    role="h1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
@@ -88,7 +106,17 @@ Ut in feugiat nunc, in eleifend ex.
 exports[`HX Component renders custom copyable correctly 1`] = `
 <DocumentFragment>
   <h1
+    aria-label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
+Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
+Quisque ornare interdum massa blandit accumsan. Morbi viverra, urna ut consequat maximus, risus eros molestie augue, at posuere lacus nunc id ex.
+Aenean et ante augue. Donec vitae pretium tellus, mattis placerat nisl. Phasellus dolor urna, porttitor a tempus at, scelerisque id nisi.
+In ac libero quis neque tempor iaculis sit amet non sapien. Aenean quis neque varius, efficitur erat et, faucibus tortor.
+Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
+Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
+Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
+Ut in feugiat nunc, in eleifend ex."
     class="ant-typography css-dev-only-do-not-override-1vr7spz"
+    role="h1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
@@ -152,6 +180,7 @@ Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet
 Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
 Ut in feugiat nunc, in eleifend ex."
     class="ant-typography ant-typography-ellipsis ant-typography-single-line css-dev-only-do-not-override-1vr7spz"
+    role="h1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.

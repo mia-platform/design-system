@@ -73,6 +73,11 @@ type HXLevel = {
    * The H tag to be rendered. Match with H1, H2, H3, H4.
    */
   level: 1 | 2 | 3 | 4,
+
+  /**
+   * The H tag role.
+   */
+  role: 'h1' | 'h2' | 'h3' | 'h4',
 }
 
 /**
@@ -86,12 +91,15 @@ export const HX = ({
   copyable,
   ellipsis,
   level,
+  role,
 }: HXProps & HXLevel): ReactElement => {
   return (
     <AntTitle
+      aria-label={typeof children === 'string' ? children : ''}
       copyable={copyable}
       ellipsis={ellipsis}
       level={level}
+      role={role}
     >
       {children}
     </AntTitle>

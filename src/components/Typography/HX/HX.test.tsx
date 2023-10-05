@@ -31,7 +31,7 @@ describe('HX Component', () => {
   test('renders H1 correctly', () => {
     const { asFragment } = render(<H1>{'Text'}</H1>)
 
-    const heading = screen.getByRole('heading', { name: 'Text' })
+    const heading = screen.getByRole('h1', { name: 'Text' })
     expect(heading).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
@@ -40,7 +40,7 @@ describe('HX Component', () => {
   test('renders H2 correctly', () => {
     const { asFragment } = render(<H2>{'Text'}</H2>)
 
-    const heading = screen.getByRole('heading', { name: 'Text' })
+    const heading = screen.getByRole('h2', { name: 'Text' })
     expect(heading).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
@@ -49,7 +49,7 @@ describe('HX Component', () => {
   test('renders H3 correctly', () => {
     const { asFragment } = render(<H3>{'Text'}</H3>)
 
-    const heading = screen.getByRole('heading', { name: 'Text' })
+    const heading = screen.getByRole('h3', { name: 'Text' })
     expect(heading).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
@@ -58,7 +58,7 @@ describe('HX Component', () => {
   test('renders H4 correctly', () => {
     const { asFragment } = render(<H4>{'Text'}</H4>)
 
-    const heading = screen.getByRole('heading', { name: 'Text' })
+    const heading = screen.getByRole('h4', { name: 'Text' })
     expect(heading).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()

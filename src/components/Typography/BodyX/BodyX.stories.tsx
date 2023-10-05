@@ -18,7 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { customCopyable, customEllipsis, loremIpsum } from '../Typography.mocks'
+import { customCopyable, customEllipsis, fontUrl, loremIpsum } from '../Typography.mocks'
 import { BodySizes } from './BodyX.types'
 import { BodyX } from './BodyX'
 import { Typography } from '..'
@@ -42,6 +42,9 @@ const bodyLBoldEllipsisWithTooltip = { rows: 3, tooltip: bodyLBoldLongText }
 const meta = {
   title: 'Components/Typography/BodyX',
   component: BodyX,
+  parameters: {
+    design: { type: 'iframe', name: 'Font Definition', url: fontUrl },
+  },
   args: {
     ...BodyX.defaultProps,
     children: 'Text',
