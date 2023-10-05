@@ -18,7 +18,7 @@
 
 .bodyS {
   font-size: calc(var(--typography-bodyS-fontSize, 14) * 1px);
-  line-height: calc(var(--typography-bodyS-lineHeight, 16) * 1px);
+  line-height: calc(var(--typography-bodyS-lineHeight, 24) * 1px);
 }
 
 .bodyM {
