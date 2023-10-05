@@ -28,7 +28,7 @@
  * {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-size}
  *
  * fontStyle: whether the text should adopt a cursive style.
- * {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-size}
+ * {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-style}
  *
  * fontWeight: set of properties handling the boldness of the font.
  * {@link https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight}
