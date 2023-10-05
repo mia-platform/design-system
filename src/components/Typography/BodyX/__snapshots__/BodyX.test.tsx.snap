@@ -3,7 +3,7 @@
 exports[`BodyX Component renders BodyL Bold correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line bodyL css-dev-only-do-not-override-1vr7spz"
+    class="ant-typography bodyL css-dev-only-do-not-override-1vr7spz"
   >
     <strong>
       Text
@@ -15,7 +15,7 @@ exports[`BodyX Component renders BodyL Bold correctly 1`] = `
 exports[`BodyX Component renders BodyL correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line bodyL css-dev-only-do-not-override-1vr7spz"
+    class="ant-typography bodyL css-dev-only-do-not-override-1vr7spz"
   >
     Text
   </div>
@@ -25,7 +25,7 @@ exports[`BodyX Component renders BodyL correctly 1`] = `
 exports[`BodyX Component renders BodyM Bold correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line bodyM css-dev-only-do-not-override-1vr7spz"
+    class="ant-typography bodyM css-dev-only-do-not-override-1vr7spz"
   >
     <strong>
       Text
@@ -37,7 +37,7 @@ exports[`BodyX Component renders BodyM Bold correctly 1`] = `
 exports[`BodyX Component renders BodyM correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line bodyM css-dev-only-do-not-override-1vr7spz"
+    class="ant-typography bodyM css-dev-only-do-not-override-1vr7spz"
   >
     Text
   </div>
@@ -47,7 +47,7 @@ exports[`BodyX Component renders BodyM correctly 1`] = `
 exports[`BodyX Component renders BodyS Bold correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line bodyS css-dev-only-do-not-override-1vr7spz"
+    class="ant-typography bodyS css-dev-only-do-not-override-1vr7spz"
   >
     <strong>
       Text
@@ -59,7 +59,7 @@ exports[`BodyX Component renders BodyS Bold correctly 1`] = `
 exports[`BodyX Component renders BodyS correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line bodyS css-dev-only-do-not-override-1vr7spz"
+    class="ant-typography bodyS css-dev-only-do-not-override-1vr7spz"
   >
     Text
   </div>
@@ -69,16 +69,7 @@ exports[`BodyX Component renders BodyS correctly 1`] = `
 exports[`BodyX Component renders copyable correctly 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
-Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
-Quisque ornare interdum massa blandit accumsan. Morbi viverra, urna ut consequat maximus, risus eros molestie augue, at posuere lacus nunc id ex.
-Aenean et ante augue. Donec vitae pretium tellus, mattis placerat nisl. Phasellus dolor urna, porttitor a tempus at, scelerisque id nisi.
-In ac libero quis neque tempor iaculis sit amet non sapien. Aenean quis neque varius, efficitur erat et, faucibus tortor.
-Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
-Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
-Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
-Ut in feugiat nunc, in eleifend ex."
-    class="ant-typography ant-typography-ellipsis bodyS css-dev-only-do-not-override-1vr7spz"
+    class="ant-typography bodyS css-dev-only-do-not-override-1vr7spz"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
@@ -116,49 +107,6 @@ Ut in feugiat nunc, in eleifend ex.
         </svg>
       </span>
     </div>
-    <span
-      aria-hidden="true"
-      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
-    >
-      lg
-    </span>
-    <span
-      aria-hidden="true"
-      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
-    >
-      <span
-        aria-hidden="true"
-      >
-        ...
-      </span>
-      <div
-        aria-label="Copy"
-        class="ant-typography-copy"
-        role="button"
-        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
-        tabindex="0"
-      >
-        <span
-          aria-label="copy"
-          class="anticon anticon-copy"
-          role="img"
-        >
-          <svg
-            aria-hidden="true"
-            data-icon="copy"
-            fill="currentColor"
-            focusable="false"
-            height="1em"
-            viewBox="64 64 896 896"
-            width="1em"
-          >
-            <path
-              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
-            />
-          </svg>
-        </span>
-      </div>
-    </span>
   </div>
 </DocumentFragment>
 `;
@@ -166,16 +114,7 @@ Ut in feugiat nunc, in eleifend ex.
 exports[`BodyX Component renders custom copyable correctly 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
-Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
-Quisque ornare interdum massa blandit accumsan. Morbi viverra, urna ut consequat maximus, risus eros molestie augue, at posuere lacus nunc id ex.
-Aenean et ante augue. Donec vitae pretium tellus, mattis placerat nisl. Phasellus dolor urna, porttitor a tempus at, scelerisque id nisi.
-In ac libero quis neque tempor iaculis sit amet non sapien. Aenean quis neque varius, efficitur erat et, faucibus tortor.
-Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
-Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
-Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
-Ut in feugiat nunc, in eleifend ex."
-    class="ant-typography ant-typography-ellipsis bodyS css-dev-only-do-not-override-1vr7spz"
+    class="ant-typography bodyS css-dev-only-do-not-override-1vr7spz"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.
@@ -222,58 +161,6 @@ Ut in feugiat nunc, in eleifend ex.
         />
       </svg>
     </div>
-    <span
-      aria-hidden="true"
-      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
-    >
-      lg
-    </span>
-    <span
-      aria-hidden="true"
-      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
-    >
-      <span
-        aria-hidden="true"
-      >
-        ...
-      </span>
-      <div
-        aria-label="Copy to clipboard!"
-        class="ant-typography-copy"
-        role="button"
-        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
-        tabindex="0"
-      >
-        <svg
-          alt="FiCopy"
-          aria-label="FiCopy"
-          color="magenta"
-          fill="none"
-          height="16"
-          role="img"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          style="color: magenta;"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            height="13"
-            rx="2"
-            ry="2"
-            width="13"
-            x="9"
-            y="9"
-          />
-          <path
-            d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-          />
-        </svg>
-      </div>
-    </span>
   </div>
 </DocumentFragment>
 `;
