@@ -29,6 +29,9 @@
   padding: 2px; /* does not change with theme */
   border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
   background-color:  var(--palette-common-grey-100, #f5f5f5);
+  font-family: var(--typography-caption-fontFamily, Inter);
+  font-weight: var(--typography-caption-fontWeight, 400);
+  font-size: calc(var(--typography-caption-fontSize, 12) * 1px);
 }
 
 .segmented.primary {
@@ -75,6 +78,7 @@
 
 .segmentedOption.vertical {
   flex-direction: column;
+  gap: calc(var(--spacing-gap-sm, 8) * 1px);
 }
 
 .segmentedOption.disabled {
