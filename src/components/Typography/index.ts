@@ -16,28 +16,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/**
- * Imports the Jest DOM utilities
- *
- * It can be used to:
- * - query the DOM for elements,
- * - assert that elements have certain properties,
- * - simulate user events.
- *
- * This import should be added to the top of your test files before any other imports.
- */
-import '@testing-library/jest-dom'
+import { H1 } from './HX/H1'
+import { H2 } from './HX/H2'
+import { H3 } from './HX/H3'
+import { H4 } from './HX/H4'
 
-/**
- * Mocks the '@fontsource/inter' module.
- *
- * It helps avoid Jest errors when loading the default fontface.
- */
-jest.mock('@fontsource/inter', () => ({
-  default: () => `
-    @font-face { 
-      font-family: "Inter"; 
-      src: local("Inter"); 
-    };
-  `,
-}))
+export const Typography = {
+  H1,
+  H2,
+  H3,
+  H4,
+}
