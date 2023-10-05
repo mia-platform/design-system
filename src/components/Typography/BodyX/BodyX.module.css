@@ -16,20 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BodyL } from './BodyX/BodyL'
-import { BodyM } from './BodyX/BodyM'
-import { BodyS } from './BodyX/BodyS'
-import { H1 } from './HX/H1'
-import { H2 } from './HX/H2'
-import { H3 } from './HX/H3'
-import { H4 } from './HX/H4'
+.bodyS {
+  font-size: calc(var(--typography-bodyS-fontSize, 14) * 1px);
+  line-height: calc(var(--typography-bodyS-lineHeight, 24) * 1px);
+}
 
-export const Typography = {
-  H1,
-  H2,
-  H3,
-  H4,
-  BodyS,
-  BodyM,
-  BodyL,
+.bodyM {
+  font-size: calc(var(--typography-bodyM-fontSize, 16) * 1px);
+  line-height: calc(var(--typography-bodyM-lineHeight, 24) * 1px);
+}
+
+.bodyL {
+  font-size: calc(var(--typography-bodyL-fontSize, 18) * 1px);
+  line-height: calc(var(--typography-bodyL-lineHeight, 24) * 1px);
 }

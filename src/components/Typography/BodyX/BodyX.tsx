@@ -16,14 +16,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode, useMemo } from 'react'
 import { Typography as AntTypography } from 'antd'
+import classnames from 'classnames'
 
 import { CopyConfig, EllipsisConfig } from '../Typography.types'
+import { BodySizes } from './BodyX.types'
+import styles from './BodyX.module.css'
 
-const { Title: AntTitle } = AntTypography
+const { Paragraph: AntParagraph } = AntTypography
 
-export type HXProps = {
+const { bodyS, bodyM, bodyL } = styles
+
+const { S, M, L } = BodySizes
+
+export type BodyXProps = {
 
   /**
    * The children nodes to be rendered within the typography context.
@@ -65,48 +72,59 @@ export type HXProps = {
    *   The attribute is further customizable. <br>`ReactNode`
    */
   ellipsis?: boolean | EllipsisConfig,
+
+  /**
+   * Whether the body font weight is bold.
+   */
+  isBold?: boolean,
 }
 
-type HXLevel = {
+type BodyXSize = {
 
   /**
-   * The H tag to be rendered. Match with H1, H2, H3, H4.
+   * Defines the body font size and line height. Either:
+   *
+   * - s: small - fontSize: 14px, lineHeight: 24px by default;
+   * - m: middle - fontSize: 16px, lineHeight: 24px by default;
+   * - l: large - fontSize: 18px, lineHeight: 24px by default.
    */
-  level: 1 | 2 | 3 | 4,
-
-  /**
-   * The H tag role.
-   */
-  role: 'h1' | 'h2' | 'h3' | 'h4',
+  size: BodySizes,
 }
 
 /**
- * UI component for displaying headers (H1, H2, H3, H4).
+ * UI component for displaying bodies (BodyS, BodyM, BodyL).
  *
- * @link https://ant.design/components/typography#typographytitle
- * @returns {HX} HX component
+ * @link https://ant.design/components/typography#typographyparagraph
+ * @returns {BodyX} BodyX component
  */
-export const HX = ({
+export const BodyX = ({
   children,
   copyable,
   ellipsis,
-  level,
-  role,
-}: HXProps & HXLevel): ReactElement => {
+  isBold,
+  size,
+}: BodyXProps & BodyXSize): ReactElement => {
+  const bodyClassName = useMemo(() => classnames([
+    size === S && bodyS,
+    size === M && bodyM,
+    size === L && bodyL,
+  ]), [size])
+
   return (
-    <AntTitle
-      aria-label={typeof children === 'string' ? children : ''}
+    <AntParagraph
+      className={bodyClassName}
       copyable={copyable}
       ellipsis={ellipsis}
-      level={level}
-      role={role}
+      role={'paragraph'}
+      strong={isBold}
     >
       {children}
-    </AntTitle>
+    </AntParagraph>
   )
 }
 
-HX.defaultProps = {
+BodyX.defaultProps = {
   copyable: false,
   ellipsis: false,
+  isBold: false,
 }

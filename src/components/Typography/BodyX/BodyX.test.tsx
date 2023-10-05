@@ -21,56 +21,74 @@ import { render, screen } from '@testing-library/react'
 import { customCopyable, customEllipsis, loremIpsum } from '../Typography.mocks'
 import { Typography } from '..'
 
-const { H1, H2, H3, H4 } = Typography
+const { BodyS, BodyM, BodyL } = Typography
 
-describe('HX Component', () => {
+describe('BodyX Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
 
-  test('renders H1 correctly', () => {
-    const { asFragment } = render(<H1>{'Text'}</H1>)
+  test('renders BodyS correctly', () => {
+    const { asFragment } = render(<BodyS>{'Text'}</BodyS>)
 
-    const heading = screen.getByRole('h1', { name: 'Text' })
-    expect(heading).toBeVisible()
-
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders H2 correctly', () => {
-    const { asFragment } = render(<H2>{'Text'}</H2>)
-
-    const heading = screen.getByRole('h2', { name: 'Text' })
-    expect(heading).toBeVisible()
+    const text = screen.getByRole('paragraph')
+    expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders H3 correctly', () => {
-    const { asFragment } = render(<H3>{'Text'}</H3>)
+  test('renders BodyM correctly', () => {
+    const { asFragment } = render(<BodyM>{'Text'}</BodyM>)
 
-    const heading = screen.getByRole('h3', { name: 'Text' })
-    expect(heading).toBeVisible()
+    const text = screen.getByRole('paragraph')
+    expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders H4 correctly', () => {
-    const { asFragment } = render(<H4>{'Text'}</H4>)
+  test('renders BodyL correctly', () => {
+    const { asFragment } = render(<BodyL>{'Text'}</BodyL>)
 
-    const heading = screen.getByRole('h4', { name: 'Text' })
-    expect(heading).toBeVisible()
+    const text = screen.getByRole('paragraph')
+    expect(text).toBeVisible()
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders BodyS Bold correctly', () => {
+    const { asFragment } = render(<BodyS isBold>{'Text'}</BodyS>)
+
+    const text = screen.getByRole('paragraph')
+    expect(text).toBeVisible()
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders BodyM Bold correctly', () => {
+    const { asFragment } = render(<BodyM isBold>{'Text'}</BodyM>)
+
+    const text = screen.getByRole('paragraph')
+    expect(text).toBeVisible()
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders BodyL Bold correctly', () => {
+    const { asFragment } = render(<BodyL isBold>{'Text'}</BodyL>)
+
+    const text = screen.getByRole('paragraph')
+    expect(text).toBeVisible()
 
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders custom ellipsis correctly', () => {
-    const { asFragment } = render(<H1 ellipsis={customEllipsis}>{loremIpsum}</H1>)
+    const { asFragment } = render(<BodyS ellipsis={customEllipsis}>{loremIpsum}</BodyS>)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders copyable correctly', () => {
-    const { asFragment } = render(<H1 copyable>{loremIpsum}</H1>)
+    const { asFragment } = render(<BodyS copyable>{loremIpsum}</BodyS>)
 
     const copyButton = screen.getByRole('button', { name: 'Copy' })
     const copyImg = screen.getByRole('img', { name: 'copy' })
@@ -81,7 +99,7 @@ describe('HX Component', () => {
   })
 
   test('renders custom copyable correctly', () => {
-    const { asFragment } = render(<H1 copyable={customCopyable}>{loremIpsum}</H1>)
+    const { asFragment } = render(<BodyS copyable={customCopyable}>{loremIpsum}</BodyS>)
 
     const copyButton = screen.getByRole('button', { name: 'Copy to clipboard!' })
     const copyImg = screen.getByRole('img', { name: 'FiCopy' })
