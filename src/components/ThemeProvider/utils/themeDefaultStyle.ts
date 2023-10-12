@@ -61,6 +61,8 @@ export default function themeDefaultStyle(theme: Partial<Theme> = {}): Record<st
     fontFamily: typography?.bodyS?.fontFamily ?? DEFAULT_FONT_FAMILY,
     fontSize: `${typography?.bodyS?.fontSize ?? DEFAULT_FONT_SIZE}px`,
     fontWeight: typography?.bodyS?.fontWeight ?? DEFAULT_FONT_WEIGHT,
+    height: '100%',
+    width: '100%',
   }
 }
 
