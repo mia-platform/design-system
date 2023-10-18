@@ -2461,7 +2461,7 @@ __metadata:
     typescript: ^5.0.2
     vite: ^4.5.0
     vite-plugin-dts: ^3.5.1
-    vite-plugin-svgr: ^3.3.0
+    vite-plugin-svgr: ^4.1.0
     vite-tsconfig-paths: ^4.2.0
   peerDependencies:
     react: ^18.2.0
@@ -14385,16 +14385,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-svgr@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "vite-plugin-svgr@npm:3.3.0"
+"vite-plugin-svgr@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "vite-plugin-svgr@npm:4.1.0"
   dependencies:
     "@rollup/pluginutils": ^5.0.4
     "@svgr/core": ^8.1.0
     "@svgr/plugin-jsx": ^8.1.0
   peerDependencies:
     vite: ^2.6.0 || 3 || 4
-  checksum: 014840a0d98a54422fb94520086bb20c99c7ee21285d7049e4496f529b7be69e23d34f543a29867372e5cbdf135c5a96eae01474c88ec1223c78b7e4b18008b0
+  checksum: b2896d851a75d86d9b21b8a64c8bc8090601d6b26fcfb4739b84314dbb8b426daa7ad451e02e54ce8ae4f8473e19990caa362e2a3e9a22ee1cea0eb27c15f018
   languageName: node
   linkType: hard
 
