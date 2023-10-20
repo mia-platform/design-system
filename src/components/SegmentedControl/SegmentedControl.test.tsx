@@ -46,11 +46,11 @@ describe('Segmented Control Component', () => {
 
       expect(screen.getByRole('list')).toBeVisible()
 
-      labeledOptions.forEach(({ key }) => {
+      labeledOptions.forEach(({ key, isDisabled }) => {
         const option = screen.getByRole('listitem', { name: key })
 
         expect(option).toBeVisible()
-        expect(option).toHaveAttribute('aria-disabled', 'false')
+        expect(option).toHaveAttribute('aria-disabled', isDisabled ? 'true' : 'false')
       })
 
       expect(screen.getByRole('listitem', { name: selectedOption.key })).toHaveAttribute('aria-checked', 'true')
@@ -63,11 +63,11 @@ describe('Segmented Control Component', () => {
 
       expect(screen.getByRole('list')).toBeVisible()
 
-      labeledOptions.forEach(({ key }) => {
+      labeledOptions.forEach(({ key, isDisabled }) => {
         const option = screen.getByRole('listitem', { name: key })
 
         expect(option).toBeVisible()
-        expect(option).toHaveAttribute('aria-disabled', 'false')
+        expect(option).toHaveAttribute('aria-disabled', isDisabled ? 'true' : 'false')
       })
 
       expect(screen.getByRole('listitem', { name: selectedOption.key })).toHaveAttribute('aria-checked', 'true')
@@ -80,11 +80,11 @@ describe('Segmented Control Component', () => {
 
       expect(screen.getByRole('list')).toBeVisible()
 
-      labeledOptions.forEach(({ key }) => {
+      labeledOptions.forEach(({ key, isDisabled }) => {
         const option = screen.getByRole('listitem', { name: key })
 
         expect(option).toBeVisible()
-        expect(option).toHaveAttribute('aria-disabled', 'false')
+        expect(option).toHaveAttribute('aria-disabled', isDisabled ? 'true' : 'false')
       })
 
       expect(screen.getByRole('listitem', { name: selectedOption.key })).toHaveAttribute('aria-checked', 'true')

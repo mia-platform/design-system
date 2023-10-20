@@ -224,9 +224,9 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     </li>
     <li
       aria-checked="true"
-      aria-disabled="false"
+      aria-disabled="true"
       aria-label="three"
-      class="segmentedOption selected"
+      class="segmentedOption selected disabled"
     >
       <svg
         alt="AiOutlineDesktop"
@@ -400,9 +400,9 @@ exports[`Segmented Control Component labeled options renders primary options cor
     </li>
     <li
       aria-checked="true"
-      aria-disabled="false"
+      aria-disabled="true"
       aria-label="three"
-      class="segmentedOption primary selected"
+      class="segmentedOption primary selected disabled"
     >
       <svg
         alt="AiOutlineDesktop"
@@ -576,9 +576,9 @@ exports[`Segmented Control Component labeled options renders vertical options co
     </li>
     <li
       aria-checked="true"
-      aria-disabled="false"
+      aria-disabled="true"
       aria-label="three"
-      class="segmentedOption selected vertical"
+      class="segmentedOption selected vertical disabled"
     >
       <svg
         alt="AiOutlineDesktop"
