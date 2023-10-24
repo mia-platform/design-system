@@ -136,7 +136,13 @@ describe('Segmented Control Component', () => {
       fireEvent.click(screen.getByRole('listitem', { name: clickedOption.key }))
 
       expect(onChange).toBeCalledTimes(1)
-      expect(onChange).toBeCalledWith(clickedOption)
+      expect(onChange).toBeCalledWith(clickedOption, expect.objectContaining({
+        altKey: expect.any(Boolean),
+        ctrlKey: expect.any(Boolean),
+        metaKey: expect.any(Boolean),
+        shiftKey: expect.any(Boolean),
+        target: expect.any(HTMLElement),
+      }))
     })
   })
 
@@ -246,7 +252,13 @@ describe('Segmented Control Component', () => {
       fireEvent.click(screen.getByRole('listitem', { name: clickedOption }))
 
       expect(onChange).toBeCalledTimes(1)
-      expect(onChange).toBeCalledWith(clickedOption)
+      expect(onChange).toBeCalledWith(clickedOption, expect.objectContaining({
+        altKey: expect.any(Boolean),
+        ctrlKey: expect.any(Boolean),
+        metaKey: expect.any(Boolean),
+        shiftKey: expect.any(Boolean),
+        target: expect.any(HTMLElement),
+      }))
     })
   })
 })
