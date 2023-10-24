@@ -62,6 +62,7 @@ module.exports = {
       allowExpressions: true
     }],
     "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
 
     /**
      * Eslint plugin React Hooks

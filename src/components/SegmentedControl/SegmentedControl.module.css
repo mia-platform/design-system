@@ -76,12 +76,12 @@
     0 2px 4px 0 rgba(0,0,0,.02);
 }
 
-.segmentedOption.vertical {
+.segmentedOption.vertical, .segmentedOption.primary.vertical {
   flex-direction: column;
   gap: calc(var(--spacing-gap-sm, 8) * 1px);
 }
 
-.segmentedOption.disabled {
+.segmentedOption.disabled, .segmentedOption.primary.disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
