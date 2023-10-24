@@ -39,7 +39,7 @@ export function isString(element: Option | number): element is string {
  * @returns {boolean} `true` if the option is disabled, `false` otherwise.
  */
 export function isDisabledOption(option: Option, isDisabled: boolean): boolean {
-  return (!isString(option) && option?.isDisabled) || isDisabled
+  return isDisabled || (!isString(option) && option?.isDisabled)
 }
 
 /**
