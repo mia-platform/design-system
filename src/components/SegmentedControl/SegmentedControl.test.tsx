@@ -136,7 +136,7 @@ describe('Segmented Control Component', () => {
       fireEvent.click(screen.getByRole('listitem', { name: clickedOption.key }))
 
       expect(onChange).toBeCalledTimes(1)
-      expect(onChange).toBeCalledWith(clickedOption)
+      expect(onChange).toBeCalledWith(clickedOption, expect.objectContaining({ ...MouseEvent }))
     })
   })
 
@@ -246,7 +246,7 @@ describe('Segmented Control Component', () => {
       fireEvent.click(screen.getByRole('listitem', { name: clickedOption }))
 
       expect(onChange).toBeCalledTimes(1)
-      expect(onChange).toBeCalledWith(clickedOption)
+      expect(onChange).toBeCalledWith(clickedOption, expect.objectContaining({ ...MouseEvent }))
     })
   })
 })

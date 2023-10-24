@@ -136,5 +136,6 @@ describe('Button Component', () => {
     const button = screen.getByRole('button', { name: /Button/i })
     fireEvent.click(button)
     expect(onClick).toHaveBeenCalledTimes(1)
+    expect(onClick).toBeCalledWith(expect.objectContaining({ ...MouseEvent }))
   })
 })

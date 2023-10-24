@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode, useMemo } from 'react'
+import { MouseEvent, ReactElement, ReactNode, useMemo } from 'react'
 import { Button as AntButton } from 'antd'
 import classnames from 'classnames'
 
@@ -79,7 +79,7 @@ export type ButtonProps = {
   /**
    * Sets the handler to handle a click event.
    */
-  onClick?: () => void,
+  onClick?: (event: MouseEvent) => void,
 
   /**
    * Defines the button shape. Either:

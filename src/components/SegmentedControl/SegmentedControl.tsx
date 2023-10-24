@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useCallback, useState } from 'react'
+import { MouseEvent, ReactElement, useCallback, useState } from 'react'
 import classnames from 'classnames'
 
 import { Hierarchies, Option, OptionsAlignments } from './SegmentedControl.types'
@@ -53,8 +53,9 @@ export type SegmentedControlProps = {
   /**
    * A callback function that is invoked when the selected option changes.
    * @param {Option} option - The newly selected option.
+   * @param {MouseEvent} event - The event linked to the mouse click.
    */
-  onChange?: (option: Option) => void
+  onChange?: (option: Option, event: MouseEvent) => void
 
  /**
    * An array of segmented options to be displayed. Either one of the following:
@@ -101,11 +102,11 @@ export const SegmentedControl = ({
 }: SegmentedControlProps): ReactElement => {
   const [selectedValue, setSelectedValue] = useState(resolveKey(options, defaultValue))
 
-  const handleOptionClick = useCallback((option: Option): void => {
+  const handleOptionClick = useCallback((option: Option, event: MouseEvent): void => {
     if (!isDisabledOption(option, isDisabled!)) {
       setSelectedValue(getOptionKey(option))
       if (onChange) {
-        onChange(option)
+        onChange(option, event)
       }
     }
   }, [isDisabled, onChange])
@@ -141,7 +142,7 @@ export const SegmentedControl = ({
               disabledOption && disabled,
             ])}
             key={key}
-            onClick={() => handleOptionClick(option)}
+            onClick={event => handleOptionClick(option, event)}
           >
             {
               isString(option)
