@@ -8,8 +8,21 @@ export default {
   roots: [
     "<rootDir>/src"
   ],
+  setupFilesAfterEnv: [
+    "<rootDir>/src/setupTests.ts"
+  ],
   watchPlugins: [
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
+  ],
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy',
+  },
+  transform: {
+    "\\.(svg)$": "jest-transformer-svg"
+  },
+  coveragePathIgnorePatterns: [
+    "/node_modules/",
+    "/src/setupTests.ts"
   ]
 }

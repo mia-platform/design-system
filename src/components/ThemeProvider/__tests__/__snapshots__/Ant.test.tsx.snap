@@ -3,6 +3,23 @@
 exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
 {
   "algorithm": [Function],
+  "components": {
+    "Button": {
+      "contentFontSize": 16,
+      "contentFontSizeLG": 16,
+      "contentFontSizeSM": 16,
+    },
+    "Typography": {
+      "fontSizeHeading1": 24,
+      "fontSizeHeading2": 20,
+      "fontSizeHeading3": 18,
+      "fontSizeHeading4": 16,
+      "lineHeightHeading1": 1.3333333333333333,
+      "lineHeightHeading2": 1.6,
+      "lineHeightHeading3": 1.3333333333333333,
+      "lineHeightHeading4": 1.5,
+    },
+  },
   "token": {
     "borderRadius": 4,
     "colorBgBase": "#ffffff",
@@ -25,6 +42,23 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
 exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
 {
   "algorithm": [Function],
+  "components": {
+    "Button": {
+      "contentFontSize": undefined,
+      "contentFontSizeLG": undefined,
+      "contentFontSizeSM": undefined,
+    },
+    "Typography": {
+      "fontSizeHeading1": undefined,
+      "fontSizeHeading2": undefined,
+      "fontSizeHeading3": undefined,
+      "fontSizeHeading4": undefined,
+      "lineHeightHeading1": undefined,
+      "lineHeightHeading2": undefined,
+      "lineHeightHeading3": undefined,
+      "lineHeightHeading4": undefined,
+    },
+  },
   "token": {
     "borderRadius": undefined,
     "colorBgBase": undefined,
@@ -47,6 +81,23 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
 exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
 {
   "algorithm": [Function],
+  "components": {
+    "Button": {
+      "contentFontSize": 14,
+      "contentFontSizeLG": 14,
+      "contentFontSizeSM": 14,
+    },
+    "Typography": {
+      "fontSizeHeading1": 24,
+      "fontSizeHeading2": 20,
+      "fontSizeHeading3": 18,
+      "fontSizeHeading4": 16,
+      "lineHeightHeading1": 1.3333333333333333,
+      "lineHeightHeading2": 1.6,
+      "lineHeightHeading3": 1.3333333333333333,
+      "lineHeightHeading4": 1.5,
+    },
+  },
   "token": {
     "borderRadius": 4,
     "colorBgBase": "#ffffff",

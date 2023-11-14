@@ -49,7 +49,6 @@ module.exports = {
       "newlines-between": "always"
     }],
     "no-shadow": "off",
-    "padded-blocks": "off",
     "sort-imports": ["error", {
       allowSeparatedGroups: true
     }],
@@ -63,6 +62,7 @@ module.exports = {
       allowExpressions: true
     }],
     "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
 
     /**
      * Eslint plugin React Hooks
@@ -75,9 +75,7 @@ module.exports = {
      * Eslint plugin React Refresh
      * @link https://github.com/ArnaudBarre/eslint-plugin-react-refresh
      */
-    "react-refresh/only-export-components": ["warn", {
-      allowConstantExport: true
-    }],
+    "react-refresh/only-export-components": "off",
 
     /** 
      * Eslint plugin React
@@ -138,7 +136,7 @@ module.exports = {
     "react/no-multi-comp": "error",
     "react/no-object-type-as-default-prop": "error",
     "react/prefer-stateless-function": "error",
-    "react/require-default-props": "error",
+    "react/require-default-props": "off",
     "react/self-closing-comp": ["error", {
       "component": true,
       "html": true

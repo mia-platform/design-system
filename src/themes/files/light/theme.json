@@ -140,16 +140,17 @@
       "xl": "16",
       "2xl": "24",
       "3xl": "32",
-      "4xl": "64",
-      "5xl": "96"
+      "4xl": "48",
+      "5xl": "64",
+      "6xl": "96"
     }
   },
   "typography": {
     "h1": {
       "fontFamily": "Inter",
+      "fontWeight": "600",
       "lineHeight": "32",
-      "fontSize": "24",
-      "fontWeight": "600"
+      "fontSize": "24"
     },
     "h2": {
       "fontFamily": "Inter",
@@ -172,13 +173,13 @@
     "bodyS": {
       "fontFamily": "Inter",
       "fontWeight": "400",
-      "lineHeight": "16",
+      "lineHeight": "24",
       "fontSize": "14"
     },
     "bodySBold": {
       "fontFamily": "Inter",
       "fontWeight": "600",
-      "lineHeight": "16",
+      "lineHeight": "24",
       "fontSize": "14"
     },
     "bodyM": {
@@ -209,7 +210,7 @@
       "fontFamily": "Inter",
       "fontWeight": "400",
       "lineHeight": "16",
-      "fontSize": "16"
+      "fontSize": "14"
     },
     "link": {
       "fontFamily": "Inter",

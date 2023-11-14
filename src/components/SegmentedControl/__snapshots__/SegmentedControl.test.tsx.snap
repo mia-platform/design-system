@@ -1,0 +1,901 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Segmented Control Component labeled options renders disabled segmented correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="segmented disabled"
+  >
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="one"
+      class="segmentedOption disabled"
+    >
+      <svg
+        alt="MiaPlatform"
+        aria-label="MiaPlatform"
+        data-file-name="SvgMiaPlatform"
+        height="16"
+        role="img"
+        size="16"
+        width="16"
+      />
+      Option 1
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="two"
+      class="segmentedOption disabled"
+    >
+      <svg
+        alt="PiChartPieSlice"
+        aria-label="PiChartPieSlice"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M100,116.43a8,8,0,0,0,4-6.93v-72A8,8,0,0,0,93.34,30,104.06,104.06,0,0,0,25.73,147a8,8,0,0,0,4.52,5.81,7.86,7.86,0,0,0,3.35.74,8,8,0,0,0,4-1.07ZM88,49.62v55.26L40.12,132.51C40,131,40,129.48,40,128A88.12,88.12,0,0,1,88,49.62Zm130.34,26.9c-.09-.18-.18-.37-.29-.55s-.2-.33-.31-.49A104.05,104.05,0,0,0,128,24a8,8,0,0,0-8,8v91.83l-78.81,45.9a8,8,0,0,0-2.87,11A104,104,0,0,0,232,128,103.34,103.34,0,0,0,218.34,76.52ZM136,40.36A88.05,88.05,0,0,1,199.89,77.3L136,114.51ZM128,216a88.45,88.45,0,0,1-71.49-36.68l75.4-43.91.22-.14L207.9,91.14A88,88,0,0,1,128,216Z"
+        />
+      </svg>
+      Option 2
+    </li>
+    <li
+      aria-checked="true"
+      aria-disabled="true"
+      aria-label="three"
+      class="segmentedOption selected disabled"
+    >
+      <svg
+        alt="AiOutlineDesktop"
+        aria-label="AiOutlineDesktop"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M928 140H96c-17.7 0-32 14.3-32 32v496c0 17.7 14.3 32 32 32h380v112H304c-8.8 0-16 7.2-16 16v48c0 4.4 3.6 8 8 8h432c4.4 0 8-3.6 8-8v-48c0-8.8-7.2-16-16-16H548V700h380c17.7 0 32-14.3 32-32V172c0-17.7-14.3-32-32-32zm-40 488H136V212h752v416z"
+        />
+      </svg>
+      Option 3
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="four"
+      class="segmentedOption disabled"
+    >
+      <svg
+        alt="AiOutlineFieldTime"
+        aria-label="AiOutlineFieldTime"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        t="1569683618210"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs />
+        <path
+          d="M945 412H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h256c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM811 548H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h122c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM477.3 322.5H434c-6.2 0-11.2 5-11.2 11.2v248c0 3.6 1.7 6.9 4.6 9l148.9 108.6c5 3.6 12 2.6 15.6-2.4l25.7-35.1v-0.1c3.6-5 2.5-12-2.5-15.6l-126.7-91.6V333.7c0.1-6.2-5-11.2-11.1-11.2z"
+        />
+        <path
+          d="M804.8 673.9H747c-5.6 0-10.9 2.9-13.9 7.7-12.7 20.1-27.5 38.7-44.5 55.7-29.3 29.3-63.4 52.3-101.3 68.3-39.3 16.6-81 25-124 25-43.1 0-84.8-8.4-124-25-37.9-16-72-39-101.3-68.3s-52.3-63.4-68.3-101.3c-16.6-39.2-25-80.9-25-124 0-43.1 8.4-84.7 25-124 16-37.9 39-72 68.3-101.3 29.3-29.3 63.4-52.3 101.3-68.3 39.2-16.6 81-25 124-25 43.1 0 84.8 8.4 124 25 37.9 16 72 39 101.3 68.3 17 17 31.8 35.6 44.5 55.7 3 4.8 8.3 7.7 13.9 7.7h57.8c6.9 0 11.3-7.2 8.2-13.3-65.2-129.7-197.4-214-345-215.7-216.1-2.7-395.6 174.2-396 390.1C71.6 727.5 246.9 903 463.2 903c149.5 0 283.9-84.6 349.8-215.8 3.1-6.1-1.4-13.3-8.2-13.3z"
+        />
+      </svg>
+      Option 4
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="five"
+      class="segmentedOption disabled"
+    >
+      <svg
+        alt="AiOutlineLock"
+        aria-label="AiOutlineLock"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0z"
+        />
+      </svg>
+      Option 5
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="six"
+      class="segmentedOption disabled"
+    >
+      <svg
+        alt="AiOutlineFork"
+        aria-label="AiOutlineFork"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M752 100c-61.8 0-112 50.2-112 112 0 47.7 29.9 88.5 72 104.6v27.6L512 601.4 312 344.2v-27.6c42.1-16.1 72-56.9 72-104.6 0-61.8-50.2-112-112-112s-112 50.2-112 112c0 50.6 33.8 93.5 80 107.3v34.4c0 9.7 3.3 19.3 9.3 27L476 672.3v33.6c-44.2 15-76 56.9-76 106.1 0 61.8 50.2 112 112 112s112-50.2 112-112c0-49.2-31.8-91-76-106.1v-33.6l226.7-291.6c6-7.7 9.3-17.3 9.3-27v-34.4c46.2-13.8 80-56.7 80-107.3 0-61.8-50.2-112-112-112zM224 212a48.01 48.01 0 0 1 96 0 48.01 48.01 0 0 1-96 0zm336 600a48.01 48.01 0 0 1-96 0 48.01 48.01 0 0 1 96 0zm192-552a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"
+        />
+      </svg>
+      Option 6
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="seven"
+      class="segmentedOption disabled"
+    >
+      <svg
+        alt="AiOutlineFilter"
+        aria-label="AiOutlineFilter"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M880.1 154H143.9c-24.5 0-39.8 26.7-27.5 48L349 597.4V838c0 17.7 14.2 32 31.8 32h262.4c17.6 0 31.8-14.3 31.8-32V597.4L907.7 202c12.2-21.3-3.1-48-27.6-48zM603.4 798H420.6V642h182.9v156zm9.6-236.6l-9.5 16.6h-183l-9.5-16.6L212.7 226h598.6L613 561.4z"
+        />
+      </svg>
+      Option 7
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Segmented Control Component labeled options renders options correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="segmented"
+  >
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="one"
+      class="segmentedOption"
+    >
+      <svg
+        alt="MiaPlatform"
+        aria-label="MiaPlatform"
+        data-file-name="SvgMiaPlatform"
+        height="16"
+        role="img"
+        size="16"
+        width="16"
+      />
+      Option 1
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="two"
+      class="segmentedOption"
+    >
+      <svg
+        alt="PiChartPieSlice"
+        aria-label="PiChartPieSlice"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M100,116.43a8,8,0,0,0,4-6.93v-72A8,8,0,0,0,93.34,30,104.06,104.06,0,0,0,25.73,147a8,8,0,0,0,4.52,5.81,7.86,7.86,0,0,0,3.35.74,8,8,0,0,0,4-1.07ZM88,49.62v55.26L40.12,132.51C40,131,40,129.48,40,128A88.12,88.12,0,0,1,88,49.62Zm130.34,26.9c-.09-.18-.18-.37-.29-.55s-.2-.33-.31-.49A104.05,104.05,0,0,0,128,24a8,8,0,0,0-8,8v91.83l-78.81,45.9a8,8,0,0,0-2.87,11A104,104,0,0,0,232,128,103.34,103.34,0,0,0,218.34,76.52ZM136,40.36A88.05,88.05,0,0,1,199.89,77.3L136,114.51ZM128,216a88.45,88.45,0,0,1-71.49-36.68l75.4-43.91.22-.14L207.9,91.14A88,88,0,0,1,128,216Z"
+        />
+      </svg>
+      Option 2
+    </li>
+    <li
+      aria-checked="true"
+      aria-disabled="true"
+      aria-label="three"
+      class="segmentedOption selected disabled"
+    >
+      <svg
+        alt="AiOutlineDesktop"
+        aria-label="AiOutlineDesktop"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M928 140H96c-17.7 0-32 14.3-32 32v496c0 17.7 14.3 32 32 32h380v112H304c-8.8 0-16 7.2-16 16v48c0 4.4 3.6 8 8 8h432c4.4 0 8-3.6 8-8v-48c0-8.8-7.2-16-16-16H548V700h380c17.7 0 32-14.3 32-32V172c0-17.7-14.3-32-32-32zm-40 488H136V212h752v416z"
+        />
+      </svg>
+      Option 3
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="four"
+      class="segmentedOption"
+    >
+      <svg
+        alt="AiOutlineFieldTime"
+        aria-label="AiOutlineFieldTime"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        t="1569683618210"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs />
+        <path
+          d="M945 412H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h256c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM811 548H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h122c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM477.3 322.5H434c-6.2 0-11.2 5-11.2 11.2v248c0 3.6 1.7 6.9 4.6 9l148.9 108.6c5 3.6 12 2.6 15.6-2.4l25.7-35.1v-0.1c3.6-5 2.5-12-2.5-15.6l-126.7-91.6V333.7c0.1-6.2-5-11.2-11.1-11.2z"
+        />
+        <path
+          d="M804.8 673.9H747c-5.6 0-10.9 2.9-13.9 7.7-12.7 20.1-27.5 38.7-44.5 55.7-29.3 29.3-63.4 52.3-101.3 68.3-39.3 16.6-81 25-124 25-43.1 0-84.8-8.4-124-25-37.9-16-72-39-101.3-68.3s-52.3-63.4-68.3-101.3c-16.6-39.2-25-80.9-25-124 0-43.1 8.4-84.7 25-124 16-37.9 39-72 68.3-101.3 29.3-29.3 63.4-52.3 101.3-68.3 39.2-16.6 81-25 124-25 43.1 0 84.8 8.4 124 25 37.9 16 72 39 101.3 68.3 17 17 31.8 35.6 44.5 55.7 3 4.8 8.3 7.7 13.9 7.7h57.8c6.9 0 11.3-7.2 8.2-13.3-65.2-129.7-197.4-214-345-215.7-216.1-2.7-395.6 174.2-396 390.1C71.6 727.5 246.9 903 463.2 903c149.5 0 283.9-84.6 349.8-215.8 3.1-6.1-1.4-13.3-8.2-13.3z"
+        />
+      </svg>
+      Option 4
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="five"
+      class="segmentedOption"
+    >
+      <svg
+        alt="AiOutlineLock"
+        aria-label="AiOutlineLock"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0z"
+        />
+      </svg>
+      Option 5
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="six"
+      class="segmentedOption"
+    >
+      <svg
+        alt="AiOutlineFork"
+        aria-label="AiOutlineFork"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M752 100c-61.8 0-112 50.2-112 112 0 47.7 29.9 88.5 72 104.6v27.6L512 601.4 312 344.2v-27.6c42.1-16.1 72-56.9 72-104.6 0-61.8-50.2-112-112-112s-112 50.2-112 112c0 50.6 33.8 93.5 80 107.3v34.4c0 9.7 3.3 19.3 9.3 27L476 672.3v33.6c-44.2 15-76 56.9-76 106.1 0 61.8 50.2 112 112 112s112-50.2 112-112c0-49.2-31.8-91-76-106.1v-33.6l226.7-291.6c6-7.7 9.3-17.3 9.3-27v-34.4c46.2-13.8 80-56.7 80-107.3 0-61.8-50.2-112-112-112zM224 212a48.01 48.01 0 0 1 96 0 48.01 48.01 0 0 1-96 0zm336 600a48.01 48.01 0 0 1-96 0 48.01 48.01 0 0 1 96 0zm192-552a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"
+        />
+      </svg>
+      Option 6
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="seven"
+      class="segmentedOption"
+    >
+      <svg
+        alt="AiOutlineFilter"
+        aria-label="AiOutlineFilter"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M880.1 154H143.9c-24.5 0-39.8 26.7-27.5 48L349 597.4V838c0 17.7 14.2 32 31.8 32h262.4c17.6 0 31.8-14.3 31.8-32V597.4L907.7 202c12.2-21.3-3.1-48-27.6-48zM603.4 798H420.6V642h182.9v156zm9.6-236.6l-9.5 16.6h-183l-9.5-16.6L212.7 226h598.6L613 561.4z"
+        />
+      </svg>
+      Option 7
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Segmented Control Component labeled options renders primary options correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="segmented primary"
+  >
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="one"
+      class="segmentedOption primary"
+    >
+      <svg
+        alt="MiaPlatform"
+        aria-label="MiaPlatform"
+        data-file-name="SvgMiaPlatform"
+        height="16"
+        role="img"
+        size="16"
+        width="16"
+      />
+      Option 1
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="two"
+      class="segmentedOption primary"
+    >
+      <svg
+        alt="PiChartPieSlice"
+        aria-label="PiChartPieSlice"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M100,116.43a8,8,0,0,0,4-6.93v-72A8,8,0,0,0,93.34,30,104.06,104.06,0,0,0,25.73,147a8,8,0,0,0,4.52,5.81,7.86,7.86,0,0,0,3.35.74,8,8,0,0,0,4-1.07ZM88,49.62v55.26L40.12,132.51C40,131,40,129.48,40,128A88.12,88.12,0,0,1,88,49.62Zm130.34,26.9c-.09-.18-.18-.37-.29-.55s-.2-.33-.31-.49A104.05,104.05,0,0,0,128,24a8,8,0,0,0-8,8v91.83l-78.81,45.9a8,8,0,0,0-2.87,11A104,104,0,0,0,232,128,103.34,103.34,0,0,0,218.34,76.52ZM136,40.36A88.05,88.05,0,0,1,199.89,77.3L136,114.51ZM128,216a88.45,88.45,0,0,1-71.49-36.68l75.4-43.91.22-.14L207.9,91.14A88,88,0,0,1,128,216Z"
+        />
+      </svg>
+      Option 2
+    </li>
+    <li
+      aria-checked="true"
+      aria-disabled="true"
+      aria-label="three"
+      class="segmentedOption primary selected disabled"
+    >
+      <svg
+        alt="AiOutlineDesktop"
+        aria-label="AiOutlineDesktop"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M928 140H96c-17.7 0-32 14.3-32 32v496c0 17.7 14.3 32 32 32h380v112H304c-8.8 0-16 7.2-16 16v48c0 4.4 3.6 8 8 8h432c4.4 0 8-3.6 8-8v-48c0-8.8-7.2-16-16-16H548V700h380c17.7 0 32-14.3 32-32V172c0-17.7-14.3-32-32-32zm-40 488H136V212h752v416z"
+        />
+      </svg>
+      Option 3
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="four"
+      class="segmentedOption primary"
+    >
+      <svg
+        alt="AiOutlineFieldTime"
+        aria-label="AiOutlineFieldTime"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        t="1569683618210"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs />
+        <path
+          d="M945 412H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h256c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM811 548H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h122c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM477.3 322.5H434c-6.2 0-11.2 5-11.2 11.2v248c0 3.6 1.7 6.9 4.6 9l148.9 108.6c5 3.6 12 2.6 15.6-2.4l25.7-35.1v-0.1c3.6-5 2.5-12-2.5-15.6l-126.7-91.6V333.7c0.1-6.2-5-11.2-11.1-11.2z"
+        />
+        <path
+          d="M804.8 673.9H747c-5.6 0-10.9 2.9-13.9 7.7-12.7 20.1-27.5 38.7-44.5 55.7-29.3 29.3-63.4 52.3-101.3 68.3-39.3 16.6-81 25-124 25-43.1 0-84.8-8.4-124-25-37.9-16-72-39-101.3-68.3s-52.3-63.4-68.3-101.3c-16.6-39.2-25-80.9-25-124 0-43.1 8.4-84.7 25-124 16-37.9 39-72 68.3-101.3 29.3-29.3 63.4-52.3 101.3-68.3 39.2-16.6 81-25 124-25 43.1 0 84.8 8.4 124 25 37.9 16 72 39 101.3 68.3 17 17 31.8 35.6 44.5 55.7 3 4.8 8.3 7.7 13.9 7.7h57.8c6.9 0 11.3-7.2 8.2-13.3-65.2-129.7-197.4-214-345-215.7-216.1-2.7-395.6 174.2-396 390.1C71.6 727.5 246.9 903 463.2 903c149.5 0 283.9-84.6 349.8-215.8 3.1-6.1-1.4-13.3-8.2-13.3z"
+        />
+      </svg>
+      Option 4
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="five"
+      class="segmentedOption primary"
+    >
+      <svg
+        alt="AiOutlineLock"
+        aria-label="AiOutlineLock"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0z"
+        />
+      </svg>
+      Option 5
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="six"
+      class="segmentedOption primary"
+    >
+      <svg
+        alt="AiOutlineFork"
+        aria-label="AiOutlineFork"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M752 100c-61.8 0-112 50.2-112 112 0 47.7 29.9 88.5 72 104.6v27.6L512 601.4 312 344.2v-27.6c42.1-16.1 72-56.9 72-104.6 0-61.8-50.2-112-112-112s-112 50.2-112 112c0 50.6 33.8 93.5 80 107.3v34.4c0 9.7 3.3 19.3 9.3 27L476 672.3v33.6c-44.2 15-76 56.9-76 106.1 0 61.8 50.2 112 112 112s112-50.2 112-112c0-49.2-31.8-91-76-106.1v-33.6l226.7-291.6c6-7.7 9.3-17.3 9.3-27v-34.4c46.2-13.8 80-56.7 80-107.3 0-61.8-50.2-112-112-112zM224 212a48.01 48.01 0 0 1 96 0 48.01 48.01 0 0 1-96 0zm336 600a48.01 48.01 0 0 1-96 0 48.01 48.01 0 0 1 96 0zm192-552a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"
+        />
+      </svg>
+      Option 6
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="seven"
+      class="segmentedOption primary"
+    >
+      <svg
+        alt="AiOutlineFilter"
+        aria-label="AiOutlineFilter"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M880.1 154H143.9c-24.5 0-39.8 26.7-27.5 48L349 597.4V838c0 17.7 14.2 32 31.8 32h262.4c17.6 0 31.8-14.3 31.8-32V597.4L907.7 202c12.2-21.3-3.1-48-27.6-48zM603.4 798H420.6V642h182.9v156zm9.6-236.6l-9.5 16.6h-183l-9.5-16.6L212.7 226h598.6L613 561.4z"
+        />
+      </svg>
+      Option 7
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Segmented Control Component labeled options renders vertical options correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="segmented vertical"
+  >
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="one"
+      class="segmentedOption vertical"
+    >
+      <svg
+        alt="MiaPlatform"
+        aria-label="MiaPlatform"
+        data-file-name="SvgMiaPlatform"
+        height="16"
+        role="img"
+        size="16"
+        width="16"
+      />
+      Option 1
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="two"
+      class="segmentedOption vertical"
+    >
+      <svg
+        alt="PiChartPieSlice"
+        aria-label="PiChartPieSlice"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M100,116.43a8,8,0,0,0,4-6.93v-72A8,8,0,0,0,93.34,30,104.06,104.06,0,0,0,25.73,147a8,8,0,0,0,4.52,5.81,7.86,7.86,0,0,0,3.35.74,8,8,0,0,0,4-1.07ZM88,49.62v55.26L40.12,132.51C40,131,40,129.48,40,128A88.12,88.12,0,0,1,88,49.62Zm130.34,26.9c-.09-.18-.18-.37-.29-.55s-.2-.33-.31-.49A104.05,104.05,0,0,0,128,24a8,8,0,0,0-8,8v91.83l-78.81,45.9a8,8,0,0,0-2.87,11A104,104,0,0,0,232,128,103.34,103.34,0,0,0,218.34,76.52ZM136,40.36A88.05,88.05,0,0,1,199.89,77.3L136,114.51ZM128,216a88.45,88.45,0,0,1-71.49-36.68l75.4-43.91.22-.14L207.9,91.14A88,88,0,0,1,128,216Z"
+        />
+      </svg>
+      Option 2
+    </li>
+    <li
+      aria-checked="true"
+      aria-disabled="true"
+      aria-label="three"
+      class="segmentedOption selected vertical disabled"
+    >
+      <svg
+        alt="AiOutlineDesktop"
+        aria-label="AiOutlineDesktop"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M928 140H96c-17.7 0-32 14.3-32 32v496c0 17.7 14.3 32 32 32h380v112H304c-8.8 0-16 7.2-16 16v48c0 4.4 3.6 8 8 8h432c4.4 0 8-3.6 8-8v-48c0-8.8-7.2-16-16-16H548V700h380c17.7 0 32-14.3 32-32V172c0-17.7-14.3-32-32-32zm-40 488H136V212h752v416z"
+        />
+      </svg>
+      Option 3
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="four"
+      class="segmentedOption vertical"
+    >
+      <svg
+        alt="AiOutlineFieldTime"
+        aria-label="AiOutlineFieldTime"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        t="1569683618210"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs />
+        <path
+          d="M945 412H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h256c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM811 548H689c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h122c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM477.3 322.5H434c-6.2 0-11.2 5-11.2 11.2v248c0 3.6 1.7 6.9 4.6 9l148.9 108.6c5 3.6 12 2.6 15.6-2.4l25.7-35.1v-0.1c3.6-5 2.5-12-2.5-15.6l-126.7-91.6V333.7c0.1-6.2-5-11.2-11.1-11.2z"
+        />
+        <path
+          d="M804.8 673.9H747c-5.6 0-10.9 2.9-13.9 7.7-12.7 20.1-27.5 38.7-44.5 55.7-29.3 29.3-63.4 52.3-101.3 68.3-39.3 16.6-81 25-124 25-43.1 0-84.8-8.4-124-25-37.9-16-72-39-101.3-68.3s-52.3-63.4-68.3-101.3c-16.6-39.2-25-80.9-25-124 0-43.1 8.4-84.7 25-124 16-37.9 39-72 68.3-101.3 29.3-29.3 63.4-52.3 101.3-68.3 39.2-16.6 81-25 124-25 43.1 0 84.8 8.4 124 25 37.9 16 72 39 101.3 68.3 17 17 31.8 35.6 44.5 55.7 3 4.8 8.3 7.7 13.9 7.7h57.8c6.9 0 11.3-7.2 8.2-13.3-65.2-129.7-197.4-214-345-215.7-216.1-2.7-395.6 174.2-396 390.1C71.6 727.5 246.9 903 463.2 903c149.5 0 283.9-84.6 349.8-215.8 3.1-6.1-1.4-13.3-8.2-13.3z"
+        />
+      </svg>
+      Option 4
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="five"
+      class="segmentedOption vertical"
+    >
+      <svg
+        alt="AiOutlineLock"
+        aria-label="AiOutlineLock"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0z"
+        />
+      </svg>
+      Option 5
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="six"
+      class="segmentedOption vertical"
+    >
+      <svg
+        alt="AiOutlineFork"
+        aria-label="AiOutlineFork"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M752 100c-61.8 0-112 50.2-112 112 0 47.7 29.9 88.5 72 104.6v27.6L512 601.4 312 344.2v-27.6c42.1-16.1 72-56.9 72-104.6 0-61.8-50.2-112-112-112s-112 50.2-112 112c0 50.6 33.8 93.5 80 107.3v34.4c0 9.7 3.3 19.3 9.3 27L476 672.3v33.6c-44.2 15-76 56.9-76 106.1 0 61.8 50.2 112 112 112s112-50.2 112-112c0-49.2-31.8-91-76-106.1v-33.6l226.7-291.6c6-7.7 9.3-17.3 9.3-27v-34.4c46.2-13.8 80-56.7 80-107.3 0-61.8-50.2-112-112-112zM224 212a48.01 48.01 0 0 1 96 0 48.01 48.01 0 0 1-96 0zm336 600a48.01 48.01 0 0 1-96 0 48.01 48.01 0 0 1 96 0zm192-552a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"
+        />
+      </svg>
+      Option 6
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="seven"
+      class="segmentedOption vertical"
+    >
+      <svg
+        alt="AiOutlineFilter"
+        aria-label="AiOutlineFilter"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M880.1 154H143.9c-24.5 0-39.8 26.7-27.5 48L349 597.4V838c0 17.7 14.2 32 31.8 32h262.4c17.6 0 31.8-14.3 31.8-32V597.4L907.7 202c12.2-21.3-3.1-48-27.6-48zM603.4 798H420.6V642h182.9v156zm9.6-236.6l-9.5 16.6h-183l-9.5-16.6L212.7 226h598.6L613 561.4z"
+        />
+      </svg>
+      Option 7
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Segmented Control Component string options renders disabled segmented correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="segmented disabled"
+  >
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="Option 1"
+      class="segmentedOption disabled"
+    >
+      Option 1
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="Option 2"
+      class="segmentedOption disabled"
+    >
+      Option 2
+    </li>
+    <li
+      aria-checked="true"
+      aria-disabled="true"
+      aria-label="Option 3"
+      class="segmentedOption selected disabled"
+    >
+      Option 3
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="Option 4"
+      class="segmentedOption disabled"
+    >
+      Option 4
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="Option 5"
+      class="segmentedOption disabled"
+    >
+      Option 5
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Segmented Control Component string options renders options correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="segmented"
+  >
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 1"
+      class="segmentedOption"
+    >
+      Option 1
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 2"
+      class="segmentedOption"
+    >
+      Option 2
+    </li>
+    <li
+      aria-checked="true"
+      aria-disabled="false"
+      aria-label="Option 3"
+      class="segmentedOption selected"
+    >
+      Option 3
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 4"
+      class="segmentedOption"
+    >
+      Option 4
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 5"
+      class="segmentedOption"
+    >
+      Option 5
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Segmented Control Component string options renders primary options correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="segmented primary"
+  >
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 1"
+      class="segmentedOption primary"
+    >
+      Option 1
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 2"
+      class="segmentedOption primary"
+    >
+      Option 2
+    </li>
+    <li
+      aria-checked="true"
+      aria-disabled="false"
+      aria-label="Option 3"
+      class="segmentedOption primary selected"
+    >
+      Option 3
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 4"
+      class="segmentedOption primary"
+    >
+      Option 4
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 5"
+      class="segmentedOption primary"
+    >
+      Option 5
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Segmented Control Component string options renders vertical options correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="segmented vertical"
+  >
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 1"
+      class="segmentedOption"
+    >
+      Option 1
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 2"
+      class="segmentedOption"
+    >
+      Option 2
+    </li>
+    <li
+      aria-checked="true"
+      aria-disabled="false"
+      aria-label="Option 3"
+      class="segmentedOption selected"
+    >
+      Option 3
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 4"
+      class="segmentedOption"
+    >
+      Option 4
+    </li>
+    <li
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Option 5"
+      class="segmentedOption"
+    >
+      Option 5
+    </li>
+  </ul>
+</DocumentFragment>
+`;

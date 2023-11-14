@@ -16,11 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Button } from './components/Button'
+import { Icon } from './components/Icon'
+import { SegmentedControl } from './components/SegmentedControl'
 import { ThemeProvider } from './components/ThemeProvider'
 import hooks from './hooks'
 import themes from './themes'
 
 export {
+  Button,
+  Icon,
+  SegmentedControl,
   ThemeProvider,
   hooks,
   themes,

@@ -1,7 +1,7 @@
 {
   "name": "@mia-platform-internal/console-design-system-react",
   "packageManager": "yarn@3.6.1",
-  "version": "0.0.8",
+  "version": "0.1.1",
   "type": "module",
   "main": "dist/cjs/console-design-system-react.cjs",
   "module": "dist/es/console-design-system-react.js",
@@ -12,7 +12,9 @@
   "contributors": [
     "Daniele Cinà <daniele.cina@mia-platform.eu>",
     "Davide Bianchi <davide.bianchi@mia-platform.eu>",
-    "Giovanni Tommasi <giovanni.tommasi@mia-platform.eu>"
+    "Federico Maggi <federico.maggi@mia-platform.eu>",
+    "Giovanni Tommasi <giovanni.tommasi@mia-platform.eu>",
+    "Riccardo Corona <riccardo.corona@mia-platform.eu>"
   ],
   "repository": {
     "type": "git",
@@ -33,9 +35,11 @@
     "check-license": "addlicense -c 'Mia srl' -check -s -ignore src/**/*.ts"
   },
   "dependencies": {
-    "antd": "^5.8.2",
+    "@fontsource/inter": "^5.0.12",
+    "antd": "^5.9.2",
     "lodash.get": "^4.4.2",
-    "lodash.isobject": "^3.0.2"
+    "lodash.isobject": "^3.0.2",
+    "react-icons": "^4.11.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -43,18 +47,18 @@
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
-    "@storybook/addon-a11y": "^7.4.0",
+    "@storybook/addon-a11y": "^7.4.6",
     "@storybook/addon-designs": "^7.0.5",
-    "@storybook/addon-essentials": "^7.4.0",
-    "@storybook/addon-interactions": "^7.4.0",
-    "@storybook/addon-links": "^7.4.0",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
     "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.4.0",
-    "@storybook/manager-api": "^7.4.0",
-    "@storybook/react": "^7.4.0",
-    "@storybook/react-vite": "^7.4.0",
-    "@storybook/testing-library": "^0.2.0",
-    "@storybook/theming": "^7.4.0",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/manager-api": "^7.4.6",
+    "@storybook/react": "^7.4.6",
+    "@storybook/react-vite": "^7.4.6",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/theming": "^7.4.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.3",
@@ -73,19 +77,22 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-storybook": "^0.6.13",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.6.2",
     "jest-environment-jsdom": "^29.6.2",
+    "jest-transformer-svg": "^2.0.1",
     "jest-watch-typeahead": "^2.2.2",
     "postcss": "^8.4.29",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup-plugin-visualizer": "^5.9.2",
-    "storybook": "^7.4.0",
+    "storybook": "^7.4.6",
     "traverse": "^0.6.7",
     "ts-jest": "^29.1.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
+    "vite": "^4.5.0",
     "vite-plugin-dts": "^3.5.1",
+    "vite-plugin-svgr": "^3.3.0",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "engines": {

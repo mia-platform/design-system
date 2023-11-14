@@ -1,7 +1,10 @@
 .github
 .storybook
 .yarn
+.vscode
+*.tgz
 src
+coverage
 .editorconfig
 .eslintignore
 .eslintrc.cjs
@@ -17,4 +20,5 @@ tsconfig.node.json
 vite.config.ts
 yarn.lock
 stats.html
+storybook-static
 __tests__

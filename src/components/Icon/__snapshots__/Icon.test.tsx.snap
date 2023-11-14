@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon Component renders Ant icon correctly 1`] = `
+<DocumentFragment>
+  <svg
+    alt="AiOutlineHome"
+    aria-label="AiOutlineHome"
+    fill="currentColor"
+    height="24"
+    role="img"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 1024 1024"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Icon Component renders Feather icon correctly 1`] = `
+<DocumentFragment>
+  <svg
+    alt="FiHome"
+    aria-label="FiHome"
+    fill="none"
+    height="24"
+    role="img"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+    <polyline
+      points="9 22 9 12 15 12 15 22"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Icon Component renders Phosphor icon correctly 1`] = `
+<DocumentFragment>
+  <svg
+    alt="PiHouse"
+    aria-label="PiHouse"
+    fill="currentColor"
+    height="24"
+    role="img"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 256 256"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Icon Component renders custom icon correctly 1`] = `
+<DocumentFragment>
+  <svg
+    alt="MiaPlatform"
+    aria-label="MiaPlatform"
+    data-file-name="SvgMiaPlatform"
+    height="24"
+    role="img"
+    size="24"
+    width="24"
+  />
+</DocumentFragment>
+`;

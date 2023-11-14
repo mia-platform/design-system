@@ -367,10 +367,14 @@
       "type": "sizing"
     },
     "4xl": {
-      "value": "64",
+      "value": "48",
       "type": "sizing"
     },
     "5xl": {
+      "value": "64",
+      "type": "sizing"
+    },
+    "6xl": {
       "value": "96",
       "type": "sizing"
     }

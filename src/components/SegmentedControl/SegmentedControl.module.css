@@ -1,0 +1,86 @@
+/**
+ * Copyright 2023 Mia srl
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+ 
+.segmented {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  user-select: none;
+  width: 100%;
+  margin: 0;
+  gap: 2px; /* does not change with theme */
+  padding: 2px; /* does not change with theme */
+  border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  background-color:  var(--palette-common-grey-100, #f5f5f5);
+  font-family: var(--typography-caption-fontFamily, Inter);
+  font-weight: var(--typography-caption-fontWeight, 400);
+  font-size: calc(var(--typography-caption-fontSize, 12) * 1px);
+}
+
+.segmented.primary {
+  background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 85%);
+}
+
+.segmentedOption {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: calc(var(--spacing-gap-xs, 4) * 1px);
+  padding: calc(var(--spacing-padding-sm, 8) * 1px);
+  min-width: calc(var(--shape-size-5xl, 64) * 1px);
+  border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.segmentedOption:hover {
+  background-color: color-mix(in srgb, var(--palette-common-black, #000000), transparent 92%);
+}
+
+.segmentedOption:active {
+  background-color: color-mix(in srgb, var(--palette-common-black, #000000), transparent 88%);
+}
+
+.segmentedOption.primary:hover {
+  background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 85%);
+}
+
+.segmentedOption.primary:active {
+  background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 76%);
+}
+
+.segmentedOption.selected, .segmentedOption.primary.selected {
+  background-color: var(--palette-common-white, #ffffff);
+  box-shadow:
+    0 1px 2px 0 rgba(0,0,0,.03), 
+    0 1px 6px -1px rgba(0,0,0,.02), 
+    0 2px 4px 0 rgba(0,0,0,.02);
+}
+
+.segmentedOption.vertical, .segmentedOption.primary.vertical {
+  flex-direction: column;
+}
+
+.segmentedOption.disabled, .segmentedOption.primary.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
