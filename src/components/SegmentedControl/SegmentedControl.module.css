@@ -78,7 +78,6 @@
 
 .segmentedOption.vertical, .segmentedOption.primary.vertical {
   flex-direction: column;
-  gap: calc(var(--spacing-gap-sm, 8) * 1px);
 }
 
 .segmentedOption.disabled, .segmentedOption.primary.disabled {
