@@ -210,7 +210,7 @@ exports[`Theme to Variables generate darkTheme CSS variables 1`] = `
   "--typography-link-fontSize": 14,
   "--typography-link-fontWeight": 400,
   "--typography-link-lineHeight": 16,
-  "--typography-link-textdecoration": "underline",
+  "--typography-link-textDecoration": "underline",
 }
 `;
 
@@ -426,6 +426,6 @@ exports[`Theme to Variables generate lightTheme CSS variables 1`] = `
   "--typography-link-fontSize": 14,
   "--typography-link-fontWeight": 400,
   "--typography-link-lineHeight": 16,
-  "--typography-link-textdecoration": "underline",
+  "--typography-link-textDecoration": "underline",
 }
 `;

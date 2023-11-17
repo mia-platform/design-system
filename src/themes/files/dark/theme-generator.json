@@ -215,7 +215,7 @@
         "$type": "dimension",
         "$value": "{fontWeights.regular}"
       },
-      "textdecoration": {
+      "textDecoration": {
         "$type": "string",
         "$value": "{textDecoration.underline}"
       }
