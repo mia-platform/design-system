@@ -18,7 +18,6 @@
 
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
-import classnames from 'classnames'
 
 import { Hierarchies, Item, Modes } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
@@ -130,7 +129,7 @@ export const Menu = ({
         paragraph={{ rows: 6, width: ['30%', '80%', '65%', '30%', '70%', '60%'] }}
       >
         <AntMenu
-          className={classnames([menu])}
+          className={menu}
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
           inlineCollapsed={isCollapsed}

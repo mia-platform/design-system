@@ -31,8 +31,8 @@ import { Item } from './Menu.types'
  */
 function formatLabels(
   items: Item[] = [],
-  selectedItem: string | undefined,
-  isCollapsed: boolean | undefined
+  selectedItem?: string,
+  isCollapsed?: boolean
 ): ItemType[] {
   return items.map(({ title, label, type, key, children, icon, ...item }) => {
     if (type === 'group' && isCollapsed) {

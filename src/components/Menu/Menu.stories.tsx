@@ -23,13 +23,8 @@ import { Hierarchies, Modes } from './Menu.types'
 import { category, divider, group, item } from './Menu.mocks'
 import { Menu } from './'
 
-const figmaUrl = 'https://www.figma.com/file/0ar6alIEDe8iYCb8kU7Rxd/%5BDS%5D-Console-Mia-Platform?node-id=987%3A10396&mode=dev'
-
 const meta = {
   component: Menu,
-  parameters: {
-    design: { type: 'figma', url: figmaUrl },
-  },
   args: {
     ...Menu.defaultProps,
     items: [

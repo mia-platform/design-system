@@ -18,7 +18,7 @@
 
 import { MenuItemType } from 'antd/es/menu/hooks/useItems'
 
-export type Item = { type?: string, children?: Item[] } & MenuItemType
+export type Item = MenuItemType & { type?: string, children?: Item[] }
 
 export enum Hierarchies {
   Default = 'default',

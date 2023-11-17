@@ -24,23 +24,20 @@ import { Modes } from './Menu.types'
 
 const { Vertical } = Modes
 
+const items = [item, group, divider, category]
+
+/*
+ * Ant natively allows the menu to be collapsed even in `vertical` mode, but advises against doing so
+ * (in fact, the reference prop is called `inlineCollapsed`).
+ * Since we want to make the menu collapsible in `vertical` mode as well, we decided to hide this warning.
+ */
+const originalErr = global.console.error.bind(global.console.error)
+const warningToSuppress = 'Warning: [antd: Menu] `inlineCollapsed` should only be used when `mode` is inline.'
+
 describe('Menu Component', () => {
-  const originalErr = global.console.error.bind(global.console.error)
-  const warningToSuppress = 'Warning: [antd: Menu] `inlineCollapsed` should only be used when `mode` is inline.'
-
-  beforeAll(() => {
-    global.console.error = (msg) => !msg.toString().includes(warningToSuppress) && originalErr(msg)
-  })
-
-  afterAll(() => {
-    global.console.error = originalErr
-  })
-
   beforeEach(() => {
     jest.resetAllMocks()
   })
-
-  const items = [item, group, divider, category]
 
   test('renders inline menu correctly', async() => {
     const { asFragment } = render(<Menu items={items} />)
@@ -48,8 +45,12 @@ describe('Menu Component', () => {
   })
 
   test('renders vertical menu correctly', async() => {
+    global.console.error = (msg) => !msg.toString().includes(warningToSuppress) && originalErr(msg)
+
     const { asFragment } = render(<Menu items={items} mode={Vertical} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
+
+    global.console.error = originalErr
   })
 
   test('renders collapsed menu correctly', async() => {
