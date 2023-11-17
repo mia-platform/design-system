@@ -43,11 +43,11 @@
  * {@link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration}
  */
 type TextFormat = {
+  fontSize: number,
+  fontWeight: number,
   fontFamily: string,
-  fontSize: string,
-  fontWeight: string,
   fontStyle?: string,
-  lineHeight?: string,
+  lineHeight?: number,
   letterspacing?: string,
   textDecoration?: string,
 }

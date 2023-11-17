@@ -34,9 +34,9 @@ type Index = number
 type Shadow = string
 
 /**
- * Scale of elevations from lower to higher.
+ * Elevation of elements from background, ranging from 0 (lowest) to 500 (highest).
  */
-type Elevation = 0 | 100 | 200 | 300 | 400 | 500
+type Elevation = 0 | 100 | 200 | 300 | 400 | 500 | 600
 
 /**
  * Scale of indexes for each elevation value.
