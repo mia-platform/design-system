@@ -23,6 +23,7 @@ export default {
   },
   coveragePathIgnorePatterns: [
     "/node_modules/",
-    "/src/setupTests.ts"
+    "/src/setupTests.ts",
+    "/src/utils/log.ts"
   ]
 }

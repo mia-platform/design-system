@@ -16,21 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Indexes, Shadows } from './elevation'
-import Palette from './palette'
-import Shape from './shape'
-import Spacing from './spacing'
-import Transitions from './animation'
-import Typography from './typography'
+import { MenuItemType } from 'antd/es/menu/hooks/useItems'
 
-type Theme = {
-  palette: Palette,
-  shape: Shape,
-  spacing: Spacing,
-  typography: Typography,
-  shadows?: Shadows,
-  transitions?: Transitions,
-  zIndex?: Indexes,
+export type Item = MenuItemType & { type?: string, children?: Item[] }
+
+export enum Hierarchies {
+  Default = 'default',
+  Primary = 'primary',
 }
 
-export default Theme
+export enum Modes {
+  Inline = 'inline',
+  Vertical = 'vertical',
+}
