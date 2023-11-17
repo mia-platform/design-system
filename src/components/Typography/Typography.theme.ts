@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ComponentsTheme, parse } from '../ThemeProvider/Ant'
+import { ComponentsTheme } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
 /**
@@ -41,12 +41,12 @@ const getRelativeLineHeight = (lineHeight?: number, fontSize?: number): number |
  * @returns {Partial<ComponentsTheme>} The generated Typography Ant theme configuration.
  */
 export default ({ typography }: Partial<Theme>): ComponentsTheme['Typography'] => ({
-  fontSizeHeading1: parse(typography?.h1?.fontSize),
-  fontSizeHeading2: parse(typography?.h2?.fontSize),
-  fontSizeHeading3: parse(typography?.h3?.fontSize),
-  fontSizeHeading4: parse(typography?.h4?.fontSize),
-  lineHeightHeading1: getRelativeLineHeight(parse(typography?.h1?.lineHeight), parse(typography?.h1?.fontSize)),
-  lineHeightHeading2: getRelativeLineHeight(parse(typography?.h2?.lineHeight), parse(typography?.h2?.fontSize)),
-  lineHeightHeading3: getRelativeLineHeight(parse(typography?.h3?.lineHeight), parse(typography?.h3?.fontSize)),
-  lineHeightHeading4: getRelativeLineHeight(parse(typography?.h4?.lineHeight), parse(typography?.h4?.fontSize)),
+  fontSizeHeading1: typography?.h1?.fontSize,
+  fontSizeHeading2: typography?.h2?.fontSize,
+  fontSizeHeading3: typography?.h3?.fontSize,
+  fontSizeHeading4: typography?.h4?.fontSize,
+  lineHeightHeading1: getRelativeLineHeight(typography?.h1?.lineHeight, typography?.h1?.fontSize),
+  lineHeightHeading2: getRelativeLineHeight(typography?.h2?.lineHeight, typography?.h2?.fontSize),
+  lineHeightHeading3: getRelativeLineHeight(typography?.h3?.lineHeight, typography?.h3?.fontSize),
+  lineHeightHeading4: getRelativeLineHeight(typography?.h4?.lineHeight, typography?.h4?.fontSize),
 })

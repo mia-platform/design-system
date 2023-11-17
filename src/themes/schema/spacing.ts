@@ -17,11 +17,9 @@
  */
 
 /**
- * Unit value expressing a distance.
+ * Unit value expressing a dimension (in pixels).
  *
  * @example 2px
- * @example 50%
- * @example 0.5em
  * @example 16
  */
 type Space = string | number

@@ -351,7 +351,7 @@
       },
       "sm": {
         "$type": "dimension",
-        "$value": "{spacing.xs}"
+        "$value": "{spacing.sm}"
       },
       "md": {
         "$type": "dimension",
@@ -377,7 +377,7 @@
       },
       "sm": {
         "$type": "dimension",
-        "$value": "{spacing.xs}"
+        "$value": "{spacing.sm}"
       },
       "md": {
         "$type": "dimension",
@@ -403,7 +403,7 @@
       },
       "sm": {
         "$type": "dimension",
-        "$value": "{spacing.xs}"
+        "$value": "{spacing.sm}"
       },
       "md": {
         "$type": "dimension",

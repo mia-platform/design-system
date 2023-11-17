@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ComponentsTheme, parse } from '../ThemeProvider/Ant'
+import { ComponentsTheme } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
 /**
@@ -28,7 +28,7 @@ import Theme from '../../themes/schema'
  * @returns {Partial<ComponentsTheme>} The generated Button Ant theme configuration.
  */
 export default ({ typography }: Partial<Theme>): ComponentsTheme['Button'] => ({
-  contentFontSizeSM: parse(typography?.action?.fontSize),
-  contentFontSize: parse(typography?.action?.fontSize),
-  contentFontSizeLG: parse(typography?.action?.fontSize),
+  contentFontSizeSM: typography?.action?.fontSize,
+  contentFontSize: typography?.action?.fontSize,
+  contentFontSizeLG: typography?.action?.fontSize,
 })

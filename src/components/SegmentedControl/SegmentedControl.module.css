@@ -28,14 +28,14 @@
   gap: 2px; /* does not change with theme */
   padding: 2px; /* does not change with theme */
   border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
-  background-color:  var(--palette-common-grey-100, #f5f5f5);
+  background-color:  var(--palette-background-neutral-100, #e5e5e5);
   font-family: var(--typography-caption-fontFamily, Inter);
   font-weight: var(--typography-caption-fontWeight, 400);
   font-size: calc(var(--typography-caption-fontSize, 12) * 1px);
 }
 
 .segmented.primary {
-  background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 85%);
+  background-color: var(--palette-background-primary-100, #d4e7ff);
 }
 
 .segmentedOption {
@@ -53,19 +53,19 @@
 }
 
 .segmentedOption:hover {
-  background-color: color-mix(in srgb, var(--palette-common-black, #000000), transparent 92%);
+  background-color: var(--palette-action-alternate-secondary-hover, #00000014);
 }
 
 .segmentedOption:active {
-  background-color: color-mix(in srgb, var(--palette-common-black, #000000), transparent 88%);
+  background-color: var(--palette-action-alternate-secondary-active, #0000000a);
 }
 
 .segmentedOption.primary:hover {
-  background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 85%);
+  background-color: var(--palette-action-alternate-primary-hover, #1890ff29);
 }
 
 .segmentedOption.primary:active {
-  background-color: color-mix(in srgb, var(--palette-primary-main, #1890FF), transparent 76%);
+  background-color: var(--palette-action-alternate-primary-active, #1890ff14);
 }
 
 .segmentedOption.selected, .segmentedOption.primary.selected {

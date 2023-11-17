@@ -99,3 +99,7 @@ type Palette = {
 }
 
 export default Palette
+
+export type {
+  Color,
+}

@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Color } from './palette'
+
 /**
  * Position on the cartesian axis perpendicular to the screen.
  *
@@ -31,10 +33,16 @@ type Index = number
  * @example 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
  * @example inset 5em 1em white;
  */
-type Shadow = string
+type Shadow = {
+  offsetX: string,
+  offsetY: string,
+  blur: string,
+  spread: string,
+  color: Color
+}
 
 /**
- * Elevation of elements from background, ranging from 0 (lowest) to 500 (highest).
+ * Elevation of elements from background, ranging from 0 (lowest) to 600 (highest).
  */
 type Elevation = 0 | 100 | 200 | 300 | 400 | 500 | 600
 
