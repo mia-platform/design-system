@@ -23,7 +23,6 @@ import Spacing from './spacing'
 import Transitions from './animation'
 import Typography from './typography'
 
-
 type Theme = {
   palette: Palette,
   shape: Shape,
@@ -31,7 +30,7 @@ type Theme = {
   typography: Typography,
   shadows?: Shadows,
   transitions?: Transitions,
-  zIndex?: Indexes
+  zIndex?: Indexes,
 }
 
 export default Theme

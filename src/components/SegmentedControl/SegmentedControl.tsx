@@ -40,8 +40,8 @@ export type SegmentedControlProps = {
  /**
    * Defines the segmented hierarchy. Either:
    *
-   * - primary: segmented associated with the most significant (and therefore primary) action on the page;
-   * - neutral: segmented associated with a general purpose action;
+   * - primary: segmented associated with the most significant (and therefore primary) action on the page
+   * - neutral: segmented associated with a general purpose action
    */
   hierarchy?: Hierarchies,
 
@@ -52,6 +52,7 @@ export type SegmentedControlProps = {
 
   /**
    * A callback function that is invoked when the selected option changes.
+   *
    * @param {Option} option - The newly selected option.
    * @param {MouseEvent} event - The event linked to the mouse click.
    */

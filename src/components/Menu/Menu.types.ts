@@ -16,4 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export { Menu } from './Menu'
+import { MenuItemType } from 'antd/es/menu/hooks/useItems'
+
+export type Item = { type?: string, children?: Item[] } & MenuItemType
+
+export enum Hierarchies {
+  Default = 'default',
+  Primary = 'primary',
+}
+
+export enum Modes {
+  Inline = 'inline',
+  Vertical = 'vertical',
+}

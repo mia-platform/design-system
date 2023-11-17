@@ -79,7 +79,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
   },
   components: {
     Button: ButtonTheme({ typography }),
-    Menu: MenuTheme({ spacing, typography }),
+    Menu: MenuTheme({ palette, shape, spacing, typography }),
     Typography: TypographyTheme({ typography }),
   },
 })

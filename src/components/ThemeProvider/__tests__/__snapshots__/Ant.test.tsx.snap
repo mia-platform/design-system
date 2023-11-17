@@ -9,6 +9,14 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "contentFontSizeLG": 16,
       "contentFontSizeSM": 16,
     },
+    "Menu": {
+      "activeBarBorderWidth": 0,
+      "groupTitleColor": "#858585",
+      "groupTitleFontSize": 12,
+      "groupTitleLineHeight": 1,
+      "iconSize": 16,
+      "itemHeight": 24,
+    },
     "Typography": {
       "fontSizeHeading1": 24,
       "fontSizeHeading2": 20,
@@ -48,6 +56,14 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "contentFontSizeLG": undefined,
       "contentFontSizeSM": undefined,
     },
+    "Menu": {
+      "activeBarBorderWidth": 0,
+      "groupTitleColor": undefined,
+      "groupTitleFontSize": undefined,
+      "groupTitleLineHeight": 1,
+      "iconSize": undefined,
+      "itemHeight": 32,
+    },
     "Typography": {
       "fontSizeHeading1": undefined,
       "fontSizeHeading2": undefined,
@@ -86,6 +102,14 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "contentFontSize": 14,
       "contentFontSizeLG": 14,
       "contentFontSizeSM": 14,
+    },
+    "Menu": {
+      "activeBarBorderWidth": 0,
+      "groupTitleColor": "#858585",
+      "groupTitleFontSize": 12,
+      "groupTitleLineHeight": 1,
+      "iconSize": 16,
+      "itemHeight": 32,
     },
     "Typography": {
       "fontSizeHeading1": 24,
