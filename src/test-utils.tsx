@@ -44,7 +44,6 @@ const TestWrapper = ({ children }: {children: ReactElement}): ReactElement => (
  *
  * @param {ReactElement} element - The React element to be rendered.
  * @param {RenderOptions} [options] - Options for rendering.
- * @param {ReactElement} [options.wrapper] - The wrapper component to be used during rendering.
  * @returns {RenderResult} The result of rendering the React element.
  */
 const customRender = (
