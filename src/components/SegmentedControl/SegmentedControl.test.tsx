@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from 'test-utils'
 
 import { Hierarchies, OptionsAlignments } from './SegmentedControl.types'
 import { labeledOptions, stringOptions } from './SegmentedControl.mocks'

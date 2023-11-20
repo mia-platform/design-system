@@ -110,4 +110,5 @@ export type ComponentsTheme = NonNullable<ThemeConfig['components']>
 export {
   AntThemeProvider,
   generateAntTheme,
+  parse,
 }

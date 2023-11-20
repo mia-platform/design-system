@@ -18,25 +18,29 @@
 
 import { ItemType } from 'antd/es/menu/hooks/useItems'
 
-import { Item } from './Menu.types'
+import { Hierarchies, Item } from './Menu.types'
+
+const { Primary } = Hierarchies
 
 /**
  * Formats menu items to ensure optimal display.
  *
  * @param {items} items - Menu items to format.
- * @param {selectedItem} selectedItem - The currently selected menu item.
- * @param {isCollapsed} isCollapsed - Whether the menu is collapsed.
+ * @param {string} selectedItem - The currently selected menu item.
+ * @param {boolean} isCollapsed - Whether the menu is collapsed.
+ * @param {Hierarchies} hierarchy - Whether the menu is primary.
  *
  * @returns {ItemType[]} array of formatted menu items.
  */
 function formatLabels(
   items: Item[] = [],
   selectedItem?: string,
-  isCollapsed?: boolean
+  isCollapsed?: boolean,
+  hierarchy?: Hierarchies
 ): ItemType[] {
   return items.map(({ title, label, type, key, children, icon, ...item }) => {
     if (type === 'group' && isCollapsed) {
-      return formatLabels(children, selectedItem, isCollapsed)
+      return formatLabels(children, selectedItem, isCollapsed, hierarchy)
     }
 
     return {
@@ -50,13 +54,13 @@ function formatLabels(
         label: typeof label === 'string' && label?.toUpperCase(),
         title: title?.toUpperCase(),
       },
-      ...selectedItem === key && {
+      ...selectedItem === key && hierarchy === Primary && {
         style: {
           boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)',
         },
       },
       ...children && Array.isArray(children) && {
-        children: formatLabels(children, selectedItem, isCollapsed),
+        children: formatLabels(children, selectedItem, isCollapsed, hierarchy),
       },
     }
   }).flat()
