@@ -31,7 +31,7 @@ export default ({ palette, shape, spacing, typography }: Partial<Theme>): Compon
   groupTitleColor: palette?.common?.grey?.[500],
   groupTitleFontSize: typography?.caption?.fontSize,
   groupTitleLineHeight: 1,
-  iconSize: parse(shape?.size?.xl),
+  iconSize: parse(shape?.size?.md),
   itemHeight: (typography?.bodyM?.lineHeight ?? 24) + (parse(spacing?.padding?.sm) ?? 8),
   itemActiveBg: palette?.action?.alternate?.primary?.active,
   itemHoverBg: palette?.action?.alternate?.secondary?.hover,
