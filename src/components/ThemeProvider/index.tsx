@@ -75,6 +75,7 @@ ThemeProvider.defaultProps = {
 }
 
 export {
+  defaultTheme,
   ThemeProvider,
   ThemeContext,
 }

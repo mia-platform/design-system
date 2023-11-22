@@ -19,7 +19,7 @@
 /* eslint-disable func-names */
 /* eslint-disable react/display-name */
 
-import { renderHook } from '@testing-library/react'
+import { renderHook } from 'test-utils'
 
 import { ThemeProvider, ThemeProviderProps } from '../../components/ThemeProvider'
 import Theme from '../../themes/schema'

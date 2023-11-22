@@ -15,6 +15,10 @@ export default {
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
   ],
+  moduleDirectories: [
+    'node_modules',
+    'src'
+  ],
   moduleNameMapper: {
     '\\.(css|less)$': 'identity-obj-proxy',
   },
@@ -24,6 +28,7 @@ export default {
   coveragePathIgnorePatterns: [
     "/node_modules/",
     "/src/setupTests.ts",
+    "/src/test-utils.tsx",
     "/src/utils/log.ts"
   ]
 }

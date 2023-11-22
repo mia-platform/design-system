@@ -1,8 +1,9 @@
-/.git
-/.yarn
-/coverage
-/tmp
+.git
 .next
-build
-node_modules
 .nyc_output
+.yarn
+dist
+coverage
+node_modules
+storybook-static
+tmp
