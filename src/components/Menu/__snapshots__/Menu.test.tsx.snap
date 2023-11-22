@@ -1,0 +1,827 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Component renders category correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu css-dev-only-do-not-override-1ocdu3z"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-item-group"
+      role="presentation"
+    >
+      <div
+        class="ant-menu-item-group-title"
+        role="presentation"
+        title="CATEGORY"
+      >
+        CATEGORY
+      </div>
+      <ul
+        class="ant-menu-item-group-list"
+        role="group"
+      >
+        <li
+          class="ant-menu-item"
+          data-menu-id="rc-menu-uuid-test-category item 1"
+          role="menuitem"
+          style="padding-left: 12px;"
+          tabindex="-1"
+          title="Category Item 1"
+        >
+          <div
+            class="ant-menu-item-icon"
+          >
+            <svg
+              alt="PiSun"
+              aria-label="PiSun"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </div>
+          <span
+            class="ant-menu-title-content"
+          >
+            Category Item 1
+          </span>
+        </li>
+        <li
+          class="ant-menu-item"
+          data-menu-id="rc-menu-uuid-test-category item 2"
+          role="menuitem"
+          style="padding-left: 12px;"
+          tabindex="-1"
+          title="Category Item 2"
+        >
+          <div
+            class="ant-menu-item-icon"
+          >
+            <svg
+              alt="PiMoon"
+              aria-label="PiMoon"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
+              />
+            </svg>
+          </div>
+          <span
+            class="ant-menu-title-content"
+          >
+            Category Item 2
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders collapsed menu correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-vertical ant-menu-light menu ant-menu-inline-collapsed css-dev-only-do-not-override-1ocdu3z"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-item"
+      data-menu-id="rc-menu-uuid-test-item"
+      role="menuitem"
+      tabindex="-1"
+      title="Item"
+    >
+      <div
+        class="ant-menu-item-icon"
+      >
+        <svg
+          alt="PiStar"
+          aria-label="PiStar"
+          color="currentColor"
+          fill="currentColor"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: currentColor;"
+          viewBox="0 0 256 256"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+          />
+        </svg>
+      </div>
+      <span
+        class="ant-menu-title-content"
+      >
+        Item
+      </span>
+    </li>
+    <li
+      class="ant-menu-submenu ant-menu-submenu-vertical"
+      role="none"
+    >
+      <div
+        aria-controls="rc-menu-uuid-test-group-popup"
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="ant-menu-submenu-title"
+        data-menu-id="rc-menu-uuid-test-group"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <div
+          class="ant-menu-item-icon"
+        >
+          <svg
+            alt="PiSnowflake"
+            aria-label="PiSnowflake"
+            color="currentColor"
+            fill="currentColor"
+            height="16"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"
+            />
+          </svg>
+        </div>
+        <span
+          class="ant-menu-title-content"
+        >
+          Group
+        </span>
+        <i
+          class="ant-menu-submenu-arrow"
+        />
+      </div>
+    </li>
+    <li
+      class="ant-menu-item-divider"
+      role="separator"
+    />
+    <li
+      class="ant-menu-item"
+      data-menu-id="rc-menu-uuid-test-category item 1"
+      role="menuitem"
+      tabindex="-1"
+      title="Category Item 1"
+    >
+      <div
+        class="ant-menu-item-icon"
+      >
+        <svg
+          alt="PiSun"
+          aria-label="PiSun"
+          color="currentColor"
+          fill="currentColor"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: currentColor;"
+          viewBox="0 0 256 256"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
+          />
+        </svg>
+      </div>
+      <span
+        class="ant-menu-title-content"
+      >
+        Category Item 1
+      </span>
+    </li>
+    <li
+      class="ant-menu-item"
+      data-menu-id="rc-menu-uuid-test-category item 2"
+      role="menuitem"
+      tabindex="-1"
+      title="Category Item 2"
+    >
+      <div
+        class="ant-menu-item-icon"
+      >
+        <svg
+          alt="PiMoon"
+          aria-label="PiMoon"
+          color="currentColor"
+          fill="currentColor"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: currentColor;"
+          viewBox="0 0 256 256"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
+          />
+        </svg>
+      </div>
+      <span
+        class="ant-menu-title-content"
+      >
+        Category Item 2
+      </span>
+    </li>
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders divider correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu css-dev-only-do-not-override-1ocdu3z"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-item-divider"
+      role="separator"
+    />
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders group correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu css-dev-only-do-not-override-1ocdu3z"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-submenu ant-menu-submenu-inline"
+      role="none"
+    >
+      <div
+        aria-controls="rc-menu-uuid-test-group-popup"
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="ant-menu-submenu-title"
+        data-menu-id="rc-menu-uuid-test-group"
+        role="menuitem"
+        style="padding-left: 12px;"
+        tabindex="-1"
+      >
+        <div
+          class="ant-menu-item-icon"
+        >
+          <svg
+            alt="PiSnowflake"
+            aria-label="PiSnowflake"
+            color="currentColor"
+            fill="currentColor"
+            height="16"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"
+            />
+          </svg>
+        </div>
+        <span
+          class="ant-menu-title-content"
+        >
+          Group
+        </span>
+        <i
+          class="ant-menu-submenu-arrow"
+        />
+      </div>
+    </li>
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders inline menu correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu css-dev-only-do-not-override-1ocdu3z"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-item"
+      data-menu-id="rc-menu-uuid-test-item"
+      role="menuitem"
+      style="padding-left: 12px;"
+      tabindex="-1"
+      title="Item"
+    >
+      <div
+        class="ant-menu-item-icon"
+      >
+        <svg
+          alt="PiStar"
+          aria-label="PiStar"
+          color="currentColor"
+          fill="currentColor"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: currentColor;"
+          viewBox="0 0 256 256"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+          />
+        </svg>
+      </div>
+      <span
+        class="ant-menu-title-content"
+      >
+        Item
+      </span>
+    </li>
+    <li
+      class="ant-menu-submenu ant-menu-submenu-inline"
+      role="none"
+    >
+      <div
+        aria-controls="rc-menu-uuid-test-group-popup"
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="ant-menu-submenu-title"
+        data-menu-id="rc-menu-uuid-test-group"
+        role="menuitem"
+        style="padding-left: 12px;"
+        tabindex="-1"
+      >
+        <div
+          class="ant-menu-item-icon"
+        >
+          <svg
+            alt="PiSnowflake"
+            aria-label="PiSnowflake"
+            color="currentColor"
+            fill="currentColor"
+            height="16"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"
+            />
+          </svg>
+        </div>
+        <span
+          class="ant-menu-title-content"
+        >
+          Group
+        </span>
+        <i
+          class="ant-menu-submenu-arrow"
+        />
+      </div>
+    </li>
+    <li
+      class="ant-menu-item-divider"
+      role="separator"
+    />
+    <li
+      class="ant-menu-item-group"
+      role="presentation"
+    >
+      <div
+        class="ant-menu-item-group-title"
+        role="presentation"
+        title="CATEGORY"
+      >
+        CATEGORY
+      </div>
+      <ul
+        class="ant-menu-item-group-list"
+        role="group"
+      >
+        <li
+          class="ant-menu-item"
+          data-menu-id="rc-menu-uuid-test-category item 1"
+          role="menuitem"
+          style="padding-left: 12px;"
+          tabindex="-1"
+          title="Category Item 1"
+        >
+          <div
+            class="ant-menu-item-icon"
+          >
+            <svg
+              alt="PiSun"
+              aria-label="PiSun"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </div>
+          <span
+            class="ant-menu-title-content"
+          >
+            Category Item 1
+          </span>
+        </li>
+        <li
+          class="ant-menu-item"
+          data-menu-id="rc-menu-uuid-test-category item 2"
+          role="menuitem"
+          style="padding-left: 12px;"
+          tabindex="-1"
+          title="Category Item 2"
+        >
+          <div
+            class="ant-menu-item-icon"
+          >
+            <svg
+              alt="PiMoon"
+              aria-label="PiMoon"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
+              />
+            </svg>
+          </div>
+          <span
+            class="ant-menu-title-content"
+          >
+            Category Item 2
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders item correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu css-dev-only-do-not-override-1ocdu3z"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-item"
+      data-menu-id="rc-menu-uuid-test-item"
+      role="menuitem"
+      style="padding-left: 12px;"
+      tabindex="-1"
+      title="Item"
+    >
+      <div
+        class="ant-menu-item-icon"
+      >
+        <svg
+          alt="PiStar"
+          aria-label="PiStar"
+          color="currentColor"
+          fill="currentColor"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: currentColor;"
+          viewBox="0 0 256 256"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+          />
+        </svg>
+      </div>
+      <span
+        class="ant-menu-title-content"
+      >
+        Item
+      </span>
+    </li>
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders skeleton correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-skeleton ant-skeleton-active css-dev-only-do-not-override-1ocdu3z"
+  >
+    <div
+      class="ant-skeleton-content"
+    >
+      <h3
+        class="ant-skeleton-title"
+        style="width: 38%;"
+      />
+      <ul
+        class="ant-skeleton-paragraph"
+      >
+        <li
+          style="width: 30%;"
+        />
+        <li
+          style="width: 80%;"
+        />
+        <li
+          style="width: 65%;"
+        />
+        <li
+          style="width: 30%;"
+        />
+        <li
+          style="width: 70%;"
+        />
+        <li
+          style="width: 60%;"
+        />
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Menu Component renders vertical menu correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="ant-menu ant-menu-root ant-menu-vertical ant-menu-light menu css-dev-only-do-not-override-1ocdu3z"
+    data-menu-list="true"
+    role="menu"
+    tabindex="0"
+  >
+    <li
+      class="ant-menu-item"
+      data-menu-id="rc-menu-uuid-test-item"
+      role="menuitem"
+      tabindex="-1"
+      title="Item"
+    >
+      <div
+        class="ant-menu-item-icon"
+      >
+        <svg
+          alt="PiStar"
+          aria-label="PiStar"
+          color="currentColor"
+          fill="currentColor"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: currentColor;"
+          viewBox="0 0 256 256"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+          />
+        </svg>
+      </div>
+      <span
+        class="ant-menu-title-content"
+      >
+        Item
+      </span>
+    </li>
+    <li
+      class="ant-menu-submenu ant-menu-submenu-vertical"
+      role="none"
+    >
+      <div
+        aria-controls="rc-menu-uuid-test-group-popup"
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="ant-menu-submenu-title"
+        data-menu-id="rc-menu-uuid-test-group"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <div
+          class="ant-menu-item-icon"
+        >
+          <svg
+            alt="PiSnowflake"
+            aria-label="PiSnowflake"
+            color="currentColor"
+            fill="currentColor"
+            height="16"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"
+            />
+          </svg>
+        </div>
+        <span
+          class="ant-menu-title-content"
+        >
+          Group
+        </span>
+        <i
+          class="ant-menu-submenu-arrow"
+        />
+      </div>
+    </li>
+    <li
+      class="ant-menu-item-divider"
+      role="separator"
+    />
+    <li
+      class="ant-menu-item-group"
+      role="presentation"
+    >
+      <div
+        class="ant-menu-item-group-title"
+        role="presentation"
+        title="CATEGORY"
+      >
+        CATEGORY
+      </div>
+      <ul
+        class="ant-menu-item-group-list"
+        role="group"
+      >
+        <li
+          class="ant-menu-item"
+          data-menu-id="rc-menu-uuid-test-category item 1"
+          role="menuitem"
+          tabindex="-1"
+          title="Category Item 1"
+        >
+          <div
+            class="ant-menu-item-icon"
+          >
+            <svg
+              alt="PiSun"
+              aria-label="PiSun"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </div>
+          <span
+            class="ant-menu-title-content"
+          >
+            Category Item 1
+          </span>
+        </li>
+        <li
+          class="ant-menu-item"
+          data-menu-id="rc-menu-uuid-test-category item 2"
+          role="menuitem"
+          tabindex="-1"
+          title="Category Item 2"
+        >
+          <div
+            class="ant-menu-item-icon"
+          >
+            <svg
+              alt="PiMoon"
+              aria-label="PiMoon"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
+              />
+            </svg>
+          </div>
+          <span
+            class="ant-menu-title-content"
+          >
+            Category Item 2
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div
+    aria-hidden="true"
+    style="display: none;"
+  />
+</DocumentFragment>
+`;

@@ -20,6 +20,7 @@ import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
 import ButtonTheme from '../Button/Button.theme'
+import MenuTheme from '../Menu/Menu.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from '.'
 import TypographyTheme from '../Typography/Typography.theme'
@@ -78,6 +79,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
   },
   components: {
     Button: ButtonTheme({ typography }),
+    Menu: MenuTheme({ palette, shape, spacing, typography }),
     Typography: TypographyTheme({ typography }),
   },
 })
