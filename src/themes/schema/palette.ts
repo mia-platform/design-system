@@ -25,7 +25,7 @@ import { Elevation } from './elevation'
 type Color = string
 
 /**
- * Color intensity level ranging from 50 (lightest) to 900 (darkest).
+ * Color intensity level, ranging from 50 (lightest) to 900 (darkest).
  */
 type Intensity = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 600 | 700 | 800 | 900
 
