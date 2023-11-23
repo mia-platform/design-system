@@ -19,12 +19,12 @@
 import { MouseEvent, ReactElement, useCallback, useState } from 'react'
 import classnames from 'classnames'
 
-import { Hierarchies, Option, OptionsAlignments } from './SegmentedControl.types'
+import { Option, SegmentedControlHierarchy, SegmentedControlOptionAlignment } from './SegmentedControl.types'
 import { getOptionKey, isDisabledOption, isString, isVerticalOption, resolveKey } from './SegmentedControl.utils'
 import styles from './SegmentedControl.module.css'
 
-const { Neutral, Primary } = Hierarchies
-const { Horizontal, Vertical } = OptionsAlignments
+const { Neutral, Primary } = SegmentedControlHierarchy
+const { Horizontal, Vertical } = SegmentedControlOptionAlignment
 const { segmented, segmentedOption, primary, disabled, selected, vertical } = styles
 
 export type SegmentedControlProps = {
@@ -43,7 +43,7 @@ export type SegmentedControlProps = {
    * - primary: segmented associated with the most significant (and therefore primary) action on the page
    * - neutral: segmented associated with a general purpose action
    */
-  hierarchy?: Hierarchies,
+  hierarchy?: SegmentedControlHierarchy,
 
   /**
    * Determines whether the segmented control is disabled.
@@ -76,7 +76,7 @@ export type SegmentedControlProps = {
    * - horizontal: icons and labels of every option are aligned horizontally
    * - vertical: icons and labels of every option are aligned vertically
    */
-  optionsAlignment?: OptionsAlignments
+  optionsAlignment?: SegmentedControlOptionAlignment
 
  /**
    * The current selected value. Either one of the following:

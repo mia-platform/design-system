@@ -17,6 +17,9 @@
  */
 
 import { Icon } from '../Icon'
+import { MenuItemType } from './Menu.types'
+
+const { Category, Divider } = MenuItemType
 
 export const item = {
   key: 'item',
@@ -48,7 +51,7 @@ export const group = {
 export const category = {
   key: 'category',
   label: 'Category',
-  type: 'group',
+  type: Category,
   children: [
     {
       key: 'category item 1',
@@ -67,6 +70,6 @@ export const category = {
 
 export const divider = {
   key: 'divider',
-  type: 'divider',
+  type: Divider,
   dashed: false,
 }

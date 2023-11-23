@@ -19,15 +19,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './Button.types'
+import { ButtonHierarchy, ButtonIconPosition, ButtonShape, ButtonSize, ButtonType } from './Button.types'
 import { Button } from '.'
 import { Icon } from '../Icon'
 
-const { Primary, Neutral, Danger } = ButtonHierarchies
-const { Left, Right } = ButtonIconPositions
-const { Square, Circle } = ButtonShapes
-const { Small, Middle, Large } = ButtonSizes
-const { Filled, Outlined, Ghost } = ButtonTypes
+const { Primary, Neutral, Danger } = ButtonHierarchy
+const { Left, Right } = ButtonIconPosition
+const { Square, Circle } = ButtonShape
+const { Small, Middle, Large } = ButtonSize
+const { Filled, Outlined, Ghost } = ButtonType
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 

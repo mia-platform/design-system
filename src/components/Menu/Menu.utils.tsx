@@ -18,7 +18,9 @@
 
 import { ItemType } from 'antd/es/menu/hooks/useItems'
 
-import { Item } from './Menu.types'
+import { Item, MenuItemType } from './Menu.types'
+
+const { Category } = MenuItemType
 
 /**
  * Formats menu items to ensure optimal display.
@@ -32,10 +34,10 @@ import { Item } from './Menu.types'
 function formatLabels(
   items: Item[] = [],
   selectedItem?: string,
-  isCollapsed?: boolean
+  isCollapsed?: boolean,
 ): ItemType[] {
   return items.map(({ title, label, type, key, children, icon, ...item }) => {
-    if (type === 'group' && isCollapsed) {
+    if (type === Category && isCollapsed) {
       return formatLabels(children, selectedItem, isCollapsed)
     }
 
@@ -46,7 +48,8 @@ function formatLabels(
       key,
       type,
       icon: icon && <div>{icon}</div>,
-      ...type === 'group' && {
+      ...type === Category && {
+        type: 'group',
         label: typeof label === 'string' && label?.toUpperCase(),
         title: title?.toUpperCase(),
       },

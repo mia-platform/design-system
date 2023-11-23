@@ -20,9 +20,9 @@ import { render, waitFor } from '@testing-library/react'
 
 import { category, divider, group, item } from './Menu.mocks'
 import { Menu } from '.'
-import { Modes } from './Menu.types'
+import { MenuMode } from './Menu.types'
 
-const { Vertical } = Modes
+const { Vertical } = MenuMode
 
 const items = [item, group, divider, category]
 

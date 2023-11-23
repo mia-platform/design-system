@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Option, OptionsAlignments } from './SegmentedControl.types'
+import { Option, SegmentedControlOptionAlignment } from './SegmentedControl.types'
 
-const { Vertical } = OptionsAlignments
+const { Vertical } = SegmentedControlOptionAlignment
 
 /**
  * Type guard function that checks if an element is of type string.
@@ -46,11 +46,11 @@ export function isDisabledOption(option: Option, isDisabled: boolean): boolean {
  * Checks if an option should be aligned vertically.
  *
  * @param {Option} option - The option to check.
- * @param {OptionsAlignments} optionsAlignment - Specifies the alignment of segmented options.
+ * @param {SegmentedControlOptionAlignment} optionsAlignment - Specifies the alignment of segmented options.
  *
  * @returns {boolean} `true` if the option should be aligned vertically, `false` otherwise.
  */
-export function isVerticalOption(option: Option, optionsAlignment: OptionsAlignments): boolean {
+export function isVerticalOption(option: Option, optionsAlignment: SegmentedControlOptionAlignment): boolean {
   return !isString(option) && optionsAlignment === Vertical
 }
 
