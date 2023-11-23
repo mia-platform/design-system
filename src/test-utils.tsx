@@ -23,7 +23,7 @@ import { ReactElement } from 'react'
 import { ThemeContext, defaultTheme } from './components/ThemeProvider'
 
 /**
- * Wraps a React element with the a series of providers for testing purposes.
+ * Wraps a React element with a series of providers for testing purposes.
  *
  * @remarks It adds the default theme to components
  * @remarks It removes the css-do-not-override classes from Ant Design components
