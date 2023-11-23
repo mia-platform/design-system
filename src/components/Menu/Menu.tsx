@@ -71,7 +71,7 @@ export type MenuProps = {
    * - category `object`:
    *    - key: The unique key of the category <br> `React.Key`
    *    - label: The display label of the category <br> `ReactNode`
-   *    - type: The type of the category <br> "category"
+   *    - type: The type of the category <br> `"category"`
    *    - children: The children items within the category <br> `Item[]`
    *
    * - group `object`:
@@ -82,7 +82,7 @@ export type MenuProps = {
    *
    * - divider `object`:
    *    - key: The unique key of the divider <br> `React.Key`
-   *    - type: The type of the divider <br> "divider"
+   *    - type: The type of the divider <br> `"divider"`
    *    - dashed: Indicates whether the divider is dashed <br> `boolean`
    */
   items?: Item[]
