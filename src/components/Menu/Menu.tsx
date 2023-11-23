@@ -65,7 +65,7 @@ export type MenuProps = {
    * - item `object`:
    *    - key: The unique key of the item <br> `React.Key`
    *    - label: The display label of the item <br> `ReactNode`
-   *    - title: The display label of the item <br> `string`
+   *    - title: The display title of the collapsed item <br> `string`
    *    - icon: The icon associated with the item <br> `ReactNode`
    *
    * - category `object`:
