@@ -16,9 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { fireEvent, render, screen } from 'test-utils'
-
 import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './Button.types'
+import { fireEvent, render, screen } from '../../test-utils'
 import { Button } from '.'
 import { Icon } from '../Icon'
 

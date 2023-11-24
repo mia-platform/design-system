@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { fireEvent, render, screen } from 'test-utils'
 
 import { Hierarchies, OptionsAlignments } from './SegmentedControl.types'
+import { fireEvent, render, screen } from '../../test-utils'
 import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
 import { SegmentedControl } from '.'
 

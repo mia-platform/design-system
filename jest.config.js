@@ -15,10 +15,6 @@ export default {
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
   ],
-  moduleDirectories: [
-    'node_modules',
-    'src'
-  ],
   moduleNameMapper: {
     '\\.(css|less)$': 'identity-obj-proxy',
   },
