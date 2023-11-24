@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum BodySizes {
+export enum Size {
   S = 's',
   M = 'm',
   L = 'l',

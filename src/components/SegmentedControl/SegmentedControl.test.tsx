@@ -17,13 +17,13 @@
  */
 
 
-import { Hierarchies, OptionsAlignments } from './SegmentedControl.types'
+import { Hierarchy, OptionAlignment } from './SegmentedControl.types'
 import { fireEvent, render, screen } from '../../test-utils'
 import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
 import { SegmentedControl } from '.'
 
-const { Primary } = Hierarchies
-const { Vertical } = OptionsAlignments
+const { Primary } = Hierarchy
+const { Vertical } = OptionAlignment
 
 describe('Segmented Control Component', () => {
   beforeEach(() => {
