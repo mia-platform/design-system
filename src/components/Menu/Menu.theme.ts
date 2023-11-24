@@ -28,12 +28,14 @@ import Theme from '../../themes/schema'
  * @returns {Partial<ComponentsTheme>} The generated Menu Ant theme configuration.
  */
 export default ({ palette, shape, spacing, typography }: Partial<Theme>): ComponentsTheme['Menu'] => ({
-  groupTitleColor: palette?.common?.grey?.[700],
-  groupTitleFontSize: parse(typography?.caption?.fontSize),
+  groupTitleColor: palette?.common?.grey?.[500],
+  groupTitleFontSize: typography?.caption?.fontSize,
   groupTitleLineHeight: 1,
-  itemHeight: (parse(typography?.bodyS?.lineHeight) ?? 24) + (parse(spacing?.padding?.sm) ?? 8),
-  activeBarBorderWidth: 0,
-  iconSize: parse(shape?.size?.xl),
+  iconSize: parse(shape?.size?.md),
+  itemHeight: (typography?.bodyM?.lineHeight ?? 24) + (parse(spacing?.padding?.sm) ?? 8),
+  itemActiveBg: palette?.action?.alternate?.primary?.active,
+  itemHoverBg: palette?.action?.alternate?.secondary?.hover,
+  itemSelectedBg: palette?.action?.alternate?.primary?.active,
 })
 
 /**
@@ -45,11 +47,9 @@ export default ({ palette, shape, spacing, typography }: Partial<Theme>): Compon
  * @returns {Partial<ComponentsTheme>} The generated Menu Ant theme configuration.
  */
 export const primaryTheme = ({ palette }: Partial<Theme>): ComponentsTheme['Menu'] => ({
-  subMenuItemBg: 'transparent',
   itemBg: 'transparent',
-  itemColor: palette?.common?.grey?.[800],
-  itemHoverBg: '#1890FF15',
-  itemHoverColor: palette?.common?.grey?.[800],
+  itemHoverBg: palette?.action?.alternate?.primary?.hover,
   itemSelectedBg: palette?.common?.white,
-  itemSelectedColor: palette?.common?.grey?.[800],
+  itemSelectedColor: palette?.common?.grey?.[700],
+  subMenuItemBg: 'transparent',
 })

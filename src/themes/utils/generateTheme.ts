@@ -28,7 +28,7 @@ import Theme from '../schema'
 
 export const THEMES_DIR = resolve(__dirname, '../files')
 export const THEME_GENERATOR_FILE = 'theme-generator.json'
-export const GLOBAL_FILE = 'global.json'
+export const PRIMITIVES_FILE = 'primitives.json'
 export const GENERATED_FILE = 'theme.json'
 
 const INTERPOLATED_VALUE = /^{.*}$/g
@@ -46,9 +46,9 @@ const resolveThemeValues = (themeValues: Theme) => (node: string) => {
   if (node.match?.(INTERPOLATED_VALUE)) {
     const path = node.replace(PARENTHESES, '').split('.')
 
-    const { value } = get(themeValues, path) || {}
+    const { $value } = get(themeValues, path) || {}
 
-    return value
+    return $value
   }
   return node
 }
@@ -61,7 +61,7 @@ const resolveThemeValues = (themeValues: Theme) => (node: string) => {
  */
 export default async function generateTheme(themeName: string): Promise<void> {
   const structure = await readFileSync(getFile(themeName, THEME_GENERATOR_FILE)).toString()
-  const values = await readFileSync(getFile(themeName, GLOBAL_FILE)).toString()
+  const values = await readFileSync(getFile(themeName, PRIMITIVES_FILE)).toString()
 
   const themeStructure: object = JSON.parse(structure)
   const themeValues: Theme = JSON.parse(values)
@@ -69,8 +69,8 @@ export default async function generateTheme(themeName: string): Promise<void> {
   const resolveVariable = resolveThemeValues(themeValues)
 
   const resolvedTheme: Theme = traverse(themeStructure).map(function(node) {
-    const isLeaf = node?.value && node?.type
-    const resolvedNode = resolveVariable(isLeaf ? node.value : node)
+    const isLeaf = node?.$value && node?.$type
+    const resolvedNode = resolveVariable(isLeaf ? node.$value : node)
 
     this.update(resolvedNode)
   })

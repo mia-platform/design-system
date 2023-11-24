@@ -19,7 +19,6 @@
 /* eslint-disable func-names */
 /* eslint-disable react/display-name */
 
-
 import { ThemeProvider, ThemeProviderProps } from '../../components/ThemeProvider'
 import Theme from '../../themes/schema'
 import { renderHook } from '../../test-utils'

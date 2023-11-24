@@ -17,11 +17,9 @@
  */
 
 /**
- * Unit value expressing a dimension.
+ * Unit value expressing a dimension (in pixels).
  *
  * @example 2px
- * @example 50%
- * @example 0.5em
  * @example 16
  */
 type Size = string | number
@@ -52,10 +50,10 @@ type Shape = {
     width: Sizer
   },
   size: Sizer & {
+    '3xs': Size,
+    '2xs': Size,
     '2xl': Size,
     '3xl': Size,
-    '4xl': Size,
-    '5xl': Size,
   }
 }
 

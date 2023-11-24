@@ -25,37 +25,19 @@ import { Elevation } from './elevation'
 type Color = string
 
 /**
- * Scale of colors from lighter to darker.
+ * Color intensity level, ranging from 50 (lightest) to 900 (darkest).
  */
-type ColorGrades = {
-  50: Color,
-  100: Color,
-  200: Color,
-  300: Color,
-  400: Color,
-  500: Color,
-  600: Color,
-  700: Color,
-  800: Color,
-  900: Color
-}
+type Intensity = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 600 | 700 | 800 | 900
 
 /**
- * Semantic map of colors for static components.
- *
- * @remarks
- * light: a lighter version of the main color.
- *
- * dark: a darker version of the main color.
- *
- * contrastText: color that grants accessibility when superimposed on the main color.
+ * Scale of colors from lighter to darker.
  */
-type ColorMap = {
-  light: Color,
-  main: Color,
-  dark: Color,
-  contrastText: Color
-}
+type ColorGrades = Record<Intensity, Color>
+
+/**
+ * Represents the various states of an element.
+ */
+type State = 'active' | 'hover' | 'focus' | 'selected'
 
 /**
  * Semantic map of colors for dynamic components.
@@ -65,13 +47,7 @@ type ColorMap = {
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes}
  */
-type ColorInteractions = {
-  active: Color,
-  hover: Color,
-  focus: Color,
-  selected: Color,
-  disabled: Color
-}
+type ColorInteractions = Record<State, Color>
 
 /**
  * Scale of background colors.
@@ -99,19 +75,31 @@ type Palette = {
     white: Color,
     grey: ColorGrades,
   },
-  primary: ColorMap,
-  secondary: ColorMap,
-  error: ColorMap,
-  warning: ColorMap,
-  info: ColorMap,
-  success: ColorMap,
-  background: Background,
-  link: ColorInteractions,
+  primary: ColorGrades,
+  secondary: ColorGrades,
+  error: ColorGrades,
+  warning: ColorGrades,
+  info: ColorGrades,
+  success: ColorGrades,
+  background: {
+    primary: Background,
+    neutral: Background,
+  },
   action: {
     primary: ColorInteractions,
     secondary: ColorInteractions,
-    danger: ColorInteractions
+    danger: ColorInteractions,
+    link: ColorInteractions,
+    alternate: {
+      primary: ColorInteractions,
+      secondary: ColorInteractions,
+      danger: ColorInteractions
+    }
   }
 }
 
 export default Palette
+
+export type {
+  Color,
+}

@@ -2,18 +2,18 @@
 
 exports[`Generate React Icons context generate context from darkTheme 1`] = `
 {
-  "color": "#666666",
+  "color": "#464646",
 }
 `;
 
 exports[`Generate React Icons context generate context from empty theme 1`] = `
 {
-  "color": "#666666",
+  "color": "#464646",
 }
 `;
 
 exports[`Generate React Icons context generate context from lightTheme 1`] = `
 {
-  "color": "#666666",
+  "color": "#464646",
 }
 `;

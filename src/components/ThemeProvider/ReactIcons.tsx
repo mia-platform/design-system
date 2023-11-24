@@ -30,7 +30,7 @@ import { ThemeProviderProps } from '.'
  * @returns {IconContext} The generated React Icons context.
  */
 const generateReactIconsContext = ({ palette }: Partial<Theme> = {}): IconContext => ({
-  color: palette?.common?.grey?.[800] ?? DEFAULT_COLOR,
+  color: palette?.common?.grey?.[700] ?? DEFAULT_COLOR,
 })
 
 /**
