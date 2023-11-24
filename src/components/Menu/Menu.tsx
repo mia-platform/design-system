@@ -141,8 +141,8 @@ export const Menu = ({
   const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
 
   const formattedItems = useMemo(() => (
-    formatLabels(items, selectedKey || selectedItem, isCollapsed)
-  ), [items, selectedKey, selectedItem, isCollapsed])
+    formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
+  ), [items, selectedKey, selectedItem, isCollapsed, hierarchy])
 
   return (
     <ConfigProvider theme={{ components: { Menu: menuTheme } }}>

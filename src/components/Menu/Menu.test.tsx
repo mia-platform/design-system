@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { render, waitFor } from '@testing-library/react'
-
+import { Hierarchy, Mode } from './Menu.types'
 import { category, divider, group, item } from './Menu.mocks'
+import { render, screen, waitFor } from '../../test-utils'
 import { Menu } from '.'
-import { Mode } from './Menu.types'
 
+const { Primary } = Hierarchy
 const { Vertical } = Mode
 
 const items = [item, group, divider, category]
@@ -58,6 +58,11 @@ describe('Menu Component', () => {
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
+  test('renders primary menu correctly', () => {
+    const { asFragment } = render(<Menu hierarchy={Primary} items={items} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('renders skeleton correctly', () => {
     const { asFragment } = render(<Menu isLoading={true} />)
     expect(asFragment()).toMatchSnapshot()
@@ -65,21 +70,35 @@ describe('Menu Component', () => {
 
   test('renders category correctly', async() => {
     const { asFragment } = render(<Menu items={[category]} />)
+
+    expect(screen.getByText('CATEGORY')).toBeVisible()
+    expect(screen.getByRole('menuitem', { name: 'PiSun Category Item 1' })).toBeVisible()
+    expect(screen.getByRole('menuitem', { name: 'PiMoon Category Item 2' })).toBeVisible()
+
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders group correctly', async() => {
     const { asFragment } = render(<Menu items={[group]} />)
+
+    expect(screen.getByRole('menuitem', { name: 'PiSnowflake Group' })).toBeVisible()
+
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders divider correctly', () => {
     const { asFragment } = render(<Menu items={[divider]} />)
+
+    expect(screen.getByRole('separator')).toBeVisible()
+
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders item correctly', async() => {
     const { asFragment } = render(<Menu items={[item]} />)
+
+    expect(screen.getByRole('menuitem', { name: 'PiStar Item' })).toBeVisible()
+
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 })

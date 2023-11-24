@@ -14,7 +14,6 @@ module.exports = {
     "plugin:storybook/recommended"
   ],
   ignorePatterns: [
-    "dist",
     ".eslintrc.cjs",
     "jest.config.js",
     "src/vite-env.d.ts"

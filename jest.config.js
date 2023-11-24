@@ -24,6 +24,7 @@ export default {
   coveragePathIgnorePatterns: [
     "/node_modules/",
     "/src/setupTests.ts",
+    "/src/test-utils.tsx",
     "/src/utils/log.ts"
   ]
 }
