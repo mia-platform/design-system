@@ -19,7 +19,7 @@
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
 
-import { Item, Hierarchy, Mode } from './Menu.types'
+import { Hierarchy, Item, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import formatLabels from './Menu.utils'
 import styles from './Menu.module.css'

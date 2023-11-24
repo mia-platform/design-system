@@ -19,8 +19,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { customCopyable, customEllipsis, fontUrl, loremIpsum } from '../Typography.mocks'
-import { Size } from './BodyX.types'
 import { BodyX } from './BodyX'
+import { Size } from './BodyX.types'
 import { Typography } from '..'
 
 const { S } = Size

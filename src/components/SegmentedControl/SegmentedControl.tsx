@@ -19,7 +19,7 @@
 import { MouseEvent, ReactElement, useCallback, useState } from 'react'
 import classnames from 'classnames'
 
-import { Option, Hierarchy, OptionAlignment } from './SegmentedControl.types'
+import { Hierarchy, Option, OptionAlignment } from './SegmentedControl.types'
 import { getOptionKey, isDisabledOption, isString, isVerticalOption, resolveKey } from './SegmentedControl.utils'
 import styles from './SegmentedControl.module.css'
 
