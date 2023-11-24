@@ -18,12 +18,12 @@
 
 import { fireEvent, render, screen } from '@testing-library/react'
 
-import { Hierarchies, OptionsAlignments } from './SegmentedControl.types'
+import { Hierarchy, OptionAlignment } from './SegmentedControl.types'
 import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
 import { SegmentedControl } from '.'
 
-const { Primary } = Hierarchies
-const { Vertical } = OptionsAlignments
+const { Primary } = Hierarchy
+const { Vertical } = OptionAlignment
 
 describe('Segmented Control Component', () => {
   beforeEach(() => {
