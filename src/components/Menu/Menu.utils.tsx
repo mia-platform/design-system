@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ItemType } from 'antd/es/menu/hooks/useItems'
+import { ItemType as AntItemType } from 'antd/es/menu/hooks/useItems'
 
 import { Item, ItemType } from './Menu.types'
 
@@ -35,7 +35,7 @@ function formatLabels(
   items: Item[] = [],
   selectedItem?: string,
   isCollapsed?: boolean,
-): ItemType[] {
+): AntItemType[] {
   return items.map(({ title, label, type, key, children, icon, ...item }) => {
     if (type === Category && isCollapsed) {
       return formatLabels(children, selectedItem, isCollapsed)
