@@ -18,15 +18,15 @@
 
 import { fireEvent, render, screen } from '@testing-library/react'
 
-import { ButtonHierarchy, ButtonIconPosition, ButtonShape, ButtonSize, ButtonType } from './Button.types'
+import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 import { Button } from '.'
 import { Icon } from '../Icon'
 
-const { Neutral, Danger } = ButtonHierarchy
-const { Right } = ButtonIconPosition
-const { Circle } = ButtonShape
-const { Small, Large } = ButtonSize
-const { Outlined, Ghost } = ButtonType
+const { Neutral, Danger } = Hierarchy
+const { Right } = IconPosition
+const { Circle } = Shape
+const { Small, Large } = Size
+const { Outlined, Ghost } = Type
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 

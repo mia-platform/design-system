@@ -17,9 +17,9 @@
  */
 
 import { Icon } from '../Icon'
-import { MenuItemType } from './Menu.types'
+import { ItemType } from './Menu.types'
 
-const { Category, Divider } = MenuItemType
+const { Category, Divider } = ItemType
 
 export const item = {
   key: 'item',

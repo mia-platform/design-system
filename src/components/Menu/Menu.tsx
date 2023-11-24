@@ -19,14 +19,14 @@
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
 
-import { Item, MenuHierarchy, MenuMode } from './Menu.types'
+import { Item, Hierarchy, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import formatLabels from './Menu.utils'
 import styles from './Menu.module.css'
 import useTheme from '../../hooks/useTheme'
 
-const { Default, Primary } = MenuHierarchy
-const { Inline } = MenuMode
+const { Default, Primary } = Hierarchy
+const { Inline } = Mode
 const { menu } = styles
 
 export type MenuProps = {
@@ -47,7 +47,7 @@ export type MenuProps = {
    * - default: menu associated with general purpose navigation items;
    * - primary: menu associated with the most significant (and therefore primary) navigation items.
    */
-  hierarchy?: MenuHierarchy,
+  hierarchy?: Hierarchy,
 
   /**
    * Whether the menu is collapsed.
@@ -93,7 +93,7 @@ export type MenuProps = {
    * - inline: sub-menus open as popovers;
    * - vertical: sub-menus open as collapsible elements, expanding the menu downward.
    */
-  mode?: MenuMode,
+  mode?: Mode,
 
   /**
    * Called when a menu item is clicked.

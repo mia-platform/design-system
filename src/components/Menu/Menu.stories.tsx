@@ -19,7 +19,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { MenuHierarchy, MenuMode } from './Menu.types'
+import { Hierarchy, Mode } from './Menu.types'
 import { category, divider, group, item } from './Menu.mocks'
 import { Menu } from './'
 
@@ -49,7 +49,7 @@ export const Inline: Story = {
 export const Vertical: Story = {
   args: {
     ...meta.args,
-    mode: MenuMode.Vertical,
+    mode: Mode.Vertical,
   },
   decorators: [Story => (
     <div style={{ width: '75%' }}>
@@ -68,7 +68,7 @@ export const Collapsed: Story = {
 export const Primary: Story = {
   args: {
     ...meta.args,
-    hierarchy: MenuHierarchy.Primary,
+    hierarchy: Hierarchy.Primary,
   },
 }
 

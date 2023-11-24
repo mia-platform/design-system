@@ -18,9 +18,9 @@
 
 import { ItemType } from 'antd/es/menu/hooks/useItems'
 
-import { Item, MenuItemType } from './Menu.types'
+import { Item, ItemType } from './Menu.types'
 
-const { Category } = MenuItemType
+const { Category } = ItemType
 
 /**
  * Formats menu items to ensure optimal display.

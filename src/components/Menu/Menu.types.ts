@@ -16,34 +16,34 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { MenuItemType as AntMenuItemType } from 'antd/es/menu/hooks/useItems'
+import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
 
-export enum MenuItemType {
+export enum ItemType {
   Category = 'category',
   Divider = 'divider'
 }
 
-export enum MenuHierarchy {
+export enum Hierarchy {
   Default = 'default',
   Primary = 'primary',
 }
 
-export enum MenuMode {
+export enum Mode {
   Inline = 'inline',
   Vertical = 'vertical',
 }
 
 /**
- * Represents a menu item, extending the base type {@link AntMenuItemType}.
+ * Represents a menu item, extending the base type {@link MenuItemType}.
  *
  * @see {@link https://ant.design/components/menu#menuitemtype}
  */
-export type Item = AntMenuItemType & {
+export type Item = MenuItemType & {
 
   /**
    * The type of the menu item.
    */
-  type?: MenuItemType;
+  type?: ItemType;
 
   /**
    * An array of child items for nested menus.

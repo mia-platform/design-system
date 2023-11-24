@@ -19,9 +19,9 @@
 import { ReactElement } from 'react'
 
 import { BodyX, BodyXProps } from '../BodyX'
-import { BodySize } from '../BodyX.types'
+import { Size } from '../BodyX.types'
 
-const { L } = BodySize
+const { L } = Size
 
 export const BodyL = (props: BodyXProps): ReactElement => {
   return <BodyX {...props} size={L} />

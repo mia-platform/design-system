@@ -20,16 +20,16 @@ import { MouseEvent, ReactElement, ReactNode, useMemo } from 'react'
 import { Button as AntButton } from 'antd'
 import classnames from 'classnames'
 
-import { ButtonHierarchy, ButtonIconPosition, ButtonShape, ButtonSize, ButtonType } from './Button.types'
+import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 import styles from './Button.module.css'
 
 const { button, buttonSm, buttonSmIconOnly, buttonMd, buttonMdIconOnly, buttonLg, buttonGhost, buttonText } = styles
 
-const { Primary, Neutral, Danger } = ButtonHierarchy
-const { Left, Right } = ButtonIconPosition
-const { Square } = ButtonShape
-const { Small, Middle, Large } = ButtonSize
-const { Filled, Ghost } = ButtonType
+const { Primary, Neutral, Danger } = Hierarchy
+const { Left, Right } = IconPosition
+const { Square } = Shape
+const { Small, Middle, Large } = Size
+const { Filled, Ghost } = Type
 
 export type ButtonProps = {
 
@@ -45,7 +45,7 @@ export type ButtonProps = {
    * - neutral: button associated with a general purpose action;
    * - danger: button associated with a potentially dangerous action.
    */
-  hierarchy?: ButtonHierarchy,
+  hierarchy?: Hierarchy,
 
   /**
    * Redirect url of a link button.
@@ -64,7 +64,7 @@ export type ButtonProps = {
    * - left: the icon is placed to the left of the button text;
    * - right: the icon is placed to the right of the button text.
    */
-  iconPosition?: ButtonIconPosition,
+  iconPosition?: IconPosition,
 
   /**
    * Identifies whether the button is disabled or not.
@@ -87,7 +87,7 @@ export type ButtonProps = {
    * - square: square-shaped button with rounded corners;
    * - circle: fully rounded button, typically used for buttons containing only icon.
    */
-  shape?: ButtonShape,
+  shape?: Shape,
 
   /**
    * Defines the button size. Either:
@@ -96,7 +96,7 @@ export type ButtonProps = {
    * - middle: middle button - 32px in height by default;
    * - large: large button - 48px in height by default.
    */
-  size?: ButtonSize,
+  size?: Size,
 
   /**
    * Specifies where the linked document will open when the link is clicked.
@@ -114,7 +114,7 @@ export type ButtonProps = {
    *   typically used for secondary actions;
    * - ghost: transparent button with no stroke, typically used for links.
    */
-  type?: ButtonType,
+  type?: Type,
 }
 
 /**

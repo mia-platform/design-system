@@ -18,12 +18,12 @@
 
 import { ReactNode } from 'react'
 
-export enum SegmentedControlHierarchy {
+export enum Hierarchy {
   Primary = 'primary',
   Neutral = 'neutral',
 }
 
-export enum SegmentedControlOptionAlignment {
+export enum OptionAlignment {
   Horizontal = 'horizontal',
   Vertical = 'vertical',
 }
