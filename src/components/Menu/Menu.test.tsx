@@ -16,14 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { render, screen, waitFor } from 'test-utils'
-
-import { Hierarchies, Modes } from './Menu.types'
+import { Hierarchy, Mode } from './Menu.types'
 import { category, divider, group, item } from './Menu.mocks'
+import { render, screen, waitFor } from '../../test-utils'
 import { Menu } from '.'
 
-const { Primary } = Hierarchies
-const { Vertical } = Modes
+const { Primary } = Hierarchy
+const { Vertical } = Mode
 
 const items = [item, group, divider, category]
 

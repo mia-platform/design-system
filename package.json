@@ -30,6 +30,7 @@
     "coverage": "yarn unit --coverage --watchAll=false --reporters=default",
     "test": "yarn lint && yarn checkonly && yarn coverage",
     "storybook": "storybook dev -p 6006",
+    "test-storybook": "test-storybook --watchAll",
     "build-storybook": "storybook build",
     "addlicense": "addlicense -c 'Mia srl' -s -ignore src/**/*.ts",
     "check-license": "addlicense -c 'Mia srl' -check -s -ignore src/**/*.ts"
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
+    "@playwright/test": "^1.40.0",
     "@storybook/addon-a11y": "^7.4.6",
     "@storybook/addon-designs": "^7.0.5",
     "@storybook/addon-essentials": "^7.4.6",
@@ -57,6 +59,7 @@
     "@storybook/manager-api": "^7.4.6",
     "@storybook/react": "^7.4.6",
     "@storybook/react-vite": "^7.4.6",
+    "@storybook/test-runner": "^0.15.2",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.4.6",
     "@testing-library/jest-dom": "^5.17.0",

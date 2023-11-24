@@ -21,14 +21,14 @@ import { Typography as AntTypography } from 'antd'
 import classnames from 'classnames'
 
 import { CopyConfig, EllipsisConfig } from '../Typography.types'
-import { BodySizes } from './BodyX.types'
+import { Size } from './BodyX.types'
 import styles from './BodyX.module.css'
 
 const { Paragraph: AntParagraph } = AntTypography
 
 const { bodyS, bodyM, bodyL } = styles
 
-const { S, M, L } = BodySizes
+const { S, M, L } = Size
 
 export type BodyXProps = {
 
@@ -88,7 +88,7 @@ type BodyXSize = {
    * - m: middle - fontSize: 16px, lineHeight: 24px by default;
    * - l: large - fontSize: 18px, lineHeight: 24px by default.
    */
-  size: BodySizes,
+  size: Size,
 }
 
 /**

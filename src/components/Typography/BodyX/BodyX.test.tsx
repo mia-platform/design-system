@@ -16,9 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { render, screen } from 'test-utils'
-
 import { customCopyable, customEllipsis, loremIpsum } from '../Typography.mocks'
+import { render, screen } from '../../../test-utils'
 import { Typography } from '..'
 
 const { BodyS, BodyM, BodyL } = Typography

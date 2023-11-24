@@ -19,11 +19,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { customCopyable, customEllipsis, fontUrl, loremIpsum } from '../Typography.mocks'
-import { BodySizes } from './BodyX.types'
 import { BodyX } from './BodyX'
+import { Size } from './BodyX.types'
 import { Typography } from '..'
 
-const { S } = BodySizes
+const { S } = Size
 
 const bodySLongText = ['BodyS', loremIpsum].join(' | ')
 const bodyMLongText = ['BodyM', loremIpsum].join(' | ')

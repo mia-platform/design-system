@@ -16,17 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { fireEvent, render, screen } from 'test-utils'
-
-import { ButtonHierarchies, ButtonIconPositions, ButtonShapes, ButtonSizes, ButtonTypes } from './Button.types'
+import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
+import { fireEvent, render, screen } from '../../test-utils'
 import { Button } from '.'
 import { Icon } from '../Icon'
 
-const { Neutral, Danger } = ButtonHierarchies
-const { Right } = ButtonIconPositions
-const { Circle } = ButtonShapes
-const { Small, Large } = ButtonSizes
-const { Outlined, Ghost } = ButtonTypes
+const { Neutral, Danger } = Hierarchy
+const { Right } = IconPosition
+const { Circle } = Shape
+const { Small, Large } = Size
+const { Outlined, Ghost } = Type
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 

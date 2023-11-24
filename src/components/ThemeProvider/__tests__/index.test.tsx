@@ -17,10 +17,10 @@
  */
 
 import { ReactElement } from 'react'
-import { render } from 'test-utils'
 
 import type Theme from '../../../themes/schema'
 import { ThemeProvider } from '..'
+import { render } from '../../../test-utils'
 import themeToVariables from '../utils/themeToVariables'
 import themes from '../../../themes'
 

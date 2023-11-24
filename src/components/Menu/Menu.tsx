@@ -19,14 +19,14 @@
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
 
-import { Hierarchies, Item, Modes } from './Menu.types'
+import { Hierarchy, Item, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import formatLabels from './Menu.utils'
 import styles from './Menu.module.css'
 import useTheme from '../../hooks/useTheme'
 
-const { Default, Primary } = Hierarchies
-const { Inline } = Modes
+const { Default, Primary } = Hierarchy
+const { Inline } = Mode
 const { menu } = styles
 
 export type MenuProps = {
@@ -47,7 +47,7 @@ export type MenuProps = {
    * - default: menu associated with general purpose navigation items;
    * - primary: menu associated with the most significant (and therefore primary) navigation items.
    */
-  hierarchy?: Hierarchies,
+  hierarchy?: Hierarchy,
 
   /**
    * Whether the menu is collapsed.
@@ -60,7 +60,30 @@ export type MenuProps = {
   isLoading?: boolean
 
   /**
-   * Menu items.
+   * Menu items. Either one of the following:
+   *
+   * - item `object`:
+   *    - key: The unique key of the item <br> `React.Key`
+   *    - label: The display label of the item <br> `ReactNode`
+   *    - title: The display title of the collapsed item <br> `string`
+   *    - icon: The icon associated with the item <br> `ReactNode`
+   *
+   * - category `object`:
+   *    - key: The unique key of the category <br> `React.Key`
+   *    - label: The display label of the category <br> `ReactNode`
+   *    - type: The type of the category <br> `"category"`
+   *    - children: The children items within the category <br> `Item[]`
+   *
+   * - group `object`:
+   *    - key: The unique key of the group <br> `React.Key`
+   *    - label: The display label of the group <br> `ReactNode`
+   *    - icon: The icon associated with the group <br> `ReactNode`
+   *    - children: The children items within the group <br> `Item[]`
+   *
+   * - divider `object`:
+   *    - key: The unique key of the divider <br> `React.Key`
+   *    - type: The type of the divider <br> `"divider"`
+   *    - dashed: Indicates whether the divider is dashed <br> `boolean`
    */
   items?: Item[]
 
@@ -70,7 +93,7 @@ export type MenuProps = {
    * - inline: sub-menus open as popovers;
    * - vertical: sub-menus open as collapsible elements, expanding the menu downward.
    */
-  mode?: Modes,
+  mode?: Mode,
 
   /**
    * Called when a menu item is clicked.

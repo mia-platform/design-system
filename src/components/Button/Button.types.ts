@@ -16,29 +16,29 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum ButtonHierarchies {
+export enum Hierarchy {
   Primary = 'primary',
   Neutral = 'neutral',
   Danger = 'danger',
 }
 
-export enum ButtonIconPositions {
+export enum IconPosition {
   Left = 'left',
   Right = 'right',
 }
 
-export enum ButtonShapes {
+export enum Shape {
   Square = 'square',
   Circle = 'circle',
 }
 
-export enum ButtonSizes {
+export enum Size {
   Small = 'small',
   Middle = 'middle',
   Large = 'large',
 }
 
-export enum ButtonTypes {
+export enum Type {
   Filled = 'filled',
   Outlined = 'outlined',
   Ghost = 'ghost',
