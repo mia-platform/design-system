@@ -21,6 +21,7 @@ import { Icon } from './components/Icon'
 import { Menu } from './components/Menu'
 import { SegmentedControl } from './components/SegmentedControl'
 import { ThemeProvider } from './components/ThemeProvider'
+import { Typography } from './components/Typography'
 import hooks from './hooks'
 import themes from './themes'
 
@@ -30,6 +31,7 @@ export {
   Menu,
   SegmentedControl,
   ThemeProvider,
+  Typography,
   hooks,
   themes,
 }
