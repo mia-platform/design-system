@@ -1,7 +1,7 @@
 {
   "name": "@mia-platform-internal/console-design-system-react",
   "packageManager": "yarn@3.6.1",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "main": "dist/cjs/console-design-system-react.cjs",
   "module": "dist/es/console-design-system-react.js",
