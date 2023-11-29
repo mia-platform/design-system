@@ -46,10 +46,14 @@ export default ({ palette, shape, spacing, typography }: Partial<Theme>): Compon
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Menu Ant theme configuration.
  */
-export const primaryTheme = ({ palette }: Partial<Theme>): ComponentsTheme['Menu'] => ({
+export const primaryTheme = ({ palette, spacing }: Partial<Theme>): ComponentsTheme['Menu'] => ({
+  activeBarBorderWidth: 0,
   itemBg: 'transparent',
   itemHoverBg: palette?.action?.alternate?.primary?.hover,
   itemSelectedBg: palette?.common?.white,
   itemSelectedColor: palette?.common?.grey?.[700],
+  itemMarginInline: 0,
+  itemPaddingInline: 0,
+  padding: parse(spacing?.padding?.md),
   subMenuItemBg: 'transparent',
 })
