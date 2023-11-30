@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href=https://www.mia-platform.eu/>
-<img alt="logo" src="https://github.com/mia-platform/design-system/assets/9254840/cd4ae258-3b90-451d-be5f-d7665a4c2be9" height="96">
+<img alt="logo" src="./src/assets/mia-platform-logo.png" height="96">
 </a>
 
 # Mia Platform Design System
@@ -11,7 +11,10 @@ React graphical components designed by Mia Platform
 [![NPM publish CI][action-status-svg]][github-action]
 [![javascript style guide][standard-mia-svg]][standard-mia]  
 [![Coverage Status][coverall-svg]][coverall-io]
-  
+[![Storybook][storybook-svg]][storybook]
+
+Explore our graphical components using [Storybook][storybook].
+
 </div>
 
 ## Install
@@ -67,4 +70,5 @@ yarn addlicense
 [standard-mia]: https://github.com/mia-platform/eslint-config-mia
 [coverall-svg]: https://coveralls.io/repos/github/mia-platform/design-system/badge.svg
 [coverall-io]: https://coveralls.io/github/mia-platform/design-system
-
+[storybook-svg]: https://img.shields.io/badge/graphical_components-Storybook-deeppink
+[storybook]: https://mia-platform.github.io/design-system/
