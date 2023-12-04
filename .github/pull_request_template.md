@@ -24,6 +24,6 @@
 - [ ] changes are accessible and documented from components stories
 - [ ] typings are updated or integrated accordingly with your changes
 - [ ] all added files include Apache 2.0 license
-- [ ] the changelog has been updated accordingly with your changes
 - [ ] you are not committing extraneous files or sensible data
 - [ ] the browser console does not have any logged errors
+- [ ] necessary labels have been applied to this pull request (enhancement, bug, ecc.)
