@@ -19,7 +19,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { Record, alignedColumns, columns, data, filteredAndSortedColumns, footer, pagination, sizedColumns } from './Table.mocks'
+import { ExternallyControlledFilters, Record, alignedColumns, columns, data, filteredAndSortedColumns, footer, hugeData, pagination, sizedColumns } from './Table.mocks'
 import { Table } from '.'
 
 const meta = {
@@ -54,11 +54,22 @@ export const Loading: Story = {
 }
 
 export const Pagination: Story = {
-  args: { ...meta.args, pagination: pagination({ onChange: action('onPageChange') }) },
+  args: { ...meta.args,
+    data: hugeData,
+    pagination: pagination({
+      onChange: action('onPageChange'),
+      onShowSizeChange: action('onShowSizeChange'),
+    }),
+  },
 }
 
 export const Footer: Story = {
   args: { ...meta.args, footer },
+}
+
+export const FiltersAndSorting: Story = {
+  args: { ...meta.args },
+  decorators: [ExternallyControlledFilters],
 }
 
 export const ColumnFiltersAndSorting: Story = {

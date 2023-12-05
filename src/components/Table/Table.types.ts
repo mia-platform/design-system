@@ -17,7 +17,7 @@
  */
 
 export type { ColumnType } from 'antd/es/table'
-export type { TableLocale } from 'antd/es/table/interface'
+export type { TableLocale, ColumnFilterItem } from 'antd/es/table/interface'
 export type { AnyObject as GenericRecord } from 'antd/es/_util/type'
 export type { TablePaginationConfig as Pagination } from 'antd'
 
@@ -32,11 +32,18 @@ export enum SortOrder {
 }
 
 export enum Size {
+  Small = 'small',
   Middle ='middle',
-  Larger = 'large',
+  Large = 'large',
 }
 
 export enum ColumnAlignment {
   Left = 'left',
+  Center = 'center',
   Right = 'right',
+}
+
+export enum ColumnFilterMode {
+  Menu = 'menu',
+  Tree = 'tree',
 }

@@ -21,9 +21,12 @@
 import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement } from 'react'
 
-import { ColumnType, GenericRecord, Layout, Pagination, Size, TableLocale } from './Table.types'
+import * as ButtonTypes from '../Button/Button.types'
+import { ColumnAlignment, ColumnType, GenericRecord, Layout, Pagination, Size, TableLocale } from './Table.types'
+import { Button } from '../Button'
+import { Icon } from '../Icon'
 
-const { Middle } = Size
+const { Small, Middle, Large } = Size
 
 export type TableProps<Record> = {
  columns: ColumnType<Record>[],
@@ -35,7 +38,7 @@ export type TableProps<Record> = {
  layout?: Layout,
  onChange?: (
   pagination: unknown,
-  filters: any,
+  filters: unknown,
   sorter: unknown,
   extra: {
     currentDataSource: readonly Record[],
@@ -50,7 +53,7 @@ export type TableProps<Record> = {
 }
 
 /**
- * UI component for presenting tabular data
+ * UI component for presenting tabular structured data
  *
  * @link https://ant.design/components/table
  * @returns {Table} Table component
@@ -66,7 +69,7 @@ export const Table = <Record extends GenericRecord>({
   onChange,
   onHeaderRow,
   onRow,
-  // rowKey,
+  rowKey,
   pagination,
   size,
   title,
@@ -85,7 +88,7 @@ export const Table = <Record extends GenericRecord>({
         loading={false}
         locale={intlLocale}
         pagination={pagination}
-        // rowKey={rowKey ?? columns?.[0]?.dataIndex}
+        rowKey={rowKey}
         // rowSelection={}
         // scroll={}
         showHeader
@@ -103,25 +106,57 @@ export const Table = <Record extends GenericRecord>({
   )
 }
 
+// Table.actionColumn = {
+//   dataIndex: 'actions',
+//   align: ColumnAlignment.Right,
+//   title: (
+//     <div style={{ display: 'flex', justifyContent: 'center' }}>
+//       <Button
+//         icon={<Icon name="PiGearLight" size={16} />}
+//         shape={ButtonTypes.Shape.Circle}
+//         size={ButtonTypes.Size.Small}
+//         type={ButtonTypes.Type.Ghost}
+//       />
+//     </div>
+//   ),
+//   // filters: [
+//   //   { text: 'Row Heights',
+//   //     options: [
+//   //       { text: 'Small', value: Small },
+//   //       { text: 'Middle', value: Middle },
+//   //       { text: 'Large', value: Large },
+//   //     ],
+//   //   },
+//   // ],
+//   width: 1,
+//   // onFilter: (value, record) =>
+//   // onFilterDropdownOpenChange: (visible) => {
+//   //   if (visible) {
+//   //     setTimeout(() => searchInput.current?.select(), 100)
+//   //   }
+//   // },
+// }
+
+Table.pagination = {
+  defaultCurrent: 1,
+  defaultPageSize: 10,
+  hideOnSinglePage: true,
+  pageSizeOptions: [10, 20, 50],
+  responsive: true,
+  showLessItems: false,
+  showSizeChanger: true,
+  showTitle: true,
+  showTotal: (total: number): ReactElement => (
+    <span>
+      <b>{total}</b>
+      {' in total'}
+    </span>
+  ),
+}
+
 Table.defaultProps = {
   isBordered: false,
   isLoading: false,
-  pagination: {
-    defaultCurrent: 1,
-    defaultPageSize: 10,
-    hideOnSinglePage: true,
-    pageSizeOptions: [10, 20, 50],
-    responsive: true,
-    showLessItems: false,
-    showTitle: true,
-    showTotal: Table.showTotal,
-  },
+  pagination: Table.pagination,
   size: Middle,
 }
-
-Table.showTotal = (total: number): ReactElement => (
-  <div style={{ display: 'flex', gap: 4 }}>
-    <b>{total}</b>
-    {'in total'}
-  </div>
-)
