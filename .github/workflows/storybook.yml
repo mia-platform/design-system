@@ -1,10 +1,9 @@
 name: Publish Storybook to Github Pages
 
 on:
-  push: 
-    branches:
+  push:
+    tags:
       - '*'
-  # TODO remove this step, only for testing the pipeline
 
 permissions:
   contents: read
