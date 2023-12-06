@@ -1,9 +1,10 @@
 name: Publish Storybook to Github Pages
 
 on:
-  push:
-    tags:
+  push: 
+    branches:
       - '*'
+  # TODO remove this step, only for testing the pipeline
 
 permissions:
   contents: read
@@ -19,8 +20,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - run: yarn
-      - run: yarn build-storybook
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "yarn"
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn
+      - name: Build Storybook
+        run: yarn build-storybook
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
