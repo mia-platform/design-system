@@ -20,7 +20,7 @@ import { ComponentsTheme, parse } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
 /**
- * Generates a Ant theme configuration for Table component based on a theme configuration (default theme).
+ * Generates a Ant theme configuration for Table component based on a theme configuration.
  *
  * @link https://ant.design/components/table#design-token
  *
@@ -28,32 +28,4 @@ import Theme from '../../themes/schema'
  * @returns {Partial<ComponentsTheme>} The generated Table Ant theme configuration.
  */
 export default ({ palette, shape, spacing, typography }: Partial<Theme>): ComponentsTheme['Table'] => ({
-  groupTitleColor: palette?.common?.grey?.[500],
-  groupTitleFontSize: typography?.caption?.fontSize,
-  groupTitleLineHeight: 1,
-  iconSize: parse(shape?.size?.md),
-  itemHeight: (typography?.bodyM?.lineHeight ?? 24) + (parse(spacing?.padding?.sm) ?? 8),
-  itemActiveBg: palette?.action?.alternate?.primary?.active,
-  itemHoverBg: palette?.action?.alternate?.secondary?.hover,
-  itemSelectedBg: palette?.action?.alternate?.primary?.active,
-})
-
-/**
- * Generates a Ant theme configuration for Table component based on a theme configuration (primary theme).
- *
- * @link https://ant.design/components/table#design-token
- *
- * @param {Partial<Theme>} theme - theme configuration.
- * @returns {Partial<ComponentsTheme>} The generated Table Ant theme configuration.
- */
-export const primaryTheme = ({ palette, spacing }: Partial<Theme>): ComponentsTheme['Table'] => ({
-  activeBarBorderWidth: 0,
-  itemBg: 'transparent',
-  itemHoverBg: palette?.action?.alternate?.primary?.hover,
-  itemSelectedBg: palette?.common?.white,
-  itemSelectedColor: palette?.common?.grey?.[700],
-  itemMarginInline: 0,
-  itemPaddingInline: 0,
-  padding: parse(spacing?.padding?.md),
-  subMenuItemBg: 'transparent',
 })

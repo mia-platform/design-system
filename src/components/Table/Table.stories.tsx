@@ -19,38 +19,60 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { ExternallyControlledFilters, Record, alignedColumns, columns, data, filteredAndSortedColumns, footer, hugeData, pagination, sizedColumns } from './Table.mocks'
+import {
+  TableRecord,
+  WithExternalFiltersandSorters,
+  alignedColumns,
+  columns,
+  data,
+  filteredAndSortedColumns,
+  footer,
+  hugeData,
+  pagination,
+  rowKey,
+  rowSelection,
+  sizedColumns,
+} from './Table.mocks'
 import { Table } from '.'
 
 const meta = {
-  component: Table<Record>,
+  component: Table<TableRecord>,
   args: {
     ...Table.defaultProps,
     columns,
     data,
+    rowKey,
     onChange: action('onChange'),
     onHeaderRow: action('onHeaderRow'),
     onRow: action('onRow'),
   },
-} satisfies Meta<typeof Table<Record>>
+} satisfies Meta<typeof Table<TableRecord>>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Base: Story = {
+export const Default: Story = {
   args: meta.args,
 }
 
-export const Empty: Story = {
-  args: { ...meta.args, data: [] },
+export const Loading: Story = {
+  args: { ...meta.args, isLoading: true },
 }
 
 export const Bordered: Story = {
   args: { ...meta.args, isBordered: true },
 }
 
-export const Loading: Story = {
-  args: { ...meta.args, isLoading: true },
+export const Selection: Story = {
+  args: { ...meta.args,
+    rowSelection: rowSelection({
+      onChange: action('onChange'),
+      onSelect: action('onSelect'),
+      onSelectMultiple: action('onSelectMuliptle'),
+      onSelectAll: action('onSelectAll'),
+      onSelectNone: action('onSelectNone'),
+    }),
+  },
 }
 
 export const Pagination: Story = {
@@ -67,9 +89,9 @@ export const Footer: Story = {
   args: { ...meta.args, footer },
 }
 
-export const FiltersAndSorting: Story = {
+export const ExternalFiltersAndSorting: Story = {
   args: { ...meta.args },
-  decorators: [ExternallyControlledFilters],
+  decorators: [WithExternalFiltersandSorters],
 }
 
 export const ColumnFiltersAndSorting: Story = {
@@ -79,10 +101,6 @@ export const ColumnFiltersAndSorting: Story = {
 export const ColumnAlignment: Story = {
   args: { ...meta.args, columns: alignedColumns },
 }
-
-// export const ColumnSpan: Story = {
-//   args: { ...meta.args, columns: spannedColumns },
-// }
 
 export const ColumnWidth: Story = {
   args: { ...meta.args, columns: sizedColumns },

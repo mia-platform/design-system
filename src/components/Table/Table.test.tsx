@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Hierarchy, Mode } from './Table.types'
-import { category, divider, group, item } from './Table.mocks'
+import { } from './Table.types'
+import { } from './Table.mocks'
 import { render, screen, waitFor } from '../../test-utils'
 import { Table } from '.'
 
@@ -28,7 +28,7 @@ describe('Table Component', () => {
   })
 
   test('renders table correctly', async() => {
-    const { asFragment } = render(<Table items={items} />)
+    const { asFragment } = render(<Table columns={[]} data={[]} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 })

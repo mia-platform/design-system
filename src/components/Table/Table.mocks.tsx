@@ -24,7 +24,7 @@ import { StoryFn } from '@storybook/react'
 import { get } from 'lodash'
 
 import * as ButtonTypes from '../Button/Button.types'
-import { ColumnAlignment, ColumnFilterMode, ColumnType, Pagination, SortOrder } from './Table.types'
+import { ColumnAlignment, ColumnFilterMode, ColumnType, Pagination, RowSelection, SortOrder } from './Table.types'
 import { Button } from '../Button'
 import { Table } from '.'
 import { TableProps } from './Table'
@@ -33,31 +33,35 @@ const { Left, Center, Right } = ColumnAlignment
 const { Menu, Tree } = ColumnFilterMode
 const { Ascend, Descend } = SortOrder
 
+type FieldName = string | string[]
+type StorybookActions = Record<string, () => void>
+
 /** Data */
 
-export type Record = {
+export type TableRecord = {
   field1: string,
   field2: string,
   field3: string,
   nested: {
     field4: string
-  },
-  actions?: string[]
+  }
 }
 
-export const data: Record[] = [
+export const data: TableRecord[] = [
   { field1: 'Value 1', field2: 'Value 1', field3: 'Value 1', nested: { field4: 'Value 1' } },
   { field1: 'Value 2', field2: 'Value 2', field3: 'Value 2', nested: { field4: 'Value 2' } },
   { field1: 'Value 3', field2: 'Value 3', field3: 'Value 3', nested: { field4: 'Value 3' } },
   { field1: 'Value 4', field2: 'Value 4', field3: 'Value 4', nested: { field4: 'Value 4' } },
 ]
 
-export const hugeData: Record[] = Array.from({ length: 50 }).map((i) => ({
-  field1: `Value ${i}`,
-  field2: `Value ${i}`,
-  field3: `Value ${i}`,
-  nested: { field4: `Value ${i}` },
+export const hugeData: TableRecord[] = Array.from({ length: 50 }).map((_, i) => ({
+  field1: `Value ${i + 1}`,
+  field2: `Value ${i + 1}`,
+  field3: `Value ${i + 1}`,
+  nested: { field4: `Value ${i + 1}` },
 }))
+
+export const [rowKey] = Object.keys(data[0])
 
 /** Filters */
 
@@ -73,127 +77,141 @@ export const filters = [
   },
 ]
 
-const menufilterProps = {
+const menufilterProps = (fieldName: FieldName): object => ({
+  filters,
   filterMode: Menu,
   filterSearch: true,
-  onFilter: (value: unknown, record: Record) => record.field1 === value,
-}
+  onFilter: (value: unknown, record: TableRecord) => get(record, fieldName) === value,
+})
 
-const treefilterProps = {
+const treefilterProps = (fieldName: FieldName): object => ({
+  filters,
   filterMode: Tree,
   filterSearch: true,
-  onFilter: (value: unknown, record: Record) => record.field2 === value,
-}
-
-export const ExternallyControlledFilters = (_: StoryFn, { args }: {args: TableProps<Record>}): ReactElement => {
-  const { columns } = args
-
-  const [filteredData, setFilteredData] = useState<Record[]>([])
-  const [{ sortedColumn, order }, setSortedInfo] = useState<{sortedColumn?: string, order?: SortOrder}>({})
-
-  const dataWithValue2 = data.filter(record => Object.values(record).includes('Value 2'))
-  const field2Descending = { sortedColumn: 'field2', order: Descend }
-
-  const clearFilters = (): void => setFilteredData([])
-  const filterValue2 = (): void => setFilteredData(dataWithValue2)
-
-  const clearSort = (): void => setSortedInfo({})
-  const sortField2Descending = (): void => setSortedInfo(field2Descending)
-
-  const filteredAndSortedColumns = columns?.map((column: ColumnType<Record>) => ({
-    ...column,
-
-    /* Apply sort order */
-    sortOrder: sortedColumn === column.dataIndex ? order : undefined,
-    sorter: (fieldA: Record, fieldB: Record) => (fieldA?.field2 > fieldB?.field2 ? 1 : -1),
-
-    /* Apply filters */
-    filteredValue: filteredData.map(record => get(record, column.dataIndex!)),
-    onFilter: (value: unknown, record: Record) => get(record, column.dataIndex!) === value,
-  }))
-
-  return (
-    <Space direction="vertical" style={{ width: '100%' }} >
-      <Space>
-        <Button type={ButtonTypes.Type.Outlined} onClick={filterValue2}>{'Filter Value 2'}</Button>
-        <Button type={ButtonTypes.Type.Outlined} onClick={sortField2Descending}>{'Sort Field 2 Descending'}</Button>
-        <Button type={ButtonTypes.Type.Outlined} onClick={clearFilters}>{'Clear filters'}</Button>
-        <Button type={ButtonTypes.Type.Outlined} onClick={clearSort}>{'Clear sort'}</Button>
-      </Space>
-      <Table {...args} columns={filteredAndSortedColumns} />
-    </Space>
-  )
-}
+  onFilter: (value: unknown, record: TableRecord) => get(record, fieldName) === value,
+})
 
 /** Sorters */
 
-export const sorter = (
-  { field1: fieldA }: Record,
-  { field1: fieldB }: Record
-): number => (fieldA > fieldB ? 1 : -1)
-
-const sortProps = {
+const sortProps = (fieldName: FieldName): object => ({
   defaultSortOrder: Ascend,
   sortDirections: [Ascend, Descend],
   showSorterTooltip: true,
-}
+  sorter: (
+    fieldA: TableRecord,
+    fieldB: TableRecord
+  ): number => (
+    get(fieldA, fieldName) > get(fieldB, fieldName) ? 1 : -1
+  ),
+})
 
 /** Columns */
 
-export const columns: ColumnType<Record>[] = [
+export const columns: ColumnType<TableRecord>[] = [
   { dataIndex: 'field1', title: 'Field 1' },
   { dataIndex: 'field2', title: 'Field 2' },
   { dataIndex: 'field3', title: 'Field 3' },
   { dataIndex: ['nested', 'field4'], title: 'Field 4' },
 ]
 
-export const alignedColumns: ColumnType<Record>[] = [
+export const alignedColumns: ColumnType<TableRecord>[] = [
   { dataIndex: 'field1', title: 'Left Alignment', align: Left },
   { dataIndex: 'field2', title: 'Center Alignment', align: Center },
   { dataIndex: ['nested', 'field4'], title: 'Right Alignment', align: Right },
 ]
 
-export const filteredAndSortedColumns: ColumnType<Record>[] = [
-  { dataIndex: 'field1', title: 'Filtered (Menu)', filters, ...menufilterProps },
-  { dataIndex: 'field2', title: 'Filtered (Tree)', filters, ...treefilterProps },
-  { dataIndex: 'field3', title: 'Sorted', sorter, ...sortProps },
-  { dataIndex: 'field4', title: 'Filtered and Sorted', filters, sorter },
+export const filteredAndSortedColumns: ColumnType<TableRecord>[] = [
+  { dataIndex: 'field1', title: 'Filtered (Menu)', ...menufilterProps('field1') },
+  { dataIndex: 'field2', title: 'Filtered (Tree)', ...treefilterProps('field2') },
+  { dataIndex: 'field3', title: 'Sorted', ...sortProps('field3') },
+  { dataIndex: ['nested', 'field4'], title: 'Filtered and Sorted', ...menufilterProps(['nested', 'field4']), ...sortProps(['nested', 'field4']) },
 ]
 
-export const spannedColumns: ColumnType<Record>[] = [
+export const spannedColumns: ColumnType<TableRecord>[] = [
   { dataIndex: 'field1', title: 'Left Alignment', colSpan: 0 },
   { dataIndex: 'field2', title: 'Center Alignment' },
   { dataIndex: 'field3', title: 'Right Alignment' },
 ]
 
-export const sizedColumns: ColumnType<Record>[] = [
+export const sizedColumns: ColumnType<TableRecord>[] = [
   { dataIndex: 'field1', title: '20%', width: '20%' },
   { dataIndex: 'field2', title: '30%', width: '30%' },
   { dataIndex: 'field3', title: '40%', width: '40%' },
   { dataIndex: ['nested', 'field4'], title: '10%', width: '10%' },
 ]
 
+/** Row Selection */
+
+export const rowSelection = (actions: StorybookActions): RowSelection<TableRecord> => ({
+  fixed: true,
+  ...actions,
+})
+
 /** Pagination */
 
-export const pagination = ({ onChange, onShowSizeChange }: {
-  onChange?: () => void,
-  onShowSizeChange?: () => void,
-  showTotal?: (total: number) => ReactElement
-}): Pagination => ({
+export const pagination = (actions: StorybookActions): Pagination => ({
   ...Table.pagination,
-  defaultCurrent: 1,
+  ...actions,
+  // Fit Storybook size
   defaultPageSize: 4,
   pageSizeOptions: [4, 10, 20],
-  onChange,
-  onShowSizeChange,
 })
 
 /** Footer */
 
-export const footer = (currentPageData: readonly Record[]): ReactElement => {
+export const footer = (currentPageData: readonly TableRecord[]): ReactElement => {
   return (
     <span>
       {`Total rows number: ${currentPageData.length}`}
     </span>
+  )
+}
+
+/** Externally controlled Filters and Sorters */
+
+const { Hierarchy: { Neutral }, Type: { Outlined } } = ButtonTypes
+
+type FilterState = TableRecord[]
+type SortState = {
+  sortedColumn?: ColumnType<TableRecord>['dataIndex'],
+  sortOrder?: SortOrder
+}
+
+export const WithExternalFiltersandSorters = (_: StoryFn, { args }: {args: TableProps<TableRecord>}): ReactElement => {
+  const [filteredData, setFilteredData] = useState<FilterState>([])
+  const [{ sortedColumn, sortOrder }, setSortedInfo] = useState<SortState>({})
+
+  const dataWithValue2 = data.filter(record => Object.values(record).includes('Value 2'))
+  const field2Descending = { sortedColumn: 'field2', sortOrder: Descend }
+
+  const filterValue2 = (): void => setFilteredData(dataWithValue2)
+  const sortField2Descending = (): void => setSortedInfo(field2Descending)
+
+  const clearFilters = (): void => setFilteredData([])
+  const clearSort = (): void => setSortedInfo({})
+
+  return (
+    <Space direction="vertical" style={{ width: '100%' }} >
+      <Space>
+        <Button hierarchy={Neutral} type={Outlined} onClick={filterValue2}>{'Filter Value 2'}</Button>
+        <Button hierarchy={Neutral} type={Outlined} onClick={sortField2Descending}>{'Sort Field 2 Descending'}</Button>
+        <Button hierarchy={Neutral} type={Outlined} onClick={clearFilters}>{'Clear filters'}</Button>
+        <Button hierarchy={Neutral} type={Outlined} onClick={clearSort}>{'Clear sort'}</Button>
+      </Space>
+      <Table
+        {...args}
+        columns={args.columns?.map((column: ColumnType<TableRecord>) => ({
+          ...column,
+
+          /* Apply sort order */
+          sortOrder: sortedColumn === column.dataIndex ? sortOrder : undefined,
+          sorter: (fieldA: TableRecord, fieldB: TableRecord) => (fieldA?.field2 > fieldB?.field2 ? 1 : -1),
+
+          /* Apply filters */
+          filteredValue: filteredData.map(record => get(record, column.dataIndex!)),
+          onFilter: (value: unknown, record: TableRecord) => get(record, column.dataIndex!) === value,
+        }))}
+      />
+    </Space>
   )
 }

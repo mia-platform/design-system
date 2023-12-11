@@ -17,7 +17,7 @@
  */
 
 export type { ColumnType } from 'antd/es/table'
-export type { TableLocale, ColumnFilterItem } from 'antd/es/table/interface'
+export type { ColumnFilterItem, TableLocale as Locale, TableRowSelection as RowSelection } from 'antd/es/table/interface'
 export type { AnyObject as GenericRecord } from 'antd/es/_util/type'
 export type { TablePaginationConfig as Pagination } from 'antd'
 

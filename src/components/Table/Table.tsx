@@ -21,17 +21,15 @@
 import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement } from 'react'
 
-import * as ButtonTypes from '../Button/Button.types'
-import { ColumnAlignment, ColumnType, GenericRecord, Layout, Pagination, Size, TableLocale } from './Table.types'
-import { Button } from '../Button'
-import { Icon } from '../Icon'
+import { ColumnType, GenericRecord, Layout, Locale, Pagination, RowSelection, Size } from './Table.types'
 
-const { Small, Middle, Large } = Size
+const { Auto } = Layout
+const { Middle } = Size
 
 export type TableProps<Record> = {
  columns: ColumnType<Record>[],
  data: Record[],
- intlLocale?: TableLocale,
+ intlLocale?: Locale,
  isBordered?: boolean,
  isLoading?: boolean,
  footer?: (currentPageData: readonly Record[]) => ReactElement,
@@ -47,8 +45,9 @@ export type TableProps<Record> = {
  onHeaderRow?: (columns: any, index?: number) => any,
  onRow?: (record: Record, index?: number) => any,
  pagination?: Pagination,
- rowKey?: string,
- size: Size,
+ rowKey: string,
+ rowSelection?: RowSelection<Record>,
+ size?: Size,
  title?: (data: any) => string,
 }
 
@@ -70,6 +69,7 @@ export const Table = <Record extends GenericRecord>({
   onHeaderRow,
   onRow,
   rowKey,
+  rowSelection,
   pagination,
   size,
   title,
@@ -89,7 +89,7 @@ export const Table = <Record extends GenericRecord>({
         locale={intlLocale}
         pagination={pagination}
         rowKey={rowKey}
-        // rowSelection={}
+        rowSelection={rowSelection}
         // scroll={}
         showHeader
         // showSorterTooltip={}
@@ -106,36 +106,8 @@ export const Table = <Record extends GenericRecord>({
   )
 }
 
-// Table.actionColumn = {
-//   dataIndex: 'actions',
-//   align: ColumnAlignment.Right,
-//   title: (
-//     <div style={{ display: 'flex', justifyContent: 'center' }}>
-//       <Button
-//         icon={<Icon name="PiGearLight" size={16} />}
-//         shape={ButtonTypes.Shape.Circle}
-//         size={ButtonTypes.Size.Small}
-//         type={ButtonTypes.Type.Ghost}
-//       />
-//     </div>
-//   ),
-//   // filters: [
-//   //   { text: 'Row Heights',
-//   //     options: [
-//   //       { text: 'Small', value: Small },
-//   //       { text: 'Middle', value: Middle },
-//   //       { text: 'Large', value: Large },
-//   //     ],
-//   //   },
-//   // ],
-//   width: 1,
-//   // onFilter: (value, record) =>
-//   // onFilterDropdownOpenChange: (visible) => {
-//   //   if (visible) {
-//   //     setTimeout(() => searchInput.current?.select(), 100)
-//   //   }
-//   // },
-// }
+Table.expandable = {
+}
 
 Table.pagination = {
   defaultCurrent: 1,
@@ -157,6 +129,7 @@ Table.pagination = {
 Table.defaultProps = {
   isBordered: false,
   isLoading: false,
+  layout: Auto,
   pagination: Table.pagination,
   size: Middle,
 }
