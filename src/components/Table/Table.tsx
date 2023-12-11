@@ -27,28 +27,110 @@ const { Auto } = Layout
 const { Middle } = Size
 
 export type TableProps<Record> = {
+
+ /**
+  * An array of column configurations for the table.
+  */
  columns: ColumnType<Record>[],
+
+ /**
+  * The array of data records to be displayed in the table.
+  */
  data: Record[],
+
+ /**
+  * Configuration for making the table rows expandable.
+  */
  expandable?: ExpandableConfig<Record>,
+
+ /**
+  * The locale configuration for internationalization
+  */
  intlLocale?: Locale,
+
+ /**
+  * Indicates wheter the table has borders
+  */
  isBordered?: boolean,
+
+ /**
+  * Indicates wheter the table is in a loading state (skeleton)
+  */
  isLoading?: boolean,
+
+ /**
+  * A custom footer component for the table.
+  *
+  * @param currentPageData - The data of the current page.
+  * @returns React element to be displayed under the table.
+  */
  footer?: (currentPageData: readonly Record[]) => ReactElement,
+
+ /**
+  * The table-layout attributre of the table.
+  *
+  * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout}
+  */
  layout?: Layout,
+
+ /**
+  * Callback function triggered when there are changes in the table (pagination, filters, sorter, etc.).
+  *
+  * @param pagination - The pagination configuration.
+  * @param filters - The applied filters.
+  * @param sorter - The sorting configuration.
+  * @param extra - Additional information including current data source and the triggered user action.
+  */
  onChange?: (
   pagination: unknown,
   filters: unknown,
   sorter: unknown,
-  extra: {
-    currentDataSource: readonly Record[],
-    action: UserAction
-}) => void,
+  extra: { currentDataSource: readonly Record[], action: UserAction }
+) => void,
+
+/**
+  * Callback function for customizing the header row of the table.
+  *
+  * @param columns - The columns of the header row.
+  * @param index - The index of the header row.
+  * @returns The header row component.
+  */
  onHeaderRow?: (columns: readonly ColumnType<Record>[], index?: number) => any,
+
+ /**
+  * Callback function for customizing each table row.
+  *
+  * @param record - The data record for the row.
+  * @param index - The index of the row.
+  * @returns The customized row component.
+  */
  onRow?: (record: Record, index?: number) => any,
+
+ /**
+  * Configuration for table pagination.
+  */
  pagination?: Pagination,
+
+/**
+  * The key used to identify each row of the table.
+  *
+  * @remarks use the first level key for nested fields (e.g. ["foo", "bar"] becomes "foo")
+  */
  rowKey: string,
+
+ /**
+  * Configuration for row selection in the table.
+  */
  rowSelection?: RowSelection<Record>,
+
+ /**
+  * The size of the table.
+  */
  size?: Size,
+
+ /**
+  * Configuration for table scrolling.
+  */
  scroll?: Scroll,
 }
 

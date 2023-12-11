@@ -117,10 +117,10 @@ export const columns: ColumnType<TableRecord>[] = [
 ]
 
 export const scrollableColumns: ColumnType<TableRecord>[] = [
-  { dataIndex: 'field1', title: 'Field 1', width: '10%', fixed: Left },
+  { dataIndex: 'field1', title: 'Field 1 (fixed left)', width: '10%', fixed: Left },
   { dataIndex: 'field2', title: 'Field 2' },
   { dataIndex: 'field3', title: 'Field 3' },
-  { dataIndex: ['nested', 'field4'], title: 'Field 4', width: '10%', fixed: Right },
+  { dataIndex: ['nested', 'field4'], title: 'Field 4 (fixed right)', width: '10%', fixed: Right },
 ]
 
 export const filteredAndSortedColumns: ColumnType<TableRecord>[] = [
