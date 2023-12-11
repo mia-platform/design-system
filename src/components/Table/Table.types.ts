@@ -17,25 +17,17 @@
  */
 
 export type { ColumnType } from 'antd/es/table'
-export type { ColumnFilterItem, TableLocale as Locale, TableRowSelection as RowSelection } from 'antd/es/table/interface'
+export type { ColumnFilterItem, ExpandableConfig, TableLocale as Locale, TableRowSelection as RowSelection } from 'antd/es/table/interface'
 export type { AnyObject as GenericRecord } from 'antd/es/_util/type'
 export type { TablePaginationConfig as Pagination } from 'antd'
 
-export enum Layout {
-  Auto = 'auto',
-  Fixed = 'fixed',
+export type Scroll = {
+  x?: number | string | true,
+  y?: number | string,
+  scrollToFirstRowOnChange?: boolean,
 }
 
-export enum SortOrder {
-  Ascend = 'ascend',
-  Descend = 'descend',
-}
-
-export enum Size {
-  Small = 'small',
-  Middle ='middle',
-  Large = 'large',
-}
+export type UserAction = 'paginate' | 'sort' | 'filter'
 
 export enum ColumnAlignment {
   Left = 'left',
@@ -46,4 +38,20 @@ export enum ColumnAlignment {
 export enum ColumnFilterMode {
   Menu = 'menu',
   Tree = 'tree',
+}
+
+export enum Layout {
+  Auto = 'auto',
+  Fixed = 'fixed',
+}
+
+export enum Size {
+  Small = 'small',
+  Middle ='middle',
+  Large = 'large',
+}
+
+export enum SortOrder {
+  Ascend = 'ascend',
+  Descend = 'descend',
 }

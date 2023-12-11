@@ -25,13 +25,17 @@ import {
   alignedColumns,
   columns,
   data,
+  expandable,
   filteredAndSortedColumns,
   footer,
   hugeData,
   pagination,
   rowKey,
   rowSelection,
+  scroll,
+  scrollableColumns,
   sizedColumns,
+  spannedColumns,
 } from './Table.mocks'
 import { Table } from '.'
 
@@ -75,6 +79,15 @@ export const Selection: Story = {
   },
 }
 
+export const Expandable: Story = {
+  args: { ...meta.args,
+    expandable: expandable({
+      onExpand: action('onExpand'),
+      onExpandRowsChange: action('onExpandRowsChange'),
+    }),
+  },
+}
+
 export const Pagination: Story = {
   args: { ...meta.args,
     data: hugeData,
@@ -87,6 +100,10 @@ export const Pagination: Story = {
 
 export const Footer: Story = {
   args: { ...meta.args, footer },
+}
+
+export const Scroll: Story = {
+  args: { ...meta.args, data: hugeData, columns: scrollableColumns, scroll },
 }
 
 export const ExternalFiltersAndSorting: Story = {
@@ -104,4 +121,8 @@ export const ColumnAlignment: Story = {
 
 export const ColumnWidth: Story = {
   args: { ...meta.args, columns: sizedColumns },
+}
+
+export const ColumnSpan: Story = {
+  args: { ...meta.args, columns: spannedColumns, isBordered: true },
 }

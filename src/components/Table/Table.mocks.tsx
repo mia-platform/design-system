@@ -23,9 +23,9 @@ import { Space } from 'antd'
 import { StoryFn } from '@storybook/react'
 import { get } from 'lodash'
 
-import * as ButtonTypes from '../Button/Button.types'
-import { ColumnAlignment, ColumnFilterMode, ColumnType, Pagination, RowSelection, SortOrder } from './Table.types'
+import { ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder } from './Table.types'
 import { Button } from '../Button'
+import { Hierarchy as ButtonHierarchy } from '../Button/Button.types'
 import { Table } from '.'
 import { TableProps } from './Table'
 
@@ -81,6 +81,7 @@ const menufilterProps = (fieldName: FieldName): object => ({
   filters,
   filterMode: Menu,
   filterSearch: true,
+  filterResetToDefaultFilteredValue: true,
   onFilter: (value: unknown, record: TableRecord) => get(record, fieldName) === value,
 })
 
@@ -88,6 +89,7 @@ const treefilterProps = (fieldName: FieldName): object => ({
   filters,
   filterMode: Tree,
   filterSearch: true,
+  filterResetToDefaultFilteredValue: true,
   onFilter: (value: unknown, record: TableRecord) => get(record, fieldName) === value,
 })
 
@@ -114,10 +116,11 @@ export const columns: ColumnType<TableRecord>[] = [
   { dataIndex: ['nested', 'field4'], title: 'Field 4' },
 ]
 
-export const alignedColumns: ColumnType<TableRecord>[] = [
-  { dataIndex: 'field1', title: 'Left Alignment', align: Left },
-  { dataIndex: 'field2', title: 'Center Alignment', align: Center },
-  { dataIndex: ['nested', 'field4'], title: 'Right Alignment', align: Right },
+export const scrollableColumns: ColumnType<TableRecord>[] = [
+  { dataIndex: 'field1', title: 'Field 1', width: '10%', fixed: Left },
+  { dataIndex: 'field2', title: 'Field 2' },
+  { dataIndex: 'field3', title: 'Field 3' },
+  { dataIndex: ['nested', 'field4'], title: 'Field 4', width: '10%', fixed: Right },
 ]
 
 export const filteredAndSortedColumns: ColumnType<TableRecord>[] = [
@@ -127,10 +130,10 @@ export const filteredAndSortedColumns: ColumnType<TableRecord>[] = [
   { dataIndex: ['nested', 'field4'], title: 'Filtered and Sorted', ...menufilterProps(['nested', 'field4']), ...sortProps(['nested', 'field4']) },
 ]
 
-export const spannedColumns: ColumnType<TableRecord>[] = [
-  { dataIndex: 'field1', title: 'Left Alignment', colSpan: 0 },
-  { dataIndex: 'field2', title: 'Center Alignment' },
-  { dataIndex: 'field3', title: 'Right Alignment' },
+export const alignedColumns: ColumnType<TableRecord>[] = [
+  { dataIndex: 'field1', title: 'Left Alignment', align: Left },
+  { dataIndex: 'field2', title: 'Center Alignment', align: Center },
+  { dataIndex: ['nested', 'field4'], title: 'Right Alignment', align: Right },
 ]
 
 export const sizedColumns: ColumnType<TableRecord>[] = [
@@ -140,10 +143,42 @@ export const sizedColumns: ColumnType<TableRecord>[] = [
   { dataIndex: ['nested', 'field4'], title: '10%', width: '10%' },
 ]
 
+export const spannedColumns: ColumnType<TableRecord>[] = [
+  { dataIndex: 'field1', title: 'Field 1', colSpan: 1 },
+  { dataIndex: 'field2', title: 'Field 2 - Field 3', colSpan: 2 },
+  { dataIndex: 'field3', title: 'Field 3', colSpan: 0 },
+  { dataIndex: ['nested', 'field4'], title: 'Field 4', colSpan: 1 },
+]
+
+/** Scroll */
+
+export const scroll = {
+  x: 1800,
+  y: 200,
+  scrollToFirstRowOnChange: true,
+}
+
 /** Row Selection */
 
 export const rowSelection = (actions: StorybookActions): RowSelection<TableRecord> => ({
+  columnTitle: '',
   fixed: true,
+  hideSelectAll: false,
+  type: 'checkbox',
+  ...actions,
+})
+
+/** Row Expansion */
+
+export const expandable = (actions: StorybookActions): ExpandableConfig<TableRecord> => ({
+  columnTitle: '',
+  defaultExpandAllRows: false,
+  defaultExpandedRowKeys: [],
+  expandIcon: undefined,
+  expandedRowRender: () => 'Expandable row',
+  expandRowByClick: true,
+  rowExpandable: (record: TableRecord) => record.field1 !== 'Value 3',
+  showExpandColumn: true,
   ...actions,
 })
 
@@ -152,7 +187,8 @@ export const rowSelection = (actions: StorybookActions): RowSelection<TableRecor
 export const pagination = (actions: StorybookActions): Pagination => ({
   ...Table.pagination,
   ...actions,
-  // Fit Storybook size
+
+  // Only to fit Storybook size
   defaultPageSize: 4,
   pageSizeOptions: [4, 10, 20],
 })
@@ -168,8 +204,6 @@ export const footer = (currentPageData: readonly TableRecord[]): ReactElement =>
 }
 
 /** Externally controlled Filters and Sorters */
-
-const { Hierarchy: { Neutral }, Type: { Outlined } } = ButtonTypes
 
 type FilterState = TableRecord[]
 type SortState = {
@@ -193,10 +227,10 @@ export const WithExternalFiltersandSorters = (_: StoryFn, { args }: {args: Table
   return (
     <Space direction="vertical" style={{ width: '100%' }} >
       <Space>
-        <Button hierarchy={Neutral} type={Outlined} onClick={filterValue2}>{'Filter Value 2'}</Button>
-        <Button hierarchy={Neutral} type={Outlined} onClick={sortField2Descending}>{'Sort Field 2 Descending'}</Button>
-        <Button hierarchy={Neutral} type={Outlined} onClick={clearFilters}>{'Clear filters'}</Button>
-        <Button hierarchy={Neutral} type={Outlined} onClick={clearSort}>{'Clear sort'}</Button>
+        <Button hierarchy={ButtonHierarchy.Neutral} onClick={filterValue2}>{'Filter Value 2'}</Button>
+        <Button hierarchy={ButtonHierarchy.Neutral} onClick={sortField2Descending}>{'Sort Field 2 Descending'}</Button>
+        <Button hierarchy={ButtonHierarchy.Neutral} onClick={clearFilters}>{'Clear filters'}</Button>
+        <Button hierarchy={ButtonHierarchy.Neutral} onClick={clearSort}>{'Clear sort'}</Button>
       </Space>
       <Table
         {...args}
@@ -208,6 +242,7 @@ export const WithExternalFiltersandSorters = (_: StoryFn, { args }: {args: Table
           sorter: (fieldA: TableRecord, fieldB: TableRecord) => (fieldA?.field2 > fieldB?.field2 ? 1 : -1),
 
           /* Apply filters */
+          filtered: true,
           filteredValue: filteredData.map(record => get(record, column.dataIndex!)),
           onFilter: (value: unknown, record: TableRecord) => get(record, column.dataIndex!) === value,
         }))}

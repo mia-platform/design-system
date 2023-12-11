@@ -21,7 +21,7 @@
 import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement } from 'react'
 
-import { ColumnType, GenericRecord, Layout, Locale, Pagination, RowSelection, Size } from './Table.types'
+import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, Scroll, Size, UserAction } from './Table.types'
 
 const { Auto } = Layout
 const { Middle } = Size
@@ -29,6 +29,7 @@ const { Middle } = Size
 export type TableProps<Record> = {
  columns: ColumnType<Record>[],
  data: Record[],
+ expandable?: ExpandableConfig<Record>,
  intlLocale?: Locale,
  isBordered?: boolean,
  isLoading?: boolean,
@@ -40,15 +41,15 @@ export type TableProps<Record> = {
   sorter: unknown,
   extra: {
     currentDataSource: readonly Record[],
-    action: 'paginate' | 'sort' | 'filter'
+    action: UserAction
 }) => void,
- onHeaderRow?: (columns: any, index?: number) => any,
+ onHeaderRow?: (columns: readonly ColumnType<Record>[], index?: number) => any,
  onRow?: (record: Record, index?: number) => any,
  pagination?: Pagination,
  rowKey: string,
  rowSelection?: RowSelection<Record>,
  size?: Size,
- title?: (data: any) => string,
+ scroll?: Scroll,
 }
 
 /**
@@ -60,6 +61,7 @@ export type TableProps<Record> = {
 export const Table = <Record extends GenericRecord>({
   columns,
   data,
+  expandable,
   footer,
   intlLocale,
   isBordered,
@@ -72,7 +74,7 @@ export const Table = <Record extends GenericRecord>({
   rowSelection,
   pagination,
   size,
-  title,
+  scroll,
 }: TableProps<Record>): ReactElement => {
   return (
     <Skeleton
@@ -83,30 +85,30 @@ export const Table = <Record extends GenericRecord>({
         bordered={isBordered}
         columns={columns}
         dataSource={data}
-        // expandable={}
+        expandable={expandable}
         footer={footer}
         loading={false}
         locale={intlLocale}
         pagination={pagination}
         rowKey={rowKey}
         rowSelection={rowSelection}
-        // scroll={}
+        scroll={scroll}
         showHeader
-        // showSorterTooltip={}
+        showSorterTooltip={false}
         size={size}
         // sticky={}
         tableLayout={layout}
-        title={title}
+        virtual={false}
         onChange={onChange}
         onHeaderRow={onHeaderRow}
         onRow={onRow}
-        // virtual={}
       />
     </Skeleton>
   )
 }
 
-Table.expandable = {
+Table.scroll = {
+  x: true as const,
 }
 
 Table.pagination = {
@@ -131,5 +133,6 @@ Table.defaultProps = {
   isLoading: false,
   layout: Auto,
   pagination: Table.pagination,
+  scroll: Table.scroll,
   size: Middle,
 }
