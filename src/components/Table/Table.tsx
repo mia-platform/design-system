@@ -96,7 +96,7 @@ export const Table = <Record extends GenericRecord>({
         showHeader
         showSorterTooltip={false}
         size={size}
-        // sticky={}
+        sticky={true}
         tableLayout={layout}
         virtual={false}
         onChange={onChange}
