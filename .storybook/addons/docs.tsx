@@ -29,7 +29,7 @@ const docs = {
       <Subtitle />
       <Description />
       <Primary />
-      <Controls />
+      <Controls sort='requiredFirst' />
       <Stories includePrimary={false} />
     </>
   ),
