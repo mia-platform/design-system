@@ -22,9 +22,11 @@ import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement } from 'react'
 
 import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, Scroll, Size, UserAction } from './Table.types'
+import styles from './Table.module.css'
 
 const { Auto } = Layout
 const { Middle } = Size
+const { table } = styles
 
 export type TableProps<Record> = {
 
@@ -165,6 +167,7 @@ export const Table = <Record extends GenericRecord>({
     >
       <AntTable<Record>
         bordered={isBordered}
+        className={table}
         columns={columns}
         dataSource={data}
         expandable={expandable}

@@ -18,7 +18,7 @@
 
 import { } from './Table.types'
 import { } from './Table.mocks'
-import { render, screen, waitFor } from '../../test-utils'
+import { render, waitFor } from '../../test-utils'
 import { Table } from '.'
 
 
@@ -28,7 +28,7 @@ describe('Table Component', () => {
   })
 
   test('renders table correctly', async() => {
-    const { asFragment } = render(<Table columns={[]} data={[]} />)
+    const { asFragment } = render(<Table columns={[]} data={[]} rowKey="" />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 })

@@ -37,6 +37,7 @@ import {
   sizedColumns,
   spannedColumns,
 } from './Table.mocks'
+import { Size } from './Table.types'
 import { Table } from '.'
 
 const meta = {
@@ -57,6 +58,14 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: meta.args,
+}
+
+export const Small: Story = {
+  args: { ...meta.args, size: Size.Small },
+}
+
+export const Large: Story = {
+  args: { ...meta.args, size: Size.Large },
 }
 
 export const Loading: Story = {
