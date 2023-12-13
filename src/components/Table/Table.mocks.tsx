@@ -162,7 +162,7 @@ export const scroll = {
 
 export const rowSelection = (actions: StorybookActions): RowSelection<TableRecord> => ({
   columnTitle: '',
-  fixed: true,
+  fixed: Left,
   hideSelectAll: false,
   type: 'checkbox',
   ...actions,
