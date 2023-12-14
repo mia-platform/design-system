@@ -16,18 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type { ColumnType } from 'antd/es/table'
-export type { ColumnFilterItem, ExpandableConfig, TableLocale as Locale, TableRowSelection as RowSelection } from 'antd/es/table/interface'
-export type { AnyObject as GenericRecord } from 'antd/es/_util/type'
+import type { AnyObject as GenericRecord } from 'antd/es/_util/type'
 export type { TablePaginationConfig as Pagination } from 'antd'
-
-export type Scroll = {
-  x?: number | string | true,
-  y?: number | string,
-  scrollToFirstRowOnChange?: boolean,
-}
-
-export type UserAction = 'paginate' | 'sort' | 'filter'
+export type { ColumnType, ColumnFilterItem, ExpandableConfig, TableLocale as Locale, TableRowSelection as RowSelection } from 'antd/es/table/interface'
+export type { GenericRecord }
 
 export enum ColumnAlignment {
   Left = 'left',
@@ -45,6 +37,13 @@ export enum Layout {
   Fixed = 'fixed',
 }
 
+export enum RowFormat {
+  Info = 'info',
+  Success = 'success',
+  Warning = 'warning',
+  Error = 'error'
+}
+
 export enum Size {
   Small = 'small',
   Middle ='middle',
@@ -55,3 +54,15 @@ export enum SortOrder {
   Ascend = 'ascend',
   Descend = 'descend',
 }
+
+export type RowFormatting<T extends GenericRecord> = {
+  formattedRowKeys: Record<T[keyof T], RowFormat>,
+}
+
+export type Scroll = {
+  x?: number | string | true,
+  y?: number | string,
+  scrollToFirstRowOnChange?: boolean,
+}
+
+export type UserAction = 'paginate' | 'sort' | 'filter'

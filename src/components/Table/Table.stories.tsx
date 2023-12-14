@@ -30,6 +30,7 @@ import {
   footer,
   hugeData,
   pagination,
+  rowFormatting,
   rowKey,
   rowSelection,
   scroll,
@@ -48,8 +49,6 @@ const meta = {
     data,
     rowKey,
     onChange: action('onChange'),
-    onHeaderRow: action('onHeaderRow'),
-    onRow: action('onRow'),
   },
 } satisfies Meta<typeof Table<TableRecord>>
 
@@ -134,4 +133,11 @@ export const ColumnWidth: Story = {
 
 export const ColumnSpan: Story = {
   args: { ...meta.args, columns: spannedColumns, isBordered: true },
+}
+
+export const FormattedRows: Story = {
+  args: {
+    ...meta.args,
+    rowFormatting,
+  },
 }

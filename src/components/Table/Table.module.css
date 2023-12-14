@@ -3,4 +3,32 @@
     padding-top: calc(var(--spacing-padding-sm, 8) * 1px) !important;
     padding-bottom: calc(var(--spacing-padding-sm, 8) * 1px) !important;
   }
+
+  :global(.info>td) {
+    background-color: lightblue;
+  }
+  :global(.info:hover>td) {
+    background-color: blue !important;
+  }
+
+  :global(.success>td) {
+    background-color: lightgreen;
+  }
+  :global(.success:hover>td) {
+    background-color: green !important;
+  }
+
+  :global(.warning>td) {
+    background-color: yellow;
+  }
+  :global(.warning:hover>td) {
+    background-color: orange !important;
+  }
+
+  :global(.error>td) {
+    background-color: lightcoral;
+  }
+  :global(.error:hover>td) {
+    background-color: red !important;
+  }
 }

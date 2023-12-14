@@ -23,7 +23,7 @@ import { Space } from 'antd'
 import { StoryFn } from '@storybook/react'
 import { get } from 'lodash'
 
-import { ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder } from './Table.types'
+import { ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowFormat, RowSelection, SortOrder } from './Table.types'
 import { Button } from '../Button'
 import { Hierarchy as ButtonHierarchy } from '../Button/Button.types'
 import { Table } from '.'
@@ -31,6 +31,7 @@ import { TableProps } from './Table'
 
 const { Left, Center, Right } = ColumnAlignment
 const { Menu, Tree } = ColumnFilterMode
+const { Info, Success, Warning, Error } = RowFormat
 const { Ascend, Descend } = SortOrder
 
 type FieldName = string | string[]
@@ -61,7 +62,7 @@ export const hugeData: TableRecord[] = Array.from({ length: 50 }).map((_, i) => 
   nested: { field4: `Value ${i + 1}` },
 }))
 
-export const [rowKey] = Object.keys(data[0])
+export const rowKey = Object.keys(data[0])[0] as keyof TableRecord
 
 /** Filters */
 
@@ -160,7 +161,7 @@ export const scroll = {
 
 /** Row Selection */
 
-export const rowSelection = (actions: StorybookActions): RowSelection<TableRecord> => ({
+export const rowSelection = (actions: StorybookActions = {}): RowSelection<TableRecord> => ({
   columnTitle: '',
   fixed: Left,
   hideSelectAll: false,
@@ -170,7 +171,7 @@ export const rowSelection = (actions: StorybookActions): RowSelection<TableRecor
 
 /** Row Expansion */
 
-export const expandable = (actions: StorybookActions): ExpandableConfig<TableRecord> => ({
+export const expandable = (actions: StorybookActions = {}): ExpandableConfig<TableRecord> => ({
   columnTitle: '',
   defaultExpandAllRows: false,
   defaultExpandedRowKeys: [],
@@ -182,9 +183,20 @@ export const expandable = (actions: StorybookActions): ExpandableConfig<TableRec
   ...actions,
 })
 
+/** Row Formatting */
+
+export const rowFormatting = {
+  formattedRowKeys: {
+    'Value 1': Info,
+    'Value 2': Success,
+    'Value 3': Warning,
+    'Value 4': Error,
+  },
+}
+
 /** Pagination */
 
-export const pagination = (actions: StorybookActions): Pagination => ({
+export const pagination = (actions: StorybookActions = {}): Pagination => ({
   ...Table.pagination,
   ...actions,
 
