@@ -5,30 +5,30 @@
   }
 
   :global(.info>td) {
-    background-color: lightblue;
+    background-color: lightblue; /* TODO use theme var */
   }
   :global(.info:hover>td) {
-    background-color: blue !important;
+    background-color: blue !important; /* TODO use theme var */
   }
 
   :global(.success>td) {
-    background-color: lightgreen;
+    background-color: lightgreen; /* TODO use theme var */
   }
   :global(.success:hover>td) {
-    background-color: green !important;
+    background-color: green !important; /* TODO use theme var */
   }
 
   :global(.warning>td) {
-    background-color: yellow;
+    background-color: yellow; /* TODO use theme var */
   }
   :global(.warning:hover>td) {
-    background-color: orange !important;
+    background-color: orange !important; /* TODO use theme var */
   }
 
   :global(.error>td) {
-    background-color: lightcoral;
+    background-color: lightcoral; /* TODO use theme var */
   }
   :global(.error:hover>td) {
-    background-color: red !important;
+    background-color: red !important; /* TODO use theme var */
   }
 }

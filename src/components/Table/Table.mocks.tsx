@@ -16,8 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/* eslint-disable react/prop-types */
-
 import { ReactElement, useState } from 'react'
 import { Space } from 'antd'
 import { StoryFn } from '@storybook/react'

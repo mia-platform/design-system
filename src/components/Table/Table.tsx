@@ -49,7 +49,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - filterMultiple: Whether multiple filters can be selected. <br> `boolean`
   *   - filters: filters configurations for the column. <br> `object`:
   *       - text: Filter option display value. <br> `ReactNode`
-  *       - value: Value provided to the table when filter is applied. <br> `string` | `number` | `boolean`
+  *       - value: Value provided to the table when the filter is applied. <br> `string` | `number` | `boolean`
   *       - children: sub-filters configurations (same as filters).`object`
   *   - filterSearch: Whether to display a search bar in filter dropdown. <br> `boolean`
   *   - filterResetToDefaultFilteredValue: Whether to apply the initial filter when filters reset. <br> `boolean`
@@ -58,7 +58,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - render: Column custom render function. <br> `(value: any, record: RecordType, index: number) => ReactNode`
   *   - shoSorterTooltip: Whether the sorter tooltip is displayed. <br> `booean`
   *   - sortDirections: Possible sort directions for the column. <br> `["ascend", "descend"]`
-  *   - sorter: Sorting function appliead between two records. <br> `(a: RecordType, b: RecordType, sortOrder: "ascend" | "descend") => boolean`
+  *   - sorter: Sorting function applied between two records. <br> `(a: RecordType, b: RecordType, sortOrder: "ascend" | "descend") => boolean`
   *   - sortOrder: Controlled sort order for the column. <br> `"ascend" | "descend"`
   *   - sortIcon: Sorter custom icon. <br> `ReactNode`
   *   - width: Column width, either a percentage or number of pixels. <br> `string` | `number`
@@ -80,15 +80,15 @@ export type TableProps<RecordType extends GenericRecord> = {
   * Configuration for making the table rows expandable.
   *
   * expandable `object`:
-  *   - columnTitle: The name displayed on the expand column. <br> `ReactNode`
+  *   - columnTitle: The name displayed on the expansion column. <br> `ReactNode`
   *   - columnWidth: The width of the expansion column. <br> `string` | `number`
   *   - defaultExpandAllRows: Whether the rows are initially expanded. <br> `boolean`
   *   - defaultExpandedRowKeys: The initially expanded rows. <br> `React.Key[]`
   *   - expandedRowClassName: A custom class for expanded rows. <br> `(record: RecordType, index: number) => string`
   *   - expandedRowKeys: Externally controlled expanded rows. <br> `React.Key[]`
-  *   - expandedRowRender: The. <br> `ExpandedRowRender<RecordType>`
+  *   - expandedRowRender: A custom expanded row render. <br> `(record: RecordType, index: number) => ReactNode`
   *   - expandRowByClick: Whether the row expands by clicking the whole row. <br> `boolean`
-  *   - expandIcon: A custom expand icon for the row. <br> `(prefixCls: stirng, expanded: boolean, record: RecordType, expandable: boolean, onExpand: (record: RecordType, event: Event) => void) => ReactNode`
+  *   - expandIcon: A custom expand icon for the row. <br> `(prefixCls: string, expanded: boolean, record: RecordType, expandable: boolean, onExpand: (record: RecordType, event: Event) => void) => ReactNode`
   *   - fixed: Whether the expansion column should stick to a fixed position. <br> `"left"` | `"right"`
   *   - showExpandColumn: Whether the expansion column is visible. <br> `boolean`
   *   - rowExpandable: A function that determines whether a row is expandable. <br> `(record: RecordType) => boolean`
@@ -105,12 +105,12 @@ export type TableProps<RecordType extends GenericRecord> = {
  intlLocale?: Locale,
 
  /**
-  * Indicates wheter the table has borders
+  * Indicates whether the table has borders
   */
  isBordered?: boolean,
 
  /**
-  * Indicates wheter the table is in a loading state (skeleton)
+  * Indicates whether the table is in a loading state (skeleton)
   */
  isLoading?: boolean,
 
@@ -123,7 +123,7 @@ export type TableProps<RecordType extends GenericRecord> = {
  footer?: (currentPageData: readonly RecordType[]) => ReactElement,
 
  /**
-  * The table-layout attributre of the table.
+  * The table-layout attribute of the table.
   *
   * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout}
   */
@@ -164,13 +164,35 @@ export type TableProps<RecordType extends GenericRecord> = {
 
  /**
   * Configuration for table pagination.
+  *
+  * pagination `object`:
+  *   - current: The externally controlled selected page. <br> `number`
+  *   - defaultCurrent: The initially selected page. <br> `number`
+  *   - defaultPageSize: The initially selected size of the page. <br> `number`
+  *   - disabled: Whether the pagination is disabled. <br> `boolean`
+  *   - hideOnSinglePage: Whether the pagination is hidden when only one page is present. <br> `boolean`
+  *   - pageSize: The externally controlled size of the page. <br> `number`
+  *   - pageSizeOptions: The options shown in the page size changer. <br> `number[]`
+  *   - responsive: Whether the pagination resizes automatically with the window. <br> `boolean`
+  *   - showLessItems: Whether to show less page items. <br> `boolean`
+  *   - showQuickJumper: Whether to show the exact page selector. <br> `boolean`
+  *   - showSizeChanger: Whether to show the page size selector. <br> `boolean`
+  *   - showTitle: Whether to show the page size selector. <br> `boolean`
+  *   - showTotal: Custom total title function. <br> `(total: number) => ReactElement`
+  *   - simple: Whether a simpler pagination is set. <br> `boolean`
+  *   - size: The size of the pagination. <br> `"small" | "default"`
+  *   - total: Externally controlled number of total items. <br> `number`
+  *   - onChange: Callback invoked when updating page size or page number. <br> `(page: number, pageSize: number) => void`
+  *   - onShowSizeChange: Callback invoked when selecting an option. <br> `(current: number, pageSize: number) => void`
+  *
+  * @see {@link https://ant.design/components/pagination#api} for advanced configurations.
   */
  pagination?: Pagination,
 
  /**
  * Configuration for row selection in the table.
  *
- * - formattedRowKeys: Externally controlled formatted rows. <br> `React.Key[]`
+ * - formattedRowKeys: Externally controlled formatted rows. <br> `Record<RecordType[keyof RecordType], "info" | "success" | "warning" | "error">`
  */
  rowFormatting?: RowFormatting<RecordType>
 
@@ -192,7 +214,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - hideSelectAll: Whether to hide the select all checkbox (only for type "checkbox"). <br> `boolean`
   *   - selectedRowKeys: Externally controlled selected rows. <br> `React.Key[]`
   *   - type: Selection type, use radio for mutual exclusive selection. <br> `"checkbox"` | `"radio"`
-  *   - onChange: Callback invoked when updating table. <br> `(selectedRowKeys: string[], selectedRows: RecordType[], info: { type: "checkbox" | "radio" }) => void`
+  *   - onChange: Callback invoked when updating the table. <br> `(selectedRowKeys: string[], selectedRows: RecordType[], info: { type: "checkbox" | "radio" }) => void`
   *   - onSelect: Callback invoked when selecting an option. <br> `(record: RecordType, selected: boolean, selectedRows: RecordType[], nativeEvent: Event) => void`
   *   - onSelectAll: Callback invoked when selecting all options. <br> `(selected: boolean, selectedRows: RecordType[], changeRows: RecordType[]) => void`
   *   - onSelectMultiple: Callback invoked when selecting all options. <br> `(selected: boolean, selectedRows: RecordType[], changeRows: RecordType[]) => void`
@@ -209,6 +231,11 @@ export type TableProps<RecordType extends GenericRecord> = {
 
  /**
   * Configuration for table scrolling.
+  *
+  * scroll `object`:
+  *   - x: Minimum width from which the table scrolls horizontally. If true, it sets the width as max-content. <br> `number | string | true`
+  *   - y: Minimum height from which the table scrolls vertically. <br> `number | string`
+  *   - scrollToFirstRowOnChange: Whether to automatically scroll to the first row of the page after onChange is invoked. <br> `boolean`
   */
  scroll?: Scroll,
 }
