@@ -214,9 +214,9 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - hideSelectAll: Whether to hide the select all checkbox (only for type "checkbox"). <br> `boolean`
   *   - selectedRowKeys: Externally controlled selected rows. <br> `React.Key[]`
   *   - type: Selection type, use radio for mutual exclusive selection. <br> `"checkbox"` | `"radio"`
-  *   - onChange: Callback invoked when updating the table. <br> `(selectedRowKeys: string[], selectedRows: RecordType[], info: { type: "checkbox" | "radio" }) => void`
+  *   - onChange: Callback invoked when updating the table. <br> `(selectedRowKeys: string[], selectedRows: RecordType[], info: { type: "all" | "none" | "invert" | "single" | "multiple" }) => void`
   *   - onSelect: Callback invoked when selecting an option. <br> `(record: RecordType, selected: boolean, selectedRows: RecordType[], nativeEvent: Event) => void`
-  *   - onSelectAll: Callback invoked when selecting all options. <br> `(selected: boolean, selectedRows: RecordType[], changeRows: RecordType[]) => void`
+  *   - onSelectAll: Callback invoked when selecting all options. <br> `(selected: boolean, selectedRows: RecordType[], changedRows: RecordType[]) => void`
   *   - onSelectMultiple: Callback invoked when selecting all options. <br> `(selected: boolean, selectedRows: RecordType[], changeRows: RecordType[]) => void`
   *   - onSelectNone: Callback invoked when deselecting all options. <br> `() => void`
   *

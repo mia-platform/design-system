@@ -91,7 +91,7 @@ export const Expandable: Story = {
   args: { ...meta.args,
     expandable: expandable({
       onExpand: action('onExpand'),
-      onExpandRowsChange: action('onExpandRowsChange'),
+      onExpandedRowsChange: action('onExpandedRowsChange'),
     }),
   },
 }

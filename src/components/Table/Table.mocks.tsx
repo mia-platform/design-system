@@ -33,7 +33,7 @@ const { Info, Success, Warning, Error } = RowFormat
 const { Ascend, Descend } = SortOrder
 
 type FieldName = string | string[]
-type StorybookActions = Record<string, () => void>
+type Callbacks = Record<string, () => void>
 
 /** Data */
 
@@ -159,26 +159,27 @@ export const scroll = {
 
 /** Row Selection */
 
-export const rowSelection = (actions: StorybookActions = {}): RowSelection<TableRecord> => ({
+export const rowSelection = (callbacks: Callbacks = {}): RowSelection<TableRecord> => ({
   columnTitle: '',
+  defaultSelectedRowKeys: ['Value 1'],
   fixed: Left,
   hideSelectAll: false,
   type: 'checkbox',
-  ...actions,
+  ...callbacks,
 })
 
 /** Row Expansion */
 
-export const expandable = (actions: StorybookActions = {}): ExpandableConfig<TableRecord> => ({
+export const expandable = (callbacks: Callbacks = {}): ExpandableConfig<TableRecord> => ({
   columnTitle: '',
   defaultExpandAllRows: false,
-  defaultExpandedRowKeys: [],
+  defaultExpandedRowKeys: ['Value 1'],
   expandIcon: undefined,
   expandedRowRender: () => 'Expandable row',
   expandRowByClick: true,
   rowExpandable: (record: TableRecord) => record.field1 !== 'Value 3',
   showExpandColumn: true,
-  ...actions,
+  ...callbacks,
 })
 
 /** Row Formatting */
@@ -194,9 +195,9 @@ export const rowFormatting = {
 
 /** Pagination */
 
-export const pagination = (actions: StorybookActions = {}): Pagination => ({
+export const pagination = (callbacks: Callbacks = {}): Pagination => ({
   ...Table.pagination,
-  ...actions,
+  ...callbacks,
 
   // Only to fit Storybook size
   defaultPageSize: 4,

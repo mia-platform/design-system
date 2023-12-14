@@ -1,0 +1,1794 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Component renders bordered table correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-table-wrapper table"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table ant-table-middle ant-table-bordered ant-table-scroll-horizontal"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-header ant-table-sticky-holder"
+              style="overflow: hidden; top: 0px;"
+            >
+              <table
+                style="table-layout: fixed; visibility: hidden;"
+              >
+                <colgroup />
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div
+              class="ant-table-body"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup />
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="ant-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Table Component renders expandable rows correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-table-wrapper table"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-header ant-table-sticky-holder"
+              style="overflow: hidden; top: 0px;"
+            >
+              <table
+                style="table-layout: fixed; visibility: hidden;"
+              >
+                <colgroup>
+                  <col
+                    class="ant-table-expand-icon-col"
+                  />
+                </colgroup>
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <td
+                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                    />
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div
+              class="ant-table-body"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup>
+                  <col
+                    class="ant-table-expand-icon-col"
+                  />
+                </colgroup>
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="ant-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                    >
+                      <span>
+                        <button
+                          aria-expanded="false"
+                          aria-label="Expand row"
+                          class="ant-table-row-expand-icon ant-table-row-expand-icon-collapsed"
+                          type="button"
+                        />
+                      </span>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-expanded-row ant-table-expanded-row-level-1"
+                    style="display: none;"
+                  >
+                    <td
+                      class="ant-table-cell"
+                      colspan="5"
+                    >
+                      Expandable row
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                    >
+                      <span>
+                        <button
+                          aria-expanded="true"
+                          aria-label="Collapse row"
+                          class="ant-table-row-expand-icon ant-table-row-expand-icon-expanded"
+                          type="button"
+                        />
+                      </span>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-expanded-row ant-table-expanded-row-level-1"
+                  >
+                    <td
+                      class="ant-table-cell"
+                      colspan="5"
+                    >
+                      Expandable row
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                    >
+                      <span>
+                        <button
+                          aria-expanded="false"
+                          aria-label="Expand row"
+                          class="ant-table-row-expand-icon ant-table-row-expand-icon-spaced"
+                          type="button"
+                        />
+                      </span>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                    >
+                      <span>
+                        <button
+                          aria-expanded="false"
+                          aria-label="Expand row"
+                          class="ant-table-row-expand-icon ant-table-row-expand-icon-collapsed"
+                          type="button"
+                        />
+                      </span>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Table Component renders footer correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-table-wrapper table"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-header ant-table-sticky-holder"
+              style="overflow: hidden; top: 0px;"
+            >
+              <table
+                style="table-layout: fixed; visibility: hidden;"
+              >
+                <colgroup />
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div
+              class="ant-table-body"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup />
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="ant-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div
+            class="ant-table-footer"
+          >
+            <span>
+              Total rows number: 4
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Table Component renders large table correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-table-wrapper table"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table ant-table-scroll-horizontal"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-header ant-table-sticky-holder"
+              style="overflow: hidden; top: 0px;"
+            >
+              <table
+                style="table-layout: fixed; visibility: hidden;"
+              >
+                <colgroup />
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div
+              class="ant-table-body"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup />
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="ant-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Table Component renders selectable rows correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-table-wrapper table"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table ant-table-middle ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-header ant-table-sticky-holder"
+              style="overflow: hidden; top: 0px;"
+            >
+              <table
+                style="table-layout: fixed; visibility: hidden;"
+              >
+                <colgroup>
+                  <col
+                    class="ant-table-selection-col"
+                  />
+                </colgroup>
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last ant-table-cell-fix-sticky"
+                      scope="col"
+                      style="position: sticky; left: 0px;"
+                    >
+                      <div
+                        class="ant-table-selection"
+                      >
+                        <label
+                          class="ant-checkbox-wrapper ant-checkbox-wrapper-checked"
+                        >
+                          <span
+                            class="ant-checkbox ant-wave-target ant-checkbox-checked"
+                          >
+                            <input
+                              aria-label="Select all"
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                        </label>
+                      </div>
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div
+              class="ant-table-body"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup>
+                  <col
+                    class="ant-table-selection-col"
+                  />
+                </colgroup>
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="ant-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0 ant-table-row-selected"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                      style="position: sticky; left: 0px;"
+                    >
+                      <label
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked"
+                      >
+                        <span
+                          class="ant-checkbox ant-wave-target ant-checkbox-checked"
+                        >
+                          <input
+                            checked=""
+                            class="ant-checkbox-input"
+                            type="checkbox"
+                          />
+                          <span
+                            class="ant-checkbox-inner"
+                          />
+                        </span>
+                      </label>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0 ant-table-row-selected"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                      style="position: sticky; left: 0px;"
+                    >
+                      <label
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked"
+                      >
+                        <span
+                          class="ant-checkbox ant-wave-target ant-checkbox-checked"
+                        >
+                          <input
+                            class="ant-checkbox-input"
+                            type="checkbox"
+                          />
+                          <span
+                            class="ant-checkbox-inner"
+                          />
+                        </span>
+                      </label>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0 ant-table-row-selected"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                      style="position: sticky; left: 0px;"
+                    >
+                      <label
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked"
+                      >
+                        <span
+                          class="ant-checkbox ant-wave-target ant-checkbox-checked"
+                        >
+                          <input
+                            class="ant-checkbox-input"
+                            type="checkbox"
+                          />
+                          <span
+                            class="ant-checkbox-inner"
+                          />
+                        </span>
+                      </label>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0 ant-table-row-selected"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                      style="position: sticky; left: 0px;"
+                    >
+                      <label
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked"
+                      >
+                        <span
+                          class="ant-checkbox ant-wave-target ant-checkbox-checked"
+                        >
+                          <input
+                            class="ant-checkbox-input"
+                            type="checkbox"
+                          />
+                          <span
+                            class="ant-checkbox-inner"
+                          />
+                        </span>
+                      </label>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Table Component renders small table correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-table-wrapper table"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table ant-table-small ant-table-scroll-horizontal"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-header ant-table-sticky-holder"
+              style="overflow: hidden; top: 0px;"
+            >
+              <table
+                style="table-layout: fixed; visibility: hidden;"
+              >
+                <colgroup />
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div
+              class="ant-table-body"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup />
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="ant-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Table Component renders table correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-table-wrapper table"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-header ant-table-sticky-holder"
+              style="overflow: hidden; top: 0px;"
+            >
+              <table
+                style="table-layout: fixed; visibility: hidden;"
+              >
+                <colgroup />
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div
+              class="ant-table-body"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup />
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="ant-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Table Component renders table correctly while loading 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-skeleton ant-skeleton-active"
+  >
+    <div
+      class="ant-skeleton-content"
+    >
+      <h3
+        class="ant-skeleton-title"
+        style="width: 38%;"
+      />
+      <ul
+        class="ant-skeleton-paragraph"
+      >
+        <li />
+        <li />
+        <li
+          style="width: 61%;"
+        />
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
