@@ -58,14 +58,14 @@ describe('Menu Component', () => {
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
-  test('renders primary menu correctly', () => {
+  test('renders primary menu correctly', async() => {
     const { asFragment } = render(<Menu hierarchy={Primary} items={items} />)
-    expect(asFragment()).toMatchSnapshot()
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
-  test('renders skeleton correctly', () => {
+  test('renders skeleton correctly', async() => {
     const { asFragment } = render(<Menu isLoading={true} />)
-    expect(asFragment()).toMatchSnapshot()
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders category correctly', async() => {

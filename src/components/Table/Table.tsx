@@ -58,7 +58,12 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - render: Column custom render function. <br> `(value: any, record: RecordType, index: number) => ReactNode`
   *   - shoSorterTooltip: Whether the sorter tooltip is displayed. <br> `booean`
   *   - sortDirections: Possible sort directions for the column. <br> `["ascend", "descend"]`
-  *   - sorter: Sorting function applied between two records. <br> `(a: RecordType, b: RecordType, sortOrder: "ascend" | "descend") => boolean`
+  *   - sorter: Sorting function applied between two records. <br>
+  *     `(` <br>
+  *     `  a: RecordType,` <br>
+  *     `  b: RecordType,` <br>
+  *     `  sortOrder: "ascend" | "descend"` <br>
+  *     `) => boolean`
   *   - sortOrder: Controlled sort order for the column. <br> `"ascend" | "descend"`
   *   - sortIcon: Sorter custom icon. <br> `ReactNode`
   *   - width: Column width, either a percentage or number of pixels. <br> `string` | `number`
@@ -88,7 +93,14 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - expandedRowKeys: Externally controlled expanded rows. <br> `React.Key[]`
   *   - expandedRowRender: A custom expanded row render. <br> `(record: RecordType, index: number) => ReactNode`
   *   - expandRowByClick: Whether the row expands by clicking the whole row. <br> `boolean`
-  *   - expandIcon: A custom expand icon for the row. <br> `(prefixCls: string, expanded: boolean, record: RecordType, expandable: boolean, onExpand: (record: RecordType, event: Event) => void) => ReactNode`
+  *   - expandIcon: A custom expand icon for the row. <br>
+  *     `(` <br>
+  *     `  prefixCls: string,` <br>
+  *     `  expanded: boolean,` <br>
+  *     `  record: RecordType,` <br>
+  *     `  expandable: boolean,` <br>
+  *     `  onExpand: (record: RecordType, event: Event) => void` <br>
+  *     `) => ReactNode`
   *   - fixed: Whether the expansion column should stick to a fixed position. <br> `"left"` | `"right"`
   *   - showExpandColumn: Whether the expansion column is visible. <br> `boolean`
   *   - rowExpandable: A function that determines whether a row is expandable. <br> `(record: RecordType) => boolean`
@@ -120,7 +132,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   * @param currentPageData - The data of the current page.
   * @returns React element to be displayed under the table.
   */
- footer?: (currentPageData: readonly RecordType[]) => ReactElement,
+ footer?: (currentPageData: readonly RecordType[]) => ReactElement<unknown>,
 
  /**
   * The table-layout attribute of the table.
@@ -192,7 +204,7 @@ export type TableProps<RecordType extends GenericRecord> = {
  /**
  * Configuration for row selection in the table.
  *
- * - formattedRowKeys: Externally controlled formatted rows. <br> `Record<RecordType[keyof RecordType], "info" | "success" | "warning" | "error">`
+ * - formattedRowKeys: Externally controlled formatted rows. <br> `Record<RecordType[keyof RecordType], RowFormat>`
  */
  rowFormatting?: RowFormatting<RecordType>
 
@@ -214,10 +226,31 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - hideSelectAll: Whether to hide the select all checkbox (only for type "checkbox"). <br> `boolean`
   *   - selectedRowKeys: Externally controlled selected rows. <br> `React.Key[]`
   *   - type: Selection type, use radio for mutual exclusive selection. <br> `"checkbox"` | `"radio"`
-  *   - onChange: Callback invoked when updating the table. <br> `(selectedRowKeys: string[], selectedRows: RecordType[], info: { type: "all" | "none" | "invert" | "single" | "multiple" }) => void`
-  *   - onSelect: Callback invoked when selecting an option. <br> `(record: RecordType, selected: boolean, selectedRows: RecordType[], nativeEvent: Event) => void`
-  *   - onSelectAll: Callback invoked when selecting all options. <br> `(selected: boolean, selectedRows: RecordType[], changedRows: RecordType[]) => void`
-  *   - onSelectMultiple: Callback invoked when selecting all options. <br> `(selected: boolean, selectedRows: RecordType[], changeRows: RecordType[]) => void`
+  *   - onChange: Callback invoked when updating the table. <br>
+  *     `(` <br>
+  *     `  selectedRowKeys: string[],` <br>
+  *     `  selectedRows: RecordType[],` <br>
+  *     `  info: { type: "all" | "none" | "invert" | "single" | "multiple" }` <br>
+  *     `) => void`
+  *   - onSelect: Callback invoked when selecting an option. <br>
+  *     `(` <br>
+  *     `  record: RecordType,` <br>
+  *     `  selected: boolean,` <br>
+  *     `  selectedRows: RecordType[],` <br>
+  *     `  nativeEvent: Event` <br>
+  *     `) => void`
+  *   - onSelectAll: Callback invoked when selecting all options. <br>
+  *     `(` <br>
+  *     `  selected: boolean,` <br>
+  *     `  selectedRows: RecordType[],` <br>
+  *     `  changedRows: RecordType[]` <br>
+  *     `) => void`
+  *   - onSelectMultiple: Callback invoked when selecting all options. <br>
+  *     `(
+  *     `  selected: boolean,` <br>
+  *     `  selectedRows: RecordType[],` <br>
+  *     `  changeRows: RecordType[]` <br>
+  *     `) => void`
   *   - onSelectNone: Callback invoked when deselecting all options. <br> `() => void`
   *
   * @see {@link https://ant.design/components/table#rowselection} for advanced configurations.

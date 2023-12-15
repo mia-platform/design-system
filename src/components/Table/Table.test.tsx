@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { columns, data, expandable, footer, rowKey, rowSelection } from './Table.mocks'
+import { alignedColumns, columns, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
 import { fireEvent, render, screen, waitFor } from '../../test-utils'
 import { Size } from './Table.types'
 import { Table } from '.'
@@ -162,11 +162,108 @@ describe('Table Component', () => {
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
+  test('renders pagination correctly', async() => {
+    const onChange = jest.fn()
+    const onShowSizeChange = jest.fn()
+
+    const { asFragment } = render(
+      <Table {...props} data={hugeData} pagination={pagination({ onChange, onShowSizeChange })} />
+    )
+
+    expect(screen.getByRole('listitem', { name: 'Previous Page' })).toBeVisible()
+    expect(screen.getByRole('listitem', { name: '1' })).toBeVisible()
+    expect(screen.getByRole('listitem', { name: '2' })).toBeVisible()
+    expect(screen.getByRole('listitem', { name: '3' })).toBeVisible()
+    expect(screen.getByRole('listitem', { name: 'Next 5 Pages' })).toBeVisible()
+
+    const nextPage = screen.getByRole('listitem', { name: 'Next Page' })
+    expect(nextPage).toBeVisible()
+
+    fireEvent.click(nextPage)
+    expect(onChange).toHaveBeenCalledTimes(1)
+
+    const page = screen.getByRole('listitem', { name: '13' })
+    expect(page).toBeVisible()
+
+    fireEvent.click(page)
+    expect(onChange).toHaveBeenCalledTimes(2)
+
+    expect(onChange.mock.calls).toEqual([
+      // currentPage, pageSize
+      [2, 4],
+      [13, 4],
+    ])
+
+    const pageSizer = screen.getByRole('combobox', { name: 'Page Size' })
+    expect(pageSizer).toBeVisible()
+
+    expect(screen.getByText('4 / page')).toBeVisible()
+
+    fireEvent.change(pageSizer, { target: { value: '10' } })
+    fireEvent.click(screen.getByRole('option', { name: '10 / page' }))
+
+    expect(onShowSizeChange).toHaveBeenCalledTimes(1)
+    expect(onShowSizeChange).toHaveBeenCalledWith(5, 10)
+
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
   test('renders footer correctly', async() => {
     const { asFragment } = render(<Table {...props} footer={footer} />)
 
     expect(screen.getByText('Total rows number: 4')).toBeVisible()
 
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders columns filters and sorting correctly', async() => {
+    const { asFragment } = render(<Table {...props} columns={filteredAndSortedColumns} />)
+
+    const sorters = screen.getAllByLabelText('caret-up')
+    const filters = screen.getAllByLabelText('filter')
+
+    expect(sorters).toHaveLength(2)
+    expect(filters).toHaveLength(3)
+
+    const [filter] = filters
+    fireEvent.click(filter)
+
+    expect(screen.getByLabelText('search')).toBeInTheDocument()
+    expect(screen.getAllByRole('checkbox')).toHaveLength(2)
+
+    expect(screen.getByRole('menuitem', { name: 'Value 1' })).toBeInTheDocument()
+    expect(screen.getByRole('menuitem', { name: 'Value 2' })).toBeInTheDocument()
+    expect(screen.getByRole('menuitem', { name: 'Submenu right' })).toBeInTheDocument()
+
+    const resetButton = screen.getByRole('button', { name: 'Reset' })
+    const okButton = screen.getByRole('button', { name: 'OK' })
+
+    expect(resetButton).toBeDisabled()
+    expect(resetButton).toBeInTheDocument()
+    expect(okButton).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Value 1' }))
+    fireEvent.click(okButton)
+
+    expect(screen.queryByRole('row', { name: 'Value 2 Value 2 Value 2 Value 2' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('row', { name: 'Value 3 Value 3 Value 3 Value 3' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('row', { name: 'Value 4 Value 4 Value 4 Value 4' })).not.toBeInTheDocument()
+
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders aligned columns correctly', async() => {
+    const { asFragment } = render(<Table {...props} columns={alignedColumns} />)
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders columns with certain width correctly', async() => {
+    const { asFragment } = render(<Table {...props} columns={sizedColumns} />)
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders spanned columns correctly', async() => {
+    const { asFragment } = render(<Table {...props} columns={spannedColumns} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 })
