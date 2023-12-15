@@ -37,13 +37,6 @@ export enum Layout {
   Fixed = 'fixed',
 }
 
-export enum RowFormat {
-  Info = 'info',
-  Success = 'success',
-  Warning = 'warning',
-  Error = 'error'
-}
-
 export enum Size {
   Small = 'small',
   Middle ='middle',
@@ -53,10 +46,6 @@ export enum Size {
 export enum SortOrder {
   Ascend = 'ascend',
   Descend = 'descend',
-}
-
-export type RowFormatting<T extends GenericRecord> = {
-  formattedRowKeys: Record<T[keyof T], RowFormat>,
 }
 
 export type Scroll = {

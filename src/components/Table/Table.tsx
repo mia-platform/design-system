@@ -20,10 +20,8 @@
 
 import { Table as AntTable, Skeleton } from 'antd'
 import { HTMLAttributes, ReactElement } from 'react'
-import classNames from 'classnames'
 
-import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowFormatting, RowSelection, Scroll, Size, UserAction } from './Table.types'
-import { getRecordFormatting } from './Table.utils'
+import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, Scroll, Size, UserAction } from './Table.types'
 import styles from './Table.module.css'
 
 const { Auto } = Layout
@@ -201,13 +199,6 @@ export type TableProps<RecordType extends GenericRecord> = {
   */
  pagination?: Pagination,
 
- /**
- * Configuration for row selection in the table.
- *
- * - formattedRowKeys: Externally controlled formatted rows. <br> `Record<RecordType[keyof RecordType], RowFormat>`
- */
- rowFormatting?: RowFormatting<RecordType>
-
 /**
   * The key used to identify each row of the table.
   *
@@ -291,7 +282,6 @@ export const Table = <RecordType extends GenericRecord>({
   onChange,
   onHeaderRow,
   onRow,
-  rowFormatting,
   rowKey,
   rowSelection,
   pagination,
@@ -324,13 +314,7 @@ export const Table = <RecordType extends GenericRecord>({
         virtual={false}
         onChange={onChange}
         onHeaderRow={onHeaderRow}
-        onRow={(record, i) => ({
-          ...onRow?.(record, i),
-          className: classNames([
-            getRecordFormatting(rowKey, rowFormatting)(record),
-            onRow?.(record, i)?.className,
-          ]),
-        })}
+        onRow={onRow}
       />
     </Skeleton>
   )

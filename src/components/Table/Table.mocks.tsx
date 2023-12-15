@@ -21,7 +21,7 @@ import { Space } from 'antd'
 import { StoryFn } from '@storybook/react'
 import { get } from 'lodash'
 
-import { ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowFormat, RowSelection, SortOrder } from './Table.types'
+import { ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder } from './Table.types'
 import { Button } from '../Button'
 import { Hierarchy as ButtonHierarchy } from '../Button/Button.types'
 import { Table } from '.'
@@ -29,7 +29,6 @@ import { TableProps } from './Table'
 
 const { Left, Center, Right } = ColumnAlignment
 const { Menu, Tree } = ColumnFilterMode
-const { Info, Success, Warning, Error } = RowFormat
 const { Ascend, Descend } = SortOrder
 
 type FieldName = string | string[]
@@ -181,17 +180,6 @@ export const expandable = (callbacks: Callbacks = {}): ExpandableConfig<TableRec
   showExpandColumn: true,
   ...callbacks,
 })
-
-/** Row Formatting */
-
-export const rowFormatting = {
-  formattedRowKeys: {
-    'Value 1': Info,
-    'Value 2': Success,
-    'Value 3': Warning,
-    'Value 4': Error,
-  },
-}
 
 /** Pagination */
 

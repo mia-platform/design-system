@@ -30,7 +30,6 @@ import {
   footer,
   hugeData,
   pagination,
-  rowFormatting,
   rowKey,
   rowSelection,
   scroll,
@@ -133,11 +132,4 @@ export const ColumnWidth: Story = {
 
 export const ColumnSpan: Story = {
   args: { ...meta.args, columns: spannedColumns, isBordered: true },
-}
-
-export const FormattedRows: Story = {
-  args: {
-    ...meta.args,
-    rowFormatting,
-  },
 }
