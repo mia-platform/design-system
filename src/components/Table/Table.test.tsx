@@ -23,7 +23,6 @@ import { Table } from '.'
 
 const { Small, Large } = Size
 
-
 describe('Table Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
