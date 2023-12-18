@@ -38,6 +38,8 @@ describe('Table Component', () => {
   test('renders table correctly', async() => {
     const { asFragment } = render(<Table {...props} />)
 
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+
     expect(screen.getByRole('table')).toBeVisible()
 
     expect(screen.getByRole('row', { name: 'Value 1 Value 1 Value 1 Value 1' })).toBeVisible()
@@ -49,8 +51,6 @@ describe('Table Component', () => {
     expect(screen.getAllByRole('cell', { name: 'Value 2' })).toHaveLength(columns.length)
     expect(screen.getAllByRole('cell', { name: 'Value 3' })).toHaveLength(columns.length)
     expect(screen.getAllByRole('cell', { name: 'Value 4' })).toHaveLength(columns.length)
-
-    await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders small table correctly', async() => {
