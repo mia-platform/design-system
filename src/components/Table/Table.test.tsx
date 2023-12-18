@@ -17,7 +17,7 @@
  */
 
 import { WithExternalFiltersandSorters, alignedColumns, columns, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
-import { fireEvent, render, screen, waitFor } from '../../test-utils'
+import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
 import { Size } from './Table.types'
 import { Table } from '.'
 
@@ -226,8 +226,8 @@ describe('Table Component', () => {
     expect(sorters).toHaveLength(2)
     expect(filters).toHaveLength(3)
 
-    const [filter] = filters
-    fireEvent.click(filter)
+    const [menuFilter, treeFilter] = filters
+    fireEvent.click(menuFilter)
 
     expect(screen.getByLabelText('search')).toBeInTheDocument()
     expect(screen.getAllByRole('checkbox')).toHaveLength(2)
@@ -236,19 +236,49 @@ describe('Table Component', () => {
     expect(screen.getByRole('menuitem', { name: 'Value 2' })).toBeInTheDocument()
     expect(screen.getByRole('menuitem', { name: 'Submenu right' })).toBeInTheDocument()
 
-    const resetButton = screen.getByRole('button', { name: 'Reset' })
-    const okButton = screen.getByRole('button', { name: 'OK' })
+    const menuResetButton = screen.getByRole('button', { name: 'Reset' })
+    const menuOkButton = screen.getByRole('button', { name: 'OK' })
 
-    expect(resetButton).toBeDisabled()
-    expect(resetButton).toBeInTheDocument()
-    expect(okButton).toBeInTheDocument()
+    expect(menuResetButton).toBeDisabled()
+    expect(menuResetButton).toBeInTheDocument()
+    expect(menuOkButton).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('menuitem', { name: 'Value 1' }))
-    fireEvent.click(okButton)
+    fireEvent.click(menuOkButton)
 
     expect(screen.queryByRole('row', { name: 'Value 2 Value 2 Value 2 Value 2' })).not.toBeInTheDocument()
     expect(screen.queryByRole('row', { name: 'Value 3 Value 3 Value 3 Value 3' })).not.toBeInTheDocument()
     expect(screen.queryByRole('row', { name: 'Value 4 Value 4 Value 4 Value 4' })).not.toBeInTheDocument()
+
+    fireEvent.click(menuFilter)
+    fireEvent.click(menuResetButton)
+    fireEvent.click(menuOkButton)
+
+    fireEvent.click(treeFilter)
+
+    const tree = screen.getByRole('tree')
+
+    expect(tree).toBeInTheDocument()
+    expect(screen.getByRole('checkbox', { name: 'Select all items' })).toBeInTheDocument()
+
+    expect(within(tree).getByText('Value 1')).toBeInTheDocument()
+    expect(within(tree).getByText('Value 2')).toBeInTheDocument()
+    expect(within(tree).getByText('Submenu')).toBeInTheDocument()
+    expect(within(tree).getByText('Value 3')).toBeInTheDocument()
+    expect(within(tree).getByText('Value 4')).toBeInTheDocument()
+
+    const filterResetButton = screen.getByRole('button', { name: 'Reset' })
+    const filterOkButton = screen.getByRole('button', { name: 'OK' })
+
+    expect(filterResetButton).toBeInTheDocument()
+    expect(filterOkButton).toBeInTheDocument()
+
+    fireEvent.click(within(tree).getByText('Value 4'))
+    fireEvent.click(filterOkButton)
+
+    expect(screen.queryByRole('row', { name: 'Value 1 Value 1 Value 1 Value 1' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('row', { name: 'Value 2 Value 2 Value 2 Value 2' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('row', { name: 'Value 3 Value 3 Value 3 Value 3' })).not.toBeInTheDocument()
 
     const [sorter] = sorters
     fireEvent.click(sorter)
