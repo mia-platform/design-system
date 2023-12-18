@@ -47,6 +47,7 @@ module.exports = {
       ],      
       "newlines-between": "always"
     }],
+    "max-statements": "off",
     "no-shadow": "off",
     "sort-imports": ["error", {
       allowSeparatedGroups: true

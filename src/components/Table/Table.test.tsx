@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { alignedColumns, columns, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
+import { WithExternalFiltersandSorters, alignedColumns, columns, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
 import { fireEvent, render, screen, waitFor } from '../../test-utils'
 import { Size } from './Table.types'
 import { Table } from '.'
@@ -80,6 +80,8 @@ describe('Table Component', () => {
 
     const { asFragment } = render(<Table {...props} rowSelection={rowSelection({ onChange, onSelect, onSelectAll })} />)
 
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+
     const selectAll = screen.getByLabelText('Select all')
     const checkboxes = screen.getAllByRole('checkbox')
 
@@ -118,8 +120,6 @@ describe('Table Component', () => {
     expect(onSelectAll).toHaveBeenCalledWith(
       // selected, selectedRows, changedRows
       true, data, [data[1], data[2], data[3]])
-
-    await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders expandable rows correctly', async() => {
@@ -127,6 +127,8 @@ describe('Table Component', () => {
     const onExpandedRowsChange = jest.fn()
 
     const { asFragment } = render(<Table {...props} expandable={expandable({ onExpand, onExpandedRowsChange })} />)
+
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
 
     expect(screen.getByRole('row', { name: 'Expandable row' })).toBeVisible()
 
@@ -157,8 +159,6 @@ describe('Table Component', () => {
       [[data[0][rowKey], data[1][rowKey]]],
       [[data[1][rowKey]]],
     ])
-
-    await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders pagination correctly', async() => {
@@ -168,6 +168,8 @@ describe('Table Component', () => {
     const { asFragment } = render(
       <Table {...props} data={hugeData} pagination={pagination({ onChange, onShowSizeChange })} />
     )
+
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
 
     expect(screen.getByRole('listitem', { name: 'Previous Page' })).toBeVisible()
     expect(screen.getByRole('listitem', { name: '1' })).toBeVisible()
@@ -203,20 +205,20 @@ describe('Table Component', () => {
 
     expect(onShowSizeChange).toHaveBeenCalledTimes(1)
     expect(onShowSizeChange).toHaveBeenCalledWith(5, 10)
-
-    await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders footer correctly', async() => {
     const { asFragment } = render(<Table {...props} footer={footer} />)
 
-    expect(screen.getByText('Total rows number: 4')).toBeVisible()
-
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
+
+    expect(screen.getByText('Total rows number: 4')).toBeVisible()
   })
 
   test('renders columns filters and sorting correctly', async() => {
     const { asFragment } = render(<Table {...props} columns={filteredAndSortedColumns} />)
+
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
 
     const sorters = screen.getAllByLabelText('caret-up')
     const filters = screen.getAllByLabelText('filter')
@@ -248,7 +250,47 @@ describe('Table Component', () => {
     expect(screen.queryByRole('row', { name: 'Value 3 Value 3 Value 3 Value 3' })).not.toBeInTheDocument()
     expect(screen.queryByRole('row', { name: 'Value 4 Value 4 Value 4 Value 4' })).not.toBeInTheDocument()
 
+    const [sorter] = sorters
+    fireEvent.click(sorter)
+
+    expect(screen.getAllByLabelText('caret-down')[0]).toHaveClass('active')
+  })
+
+  test('renders external filters and sorting correctly', async() => {
+    const { asFragment } = render(<WithExternalFiltersandSorters {...props} />)
+
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
+
+    const filterValue2 = screen.getByRole('button', { name: 'Filter Value 2' })
+    const sortField2Descending = screen.getByRole('button', { name: 'Sort Field 2 Descending' })
+    const clearFilters = screen.getByRole('button', { name: 'Clear filters' })
+    const clearSort = screen.getByRole('button', { name: 'Clear sort' })
+
+    expect(sortField2Descending).toBeVisible()
+    expect(filterValue2).toBeVisible()
+    expect(clearFilters).toBeVisible()
+    expect(clearSort).toBeVisible()
+
+    fireEvent.click(filterValue2)
+
+    expect(screen.queryByRole('row', { name: 'Value 1 Value 1 Value 1 Value 1' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('row', { name: 'Value 3 Value 3 Value 3 Value 3' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('row', { name: 'Value 4 Value 4 Value 4 Value 4' })).not.toBeInTheDocument()
+
+    fireEvent.click(clearFilters)
+
+    expect(screen.getByRole('row', { name: 'Value 1 Value 1 Value 1 Value 1' })).toBeVisible()
+    expect(screen.getByRole('row', { name: 'Value 3 Value 3 Value 3 Value 3' })).toBeVisible()
+    expect(screen.getByRole('row', { name: 'Value 4 Value 4 Value 4 Value 4' })).toBeVisible()
+
+    fireEvent.click(sortField2Descending)
+
+    expect(screen.getAllByLabelText('caret-down')[1]).toHaveClass('active')
+
+    fireEvent.click(clearSort)
+
+    expect(screen.getAllByLabelText('caret-up')[1]).not.toHaveClass('active')
+    expect(screen.getAllByLabelText('caret-down')[1]).not.toHaveClass('active')
   })
 
   test('renders aligned columns correctly', async() => {

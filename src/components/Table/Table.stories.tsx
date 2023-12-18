@@ -115,7 +115,7 @@ export const Scroll: Story = {
 
 export const ExternalFiltersAndSorting: Story = {
   args: { ...meta.args },
-  decorators: [WithExternalFiltersandSorters],
+  decorators: [(_, { args }) => <WithExternalFiltersandSorters {...args} />],
 }
 
 export const ColumnFiltersAndSorting: Story = {

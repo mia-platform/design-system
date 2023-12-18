@@ -18,7 +18,6 @@
 
 import { ReactElement, useState } from 'react'
 import { Space } from 'antd'
-import { StoryFn } from '@storybook/react'
 import { get } from 'lodash'
 
 import { ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder } from './Table.types'
@@ -210,7 +209,7 @@ type SortState = {
   sortOrder?: SortOrder
 }
 
-export const WithExternalFiltersandSorters = (_: StoryFn, { args }: {args: TableProps<TableRecord>}): ReactElement => {
+export const WithExternalFiltersandSorters = (props: TableProps<TableRecord>): ReactElement => {
   const [filteredData, setFilteredData] = useState<FilterState>([])
   const [{ sortedColumn, sortOrder }, setSortedInfo] = useState<SortState>({})
 
@@ -232,8 +231,8 @@ export const WithExternalFiltersandSorters = (_: StoryFn, { args }: {args: Table
         <Button hierarchy={ButtonHierarchy.Neutral} onClick={clearSort}>{'Clear sort'}</Button>
       </Space>
       <Table
-        {...args}
-        columns={args.columns?.map((column: ColumnType<TableRecord>) => ({
+        {...props}
+        columns={props.columns?.map((column: ColumnType<TableRecord>) => ({
           ...column,
 
           /* Apply sort order */
