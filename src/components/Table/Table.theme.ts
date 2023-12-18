@@ -33,4 +33,5 @@ export default ({ palette, spacing }: Partial<Theme>): ComponentsTheme['Table'] 
   cellPaddingInline: parse(spacing?.padding?.lg),
   cellPaddingInlineMD: parse(spacing?.padding?.lg),
   cellPaddingInlineSM: parse(spacing?.padding?.lg),
+  rowHoverBg: palette?.action?.alternate?.secondary?.hover,
 })

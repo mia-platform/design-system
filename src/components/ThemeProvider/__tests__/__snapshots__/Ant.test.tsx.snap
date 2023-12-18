@@ -25,6 +25,7 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "cellPaddingInlineSM": 16,
       "colorText": "#636363",
       "headerBg": "#f2f2f2",
+      "rowHoverBg": "#00000014",
     },
     "Typography": {
       "fontSizeHeading1": 24,
@@ -81,6 +82,7 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "cellPaddingInlineSM": undefined,
       "colorText": undefined,
       "headerBg": undefined,
+      "rowHoverBg": undefined,
     },
     "Typography": {
       "fontSizeHeading1": undefined,
@@ -137,6 +139,7 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "cellPaddingInlineSM": 16,
       "colorText": "#636363",
       "headerBg": "#f2f2f2",
+      "rowHoverBg": "#00000014",
     },
     "Typography": {
       "fontSizeHeading1": 24,
