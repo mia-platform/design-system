@@ -21,7 +21,7 @@ import { action } from '@storybook/addon-actions'
 
 import {
   TableRecord,
-  WithExternalFiltersandSorters,
+  WithExternalFiltersAndSorters,
   alignedColumns,
   columns,
   data,
@@ -115,7 +115,7 @@ export const Scroll: Story = {
 
 export const ExternalFiltersAndSorting: Story = {
   args: { ...meta.args },
-  decorators: [(_, { args }) => <WithExternalFiltersandSorters {...args} />],
+  decorators: [(_, { args }) => <WithExternalFiltersAndSorters {...args} />],
 }
 
 export const ColumnFiltersAndSorting: Story = {

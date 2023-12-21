@@ -19,6 +19,7 @@
 import type { AnyObject as GenericRecord } from 'antd/es/_util/type'
 export type { TablePaginationConfig as Pagination } from 'antd'
 export type { ColumnType, ColumnFilterItem, ExpandableConfig, TableLocale as Locale, TableRowSelection as RowSelection } from 'antd/es/table/interface'
+
 export type { GenericRecord }
 
 export enum ColumnAlignment {

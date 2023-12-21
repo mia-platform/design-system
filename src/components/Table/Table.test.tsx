@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { WithExternalFiltersandSorters, alignedColumns, columns, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
+import { WithExternalFiltersAndSorters, alignedColumns, columns, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
 import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
 import { Size } from './Table.types'
 import { Table } from '.'
@@ -215,7 +215,7 @@ describe('Table Component', () => {
     expect(screen.getByText('Total rows number: 4')).toBeVisible()
   })
 
-  test('renders columns filters and sorting correctly', async() => {
+  test('renders columns filters and sorters correctly', async() => {
     const { asFragment } = render(<Table {...props} columns={filteredAndSortedColumns} />)
 
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
@@ -286,8 +286,8 @@ describe('Table Component', () => {
     expect(screen.getAllByLabelText('caret-down')[0]).toHaveClass('active')
   })
 
-  test('renders external filters and sorting correctly', async() => {
-    const { asFragment } = render(<WithExternalFiltersandSorters {...props} />)
+  test('renders external filters and sorters correctly', async() => {
+    const { asFragment } = render(<WithExternalFiltersAndSorters {...props} />)
 
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
 

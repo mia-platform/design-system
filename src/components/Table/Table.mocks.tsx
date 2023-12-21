@@ -74,7 +74,7 @@ export const filters = [
   },
 ]
 
-const menufilterProps = (fieldName: FieldName): object => ({
+const menuFilterProps = (fieldName: FieldName): object => ({
   filters,
   filterMode: Menu,
   filterSearch: true,
@@ -82,7 +82,7 @@ const menufilterProps = (fieldName: FieldName): object => ({
   onFilter: (value: unknown, record: TableRecord) => get(record, fieldName) === value,
 })
 
-const treefilterProps = (fieldName: FieldName): object => ({
+const treeFilterProps = (fieldName: FieldName): object => ({
   filters,
   filterMode: Tree,
   filterSearch: true,
@@ -121,10 +121,10 @@ export const scrollableColumns: ColumnType<TableRecord>[] = [
 ]
 
 export const filteredAndSortedColumns: ColumnType<TableRecord>[] = [
-  { dataIndex: 'field1', title: 'Filtered (Menu)', ...menufilterProps('field1') },
-  { dataIndex: 'field2', title: 'Filtered (Tree)', ...treefilterProps('field2') },
+  { dataIndex: 'field1', title: 'Filtered (Menu)', ...menuFilterProps('field1') },
+  { dataIndex: 'field2', title: 'Filtered (Tree)', ...treeFilterProps('field2') },
   { dataIndex: 'field3', title: 'Sorted', ...sortProps('field3') },
-  { dataIndex: ['nested', 'field4'], title: 'Filtered and Sorted', ...menufilterProps(['nested', 'field4']), ...sortProps(['nested', 'field4']) },
+  { dataIndex: ['nested', 'field4'], title: 'Filtered and Sorted', ...menuFilterProps(['nested', 'field4']), ...sortProps(['nested', 'field4']) },
 ]
 
 export const alignedColumns: ColumnType<TableRecord>[] = [
@@ -209,7 +209,7 @@ type SortState = {
   sortOrder?: SortOrder
 }
 
-export const WithExternalFiltersandSorters = (props: TableProps<TableRecord>): ReactElement => {
+export const WithExternalFiltersAndSorters = (props: TableProps<TableRecord>): ReactElement => {
   const [filteredData, setFilteredData] = useState<FilterState>([])
   const [{ sortedColumn, sortOrder }, setSortedInfo] = useState<SortState>({})
 

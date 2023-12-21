@@ -48,13 +48,13 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - filters: filters configurations for the column. <br> `object`:
   *       - text: Filter option display value. <br> `ReactNode`
   *       - value: Value provided to the table when the filter is applied. <br> `string` | `number` | `boolean`
-  *       - children: sub-filters configurations (same as filters).`object`
+  *       - children: sub-filters configurations (same as filters). <br> `object`
   *   - filterSearch: Whether to display a search bar in filter dropdown. <br> `boolean`
   *   - filterResetToDefaultFilteredValue: Whether to apply the initial filter when filters reset. <br> `boolean`
   *   - fixed: Whether the column should stick to a fixed position. <br> `"left"` | `"right"`
   *   - key: Unique key for the column. Ignore if dataIndex is unique. <br> `string`
   *   - render: Column custom render function. <br> `(value: any, record: RecordType, index: number) => ReactNode`
-  *   - shoSorterTooltip: Whether the sorter tooltip is displayed. <br> `booean`
+  *   - showSorterTooltip: Whether the sorter tooltip is displayed. <br> `booean`
   *   - sortDirections: Possible sort directions for the column. <br> `["ascend", "descend"]`
   *   - sorter: Sorting function applied between two records. <br>
   *     `(` <br>
@@ -110,17 +110,17 @@ export type TableProps<RecordType extends GenericRecord> = {
  expandable?: ExpandableConfig<RecordType>,
 
  /**
-  * The locale configuration for internationalization
+  * The locale configuration for internationalization.
   */
  intlLocale?: Locale,
 
  /**
-  * Indicates whether the table has borders
+  * Indicates whether the table has borders.
   */
  isBordered?: boolean,
 
  /**
-  * Indicates whether the table is in a loading state (skeleton)
+  * Indicates whether the table is in a loading state (skeleton).
   */
  isLoading?: boolean,
 
@@ -214,7 +214,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   *   - columnWidth: The width of the selection column. <br> `string` | `number`
   *   - defaultSelectedRowKeys: The initially selected rows. <br> `React.Key[]`
   *   - fixed: Whether the selection column should stick to a fixed position. <br> `"left"` | `"right"`
-  *   - hideSelectAll: Whether to hide the select all checkbox (only for type "checkbox"). <br> `boolean`
+  *   - hideSelectAll: Whether to hide the "Select all" checkbox (only for type "checkbox"). <br> `boolean`
   *   - selectedRowKeys: Externally controlled selected rows. <br> `React.Key[]`
   *   - type: Selection type, use radio for mutual exclusive selection. <br> `"checkbox"` | `"radio"`
   *   - onChange: Callback invoked when updating the table. <br>
@@ -237,7 +237,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   *     `  changedRows: RecordType[]` <br>
   *     `) => void`
   *   - onSelectMultiple: Callback invoked when selecting all options. <br>
-  *     `(
+  *     `(` <br>
   *     `  selected: boolean,` <br>
   *     `  selectedRows: RecordType[],` <br>
   *     `  changeRows: RecordType[]` <br>
