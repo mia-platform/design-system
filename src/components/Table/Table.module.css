@@ -1,0 +1,6 @@
+.table {
+  :global([scope=col]) {
+    padding-top: calc(var(--spacing-padding-sm, 8) * 1px) !important;
+    padding-bottom: calc(var(--spacing-padding-sm, 8) * 1px) !important;
+  }
+}

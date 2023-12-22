@@ -20,6 +20,14 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "itemHoverBg": "#00000014",
       "itemSelectedBg": "#1890ff14",
     },
+    "Table": {
+      "cellPaddingInline": 16,
+      "cellPaddingInlineMD": 16,
+      "cellPaddingInlineSM": 16,
+      "colorText": "#636363",
+      "headerBg": "#f2f2f2",
+      "rowHoverBg": "#00000014",
+    },
     "Typography": {
       "fontSizeHeading1": 24,
       "fontSizeHeading2": 20,
@@ -70,6 +78,14 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "itemHoverBg": undefined,
       "itemSelectedBg": undefined,
     },
+    "Table": {
+      "cellPaddingInline": undefined,
+      "cellPaddingInlineMD": undefined,
+      "cellPaddingInlineSM": undefined,
+      "colorText": undefined,
+      "headerBg": undefined,
+      "rowHoverBg": undefined,
+    },
     "Typography": {
       "fontSizeHeading1": undefined,
       "fontSizeHeading2": undefined,
@@ -119,6 +135,14 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "itemHeight": 32,
       "itemHoverBg": "#00000014",
       "itemSelectedBg": "#1890ff14",
+    },
+    "Table": {
+      "cellPaddingInline": 16,
+      "cellPaddingInlineMD": 16,
+      "cellPaddingInlineSM": 16,
+      "colorText": "#636363",
+      "headerBg": "#f2f2f2",
+      "rowHoverBg": "#00000014",
     },
     "Typography": {
       "fontSizeHeading1": 24,
