@@ -18,9 +18,17 @@
 
 import { ReactElement } from 'react'
 
-import { HX } from '../HX'
-import { HXProps } from '../HX.props'
+import Theme from '../../themes/schema'
 
-export const H2 = (props: HXProps): ReactElement => {
-  return <HX {...props} level={2} role={'h2'} />
+export type ThemeProviderProps = {
+
+  /**
+   * The children nodes to be rendered with the theme context
+   */
+  children?: ReactElement,
+
+  /**
+   * The theme configuration to be passed to children nodes
+   */
+  theme?: Theme,
 }

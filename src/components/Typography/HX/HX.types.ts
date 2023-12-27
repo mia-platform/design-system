@@ -16,11 +16,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement } from 'react'
+export type HXLevel = {
 
-import { HX } from '../HX'
-import { HXProps } from '../HX.props'
+  /**
+   * The H tag to be rendered. Match with H1, H2, H3, H4.
+   */
+  level: 1 | 2 | 3 | 4,
 
-export const H2 = (props: HXProps): ReactElement => {
-  return <HX {...props} level={2} role={'h2'} />
+  /**
+   * The H tag role.
+   */
+  role: 'h1' | 'h2' | 'h3' | 'h4'
 }

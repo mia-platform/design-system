@@ -18,7 +18,8 @@
 
 import { ReactElement } from 'react'
 
-import { HX, HXProps } from '../HX'
+import { HX } from '../HX'
+import { HXProps } from '../HX.props'
 
 export const H1 = (props: HXProps): ReactElement => {
   return <HX {...props} level={1} role={'h1'} />

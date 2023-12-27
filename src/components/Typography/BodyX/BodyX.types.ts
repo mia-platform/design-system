@@ -21,3 +21,15 @@ export enum Size {
   M = 'm',
   L = 'l',
 }
+
+export type BodyXSize = {
+
+  /**
+   * Defines the body font size and line height. Either:
+   *
+   * - s: small - fontSize: 14px, lineHeight: 24px by default;
+   * - m: middle - fontSize: 16px, lineHeight: 24px by default;
+   * - l: large - fontSize: 18px, lineHeight: 24px by default.
+   */
+  size: Size,
+}

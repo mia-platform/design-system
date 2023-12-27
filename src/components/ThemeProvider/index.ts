@@ -16,11 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement } from 'react'
-
-import { HX } from '../HX'
-import { HXProps } from '../HX.props'
-
-export const H2 = (props: HXProps): ReactElement => {
-  return <HX {...props} level={2} role={'h2'} />
-}
+export { ThemeContext, ThemeProvider, defaultTheme } from './ThemeProvider'
