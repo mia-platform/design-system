@@ -55,7 +55,7 @@ type Story = StoryObj<typeof meta>
 export const HXComponent: Story = {
   args: { ...meta.args, level: 1, role: 'h1' },
   argTypes: {
-    level: { control: 'number', table: { disable: false } },
+    level: { control: { type: 'number', min: 1, max: 4 }, table: { disable: false } },
   },
 }
 

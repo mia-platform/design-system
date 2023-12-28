@@ -24,7 +24,7 @@ import { ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagina
 import { Button } from '../Button'
 import { Hierarchy as ButtonHierarchy } from '../Button/Button.types'
 import { Table } from '.'
-import { TableProps } from './Table'
+import { TableProps } from './Table.props'
 
 const { Left, Center, Right } = ColumnAlignment
 const { Menu, Tree } = ColumnFilterMode

@@ -24,7 +24,7 @@ import ButtonTheme from '../Button/Button.theme'
 import MenuTheme from '../Menu/Menu.theme'
 import TableTheme from '../Table/Table.theme'
 import Theme from '../../themes/schema'
-import { ThemeProviderProps } from '.'
+import { ThemeProviderProps } from './ThemeProvider.props'
 import TypographyTheme from '../Typography/Typography.theme'
 
 const ANT_PREFIX = 'mia-platform'
