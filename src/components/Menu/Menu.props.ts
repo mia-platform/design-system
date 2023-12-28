@@ -33,8 +33,8 @@ export type MenuProps = {
   /**
    * Defines the menu hierarchy. Either:
    *
-   * - default: menu associated with general purpose navigation items;
-   * - primary: menu associated with the most significant (and therefore primary) navigation items.
+   * - "default": menu associated with general purpose navigation items;
+   * - "primary": menu associated with the most significant (and therefore primary) navigation items.
    */
   hierarchy?: Hierarchy,
 
@@ -79,8 +79,8 @@ export type MenuProps = {
   /**
    * The mode in which sub-menu items are shown. Either:
    *
-   * - inline: sub-menus open as popovers;
-   * - vertical: sub-menus open as collapsible elements, expanding the menu downward.
+   * - "inline": sub-menus open as popovers;
+   * - "vertical": sub-menus open as collapsible elements, expanding the menu downward.
    */
   mode?: Mode,
 

@@ -25,16 +25,16 @@ export type SegmentedControlProps = {
   /**
    * The option initially selected. Either one of the following:
    *
-   * - string: the key of the initially selected option
-   * - number: the position in the array of the initially selected option
+   * - `string`: the key of the initially selected option
+   * - `number`: the position in the array of the initially selected option
    */
   defaultValue?: string | number
 
  /**
    * Defines the segmented hierarchy. Either:
    *
-   * - primary: segmented associated with the most significant (and therefore primary) action on the page
-   * - neutral: segmented associated with a general purpose action
+   * - "primary": segmented associated with the most significant (and therefore primary) action on the page
+   * - "neutral": segmented associated with a general purpose action
    */
   hierarchy?: Hierarchy,
 
@@ -66,16 +66,16 @@ export type SegmentedControlProps = {
   /**
    * The alignment of the options within the segmented control. Either one of the following:
    *
-   * - horizontal: icons and labels of every option are aligned horizontally
-   * - vertical: icons and labels of every option are aligned vertically
+   * - "horizontal": icons and labels of every option are aligned horizontally
+   * - "vertical": icons and labels of every option are aligned vertically
    */
   optionsAlignment?: OptionAlignment
 
  /**
    * The current selected value. Either one of the following:
    *
-   * - string: the key of the selected option
-   * - number: the position of the selected option in the array
+   * - `string`: the key of the selected option
+   * - `number`: the position of the selected option in the array
    */
   value?: string | number
 }
