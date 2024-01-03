@@ -16,11 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { MouseEvent, ReactElement, ReactNode, useMemo } from 'react'
+import { ReactElement, useMemo } from 'react'
 import { Button as AntButton } from 'antd'
 import classnames from 'classnames'
 
 import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
+import { ButtonProps } from './Button.props'
 import styles from './Button.module.css'
 
 const { button, buttonSm, buttonSmIconOnly, buttonMd, buttonMdIconOnly, buttonLg, buttonGhost, buttonText } = styles
@@ -30,92 +31,6 @@ const { Left, Right } = IconPosition
 const { Square } = Shape
 const { Small, Middle, Large } = Size
 const { Filled, Ghost } = Type
-
-export type ButtonProps = {
-
-  /**
-   * The children nodes to be rendered within the button context.
-   */
-  children?: ReactNode,
-
-  /**
-   * Defines the button hierarchy. Either:
-   *
-   * - primary: button associated with the most significant (and therefore primary) action on the page;
-   * - neutral: button associated with a general purpose action;
-   * - danger: button associated with a potentially dangerous action.
-   */
-  hierarchy?: Hierarchy,
-
-  /**
-   * Redirect url of a link button.
-   * For security reasons, the attribute "rel: 'noopener noreferrer'" is always specified.
-   */
-  href?: string,
-
-  /**
-   * Sets an icon for the button component.
-   */
-  icon?: ReactNode,
-
-  /**
-   * Defines a position for the button icon (if any). Either:
-   *
-   * - left: the icon is placed to the left of the button text;
-   * - right: the icon is placed to the right of the button text.
-   */
-  iconPosition?: IconPosition,
-
-  /**
-   * Identifies whether the button is disabled or not.
-   */
-  isDisabled?: boolean,
-
-  /**
-   * Sets the loading status of the button.
-   */
-  isLoading?: boolean,
-
-  /**
-   * Sets the handler to handle a click event.
-   */
-  onClick?: (event: MouseEvent) => void,
-
-  /**
-   * Defines the button shape. Either:
-   *
-   * - square: square-shaped button with rounded corners;
-   * - circle: fully rounded button, typically used for buttons containing only icon.
-   */
-  shape?: Shape,
-
-  /**
-   * Defines the button size. Either:
-   *
-   * - small: small button - 24px in height by default;
-   * - middle: middle button - 32px in height by default;
-   * - large: large button - 48px in height by default.
-   */
-  size?: Size,
-
-  /**
-   * Specifies where the linked document will open when the link is clicked.
-   * Only usable for link buttons together with the href property.
-   *
-   * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
-   */
-  target?: string,
-
-  /**
-   * Defines the button type. Either:
-   *
-   * - filled: button with a solid fill, typically used for primary actions;
-   * - outlined: medium-emphasis button with a stroke around the button container and no fill,
-   *   typically used for secondary actions;
-   * - ghost: transparent button with no stroke, typically used for links.
-   */
-  type?: Type,
-}
 
 /**
  * UI component for performing actions on the page interacting through clicks

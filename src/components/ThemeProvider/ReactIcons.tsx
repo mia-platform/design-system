@@ -21,7 +21,7 @@ import { IconContext } from 'react-icons'
 
 import { DEFAULT_COLOR } from './utils/themeDefaultStyle'
 import Theme from '../../themes/schema'
-import { ThemeProviderProps } from '.'
+import { ThemeProviderProps } from './ThemeProvider.props'
 
 /**
  * Generates a context configuration for React Icons based on a theme configuration.

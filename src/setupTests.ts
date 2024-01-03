@@ -31,7 +31,7 @@ import '@testing-library/jest-dom'
 /**
  * Mocks the '@fontsource/inter' module.
  *
- * It helps avoid Jest errors when loading the default fontface.
+ * It helps avoiding Jest errors when loading the default fontface.
  */
 jest.mock('@fontsource/inter', () => ({
   default: () => `
@@ -41,3 +41,24 @@ jest.mock('@fontsource/inter', () => ({
     };
   `,
 }))
+
+/**
+ * Mocks the window.matchMedia function.
+ *
+ * It allows testing components that implement media queries.
+ *
+ * @remarks The writable param indicates the property can be reassigned in tests.
+ */
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: (query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  }),
+})

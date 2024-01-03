@@ -20,30 +20,17 @@ import { ReactElement, createContext, useMemo } from 'react'
 
 import { AntThemeProvider } from './Ant'
 import { ReactIconsProvider } from './ReactIcons'
-import Theme from '../../themes/schema'
+import { ThemeProviderProps } from './ThemeProvider.props'
 import themeDefaultStyle from './utils/themeDefaultStyle'
 import themeToVariables from './utils/themeToVariables'
 import themes from '../../themes'
 
-export type ThemeProviderProps = {
-
-  /**
-   * The children nodes to be rendered with the theme context
-   */
-  children?: ReactElement,
-
-  /**
-   * The theme configuration to be passed to children nodes
-   */
-  theme?: Theme,
-}
-
-const { lightTheme: defaultTheme } = themes
+export const { lightTheme: defaultTheme } = themes
 
 /**
  * A context to provide the theme throughout the application.
  */
-const ThemeContext = createContext(defaultTheme)
+export const ThemeContext = createContext(defaultTheme)
 
 /**
  * Provides theming for the application.
@@ -53,7 +40,7 @@ const ThemeContext = createContext(defaultTheme)
  *
  * @TODO check children wrapper div style does not clash with other divs (e.g. not full height or width)
  */
-const ThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
+export const ThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
   const style = useMemo(() => ({ ...themeDefaultStyle(theme), ...themeToVariables(theme) }), [theme])
 
   return (
@@ -72,10 +59,4 @@ const ThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement =>
 ThemeProvider.defaultProps = {
   children: undefined,
   theme: defaultTheme,
-}
-
-export {
-  defaultTheme,
-  ThemeProvider,
-  ThemeContext,
 }
