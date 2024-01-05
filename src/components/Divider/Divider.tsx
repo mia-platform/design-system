@@ -16,19 +16,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { MouseEvent, ReactElement, ReactNode, useMemo } from 'react'
-import { Button as AntButton } from 'antd'
-import classnames from 'classnames'
+import { ReactElement, ReactNode } from 'react'
+import { Divider as AntDivider } from 'antd'
 
 import { TextOrientation, Type } from './Divider.types'
-import styles from './Button.module.css'
 
-const { button, buttonSm, buttonSmIconOnly, buttonMd, buttonMdIconOnly, buttonLg, buttonGhost, buttonText } = styles
 
-const { Central, Left, Right } = TextOrientation
-const { Horizontal, Vertical } = Type
+const { Central } = TextOrientation
+const { Horizontal } = Type
 
 export type DividerProps = {
+
+  /**
+   * The wrapped title to be shown in the divider.
+   */
+  children?: ReactNode,
 
   /**
    * Defined the class name assigned to the divider container.
@@ -76,6 +78,7 @@ export type DividerProps = {
  * @returns {Button} Button component
  */
 export const Divider = ({
+  children,
   className,
   isDashed,
   orientationMargin,
@@ -83,35 +86,17 @@ export const Divider = ({
   isPlain,
   type,
 }: DividerProps): ReactElement => {
-  const buttonClassNames = useMemo(() => classnames(
-    [
-      button,
-      children && size === Small && buttonSm,
-      !children && size === Small && buttonSmIconOnly,
-      children && size === Middle && buttonMd,
-      !children && size === Middle && buttonMdIconOnly,
-      size === Large && buttonLg,
-      type === Ghost && buttonGhost,
-    ]
-  ), [children, size, type])
-
   return (
-    <AntButton
-      className={buttonClassNames}
-      danger={hierarchy === Danger}
-      disabled={isDisabled}
-      ghost={type !== Filled && hierarchy !== Neutral}
-      loading={isLoading}
-      shape={shape === Square ? 'default' : 'circle'}
-      size={size}
-      type={hierarchy === Neutral ? 'default' : 'primary'}
-      onClick={onClick}
-      {...href && { href, rel: 'noopener noreferrer', target }}
+    <AntDivider
+      className={className}
+      dashed={isDashed}
+      orientation={orientation}
+      orientationMargin={orientationMargin}
+      plain={isPlain}
+      type={type}
     >
-      {iconPosition === Left && icon}
-      {children && <div className={buttonText}>{children}</div>}
-      {iconPosition === Right && icon}
-    </AntButton>
+      {children}
+    </AntDivider>
   )
 }
 

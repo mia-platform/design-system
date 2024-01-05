@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,161 +17,57 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 
-import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
-import { Button } from '.'
-import { Icon } from '../Icon'
+import { Divider } from '.'
+import { TextOrientation } from './Divider.types'
 
-const { Primary, Neutral, Danger } = Hierarchy
-const { Left, Right } = IconPosition
-const { Square, Circle } = Shape
-const { Small, Middle, Large } = Size
-const { Filled, Outlined, Ghost } = Type
-
-const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
+const { Left } = TextOrientation
 
 const meta = {
-  component: Button,
-  args: {
-    ...Button.defaultProps,
-    children: 'Button',
-    onClick: action('click'),
-  },
-} satisfies Meta<typeof Button>
+  component: Divider,
+  // args: {
+  //   ...Divider.defaultProps,
+  // },
+} satisfies Meta<typeof Divider>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const PrimaryFilled: Story = {
-  args: {
-    ...meta.args,
-    hierarchy: Primary,
-    type: Filled,
-  },
+
+const mockedText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.'
+
+// FIXME: These component requires some span tag as context in order to be clear on the storybook doc.
+// Which variant should we implement inside the doc?
+export const SimpleDivider: Story = {
+  render: (args) => (
+    <>
+      <span>{mockedText}</span>
+      <Divider {...args} />
+      <span>{mockedText}</span>
+    </>
+  ),
 }
 
-export const PrimaryOutline: Story = {
-  args: {
-    ...meta.args,
-    hierarchy: Primary,
-    type: Outlined,
-  },
+export const DividerWithTitle: Story = {
+  render: (args) => (
+    <>
+      <span>{mockedText}</span>
+      <Divider
+        orientation={Left}
+        {...args}
+      >
+        {'Left title'}
+      </Divider>
+      <span>{mockedText}</span>
+      <Divider
+        orientation={Left}
+        orientationMargin={20}
+        {...args}
+      >
+        {'Left title with custom margin'}
+      </Divider>
+      <span>{mockedText}</span>
+    </>
+  ),
 }
 
-export const PrimaryGhost: Story = {
-  args: {
-    ...meta.args,
-    hierarchy: Primary,
-    type: Ghost,
-  },
-}
-
-export const NeutralOutline: Story = {
-  args: {
-    ...meta.args,
-    hierarchy: Neutral,
-    type: Outlined,
-  },
-}
-
-export const NeutralGhost: Story = {
-  args: {
-    ...meta.args,
-    hierarchy: Neutral,
-    type: Ghost,
-  },
-}
-
-export const DangerFilled: Story = {
-  args: {
-    ...meta.args,
-    hierarchy: Danger,
-    type: Filled,
-  },
-}
-
-export const DangerOutline: Story = {
-  args: {
-    ...meta.args,
-    hierarchy: Danger,
-    type: Outlined,
-  },
-}
-
-export const DangerGhost: Story = {
-  args: {
-    ...meta.args,
-    hierarchy: Danger,
-    type: Ghost,
-  },
-}
-
-export const SquareShape: Story = {
-  args: {
-    ...meta.args,
-    children: undefined,
-    icon,
-    shape: Square,
-  },
-}
-
-export const CircleShape: Story = {
-  args: {
-    ...meta.args,
-    children: undefined,
-    icon,
-    shape: Circle,
-  },
-}
-
-export const SmallSize: Story = {
-  args: {
-    ...meta.args,
-    size: Small,
-  },
-}
-
-export const MiddleSize: Story = {
-  args: {
-    ...meta.args,
-    size: Middle,
-  },
-}
-
-export const LargeSize: Story = {
-  args: {
-    ...meta.args,
-    size: Large,
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    ...meta.args,
-    isDisabled: true,
-  },
-}
-
-export const Loading: Story = {
-  args: {
-    ...meta.args,
-    isLoading: true,
-  },
-}
-
-export const WithIconLeft: Story = {
-  args: {
-    ...meta.args,
-    icon,
-    iconPosition: Left,
-  },
-}
-
-export const WithIconRight: Story = {
-  args: {
-    ...meta.args,
-    icon,
-    iconPosition: Right,
-  },
-}
