@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ComponentsTheme } from '../ThemeProvider/Ant'
-import Theme from '../../themes/schema'
+// import { ComponentsTheme } from '../ThemeProvider/Ant'
+// import Theme from '../../themes/schema'
 
 /**
  * Generates a Ant theme configuration for Button component based on a theme configuration.
  *
- * @link https://ant.design/components/button#design-token
+ * @link https://ant.design/components/divider#design-token
  *
  * @param {Partial<Theme>} theme - theme configuration.
- * @returns {Partial<ComponentsTheme>} The generated Button Ant theme configuration.
+ * @returns {Partial<ComponentsTheme>} The generated Divider Ant theme configuration.
  */
-export default ({ typography }: Partial<Theme>): ComponentsTheme['Button'] => ({
-  contentFontSizeSM: typography?.action?.fontSize,
-  contentFontSize: typography?.action?.fontSize,
-  contentFontSizeLG: typography?.action?.fontSize,
-})
+
+
+// FIXME: Could theme affect the props of this component?
+// export default ({ typography }: Partial<Theme>): ComponentsTheme['Divider'] => ({
+//   orientationMargin: 0,
+//   textPaddingInline: '?',
+//   verticalMarginInline: '?',
+// })

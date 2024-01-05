@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,125 +16,57 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
-import { fireEvent, render, screen } from '../../test-utils'
-import { Button } from '.'
-import { Icon } from '../Icon'
+import { ReactElement, ReactNode } from 'react'
 
-const { Neutral, Danger } = Hierarchy
-const { Right } = IconPosition
-const { Circle } = Shape
-const { Small, Large } = Size
-const { Outlined, Ghost } = Type
+import { Divider } from '.'
+import { Type } from './Divider.types'
+import { render } from '../../test-utils'
 
-const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
+const { Vertical } = Type
 
-describe('Button Component', () => {
+type SplitTextComponentProps = {
+  children: ReactNode
+}
+
+const SplitTextComponent = ({ children }: SplitTextComponentProps): ReactElement => (
+  <>
+    <span>{'Text mocked 1'}</span>
+    {children}
+    <span>{'Text mocked 2'}</span>
+  </>
+)
+
+// FIXME: These tests has no value, because the divider feature are expressed using the antd class
+// and RTL does not test the style rules
+describe('Divider Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
 
-  test('renders primary filled button correctly', () => {
-    const { asFragment } = render(<Button>{'Button'}</Button>)
+  test('renders horizontal without title correctly', () => {
+    const { asFragment } = render(
+      <SplitTextComponent>
+        <Divider />
+      </SplitTextComponent>
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders primary outline button correctly', () => {
-    const { asFragment } = render(<Button type={Outlined}>{'Button'}</Button>)
+  test('renders horizontal with title correctly', () => {
+    const { asFragment } = render(
+      <SplitTextComponent>
+        <Divider>{'Some text'}</Divider>
+      </SplitTextComponent>
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders primary ghost button correctly', () => {
-    const { asFragment } = render(<Button type={Ghost}>{'Button'}</Button>)
+  test('renders vertical correctly', () => {
+    const { asFragment } = render(
+      <SplitTextComponent>
+        <Divider type={Vertical} />
+      </SplitTextComponent>
+    )
     expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders neutral outline button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Neutral} type={Outlined}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders neutral ghost button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Neutral} type={Ghost}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders danger filled button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Danger}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders danger outline button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Danger} type={Outlined}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders danger ghost button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Danger} type={Ghost}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders square button correctly', () => {
-    const { asFragment } = render(<Button icon={icon} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders circle button correctly', () => {
-    const { asFragment } = render(<Button icon={icon} shape={Circle} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders small button correctly', () => {
-    const { asFragment } = render(<Button size={Small}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders middle button correctly', () => {
-    const { asFragment } = render(<Button>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders large button correctly', () => {
-    const { asFragment } = render(<Button size={Large}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders disabled button correctly', () => {
-    const { asFragment } = render(<Button isDisabled>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-
-    const button = screen.getByRole('button', { name: /Button/i })
-    expect(button).toBeDisabled()
-  })
-
-  test('renders loading button correctly', () => {
-    const { asFragment } = render(<Button isLoading>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders button with icon left correctly', () => {
-    const { asFragment } = render(<Button icon={icon}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders button with icon right correctly', () => {
-    const { asFragment } = render(<Button icon={icon} iconPosition={Right}>{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders button with href correctly', () => {
-    const { asFragment } = render(<Button href="https://mia-platform.eu">{'Button'}</Button>)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('calls onClick correctly', () => {
-    const onClick = jest.fn()
-
-    render(<Button onClick={onClick}>{'Button'}</Button>)
-
-    const button = screen.getByRole('button', { name: /Button/i })
-    fireEvent.click(button)
-    expect(onClick).toHaveBeenCalledTimes(1)
-    expect(onClick).toBeCalledWith(expect.objectContaining({ ...MouseEvent }))
   })
 })
