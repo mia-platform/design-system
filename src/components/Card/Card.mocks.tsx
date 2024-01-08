@@ -20,8 +20,8 @@ export const actionButton = (
 )
 
 export const skeletonParagraph = {
-  rows: 6,
-  width: ['30%', '80%', '65%', '30%', '70%', '60%'],
+  rows: 3,
+  width: ['80%', '65%', '70%'],
 }
 
 export const children = 'Card Content'

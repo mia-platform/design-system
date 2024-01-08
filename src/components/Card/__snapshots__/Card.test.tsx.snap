@@ -172,22 +172,13 @@ exports[`Card Component renders skeleton correctly 1`] = `
           class="ant-skeleton-paragraph"
         >
           <li
-            style="width: 30%;"
-          />
-          <li
             style="width: 80%;"
           />
           <li
             style="width: 65%;"
           />
           <li
-            style="width: 30%;"
-          />
-          <li
             style="width: 70%;"
-          />
-          <li
-            style="width: 60%;"
           />
         </ul>
       </div>

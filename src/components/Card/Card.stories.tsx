@@ -26,6 +26,10 @@ import { Table } from '../Table'
 const meta = {
   component: Card,
   args: Card.defaultProps,
+  argTypes: {
+    children: { control: false },
+    extra: { control: false },
+  },
 } satisfies Meta<typeof Card>
 
 export default meta
