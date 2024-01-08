@@ -51,7 +51,7 @@ export const PrimaryFilled: Story = {
   },
 }
 
-export const PrimaryOutline: Story = {
+export const PrimaryOutlined: Story = {
   args: {
     ...meta.args,
     hierarchy: Primary,
@@ -67,7 +67,7 @@ export const PrimaryGhost: Story = {
   },
 }
 
-export const NeutralOutline: Story = {
+export const NeutralOutlined: Story = {
   args: {
     ...meta.args,
     hierarchy: Neutral,
@@ -91,7 +91,7 @@ export const DangerFilled: Story = {
   },
 }
 
-export const DangerOutline: Story = {
+export const DangerOutlined: Story = {
   args: {
     ...meta.args,
     hierarchy: Danger,
