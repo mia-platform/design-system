@@ -18,22 +18,14 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { columns, data, rowKey } from '../Table/Table.mocks'
-import { Button } from '../Button'
+import { actionButton, children, docLink, extra, subtitle, title } from './Card.mocks'
+import { hugeData, rowKey, scroll, scrollableColumns } from '../Table/Table.mocks'
 import { Card } from '.'
 import { Table } from '../Table'
-import { actionButton } from './Card.mocks'
 
 const meta = {
   component: Card,
-  args: {
-    ...Card.defaultProps,
-    children: 'Card Content',
-    docLink: 'https://mia-platform.eu',
-    extra: <Button>{'Button'}</Button>,
-    subtitle: 'Card Subtitle',
-    title: 'Card Title',
-  },
+  args: Card.defaultProps,
 } satisfies Meta<typeof Card>
 
 export default meta
@@ -42,73 +34,58 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     ...meta.args,
+    children,
+    docLink,
+    extra,
+    subtitle,
+    title,
   },
 }
 
 export const Title: Story = {
-  args: {
-    children: undefined,
-    docLink: undefined,
-    extra: undefined,
-    subtitle: undefined,
-  },
+  args: { title },
 }
 
 export const TitleWithDocLink: Story = {
-  args: {
-    children: undefined,
-    extra: undefined,
-    subtitle: undefined,
-  },
+  args: { docLink, title },
 }
 
 export const HeaderWithSubtitle: Story = {
-  args: {
-    children: undefined,
-    extra: undefined,
-  },
+  args: { docLink, subtitle, title },
 }
 
 export const HeaderWithAction: Story = {
-  args: {
-    children: undefined,
-    subtitle: undefined,
-  },
+  args: { docLink, extra, title },
 }
 
 export const TextContent: Story = {
-  args: {
-    extra: undefined,
-    subtitle: undefined,
-    title: undefined,
-  },
+  args: { children },
 }
 
 export const ActionContent: Story = {
   args: {
     children: (
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {'Card Content'}
+        {children}
         {actionButton}
       </div>
     ),
-    extra: undefined,
-    subtitle: undefined,
-    title: undefined,
   },
 }
 
 export const TableContent: Story = {
   args: {
-    children: <Table columns={columns} data={data} rowKey={rowKey} />,
-    extra: undefined,
-    subtitle: undefined,
-    title: undefined,
+    children: (
+      <Table
+        columns={scrollableColumns}
+        data={hugeData}
+        rowKey={rowKey}
+        scroll={scroll}
+      />
+    ),
   },
 }
 
 export const Loading: Story = {
-  args: {
-    isLoading: true,
-  },
+  args: { isLoading: true },
 }

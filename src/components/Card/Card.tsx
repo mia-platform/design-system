@@ -31,7 +31,7 @@ import useTheme from '../../hooks/useTheme'
 
 const { Circle } = Shape
 const { Ghost } = Type
-const { card, header, icon, titles, titleStyle } = styles
+const { card, header, heading } = styles
 
 /**
  * UI component used to display content related to a single subject
@@ -62,10 +62,10 @@ export const Card = ({
         paragraph={skeletonParagraph}
       >
         {(title || subtitle) && <div className={header}>
-          <div className={titles}>
-            {title && <div className={titleStyle}>
+          <div className={heading}>
+            {title && <div className={styles.title}>
               <H3>{title}</H3>
-              {docLink && <div className={icon}>
+              {docLink && <div className={styles.docLink}>
                 <Button
                   icon={docLinkIcon}
                   shape={Circle}

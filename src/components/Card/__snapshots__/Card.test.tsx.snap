@@ -9,10 +9,10 @@ exports[`Card Component renders card correctly 1`] = `
       class="header"
     >
       <div
-        class="titles"
+        class="heading"
       >
         <div
-          class="titleStyle"
+          class="title"
         >
           <h3
             aria-label="Card Title"
@@ -22,7 +22,7 @@ exports[`Card Component renders card correctly 1`] = `
             Card Title
           </h3>
           <div
-            class="icon"
+            class="docLink"
           >
             <button
               class="ant-btn ant-btn-circle ant-btn-primary ant-btn-background-ghost button buttonMdIconOnly buttonGhost"
@@ -68,6 +68,87 @@ exports[`Card Component renders card correctly 1`] = `
       </button>
     </div>
     Card Content
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Card Component renders content only 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    Card Content
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Card Component renders header only 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    <div
+      class="header"
+    >
+      <div
+        class="heading"
+      >
+        <div
+          class="title"
+        >
+          <h3
+            aria-label="Card Title"
+            class="ant-typography"
+            role="h3"
+          >
+            Card Title
+          </h3>
+          <div
+            class="docLink"
+          >
+            <button
+              class="ant-btn ant-btn-circle ant-btn-primary ant-btn-background-ghost button buttonMdIconOnly buttonGhost"
+              type="button"
+            >
+              <svg
+                alt="PiBookOpen"
+                aria-label="PiBookOpen"
+                color="#005dc9"
+                fill="currentColor"
+                height="16"
+                role="img"
+                stroke="currentColor"
+                stroke-width="0"
+                style="color: rgb(0, 93, 201);"
+                viewBox="0 0 256 256"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="ant-typography bodyS"
+          role="paragraph"
+        >
+          Card Subtitle
+        </div>
+      </div>
+      <button
+        class="ant-btn ant-btn-primary button buttonMd"
+        type="button"
+      >
+        <div
+          class="buttonText"
+        >
+          Button
+        </div>
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;

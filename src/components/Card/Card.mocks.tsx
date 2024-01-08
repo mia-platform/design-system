@@ -1,3 +1,5 @@
+import { action } from '@storybook/addon-actions'
+
 import { Hierarchy, Shape, Type } from '../Button/Button.types'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
@@ -13,6 +15,7 @@ export const actionButton = (
     icon={actionIcon}
     shape={Circle}
     type={Outlined}
+    onClick={action('click')}
   />
 )
 
@@ -20,3 +23,9 @@ export const skeletonParagraph = {
   rows: 6,
   width: ['30%', '80%', '65%', '30%', '70%', '60%'],
 }
+
+export const children = 'Card Content'
+export const docLink = 'https://mia-platform.eu'
+export const extra = <Button>{'Button'}</Button>
+export const subtitle = 'Card Subtitle'
+export const title = 'Card Title'
