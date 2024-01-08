@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useMemo } from 'react'
+import { ReactElement, useCallback, useMemo } from 'react'
 import { Skeleton } from 'antd'
 
 import { Shape, Type } from '../Button/Button.types'
@@ -25,6 +25,7 @@ import { Button } from '../Button'
 import { CardProps } from './Card.props'
 import { H3 } from '../Typography/HX/H3'
 import { Icon } from '../Icon'
+import { skeletonParagraph } from './Card.mocks'
 import styles from './Card.module.css'
 import useTheme from '../../hooks/useTheme'
 
@@ -51,12 +52,14 @@ export const Card = ({
     <Icon color={palette?.action?.link?.active} name="PiBookOpen" size={16} />
   ), [palette?.action?.link?.active])
 
+  const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])
+
   return (
     <div className={card}>
       <Skeleton
         active
         loading={isLoading}
-        paragraph={{ rows: 6, width: ['30%', '80%', '65%', '30%', '70%', '60%'] }}
+        paragraph={skeletonParagraph}
       >
         {(title || subtitle) && <div className={header}>
           <div className={titles}>
@@ -67,7 +70,7 @@ export const Card = ({
                   icon={docLinkIcon}
                   shape={Circle}
                   type={Ghost}
-                  onClick={() => window.open(docLink, '_blank')}
+                  onClick={onClickDocLink}
                 />
               </div>}
             </div>}

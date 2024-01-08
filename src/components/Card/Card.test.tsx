@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { render, screen, waitFor } from '../../test-utils'
+import { render, screen } from '../../test-utils'
 import { Button } from '../Button'
 import { Card } from '.'
 
@@ -47,8 +47,8 @@ describe('Card Component', () => {
     expect(screen.getByText(/Card Content/i)).toBeVisible()
   })
 
-  test('renders skeleton correctly', async() => {
+  test('renders skeleton correctly', () => {
     const { asFragment } = render(<Card isLoading={true} />)
-    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+    expect(asFragment()).toMatchSnapshot()
   })
 })

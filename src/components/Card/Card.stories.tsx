@@ -18,26 +18,11 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Hierarchy, Shape, Type } from '../Button/Button.types'
 import { columns, data, rowKey } from '../Table/Table.mocks'
 import { Button } from '../Button'
 import { Card } from '.'
-import { Icon } from '../Icon'
 import { Table } from '../Table'
-
-const { Danger } = Hierarchy
-const { Circle } = Shape
-const { Outlined } = Type
-
-const actionIcon = <Icon color="#b91200" name="PiTrash" size={16} />
-const actionButton = (
-  <Button
-    hierarchy={Danger}
-    icon={actionIcon}
-    shape={Circle}
-    type={Outlined}
-  />
-)
+import { actionButton } from './Card.mocks'
 
 const meta = {
   component: Card,
