@@ -25,7 +25,6 @@ import { Button } from '../Button'
 import { CardProps } from './Card.props'
 import { H3 } from '../Typography/HX/H3'
 import { Icon } from '../Icon'
-import { skeletonParagraph } from './Card.mocks'
 import styles from './Card.module.css'
 import useTheme from '../../hooks/useTheme'
 
@@ -59,7 +58,7 @@ export const Card = ({
       <Skeleton
         active
         loading={isLoading}
-        paragraph={skeletonParagraph}
+        paragraph={Card.skeletonParagraph}
       >
         {(title || subtitle) && <div className={header}>
           <div className={heading}>
@@ -82,6 +81,11 @@ export const Card = ({
       </Skeleton>
     </div>
   )
+}
+
+Card.skeletonParagraph = {
+  rows: 3,
+  width: ['80%', '65%', '70%'],
 }
 
 Card.defaultProps = {

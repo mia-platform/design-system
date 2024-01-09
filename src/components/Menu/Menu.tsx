@@ -23,7 +23,6 @@ import { Hierarchy, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import { MenuProps } from './Menu.props'
 import formatLabels from './Menu.utils'
-import { skeletonParagraph } from './Menu.mocks'
 import styles from './Menu.module.css'
 import useTheme from '../../hooks/useTheme'
 
@@ -64,7 +63,7 @@ export const Menu = ({
       <Skeleton
         active
         loading={isLoading}
-        paragraph={skeletonParagraph}
+        paragraph={Menu.skeletonParagraph}
       >
         <AntMenu
           className={menu}
@@ -85,6 +84,11 @@ export const Menu = ({
       </Skeleton>
     </ConfigProvider>
   )
+}
+
+Menu.skeletonParagraph = {
+  rows: 6,
+  width: ['30%', '80%', '65%', '30%', '70%', '60%'],
 }
 
 Menu.defaultProps = {

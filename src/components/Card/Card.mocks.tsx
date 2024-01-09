@@ -19,11 +19,6 @@ export const actionButton = (
   />
 )
 
-export const skeletonParagraph = {
-  rows: 3,
-  width: ['80%', '65%', '70%'],
-}
-
 export const children = 'Card Content'
 export const docLink = 'https://mia-platform.eu'
 export const extra = <Button>{'Button'}</Button>

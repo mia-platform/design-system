@@ -73,8 +73,3 @@ export const divider = {
   type: Divider,
   dashed: false,
 }
-
-export const skeletonParagraph = {
-  rows: 6,
-  width: ['30%', '80%', '65%', '30%', '70%', '60%'],
-}
