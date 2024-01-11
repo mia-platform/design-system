@@ -16,28 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode } from 'react'
-
 import { Divider } from '.'
+import { SplitTextComponent } from './Divider.mocks'
 import { Type } from './Divider.types'
 import { render } from '../../test-utils'
 
 const { Vertical } = Type
 
-type SplitTextComponentProps = {
-  children: ReactNode
-}
-
-const SplitTextComponent = ({ children }: SplitTextComponentProps): ReactElement => (
-  <>
-    <span>{'Text mocked 1'}</span>
-    {children}
-    <span>{'Text mocked 2'}</span>
-  </>
-)
-
-// FIXME: These tests has no value, because the divider feature are expressed using the antd class
-// and RTL does not test the style rules
 describe('Divider Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()

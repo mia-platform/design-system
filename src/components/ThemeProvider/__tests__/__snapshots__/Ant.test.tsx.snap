@@ -9,6 +9,10 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "contentFontSizeLG": 14,
       "contentFontSizeSM": 14,
     },
+    "Divider": {
+      "colorSplit": "#cdcdcd",
+      "colorText": "#cdcdcd",
+    },
     "Menu": {
       "groupTitleColor": "#898989",
       "groupTitleFontSize": 12,
@@ -67,6 +71,10 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "contentFontSizeLG": undefined,
       "contentFontSizeSM": undefined,
     },
+    "Divider": {
+      "colorSplit": undefined,
+      "colorText": undefined,
+    },
     "Menu": {
       "groupTitleColor": undefined,
       "groupTitleFontSize": undefined,
@@ -124,6 +132,10 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "contentFontSize": 14,
       "contentFontSizeLG": 14,
       "contentFontSizeSM": 14,
+    },
+    "Divider": {
+      "colorSplit": "#cdcdcd",
+      "colorText": "#cdcdcd",
     },
     "Menu": {
       "groupTitleColor": "#898989",

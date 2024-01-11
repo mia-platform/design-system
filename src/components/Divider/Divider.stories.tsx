@@ -19,15 +19,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Divider } from '.'
+import { SplitTextComponent } from './Divider.mocks'
 import { TextOrientation } from './Divider.types'
 
 const { Left } = TextOrientation
 
 const meta = {
   component: Divider,
-  // args: {
-  //   ...Divider.defaultProps,
-  // },
 } satisfies Meta<typeof Divider>
 
 export default meta
@@ -36,15 +34,14 @@ type Story = StoryObj<typeof meta>
 
 const mockedText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.'
 
-// FIXME: These component requires some span tag as context in order to be clear on the storybook doc.
-// Which variant should we implement inside the doc?
 export const SimpleDivider: Story = {
   render: (args) => (
-    <>
-      <span>{mockedText}</span>
+    <SplitTextComponent
+      mockedText1={mockedText}
+      mockedText2={mockedText}
+    >
       <Divider {...args} />
-      <span>{mockedText}</span>
-    </>
+    </SplitTextComponent>
   ),
 }
 

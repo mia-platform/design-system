@@ -16,11 +16,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// import { ComponentsTheme } from '../ThemeProvider/Ant'
-// import Theme from '../../themes/schema'
+import { ComponentsTheme } from '../ThemeProvider/Ant'
+import Theme from '../../themes/schema'
 
 /**
- * Generates a Ant theme configuration for Button component based on a theme configuration.
+ * Generates a Ant theme configuration for Divider component based on a theme configuration.
  *
  * @link https://ant.design/components/divider#design-token
  *
@@ -29,9 +29,7 @@
  */
 
 
-// FIXME: Could theme affect the props of this component?
-// export default ({ typography }: Partial<Theme>): ComponentsTheme['Divider'] => ({
-//   orientationMargin: 0,
-//   textPaddingInline: '?',
-//   verticalMarginInline: '?',
-// })
+export default ({ palette }: Partial<Theme>): ComponentsTheme['Divider'] => ({
+  colorSplit: palette?.common.grey?.[300],
+  colorText: palette?.common.grey?.[300],
+})

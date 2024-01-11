@@ -16,70 +16,24 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode } from 'react'
 import { Divider as AntDivider } from 'antd'
+import { ReactElement } from 'react'
 
 import { TextOrientation, Type } from './Divider.types'
+import { DividerProps } from './Divider.props'
 
 
 const { Central } = TextOrientation
 const { Horizontal } = Type
 
-export type DividerProps = {
-
-  /**
-   * The wrapped title to be shown in the divider.
-   */
-  children?: ReactNode,
-
-  /**
-   * Defined the class name assigned to the divider container.
-   */
-  className?: string,
-
-  /**
-   * Show the divider as dashed line. Default is false.
-   */
-  isDashed?: boolean,
-
-  /**
-   * The margin-left/right between the title and its closest border, based on the orientation left or right.
-   * If a numeric value of type string is provided without a unit, it is assumed to be in pixels (px) by default.
-   */
-  orientationMargin?: string | number,
-
-  /**
-   * Defines the text orientation on the divider. Either:
-   *
-   * - center(default)
-   * - left
-   * - right
-   */
-  orientation?: TextOrientation,
-
-  /**
-   * Show the text on divider as plain style. Default is true.
-   */
-  isPlain?: boolean,
-
-  /**
-   * Defines the divider type. Either:
-   *
-   * - horizontal(default)
-   * - vertical
-   */
-  type?: Type
-}
-
 /**
- * UI component for performing actions on the page interacting through clicks
+ * A divider line to separate different content
  *
- * @link https://ant.design/components/button
- * @returns {Button} Button component
+ * @link https://ant.design/components/divider
+ * @returns {Divider} Divider component
  */
 export const Divider = ({
   children,
-  className,
   isDashed,
   orientationMargin,
   orientation,
@@ -88,7 +42,6 @@ export const Divider = ({
 }: DividerProps): ReactElement => {
   return (
     <AntDivider
-      className={className}
       dashed={isDashed}
       orientation={orientation}
       orientationMargin={orientationMargin}
