@@ -19,11 +19,11 @@
 import { Divider as AntDivider } from 'antd'
 import { ReactElement } from 'react'
 
+import { Orientation, TextOrientation } from './Divider.types'
 import { DividerProps } from './Divider.props'
-import { /* Orientation, */ TextOrientation } from './Divider.types'
 import useTheme from '../../hooks/useTheme'
 
-// const { Horizontal } = Orientation
+const { Horizontal } = Orientation
 const { Left } = TextOrientation
 
 /**
@@ -51,6 +51,6 @@ export const Divider = ({
 }
 
 Divider.defaultProps = {
-  // orientation: Horizontal,
+  orientation: Horizontal,
   textOrientation: Left,
 }
