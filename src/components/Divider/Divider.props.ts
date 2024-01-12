@@ -41,7 +41,7 @@ export type DividerProps = {
   /**
    * Defines the text orientation on the divider. Either:
    *
-   * - "center"(default)
+   * - "center" (default)
    * - "left"
    * - "right"
    */
