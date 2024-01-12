@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactNode } from 'react'
+
 import { Orientation, TextOrientation } from './Divider.types'
 
 export type DividerProps = {
@@ -31,7 +33,7 @@ export type DividerProps = {
   /**
    * The text to show on the separator
    */
-  text?: string
+  text?: string | ReactNode
 
   /**
    * Defines the text orientation on the divider. Either:
