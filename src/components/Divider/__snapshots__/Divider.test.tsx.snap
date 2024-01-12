@@ -50,3 +50,33 @@ exports[`Divider Component renders vertical correctly 1`] = `
   </span>
 </DocumentFragment>
 `;
+
+exports[`Divider Component renders with dashed line 1`] = `
+<DocumentFragment>
+  <span>
+    Text mocked 1
+  </span>
+  <div
+    class="ant-divider ant-divider-horizontal ant-divider-dashed ant-divider-plain"
+    role="separator"
+  />
+  <span>
+    Text mocked 2
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Divider Component renders with plain text 1`] = `
+<DocumentFragment>
+  <span>
+    Text mocked 1
+  </span>
+  <div
+    class="ant-divider ant-divider-horizontal ant-divider-plain"
+    role="separator"
+  />
+  <span>
+    Text mocked 2
+  </span>
+</DocumentFragment>
+`;

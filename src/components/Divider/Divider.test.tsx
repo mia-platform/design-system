@@ -54,4 +54,22 @@ describe('Divider Component', () => {
     )
     expect(asFragment()).toMatchSnapshot()
   })
+
+  test('renders with dashed line', () => {
+    const { asFragment } = render(
+      <SplitTextComponent>
+        <Divider isDashed />
+      </SplitTextComponent>
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders with plain text', () => {
+    const { asFragment } = render(
+      <SplitTextComponent>
+        <Divider isPlain />
+      </SplitTextComponent>
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
 })
