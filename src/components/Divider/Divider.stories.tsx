@@ -19,7 +19,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Divider } from '.'
-import { SplitTextComponent } from './Divider.mocks'
+import { SeparateTextComponent } from './Divider.mocks'
 import { TextOrientation } from './Divider.types'
 
 const { Left } = TextOrientation
@@ -33,28 +33,39 @@ type Story = StoryObj<typeof meta>
 
 const mockedText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.'
 
+const singleDividerEntries = [mockedText, mockedText]
+const multipleDividersEntries = [...singleDividerEntries, mockedText]
+
 export const SimpleDivider: Story = {
   render: (args) => (
-    <SplitTextComponent
-      mockedText1={mockedText}
-      mockedText2={mockedText}
+    <SeparateTextComponent
+      mockedTextEntries={singleDividerEntries}
     >
       <Divider {...args} />
-    </SplitTextComponent>
+    </SeparateTextComponent>
   ),
 }
 
 export const DividerWithTitle: Story = {
   render: (args) => (
-    <>
-      <span>{mockedText}</span>
+    <SeparateTextComponent
+      mockedTextEntries={multipleDividersEntries}
+    >
       <Divider
         orientation={Left}
         {...args}
       >
         {'Left title'}
       </Divider>
-      <span>{mockedText}</span>
+    </SeparateTextComponent>
+  ),
+}
+
+export const DividerWithTitleAndMargin: Story = {
+  render: (args) => (
+    <SeparateTextComponent
+      mockedTextEntries={multipleDividersEntries}
+    >
       <Divider
         orientation={Left}
         orientationMargin={20}
@@ -62,8 +73,6 @@ export const DividerWithTitle: Story = {
       >
         {'Left title with custom margin'}
       </Divider>
-      <span>{mockedText}</span>
-    </>
+    </SeparateTextComponent>
   ),
 }
-

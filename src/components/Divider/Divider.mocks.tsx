@@ -20,23 +20,38 @@ import { ReactElement, ReactNode } from 'react'
 
 type SplitTextComponentProps = {
   children: ReactNode,
-  mockedText1?: string,
-  mockedText2?: string,
+  mockedTextEntries?: string[],
 }
 
-export const SplitTextComponent = ({
+const getTextComponent = (value: string | undefined): ReactNode => (<span key={`item-${value}`}>{value}</span>)
+
+export const SeparateTextComponent = ({
   children,
-  mockedText1,
-  mockedText2,
+  mockedTextEntries,
 }: SplitTextComponentProps): ReactElement => {
-  const text1 = mockedText1 || 'Text mocked 1'
-  const text2 = mockedText2 || 'Text mocked 2'
+  const defaultTextEntries = ['Text mocked 1', 'Text mocked 2']
+  const textEntries = mockedTextEntries || defaultTextEntries
+
+  const separatedComponents = textEntries
+    .reduce((acc: ReactNode[], value, i) => {
+      if (i === textEntries.length - 1) {
+        return [
+          ...acc,
+          getTextComponent(textEntries.at(textEntries.length - 1)),
+        ]
+      }
+
+      return [
+        ...acc,
+        getTextComponent(value),
+        children,
+      ]
+    }, [])
 
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      <span>{text1}</span>
-      {children}
-      <span>{text2}</span>
+      {separatedComponents}
     </>
   )
 }

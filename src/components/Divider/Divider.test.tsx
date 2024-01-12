@@ -17,7 +17,7 @@
  */
 
 import { Divider } from '.'
-import { SplitTextComponent } from './Divider.mocks'
+import { SeparateTextComponent } from './Divider.mocks'
 import { Type } from './Divider.types'
 import { render } from '../../test-utils'
 
@@ -30,45 +30,45 @@ describe('Divider Component', () => {
 
   test('renders horizontal without title correctly', () => {
     const { asFragment } = render(
-      <SplitTextComponent>
+      <SeparateTextComponent>
         <Divider />
-      </SplitTextComponent>
+      </SeparateTextComponent>
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders horizontal with title correctly', () => {
     const { asFragment } = render(
-      <SplitTextComponent>
+      <SeparateTextComponent>
         <Divider>{'Some text'}</Divider>
-      </SplitTextComponent>
+      </SeparateTextComponent>
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders vertical correctly', () => {
     const { asFragment } = render(
-      <SplitTextComponent>
+      <SeparateTextComponent>
         <Divider type={Vertical} />
-      </SplitTextComponent>
+      </SeparateTextComponent>
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders with dashed line', () => {
     const { asFragment } = render(
-      <SplitTextComponent>
+      <SeparateTextComponent>
         <Divider isDashed />
-      </SplitTextComponent>
+      </SeparateTextComponent>
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders with plain text', () => {
     const { asFragment } = render(
-      <SplitTextComponent>
+      <SeparateTextComponent>
         <Divider isPlain />
-      </SplitTextComponent>
+      </SeparateTextComponent>
     )
     expect(asFragment()).toMatchSnapshot()
   })
