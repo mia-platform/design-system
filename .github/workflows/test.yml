@@ -3,6 +3,9 @@
 
 name: Test and Publish
 
+env:
+  NODE_VERSION: 18.x
+
 on:
   push:
     branches:
@@ -21,7 +24,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 18.x
+        node-version: $NODE_VERSION
     - run: yarn
     - run: yarn build
     - run: yarn test
@@ -55,7 +58,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: $NODE_VERSION
           registry-url: ${{ secrets.MIA_NPM_REGISTRY_URL }}
       - run: yarn install --frozen-lockfile
       - run: yarn build
