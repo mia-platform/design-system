@@ -6,7 +6,7 @@ exports[`Divider Component renders horizontal with title correctly 1`] = `
     Text mocked 1
   </span>
   <div
-    class="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center ant-divider-plain"
+    class="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center"
     role="separator"
   >
     <span
@@ -27,7 +27,7 @@ exports[`Divider Component renders horizontal without title correctly 1`] = `
     Text mocked 1
   </span>
   <div
-    class="ant-divider ant-divider-horizontal ant-divider-plain"
+    class="ant-divider ant-divider-horizontal"
     role="separator"
   />
   <span>
@@ -42,37 +42,7 @@ exports[`Divider Component renders vertical correctly 1`] = `
     Text mocked 1
   </span>
   <div
-    class="ant-divider ant-divider-vertical ant-divider-plain"
-    role="separator"
-  />
-  <span>
-    Text mocked 2
-  </span>
-</DocumentFragment>
-`;
-
-exports[`Divider Component renders with dashed line 1`] = `
-<DocumentFragment>
-  <span>
-    Text mocked 1
-  </span>
-  <div
-    class="ant-divider ant-divider-horizontal ant-divider-dashed ant-divider-plain"
-    role="separator"
-  />
-  <span>
-    Text mocked 2
-  </span>
-</DocumentFragment>
-`;
-
-exports[`Divider Component renders with plain text 1`] = `
-<DocumentFragment>
-  <span>
-    Text mocked 1
-  </span>
-  <div
-    class="ant-divider ant-divider-horizontal ant-divider-plain"
+    class="ant-divider ant-divider-vertical"
     role="separator"
   />
   <span>

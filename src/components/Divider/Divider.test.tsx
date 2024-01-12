@@ -40,7 +40,7 @@ describe('Divider Component', () => {
   test('renders horizontal with title correctly', () => {
     const { asFragment } = render(
       <SeparateTextComponent>
-        <Divider>{'Some text'}</Divider>
+        <Divider text="Some text" />
       </SeparateTextComponent>
     )
     expect(asFragment()).toMatchSnapshot()
@@ -50,24 +50,6 @@ describe('Divider Component', () => {
     const { asFragment } = render(
       <SeparateTextComponent>
         <Divider type={Vertical} />
-      </SeparateTextComponent>
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders with dashed line', () => {
-    const { asFragment } = render(
-      <SeparateTextComponent>
-        <Divider isDashed />
-      </SeparateTextComponent>
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders with plain text', () => {
-    const { asFragment } = render(
-      <SeparateTextComponent>
-        <Divider isPlain />
       </SeparateTextComponent>
     )
     expect(asFragment()).toMatchSnapshot()

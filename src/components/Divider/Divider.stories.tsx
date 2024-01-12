@@ -18,24 +18,17 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { TextOrientation, Type } from './Divider.types'
 import { Divider } from '.'
-import { TextOrientation } from './Divider.types'
 
 const meta = {
   args: {
-    children: 'Customize me!',
+    text: 'Customize me!',
   },
   argTypes: {
-    children: {
+    text: {
       control: {
         type: 'text',
-      },
-    },
-    orientationMargin: {
-      control: {
-        type: 'number',
-        min: 0,
-        step: 10,
       },
     },
   },
@@ -50,23 +43,15 @@ export const DividerExamples: Story = {
     <>
       <span>{'You can customize divider below'}</span>
       <Divider {...args} />
-      <span>{'With dashed line'}</span>
-      <Divider isDashed />
       <span>{'With title on the left'}</span>
-      <Divider orientation={TextOrientation.Left}>{'Left text'}</Divider>
-      <span>{'With no margin on the left'}</span>
-      <Divider
-        orientation={TextOrientation.Left}
-        orientationMargin={0}
-      >
-        {'Left text'}
-      </Divider>
+      <Divider orientation={TextOrientation.Left} text="Left text" />
       <span>{'With title on the center'}</span>
-      <Divider orientation={TextOrientation.Center}>{'Text'}</Divider>
-      <span>{'With no plain text'}</span>
-      <Divider isPlain={false} >{'With plain text'}</Divider>
+      <Divider orientation={TextOrientation.Center} text="Text" />
       <span>{'With title on the right'}</span>
-      <Divider orientation={TextOrientation.Right}>{'Right text'}</Divider>
+      <Divider orientation={TextOrientation.Right} text="Right text" />
+      <span>{'Vertical'}</span>
+      <Divider orientation={TextOrientation.Right} type={Type.Vertical} />
+      <span>{'Divider'}</span>
     </>
   ),
 }

@@ -32,22 +32,17 @@ const { Horizontal } = Type
  * @returns {Divider} Divider component
  */
 export const Divider = ({
-  children,
-  isDashed,
-  isPlain,
   orientation,
-  orientationMargin,
+  text,
   type,
 }: DividerProps): ReactElement => {
   return (
     <AntDivider
-      dashed={isDashed}
       orientation={orientation}
-      orientationMargin={orientationMargin}
-      plain={isPlain}
+      orientationMargin="24"
       type={type}
     >
-      {children}
+      {text}
     </AntDivider>
   )
 }
