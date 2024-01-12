@@ -19,60 +19,54 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Divider } from '.'
-import { SeparateTextComponent } from './Divider.mocks'
 import { TextOrientation } from './Divider.types'
 
-const { Left } = TextOrientation
-
 const meta = {
+  args: {
+    children: 'Customize me!',
+  },
+  argTypes: {
+    children: {
+      control: {
+        type: 'text',
+      },
+    },
+    orientationMargin: {
+      control: {
+        type: 'number',
+        min: 0,
+        step: 10,
+      },
+    },
+  },
   component: Divider,
 } satisfies Meta<typeof Divider>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-const mockedText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.'
-
-const singleDividerEntries = [mockedText, mockedText]
-const multipleDividersEntries = [...singleDividerEntries, mockedText]
-
-export const SimpleDivider: Story = {
+export const DividerExamples: Story = {
   render: (args) => (
-    <SeparateTextComponent
-      mockedTextEntries={singleDividerEntries}
-    >
+    <>
+      <span>{'You can customize divider below'}</span>
       <Divider {...args} />
-    </SeparateTextComponent>
-  ),
-}
-
-export const DividerWithTitle: Story = {
-  render: (args) => (
-    <SeparateTextComponent
-      mockedTextEntries={multipleDividersEntries}
-    >
+      <span>{'With dashed line'}</span>
+      <Divider isDashed />
+      <span>{'With title on the left'}</span>
+      <Divider orientation={TextOrientation.Left}>{'Left text'}</Divider>
+      <span>{'With no margin on the left'}</span>
       <Divider
-        orientation={Left}
-        {...args}
+        orientation={TextOrientation.Left}
+        orientationMargin={0}
       >
-        {'Left title'}
+        {'Left text'}
       </Divider>
-    </SeparateTextComponent>
-  ),
-}
-
-export const DividerWithTitleAndMargin: Story = {
-  render: (args) => (
-    <SeparateTextComponent
-      mockedTextEntries={multipleDividersEntries}
-    >
-      <Divider
-        orientation={Left}
-        orientationMargin={20}
-        {...args}
-      >
-        {'Left title with custom margin'}
-      </Divider>
-    </SeparateTextComponent>
+      <span>{'With title on the center'}</span>
+      <Divider orientation={TextOrientation.Center}>{'Text'}</Divider>
+      <span>{'With no plain text'}</span>
+      <Divider isPlain={false} >{'With plain text'}</Divider>
+      <span>{'With title on the right'}</span>
+      <Divider orientation={TextOrientation.Right}>{'Right text'}</Divider>
+    </>
   ),
 }
