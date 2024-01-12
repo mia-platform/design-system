@@ -32,17 +32,6 @@ jobs:
       uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        parallel: true
-
-  post-build:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: Notify Coveralls of finished parallel jobs 
-      uses: coverallsapp/github-action@v2
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        parallel-finished: true
 
   check-license:
     runs-on: ubuntu-latest
