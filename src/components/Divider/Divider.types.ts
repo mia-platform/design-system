@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum DividerOrientation {
+export enum Orientation {
   Horizontal = 'horizontal',
   Vertical = 'vertical',
 }

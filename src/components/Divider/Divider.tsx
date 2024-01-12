@@ -19,10 +19,10 @@
 import { Divider as AntDivider } from 'antd'
 import { ReactElement } from 'react'
 
-import { DividerOrientation } from './Divider.types'
+import { Orientation } from './Divider.types'
 import { DividerProps } from './Divider.props'
 
-const { Horizontal } = DividerOrientation
+const { Horizontal } = Orientation
 
 /**
  * A divider line to separate different content

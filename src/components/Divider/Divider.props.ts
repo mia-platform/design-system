@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { DividerOrientation } from './Divider.types'
+import { Orientation } from './Divider.types'
 
 export type DividerProps = {
 
@@ -31,5 +31,5 @@ export type DividerProps = {
    * - "horizontal" (default)
    * - "vertical"
    */
-  orientation?: DividerOrientation
+  orientation?: Orientation
 }
