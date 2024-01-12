@@ -34,9 +34,9 @@ const { Horizontal } = Type
 export const Divider = ({
   children,
   isDashed,
-  orientationMargin,
-  orientation,
   isPlain,
+  orientation,
+  orientationMargin,
   type,
 }: DividerProps): ReactElement => {
   return (

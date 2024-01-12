@@ -28,12 +28,12 @@ export type DividerProps = {
   children?: ReactNode,
 
   /**
-   * Show the divider as dashed line. Default is false.
+   * Shows the divider as a dashed line. Default is false.
    */
   isDashed?: boolean,
 
   /**
-   * The margin-left/right between the title and its closest border, based on the orientation left or right.
+   * The margin-left/right between the title and its closest border, based on the orientation "left" or "right".
    * If a numeric value of type string is provided without a unit, it is assumed to be in pixels (px) by default.
    */
   orientationMargin?: string | number,
@@ -41,9 +41,9 @@ export type DividerProps = {
   /**
    * Defines the text orientation on the divider. Either:
    *
-   * - center(default)
-   * - left
-   * - right
+   * - "center"(default)
+   * - "left"
+   * - "right"
    */
   orientation?: TextOrientation,
 
@@ -55,8 +55,8 @@ export type DividerProps = {
   /**
    * Defines the divider type. Either:
    *
-   * - horizontal(default)
-   * - vertical
+   * - "horizontal" (default)
+   * - "vertical"
    */
   type?: Type
 }
