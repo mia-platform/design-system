@@ -22,7 +22,7 @@ import { ReactElement } from 'react'
 import { TextOrientation, Type } from './Divider.types'
 import { DividerProps } from './Divider.props'
 
-const { Central } = TextOrientation
+const { Center } = TextOrientation
 const { Horizontal } = Type
 
 /**
@@ -55,6 +55,6 @@ export const Divider = ({
 Divider.defaultProps = {
   isDashed: false,
   isPlain: true,
-  orientation: Central,
+  orientation: Center,
   type: Horizontal,
 }

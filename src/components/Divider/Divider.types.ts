@@ -17,7 +17,7 @@
  */
 
 export enum TextOrientation {
-  Central = 'center',
+  Center = 'center',
   Left = 'left',
   Right = 'right'
 }
