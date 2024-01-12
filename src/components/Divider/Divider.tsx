@@ -48,8 +48,6 @@ export const Divider = ({
 }
 
 Divider.defaultProps = {
-  isDashed: false,
-  isPlain: true,
   orientation: Center,
   type: Horizontal,
 }
