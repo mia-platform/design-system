@@ -18,6 +18,7 @@
 
 import { Button } from './components/Button'
 import { Card } from './components/Card'
+import { Divider } from './components/Divider'
 import { Icon } from './components/Icon'
 import { Menu } from './components/Menu'
 import { SegmentedControl } from './components/SegmentedControl'
@@ -29,6 +30,7 @@ import themes from './themes'
 export {
   Button,
   Card,
+  Divider,
   Icon,
   Menu,
   SegmentedControl,

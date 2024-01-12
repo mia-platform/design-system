@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { readFileSync, readdirSync } from 'fs'
-import { resolve } from 'path'
+import { ComponentsTheme } from '../ThemeProvider/Ant'
+import Theme from '../../themes/schema'
 
-import generateTheme, { GENERATED_FILE, THEMES_DIR } from '../generateTheme'
+/**
+ * Generates a Ant theme configuration for Divider component based on a theme configuration.
+ *
+ * @link https://ant.design/components/divider#design-token
+ *
+ * @param {Partial<Theme>} theme - theme configuration.
+ * @returns {Partial<ComponentsTheme>} The generated Divider Ant theme configuration.
+ */
 
-describe('Generate Theme', () => {
-  for (const themeName of readdirSync(THEMES_DIR)) {
-    test(`generates ${themeName} theme configuration`, async() => {
-      await generateTheme(themeName)
-
-      const generated = await readFileSync(resolve(THEMES_DIR, themeName, GENERATED_FILE)).toString()
-      expect(JSON.parse(generated)).toMatchSnapshot()
-    })
-  }
+export default ({ palette }: Partial<Theme>): ComponentsTheme['Divider'] => ({
+  colorSplit: palette?.common.grey?.[300],
 })

@@ -21,6 +21,7 @@ import { ReactElement, useMemo } from 'react'
 
 import { DEFAULT_COLOR, DEFAULT_FONT_SIZE } from './utils/themeDefaultStyle'
 import ButtonTheme from '../Button/Button.theme'
+import DividerTheme from '../Divider/Divider.theme'
 import MenuTheme from '../Menu/Menu.theme'
 import TableTheme from '../Table/Table.theme'
 import Theme from '../../themes/schema'
@@ -81,6 +82,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
   },
   components: {
     Button: ButtonTheme({ typography }),
+    Divider: DividerTheme({ palette }),
     Menu: MenuTheme({ palette, shape, spacing, typography }),
     Table: TableTheme({ palette, spacing }),
     Typography: TypographyTheme({ typography }),
