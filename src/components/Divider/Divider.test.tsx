@@ -26,7 +26,7 @@ describe('Divider Component', () => {
     jest.resetAllMocks()
   })
 
-  test('renders horizontal without title correctly', () => {
+  test('renders divider', () => {
     const { asFragment } = render(
       <SeparateTextComponent>
         <Divider />
@@ -35,7 +35,7 @@ describe('Divider Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders horizontal with title correctly', () => {
+  test('renders horizontal divider with title correctly', () => {
     const { asFragment } = render(
       <SeparateTextComponent>
         <Divider text="Some text" />
@@ -44,7 +44,7 @@ describe('Divider Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders vertical correctly', () => {
+  test('renders vertical divider correctly', () => {
     const { asFragment } = render(
       <SeparateTextComponent>
         <Divider orientation={Orientation.Vertical} />

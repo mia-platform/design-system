@@ -25,6 +25,8 @@ type SplitTextComponentProps = {
 
 const getTextComponent = (value: string | undefined): ReactNode => (<span key={`item-${value}`}>{value}</span>)
 
+export const LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+
 export const SeparateTextComponent = ({
   children,
   mockedTextEntries,

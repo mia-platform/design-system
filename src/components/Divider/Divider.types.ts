@@ -20,3 +20,9 @@ export enum Orientation {
   Horizontal = 'horizontal',
   Vertical = 'vertical',
 }
+
+export enum TextOrientation {
+  Center = 'center',
+  Left = 'left',
+  Right = 'right'
+}
