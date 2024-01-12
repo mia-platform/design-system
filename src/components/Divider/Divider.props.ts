@@ -29,7 +29,6 @@ export type DividerProps = {
    */
   orientation?: TextOrientation,
 
-
   /**
    * The text to show on the separator
    */
