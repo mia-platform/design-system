@@ -27,6 +27,7 @@ import Theme from '../../themes/schema'
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Divider Ant theme configuration.
  */
+
 export default ({ palette }: Partial<Theme>): ComponentsTheme['Divider'] => ({
   colorSplit: palette?.common.grey?.[300],
 })

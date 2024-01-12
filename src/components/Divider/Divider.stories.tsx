@@ -31,7 +31,6 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-
 const mockedText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.'
 
 export const SimpleDivider: Story = {

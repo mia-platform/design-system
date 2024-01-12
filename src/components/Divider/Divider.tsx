@@ -22,7 +22,6 @@ import { ReactElement } from 'react'
 import { TextOrientation, Type } from './Divider.types'
 import { DividerProps } from './Divider.props'
 
-
 const { Central } = TextOrientation
 const { Horizontal } = Type
 

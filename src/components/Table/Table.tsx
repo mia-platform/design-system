@@ -16,7 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-
 import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement } from 'react'
 
