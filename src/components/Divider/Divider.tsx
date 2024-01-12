@@ -19,8 +19,8 @@
 import { Divider as AntDivider } from 'antd'
 import { ReactElement } from 'react'
 
-import { Orientation } from './Divider.types'
 import { DividerProps } from './Divider.props'
+import { Orientation } from './Divider.types'
 
 const { Horizontal } = Orientation
 
