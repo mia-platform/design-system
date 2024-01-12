@@ -16,18 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { TextOrientation, Type } from './Divider.types'
+import { DividerOrientation } from './Divider.types'
 
 export type DividerProps = {
-
-  /**
-   * Defines the text orientation on the divider. Either:
-   *
-   * - "center" (default)
-   * - "left"
-   * - "right"
-   */
-  orientation?: TextOrientation,
 
   /**
    * The text to show on the separator
@@ -40,5 +31,5 @@ export type DividerProps = {
    * - "horizontal" (default)
    * - "vertical"
    */
-  type?: Type
+  orientation?: DividerOrientation
 }

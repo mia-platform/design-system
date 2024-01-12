@@ -17,11 +17,9 @@
  */
 
 import { Divider } from '.'
+import { DividerOrientation } from './Divider.types'
 import { SeparateTextComponent } from './Divider.mocks'
-import { Type } from './Divider.types'
 import { render } from '../../test-utils'
-
-const { Vertical } = Type
 
 describe('Divider Component', () => {
   beforeEach(() => {
@@ -49,7 +47,7 @@ describe('Divider Component', () => {
   test('renders vertical correctly', () => {
     const { asFragment } = render(
       <SeparateTextComponent>
-        <Divider type={Vertical} />
+        <Divider orientation={DividerOrientation.Vertical} />
       </SeparateTextComponent>
     )
     expect(asFragment()).toMatchSnapshot()

@@ -19,11 +19,10 @@
 import { Divider as AntDivider } from 'antd'
 import { ReactElement } from 'react'
 
-import { TextOrientation, Type } from './Divider.types'
+import { DividerOrientation } from './Divider.types'
 import { DividerProps } from './Divider.props'
 
-const { Center } = TextOrientation
-const { Horizontal } = Type
+const { Horizontal } = DividerOrientation
 
 /**
  * A divider line to separate different content
@@ -32,15 +31,13 @@ const { Horizontal } = Type
  * @returns {Divider} Divider component
  */
 export const Divider = ({
-  orientation,
   text,
-  type,
+  orientation,
 }: DividerProps): ReactElement => {
   return (
     <AntDivider
-      orientation={orientation}
       orientationMargin="24"
-      type={type}
+      type={orientation}
     >
       {text}
     </AntDivider>
@@ -48,6 +45,5 @@ export const Divider = ({
 }
 
 Divider.defaultProps = {
-  orientation: Center,
-  type: Horizontal,
+  orientation: Horizontal,
 }

@@ -16,13 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum TextOrientation {
-  Center = 'center',
-  Left = 'left',
-  Right = 'right'
-}
-
-export enum Type {
+export enum DividerOrientation {
   Horizontal = 'horizontal',
   Vertical = 'vertical',
 }
