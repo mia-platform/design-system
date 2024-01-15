@@ -16,10 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { render, screen } from '../../test-utils'
 import { Divider } from '.'
 import { Orientation } from './Divider.types'
-import { SeparateTextComponent } from './Divider.mocks'
-import { render } from '../../test-utils'
 
 describe('Divider Component', () => {
   beforeEach(() => {
@@ -27,29 +26,24 @@ describe('Divider Component', () => {
   })
 
   test('renders divider', () => {
-    const { asFragment } = render(
-      <SeparateTextComponent>
-        <Divider />
-      </SeparateTextComponent>
-    )
+    const { asFragment } = render(<Divider />)
+
+    expect(screen.getByRole('separator')).toBeVisible()
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders horizontal divider with title correctly', () => {
-    const { asFragment } = render(
-      <SeparateTextComponent>
-        <Divider text="Some text" />
-      </SeparateTextComponent>
-    )
+  test('renders divider with text correctly', () => {
+    const { asFragment } = render(<Divider text="Some text" />)
+
+    expect(screen.getByRole('separator')).toBeVisible()
+    expect(screen.getByText('Some text')).toBeVisible()
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders vertical divider correctly', () => {
-    const { asFragment } = render(
-      <SeparateTextComponent>
-        <Divider orientation={Orientation.Vertical} />
-      </SeparateTextComponent>
-    )
+    const { asFragment } = render(<Divider orientation={Orientation.Vertical} />)
+
+    expect(screen.getByRole('separator')).toBeVisible()
     expect(asFragment()).toMatchSnapshot()
   })
 })

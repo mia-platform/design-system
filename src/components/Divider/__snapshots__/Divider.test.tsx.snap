@@ -2,24 +2,15 @@
 
 exports[`Divider Component renders divider 1`] = `
 <DocumentFragment>
-  <span>
-    Text mocked 1
-  </span>
   <div
     class="ant-divider ant-divider-horizontal ant-divider-no-default-orientation-margin-left"
     role="separator"
   />
-  <span>
-    Text mocked 2
-  </span>
 </DocumentFragment>
 `;
 
-exports[`Divider Component renders horizontal divider with title correctly 1`] = `
+exports[`Divider Component renders divider with text correctly 1`] = `
 <DocumentFragment>
-  <span>
-    Text mocked 1
-  </span>
   <div
     class="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-left ant-divider-no-default-orientation-margin-left"
     role="separator"
@@ -31,23 +22,14 @@ exports[`Divider Component renders horizontal divider with title correctly 1`] =
       Some text
     </span>
   </div>
-  <span>
-    Text mocked 2
-  </span>
 </DocumentFragment>
 `;
 
 exports[`Divider Component renders vertical divider correctly 1`] = `
 <DocumentFragment>
-  <span>
-    Text mocked 1
-  </span>
   <div
     class="ant-divider ant-divider-vertical ant-divider-no-default-orientation-margin-left"
     role="separator"
   />
-  <span>
-    Text mocked 2
-  </span>
 </DocumentFragment>
 `;

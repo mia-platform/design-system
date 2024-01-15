@@ -18,7 +18,6 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { LOREM_IPSUM, SeparateTextComponent } from './Divider.mocks'
 import { Divider } from '.'
 import { Orientation } from './Divider.types'
 
@@ -40,29 +39,21 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Horizontal: Story = {
-  render: (args) => (
-    <SeparateTextComponent
-      mockedTextEntries={[LOREM_IPSUM, LOREM_IPSUM]}
-    >
-      <Divider {...args} />
-    </SeparateTextComponent>
-  ),
+  args: { ...meta.args },
 }
 
 export const Vertical: Story = {
-  render: () => (
-    <SeparateTextComponent>
-      <Divider orientation={Orientation.Vertical} />
-    </SeparateTextComponent>
-  ),
+  args: {
+    ...meta.args,
+    orientation: Orientation.Vertical,
+  },
 }
 
-export const WithTitle: Story = {
-  render: () => (
-    <SeparateTextComponent
-      mockedTextEntries={[LOREM_IPSUM, LOREM_IPSUM]}
-    >
-      <Divider text="Some text" />
-    </SeparateTextComponent>
-  ),
+export const WithText: Story = {
+  args: {
+    ...meta.args,
+    text: 'Divider Text',
+  },
 }
+
+
