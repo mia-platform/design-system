@@ -30,7 +30,7 @@ import useTheme from '../../hooks/useTheme'
 
 const { Circle } = Shape
 const { Ghost } = Type
-const { card, header, heading } = styles
+const { card, content, header, heading } = styles
 
 /**
  * UI component used to display content related to a single subject
@@ -77,7 +77,9 @@ export const Card = ({
           </div>
           {extra}
         </div>}
-        {children}
+        {children && <div className={content}>
+          {children}
+        </div>}
       </Skeleton>
     </div>
   )

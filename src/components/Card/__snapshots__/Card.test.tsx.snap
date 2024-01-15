@@ -67,7 +67,11 @@ exports[`Card Component renders card correctly 1`] = `
         </div>
       </button>
     </div>
-    Card Content
+    <div
+      class="content"
+    >
+      Card Content
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -77,7 +81,11 @@ exports[`Card Component renders content only 1`] = `
   <div
     class="card"
   >
-    Card Content
+    <div
+      class="content"
+    >
+      Card Content
+    </div>
   </div>
 </DocumentFragment>
 `;
