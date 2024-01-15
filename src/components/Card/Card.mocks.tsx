@@ -26,7 +26,13 @@ const { Danger } = Hierarchy
 const { Circle } = Shape
 const { Outlined } = Type
 
-const actionIcon = <Icon color="#b91200" name="PiTrash" size={16} />
+const actionIcon = (
+  <Icon
+    color="#b91200"
+    name="PiTrash"
+    size={16}
+  />
+)
 export const actionButton = (
   <Button
     hierarchy={Danger}
