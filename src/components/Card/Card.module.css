@@ -56,5 +56,5 @@
 .title {
   display: flex;
   align-items: center;
-  gap: calc(var(--spacing-padding-md, 12) * 1px);
+  gap: calc(var(--spacing-padding-sm, 8) * 1px);
 }
