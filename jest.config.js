@@ -25,6 +25,7 @@ export default {
     "/node_modules/",
     "/src/setupTests.ts",
     "/src/test-utils.tsx",
-    "/src/utils/log.ts"
+    "/src/utils/log.ts",
+    "assets"
   ]
 }
