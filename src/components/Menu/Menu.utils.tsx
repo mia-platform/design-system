@@ -49,7 +49,7 @@ function formatLabels(
       label,
       title,
       key,
-      type,
+      ...type && Object.values(ItemType).includes(type) && { type },
       icon: icon && <div>{icon}</div>,
       ...type === Category && {
         type: 'group',
@@ -61,7 +61,7 @@ function formatLabels(
           boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)',
         },
       },
-      ...children && Array.isArray(children) && {
+      ...children && Array.isArray(children) && children.length > 0 && {
         children: formatLabels(children, selectedItem, isCollapsed, hierarchy),
       },
     }
