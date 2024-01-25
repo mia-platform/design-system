@@ -49,8 +49,8 @@ function formatLabels(
       label,
       title,
       key,
-      ...type && Object.values(ItemType).includes(type) && { type },
       icon: icon && <div>{icon}</div>,
+      ...type && Object.values(ItemType).includes(type) && { type },
       ...type === Category && {
         type: 'group',
         label: typeof label === 'string' && label?.toUpperCase(),
