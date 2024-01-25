@@ -20,7 +20,8 @@ import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
 
 export enum ItemType {
   Category = 'category',
-  Divider = 'divider'
+  Divider = 'divider',
+  Group = 'group'
 }
 
 export enum Hierarchy {

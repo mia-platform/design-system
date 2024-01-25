@@ -21,7 +21,7 @@ import { ItemType as AntItemType } from 'antd/es/menu/hooks/useItems'
 import { Hierarchy, Item, ItemType } from './Menu.types'
 
 const { Primary } = Hierarchy
-const { Category } = ItemType
+const { Category, Divider, Group } = ItemType
 
 /**
  * Formats menu items to ensure optimal display.
@@ -50,12 +50,13 @@ function formatLabels(
       title,
       key,
       icon: icon && <div>{icon}</div>,
-      ...type && Object.values(ItemType).includes(type) && { type },
       ...type === Category && {
         type: 'group',
         label: typeof label === 'string' && label?.toUpperCase(),
         title: title?.toUpperCase(),
       },
+      ...type === Divider && { type },
+      ...type === Group && {},
       ...selectedItem === key && hierarchy === Primary && {
         style: {
           boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)',
