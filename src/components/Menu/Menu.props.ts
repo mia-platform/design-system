@@ -67,6 +67,7 @@ export type MenuProps = {
    *    - key: The unique key of the group <br> `React.Key`
    *    - label: The display label of the group <br> `ReactNode`
    *    - icon: The icon associated with the group <br> `ReactNode`
+   *    - type: The type of the group <br> `"group"`
    *    - children: The children items within the group <br> `Item[]`
    *
    * - divider `object`:

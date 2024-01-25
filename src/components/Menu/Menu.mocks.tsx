@@ -19,7 +19,7 @@
 import { Icon } from '../Icon'
 import { ItemType } from './Menu.types'
 
-const { Category, Divider } = ItemType
+const { Category, Divider, Group } = ItemType
 
 export const item = {
   key: 'item',
@@ -31,6 +31,7 @@ export const item = {
 export const group = {
   key: 'group',
   label: 'Group',
+  type: Group,
   icon: <Icon color="currentColor" name="PiSnowflake" size={16} />,
   children: [
     {
