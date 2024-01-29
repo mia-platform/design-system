@@ -57,7 +57,7 @@
     "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/blocks": "^7.4.6",
     "@storybook/manager-api": "^7.4.6",
-    "@storybook/react": "^7.4.6",
+    "@storybook/react": "^7.6.10",
     "@storybook/react-vite": "^7.4.6",
     "@storybook/test-runner": "^0.15.2",
     "@storybook/testing-library": "^0.2.2",
