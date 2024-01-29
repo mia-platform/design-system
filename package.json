@@ -55,7 +55,7 @@
     "@storybook/addon-interactions": "^7.4.6",
     "@storybook/addon-links": "^7.6.10",
     "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.4.6",
+    "@storybook/blocks": "^7.6.10",
     "@storybook/manager-api": "^7.4.6",
     "@storybook/react": "^7.6.10",
     "@storybook/react-vite": "^7.4.6",
