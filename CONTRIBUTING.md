@@ -30,7 +30,6 @@ You can see the `npm` scripts available inside the `package.json` file and use t
 
 ## Before submitting a PR
 
- * Fill in the `Unreleased` section in `CHANGELOG.md` adding the improvement introduced with the pull request. Changelog should follow the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard;
  * Are you in the contributors section inside the `package.json`? Add yourself!
 
 ## How to tag
