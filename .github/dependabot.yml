@@ -12,3 +12,16 @@ updates:
       interval: daily
       time: "04:00"
     open-pull-requests-limit: 10
+    groups:
+      storybook:
+        patterns:
+        - "@storybook*"
+        update-types:
+        - "minor"
+        - "patch"
+      playwright:
+        patterns:
+        - "@playwright*"
+        update-types:
+        - "minor"
+        - "patch"
