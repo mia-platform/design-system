@@ -36,7 +36,7 @@
     "check-license": "addlicense -c 'Mia srl' -check -s -ignore src/**/*.ts"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.12",
+    "@fontsource/inter": "^5.0.16",
     "antd": "^5.9.2",
     "lodash.get": "^4.4.2",
     "lodash.isobject": "^3.0.2",
