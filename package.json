@@ -93,7 +93,7 @@
     "typescript": "^5.0.2",
     "vite": "^4.5.2",
     "vite-plugin-dts": "^3.6.4",
-    "vite-plugin-svgr": "^3.3.0",
+    "vite-plugin-svgr": "^4.2.0",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "engines": {
