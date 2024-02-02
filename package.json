@@ -86,7 +86,7 @@
     "jest-watch-typeahead": "^2.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup-plugin-visualizer": "^5.9.2",
+    "rollup-plugin-visualizer": "^5.12.0",
     "storybook": "^7.4.6",
     "traverse": "^0.6.8",
     "ts-jest": "^29.1.1",
