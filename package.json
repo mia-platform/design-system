@@ -69,7 +69,7 @@
     "@types/react": "^18.2.51",
     "@types/react-dom": "^18.2.7",
     "@types/traverse": "^0.6.32",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.15.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "classnames": "^2.5.1",
