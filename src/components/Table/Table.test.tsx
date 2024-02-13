@@ -42,6 +42,11 @@ describe('Table Component', () => {
 
     expect(screen.getByRole('table')).toBeVisible()
 
+    expect(screen.getByText('Field 1')).toBeInTheDocument()
+    expect(screen.getByText('Field 2')).toBeInTheDocument()
+    expect(screen.getByText('Field 3')).toBeInTheDocument()
+    expect(screen.getByText('Field 4')).toBeInTheDocument()
+
     expect(screen.getByRole('row', { name: 'Value 1 Value 1 Value 1 Value 1' })).toBeVisible()
     expect(screen.getByRole('row', { name: 'Value 2 Value 2 Value 2 Value 2' })).toBeVisible()
     expect(screen.getByRole('row', { name: 'Value 3 Value 3 Value 3 Value 3' })).toBeVisible()
