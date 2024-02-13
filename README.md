@@ -43,14 +43,19 @@ const Example = () => {
 For local development, you can run:
 
 ```bash
-yarn install # to install all dependencies
-yarn dev
+yarn install # install all dependencies
 ```
 
-To run storybook:
+Then, run Storybook:
 
 ```bash
 yarn storybook
+```
+
+To run tests:
+
+```bash
+yarn test
 ```
 
 ## License
