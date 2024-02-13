@@ -23,9 +23,6 @@ import { FeedbackMessage } from './useFeedbackMessage.types'
 import { FeedbackMessageProps } from './useFeedbackMessage.props'
 import { Message } from '../../components/Message'
 
-// TODO: Document this
-// TODO: Add tests
-
 type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
 
 /**
@@ -68,7 +65,7 @@ type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
  * @returns {FeedbackMessage} An object including several functions to call to
  * manage the rendering of feedback messages.
  */
-export const useFeedbackMessage = (): FeedbackMessage => {
+const useFeedbackMessage = (): FeedbackMessage => {
   const [messageApi, contextHolder] = message.useMessage()
 
   const open = useCallback((type: FeedbackMessageType, props: FeedbackMessageProps): void => {
@@ -100,3 +97,5 @@ export const useFeedbackMessage = (): FeedbackMessage => {
     warning,
   }), [contextHolder, dismiss, error, info, loading, success, warning])
 }
+
+export default useFeedbackMessage

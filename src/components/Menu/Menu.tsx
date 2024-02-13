@@ -24,7 +24,7 @@ import defaultTheme, { primaryTheme } from './Menu.theme'
 import { MenuProps } from './Menu.props'
 import formatLabels from './Menu.utils'
 import styles from './Menu.module.css'
-import useTheme from '../../hooks/useTheme'
+import useTheme from '../../hooks/useTheme/useTheme'
 
 const { Default, Primary } = Hierarchy
 const { Inline } = Mode
