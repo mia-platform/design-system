@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ComponentsTheme } from '../ThemeProvider/Ant'
+import { ComponentsTheme, parse } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
 /**
@@ -28,6 +28,11 @@ import Theme from '../../themes/schema'
  * @returns {Partial<ComponentsTheme>} The generated Message Ant theme configuration.
  */
 
-export default ({ palette }: Partial<Theme>): ComponentsTheme['Message'] => ({
-  colorText: palette?.common.grey?.[600],
+export default ({ palette, spacing }: Partial<Theme>): ComponentsTheme['Message'] => ({
+  contentPadding: `${parse(spacing?.padding?.sm)} ${parse(spacing?.padding?.md)}`,
+  colorError: palette?.error?.['600'],
+  colorInfo: palette?.info?.['600'],
+  colorSuccess: palette?.success?.['600'],
+  colorText: palette?.common.grey?.['600'],
+  colorWarning: palette?.warning?.['600'],
 })
