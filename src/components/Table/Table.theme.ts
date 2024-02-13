@@ -28,10 +28,11 @@ import Theme from '../../themes/schema'
  * @returns {Partial<ComponentsTheme>} The generated Table Ant theme configuration.
  */
 export default ({ palette, spacing }: Partial<Theme>): ComponentsTheme['Table'] => ({
-  colorText: palette?.common?.grey?.[600],
-  headerBg: palette?.background?.neutral?.[200],
+  borderColor: palette?.secondary?.[100],
   cellPaddingInline: parse(spacing?.padding?.lg),
   cellPaddingInlineMD: parse(spacing?.padding?.lg),
   cellPaddingInlineSM: parse(spacing?.padding?.lg),
+  colorText: palette?.common?.grey?.[600],
+  headerBg: palette?.secondary?.[100],
   rowHoverBg: palette?.action?.alternate?.secondary?.hover,
 })

@@ -1,6 +1,22 @@
 .table {
+  --table-border: 1px solid;
+  --table-border-color: var(--palette-common-grey-100, #f2f2f2);
+  --column-padding: calc(var(--spacing-padding-sm, 8) * 1px);
+
+  :global(.mia-platform-table-container){
+    border-left: var(--table-border);
+    border-right: var(--table-border);
+    border-color: var(--table-border-color);
+  }
+
+  :global(.mia-platform-table-footer){
+    border: var(--table-border);
+    border-top: 0;
+    border-color: var(--table-border-color);
+  }
+
   :global([scope=col]) {
-    padding-top: calc(var(--spacing-padding-sm, 8) * 1px) !important;
-    padding-bottom: calc(var(--spacing-padding-sm, 8) * 1px) !important;
+    padding-top: var(--column-padding) !important;
+    padding-bottom: var(--column-padding) !important;
   }
 }
