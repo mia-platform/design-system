@@ -74,7 +74,6 @@ export const useFeedbackMessage = (): FeedbackMessage => {
   const open = useCallback((type: FeedbackMessageType, props: FeedbackMessageProps): void => {
     const { key, duration, sticky, ...messageProps } = props
 
-
     messageApi.open({
       content: <Message extra={messageProps.extra} message={messageProps.message} />,
       duration: sticky ? 0 : duration,
