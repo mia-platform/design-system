@@ -20,5 +20,4 @@
     align-items: center;
     display: inline-flex;
     gap: calc(var(--spacing-padding-lg, 16) * 1px);
-    /* padding: calc(var(--spacing-padding-md, 12) * 1px) calc(var(--spacing-padding-sm, 8) * 1px); */
 }

@@ -16,4 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export { FeedbackMessage } from './FeedbackMessage'
+export { Message } from './Message'

@@ -16,28 +16,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement } from 'react'
-
-import { FeedbackMessageProps } from './FeedbackMessage.props'
-import styles from './FeedbackMessage.module.css'
-
-const { message: messageStyles } = styles
+import { ReactNode } from 'react'
 
 
-/**
- * Renders a feedback message in response to user operations.
- *
- * @link https://ant.design/components/message
- * @returns {FeedbackMessage} FeedbackMessage component
- */
-export const FeedbackMessage = ({
-  message,
-  extra,
-}: FeedbackMessageProps): ReactElement => {
-  return <span className={messageStyles}>
-    {message}
-    {extra}
-  </span>
+export type MessageProps = {
+
+  /**
+   * The content to be shown as a message, after the icon. Could be either a string or a ReactNode.
+   */
+  message: string | ReactNode
+
+  /**
+   * Content to be rendered at the right side of the component (e.g. one or more buttons).
+   */
+  extra?: ReactNode,
 }
-
-FeedbackMessage.defaultProps = {} as Partial<FeedbackMessageProps>
