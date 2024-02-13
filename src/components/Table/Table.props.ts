@@ -167,7 +167,7 @@ export type TableProps<RecordType extends GenericRecord> = {
  onRow?: (record: RecordType, index?: number) => HTMLAttributes<unknown>,
 
  /**
-  * Configuration for table pagination.
+  * Configuration for table pagination (disable it with `false`).
   *
   * pagination `object`:
   *   - current: The externally controlled selected page. <br> `number`
@@ -191,7 +191,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   *
   * @see {@link https://ant.design/components/pagination#api} for advanced configurations.
   */
- pagination?: Pagination,
+ pagination?: Pagination | false,
 
 /**
   * The key used to identify each row of the table.

@@ -51,7 +51,7 @@ export const Table = <RecordType extends GenericRecord>({
   size,
   scroll,
 }: TableProps<RecordType>): ReactElement => {
-  const tablePagination = useMemo(() => ({ ...Table.pagination, ...pagination }), [pagination])
+  const tablePagination = useMemo(() => pagination !== false && ({ ...Table.pagination, ...pagination }), [pagination])
 
   return (
     <Skeleton
