@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import * as testUtils from './test-utils'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
 import { Divider } from './components/Divider'
@@ -40,4 +41,5 @@ export {
   Typography,
   hooks,
   themes,
+  testUtils,
 }
