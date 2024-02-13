@@ -17,7 +17,7 @@
  */
 
 import { Table as AntTable, Skeleton } from 'antd'
-import { ReactElement } from 'react'
+import { ReactElement, useMemo } from 'react'
 
 import { GenericRecord, Layout, Size } from './Table.types'
 import { TableProps } from './Table.props'
@@ -51,6 +51,8 @@ export const Table = <RecordType extends GenericRecord>({
   size,
   scroll,
 }: TableProps<RecordType>): ReactElement => {
+  const tablePagination = useMemo(() => ({ ...Table.pagination, ...pagination }), [pagination])
+
   return (
     <Skeleton
       active
@@ -65,7 +67,7 @@ export const Table = <RecordType extends GenericRecord>({
         footer={footer}
         loading={false}
         locale={intlLocale}
-        pagination={{ ...Table.pagination, ...pagination }}
+        pagination={tablePagination}
         rowKey={rowKey}
         rowSelection={rowSelection}
         scroll={scroll}
