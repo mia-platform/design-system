@@ -1,1 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message Component renders message 1`] = `
+<DocumentFragment>
+  <span
+    class="message"
+  >
+    Feedback message
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Message Component renders message with extra content 1`] = `
+<DocumentFragment>
+  <span
+    class="message"
+  >
+    Feedback message
+    <button
+      class="ant-btn ant-btn-primary button buttonMd"
+      type="button"
+    >
+      <div
+        class="buttonText"
+      >
+        Button
+      </div>
+    </button>
+  </span>
+</DocumentFragment>
+`;

@@ -23,6 +23,9 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "itemHoverBg": "#00000014",
       "itemSelectedBg": "#1890ff14",
     },
+    "Message": {
+      "colorText": "#636363",
+    },
     "Table": {
       "cellPaddingInline": 16,
       "cellPaddingInlineMD": 16,
@@ -84,6 +87,9 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "itemHoverBg": undefined,
       "itemSelectedBg": undefined,
     },
+    "Message": {
+      "colorText": undefined,
+    },
     "Table": {
       "cellPaddingInline": undefined,
       "cellPaddingInlineMD": undefined,
@@ -144,6 +150,9 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "itemHeight": 32,
       "itemHoverBg": "#00000014",
       "itemSelectedBg": "#1890ff14",
+    },
+    "Message": {
+      "colorText": "#636363",
     },
     "Table": {
       "cellPaddingInline": 16,

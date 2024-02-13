@@ -20,15 +20,14 @@ import { ComponentsTheme } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
 /**
- * Generates a Ant theme configuration for Divider component based on a theme configuration.
+ * Generates a Ant theme configuration for Message component based on a theme configuration.
  *
- * @link https://ant.design/components/divider#design-token
+ * @link https://ant.design/components/message#design-token
  *
  * @param {Partial<Theme>} theme - theme configuration.
- * @returns {Partial<ComponentsTheme>} The generated Divider Ant theme configuration.
+ * @returns {Partial<ComponentsTheme>} The generated Message Ant theme configuration.
  */
 
 export default ({ palette }: Partial<Theme>): ComponentsTheme['Message'] => ({
-  // TODO: Add stuff
-  colorSplit: palette?.common.grey?.[300],
+  colorText: palette?.common.grey?.[600],
 })

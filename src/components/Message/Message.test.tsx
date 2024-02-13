@@ -16,28 +16,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import userEvent from '@testing-library/user-event'
-
-import { render, screen } from '../../test-utils'
+import { fireEvent, render, screen } from '../../test-utils'
 import { Button } from '../Button'
-import { FeedbackMessage } from '.'
+import { Message } from '.'
 
-describe('FeedbackMessage Component', () => {
+describe('Message Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
 
-  test('renders feedback message', () => {
-    const { asFragment } = render(<FeedbackMessage message="Feedback message" />)
+  test('renders message', () => {
+    const { asFragment } = render(<Message message="Feedback message" />)
 
     expect(screen.getByText('Feedback message')).toBeVisible()
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders feedback message with extra content', () => {
+  test('renders message with extra content', () => {
     const onButtonClickMock = jest.fn()
     const { asFragment } = render(
-      <FeedbackMessage
+      <Message
         extra=<Button onClick={onButtonClickMock}>Button</Button>
         message="Feedback message"
       />
@@ -47,11 +45,9 @@ describe('FeedbackMessage Component', () => {
     const button = screen.getByRole('button', { name: 'Button' })
     expect(button).toBeVisible()
 
-    userEvent.click(button)
+    fireEvent.click(button)
     expect(onButtonClickMock).toHaveBeenCalledTimes(1)
 
     expect(asFragment()).toMatchSnapshot()
   })
-
-  // TODO: Add additional tests with different statuses, perhaps?
 })
