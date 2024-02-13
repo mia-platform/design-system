@@ -24,7 +24,7 @@ import { ThemeProvider } from '../../components/ThemeProvider'
 import { ThemeProviderProps } from '../../components/ThemeProvider/ThemeProvider.props'
 import { renderHook } from '../../test-utils'
 import themes from '../../themes'
-import useTheme from './useTheme'
+import { useTheme } from './useTheme'
 
 const { lightTheme } = themes
 

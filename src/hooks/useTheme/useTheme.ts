@@ -29,10 +29,8 @@ const { lightTheme: defaultTheme } = themes
  *
  * @returns {Theme} The current theme.
  */
-const useTheme = (): Theme => {
+export const useTheme = (): Theme => {
   const theme = useContext(ThemeContext)
 
   return useMemo(() => theme ?? defaultTheme, [theme])
 }
-
-export default useTheme

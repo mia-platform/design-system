@@ -65,7 +65,7 @@ type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
  * @returns {FeedbackMessage} An object including several functions to call to
  * manage the rendering of feedback messages.
  */
-const useFeedbackMessage = (): FeedbackMessage => {
+export const useFeedbackMessage = (): FeedbackMessage => {
   const [messageApi, contextHolder] = message.useMessage()
 
   const open = useCallback((type: FeedbackMessageType, props: FeedbackMessageProps): void => {
@@ -97,5 +97,3 @@ const useFeedbackMessage = (): FeedbackMessage => {
     warning,
   }), [contextHolder, dismiss, error, info, loading, success, warning])
 }
-
-export default useFeedbackMessage

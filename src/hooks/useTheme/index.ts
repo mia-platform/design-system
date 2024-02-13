@@ -16,8 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import useTheme from './useTheme'
-
-export default {
-  useTheme,
-}
+export { useTheme } from './useTheme'

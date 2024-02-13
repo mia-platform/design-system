@@ -21,6 +21,7 @@ import { Card } from './components/Card'
 import { Divider } from './components/Divider'
 import { Icon } from './components/Icon'
 import { Menu } from './components/Menu'
+import { Message } from './components/Message'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Table } from './components/Table'
 import { ThemeProvider } from './components/ThemeProvider'
@@ -34,6 +35,7 @@ export {
   Divider,
   Icon,
   Menu,
+  Message,
   SegmentedControl,
   Table,
   ThemeProvider,

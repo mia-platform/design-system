@@ -16,8 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import useFeedbackMessage from './useFeedbackMessage'
-
-export default {
-  useFeedbackMessage,
-}
+export { useFeedbackMessage } from './useFeedbackMessage'

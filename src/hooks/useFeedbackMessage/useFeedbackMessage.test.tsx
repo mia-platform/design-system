@@ -18,7 +18,7 @@
  */
 
 import { act, fireEvent, render } from '../../test-utils'
-import useFeedbackMessage from './useFeedbackMessage'
+import { useFeedbackMessage } from './useFeedbackMessage'
 
 jest.useFakeTimers()
 
