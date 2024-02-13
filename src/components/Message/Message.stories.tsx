@@ -19,13 +19,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 
+import { Hierarchy, Size } from '../Button/Button.types'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Message } from '.'
-import useFeedbackMessage from '../../hooks/useFeedbackMessage'
+import { useFeedbackMessage } from '../../hooks/useFeedbackMessage/useFeedbackMessage'
 
 const meta = {
-  args: { ...Message.defaultProps },
+  args: {
+    message: 'This is a Feedback message',
+  },
   component: Message,
 } satisfies Meta<typeof Message>
 
@@ -33,45 +36,47 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const FeedbackMessage: Story = {
-  decorators: [() => {
-    const { contextHolder, info, loading, success, warning, error } = useFeedbackMessage()
+  decorators: [(Story, context) => {
+    const { messageContainer, info, loading, success, warning, error } = useFeedbackMessage()
+
+    const { message } = context.args
 
     return (
       <div style={{ display: 'flex', gap: '4px' }}>
-        {contextHolder}
+        {messageContainer}
         <Button
-          hierarchy="neutral"
+          hierarchy={Hierarchy.Neutral}
           icon={<Icon color="blue" name="PiInfo" size={16} />}
-          onClick={() => info({ message: 'This is an info feedback message' })}
+          onClick={() => info({ message })}
         >
 Info
         </Button>
         <Button
-          hierarchy="neutral"
+          hierarchy={Hierarchy.Neutral}
           icon={<Icon color="green" name="PiCheck" size={16} />}
-          onClick={() => success({ message: 'This is a success feedback message' })}
+          onClick={() => success({ message })}
         >
 Success
         </Button>
         <Button
-          hierarchy="neutral"
+          hierarchy={Hierarchy.Neutral}
           icon={<Icon name="PiSpinner" size={16} />}
-          onClick={() => loading({ message: 'This is a loading feedback message' })}
+          onClick={() => loading({ message })}
         >
 Loading
         </Button>
         <Button
-          hierarchy="neutral"
+          hierarchy={Hierarchy.Neutral}
           icon={<Icon color="orange" name="PiWarning" size={16} />}
-          onClick={() => warning({ message: 'This is a warning feedback message' })}
+          onClick={() => warning({ message })}
         >
 Warning
         </Button>
         {/* Use icons in btn */}
         <Button
-          hierarchy="neutral"
+          hierarchy={Hierarchy.Neutral}
           icon={<Icon color="red" name="PiStop" size={16} />}
-          onClick={() => error({ message: 'This is a error feedback message' })}
+          onClick={() => error({ message })}
         >
 Error
         </Button>
@@ -82,14 +87,14 @@ Error
 
 export const FeedbackMessageWithExtraContent: Story = {
   decorators: [() => {
-    const { contextHolder, success, dismiss } = useFeedbackMessage()
+    const { messageContainer, success, dismiss } = useFeedbackMessage()
 
     const onDismiss = (): void => { dismiss('messageKey') }
 
     const onClick = (): void => {
       success({
         duration: 0,
-        extra: <Button size={'small'} onClick={onDismiss}>Close</Button>,
+        extra: <Button size={Size.Small} onClick={onDismiss}>Close</Button>,
         key: 'messageKey',
         message: 'This is a feedback message',
       })
@@ -97,7 +102,7 @@ export const FeedbackMessageWithExtraContent: Story = {
 
     return (
       <div>
-        {contextHolder}
+        {messageContainer}
         <Button onClick={onClick}>Click me to show a Feedback Message</Button>
       </div >
     )
@@ -106,14 +111,16 @@ export const FeedbackMessageWithExtraContent: Story = {
 
 export const ReplaceFeedbackMessages: Story = {
   decorators: [() => {
-    const { contextHolder, loading, success } = useFeedbackMessage()
+    const { messageContainer, loading, success } = useFeedbackMessage()
 
     const [isLoading, setIsLoading] = useState(false)
+
+    const MESSAGE_KEY = 'MESSAGE_KEY'
 
     const onCreateLoadingMessage = (): void => {
       loading({
         duration: 0,
-        key: 'messageKey',
+        key: MESSAGE_KEY,
         message: 'Loading. Please wait...',
       })
 
@@ -122,7 +129,7 @@ export const ReplaceFeedbackMessages: Story = {
 
     const onCreateSuccessMessage = (): void => {
       success({
-        key: 'messageKey',
+        key: MESSAGE_KEY,
         message: 'Loading complete.',
       })
 
@@ -131,7 +138,7 @@ export const ReplaceFeedbackMessages: Story = {
 
     return (
       <div style={{ display: 'flex', gap: '4px' }}>
-        {contextHolder}
+        {messageContainer}
         {
           isLoading
             ? <Button onClick={onCreateSuccessMessage}>Create a Success Feedback Message</Button>
