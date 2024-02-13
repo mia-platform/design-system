@@ -21,12 +21,6 @@ import { FeedbackMessageProps } from './useFeedbackMessage.props'
 export type FeedbackMessage = {
 
     /**
-     * A node in which the messages will be rendered.
-     * This property must be included in the children of the rendered component.
-     */
-    messageContainer: React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>>
-
-    /**
      * Destroy the FeedbackMessage with given id
      *
      * @param key the key of the message to remove

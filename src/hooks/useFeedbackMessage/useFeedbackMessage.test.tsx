@@ -25,18 +25,15 @@ jest.useFakeTimers()
 describe('useFeedbackMessage', () => {
   test('should show FeedbackMessage', () => {
     const Example = (): JSX.Element => {
-      const { messageContainer, info } = useFeedbackMessage()
+      const { info } = useFeedbackMessage()
 
       return (
-        <>
-          <button
-            type="button"
-            onClick={() => { info({ message: 'This is a FeedbackMessage' }) }}
-          >
-              Open
-          </button>
-          {messageContainer}
-        </>
+        <button
+          type="button"
+          onClick={() => { info({ message: 'This is a FeedbackMessage' }) }}
+        >
+            Open
+        </button>
       )
     }
 
@@ -48,23 +45,20 @@ describe('useFeedbackMessage', () => {
 
   test('should show FeedbackMessage with an extra button', () => {
     const Example = (): JSX.Element => {
-      const { messageContainer, success } = useFeedbackMessage()
+      const { success } = useFeedbackMessage()
 
       return (
-        <>
-          <button
-            type="button"
-            onClick={() => {
-              success({
-                message: 'This is a FeedbackMessage',
-                extra: <button type="button">Close</button>,
-              })
-            }}
-          >
-              Open
-          </button>
-          {messageContainer}
-        </>
+        <button
+          type="button"
+          onClick={() => {
+            success({
+              message: 'This is a FeedbackMessage',
+              extra: <button type="button">Close</button>,
+            })
+          }}
+        >
+            Open
+        </button>
       )
     }
 
@@ -79,18 +73,15 @@ describe('useFeedbackMessage', () => {
     const message = 'This is a FeedbackMessage'
 
     const Example = (): JSX.Element => {
-      const { messageContainer, error } = useFeedbackMessage()
+      const { error } = useFeedbackMessage()
 
       return (
-        <>
-          <button
-            type="button"
-            onClick={() => { error({ message, duration: 5 }) }}
-          >
-              Open
-          </button>
-          {messageContainer}
-        </>
+        <button
+          type="button"
+          onClick={() => { error({ message, duration: 5 }) }}
+        >
+            Open
+        </button>
       )
     }
 
@@ -105,20 +96,17 @@ describe('useFeedbackMessage', () => {
 
   test('FeedbackMessage is sticky and does not disappear', () => {
     const Example = (): JSX.Element => {
-      const { messageContainer, info } = useFeedbackMessage()
+      const { info } = useFeedbackMessage()
 
       return (
-        <>
-          <button
-            type="button"
-            onClick={() => {
-              info({ message: 'This is a FeedbackMessage', sticky: true })
-            }}
-          >
-              Open
-          </button>
-          {messageContainer}
-        </>
+        <button
+          type="button"
+          onClick={() => {
+            info({ message: 'This is a FeedbackMessage', sticky: true })
+          }}
+        >
+            Open
+        </button>
       )
     }
 
@@ -135,21 +123,18 @@ describe('useFeedbackMessage', () => {
     const message = 'Loading...'
 
     const Example = (): JSX.Element => {
-      const { messageContainer, loading, dismiss } = useFeedbackMessage()
+      const { loading, dismiss } = useFeedbackMessage()
       const onDismiss = (): void => { dismiss(key) }
 
       const extra = <button type="button" onClick={onDismiss}>Close</button>
 
       return (
-        <>
-          <button
-            type="button"
-            onClick={() => { loading({ key, message, extra }) }}
-          >
-              Open
-          </button>
-          {messageContainer}
-        </>
+        <button
+          type="button"
+          onClick={() => { loading({ key, message, extra }) }}
+        >
+            Open
+        </button>
       )
     }
 

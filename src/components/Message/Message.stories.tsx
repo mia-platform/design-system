@@ -36,14 +36,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const FeedbackMessage: Story = {
-  decorators: [(Story, context) => {
-    const { messageContainer, info, loading, success, warning, error } = useFeedbackMessage()
+  decorators: [(_Story, context) => {
+    const { info, loading, success, warning, error } = useFeedbackMessage()
 
     const { message } = context.args
 
     return (
       <div style={{ display: 'flex', gap: '4px' }}>
-        {messageContainer}
         <Button
           hierarchy={Hierarchy.Neutral}
           icon={<Icon color="blue" name="PiInfo" size={16} />}
@@ -87,7 +86,7 @@ Error
 
 export const FeedbackMessageWithExtraContent: Story = {
   decorators: [() => {
-    const { messageContainer, success, dismiss } = useFeedbackMessage()
+    const { success, dismiss } = useFeedbackMessage()
 
     const onDismiss = (): void => { dismiss('messageKey') }
 
@@ -102,7 +101,6 @@ export const FeedbackMessageWithExtraContent: Story = {
 
     return (
       <div>
-        {messageContainer}
         <Button onClick={onClick}>Click me to show a Feedback Message</Button>
       </div >
     )
@@ -111,7 +109,7 @@ export const FeedbackMessageWithExtraContent: Story = {
 
 export const ReplaceFeedbackMessages: Story = {
   decorators: [() => {
-    const { messageContainer, loading, success } = useFeedbackMessage()
+    const { loading, success } = useFeedbackMessage()
 
     const [isLoading, setIsLoading] = useState(false)
 
@@ -138,7 +136,6 @@ export const ReplaceFeedbackMessages: Story = {
 
     return (
       <div style={{ display: 'flex', gap: '4px' }}>
-        {messageContainer}
         {
           isLoading
             ? <Button onClick={onCreateSuccessMessage}>Create a Success Feedback Message</Button>

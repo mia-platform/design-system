@@ -66,20 +66,18 @@ type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
  * manage the rendering of feedback messages.
  */
 export const useFeedbackMessage = (): FeedbackMessage => {
-  const [messageApi, contextHolder] = message.useMessage()
-
   const open = useCallback((type: FeedbackMessageType, props: FeedbackMessageProps): void => {
     const { key, duration, sticky, ...messageProps } = props
 
-    messageApi.open({
+    message.open({
       content: <Message extra={messageProps.extra} message={messageProps.message} />,
       duration: sticky ? 0 : duration,
       type,
       key,
     })
-  }, [messageApi])
+  }, [])
 
-  const dismiss = useCallback((key: string) => { messageApi.destroy(key) }, [messageApi])
+  const dismiss = useCallback((key: string) => { message.destroy(key) }, [])
 
   const loading = useCallback((props: FeedbackMessageProps) => { open('loading', props) }, [open])
   const info = useCallback((props: FeedbackMessageProps) => { open('info', props) }, [open])
@@ -88,12 +86,11 @@ export const useFeedbackMessage = (): FeedbackMessage => {
   const warning = useCallback((props: FeedbackMessageProps) => { open('warning', props) }, [open])
 
   return useMemo(() => ({
-    messageContainer: contextHolder,
     dismiss,
     loading,
     info,
     success,
     error,
     warning,
-  }), [contextHolder, dismiss, error, info, loading, success, warning])
+  }), [dismiss, error, info, loading, success, warning])
 }
