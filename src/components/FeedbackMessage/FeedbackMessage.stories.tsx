@@ -20,6 +20,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from '../Button'
 import { FeedbackMessage } from '.'
+import useMessage from '../../hooks/useMessage'
 
 const meta = {
   args: { ...FeedbackMessage.defaultProps },
@@ -29,57 +30,41 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Success: Story = {
-  args: {
-    status: 'success',
-    message: 'This is a success feedback message',
-    duration: 3,
-  },
-}
-
-export const Loading: Story = {
-  args: {
-    status: 'loading',
-    message: 'This is a loading feedback message',
-    duration: 3,
-  },
-}
-
-export const Warning: Story = {
-  args: {
-    status: 'warning',
-    message: 'This is a warning feedback message',
-    duration: 3,
-  },
-}
-
-export const Error: Story = {
-  args: {
-    status: 'error',
-    message: 'This is a error feedback message',
-    duration: 3,
-  },
-}
-
-export const WithAdditionalContent: Story = {
-  args: {
-    status: 'success',
-    message: 'This is a feedback message',
-    extra: <Button>Button</Button>,
-    duration: 3,
-  },
-}
-
-export const SequentialFeedbackMessagesStory: Story = {
-  args: { ...FeedbackMessage.defaultProps },
+export const SimpleFeedbackMessage: Story = {
   decorators: [() => {
-    let isLoading = true
-    setTimeout(() => (isLoading = false), 5000)
+    const { contextHolder, loading } = useMessage()
+
+    const onClick = (): void => {
+      loading({ message: 'This is a feedback message', key: 'messageKey' })
+    }
 
     return (
       <div>
-        {isLoading && <FeedbackMessage message="Loading" status="loading" />}
-        {!isLoading && <FeedbackMessage message="Success" status="success" />}
+        {contextHolder}
+        <Button onClick={onClick}>Click me to show a Feedback Message</Button>
+      </div >
+    )
+  }],
+}
+
+
+export const FeedbackMessageWithExtraContent: Story = {
+  decorators: [() => {
+    const { contextHolder, loading } = useMessage()
+
+    const onClick = (): void => {
+      loading({
+        // TODO: "size" prop is correct but it is typed wrong (somehow)
+        extra: <Button size={'small'}>OK</Button>,
+        key: 'messageKey',
+        message: 'This is a feedback message',
+      })
+    }
+
+    return (
+      <div>
+        {contextHolder}
+        <Button onClick={onClick}>Click me to show a Feedback Message</Button>
       </div >
     )
   }],

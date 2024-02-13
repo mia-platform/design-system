@@ -18,34 +18,21 @@
 
 import { ReactNode } from 'react'
 
-import { FeedbackStatus } from './FeedbackMessage.types'
 
 export type FeedbackMessageProps = {
 
   /**
-   * Define the status of the message, that will cause the icon change.
-   *
-   * Possible values: `loading`, `success`, `error`, `waiting`
+   * identifier of the message
    */
-  status: FeedbackStatus
+  key: string;
 
   /**
-   * Time, in seconds, to show the message. Default to `1.5` seconds.
-   */
-  duration?: number
-
-  /**
-   * The content to be shown as a message, after the icon.
+   * The content to be shown as a message, after the icon. Could be either a string or a ReactNode.
    */
   message: string | ReactNode
 
   /**
-   * Content to be rendered at the right side of the component.
+   * Content to be rendered at the right side of the component (e.g. one or more buttons).
    */
   extra?: ReactNode,
-
-  /**
-   * Sets the handler executed when the message disappear.
-   */
-  onClose?: (event: MouseEvent) => void,
 }

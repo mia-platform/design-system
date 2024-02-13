@@ -28,7 +28,7 @@ describe('FeedbackMessage Component', () => {
   })
 
   test('renders feedback message', () => {
-    const { asFragment } = render(<FeedbackMessage message="Feedback message" status="success" />)
+    const { asFragment } = render(<FeedbackMessage message="Feedback message" />)
 
     expect(screen.getByText('Feedback message')).toBeVisible()
     expect(asFragment()).toMatchSnapshot()
@@ -40,7 +40,6 @@ describe('FeedbackMessage Component', () => {
       <FeedbackMessage
         extra=<Button onClick={onButtonClickMock}>Button</Button>
         message="Feedback message"
-        status="success"
       />
     )
 
@@ -54,5 +53,5 @@ describe('FeedbackMessage Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  // TODO: Add additional tests with different statuses, callback
+  // TODO: Add additional tests with different statuses, perhaps?
 })

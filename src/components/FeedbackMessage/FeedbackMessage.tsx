@@ -17,11 +17,11 @@
  */
 
 import { ReactElement } from 'react'
-import { message as antMessage } from 'antd'
 
-// import { FeedbackStatus } from './FeedbackMessage.types'
 import { FeedbackMessageProps } from './FeedbackMessage.props'
-// import useTheme from '../../hooks/useTheme'
+import styles from './FeedbackMessage.module.css'
+
+const { message: messageStyles } = styles
 
 
 /**
@@ -32,23 +32,12 @@ import { FeedbackMessageProps } from './FeedbackMessage.props'
  */
 export const FeedbackMessage = ({
   message,
-  duration = 3,
-  status,
+  extra,
 }: FeedbackMessageProps): ReactElement => {
-  const [api, context] = antMessage.useMessage()
-  // const { spacing } = useTheme()
-
-  api.open({
-    content: message,
-    duration,
-    type: status,
-  })
-
-  return context
+  return <span className={messageStyles}>
+    {message}
+    {extra}
+  </span>
 }
 
-FeedbackMessage.defaultProps = {
-  duration: 3,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onClose: () => {},
-} as Partial<FeedbackMessageProps>
+FeedbackMessage.defaultProps = {} as Partial<FeedbackMessageProps>
