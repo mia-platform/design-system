@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ConfigProvider, ThemeConfig, theme as baseAntTheme, message } from 'antd'
+import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
 import { DEFAULT_COLOR, DEFAULT_FONT_SIZE } from './utils/themeDefaultStyle'
@@ -99,7 +99,6 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
  */
 const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
   const antTheme = useMemo(() => generateAntTheme(theme), [theme])
-  const [, contextHolder] = message.useMessage()
 
   return (
     <ConfigProvider
@@ -107,7 +106,6 @@ const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement
       prefixCls={ANT_PREFIX}
       theme={antTheme}
     >
-      {contextHolder}
       {children}
     </ConfigProvider>
   )
