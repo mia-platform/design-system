@@ -19,33 +19,51 @@
 import { useCallback, useMemo } from 'react'
 import { message } from 'antd'
 
+import { FeedbackMessage } from './useFeedbackMessage.types'
 import { FeedbackMessageProps } from './useFeedbackMessage.props'
 import { Message } from '../../components/Message'
 
 // TODO: Document this
 // TODO: Add tests
-// TODO: Where should I put all these files?
-// TODO: We need a version in the bottom-center
 
 type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
 
-// export enum FeedbackMessagePositionEnum {
-//   Top = 'top',
-//   Bottom = 'bottom'
-// }
-
-type FeedbackMessage = {
-  messageContainer: React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>>
-  dismiss: (key: string) => void
-  loading: (props: FeedbackMessageProps) => void
-  info: (props: FeedbackMessageProps) => void
-  success: (props: FeedbackMessageProps) => void
-  error: (props: FeedbackMessageProps) => void
-  warning: (props: FeedbackMessageProps) => void
-}
-
 /**
- * A hook to access the current theme from the context.
+ * A hook that allow to display global informative messages to the user at the top of the page. It is intended
+ * to give user feedbacks on a certain operation executed or information regarding the context of the application.
+ *
+ * The hook returns a react node reference called `messageContainer`, that must be included in the rendered children,
+ * and several methods to be used to show a message of different type (each type will use a different icon) or to
+ * manually remove rendered messages.
+ *
+ * @example
+ * export const Component(props: {...}) => {
+ *  // We initialize the hook
+ *  const { messageContainer, info } = useFeedbackMessage()
+ *
+ *  // When called, remove the FeedbackMessage, if still there
+ *  const onDismiss = (): void => { dismiss('messageKey') }
+ *
+ *  // When called, show a FeedbackMessagea
+ *  const onClick = (): void => {
+ *    success({
+ *      extra: <Button size={Size.Small} onClick={onDismiss}>Close</Button>,
+ *      key: 'messageKey',
+ *      message: 'This is a feedback message',
+ *    })
+ *  }
+ *
+ *  // We have to include the messageContainer extracted from the hook in order to show messages
+ *  return (
+ *    <div>
+ *      {messageContainer}
+ *      <div>
+ *       {...}
+ *       <Button onClick={onClick}>Click me to show a Feedback Message</Button>
+ *      </div>
+ *    </div >
+ *  )
+ * }
  *
  * @returns {FeedbackMessage} An object including several functions to call to
  * manage the rendering of feedback messages.
@@ -83,14 +101,3 @@ export const useFeedbackMessage = (): FeedbackMessage => {
     warning,
   }), [contextHolder, dismiss, error, info, loading, success, warning])
 }
-
-
-// const { contextHolder } = useMessage()
-
-// hook.loading({ message: 'Sto caricando', key: 'commit_save' })
-
-// if (isCommitCompleted) {
-//     hook.success({ message: 'Ho caricato', extra: (<Button>OK</Button>) key='commit_save' })
-// }
-
-// return <>{ contextHolder }</>
