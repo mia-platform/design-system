@@ -24,7 +24,12 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "itemSelectedBg": "#1890ff14",
     },
     "Message": {
+      "colorError": "#b91200",
+      "colorInfo": "#005dc9",
+      "colorSuccess": "#52c41a",
       "colorText": "#636363",
+      "colorWarning": "#ff9933",
+      "contentPadding": "undefined undefined",
     },
     "Table": {
       "cellPaddingInline": 16,
@@ -88,7 +93,12 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "itemSelectedBg": undefined,
     },
     "Message": {
+      "colorError": undefined,
+      "colorInfo": undefined,
+      "colorSuccess": undefined,
       "colorText": undefined,
+      "colorWarning": undefined,
+      "contentPadding": "undefined undefined",
     },
     "Table": {
       "cellPaddingInline": undefined,
@@ -152,7 +162,12 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "itemSelectedBg": "#1890ff14",
     },
     "Message": {
+      "colorError": "#b91200",
+      "colorInfo": "#005dc9",
+      "colorSuccess": "#52c41a",
       "colorText": "#636363",
+      "colorWarning": "#ff9933",
+      "contentPadding": "undefined undefined",
     },
     "Table": {
       "cellPaddingInline": 16,
