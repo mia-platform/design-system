@@ -3,7 +3,7 @@
 exports[`Divider Component renders divider 1`] = `
 <DocumentFragment>
   <div
-    class="ant-divider ant-divider-horizontal ant-divider-no-default-orientation-margin-left"
+    class="mia-platform-divider mia-platform-divider-horizontal mia-platform-divider-no-default-orientation-margin-left"
     role="separator"
   />
 </DocumentFragment>
@@ -12,11 +12,11 @@ exports[`Divider Component renders divider 1`] = `
 exports[`Divider Component renders divider with text correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-left ant-divider-no-default-orientation-margin-left"
+    class="mia-platform-divider mia-platform-divider-horizontal mia-platform-divider-with-text mia-platform-divider-with-text-left mia-platform-divider-no-default-orientation-margin-left"
     role="separator"
   >
     <span
-      class="ant-divider-inner-text"
+      class="mia-platform-divider-inner-text"
       style="margin-left: 24px;"
     >
       Some text
@@ -28,7 +28,7 @@ exports[`Divider Component renders divider with text correctly 1`] = `
 exports[`Divider Component renders vertical divider correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-divider ant-divider-vertical ant-divider-no-default-orientation-margin-left"
+    class="mia-platform-divider mia-platform-divider-vertical mia-platform-divider-no-default-orientation-margin-left"
     role="separator"
   />
 </DocumentFragment>

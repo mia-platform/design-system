@@ -112,6 +112,7 @@ const AntThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement
 export type ComponentsTheme = NonNullable<ThemeConfig['components']>
 
 export {
+  ANT_PREFIX,
   AntThemeProvider,
   generateAntTheme,
   parse,

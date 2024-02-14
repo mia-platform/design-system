@@ -21,11 +21,13 @@ import { ConfigProvider } from 'antd'
 import { ReactElement } from 'react'
 
 import { ThemeContext, defaultTheme } from './components/ThemeProvider'
+import { ANT_PREFIX } from './components/ThemeProvider/Ant'
 
 /**
  * Wraps a React element with a series of providers for testing purposes.
  *
  * @remarks It adds the default theme to components
+ * @remarks It adds the default Ant class prefix
  * @remarks It removes the css-do-not-override classes from Ant Design components
  *
  * @param {ReactElement} children - The React element to be wrapped.
@@ -33,7 +35,7 @@ import { ThemeContext, defaultTheme } from './components/ThemeProvider'
  */
 const TestWrapper = ({ children }: {children: ReactElement}): ReactElement => (
   <ThemeContext.Provider value={defaultTheme}>
-    <ConfigProvider theme={{ hashed: false }}>
+    <ConfigProvider prefixCls={ANT_PREFIX} theme={{ hashed: false }}>
       {children}
     </ConfigProvider>
   </ThemeContext.Provider>
