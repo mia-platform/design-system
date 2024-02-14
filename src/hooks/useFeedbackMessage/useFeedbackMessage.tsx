@@ -29,18 +29,11 @@ type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
  * A hook that allow to display global informative messages to the user at the top of the page. It is intended
  * to give user feedbacks on a certain operation executed or information regarding the context of the application.
  *
- * The hook returns a react node reference called `messageContainer`, that must be included in the rendered children,
- * and several methods to be used to show a message of different type (each type will use a different icon) or to
- * manually remove rendered messages.
+ * The hook returns several methods to be used to show a message of different type
+ * (each type will use a different icon) or to manually remove rendered messages.
  *
  * @example
  * export const Component(props: {...}) => {
- *  // We initialize the hook
- *  const { messageContainer, info } = useFeedbackMessage()
- *
- *  // When called, remove the FeedbackMessage, if still there
- *  const onDismiss = (): void => { dismiss('messageKey') }
- *
  *  // When called, show a FeedbackMessagea
  *  const onClick = (): void => {
  *    success({
@@ -50,15 +43,14 @@ type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
  *    })
  *  }
  *
- *  // We have to include the messageContainer extracted from the hook in order to show messages
+ *  // When called, remove the FeedbackMessage, if still there
+ *  const onDismiss = (): void => { dismiss('messageKey') }
+ *
  *  return (
- *    <div>
- *      {messageContainer}
- *      <div>
- *       {...}
- *       <Button onClick={onClick}>Click me to show a Feedback Message</Button>
- *      </div>
- *    </div >
+*      <div>
+*       {...}
+*       <Button onClick={onClick}>Click me to show a Feedback Message</Button>
+*      </div>
  *  )
  * }
  *
