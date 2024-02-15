@@ -54,7 +54,7 @@ const BOTTOM_MESSAGE_KEY = 'BOTTOM_MESSAGE_KEY'
  *     <div>
  *       {...}
  *       <Button onClick={onClick}>Click me to show a Feedback Message</Button>
- *     </div>FeedbackMessagePositionType
+ *     </div>
  *   )
  * }
  *
