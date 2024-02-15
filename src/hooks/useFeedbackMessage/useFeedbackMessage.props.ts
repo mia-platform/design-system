@@ -46,5 +46,5 @@ export type FeedbackMessageProps = MessageProps & {
      * - "bottom": feedback message placed at the bottom of the page. Bottom messages are unique,
      *   meaning that no more than one can be shown at a time.
      */
-    position?: FeedbackMessagePositionType
+    position?: FeedbackMessagePosition
   }
