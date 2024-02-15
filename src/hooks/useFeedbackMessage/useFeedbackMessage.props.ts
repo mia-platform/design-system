@@ -40,8 +40,11 @@ export type FeedbackMessageProps = MessageProps & {
     sticky?: boolean
 
     /**
-     * Position of the message. It could be either at the top of the page, or the bottom. Bottom Feedback Messages
-     * are unique, which means that it is not possible to show more than one Feedback Message at time.
+     * Position of the message. Either one of the following:
+     *
+     * - "top": feedback message placed at the top of the page;
+     * - "bottom": feedback message placed at the bottom of the page. Bottom messages are unique,
+     *   meaning that no more than one can be shown at a time.
      */
     position?: FeedbackMessagePositionType
   }
