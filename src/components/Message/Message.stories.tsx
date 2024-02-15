@@ -27,7 +27,7 @@ import { useFeedbackMessage } from '../../hooks/useFeedbackMessage/useFeedbackMe
 
 const meta = {
   args: {
-    message: 'This is a Feedback message',
+    message: 'This is a Feedback Message',
   },
   component: Message,
 } satisfies Meta<typeof Message>
@@ -35,7 +35,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const FeedbackMessage: Story = {
+export const FeedbackMessages: Story = {
   decorators: [(_Story, context) => {
     const { info, loading, success, warning, error } = useFeedbackMessage()
 
@@ -73,7 +73,7 @@ Warning
         </Button>
         <Button
           hierarchy={Hierarchy.Neutral}
-          icon={<Icon color="red" name="PiStop" size={16} />}
+          icon={<Icon color="red" name="PiXCircle" size={16} />}
           onClick={() => error({ message })}
         >
 Error
@@ -84,7 +84,9 @@ Error
 }
 
 export const FeedbackMessageWithExtraContent: Story = {
-  decorators: [() => {
+  decorators: [(_Story, context) => {
+    const { message } = context.args
+
     const { success, dismiss } = useFeedbackMessage()
 
     const onDismiss = (): void => { dismiss('messageKey') }
@@ -93,16 +95,13 @@ export const FeedbackMessageWithExtraContent: Story = {
       success({
         extra: <Button size={Size.Small} onClick={onDismiss}>Dismiss</Button>,
         key: 'messageKey',
-        message: 'This is a feedback message',
+        message,
         sticky: true,
       })
     }
 
-    return (
-      <div>
-        <Button onClick={onClick}>Click me to show a Feedback Message</Button>
-      </div >
-    )
+    // TODO: Include a theme here
+    return <Button onClick={onClick}>Click me to show a Feedback Message</Button>
   }],
 }
 
@@ -113,15 +112,16 @@ export const ReplaceFeedbackMessages: Story = {
     const [isLoading, setIsLoading] = useState(false)
 
     const MESSAGE_KEY = 'MESSAGE_KEY'
+    const DURATION = 5
 
     const onCreateLoadingMessage = (): void => {
       loading({
         key: MESSAGE_KEY,
         message: 'Loading. Please wait...',
-        duration: 10,
+        duration: DURATION,
       })
 
-      setTimeout(() => setIsLoading(false), 10_000)
+      setTimeout(() => setIsLoading(false), 1000 * DURATION)
       setIsLoading(true)
     }
 
