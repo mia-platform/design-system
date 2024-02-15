@@ -19,11 +19,15 @@
 import { useCallback, useMemo } from 'react'
 import { message } from 'antd'
 
-import { FeedbackMessage } from './useFeedbackMessage.types'
+import { FeedbackMessage, FeedbackMessagePositionType } from './useFeedbackMessage.types'
 import { FeedbackMessageProps } from './useFeedbackMessage.props'
 import { Message } from '../../components/Message'
+import styles from './useFeedbackMessage.module.css'
 
 type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
+
+const { 'feedback-message': feedbackMessageStyle, 'bottom': bottomFeedbackMessageStyle } = styles
+const BOTTOM_MESSAGE_KEY = 'BOTTOM_MESSAGE_KEY'
 
 /**
  * A hook that allows to display global informative messages to the user at the top of the page. It is intended to give
@@ -50,7 +54,7 @@ type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
  *     <div>
  *       {...}
  *       <Button onClick={onClick}>Click me to show a Feedback Message</Button>
- *     </div>
+ *     </div>FeedbackMessagePositionType
  *   )
  * }
  *
@@ -59,17 +63,28 @@ type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
  */
 export const useFeedbackMessage = (): FeedbackMessage => {
   const open = useCallback((type: FeedbackMessageType, props: FeedbackMessageProps): void => {
-    const { key, duration, sticky, ...messageProps } = props
+    const { key, duration, sticky, position, ...messageProps } = props
+
+    let messageKey = key
+    const classNames = [feedbackMessageStyle]
+
+    if (position === FeedbackMessagePositionType.Bottom) {
+      classNames.push(bottomFeedbackMessageStyle)
+      messageKey = BOTTOM_MESSAGE_KEY
+    }
 
     message.open({
+      className: classNames.join(' '),
       content: <Message extra={messageProps.extra} message={messageProps.message} />,
       duration: sticky ? 0 : duration,
       type,
-      key,
+      key: messageKey,
     })
   }, [])
 
-  const dismiss = useCallback((key: string) => { message.destroy(key) }, [])
+  const dismiss = useCallback((key: string = BOTTOM_MESSAGE_KEY) => {
+    message.destroy(key)
+  }, [])
 
   const loading = useCallback((props: FeedbackMessageProps) => { open('loading', props) }, [open])
   const info = useCallback((props: FeedbackMessageProps) => { open('info', props) }, [open])

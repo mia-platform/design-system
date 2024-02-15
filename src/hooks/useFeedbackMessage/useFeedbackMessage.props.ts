@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { FeedbackMessagePositionType } from './useFeedbackMessage.types'
 import { MessageProps } from '../../components/Message/Message.props'
 
 export type FeedbackMessageProps = MessageProps & {
@@ -37,4 +38,10 @@ export type FeedbackMessageProps = MessageProps & {
      * method of the hook, or by replacing it with another message with the same key.
      */
     sticky?: boolean
+
+    /**
+     * Position of the message. It could be either at the top of the page, or the bottom. Bottom Feedback Messages
+     * are unique, which means that it is not possible to show more than one Feedback Message at time.
+     */
+    position?: FeedbackMessagePositionType
   }

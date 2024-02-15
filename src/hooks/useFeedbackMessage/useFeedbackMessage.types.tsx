@@ -18,14 +18,22 @@
 
 import { FeedbackMessageProps } from './useFeedbackMessage.props'
 
+export enum FeedbackMessagePositionType {
+  Bottom = 'bottom',
+  Top = 'top'
+}
+
 export type FeedbackMessage = {
 
     /**
-     * Destroy the FeedbackMessage with given id
+     * Destroy the FeedbackMessage with given key.
+     *
+     * If the key is not passed, it removes the message shown at the bottom of the page,
+     * if there is one.
      *
      * @param key - the key of the message to remove
      */
-    dismiss: (key: string) => void
+    dismiss: (key?: string) => void
 
     /**
      * Renders a FeedbackMessage with a spinner animation
