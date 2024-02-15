@@ -21,8 +21,8 @@ import { MessageProps } from '../../components/Message/Message.props'
 export type FeedbackMessageProps = MessageProps & {
 
     /**
-     * Key of the message. This will be used as identifier, in case of manual dismission of
-     * a message. Moreover, if this key is the same of a message still rendered, the rendered message will
+     * Key of the message. This will be used as an identifier, in case of manual dismission of a message.
+     * Moreover, if this key is the same as the one of a message still rendered, the rendered message will
      * be replaced with this one.
      */
     key?: string
@@ -34,7 +34,7 @@ export type FeedbackMessageProps = MessageProps & {
 
     /**
      * If set to `true`, the message will not disappear automatically, but must be removed via `dismiss`
-     * method of the hook, or by replacing with another message with the same key.
+     * method of the hook, or by replacing it with another message with the same key.
      */
     sticky?: boolean
   }

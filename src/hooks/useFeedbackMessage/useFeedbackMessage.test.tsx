@@ -70,7 +70,7 @@ describe('useFeedbackMessage', () => {
     expect(getByRole('button', { name: 'Close' })).toBeInTheDocument()
   })
 
-  test('FeedbackMessage disappear after 5 seconds', () => {
+  test('FeedbackMessage disappears after 5 seconds', () => {
     const message = 'This is a FeedbackMessage'
 
     const Example = (): JSX.Element => {
