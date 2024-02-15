@@ -71,7 +71,6 @@ Loading
         >
 Warning
         </Button>
-        {/* Use icons in btn */}
         <Button
           hierarchy={Hierarchy.Neutral}
           icon={<Icon color="red" name="PiStop" size={16} />}
@@ -92,10 +91,10 @@ export const FeedbackMessageWithExtraContent: Story = {
 
     const onClick = (): void => {
       success({
-        duration: 0,
-        extra: <Button size={Size.Small} onClick={onDismiss}>Close</Button>,
+        extra: <Button size={Size.Small} onClick={onDismiss}>Dismiss</Button>,
         key: 'messageKey',
         message: 'This is a feedback message',
+        sticky: true,
       })
     }
 
@@ -117,11 +116,12 @@ export const ReplaceFeedbackMessages: Story = {
 
     const onCreateLoadingMessage = (): void => {
       loading({
-        duration: 0,
         key: MESSAGE_KEY,
         message: 'Loading. Please wait...',
+        duration: 10,
       })
 
+      setTimeout(() => setIsLoading(false), 10_000)
       setIsLoading(true)
     }
 

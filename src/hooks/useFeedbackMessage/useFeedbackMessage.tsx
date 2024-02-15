@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,32 +26,33 @@ import { Message } from '../../components/Message'
 type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
 
 /**
- * A hook that allow to display global informative messages to the user at the top of the page. It is intended
- * to give user feedbacks on a certain operation executed or information regarding the context of the application.
+ * A hook that allows to display global informative messages to the user at the top of the page.
+ * It is intended to give user feedback messages on a certain operation being executed
+ * or information regarding the context of the application.
  *
  * The hook returns several methods to be used to show a message of different type
  * (each type will use a different icon) or to manually remove rendered messages.
  *
  * @example
  * export const Component(props: {...}) => {
- *  // When called, show a FeedbackMessagea
- *  const onClick = (): void => {
- *    success({
- *      extra: <Button size={Size.Small} onClick={onDismiss}>Close</Button>,
- *      key: 'messageKey',
- *      message: 'This is a feedback message',
- *    })
- *  }
+ *   // When called, shows a FeedbackMessage
+ *   const onClick = (): void => {
+ *     success({
+ *       extra: <Button size={Size.Small} onClick={onDismiss}>Close</Button>,
+ *       key: 'messageKey',
+ *       message: 'This is a Feedback Message',
+ *     })
+ *   }
  *
- *  // When called, remove the FeedbackMessage, if still there
- *  const onDismiss = (): void => { dismiss('messageKey') }
+ *   // When called, removes the FeedbackMessage, if still visible
+ *   const onDismiss = (): void => { dismiss('messageKey') }
  *
- *  return (
-*      <div>
-*       {...}
-*       <Button onClick={onClick}>Click me to show a Feedback Message</Button>
-*      </div>
- *  )
+ *   return (
+ *     <div>
+ *       {...}
+ *       <Button onClick={onClick}>Click me to show a Feedback Message</Button>
+ *     </div>
+ *   )
  * }
  *
  * @returns {FeedbackMessage} An object including several functions to call to

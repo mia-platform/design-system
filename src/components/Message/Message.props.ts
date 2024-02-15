@@ -18,7 +18,6 @@
 
 import { ReactNode } from 'react'
 
-
 export type MessageProps = {
 
   /**

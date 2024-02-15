@@ -1,4 +1,3 @@
-/* eslint-disable react/no-multi-comp */
 /**
  * Copyright 2024 Mia srl
  *
@@ -16,6 +15,8 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
+
+/* eslint-disable react/no-multi-comp */
 
 import { act, fireEvent, render } from '../../test-utils'
 import { useFeedbackMessage } from './useFeedbackMessage'

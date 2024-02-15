@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,42 +23,42 @@ export type FeedbackMessage = {
     /**
      * Destroy the FeedbackMessage with given id
      *
-     * @param key the key of the message to remove
+     * @param key - the key of the message to remove
      */
     dismiss: (key: string) => void
 
     /**
-     * Render a FeedbackMessage with a spinner animation
+     * Renders a FeedbackMessage with a spinner animation
      *
-     * @param {FeedbackMessageProps} props the configuration of the message to render
+     * @param {FeedbackMessageProps} props - the configuration of the message to render
      */
     loading: (props: FeedbackMessageProps) => void
 
     /**
-     * Render a FeedbackMessage with a "info" icon
+     * Renders a FeedbackMessage with an "info" icon
      *
-     * @param {FeedbackMessageProps} props the configuration of the message to render
+     * @param {FeedbackMessageProps} props - the configuration of the message to render
      */
     info: (props: FeedbackMessageProps) => void
 
     /**
-     * Render a FeedbackMessage with a "success" icon
+     * Renders a FeedbackMessage with a "success" icon
      *
-     * @param {FeedbackMessageProps} props the configuration of the message to render
+     * @param {FeedbackMessageProps} props - the configuration of the message to render
      */
     success: (props: FeedbackMessageProps) => void
 
     /**
-     * Render a FeedbackMessage with a "warning" icon
+     * Renders a FeedbackMessage with a "warning" icon
      *
-     * @param {FeedbackMessageProps} props the configuration of the message to render
+     * @param {FeedbackMessageProps} props - the configuration of the message to render
      */
     error: (props: FeedbackMessageProps) => void
 
     /**
-     * Render a FeedbackMessage with a "error" icon
+     * Renders a FeedbackMessage with an "error" icon
      *
-     * @param {FeedbackMessageProps} props the configuration of the message to render
+     * @param {FeedbackMessageProps} props - the configuration of the message to render
      */
     warning: (props: FeedbackMessageProps) => void
   }
