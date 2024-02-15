@@ -23,10 +23,9 @@ import styles from './Message.module.css'
 
 const { message: messageStyles } = styles
 
-
 /**
  * Renders a message in response to user operations.
- * This component is intended to use along with the `useFeedbackMessage` hook.
+ * This component is intended to be used along with the `useFeedbackMessage` hook.
  *
  * @link https://ant.design/components/message
  * @returns {Message} FeedbackMessage component
@@ -35,10 +34,10 @@ export const Message = ({
   message,
   extra,
 }: MessageProps): ReactElement => {
-  return <span className={messageStyles}>
-    {message}
-    {extra}
-  </span>
+  return (
+    <span className={messageStyles}>
+      {message}
+      {extra}
+    </span>
+  )
 }
-
-Message.defaultProps = {} as Partial<MessageProps>

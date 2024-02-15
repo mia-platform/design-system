@@ -27,7 +27,6 @@ import Theme from '../../themes/schema'
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Message Ant theme configuration.
  */
-
 export default ({ palette }: Partial<Theme>): ComponentsTheme['Message'] => ({
   colorError: palette?.error?.['600'],
   colorInfo: palette?.info?.['600'],
