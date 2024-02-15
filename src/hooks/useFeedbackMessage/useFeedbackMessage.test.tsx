@@ -119,7 +119,7 @@ describe('useFeedbackMessage', () => {
     expect(getByText('This is a FeedbackMessage')).toBeInTheDocument()
   })
 
-  test('FeedbackMessage disappear after click on button inside message', () => {
+  test('FeedbackMessage disappears after clicking the button contained within it', () => {
     const key = 'key'
     const message = 'Loading...'
 
