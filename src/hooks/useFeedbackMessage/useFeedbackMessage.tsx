@@ -26,11 +26,10 @@ import { Message } from '../../components/Message'
 type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
 
 /**
- * A hook that allows to display global informative messages to the user at the top of the page.
- * It is intended to give user feedback messages on a certain operation being executed
- * or information regarding the context of the application.
+ * A hook that allows to display global informative messages to the user at the top of the page. It is intended to give
+ * feedback messages on a certain operation being executed or information regarding the context of the application.
  *
- * The hook returns several methods to be used to show a message of different type
+ * The hook returns several methods to be used to show a message of a different type
  * (each type will use a different icon) or to manually remove rendered messages.
  *
  * @example
@@ -55,7 +54,7 @@ type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
  *   )
  * }
  *
- * @returns {FeedbackMessage} An object including several functions to call to
+ * @returns {FeedbackMessage} An object which includes several functions to
  * manage the rendering of feedback messages.
  */
 export const useFeedbackMessage = (): FeedbackMessage => {
