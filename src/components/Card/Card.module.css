@@ -36,11 +36,8 @@
 
 .header {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: space-between;
   padding: calc(var(--spacing-padding-sm, 8) * 1px) calc(var(--spacing-padding-xl, 24) * 1px);
-  gap: calc(var(--spacing-gap-xl, 24) * 1px);
 }
 
 .heading {
@@ -56,5 +53,5 @@
 .title {
   display: flex;
   align-items: center;
-  gap: calc(var(--spacing-padding-sm, 8) * 1px);
+  gap: calc(var(--spacing-gap-sm, 8) * 1px);
 }

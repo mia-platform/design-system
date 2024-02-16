@@ -50,5 +50,4 @@ export type Item = MenuItemType & {
    * An array of child items for nested menus.
    */
   children?: Item[];
-};
-
+}
