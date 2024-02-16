@@ -3,22 +3,22 @@
 exports[`Table Component renders aligned columns correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -26,25 +26,25 @@ exports[`Table Component renders aligned columns correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                       style="text-align: left;"
                     >
                       Left Alignment
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                       style="text-align: center;"
                     >
                       Center Alignment
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                       style="text-align: right;"
                     >
@@ -55,7 +55,7 @@ exports[`Table Component renders aligned columns correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -63,11 +63,11 @@ exports[`Table Component renders aligned columns correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -99,92 +99,92 @@ exports[`Table Component renders aligned columns correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: left;"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: center;"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: right;"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: left;"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: center;"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: right;"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: left;"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: center;"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: right;"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: left;"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: center;"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       style="text-align: right;"
                     >
                       Value 4
@@ -204,22 +204,22 @@ exports[`Table Component renders aligned columns correctly 1`] = `
 exports[`Table Component renders bordered table correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-bordered ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-bordered mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -227,29 +227,29 @@ exports[`Table Component renders bordered table correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 2
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -259,7 +259,7 @@ exports[`Table Component renders bordered table correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -267,11 +267,11 @@ exports[`Table Component renders bordered table correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -312,101 +312,101 @@ exports[`Table Component renders bordered table correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -425,22 +425,22 @@ exports[`Table Component renders bordered table correctly 1`] = `
 exports[`Table Component renders columns filters and sorters correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -448,23 +448,23 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       <div
-                        class="ant-table-filter-column"
+                        class="mia-platform-table-filter-column"
                       >
                         <span
-                          class="ant-table-column-title"
+                          class="mia-platform-table-column-title"
                         >
                           Filtered (Menu)
                         </span>
                         <span
-                          class="ant-dropdown-trigger ant-table-filter-trigger"
+                          class="mia-platform-dropdown-trigger mia-platform-table-filter-trigger"
                           role="button"
                           tabindex="-1"
                         >
@@ -491,19 +491,19 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                       </div>
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       <div
-                        class="ant-table-filter-column"
+                        class="mia-platform-table-filter-column"
                       >
                         <span
-                          class="ant-table-column-title"
+                          class="mia-platform-table-column-title"
                         >
                           Filtered (Tree)
                         </span>
                         <span
-                          class="ant-dropdown-trigger ant-table-filter-trigger"
+                          class="mia-platform-dropdown-trigger mia-platform-table-filter-trigger"
                           role="button"
                           tabindex="-1"
                         >
@@ -531,28 +531,28 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     </th>
                     <th
                       aria-sort="ascending"
-                      class="ant-table-cell ant-table-column-sort ant-table-column-has-sorters"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-column-has-sorters"
                       scope="col"
                       tabindex="0"
                     >
                       <div
-                        class="ant-table-column-sorters"
+                        class="mia-platform-table-column-sorters"
                       >
                         <span
-                          class="ant-table-column-title"
+                          class="mia-platform-table-column-title"
                         >
                           Sorted
                         </span>
                         <span
-                          class="ant-table-column-sorter ant-table-column-sorter-full"
+                          class="mia-platform-table-column-sorter mia-platform-table-column-sorter-full"
                         >
                           <span
                             aria-hidden="true"
-                            class="ant-table-column-sorter-inner"
+                            class="mia-platform-table-column-sorter-inner"
                           >
                             <span
                               aria-label="caret-up"
-                              class="anticon anticon-caret-up ant-table-column-sorter-up active"
+                              class="anticon anticon-caret-up mia-platform-table-column-sorter-up active"
                               role="img"
                             >
                               <svg
@@ -571,7 +571,7 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                             </span>
                             <span
                               aria-label="caret-down"
-                              class="anticon anticon-caret-down ant-table-column-sorter-down"
+                              class="anticon anticon-caret-down mia-platform-table-column-sorter-down"
                               role="img"
                             >
                               <svg
@@ -594,34 +594,34 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     </th>
                     <th
                       aria-sort="ascending"
-                      class="ant-table-cell ant-table-column-sort ant-table-column-has-sorters"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-column-has-sorters"
                       scope="col"
                       tabindex="0"
                     >
                       <div
-                        class="ant-table-filter-column"
+                        class="mia-platform-table-filter-column"
                       >
                         <span
-                          class="ant-table-column-title"
+                          class="mia-platform-table-column-title"
                         >
                           <div
-                            class="ant-table-column-sorters"
+                            class="mia-platform-table-column-sorters"
                           >
                             <span
-                              class="ant-table-column-title"
+                              class="mia-platform-table-column-title"
                             >
                               Filtered and Sorted
                             </span>
                             <span
-                              class="ant-table-column-sorter ant-table-column-sorter-full"
+                              class="mia-platform-table-column-sorter mia-platform-table-column-sorter-full"
                             >
                               <span
                                 aria-hidden="true"
-                                class="ant-table-column-sorter-inner"
+                                class="mia-platform-table-column-sorter-inner"
                               >
                                 <span
                                   aria-label="caret-up"
-                                  class="anticon anticon-caret-up ant-table-column-sorter-up active"
+                                  class="anticon anticon-caret-up mia-platform-table-column-sorter-up active"
                                   role="img"
                                 >
                                   <svg
@@ -640,7 +640,7 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                                 </span>
                                 <span
                                   aria-label="caret-down"
-                                  class="anticon anticon-caret-down ant-table-column-sorter-down"
+                                  class="anticon anticon-caret-down mia-platform-table-column-sorter-down"
                                   role="img"
                                 >
                                   <svg
@@ -662,7 +662,7 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                           </div>
                         </span>
                         <span
-                          class="ant-dropdown-trigger ant-table-filter-trigger"
+                          class="mia-platform-dropdown-trigger mia-platform-table-filter-trigger"
                           role="button"
                           tabindex="-1"
                         >
@@ -693,7 +693,7 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -701,11 +701,11 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -746,101 +746,101 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell ant-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell ant-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell ant-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell ant-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell ant-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell ant-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell ant-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell ant-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort"
                     >
                       Value 4
                     </td>
@@ -859,22 +859,22 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
 exports[`Table Component renders columns with certain width correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -882,29 +882,29 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       20%
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       30%
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       40%
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       10%
@@ -914,7 +914,7 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -935,11 +935,11 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
                   />
                 </colgroup>
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -980,101 +980,101 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -1093,22 +1093,22 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
 exports[`Table Component renders expandable rows correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -1116,36 +1116,36 @@ exports[`Table Component renders expandable rows correctly 1`] = `
               >
                 <colgroup>
                   <col
-                    class="ant-table-expand-icon-col"
+                    class="mia-platform-table-expand-icon-col"
                   />
                 </colgroup>
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <td
-                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                      class="mia-platform-table-cell mia-platform-table-row-expand-icon-cell"
                     />
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 2
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -1155,7 +1155,7 @@ exports[`Table Component renders expandable rows correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -1163,15 +1163,15 @@ exports[`Table Component renders expandable rows correctly 1`] = `
               >
                 <colgroup>
                   <col
-                    class="ant-table-expand-icon-col"
+                    class="mia-platform-table-expand-icon-col"
                   />
                 </colgroup>
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -1221,159 +1221,159 @@ exports[`Table Component renders expandable rows correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                      class="mia-platform-table-cell mia-platform-table-row-expand-icon-cell"
                     >
                       <span>
                         <button
                           aria-expanded="true"
                           aria-label="Collapse row"
-                          class="ant-table-row-expand-icon ant-table-row-expand-icon-expanded"
+                          class="mia-platform-table-row-expand-icon mia-platform-table-row-expand-icon-expanded"
                           type="button"
                         />
                       </span>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-expanded-row ant-table-expanded-row-level-1"
+                    class="mia-platform-table-expanded-row mia-platform-table-expanded-row-level-1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       colspan="5"
                     >
                       Expandable row
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                      class="mia-platform-table-cell mia-platform-table-row-expand-icon-cell"
                     >
                       <span>
                         <button
                           aria-expanded="false"
                           aria-label="Expand row"
-                          class="ant-table-row-expand-icon ant-table-row-expand-icon-collapsed"
+                          class="mia-platform-table-row-expand-icon mia-platform-table-row-expand-icon-collapsed"
                           type="button"
                         />
                       </span>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                      class="mia-platform-table-cell mia-platform-table-row-expand-icon-cell"
                     >
                       <span>
                         <button
                           aria-expanded="false"
                           aria-label="Expand row"
-                          class="ant-table-row-expand-icon ant-table-row-expand-icon-spaced"
+                          class="mia-platform-table-row-expand-icon mia-platform-table-row-expand-icon-spaced"
                           type="button"
                         />
                       </span>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell ant-table-row-expand-icon-cell"
+                      class="mia-platform-table-cell mia-platform-table-row-expand-icon-cell"
                     >
                       <span>
                         <button
                           aria-expanded="false"
                           aria-label="Expand row"
-                          class="ant-table-row-expand-icon ant-table-row-expand-icon-collapsed"
+                          class="mia-platform-table-row-expand-icon mia-platform-table-row-expand-icon-collapsed"
                           type="button"
                         />
                       </span>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -1392,20 +1392,20 @@ exports[`Table Component renders expandable rows correctly 1`] = `
 exports[`Table Component renders external filters and sorters correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-space ant-space-vertical ant-space-gap-row-small ant-space-gap-col-small"
+    class="mia-platform-space mia-platform-space-vertical mia-platform-space-gap-row-small mia-platform-space-gap-col-small"
     style="width: 100%;"
   >
     <div
-      class="ant-space-item"
+      class="mia-platform-space-item"
     >
       <div
-        class="ant-space ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small"
+        class="mia-platform-space mia-platform-space-horizontal mia-platform-space-align-center mia-platform-space-gap-row-small mia-platform-space-gap-col-small"
       >
         <div
-          class="ant-space-item"
+          class="mia-platform-space-item"
         >
           <button
-            class="ant-btn ant-btn-default button buttonMd"
+            class="mia-platform-btn mia-platform-btn-default button buttonMd"
             type="button"
           >
             <div
@@ -1416,10 +1416,10 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
           </button>
         </div>
         <div
-          class="ant-space-item"
+          class="mia-platform-space-item"
         >
           <button
-            class="ant-btn ant-btn-default button buttonMd"
+            class="mia-platform-btn mia-platform-btn-default button buttonMd"
             type="button"
           >
             <div
@@ -1430,10 +1430,10 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
           </button>
         </div>
         <div
-          class="ant-space-item"
+          class="mia-platform-space-item"
         >
           <button
-            class="ant-btn ant-btn-default button buttonMd"
+            class="mia-platform-btn mia-platform-btn-default button buttonMd"
             type="button"
           >
             <div
@@ -1444,10 +1444,10 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
           </button>
         </div>
         <div
-          class="ant-space-item"
+          class="mia-platform-space-item"
         >
           <button
-            class="ant-btn ant-btn-default button buttonMd"
+            class="mia-platform-btn mia-platform-btn-default button buttonMd"
             type="button"
           >
             <div
@@ -1460,25 +1460,25 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
       </div>
     </div>
     <div
-      class="ant-space-item"
+      class="mia-platform-space-item"
     >
       <div
-        class="ant-table-wrapper table"
+        class="mia-platform-table-wrapper table"
       >
         <div
-          class="ant-spin-nested-loading"
+          class="mia-platform-spin-nested-loading"
         >
           <div
-            class="ant-spin-container"
+            class="mia-platform-spin-container"
           >
             <div
-              class="ant-table ant-table-middle ant-table-scroll-horizontal"
+              class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
             >
               <div
-                class="ant-table-container"
+                class="mia-platform-table-container"
               >
                 <div
-                  class="ant-table-header ant-table-sticky-holder"
+                  class="mia-platform-table-header mia-platform-table-sticky-holder"
                   style="overflow: hidden; top: 0px;"
                 >
                   <table
@@ -1486,33 +1486,33 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                   >
                     <colgroup />
                     <thead
-                      class="ant-table-thead"
+                      class="mia-platform-table-thead"
                     >
                       <tr>
                         <th
                           aria-label="Field 1"
-                          class="ant-table-cell ant-table-column-has-sorters"
+                          class="mia-platform-table-cell mia-platform-table-column-has-sorters"
                           scope="col"
                           tabindex="0"
                         >
                           <div
-                            class="ant-table-column-sorters"
+                            class="mia-platform-table-column-sorters"
                           >
                             <span
-                              class="ant-table-column-title"
+                              class="mia-platform-table-column-title"
                             >
                               Field 1
                             </span>
                             <span
-                              class="ant-table-column-sorter ant-table-column-sorter-full"
+                              class="mia-platform-table-column-sorter mia-platform-table-column-sorter-full"
                             >
                               <span
                                 aria-hidden="true"
-                                class="ant-table-column-sorter-inner"
+                                class="mia-platform-table-column-sorter-inner"
                               >
                                 <span
                                   aria-label="caret-up"
-                                  class="anticon anticon-caret-up ant-table-column-sorter-up"
+                                  class="anticon anticon-caret-up mia-platform-table-column-sorter-up"
                                   role="img"
                                 >
                                   <svg
@@ -1531,7 +1531,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                                 </span>
                                 <span
                                   aria-label="caret-down"
-                                  class="anticon anticon-caret-down ant-table-column-sorter-down"
+                                  class="anticon anticon-caret-down mia-platform-table-column-sorter-down"
                                   role="img"
                                 >
                                   <svg
@@ -1554,28 +1554,28 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         </th>
                         <th
                           aria-label="Field 2"
-                          class="ant-table-cell ant-table-column-has-sorters"
+                          class="mia-platform-table-cell mia-platform-table-column-has-sorters"
                           scope="col"
                           tabindex="0"
                         >
                           <div
-                            class="ant-table-column-sorters"
+                            class="mia-platform-table-column-sorters"
                           >
                             <span
-                              class="ant-table-column-title"
+                              class="mia-platform-table-column-title"
                             >
                               Field 2
                             </span>
                             <span
-                              class="ant-table-column-sorter ant-table-column-sorter-full"
+                              class="mia-platform-table-column-sorter mia-platform-table-column-sorter-full"
                             >
                               <span
                                 aria-hidden="true"
-                                class="ant-table-column-sorter-inner"
+                                class="mia-platform-table-column-sorter-inner"
                               >
                                 <span
                                   aria-label="caret-up"
-                                  class="anticon anticon-caret-up ant-table-column-sorter-up"
+                                  class="anticon anticon-caret-up mia-platform-table-column-sorter-up"
                                   role="img"
                                 >
                                   <svg
@@ -1594,7 +1594,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                                 </span>
                                 <span
                                   aria-label="caret-down"
-                                  class="anticon anticon-caret-down ant-table-column-sorter-down"
+                                  class="anticon anticon-caret-down mia-platform-table-column-sorter-down"
                                   role="img"
                                 >
                                   <svg
@@ -1617,28 +1617,28 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         </th>
                         <th
                           aria-label="Field 3"
-                          class="ant-table-cell ant-table-column-has-sorters"
+                          class="mia-platform-table-cell mia-platform-table-column-has-sorters"
                           scope="col"
                           tabindex="0"
                         >
                           <div
-                            class="ant-table-column-sorters"
+                            class="mia-platform-table-column-sorters"
                           >
                             <span
-                              class="ant-table-column-title"
+                              class="mia-platform-table-column-title"
                             >
                               Field 3
                             </span>
                             <span
-                              class="ant-table-column-sorter ant-table-column-sorter-full"
+                              class="mia-platform-table-column-sorter mia-platform-table-column-sorter-full"
                             >
                               <span
                                 aria-hidden="true"
-                                class="ant-table-column-sorter-inner"
+                                class="mia-platform-table-column-sorter-inner"
                               >
                                 <span
                                   aria-label="caret-up"
-                                  class="anticon anticon-caret-up ant-table-column-sorter-up"
+                                  class="anticon anticon-caret-up mia-platform-table-column-sorter-up"
                                   role="img"
                                 >
                                   <svg
@@ -1657,7 +1657,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                                 </span>
                                 <span
                                   aria-label="caret-down"
-                                  class="anticon anticon-caret-down ant-table-column-sorter-down"
+                                  class="anticon anticon-caret-down mia-platform-table-column-sorter-down"
                                   role="img"
                                 >
                                   <svg
@@ -1680,28 +1680,28 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         </th>
                         <th
                           aria-label="Field 4"
-                          class="ant-table-cell ant-table-column-has-sorters"
+                          class="mia-platform-table-cell mia-platform-table-column-has-sorters"
                           scope="col"
                           tabindex="0"
                         >
                           <div
-                            class="ant-table-column-sorters"
+                            class="mia-platform-table-column-sorters"
                           >
                             <span
-                              class="ant-table-column-title"
+                              class="mia-platform-table-column-title"
                             >
                               Field 4
                             </span>
                             <span
-                              class="ant-table-column-sorter ant-table-column-sorter-full"
+                              class="mia-platform-table-column-sorter mia-platform-table-column-sorter-full"
                             >
                               <span
                                 aria-hidden="true"
-                                class="ant-table-column-sorter-inner"
+                                class="mia-platform-table-column-sorter-inner"
                               >
                                 <span
                                   aria-label="caret-up"
-                                  class="anticon anticon-caret-up ant-table-column-sorter-up"
+                                  class="anticon anticon-caret-up mia-platform-table-column-sorter-up"
                                   role="img"
                                 >
                                   <svg
@@ -1720,7 +1720,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                                 </span>
                                 <span
                                   aria-label="caret-down"
-                                  class="anticon anticon-caret-down ant-table-column-sorter-down"
+                                  class="anticon anticon-caret-down mia-platform-table-column-sorter-down"
                                   role="img"
                                 >
                                   <svg
@@ -1746,7 +1746,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                   </table>
                 </div>
                 <div
-                  class="ant-table-body"
+                  class="mia-platform-table-body"
                   style="overflow-x: auto; overflow-y: hidden;"
                 >
                   <table
@@ -1754,11 +1754,11 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                   >
                     <colgroup />
                     <tbody
-                      class="ant-table-tbody"
+                      class="mia-platform-table-tbody"
                     >
                       <tr
                         aria-hidden="true"
-                        class="ant-table-measure-row"
+                        class="mia-platform-table-measure-row"
                         style="height: 0px; font-size: 0px;"
                       >
                         <td
@@ -1799,101 +1799,101 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="ant-table-row ant-table-row-level-0"
+                        class="mia-platform-table-row mia-platform-table-row-level-0"
                         data-row-key="Value 1"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 1
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 1
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 1
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 1
                         </td>
                       </tr>
                       <tr
-                        class="ant-table-row ant-table-row-level-0"
+                        class="mia-platform-table-row mia-platform-table-row-level-0"
                         data-row-key="Value 2"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 2
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 2
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 2
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 2
                         </td>
                       </tr>
                       <tr
-                        class="ant-table-row ant-table-row-level-0"
+                        class="mia-platform-table-row mia-platform-table-row-level-0"
                         data-row-key="Value 3"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 3
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 3
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 3
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 3
                         </td>
                       </tr>
                       <tr
-                        class="ant-table-row ant-table-row-level-0"
+                        class="mia-platform-table-row mia-platform-table-row-level-0"
                         data-row-key="Value 4"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 4
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 4
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 4
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="mia-platform-table-cell"
                         >
                           Value 4
                         </td>
@@ -1914,22 +1914,22 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
 exports[`Table Component renders footer correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -1937,29 +1937,29 @@ exports[`Table Component renders footer correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 2
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -1969,7 +1969,7 @@ exports[`Table Component renders footer correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -1977,11 +1977,11 @@ exports[`Table Component renders footer correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -2022,101 +2022,101 @@ exports[`Table Component renders footer correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -2126,7 +2126,7 @@ exports[`Table Component renders footer correctly 1`] = `
             </div>
           </div>
           <div
-            class="ant-table-footer"
+            class="mia-platform-table-footer"
           >
             <span>
               Total rows number: 4
@@ -2142,22 +2142,22 @@ exports[`Table Component renders footer correctly 1`] = `
 exports[`Table Component renders large table correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -2165,29 +2165,29 @@ exports[`Table Component renders large table correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 2
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -2197,7 +2197,7 @@ exports[`Table Component renders large table correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -2205,11 +2205,11 @@ exports[`Table Component renders large table correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -2250,101 +2250,101 @@ exports[`Table Component renders large table correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -2363,22 +2363,22 @@ exports[`Table Component renders large table correctly 1`] = `
 exports[`Table Component renders pagination correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -2386,29 +2386,29 @@ exports[`Table Component renders pagination correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 2
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -2418,7 +2418,7 @@ exports[`Table Component renders pagination correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -2426,11 +2426,11 @@ exports[`Table Component renders pagination correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -2471,101 +2471,101 @@ exports[`Table Component renders pagination correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -2576,10 +2576,10 @@ exports[`Table Component renders pagination correctly 1`] = `
           </div>
         </div>
         <ul
-          class="ant-pagination ant-pagination-mini ant-table-pagination ant-table-pagination-right"
+          class="mia-platform-pagination mia-platform-pagination-mini mia-platform-table-pagination mia-platform-table-pagination-right"
         >
           <li
-            class="ant-pagination-total-text"
+            class="mia-platform-pagination-total-text"
           >
             <span>
               <b>
@@ -2590,11 +2590,11 @@ exports[`Table Component renders pagination correctly 1`] = `
           </li>
           <li
             aria-disabled="true"
-            class="ant-pagination-prev ant-pagination-disabled"
+            class="mia-platform-pagination-prev mia-platform-pagination-disabled"
             title="Previous Page"
           >
             <button
-              class="ant-pagination-item-link"
+              class="mia-platform-pagination-item-link"
               disabled=""
               tabindex="-1"
               type="button"
@@ -2621,7 +2621,7 @@ exports[`Table Component renders pagination correctly 1`] = `
             </button>
           </li>
           <li
-            class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+            class="mia-platform-pagination-item mia-platform-pagination-item-1 mia-platform-pagination-item-active"
             tabindex="0"
             title="1"
           >
@@ -2632,7 +2632,7 @@ exports[`Table Component renders pagination correctly 1`] = `
             </a>
           </li>
           <li
-            class="ant-pagination-item ant-pagination-item-2"
+            class="mia-platform-pagination-item mia-platform-pagination-item-2"
             tabindex="0"
             title="2"
           >
@@ -2643,7 +2643,7 @@ exports[`Table Component renders pagination correctly 1`] = `
             </a>
           </li>
           <li
-            class="ant-pagination-item ant-pagination-item-3"
+            class="mia-platform-pagination-item mia-platform-pagination-item-3"
             tabindex="0"
             title="3"
           >
@@ -2654,7 +2654,7 @@ exports[`Table Component renders pagination correctly 1`] = `
             </a>
           </li>
           <li
-            class="ant-pagination-item ant-pagination-item-4"
+            class="mia-platform-pagination-item mia-platform-pagination-item-4"
             tabindex="0"
             title="4"
           >
@@ -2665,7 +2665,7 @@ exports[`Table Component renders pagination correctly 1`] = `
             </a>
           </li>
           <li
-            class="ant-pagination-item ant-pagination-item-5 ant-pagination-item-before-jump-next"
+            class="mia-platform-pagination-item mia-platform-pagination-item-5 mia-platform-pagination-item-before-jump-next"
             tabindex="0"
             title="5"
           >
@@ -2676,19 +2676,19 @@ exports[`Table Component renders pagination correctly 1`] = `
             </a>
           </li>
           <li
-            class="ant-pagination-jump-next ant-pagination-jump-next-custom-icon"
+            class="mia-platform-pagination-jump-next mia-platform-pagination-jump-next-custom-icon"
             tabindex="0"
             title="Next 5 Pages"
           >
             <a
-              class="ant-pagination-item-link"
+              class="mia-platform-pagination-item-link"
             >
               <div
-                class="ant-pagination-item-container"
+                class="mia-platform-pagination-item-container"
               >
                 <span
                   aria-label="double-right"
-                  class="anticon anticon-double-right ant-pagination-item-link-icon"
+                  class="anticon anticon-double-right mia-platform-pagination-item-link-icon"
                   role="img"
                 >
                   <svg
@@ -2706,7 +2706,7 @@ exports[`Table Component renders pagination correctly 1`] = `
                   </svg>
                 </span>
                 <span
-                  class="ant-pagination-item-ellipsis"
+                  class="mia-platform-pagination-item-ellipsis"
                 >
                   •••
                 </span>
@@ -2714,7 +2714,7 @@ exports[`Table Component renders pagination correctly 1`] = `
             </a>
           </li>
           <li
-            class="ant-pagination-item ant-pagination-item-13"
+            class="mia-platform-pagination-item mia-platform-pagination-item-13"
             tabindex="0"
             title="13"
           >
@@ -2726,12 +2726,12 @@ exports[`Table Component renders pagination correctly 1`] = `
           </li>
           <li
             aria-disabled="false"
-            class="ant-pagination-next"
+            class="mia-platform-pagination-next"
             tabindex="0"
             title="Next Page"
           >
             <button
-              class="ant-pagination-item-link"
+              class="mia-platform-pagination-item-link"
               tabindex="-1"
               type="button"
             >
@@ -2757,17 +2757,17 @@ exports[`Table Component renders pagination correctly 1`] = `
             </button>
           </li>
           <li
-            class="ant-pagination-options"
+            class="mia-platform-pagination-options"
           >
             <div
               aria-label="Page Size"
-              class="ant-select ant-select-sm ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
+              class="mia-platform-select mia-platform-select-sm mia-platform-pagination-options-size-changer mia-platform-select-single mia-platform-select-show-arrow mia-platform-select-show-search"
             >
               <div
-                class="ant-select-selector"
+                class="mia-platform-select-selector"
               >
                 <span
-                  class="ant-select-selection-search"
+                  class="mia-platform-select-selection-search"
                 >
                   <input
                     aria-autocomplete="list"
@@ -2777,7 +2777,7 @@ exports[`Table Component renders pagination correctly 1`] = `
                     aria-label="Page Size"
                     aria-owns="rc_select_TEST_OR_SSR_list"
                     autocomplete="off"
-                    class="ant-select-selection-search-input"
+                    class="mia-platform-select-selection-search-input"
                     id="rc_select_TEST_OR_SSR"
                     role="combobox"
                     type="search"
@@ -2785,7 +2785,7 @@ exports[`Table Component renders pagination correctly 1`] = `
                   />
                 </span>
                 <span
-                  class="ant-select-selection-item"
+                  class="mia-platform-select-selection-item"
                   title="4 / page"
                 >
                   4 / page
@@ -2793,13 +2793,13 @@ exports[`Table Component renders pagination correctly 1`] = `
               </div>
               <span
                 aria-hidden="true"
-                class="ant-select-arrow"
+                class="mia-platform-select-arrow"
                 style="user-select: none;"
                 unselectable="on"
               >
                 <span
                   aria-label="down"
-                  class="anticon anticon-down ant-select-suffix"
+                  class="anticon anticon-down mia-platform-select-suffix"
                   role="img"
                 >
                   <svg
@@ -2829,22 +2829,22 @@ exports[`Table Component renders pagination correctly 1`] = `
 exports[`Table Component renders selectable rows correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-fixed-column mia-platform-table-scroll-horizontal mia-platform-table-has-fix-left"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -2852,60 +2852,60 @@ exports[`Table Component renders selectable rows correctly 1`] = `
               >
                 <colgroup>
                   <col
-                    class="ant-table-selection-col"
+                    class="mia-platform-table-selection-col"
                   />
                 </colgroup>
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last ant-table-cell-fix-sticky"
+                      class="mia-platform-table-cell mia-platform-table-selection-column mia-platform-table-cell-fix-left mia-platform-table-cell-fix-left-last mia-platform-table-cell-fix-sticky"
                       scope="col"
                       style="position: sticky; left: 0px;"
                     >
                       <div
-                        class="ant-table-selection"
+                        class="mia-platform-table-selection"
                       >
                         <label
-                          class="ant-checkbox-wrapper"
+                          class="mia-platform-checkbox-wrapper"
                         >
                           <span
-                            class="ant-checkbox ant-checkbox-indeterminate ant-wave-target"
+                            class="mia-platform-checkbox mia-platform-checkbox-indeterminate ant-wave-target"
                           >
                             <input
                               aria-checked="mixed"
                               aria-label="Select all"
-                              class="ant-checkbox-input"
+                              class="mia-platform-checkbox-input"
                               type="checkbox"
                             />
                             <span
-                              class="ant-checkbox-inner"
+                              class="mia-platform-checkbox-inner"
                             />
                           </span>
                         </label>
                       </div>
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 2
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -2915,7 +2915,7 @@ exports[`Table Component renders selectable rows correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -2923,15 +2923,15 @@ exports[`Table Component renders selectable rows correctly 1`] = `
               >
                 <colgroup>
                   <col
-                    class="ant-table-selection-col"
+                    class="mia-platform-table-selection-col"
                   />
                 </colgroup>
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -2981,182 +2981,182 @@ exports[`Table Component renders selectable rows correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0 ant-table-row-selected"
+                    class="mia-platform-table-row mia-platform-table-row-level-0 mia-platform-table-row-selected"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                      class="mia-platform-table-cell mia-platform-table-selection-column mia-platform-table-cell-fix-left mia-platform-table-cell-fix-left-last"
                       style="position: sticky; left: 0px;"
                     >
                       <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked"
+                        class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-checked"
                       >
                         <span
-                          class="ant-checkbox ant-wave-target ant-checkbox-checked"
+                          class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-checked"
                         >
                           <input
                             checked=""
-                            class="ant-checkbox-input"
+                            class="mia-platform-checkbox-input"
                             type="checkbox"
                           />
                           <span
-                            class="ant-checkbox-inner"
+                            class="mia-platform-checkbox-inner"
                           />
                         </span>
                       </label>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                      class="mia-platform-table-cell mia-platform-table-selection-column mia-platform-table-cell-fix-left mia-platform-table-cell-fix-left-last"
                       style="position: sticky; left: 0px;"
                     >
                       <label
-                        class="ant-checkbox-wrapper"
+                        class="mia-platform-checkbox-wrapper"
                       >
                         <span
-                          class="ant-checkbox ant-wave-target"
+                          class="mia-platform-checkbox ant-wave-target"
                         >
                           <input
-                            class="ant-checkbox-input"
+                            class="mia-platform-checkbox-input"
                             type="checkbox"
                           />
                           <span
-                            class="ant-checkbox-inner"
+                            class="mia-platform-checkbox-inner"
                           />
                         </span>
                       </label>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                      class="mia-platform-table-cell mia-platform-table-selection-column mia-platform-table-cell-fix-left mia-platform-table-cell-fix-left-last"
                       style="position: sticky; left: 0px;"
                     >
                       <label
-                        class="ant-checkbox-wrapper"
+                        class="mia-platform-checkbox-wrapper"
                       >
                         <span
-                          class="ant-checkbox ant-wave-target"
+                          class="mia-platform-checkbox ant-wave-target"
                         >
                           <input
-                            class="ant-checkbox-input"
+                            class="mia-platform-checkbox-input"
                             type="checkbox"
                           />
                           <span
-                            class="ant-checkbox-inner"
+                            class="mia-platform-checkbox-inner"
                           />
                         </span>
                       </label>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                      class="mia-platform-table-cell mia-platform-table-selection-column mia-platform-table-cell-fix-left mia-platform-table-cell-fix-left-last"
                       style="position: sticky; left: 0px;"
                     >
                       <label
-                        class="ant-checkbox-wrapper"
+                        class="mia-platform-checkbox-wrapper"
                       >
                         <span
-                          class="ant-checkbox ant-wave-target"
+                          class="mia-platform-checkbox ant-wave-target"
                         >
                           <input
-                            class="ant-checkbox-input"
+                            class="mia-platform-checkbox-input"
                             type="checkbox"
                           />
                           <span
-                            class="ant-checkbox-inner"
+                            class="mia-platform-checkbox-inner"
                           />
                         </span>
                       </label>
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -3175,22 +3175,22 @@ exports[`Table Component renders selectable rows correctly 1`] = `
 exports[`Table Component renders small table correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-small ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-small mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -3198,29 +3198,29 @@ exports[`Table Component renders small table correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 2
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -3230,7 +3230,7 @@ exports[`Table Component renders small table correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -3238,11 +3238,11 @@ exports[`Table Component renders small table correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -3283,101 +3283,101 @@ exports[`Table Component renders small table correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -3396,22 +3396,22 @@ exports[`Table Component renders small table correctly 1`] = `
 exports[`Table Component renders spanned columns correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -3419,24 +3419,24 @@ exports[`Table Component renders spanned columns correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       colspan="2"
                       scope="colgroup"
                     >
                       Field 2 - Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -3446,7 +3446,7 @@ exports[`Table Component renders spanned columns correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -3454,11 +3454,11 @@ exports[`Table Component renders spanned columns correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -3499,101 +3499,101 @@ exports[`Table Component renders spanned columns correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -3612,22 +3612,22 @@ exports[`Table Component renders spanned columns correctly 1`] = `
 exports[`Table Component renders table correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-table-wrapper table"
+    class="mia-platform-table-wrapper table"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="mia-platform-spin-nested-loading"
     >
       <div
-        class="ant-spin-container"
+        class="mia-platform-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-horizontal"
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
         >
           <div
-            class="ant-table-container"
+            class="mia-platform-table-container"
           >
             <div
-              class="ant-table-header ant-table-sticky-holder"
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
               style="overflow: hidden; top: 0px;"
             >
               <table
@@ -3635,29 +3635,29 @@ exports[`Table Component renders table correctly 1`] = `
               >
                 <colgroup />
                 <thead
-                  class="ant-table-thead"
+                  class="mia-platform-table-thead"
                 >
                   <tr>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 1
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 2
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 3
                     </th>
                     <th
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                       scope="col"
                     >
                       Field 4
@@ -3667,7 +3667,7 @@ exports[`Table Component renders table correctly 1`] = `
               </table>
             </div>
             <div
-              class="ant-table-body"
+              class="mia-platform-table-body"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -3675,11 +3675,11 @@ exports[`Table Component renders table correctly 1`] = `
               >
                 <colgroup />
                 <tbody
-                  class="ant-table-tbody"
+                  class="mia-platform-table-tbody"
                 >
                   <tr
                     aria-hidden="true"
-                    class="ant-table-measure-row"
+                    class="mia-platform-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
                     <td
@@ -3720,101 +3720,101 @@ exports[`Table Component renders table correctly 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 1"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 1
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 2"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 2
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 3"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 3
                     </td>
                   </tr>
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
                     data-row-key="Value 4"
                   >
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
                     <td
-                      class="ant-table-cell"
+                      class="mia-platform-table-cell"
                     >
                       Value 4
                     </td>
@@ -3833,17 +3833,17 @@ exports[`Table Component renders table correctly 1`] = `
 exports[`Table Component renders table correctly while loading 1`] = `
 <DocumentFragment>
   <div
-    class="ant-skeleton ant-skeleton-active"
+    class="mia-platform-skeleton mia-platform-skeleton-active"
   >
     <div
-      class="ant-skeleton-content"
+      class="mia-platform-skeleton-content"
     >
       <h3
-        class="ant-skeleton-title"
+        class="mia-platform-skeleton-title"
         style="width: 38%;"
       />
       <ul
-        class="ant-skeleton-paragraph"
+        class="mia-platform-skeleton-paragraph"
       >
         <li />
         <li />

@@ -3,28 +3,28 @@
 exports[`Menu Component renders category correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="ant-menu-item-group"
+      class="mia-platform-menu-item-group"
       role="presentation"
     >
       <div
-        class="ant-menu-item-group-title"
+        class="mia-platform-menu-item-group-title"
         role="presentation"
         title="CATEGORY"
       >
         CATEGORY
       </div>
       <ul
-        class="ant-menu-item-group-list"
+        class="mia-platform-menu-item-group-list"
         role="group"
       >
         <li
-          class="ant-menu-item"
+          class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
           style="padding-left: 12px;"
@@ -32,7 +32,7 @@ exports[`Menu Component renders category correctly 1`] = `
           title="Category Item 1"
         >
           <div
-            class="ant-menu-item-icon"
+            class="mia-platform-menu-item-icon"
           >
             <svg
               alt="PiSun"
@@ -54,13 +54,13 @@ exports[`Menu Component renders category correctly 1`] = `
             </svg>
           </div>
           <span
-            class="ant-menu-title-content"
+            class="mia-platform-menu-title-content"
           >
             Category Item 1
           </span>
         </li>
         <li
-          class="ant-menu-item"
+          class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
           style="padding-left: 12px;"
@@ -68,7 +68,7 @@ exports[`Menu Component renders category correctly 1`] = `
           title="Category Item 2"
         >
           <div
-            class="ant-menu-item-icon"
+            class="mia-platform-menu-item-icon"
           >
             <svg
               alt="PiMoon"
@@ -90,7 +90,7 @@ exports[`Menu Component renders category correctly 1`] = `
             </svg>
           </div>
           <span
-            class="ant-menu-title-content"
+            class="mia-platform-menu-title-content"
           >
             Category Item 2
           </span>
@@ -108,20 +108,20 @@ exports[`Menu Component renders category correctly 1`] = `
 exports[`Menu Component renders collapsed menu correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="ant-menu ant-menu-root ant-menu-vertical ant-menu-light menu ant-menu-inline-collapsed"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-vertical mia-platform-menu-light menu mia-platform-menu-inline-collapsed"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="ant-menu-item"
+      class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
       tabindex="-1"
       title="Item"
     >
       <div
-        class="ant-menu-item-icon"
+        class="mia-platform-menu-item-icon"
       >
         <svg
           alt="PiStar"
@@ -143,26 +143,26 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
         </svg>
       </div>
       <span
-        class="ant-menu-title-content"
+        class="mia-platform-menu-title-content"
       >
         Item
       </span>
     </li>
     <li
-      class="ant-menu-submenu ant-menu-submenu-vertical"
+      class="mia-platform-menu-submenu mia-platform-menu-submenu-vertical"
       role="none"
     >
       <div
         aria-controls="rc-menu-uuid-test-group-popup"
         aria-expanded="false"
         aria-haspopup="true"
-        class="ant-menu-submenu-title"
+        class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
         tabindex="-1"
       >
         <div
-          class="ant-menu-item-icon"
+          class="mia-platform-menu-item-icon"
         >
           <svg
             alt="PiSnowflake"
@@ -184,28 +184,28 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
           </svg>
         </div>
         <span
-          class="ant-menu-title-content"
+          class="mia-platform-menu-title-content"
         >
           Group
         </span>
         <i
-          class="ant-menu-submenu-arrow"
+          class="mia-platform-menu-submenu-arrow"
         />
       </div>
     </li>
     <li
-      class="ant-menu-item-divider"
+      class="mia-platform-menu-item-divider"
       role="separator"
     />
     <li
-      class="ant-menu-item"
+      class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-category item 1"
       role="menuitem"
       tabindex="-1"
       title="Category Item 1"
     >
       <div
-        class="ant-menu-item-icon"
+        class="mia-platform-menu-item-icon"
       >
         <svg
           alt="PiSun"
@@ -227,20 +227,20 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
         </svg>
       </div>
       <span
-        class="ant-menu-title-content"
+        class="mia-platform-menu-title-content"
       >
         Category Item 1
       </span>
     </li>
     <li
-      class="ant-menu-item"
+      class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-category item 2"
       role="menuitem"
       tabindex="-1"
       title="Category Item 2"
     >
       <div
-        class="ant-menu-item-icon"
+        class="mia-platform-menu-item-icon"
       >
         <svg
           alt="PiMoon"
@@ -262,7 +262,7 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
         </svg>
       </div>
       <span
-        class="ant-menu-title-content"
+        class="mia-platform-menu-title-content"
       >
         Category Item 2
       </span>
@@ -278,13 +278,13 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
 exports[`Menu Component renders divider correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="ant-menu-item-divider"
+      class="mia-platform-menu-item-divider"
       role="separator"
     />
   </ul>
@@ -298,27 +298,27 @@ exports[`Menu Component renders divider correctly 1`] = `
 exports[`Menu Component renders group correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="ant-menu-submenu ant-menu-submenu-inline"
+      class="mia-platform-menu-submenu mia-platform-menu-submenu-inline"
       role="none"
     >
       <div
         aria-controls="rc-menu-uuid-test-group-popup"
         aria-expanded="false"
         aria-haspopup="true"
-        class="ant-menu-submenu-title"
+        class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
         style="padding-left: 12px;"
         tabindex="-1"
       >
         <div
-          class="ant-menu-item-icon"
+          class="mia-platform-menu-item-icon"
         >
           <svg
             alt="PiSnowflake"
@@ -340,12 +340,12 @@ exports[`Menu Component renders group correctly 1`] = `
           </svg>
         </div>
         <span
-          class="ant-menu-title-content"
+          class="mia-platform-menu-title-content"
         >
           Group
         </span>
         <i
-          class="ant-menu-submenu-arrow"
+          class="mia-platform-menu-submenu-arrow"
         />
       </div>
     </li>
@@ -360,13 +360,13 @@ exports[`Menu Component renders group correctly 1`] = `
 exports[`Menu Component renders inline menu correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="ant-menu-item"
+      class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
       style="padding-left: 12px;"
@@ -374,7 +374,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
       title="Item"
     >
       <div
-        class="ant-menu-item-icon"
+        class="mia-platform-menu-item-icon"
       >
         <svg
           alt="PiStar"
@@ -396,27 +396,27 @@ exports[`Menu Component renders inline menu correctly 1`] = `
         </svg>
       </div>
       <span
-        class="ant-menu-title-content"
+        class="mia-platform-menu-title-content"
       >
         Item
       </span>
     </li>
     <li
-      class="ant-menu-submenu ant-menu-submenu-inline"
+      class="mia-platform-menu-submenu mia-platform-menu-submenu-inline"
       role="none"
     >
       <div
         aria-controls="rc-menu-uuid-test-group-popup"
         aria-expanded="false"
         aria-haspopup="true"
-        class="ant-menu-submenu-title"
+        class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
         style="padding-left: 12px;"
         tabindex="-1"
       >
         <div
-          class="ant-menu-item-icon"
+          class="mia-platform-menu-item-icon"
         >
           <svg
             alt="PiSnowflake"
@@ -438,36 +438,36 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           </svg>
         </div>
         <span
-          class="ant-menu-title-content"
+          class="mia-platform-menu-title-content"
         >
           Group
         </span>
         <i
-          class="ant-menu-submenu-arrow"
+          class="mia-platform-menu-submenu-arrow"
         />
       </div>
     </li>
     <li
-      class="ant-menu-item-divider"
+      class="mia-platform-menu-item-divider"
       role="separator"
     />
     <li
-      class="ant-menu-item-group"
+      class="mia-platform-menu-item-group"
       role="presentation"
     >
       <div
-        class="ant-menu-item-group-title"
+        class="mia-platform-menu-item-group-title"
         role="presentation"
         title="CATEGORY"
       >
         CATEGORY
       </div>
       <ul
-        class="ant-menu-item-group-list"
+        class="mia-platform-menu-item-group-list"
         role="group"
       >
         <li
-          class="ant-menu-item"
+          class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
           style="padding-left: 12px;"
@@ -475,7 +475,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           title="Category Item 1"
         >
           <div
-            class="ant-menu-item-icon"
+            class="mia-platform-menu-item-icon"
           >
             <svg
               alt="PiSun"
@@ -497,13 +497,13 @@ exports[`Menu Component renders inline menu correctly 1`] = `
             </svg>
           </div>
           <span
-            class="ant-menu-title-content"
+            class="mia-platform-menu-title-content"
           >
             Category Item 1
           </span>
         </li>
         <li
-          class="ant-menu-item"
+          class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
           style="padding-left: 12px;"
@@ -511,7 +511,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           title="Category Item 2"
         >
           <div
-            class="ant-menu-item-icon"
+            class="mia-platform-menu-item-icon"
           >
             <svg
               alt="PiMoon"
@@ -533,7 +533,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
             </svg>
           </div>
           <span
-            class="ant-menu-title-content"
+            class="mia-platform-menu-title-content"
           >
             Category Item 2
           </span>
@@ -551,13 +551,13 @@ exports[`Menu Component renders inline menu correctly 1`] = `
 exports[`Menu Component renders item correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="ant-menu-item"
+      class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
       style="padding-left: 12px;"
@@ -565,7 +565,7 @@ exports[`Menu Component renders item correctly 1`] = `
       title="Item"
     >
       <div
-        class="ant-menu-item-icon"
+        class="mia-platform-menu-item-icon"
       >
         <svg
           alt="PiStar"
@@ -587,7 +587,7 @@ exports[`Menu Component renders item correctly 1`] = `
         </svg>
       </div>
       <span
-        class="ant-menu-title-content"
+        class="mia-platform-menu-title-content"
       >
         Item
       </span>
@@ -603,13 +603,13 @@ exports[`Menu Component renders item correctly 1`] = `
 exports[`Menu Component renders primary menu correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="ant-menu-item"
+      class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
       style="padding-left: 12px;"
@@ -617,7 +617,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
       title="Item"
     >
       <div
-        class="ant-menu-item-icon"
+        class="mia-platform-menu-item-icon"
       >
         <svg
           alt="PiStar"
@@ -639,27 +639,27 @@ exports[`Menu Component renders primary menu correctly 1`] = `
         </svg>
       </div>
       <span
-        class="ant-menu-title-content"
+        class="mia-platform-menu-title-content"
       >
         Item
       </span>
     </li>
     <li
-      class="ant-menu-submenu ant-menu-submenu-inline"
+      class="mia-platform-menu-submenu mia-platform-menu-submenu-inline"
       role="none"
     >
       <div
         aria-controls="rc-menu-uuid-test-group-popup"
         aria-expanded="false"
         aria-haspopup="true"
-        class="ant-menu-submenu-title"
+        class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
         style="padding-left: 12px;"
         tabindex="-1"
       >
         <div
-          class="ant-menu-item-icon"
+          class="mia-platform-menu-item-icon"
         >
           <svg
             alt="PiSnowflake"
@@ -681,36 +681,36 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           </svg>
         </div>
         <span
-          class="ant-menu-title-content"
+          class="mia-platform-menu-title-content"
         >
           Group
         </span>
         <i
-          class="ant-menu-submenu-arrow"
+          class="mia-platform-menu-submenu-arrow"
         />
       </div>
     </li>
     <li
-      class="ant-menu-item-divider"
+      class="mia-platform-menu-item-divider"
       role="separator"
     />
     <li
-      class="ant-menu-item-group"
+      class="mia-platform-menu-item-group"
       role="presentation"
     >
       <div
-        class="ant-menu-item-group-title"
+        class="mia-platform-menu-item-group-title"
         role="presentation"
         title="CATEGORY"
       >
         CATEGORY
       </div>
       <ul
-        class="ant-menu-item-group-list"
+        class="mia-platform-menu-item-group-list"
         role="group"
       >
         <li
-          class="ant-menu-item"
+          class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
           style="padding-left: 12px;"
@@ -718,7 +718,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           title="Category Item 1"
         >
           <div
-            class="ant-menu-item-icon"
+            class="mia-platform-menu-item-icon"
           >
             <svg
               alt="PiSun"
@@ -740,13 +740,13 @@ exports[`Menu Component renders primary menu correctly 1`] = `
             </svg>
           </div>
           <span
-            class="ant-menu-title-content"
+            class="mia-platform-menu-title-content"
           >
             Category Item 1
           </span>
         </li>
         <li
-          class="ant-menu-item"
+          class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
           style="padding-left: 12px;"
@@ -754,7 +754,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           title="Category Item 2"
         >
           <div
-            class="ant-menu-item-icon"
+            class="mia-platform-menu-item-icon"
           >
             <svg
               alt="PiMoon"
@@ -776,7 +776,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
             </svg>
           </div>
           <span
-            class="ant-menu-title-content"
+            class="mia-platform-menu-title-content"
           >
             Category Item 2
           </span>
@@ -794,17 +794,17 @@ exports[`Menu Component renders primary menu correctly 1`] = `
 exports[`Menu Component renders skeleton correctly 1`] = `
 <DocumentFragment>
   <div
-    class="ant-skeleton ant-skeleton-active"
+    class="mia-platform-skeleton mia-platform-skeleton-active"
   >
     <div
-      class="ant-skeleton-content"
+      class="mia-platform-skeleton-content"
     >
       <h3
-        class="ant-skeleton-title"
+        class="mia-platform-skeleton-title"
         style="width: 38%;"
       />
       <ul
-        class="ant-skeleton-paragraph"
+        class="mia-platform-skeleton-paragraph"
       >
         <li
           style="width: 30%;"
@@ -833,20 +833,20 @@ exports[`Menu Component renders skeleton correctly 1`] = `
 exports[`Menu Component renders vertical menu correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="ant-menu ant-menu-root ant-menu-vertical ant-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-vertical mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="ant-menu-item"
+      class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
       tabindex="-1"
       title="Item"
     >
       <div
-        class="ant-menu-item-icon"
+        class="mia-platform-menu-item-icon"
       >
         <svg
           alt="PiStar"
@@ -868,26 +868,26 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
         </svg>
       </div>
       <span
-        class="ant-menu-title-content"
+        class="mia-platform-menu-title-content"
       >
         Item
       </span>
     </li>
     <li
-      class="ant-menu-submenu ant-menu-submenu-vertical"
+      class="mia-platform-menu-submenu mia-platform-menu-submenu-vertical"
       role="none"
     >
       <div
         aria-controls="rc-menu-uuid-test-group-popup"
         aria-expanded="false"
         aria-haspopup="true"
-        class="ant-menu-submenu-title"
+        class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
         tabindex="-1"
       >
         <div
-          class="ant-menu-item-icon"
+          class="mia-platform-menu-item-icon"
         >
           <svg
             alt="PiSnowflake"
@@ -909,43 +909,43 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
           </svg>
         </div>
         <span
-          class="ant-menu-title-content"
+          class="mia-platform-menu-title-content"
         >
           Group
         </span>
         <i
-          class="ant-menu-submenu-arrow"
+          class="mia-platform-menu-submenu-arrow"
         />
       </div>
     </li>
     <li
-      class="ant-menu-item-divider"
+      class="mia-platform-menu-item-divider"
       role="separator"
     />
     <li
-      class="ant-menu-item-group"
+      class="mia-platform-menu-item-group"
       role="presentation"
     >
       <div
-        class="ant-menu-item-group-title"
+        class="mia-platform-menu-item-group-title"
         role="presentation"
         title="CATEGORY"
       >
         CATEGORY
       </div>
       <ul
-        class="ant-menu-item-group-list"
+        class="mia-platform-menu-item-group-list"
         role="group"
       >
         <li
-          class="ant-menu-item"
+          class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
           tabindex="-1"
           title="Category Item 1"
         >
           <div
-            class="ant-menu-item-icon"
+            class="mia-platform-menu-item-icon"
           >
             <svg
               alt="PiSun"
@@ -967,20 +967,20 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
             </svg>
           </div>
           <span
-            class="ant-menu-title-content"
+            class="mia-platform-menu-title-content"
           >
             Category Item 1
           </span>
         </li>
         <li
-          class="ant-menu-item"
+          class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
           tabindex="-1"
           title="Category Item 2"
         >
           <div
-            class="ant-menu-item-icon"
+            class="mia-platform-menu-item-icon"
           >
             <svg
               alt="PiMoon"
@@ -1002,7 +1002,7 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
             </svg>
           </div>
           <span
-            class="ant-menu-title-content"
+            class="mia-platform-menu-title-content"
           >
             Category Item 2
           </span>
