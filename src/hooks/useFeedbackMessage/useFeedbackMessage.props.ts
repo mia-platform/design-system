@@ -25,6 +25,10 @@ export type FeedbackMessageProps = MessageProps & {
      * Key of the message. This will be used as an identifier, in case of manual dismission of a message.
      * Moreover, if this key is the same as the one of a message still rendered, the rendered message will
      * be replaced with this one.
+     *
+     * Please note that the key will be ignored if position is set to bottom.
+     * In this case, due to the constraint of only one bottom message being shown at a time,
+     * the key will be replaced with a constant value.
      */
     key?: string
 
