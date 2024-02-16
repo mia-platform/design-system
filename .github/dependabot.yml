@@ -15,6 +15,7 @@ updates:
     groups:
       storybook:
         patterns:
+        - "storybook"
         - "@storybook*"
         update-types:
         - "minor"
