@@ -16,4 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export { Message } from './Message'
+import { ReactNode } from 'react'
+
+export type FeedbackMessageProps = {
+
+  /**
+   * The content to be shown as a message, after the icon. Could be either a string or a ReactNode.
+   */
+  message: string | ReactNode
+
+  /**
+   * Content to be rendered at the right side of the component (e.g. one or more buttons).
+   */
+  extra?: ReactNode,
+}

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FeedbackMessageProps } from './useFeedbackMessage.props'
+import { UseFeedbackMessageProps } from './useFeedbackMessage.props'
 
 export enum FeedbackMessagePosition {
   Bottom = 'bottom',
@@ -38,35 +38,35 @@ export type FeedbackMessage = {
     /**
      * Renders a FeedbackMessage with a spinner animation
      *
-     * @param {FeedbackMessageProps} props - the configuration of the message to render
+     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
      */
-    loading: (props: FeedbackMessageProps) => void
+    loading: (props: UseFeedbackMessageProps) => void
 
     /**
      * Renders a FeedbackMessage with an "info" icon
      *
-     * @param {FeedbackMessageProps} props - the configuration of the message to render
+     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
      */
-    info: (props: FeedbackMessageProps) => void
+    info: (props: UseFeedbackMessageProps) => void
 
     /**
      * Renders a FeedbackMessage with a "success" icon
      *
-     * @param {FeedbackMessageProps} props - the configuration of the message to render
+     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
      */
-    success: (props: FeedbackMessageProps) => void
+    success: (props: UseFeedbackMessageProps) => void
 
     /**
      * Renders a FeedbackMessage with a "warning" icon
      *
-     * @param {FeedbackMessageProps} props - the configuration of the message to render
+     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
      */
-    error: (props: FeedbackMessageProps) => void
+    error: (props: UseFeedbackMessageProps) => void
 
     /**
      * Renders a FeedbackMessage with an "error" icon
      *
-     * @param {FeedbackMessageProps} props - the configuration of the message to render
+     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
      */
-    warning: (props: FeedbackMessageProps) => void
+    warning: (props: UseFeedbackMessageProps) => void
   }

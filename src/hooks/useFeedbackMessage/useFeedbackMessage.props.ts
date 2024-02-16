@@ -17,9 +17,9 @@
  */
 
 import { FeedbackMessagePosition } from './useFeedbackMessage.types'
-import { MessageProps } from '../../components/Message/Message.props'
+import { FeedbackMessageProps } from '../../components/FeedbackMessage/FeedbackMessage.props'
 
-export type FeedbackMessageProps = MessageProps & {
+export type UseFeedbackMessageProps = FeedbackMessageProps & {
 
     /**
      * Key of the message. This will be used as an identifier, in case of manual dismission of a message.

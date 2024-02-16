@@ -18,15 +18,15 @@
 
 import { fireEvent, render, screen } from '../../test-utils'
 import { Button } from '../Button'
-import { Message } from '.'
+import { FeedbackMessage } from '.'
 
-describe('Message Component', () => {
+describe('FeedbackMessage Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
 
   test('renders message', () => {
-    const { asFragment } = render(<Message message="Feedback message" />)
+    const { asFragment } = render(<FeedbackMessage message="Feedback message" />)
 
     expect(screen.getByText('Feedback message')).toBeVisible()
     expect(asFragment()).toMatchSnapshot()
@@ -35,7 +35,7 @@ describe('Message Component', () => {
   test('renders message with extra content', () => {
     const onButtonClickMock = jest.fn()
     const { asFragment } = render(
-      <Message
+      <FeedbackMessage
         extra=<Button onClick={onButtonClickMock}>Button</Button>
         message="Feedback message"
       />

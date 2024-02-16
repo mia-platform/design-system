@@ -21,17 +21,17 @@ import { useState } from 'react'
 
 import { Hierarchy, Size } from '../Button/Button.types'
 import { Button } from '../Button'
+import { FeedbackMessage } from '.'
 import { FeedbackMessagePosition } from '../../hooks/useFeedbackMessage/useFeedbackMessage.types'
 import { Icon } from '../Icon'
-import { Message } from '.'
 import { useFeedbackMessage } from '../../hooks/useFeedbackMessage/useFeedbackMessage'
 
 const meta = {
   args: {
     message: 'This is a Feedback Message',
   },
-  component: Message,
-} satisfies Meta<typeof Message>
+  component: FeedbackMessage,
+} satisfies Meta<typeof FeedbackMessage>
 
 export default meta
 type Story = StoryObj<typeof meta>

@@ -18,22 +18,22 @@
 
 import { ReactElement } from 'react'
 
-import { MessageProps } from './Message.props'
-import styles from './Message.module.css'
+import { FeedbackMessageProps } from './FeedbackMessage.props'
+import styles from './FeedbackMessage.module.css'
 
-const { message: messageStyles } = styles
+const { feedbackMessage: messageStyles } = styles
 
 /**
  * Renders a message in response to user operations.
  * This component is intended to be used along with the `useFeedbackMessage` hook.
  *
  * @link https://ant.design/components/message
- * @returns {Message} FeedbackMessage component
+ * @returns {FeedbackMessage} FeedbackMessage component
  */
-export const Message = ({
+export const FeedbackMessage = ({
   message,
   extra,
-}: MessageProps): ReactElement => {
+}: FeedbackMessageProps): ReactElement => {
   return (
     <span className={messageStyles}>
       {message}

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.message {
+.feedbackMessage {
   align-items: center;
   display: inline-flex;
   gap: calc(var(--spacing-padding-lg, 16) * 1px);

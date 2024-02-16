@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Message Component renders message 1`] = `
+exports[`FeedbackMessage Component renders message 1`] = `
 <DocumentFragment>
   <span
-    class="message"
+    class="feedbackMessage"
   >
     Feedback message
   </span>
 </DocumentFragment>
 `;
 
-exports[`Message Component renders message with extra content 1`] = `
+exports[`FeedbackMessage Component renders message with extra content 1`] = `
 <DocumentFragment>
   <span
-    class="message"
+    class="feedbackMessage"
   >
     Feedback message
     <button

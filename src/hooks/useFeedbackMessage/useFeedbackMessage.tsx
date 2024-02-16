@@ -20,8 +20,8 @@ import { useCallback, useMemo } from 'react'
 import { message } from 'antd'
 
 import { FeedbackMessage, FeedbackMessagePosition } from './useFeedbackMessage.types'
-import { FeedbackMessageProps } from './useFeedbackMessage.props'
-import { Message } from '../../components/Message'
+import { FeedbackMessage as FeedbackMessageComponent } from '../../components/FeedbackMessage'
+import { UseFeedbackMessageProps } from './useFeedbackMessage.props'
 import styles from './useFeedbackMessage.module.css'
 
 type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
@@ -62,7 +62,7 @@ const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
  * manage the rendering of feedback messages.
  */
 export const useFeedbackMessage = (): FeedbackMessage => {
-  const open = useCallback((type: FeedbackMessageType, props: FeedbackMessageProps): void => {
+  const open = useCallback((type: FeedbackMessageType, props: UseFeedbackMessageProps): void => {
     const { key, duration, sticky, position, ...messageProps } = props
 
     let messageKey = key
@@ -75,7 +75,7 @@ export const useFeedbackMessage = (): FeedbackMessage => {
 
     message.open({
       className: classNames.join(' '),
-      content: <Message extra={messageProps.extra} message={messageProps.message} />,
+      content: <FeedbackMessageComponent extra={messageProps.extra} message={messageProps.message} />,
       duration: sticky ? 0 : duration,
       type,
       key: messageKey,
@@ -86,11 +86,11 @@ export const useFeedbackMessage = (): FeedbackMessage => {
     message.destroy(key)
   }, [])
 
-  const loading = useCallback((props: FeedbackMessageProps) => { open('loading', props) }, [open])
-  const info = useCallback((props: FeedbackMessageProps) => { open('info', props) }, [open])
-  const success = useCallback((props: FeedbackMessageProps) => { open('success', props) }, [open])
-  const error = useCallback((props: FeedbackMessageProps) => { open('error', props) }, [open])
-  const warning = useCallback((props: FeedbackMessageProps) => { open('warning', props) }, [open])
+  const loading = useCallback((props: UseFeedbackMessageProps) => { open('loading', props) }, [open])
+  const info = useCallback((props: UseFeedbackMessageProps) => { open('info', props) }, [open])
+  const success = useCallback((props: UseFeedbackMessageProps) => { open('success', props) }, [open])
+  const error = useCallback((props: UseFeedbackMessageProps) => { open('error', props) }, [open])
+  const warning = useCallback((props: UseFeedbackMessageProps) => { open('warning', props) }, [open])
 
   return useMemo(() => ({
     dismiss,
