@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FeedbackMessagePositionType } from './useFeedbackMessage.types'
+import { FeedbackMessagePosition } from './useFeedbackMessage.types'
 import { MessageProps } from '../../components/Message/Message.props'
 
 export type FeedbackMessageProps = MessageProps & {

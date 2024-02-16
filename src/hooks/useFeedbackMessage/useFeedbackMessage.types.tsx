@@ -18,7 +18,7 @@
 
 import { FeedbackMessageProps } from './useFeedbackMessage.props'
 
-export enum FeedbackMessagePositionType {
+export enum FeedbackMessagePosition {
   Bottom = 'bottom',
   Top = 'top'
 }
