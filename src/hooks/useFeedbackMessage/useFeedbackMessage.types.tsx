@@ -26,7 +26,7 @@ export enum FeedbackMessagePositionType {
 export type FeedbackMessage = {
 
     /**
-     * Destroy the FeedbackMessage with given key.
+     * Destroys the FeedbackMessage with the given key.
      *
      * If the key is not passed, it removes the message shown at the bottom of the page,
      * if there is one.
