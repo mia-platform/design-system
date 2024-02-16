@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-@keyframes slideIn {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -26,12 +26,12 @@
   }
 }
 
-@keyframes slideOut {
-  from {
+@keyframes fadeOut {
+  100% {
     opacity: 1;
   }
 
-  to {
+  0% {
     opacity: 0;
   }
 }
@@ -41,11 +41,11 @@
     margin-top: calc(100vh - 72px);
 
     &[class~=ant-message-move-up] {
-      animation-name: slideIn;
+      animation-name: fadeIn;
     }
 
     &[class~=ant-message-move-up-leave] {
-      animation-name: slideOut;
+      animation-name: fadeOut;
     }
   }
 
