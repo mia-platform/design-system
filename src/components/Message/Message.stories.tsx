@@ -101,7 +101,6 @@ export const FeedbackMessageWithExtraContent: Story = {
       })
     }
 
-    // TODO: Include a theme here
     return <Button onClick={onClick}>Click me to show a Feedback Message</Button>
   }],
 }
@@ -126,7 +125,7 @@ Open
         >
 Dismiss
         </Button>
-      </div >
+      </div>
     )
   }],
 }
