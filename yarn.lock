@@ -2762,7 +2762,7 @@ __metadata:
     "@types/lodash": ^4.14.202
     "@types/react": ^18.2.51
     "@types/react-dom": ^18.2.7
-    "@types/traverse": ^0.6.32
+    "@types/traverse": ^0.6.36
     "@typescript-eslint/eslint-plugin": ^7.0.1
     "@typescript-eslint/parser": ^7.0.1
     "@vitejs/plugin-react-swc": ^3.3.2
@@ -5729,10 +5729,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/traverse@npm:^0.6.32":
-  version: 0.6.33
-  resolution: "@types/traverse@npm:0.6.33"
-  checksum: 117e76baab448fa72065c3b6c1ebd01918068636f197bd5a73195f45b1b1f8932fd5eaead4ed34cdf2d1003c7d98747e588e5e488d24d7a4e4c7d8a560a4d61d
+"@types/traverse@npm:^0.6.36":
+  version: 0.6.36
+  resolution: "@types/traverse@npm:0.6.36"
+  checksum: 2afa4d8cf4c01b8fa3efffc3c4789fd0ed0727d20d094aaf512065ca737b0bff03f47d45dfb44adbc2b85f1f4d0fa024a93ddab9137f8fece5b0c87fef050dd3
   languageName: node
   linkType: hard
 
