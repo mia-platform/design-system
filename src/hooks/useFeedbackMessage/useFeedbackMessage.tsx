@@ -26,7 +26,7 @@ import styles from './useFeedbackMessage.module.css'
 
 type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
 
-const { 'feedback-message': feedbackMessageStyle, 'bottom': bottomFeedbackMessageStyle } = styles
+const { feedbackMessage: feedbackMessageStyle, bottom: bottomFeedbackMessageStyle } = styles
 const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
 
 /**
