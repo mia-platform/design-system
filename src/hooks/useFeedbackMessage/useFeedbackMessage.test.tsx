@@ -18,33 +18,33 @@
 
 /* eslint-disable react/no-multi-comp */
 
-import { act, fireEvent, render } from '../../test-utils'
+import { act, fireEvent, render, screen } from '../../test-utils'
 import { useFeedbackMessage } from './useFeedbackMessage'
 
 jest.useFakeTimers()
 
 describe('useFeedbackMessage', () => {
-  test('should show FeedbackMessage', () => {
+  test('should show FeedbackMessage', async() => {
+    const message = 'This is a Feedback Message'
     const Example = (): JSX.Element => {
       const { info } = useFeedbackMessage()
 
       return (
-        <button
-          type="button"
-          onClick={() => { info({ message: 'This is a FeedbackMessage' }) }}
-        >
+        <button type="button" onClick={() => { info({ message }) }}>
             Open
         </button>
       )
     }
 
-    const { getByRole, getByText } = render(<Example />)
-    fireEvent.click(getByRole('button', { name: 'Open' }))
+    render(<Example />)
+    fireEvent.click(screen.getByRole('button', { name: /open/i }))
 
-    expect(getByText('This is a FeedbackMessage')).toBeInTheDocument()
+    expect(await screen.findByText(message)).toBeInTheDocument()
   })
 
   test('should show FeedbackMessage with an extra button', () => {
+    const message = 'This is Feedback Message with some extra content'
+
     const Example = (): JSX.Element => {
       const { success } = useFeedbackMessage()
 
@@ -53,7 +53,7 @@ describe('useFeedbackMessage', () => {
           type="button"
           onClick={() => {
             success({
-              message: 'This is a FeedbackMessage',
+              message,
               extra: <button type="button">Close</button>,
             })
           }}
@@ -66,12 +66,12 @@ describe('useFeedbackMessage', () => {
     const { getByRole, getByText } = render(<Example />)
     fireEvent.click(getByRole('button', { name: 'Open' }))
 
-    expect(getByText('This is a FeedbackMessage')).toBeInTheDocument()
+    expect(getByText(message)).toBeInTheDocument()
     expect(getByRole('button', { name: 'Close' })).toBeInTheDocument()
   })
 
   test('FeedbackMessage disappears after 5 seconds', () => {
-    const message = 'This is a FeedbackMessage'
+    const message = 'This is a Feedback Message that disappear after five seconds'
 
     const Example = (): JSX.Element => {
       const { error } = useFeedbackMessage()
@@ -96,16 +96,13 @@ describe('useFeedbackMessage', () => {
   })
 
   test('FeedbackMessage is sticky and does not disappear', () => {
+    const message = 'This is a sticky Feedback Message'
+
     const Example = (): JSX.Element => {
       const { info } = useFeedbackMessage()
 
       return (
-        <button
-          type="button"
-          onClick={() => {
-            info({ message: 'This is a FeedbackMessage', sticky: true })
-          }}
-        >
+        <button type="button" onClick={() => { info({ message, sticky: true }) }}>
             Open
         </button>
       )
@@ -116,7 +113,7 @@ describe('useFeedbackMessage', () => {
 
     act(() => { jest.advanceTimersByTime(5000) })
 
-    expect(getByText('This is a FeedbackMessage')).toBeInTheDocument()
+    expect(getByText(message)).toBeInTheDocument()
   })
 
   test('FeedbackMessage disappears after clicking the button contained within it', () => {
@@ -127,7 +124,7 @@ describe('useFeedbackMessage', () => {
       const { loading, dismiss } = useFeedbackMessage()
       const onDismiss = (): void => { dismiss(key) }
 
-      const extra = <button type="button" onClick={onDismiss}>Close</button>
+      const extra = <button type="button" onClick={onDismiss}>Dismiss</button>
 
       return (
         <button
@@ -144,7 +141,7 @@ describe('useFeedbackMessage', () => {
     fireEvent.click(getByRole('button', { name: 'Open' }))
     expect(getByText(message)).toBeInTheDocument()
 
-    act(() => { fireEvent.click(getByRole('button', { name: 'Close' })) })
+    act(() => { fireEvent.click(getByRole('button', { name: 'Dismiss' })) })
     expect(queryByText(message)).not.toBeInTheDocument()
   })
 })
