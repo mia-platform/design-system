@@ -19,7 +19,7 @@
 import { useCallback, useMemo } from 'react'
 import { message } from 'antd'
 
-import { FeedbackMessage, FeedbackMessagePositionType } from './useFeedbackMessage.types'
+import { FeedbackMessage, FeedbackMessagePosition } from './useFeedbackMessage.types'
 import { FeedbackMessageProps } from './useFeedbackMessage.props'
 import { Message } from '../../components/Message'
 import styles from './useFeedbackMessage.module.css'
@@ -27,7 +27,7 @@ import styles from './useFeedbackMessage.module.css'
 type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
 
 const { 'feedback-message': feedbackMessageStyle, 'bottom': bottomFeedbackMessageStyle } = styles
-const BOTTOM_MESSAGE_KEY = 'BOTTOM_MESSAGE_KEY'
+const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
 
 /**
  * A hook that allows to display global informative messages to the user at the top of the page. It is intended to give
@@ -68,7 +68,7 @@ export const useFeedbackMessage = (): FeedbackMessage => {
     let messageKey = key
     const classNames = [feedbackMessageStyle]
 
-    if (position === FeedbackMessagePositionType.Bottom) {
+    if (position === FeedbackMessagePosition.Bottom) {
       classNames.push(bottomFeedbackMessageStyle)
       messageKey = BOTTOM_MESSAGE_KEY
     }

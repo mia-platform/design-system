@@ -21,7 +21,7 @@ import { useState } from 'react'
 
 import { Hierarchy, Size } from '../Button/Button.types'
 import { Button } from '../Button'
-import { FeedbackMessagePositionType } from '../../hooks/useFeedbackMessage/useFeedbackMessage.types'
+import { FeedbackMessagePosition } from '../../hooks/useFeedbackMessage/useFeedbackMessage.types'
 import { Icon } from '../Icon'
 import { Message } from '.'
 import { useFeedbackMessage } from '../../hooks/useFeedbackMessage/useFeedbackMessage'
@@ -115,7 +115,7 @@ export const FeedbackMessageAtTheBottomOfThePage: Story = {
       <div style={{ display: 'flex', gap: '4px' }}>
         <Button
           hierarchy={Hierarchy.Neutral}
-          onClick={() => info({ message, position: FeedbackMessagePositionType.Bottom, duration: 10 })}
+          onClick={() => info({ message, position: FeedbackMessagePosition.Bottom, duration: 10 })}
         >
 Open
         </Button>
