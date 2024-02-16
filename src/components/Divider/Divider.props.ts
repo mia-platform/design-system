@@ -28,12 +28,12 @@ export type DividerProps = {
    * - "horizontal" (default)
    * - "vertical"
    */
-  orientation?: Orientation
+  orientation?: Orientation,
 
   /**
    * The text to show on the separator
    */
-  text?: string | ReactNode
+  text?: string | ReactNode,
 
   /**
    * Defines the text orientation on the divider. Either:

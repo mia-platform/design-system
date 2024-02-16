@@ -28,9 +28,9 @@ export type SegmentedControlProps = {
    * - `string`: the key of the initially selected option
    * - `number`: the position in the array of the initially selected option
    */
-  defaultValue?: string | number
+  defaultValue?: string | number,
 
- /**
+  /**
    * Defines the segmented hierarchy. Either:
    *
    * - "primary": segmented associated with the most significant (and therefore primary) action on the page
@@ -41,7 +41,7 @@ export type SegmentedControlProps = {
   /**
    * Determines whether the segmented control is disabled.
    */
-  isDisabled?: boolean
+  isDisabled?: boolean,
 
   /**
    * A callback function that is invoked when the selected option changes.
@@ -49,9 +49,9 @@ export type SegmentedControlProps = {
    * @param {Option} option - The newly selected option.
    * @param {MouseEvent} event - The event linked to the mouse click.
    */
-  onChange?: (option: Option, event: MouseEvent) => void
+  onChange?: (option: Option, event: MouseEvent) => void,
 
- /**
+  /**
    * An array of segmented options to be displayed. Either one of the following:
    *
    * - `string`
@@ -61,7 +61,7 @@ export type SegmentedControlProps = {
    *    - isDisabled?: Whether the option is clickable <br> `boolean`
    *    - key: The value associated with the option <br> `string`
    */
-  options: Option[]
+  options: Option[],
 
   /**
    * The alignment of the options within the segmented control. Either one of the following:
@@ -69,13 +69,13 @@ export type SegmentedControlProps = {
    * - "horizontal": icons and labels of every option are aligned horizontally
    * - "vertical": icons and labels of every option are aligned vertically
    */
-  optionsAlignment?: OptionAlignment
+  optionsAlignment?: OptionAlignment,
 
- /**
+  /**
    * The current selected value. Either one of the following:
    *
    * - `string`: the key of the selected option
    * - `number`: the position of the selected option in the array
    */
-  value?: string | number
+  value?: string | number,
 }

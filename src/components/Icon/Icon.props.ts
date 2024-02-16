@@ -51,15 +51,15 @@ export type IconProps = {
   /**
    * The color of the icon.
    */
-  color?: string
+  color?: string,
 
   /**
    * The name of the icon.
    */
-  name: keyof typeof customIcons | keyof typeof reactIcons
+  name: keyof typeof customIcons | keyof typeof reactIcons,
 
   /**
    * The size of the icon.
    */
-  size?: 16 | 24 | 32 | 48 | 64 | 96
+  size?: 16 | 24 | 32 | 48 | 64 | 96,
 }
