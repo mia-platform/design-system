@@ -17,7 +17,7 @@ exports[`FeedbackMessage Component renders message with extra content 1`] = `
   >
     Feedback message
     <button
-      class="ant-btn ant-btn-primary button buttonMd"
+      class="mia-platform-btn mia-platform-btn-primary button buttonMd"
       type="button"
     >
       <div
