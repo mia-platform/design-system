@@ -6,6 +6,9 @@ changelog:
     - title: Breaking Changes 🛠
       labels:
         - breaking
+    - title: New Components 🎉
+      labels:
+        - new component
     - title: Exciting New Features 🎉
       labels:
         - enhancement
