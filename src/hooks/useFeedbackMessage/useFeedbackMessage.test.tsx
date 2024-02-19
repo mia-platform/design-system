@@ -19,6 +19,7 @@
 /* eslint-disable react/no-multi-comp */
 
 import { act, fireEvent, render, screen } from '../../test-utils'
+import { FeedbackMessagePosition } from './useFeedbackMessage.types'
 import { useFeedbackMessage } from './useFeedbackMessage'
 
 jest.useFakeTimers()
@@ -143,5 +144,33 @@ describe('useFeedbackMessage', () => {
 
     act(() => { fireEvent.click(getByRole('button', { name: 'Dismiss' })) })
     expect(queryByText(message)).not.toBeInTheDocument()
+  })
+
+  test('there can only be one FeedbackMessage attached to the bottom', () => {
+    const message = 'This is a Feedback Message placed to the bottom of the page'
+    const updatedMessage = 'This is an updated Feedback Message placed to the bottom of the page'
+
+    const Example = (): JSX.Element => {
+      const { info } = useFeedbackMessage()
+
+      return <>
+        <button type="button" onClick={() => { info({ message, position: FeedbackMessagePosition.Bottom }) }}>
+            Open message
+        </button>
+        <button type="button" onClick={() => { info({ message: updatedMessage, position: FeedbackMessagePosition.Bottom }) }}>
+            Open updated message
+        </button>
+      </>
+    }
+
+    const { getByRole, getByText, queryByText } = render(<Example />)
+
+    fireEvent.click(getByRole('button', { name: 'Open message' }))
+    expect(getByText(message)).toBeInTheDocument()
+    expect(queryByText(updatedMessage)).not.toBeInTheDocument()
+
+    fireEvent.click(getByRole('button', { name: 'Open updated message' }))
+    expect(queryByText(message)).not.toBeInTheDocument()
+    expect(getByText(updatedMessage)).toBeInTheDocument()
   })
 })
