@@ -36,7 +36,7 @@ describe('FeedbackMessage Component', () => {
     const onButtonClickMock = jest.fn()
     const { asFragment } = render(
       <FeedbackMessage
-        extra=<Button onClick={onButtonClickMock}>Button</Button>
+        extra={<Button onClick={onButtonClickMock}>Button</Button>}
         message="Feedback message"
       />
     )

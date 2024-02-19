@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FeedbackMessagePosition } from './useFeedbackMessage.types'
 import { FeedbackMessageProps } from '../../components/FeedbackMessage/FeedbackMessage.props'
+import { Position } from './useFeedbackMessage.types'
 
 export type UseFeedbackMessageProps = FeedbackMessageProps & {
 
@@ -50,5 +50,5 @@ export type UseFeedbackMessageProps = FeedbackMessageProps & {
      * - "bottom": feedback message placed at the bottom of the page. Bottom messages are unique,
      *   meaning that no more than one can be shown at a time.
      */
-    position?: FeedbackMessagePosition
+    position?: Position
   }

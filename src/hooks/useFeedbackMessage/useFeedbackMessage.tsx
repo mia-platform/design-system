@@ -17,16 +17,14 @@
  */
 
 import { useCallback, useMemo } from 'react'
+import classnames from 'classnames'
 import { message } from 'antd'
 
-import { FeedbackMessage, FeedbackMessagePosition } from './useFeedbackMessage.types'
-import { FeedbackMessage as FeedbackMessageComponent } from '../../components/FeedbackMessage'
+import { MessageAPI, Position, Type } from './useFeedbackMessage.types'
+import { FeedbackMessage } from '../../components/FeedbackMessage'
 import { UseFeedbackMessageProps } from './useFeedbackMessage.props'
 import styles from './useFeedbackMessage.module.css'
 
-type FeedbackMessageType = 'loading' | 'info' | 'success' | 'warning' | 'error'
-
-const { feedbackMessage: feedbackMessageStyle, bottom: bottomFeedbackMessageStyle } = styles
 const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
 
 /**
@@ -58,24 +56,23 @@ const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
  *   )
  * }
  *
- * @returns {FeedbackMessage} An object which includes several functions to
+ * @returns {MessageAPI} An object which includes several functions to
  * manage the rendering of feedback messages.
  */
-export const useFeedbackMessage = (): FeedbackMessage => {
-  const open = useCallback((type: FeedbackMessageType, props: UseFeedbackMessageProps): void => {
+export const useFeedbackMessage = (): MessageAPI => {
+  const open = useCallback((type: Type, props: UseFeedbackMessageProps): void => {
     const { key, duration, sticky, position, ...messageProps } = props
 
-    let messageKey = key
-    const classNames = [feedbackMessageStyle]
-
-    if (position === FeedbackMessagePosition.Bottom) {
-      classNames.push(bottomFeedbackMessageStyle)
-      messageKey = BOTTOM_MESSAGE_KEY
-    }
+    const messageKey = position === Position.Bottom
+      ? BOTTOM_MESSAGE_KEY
+      : key
 
     message.open({
-      className: classNames.join(' '),
-      content: <FeedbackMessageComponent extra={messageProps.extra} message={messageProps.message} />,
+      className: classnames([
+        styles.feedbackMessage,
+        position === Position.Bottom && styles.bottom,
+      ]),
+      content: <FeedbackMessage extra={messageProps.extra} message={messageProps.message} />,
       duration: sticky ? 0 : duration,
       type,
       key: messageKey,
@@ -86,11 +83,11 @@ export const useFeedbackMessage = (): FeedbackMessage => {
     message.destroy(key)
   }, [])
 
-  const loading = useCallback((props: UseFeedbackMessageProps) => { open('loading', props) }, [open])
-  const info = useCallback((props: UseFeedbackMessageProps) => { open('info', props) }, [open])
-  const success = useCallback((props: UseFeedbackMessageProps) => { open('success', props) }, [open])
-  const error = useCallback((props: UseFeedbackMessageProps) => { open('error', props) }, [open])
-  const warning = useCallback((props: UseFeedbackMessageProps) => { open('warning', props) }, [open])
+  const loading = useCallback((props: UseFeedbackMessageProps) => open(Type.Loading, props), [open])
+  const info = useCallback((props: UseFeedbackMessageProps) => open(Type.Info, props), [open])
+  const success = useCallback((props: UseFeedbackMessageProps) => open(Type.Success, props), [open])
+  const error = useCallback((props: UseFeedbackMessageProps) => open(Type.Error, props), [open])
+  const warning = useCallback((props: UseFeedbackMessageProps) => open(Type.Warning, props), [open])
 
   return useMemo(() => ({
     dismiss,

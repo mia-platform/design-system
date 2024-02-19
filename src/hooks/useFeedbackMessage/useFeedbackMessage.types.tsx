@@ -18,12 +18,20 @@
 
 import { UseFeedbackMessageProps } from './useFeedbackMessage.props'
 
-export enum FeedbackMessagePosition {
+export enum Position {
   Bottom = 'bottom',
   Top = 'top'
 }
 
-export type FeedbackMessage = {
+export enum Type {
+  Loading = 'loading',
+  Info = 'info',
+  Success = 'success',
+  Warning = 'warning',
+  Error = 'error'
+}
+
+export type MessageAPI = {
 
     /**
      * Destroys the FeedbackMessage with the given key.

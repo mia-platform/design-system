@@ -22,9 +22,9 @@ import { useState } from 'react'
 import { Hierarchy, Size } from '../Button/Button.types'
 import { Button } from '../Button'
 import { FeedbackMessage } from '.'
-import { FeedbackMessagePosition } from '../../hooks/useFeedbackMessage/useFeedbackMessage.types'
 import { Icon } from '../Icon'
-import { useFeedbackMessage } from '../../hooks/useFeedbackMessage/useFeedbackMessage'
+import { Position } from '../../hooks/useFeedbackMessage/useFeedbackMessage.types'
+import { useFeedbackMessage } from '../../hooks/useFeedbackMessage'
 
 const meta = {
   args: {
@@ -112,10 +112,10 @@ export const FeedbackMessageAtTheBottomOfThePage: Story = {
     const { message } = context.args
 
     return (
-      <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ display: 'flex', gap: 4 }}>
         <Button
           hierarchy={Hierarchy.Neutral}
-          onClick={() => info({ message, position: FeedbackMessagePosition.Bottom, duration: 10 })}
+          onClick={() => info({ message, position: Position.Bottom, duration: 10 })}
         >
 Open
         </Button>
@@ -160,7 +160,7 @@ export const ReplaceFeedbackMessages: Story = {
     }
 
     return (
-      <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ display: 'flex', gap: 4 }}>
         {
           isLoading
             ? <Button onClick={onCreateSuccessMessage}>Create a Success Feedback Message</Button>

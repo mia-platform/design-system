@@ -21,7 +21,7 @@ import { ReactElement } from 'react'
 import { FeedbackMessageProps } from './FeedbackMessage.props'
 import styles from './FeedbackMessage.module.css'
 
-const { feedbackMessage: messageStyles } = styles
+const { feedbackMessage } = styles
 
 /**
  * Renders a message in response to user operations.
@@ -35,7 +35,7 @@ export const FeedbackMessage = ({
   extra,
 }: FeedbackMessageProps): ReactElement => {
   return (
-    <span className={messageStyles}>
+    <span className={feedbackMessage}>
       {message}
       {extra}
     </span>
