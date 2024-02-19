@@ -30,7 +30,7 @@ const { feedbackMessage: feedbackMessageStyle, bottom: bottomFeedbackMessageStyl
 const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
 
 /**
- * A hook that allows to display global informative messages to the user at the top of the page. It is intended to give
+ * A hook that allows to display global informative messages to the user. It is intended to give
  * feedback messages on a certain operation being executed or information regarding the context of the application.
  *
  * The hook returns several methods to be used to show a message of a different type
