@@ -2777,7 +2777,7 @@ __metadata:
     identity-obj-proxy: ^3.0.0
     jest: ^29.6.2
     jest-environment-jsdom: ^29.6.2
-    jest-transformer-svg: ^2.0.1
+    jest-transformer-svg: ^2.0.2
     jest-watch-typeahead: ^2.2.2
     lodash.get: ^4.4.2
     lodash.isobject: ^3.0.2
@@ -10984,13 +10984,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-transformer-svg@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "jest-transformer-svg@npm:2.0.1"
+"jest-transformer-svg@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "jest-transformer-svg@npm:2.0.2"
   peerDependencies:
     jest: ">= 28.1.0"
     react: ^17.0.0 || ^18.0.0
-  checksum: 6fffcc64c952c9a9a59c87d7bb7e51000990ccd19daba4e9d58b42fefd2448bde8accc3402a494b884681a32b8d637381d62647bf05da69d8bca5738c449cda3
+  checksum: 06b9c18334f20bbf1f1e924d3d273a9de78e38da2e102222b9ca5c18991cc09aefe176dbe447afb7fc713ec0f6e4e3412b1bc91bbefeb5f0233d074d907fb1ae
   languageName: node
   linkType: hard
 
