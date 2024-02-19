@@ -26,7 +26,7 @@ import { CardProps } from './Card.props'
 import { H3 } from '../Typography/HX/H3'
 import { Icon } from '../Icon'
 import styles from './Card.module.css'
-import useTheme from '../../hooks/useTheme'
+import { useTheme } from '../../hooks/useTheme'
 
 const { Circle } = Shape
 const { Ghost } = Type

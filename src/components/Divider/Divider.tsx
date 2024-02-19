@@ -21,7 +21,7 @@ import { ReactElement } from 'react'
 
 import { Orientation, TextOrientation } from './Divider.types'
 import { DividerProps } from './Divider.props'
-import useTheme from '../../hooks/useTheme'
+import { useTheme } from '../../hooks/useTheme'
 
 const { Horizontal } = Orientation
 const { Left } = TextOrientation

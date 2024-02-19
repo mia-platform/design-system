@@ -23,6 +23,13 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "itemHoverBg": "#00000014",
       "itemSelectedBg": "#1890ff14",
     },
+    "Message": {
+      "colorError": "#b91200",
+      "colorInfo": "#005dc9",
+      "colorSuccess": "#52c41a",
+      "colorText": "#636363",
+      "colorWarning": "#ff9933",
+    },
     "Table": {
       "borderColor": "#f2f2f2",
       "cellPaddingInline": 16,
@@ -85,6 +92,13 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "itemHoverBg": undefined,
       "itemSelectedBg": undefined,
     },
+    "Message": {
+      "colorError": undefined,
+      "colorInfo": undefined,
+      "colorSuccess": undefined,
+      "colorText": undefined,
+      "colorWarning": undefined,
+    },
     "Table": {
       "borderColor": undefined,
       "cellPaddingInline": undefined,
@@ -146,6 +160,13 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "itemHeight": 32,
       "itemHoverBg": "#00000014",
       "itemSelectedBg": "#1890ff14",
+    },
+    "Message": {
+      "colorError": "#b91200",
+      "colorInfo": "#005dc9",
+      "colorSuccess": "#52c41a",
+      "colorText": "#636363",
+      "colorWarning": "#ff9933",
     },
     "Table": {
       "borderColor": "#f2f2f2",

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedbackMessage Component renders message 1`] = `
+<DocumentFragment>
+  <span
+    class="feedbackMessage"
+  >
+    Feedback message
+  </span>
+</DocumentFragment>
+`;
+
+exports[`FeedbackMessage Component renders message with extra content 1`] = `
+<DocumentFragment>
+  <span
+    class="feedbackMessage"
+  >
+    Feedback message
+    <button
+      class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+      type="button"
+    >
+      <div
+        class="buttonText"
+      >
+        Button
+      </div>
+    </button>
+  </span>
+</DocumentFragment>
+`;
