@@ -23,12 +23,12 @@ export type MenuProps = {
   /**
    * Array with the keys of initially opened sub-menus.
    */
-  defaultOpenKeys?: string[]
+  defaultOpenKeys?: string[],
 
   /**
    * Key of the initially selected menu item.
    */
-  defaultSelectedKey?: string
+  defaultSelectedKey?: string,
 
   /**
    * Defines the menu hierarchy. Either:
@@ -41,12 +41,12 @@ export type MenuProps = {
   /**
    * Whether the menu is collapsed.
    */
-  isCollapsed?: boolean
+  isCollapsed?: boolean,
 
   /**
    * Whether the menu is in a loading state (if so, a skeleton is shown).
    */
-  isLoading?: boolean
+  isLoading?: boolean,
 
   /**
    * Menu items. Either one of the following:
@@ -75,7 +75,7 @@ export type MenuProps = {
    *    - type: The type of the divider <br> `"divider"`
    *    - dashed: Indicates whether the divider is dashed <br> `boolean`
    */
-  items?: Item[]
+  items?: Item[],
 
   /**
    * The mode in which sub-menu items are shown. Either:
@@ -88,20 +88,20 @@ export type MenuProps = {
   /**
    * Called when a menu item is clicked.
    */
-  onClick?: () => void
+  onClick?: () => void,
 
   /**
    * Called when sub-menus are opened or closed.
    */
-  onOpenChange?: () => void
+  onOpenChange?: () => void,
 
   /**
    * Array with the keys of opened sub-menus.
    */
-  openKeys?: string[]
+  openKeys?: string[],
 
   /**
    * Key of the selected menu item.
    */
-  selectedKey?: string
+  selectedKey?: string,
 }

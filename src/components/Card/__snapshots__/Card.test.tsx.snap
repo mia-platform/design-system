@@ -16,7 +16,7 @@ exports[`Card Component renders card correctly 1`] = `
         >
           <h3
             aria-label="Card Title"
-            class="ant-typography"
+            class="mia-platform-typography"
             role="h3"
           >
             Card Title
@@ -25,7 +25,7 @@ exports[`Card Component renders card correctly 1`] = `
             class="docLink"
           >
             <button
-              class="ant-btn ant-btn-circle ant-btn-primary ant-btn-background-ghost button buttonMdIconOnly buttonGhost"
+              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
               type="button"
             >
               <svg
@@ -50,14 +50,14 @@ exports[`Card Component renders card correctly 1`] = `
           </div>
         </div>
         <div
-          class="ant-typography bodyS"
+          class="mia-platform-typography bodyS"
           role="paragraph"
         >
           Card Subtitle
         </div>
       </div>
       <button
-        class="ant-btn ant-btn-primary button buttonMd"
+        class="mia-platform-btn mia-platform-btn-primary button buttonMd"
         type="button"
       >
         <div
@@ -106,7 +106,7 @@ exports[`Card Component renders header only 1`] = `
         >
           <h3
             aria-label="Card Title"
-            class="ant-typography"
+            class="mia-platform-typography"
             role="h3"
           >
             Card Title
@@ -115,7 +115,7 @@ exports[`Card Component renders header only 1`] = `
             class="docLink"
           >
             <button
-              class="ant-btn ant-btn-circle ant-btn-primary ant-btn-background-ghost button buttonMdIconOnly buttonGhost"
+              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
               type="button"
             >
               <svg
@@ -140,14 +140,14 @@ exports[`Card Component renders header only 1`] = `
           </div>
         </div>
         <div
-          class="ant-typography bodyS"
+          class="mia-platform-typography bodyS"
           role="paragraph"
         >
           Card Subtitle
         </div>
       </div>
       <button
-        class="ant-btn ant-btn-primary button buttonMd"
+        class="mia-platform-btn mia-platform-btn-primary button buttonMd"
         type="button"
       >
         <div
@@ -167,17 +167,17 @@ exports[`Card Component renders skeleton correctly 1`] = `
     class="card"
   >
     <div
-      class="ant-skeleton ant-skeleton-active"
+      class="mia-platform-skeleton mia-platform-skeleton-active"
     >
       <div
-        class="ant-skeleton-content"
+        class="mia-platform-skeleton-content"
       >
         <h3
-          class="ant-skeleton-title"
+          class="mia-platform-skeleton-title"
           style="width: 38%;"
         />
         <ul
-          class="ant-skeleton-paragraph"
+          class="mia-platform-skeleton-paragraph"
         >
           <li
             style="width: 80%;"

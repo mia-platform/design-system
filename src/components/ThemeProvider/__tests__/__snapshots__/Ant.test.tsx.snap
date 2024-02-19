@@ -31,6 +31,7 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "colorWarning": "#ff9933",
     },
     "Table": {
+      "borderColor": "#f2f2f2",
       "cellPaddingInline": 16,
       "cellPaddingInlineMD": 16,
       "cellPaddingInlineSM": 16,
@@ -99,6 +100,7 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "colorWarning": undefined,
     },
     "Table": {
+      "borderColor": undefined,
       "cellPaddingInline": undefined,
       "cellPaddingInlineMD": undefined,
       "cellPaddingInlineSM": undefined,
@@ -167,6 +169,7 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "colorWarning": "#ff9933",
     },
     "Table": {
+      "borderColor": "#f2f2f2",
       "cellPaddingInline": 16,
       "cellPaddingInlineMD": 16,
       "cellPaddingInlineSM": 16,

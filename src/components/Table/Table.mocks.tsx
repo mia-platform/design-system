@@ -183,7 +183,6 @@ export const expandable = (callbacks: Callbacks = {}): ExpandableConfig<TableRec
 /** Pagination */
 
 export const pagination = (callbacks: Callbacks = {}): Pagination => ({
-  ...Table.pagination,
   ...callbacks,
 
   // Only to fit Storybook size

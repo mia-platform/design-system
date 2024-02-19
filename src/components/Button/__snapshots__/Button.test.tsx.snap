@@ -3,7 +3,7 @@
 exports[`Button Component renders button with href correctly 1`] = `
 <DocumentFragment>
   <a
-    class="ant-btn ant-btn-primary button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     href="https://mia-platform.eu"
     rel="noopener noreferrer"
   >
@@ -19,7 +19,7 @@ exports[`Button Component renders button with href correctly 1`] = `
 exports[`Button Component renders button with icon left correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     type="button"
   >
     <svg
@@ -52,7 +52,7 @@ exports[`Button Component renders button with icon left correctly 1`] = `
 exports[`Button Component renders button with icon right correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     type="button"
   >
     <div
@@ -85,7 +85,7 @@ exports[`Button Component renders button with icon right correctly 1`] = `
 exports[`Button Component renders circle button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-circle ant-btn-primary button buttonMdIconOnly"
+    class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary button buttonMdIconOnly"
     type="button"
   >
     <svg
@@ -113,7 +113,7 @@ exports[`Button Component renders circle button correctly 1`] = `
 exports[`Button Component renders danger filled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary ant-btn-dangerous button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous button buttonMd"
     type="button"
   >
     <div
@@ -128,7 +128,7 @@ exports[`Button Component renders danger filled button correctly 1`] = `
 exports[`Button Component renders danger ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary ant-btn-background-ghost ant-btn-dangerous button buttonMd buttonGhost"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMd buttonGhost"
     type="button"
   >
     <div
@@ -143,7 +143,7 @@ exports[`Button Component renders danger ghost button correctly 1`] = `
 exports[`Button Component renders danger outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary ant-btn-background-ghost ant-btn-dangerous button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMd"
     type="button"
   >
     <div
@@ -158,7 +158,7 @@ exports[`Button Component renders danger outline button correctly 1`] = `
 exports[`Button Component renders disabled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     disabled=""
     type="button"
   >
@@ -174,7 +174,7 @@ exports[`Button Component renders disabled button correctly 1`] = `
 exports[`Button Component renders large button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary ant-btn-lg button buttonLg"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-lg button buttonLg"
     type="button"
   >
     <div
@@ -189,11 +189,11 @@ exports[`Button Component renders large button correctly 1`] = `
 exports[`Button Component renders loading button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary ant-btn-loading button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-loading button buttonMd"
     type="button"
   >
     <span
-      class="ant-btn-icon ant-btn-loading-icon"
+      class="mia-platform-btn-icon mia-platform-btn-loading-icon"
     >
       <span
         aria-label="loading"
@@ -227,7 +227,7 @@ exports[`Button Component renders loading button correctly 1`] = `
 exports[`Button Component renders middle button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     type="button"
   >
     <div
@@ -242,7 +242,7 @@ exports[`Button Component renders middle button correctly 1`] = `
 exports[`Button Component renders neutral ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-default button buttonMd buttonGhost"
+    class="mia-platform-btn mia-platform-btn-default button buttonMd buttonGhost"
     type="button"
   >
     <div
@@ -257,7 +257,7 @@ exports[`Button Component renders neutral ghost button correctly 1`] = `
 exports[`Button Component renders neutral outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-default button buttonMd"
+    class="mia-platform-btn mia-platform-btn-default button buttonMd"
     type="button"
   >
     <div
@@ -272,7 +272,7 @@ exports[`Button Component renders neutral outline button correctly 1`] = `
 exports[`Button Component renders primary filled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     type="button"
   >
     <div
@@ -287,7 +287,7 @@ exports[`Button Component renders primary filled button correctly 1`] = `
 exports[`Button Component renders primary ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary ant-btn-background-ghost button buttonMd buttonGhost"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMd buttonGhost"
     type="button"
   >
     <div
@@ -302,7 +302,7 @@ exports[`Button Component renders primary ghost button correctly 1`] = `
 exports[`Button Component renders primary outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary ant-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMd"
     type="button"
   >
     <div
@@ -317,7 +317,7 @@ exports[`Button Component renders primary outline button correctly 1`] = `
 exports[`Button Component renders small button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary ant-btn-sm button buttonSm"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-sm button buttonSm"
     type="button"
   >
     <div
@@ -332,7 +332,7 @@ exports[`Button Component renders small button correctly 1`] = `
 exports[`Button Component renders square button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="ant-btn ant-btn-primary button buttonMdIconOnly"
+    class="mia-platform-btn mia-platform-btn-primary button buttonMdIconOnly"
     type="button"
   >
     <svg
