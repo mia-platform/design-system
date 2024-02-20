@@ -3,7 +3,7 @@
 exports[`BodyX Component renders BodyL Bold correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-typography bodyL"
+    class="mia-platform-typography body bodyL"
     role="paragraph"
   >
     <strong>
@@ -16,7 +16,7 @@ exports[`BodyX Component renders BodyL Bold correctly 1`] = `
 exports[`BodyX Component renders BodyL correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-typography bodyL"
+    class="mia-platform-typography body bodyL"
     role="paragraph"
   >
     Text
@@ -27,7 +27,7 @@ exports[`BodyX Component renders BodyL correctly 1`] = `
 exports[`BodyX Component renders BodyM Bold correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-typography bodyM"
+    class="mia-platform-typography body bodyM"
     role="paragraph"
   >
     <strong>
@@ -40,7 +40,7 @@ exports[`BodyX Component renders BodyM Bold correctly 1`] = `
 exports[`BodyX Component renders BodyM correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-typography bodyM"
+    class="mia-platform-typography body bodyM"
     role="paragraph"
   >
     Text
@@ -51,7 +51,7 @@ exports[`BodyX Component renders BodyM correctly 1`] = `
 exports[`BodyX Component renders BodyS Bold correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-typography bodyS"
+    class="mia-platform-typography body bodyS"
     role="paragraph"
   >
     <strong>
@@ -64,7 +64,7 @@ exports[`BodyX Component renders BodyS Bold correctly 1`] = `
 exports[`BodyX Component renders BodyS correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-typography bodyS"
+    class="mia-platform-typography body bodyS"
     role="paragraph"
   >
     Text
@@ -75,7 +75,7 @@ exports[`BodyX Component renders BodyS correctly 1`] = `
 exports[`BodyX Component renders copyable correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-typography bodyS"
+    class="mia-platform-typography body bodyS"
     role="paragraph"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
@@ -121,7 +121,7 @@ Ut in feugiat nunc, in eleifend ex.
 exports[`BodyX Component renders custom copyable correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-typography bodyS"
+    class="mia-platform-typography body bodyS"
     role="paragraph"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
@@ -185,7 +185,7 @@ Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
 Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
 Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
 Ut in feugiat nunc, in eleifend ex."
-    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line bodyS"
+    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line body bodyS"
     role="paragraph"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.

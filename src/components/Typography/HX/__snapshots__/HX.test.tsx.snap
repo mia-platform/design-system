@@ -4,7 +4,7 @@ exports[`HX Component renders H1 correctly 1`] = `
 <DocumentFragment>
   <h1
     aria-label="Text"
-    class="mia-platform-typography"
+    class="mia-platform-typography h"
     role="h1"
   >
     Text
@@ -16,7 +16,7 @@ exports[`HX Component renders H2 correctly 1`] = `
 <DocumentFragment>
   <h2
     aria-label="Text"
-    class="mia-platform-typography"
+    class="mia-platform-typography h"
     role="h2"
   >
     Text
@@ -28,7 +28,7 @@ exports[`HX Component renders H3 correctly 1`] = `
 <DocumentFragment>
   <h3
     aria-label="Text"
-    class="mia-platform-typography"
+    class="mia-platform-typography h"
     role="h3"
   >
     Text
@@ -40,7 +40,7 @@ exports[`HX Component renders H4 correctly 1`] = `
 <DocumentFragment>
   <h4
     aria-label="Text"
-    class="mia-platform-typography"
+    class="mia-platform-typography h"
     role="h4"
   >
     Text
@@ -60,7 +60,7 @@ Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
 Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
 Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
 Ut in feugiat nunc, in eleifend ex."
-    class="mia-platform-typography"
+    class="mia-platform-typography h"
     role="h1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
@@ -115,7 +115,7 @@ Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
 Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
 Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
 Ut in feugiat nunc, in eleifend ex."
-    class="mia-platform-typography"
+    class="mia-platform-typography h"
     role="h1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
@@ -179,7 +179,7 @@ Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
 Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
 Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
 Ut in feugiat nunc, in eleifend ex."
-    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line"
+    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line h"
     role="h1"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.

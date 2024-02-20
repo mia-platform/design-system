@@ -21,8 +21,11 @@ import { ReactElement } from 'react'
 
 import { HXLevel } from './HX.types'
 import { HXProps } from './HX.props'
+import styles from './HX.module.css'
 
 const { Title: AntTitle } = AntTypography
+
+const { h } = styles
 
 /**
  * UI component for displaying headers (H1, H2, H3, H4).
@@ -40,6 +43,7 @@ export const HX = ({
   return (
     <AntTitle
       aria-label={typeof children === 'string' ? children : ''}
+      className={h}
       copyable={copyable}
       ellipsis={ellipsis}
       level={level}

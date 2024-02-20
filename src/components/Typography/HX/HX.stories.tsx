@@ -64,12 +64,12 @@ export const All = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.H1 {...args}>{'H1'}</Typography.H1>
       <Typography.H2 {...args}>{'H2'}</Typography.H2>
       <Typography.H3 {...args}>{'H3'}</Typography.H3>
       <Typography.H4 {...args}>{'H4'}</Typography.H4>
-    </>
+    </div>
   ),
 }
 
@@ -94,12 +94,12 @@ export const WithEllipsisWithTooltip = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.H1 {...args} ellipsis={h1EllipsisWithTooltip}>{h1LongText}</Typography.H1>
       <Typography.H2 {...args} ellipsis={h2EllipsisWithTooltip}>{h2LongText}</Typography.H2>
       <Typography.H3 {...args} ellipsis={h3EllipsisWithTooltip}>{h3LongText}</Typography.H3>
       <Typography.H4 {...args} ellipsis={h4EllipsisWithTooltip}>{h4LongText}</Typography.H4>
-    </>
+    </div>
   ),
 }
 
@@ -109,12 +109,12 @@ export const WithEllipsisCustom = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.H1 {...args}>{h1LongText}</Typography.H1>
       <Typography.H2 {...args}>{h2LongText}</Typography.H2>
       <Typography.H3 {...args}>{h3LongText}</Typography.H3>
       <Typography.H4 {...args}>{h4LongText}</Typography.H4>
-    </>
+    </div>
   ),
 }
 
@@ -124,12 +124,12 @@ export const Copyable = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.H1 {...args}>{'H1'}</Typography.H1>
       <Typography.H2 {...args}>{'H2'}</Typography.H2>
       <Typography.H3 {...args}>{'H3'}</Typography.H3>
       <Typography.H4 {...args}>{'H4'}</Typography.H4>
-    </>
+    </div>
   ),
 }
 
@@ -139,11 +139,11 @@ export const CopyableCustom = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.H1 {...args}>{'H1'}</Typography.H1>
       <Typography.H2 {...args}>{'H2'}</Typography.H2>
       <Typography.H3 {...args}>{'H3'}</Typography.H3>
       <Typography.H4 {...args}>{'H4'}</Typography.H4>
-    </>
+    </div>
   ),
 }

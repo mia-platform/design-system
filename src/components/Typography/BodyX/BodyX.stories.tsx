@@ -73,14 +73,14 @@ export const All = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.BodyS {...args}>{'BodyS'}</Typography.BodyS>
       <Typography.BodyS {...args} isBold>{'BodyS Bold'}</Typography.BodyS>
       <Typography.BodyM {...args}>{'BodyM'}</Typography.BodyM>
       <Typography.BodyM {...args} isBold>{'BodyM Bold'}</Typography.BodyM>
       <Typography.BodyL {...args}>{'BodyL'}</Typography.BodyL>
       <Typography.BodyL {...args} isBold>{'BodyL Bold'}</Typography.BodyL>
-    </>
+    </div>
   ),
 }
 
@@ -113,14 +113,14 @@ export const WithEllipsisWithTooltip = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.BodyS {...args} ellipsis={bodySEllipsisWithTooltip}>{bodySLongText}</Typography.BodyS>
       <Typography.BodyS {...args} ellipsis={bodySBoldEllipsisWithTooltip} isBold>{bodySBoldLongText}</Typography.BodyS>
       <Typography.BodyM {...args} ellipsis={bodyMEllipsisWithTooltip}>{bodyMLongText}</Typography.BodyM>
       <Typography.BodyM {...args} ellipsis={bodyMBoldEllipsisWithTooltip} isBold>{bodyMBoldLongText}</Typography.BodyM>
       <Typography.BodyL {...args} ellipsis={bodyLEllipsisWithTooltip}>{bodyLLongText}</Typography.BodyL>
       <Typography.BodyL {...args} ellipsis={bodyLBoldEllipsisWithTooltip} isBold>{bodyLBoldLongText}</Typography.BodyL>
-    </>
+    </div>
   ),
 }
 
@@ -130,14 +130,14 @@ export const WithEllipsisCustom = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.BodyS {...args}>{bodySLongText}</Typography.BodyS>
       <Typography.BodyS {...args} isBold>{bodySBoldLongText}</Typography.BodyS>
       <Typography.BodyM {...args}>{bodyMLongText}</Typography.BodyM>
       <Typography.BodyM {...args} isBold>{bodyMBoldLongText}</Typography.BodyM>
       <Typography.BodyL {...args}>{bodyLLongText}</Typography.BodyL>
       <Typography.BodyL {...args} isBold>{bodyLBoldLongText}</Typography.BodyL>
-    </>
+    </div>
   ),
 }
 
@@ -147,14 +147,14 @@ export const Copyable = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.BodyS {...args}>{'BodyS'}</Typography.BodyS>
       <Typography.BodyS {...args} isBold>{'BodyS Bold'}</Typography.BodyS>
       <Typography.BodyM {...args}>{'BodyM'}</Typography.BodyM>
       <Typography.BodyM {...args} isBold>{'BodyM Bold'}</Typography.BodyM>
       <Typography.BodyL {...args}>{'BodyL'}</Typography.BodyL>
       <Typography.BodyL {...args} isBold>{'BodyL Bold'}</Typography.BodyL>
-    </>
+    </div>
   ),
 }
 
@@ -164,13 +164,13 @@ export const CopyableCustom = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Typography.BodyS {...args}>{'BodyS'}</Typography.BodyS>
       <Typography.BodyS {...args} isBold>{'BodyS Bold'}</Typography.BodyS>
       <Typography.BodyM {...args}>{'BodyM'}</Typography.BodyM>
       <Typography.BodyM {...args} isBold>{'BodyM Bold'}</Typography.BodyM>
       <Typography.BodyL {...args}>{'BodyL'}</Typography.BodyL>
       <Typography.BodyL {...args} isBold>{'BodyL Bold'}</Typography.BodyL>
-    </>
+    </div>
   ),
 }
