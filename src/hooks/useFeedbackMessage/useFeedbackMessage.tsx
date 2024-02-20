@@ -60,14 +60,14 @@ const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
  * manage the rendering of feedback messages.
  */
 export const useFeedbackMessage = (): MessageAPI => {
-  const open = useCallback((type: Type, props: UseFeedbackMessageProps): void => {
+  const open = useCallback((type: Type, props: UseFeedbackMessageProps): PromiseLike<boolean> => {
     const { key, duration, sticky, position, ...messageProps } = props
 
     const messageKey = position === Position.Bottom
       ? BOTTOM_MESSAGE_KEY
       : key
 
-    message.open({
+    return message.open({
       className: classnames([
         styles.feedbackMessage,
         position === Position.Bottom && styles.bottom,
