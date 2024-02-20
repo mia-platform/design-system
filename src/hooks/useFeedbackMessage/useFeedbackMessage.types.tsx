@@ -33,48 +33,48 @@ export enum Type {
 
 export type MessageAPI = {
 
-    /**
-     * Destroys the FeedbackMessage with the given key.
-     *
-     * If the key is not passed, it removes the message shown at the bottom of the page,
-     * if there is one.
-     *
-     * @param key - the key of the message to remove
-     */
-    dismiss: (key?: string) => void
+  /**
+   * Destroys the FeedbackMessage with the given key.
+   *
+   * If the key is not passed, it removes the message shown at the bottom of the page,
+   * if there is one.
+   *
+   * @param key - the key of the message to remove
+   */
+  dismiss: (key?: string) => void
 
-    /**
-     * Renders a FeedbackMessage with a spinner animation
-     *
-     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
-     */
-    loading: (props: UseFeedbackMessageProps) => void
+  /**
+   * Renders a FeedbackMessage with a spinner animation
+   *
+   * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+   */
+  loading: (props: UseFeedbackMessageProps) => void
 
-    /**
-     * Renders a FeedbackMessage with an "info" icon
-     *
-     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
-     */
-    info: (props: UseFeedbackMessageProps) => void
+  /**
+   * Renders a FeedbackMessage with an "info" icon
+   *
+   * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+   */
+  info: (props: UseFeedbackMessageProps) => void
 
-    /**
-     * Renders a FeedbackMessage with a "success" icon
-     *
-     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
-     */
-    success: (props: UseFeedbackMessageProps) => void
+  /**
+   * Renders a FeedbackMessage with a "success" icon
+   *
+   * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+   */
+  success: (props: UseFeedbackMessageProps) => void
 
-    /**
-     * Renders a FeedbackMessage with a "warning" icon
-     *
-     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
-     */
-    error: (props: UseFeedbackMessageProps) => void
+  /**
+   * Renders a FeedbackMessage with a "warning" icon
+   *
+   * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+   */
+  error: (props: UseFeedbackMessageProps) => void
 
-    /**
-     * Renders a FeedbackMessage with an "error" icon
-     *
-     * @param {UseFeedbackMessageProps} props - the configuration of the message to render
-     */
-    warning: (props: UseFeedbackMessageProps) => void
-  }
+  /**
+   * Renders a FeedbackMessage with an "error" icon
+   *
+   * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+   */
+  warning: (props: UseFeedbackMessageProps) => void
+}

@@ -16,7 +16,7 @@ exports[`Card Component renders card correctly 1`] = `
         >
           <h3
             aria-label="Card Title"
-            class="mia-platform-typography"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
             role="h3"
           >
             Card Title
@@ -106,7 +106,7 @@ exports[`Card Component renders header only 1`] = `
         >
           <h3
             aria-label="Card Title"
-            class="mia-platform-typography"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
             role="h3"
           >
             Card Title

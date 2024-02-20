@@ -32,7 +32,7 @@ describe('useFeedbackMessage', () => {
 
       return (
         <button type="button" onClick={() => info({ message })}>
-            Open
+          Open
         </button>
       )
     }
@@ -58,7 +58,7 @@ describe('useFeedbackMessage', () => {
             extra: <button type="button">Close</button>,
           })}
         >
-            Open
+          Open
         </button>
       )
     }
@@ -82,7 +82,7 @@ describe('useFeedbackMessage', () => {
           type="button"
           onClick={() => error({ message, duration: 5 })}
         >
-            Open
+          Open
         </button>
       )
     }
@@ -107,7 +107,7 @@ describe('useFeedbackMessage', () => {
 
       return (
         <button type="button" onClick={() => info({ message, sticky: true })}>
-            Open
+          Open
         </button>
       )
     }
@@ -136,7 +136,7 @@ describe('useFeedbackMessage', () => {
           type="button"
           onClick={() => loading({ key, message, extra })}
         >
-            Open
+          Open
         </button>
       )
     }
@@ -160,14 +160,16 @@ describe('useFeedbackMessage', () => {
     const Example = (): JSX.Element => {
       const { info } = useFeedbackMessage()
 
-      return <>
-        <button type="button" onClick={() => info({ message, position: Position.Bottom })}>
+      return (
+        <>
+          <button type="button" onClick={() => info({ message, position: Position.Bottom })}>
             Open message
-        </button>
-        <button type="button" onClick={() => info({ message: updatedMessage, position: Position.Bottom })}>
+          </button>
+          <button type="button" onClick={() => info({ message: updatedMessage, position: Position.Bottom })}>
             Open updated message
-        </button>
-      </>
+          </button>
+        </>
+      )
     }
 
     render(<Example />)

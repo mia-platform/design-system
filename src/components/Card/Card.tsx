@@ -63,7 +63,7 @@ export const Card = ({
         {(title || subtitle) && <div className={header}>
           <div className={heading}>
             {title && <div className={styles.title}>
-              <H3>{title}</H3>
+              <H3 ellipsis={{ rows: 1, tooltip: title }}>{title}</H3>
               {docLink && <div className={styles.docLink}>
                 <Button
                   icon={docLinkIcon}

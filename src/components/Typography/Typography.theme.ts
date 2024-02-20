@@ -49,4 +49,6 @@ export default ({ typography }: Partial<Theme>): ComponentsTheme['Typography'] =
   lineHeightHeading2: getRelativeLineHeight(typography?.h2?.lineHeight, typography?.h2?.fontSize),
   lineHeightHeading3: getRelativeLineHeight(typography?.h3?.lineHeight, typography?.h3?.fontSize),
   lineHeightHeading4: getRelativeLineHeight(typography?.h4?.lineHeight, typography?.h4?.fontSize),
+  titleMarginBottom: 0,
+  titleMarginTop: 0,
 })
