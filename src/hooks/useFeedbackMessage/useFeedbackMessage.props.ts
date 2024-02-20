@@ -30,18 +30,18 @@ export type UseFeedbackMessageProps = FeedbackMessageProps & {
    * In this case, due to the constraint of only one bottom message being shown at a time,
    * the key will be replaced with a constant value.
    */
-  key?: string
+  key?: string,
 
   /**
    * Time before the message is removed from the screen, in seconds. Default: 3.
    */
-  duration?: number
+  duration?: number,
 
   /**
    * If set to `true`, the message will not disappear automatically, but must be removed via `dismiss`
    * method of the hook, or by replacing it with another message with the same key.
    */
-  sticky?: boolean
+  sticky?: boolean,
 
   /**
    * Position of the message. Either one of the following:
@@ -50,5 +50,5 @@ export type UseFeedbackMessageProps = FeedbackMessageProps & {
    * - "bottom": feedback message placed at the bottom of the page. Bottom messages are unique,
    *   meaning that no more than one can be shown at a time.
    */
-  position?: Position
+  position?: Position,
 }

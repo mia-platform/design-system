@@ -41,40 +41,40 @@ export type MessageAPI = {
    *
    * @param key - the key of the message to remove
    */
-  dismiss: (key?: string) => void
+  dismiss: (key?: string) => void,
 
   /**
    * Renders a FeedbackMessage with a spinner animation
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    */
-  loading: (props: UseFeedbackMessageProps) => void
+  loading: (props: UseFeedbackMessageProps) => void,
 
   /**
    * Renders a FeedbackMessage with an "info" icon
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    */
-  info: (props: UseFeedbackMessageProps) => void
+  info: (props: UseFeedbackMessageProps) => void,
 
   /**
    * Renders a FeedbackMessage with a "success" icon
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    */
-  success: (props: UseFeedbackMessageProps) => void
+  success: (props: UseFeedbackMessageProps) => void,
 
   /**
    * Renders a FeedbackMessage with a "warning" icon
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    */
-  error: (props: UseFeedbackMessageProps) => void
+  error: (props: UseFeedbackMessageProps) => void,
 
   /**
    * Renders a FeedbackMessage with an "error" icon
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    */
-  warning: (props: UseFeedbackMessageProps) => void
+  warning: (props: UseFeedbackMessageProps) => void,
 }
