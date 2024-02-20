@@ -21,34 +21,34 @@ import { Position } from './useFeedbackMessage.types'
 
 export type UseFeedbackMessageProps = FeedbackMessageProps & {
 
-    /**
-     * Key of the message. This will be used as an identifier, in case of manual dismission of a message.
-     * Moreover, if this key is the same as the one of a message still rendered, the rendered message will
-     * be replaced with this one.
-     *
-     * Please note that the key will be ignored if position is set to bottom.
-     * In this case, due to the constraint of only one bottom message being shown at a time,
-     * the key will be replaced with a constant value.
-     */
-    key?: string
+  /**
+   * Key of the message. This will be used as an identifier, in case of manual dismission of a message.
+   * Moreover, if this key is the same as the one of a message still rendered, the rendered message will
+   * be replaced with this one.
+   *
+   * Please note that the key will be ignored if position is set to bottom.
+   * In this case, due to the constraint of only one bottom message being shown at a time,
+   * the key will be replaced with a constant value.
+   */
+  key?: string
 
-    /**
-     * Time before the message is removed from the screen, in seconds. Default: 3.
-     */
-    duration?: number
+  /**
+   * Time before the message is removed from the screen, in seconds. Default: 3.
+   */
+  duration?: number
 
-    /**
-     * If set to `true`, the message will not disappear automatically, but must be removed via `dismiss`
-     * method of the hook, or by replacing it with another message with the same key.
-     */
-    sticky?: boolean
+  /**
+   * If set to `true`, the message will not disappear automatically, but must be removed via `dismiss`
+   * method of the hook, or by replacing it with another message with the same key.
+   */
+  sticky?: boolean
 
-    /**
-     * Position of the message. Either one of the following:
-     *
-     * - "top": feedback message placed at the top of the page;
-     * - "bottom": feedback message placed at the bottom of the page. Bottom messages are unique,
-     *   meaning that no more than one can be shown at a time.
-     */
-    position?: Position
-  }
+  /**
+   * Position of the message. Either one of the following:
+   *
+   * - "top": feedback message placed at the top of the page;
+   * - "bottom": feedback message placed at the bottom of the page. Bottom messages are unique,
+   *   meaning that no more than one can be shown at a time.
+   */
+  position?: Position
+}
