@@ -18,7 +18,7 @@
 
 /* eslint-disable react/no-multi-comp */
 
-import { act, fireEvent, render, screen } from '../../test-utils'
+import { act, fireEvent, render, screen, waitFor } from '../../test-utils'
 import { Position } from './useFeedbackMessage.types'
 import { useFeedbackMessage } from './useFeedbackMessage'
 
@@ -69,6 +69,29 @@ describe('useFeedbackMessage', () => {
     expect(await screen.findByRole('img', { name: 'check-circle' })).toBeVisible()
     expect(screen.getByText(message)).toBeVisible()
     expect(screen.getByRole('button', { name: 'Close' })).toBeVisible()
+  })
+
+  test('useFeedbackMessage methods return a Promise', async() => {
+    const afterCloseMockFn = jest.fn()
+
+    const Example = (): JSX.Element => {
+      const { info } = useFeedbackMessage()
+
+      const onClick = (): void => {
+        info(
+          { message: 'This is a feedback message', duration: 0.1 }
+        ).then(() => { afterCloseMockFn() })
+      }
+
+      return <button type="button" onClick={onClick}>Open</button>
+    }
+
+    render(<Example />)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }))
+
+    act(() => jest.advanceTimersByTime(101))
+    await waitFor(() => { expect(afterCloseMockFn).toHaveBeenCalledTimes(1) })
   })
 
   test('FeedbackMessage disappears after 5 seconds', async() => {

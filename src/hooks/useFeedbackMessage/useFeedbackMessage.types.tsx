@@ -47,34 +47,39 @@ export type MessageAPI = {
      * Renders a FeedbackMessage with a spinner animation
      *
      * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+     * @returns {PromiseLike<boolean>} a promise that the message has disappeared
      */
-    loading: (props: UseFeedbackMessageProps) => void
+    loading: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
 
     /**
      * Renders a FeedbackMessage with an "info" icon
      *
      * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+     * @returns {PromiseLike<boolean>} a promise that the message has disappeared
      */
-    info: (props: UseFeedbackMessageProps) => void
+    info: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
 
     /**
      * Renders a FeedbackMessage with a "success" icon
      *
      * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+     * @returns {PromiseLike<boolean>} a promise that the message has disappeared
      */
-    success: (props: UseFeedbackMessageProps) => void
+    success: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
 
     /**
      * Renders a FeedbackMessage with a "warning" icon
      *
      * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+     * @returns {PromiseLike<boolean>} a promise that the message has disappeared
      */
-    error: (props: UseFeedbackMessageProps) => void
+    error: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
 
     /**
      * Renders a FeedbackMessage with an "error" icon
      *
      * @param {UseFeedbackMessageProps} props - the configuration of the message to render
+     * @returns {PromiseLike<boolean>} a promise that the message has disappeared
      */
-    warning: (props: UseFeedbackMessageProps) => void
+    warning: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
   }
