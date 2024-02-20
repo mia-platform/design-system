@@ -46,6 +46,12 @@ export const customCopyable = {
   tooltips: ['Copy to clipboard!', 'Copied to clipboard!'],
 }
 
+export const displayAll = {
+  display: 'flex',
+  flexDirection: 'column' as const,
+  gap: 16,
+}
+
 /* Create an ad-hoc utils file in case it is used by components outside Typography */
 export const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel dolor ac sem congue ornare rhoncus quis tortor.
 Vivamus hendrerit sed nisl eget gravida. Nunc dolor elit, condimentum non ante vitae, ullamcorper dignissim dolor.

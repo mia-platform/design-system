@@ -26,7 +26,7 @@ import styles from './BodyX.module.css'
 
 const { Paragraph: AntParagraph } = AntTypography
 
-const { body, bodyS, bodyM, bodyL } = styles
+const { bodyS, bodyM, bodyL } = styles
 
 const { S, M, L } = Size
 
@@ -44,7 +44,6 @@ export const BodyX = ({
   size,
 }: BodyXProps & BodyXSize): ReactElement => {
   const bodyClassName = useMemo(() => classnames([
-    body,
     size === S && bodyS,
     size === M && bodyM,
     size === L && bodyL,

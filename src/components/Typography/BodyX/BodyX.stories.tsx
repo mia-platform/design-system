@@ -18,7 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { customCopyable, customEllipsis, fontUrl, loremIpsum } from '../Typography.mocks'
+import { customCopyable, customEllipsis, displayAll, fontUrl, loremIpsum } from '../Typography.mocks'
 import { BodyX } from './BodyX'
 import { Size } from './BodyX.types'
 import { Typography } from '..'
@@ -73,7 +73,7 @@ export const All = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <div style={displayAll}>
       <Typography.BodyS {...args}>{'BodyS'}</Typography.BodyS>
       <Typography.BodyS {...args} isBold>{'BodyS Bold'}</Typography.BodyS>
       <Typography.BodyM {...args}>{'BodyM'}</Typography.BodyM>
@@ -113,7 +113,7 @@ export const WithEllipsisWithTooltip = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <div style={displayAll}>
       <Typography.BodyS {...args} ellipsis={bodySEllipsisWithTooltip}>{bodySLongText}</Typography.BodyS>
       <Typography.BodyS {...args} ellipsis={bodySBoldEllipsisWithTooltip} isBold>{bodySBoldLongText}</Typography.BodyS>
       <Typography.BodyM {...args} ellipsis={bodyMEllipsisWithTooltip}>{bodyMLongText}</Typography.BodyM>
@@ -130,7 +130,7 @@ export const WithEllipsisCustom = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <div style={displayAll}>
       <Typography.BodyS {...args}>{bodySLongText}</Typography.BodyS>
       <Typography.BodyS {...args} isBold>{bodySBoldLongText}</Typography.BodyS>
       <Typography.BodyM {...args}>{bodyMLongText}</Typography.BodyM>
@@ -147,7 +147,7 @@ export const Copyable = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <div style={displayAll}>
       <Typography.BodyS {...args}>{'BodyS'}</Typography.BodyS>
       <Typography.BodyS {...args} isBold>{'BodyS Bold'}</Typography.BodyS>
       <Typography.BodyM {...args}>{'BodyM'}</Typography.BodyM>
@@ -164,7 +164,7 @@ export const CopyableCustom = {
     children: { table: { disable: true } },
   },
   render: (args: object) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <div style={displayAll}>
       <Typography.BodyS {...args}>{'BodyS'}</Typography.BodyS>
       <Typography.BodyS {...args} isBold>{'BodyS Bold'}</Typography.BodyS>
       <Typography.BodyM {...args}>{'BodyM'}</Typography.BodyM>
