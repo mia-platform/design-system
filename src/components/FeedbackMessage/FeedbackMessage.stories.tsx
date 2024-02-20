@@ -49,35 +49,35 @@ export const FeedbackMessages: Story = {
           icon={<Icon color="blue" name="PiInfo" size={16} />}
           onClick={() => info({ message })}
         >
-Info
+          Info
         </Button>
         <Button
           hierarchy={Hierarchy.Neutral}
           icon={<Icon color="green" name="PiCheck" size={16} />}
           onClick={() => success({ message })}
         >
-Success
+          Success
         </Button>
         <Button
           hierarchy={Hierarchy.Neutral}
           icon={<Icon name="PiSpinner" size={16} />}
           onClick={() => loading({ message })}
         >
-Loading
+          Loading
         </Button>
         <Button
           hierarchy={Hierarchy.Neutral}
           icon={<Icon color="orange" name="PiWarning" size={16} />}
           onClick={() => warning({ message })}
         >
-Warning
+          Warning
         </Button>
         <Button
           hierarchy={Hierarchy.Neutral}
           icon={<Icon color="red" name="PiXCircle" size={16} />}
           onClick={() => error({ message })}
         >
-Error
+          Error
         </Button>
       </div >
     )
@@ -117,13 +117,13 @@ export const FeedbackMessageAtTheBottomOfThePage: Story = {
           hierarchy={Hierarchy.Neutral}
           onClick={() => info({ message, position: Position.Bottom, duration: 10 })}
         >
-Open
+          Open
         </Button>
         <Button
           hierarchy={Hierarchy.Neutral}
           onClick={() => dismiss()}
         >
-Dismiss
+          Dismiss
         </Button>
       </div>
     )

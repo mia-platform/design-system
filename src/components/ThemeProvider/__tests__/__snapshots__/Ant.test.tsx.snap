@@ -48,6 +48,8 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "lineHeightHeading2": 1.6,
       "lineHeightHeading3": 1.3333333333333333,
       "lineHeightHeading4": 1.5,
+      "titleMarginBottom": 0,
+      "titleMarginTop": 0,
     },
   },
   "token": {
@@ -117,6 +119,8 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "lineHeightHeading2": undefined,
       "lineHeightHeading3": undefined,
       "lineHeightHeading4": undefined,
+      "titleMarginBottom": 0,
+      "titleMarginTop": 0,
     },
   },
   "token": {
@@ -186,6 +190,8 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "lineHeightHeading2": 1.6,
       "lineHeightHeading3": 1.3333333333333333,
       "lineHeightHeading4": 1.5,
+      "titleMarginBottom": 0,
+      "titleMarginTop": 0,
     },
   },
   "token": {

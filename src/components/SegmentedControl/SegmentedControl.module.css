@@ -28,7 +28,7 @@
   gap: 2px; /* does not change with theme */
   padding: 2px; /* does not change with theme */
   border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
-  background-color:  var(--palette-background-neutral-100, #e5e5e5);
+  background-color: var(--palette-background-neutral-100, #e5e5e5);
   font-family: var(--typography-caption-fontFamily, Inter);
   font-weight: var(--typography-caption-fontWeight, 400);
   font-size: calc(var(--typography-caption-fontSize, 12) * 1px);
