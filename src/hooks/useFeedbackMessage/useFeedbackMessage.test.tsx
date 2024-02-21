@@ -20,7 +20,7 @@
 
 import { act, fireEvent, render, screen } from '../../test-utils'
 import { Position } from './useFeedbackMessage.types'
-import { useFeedbackMessage } from './useFeedbackMessage'
+import { useFeedbackMessage } from '.'
 
 jest.useFakeTimers()
 
@@ -72,7 +72,7 @@ describe('useFeedbackMessage', () => {
   })
 
   test('FeedbackMessage disappears after 5 seconds', async() => {
-    const message = 'This is a Feedback Message that disappear after five seconds'
+    const message = 'This is a Feedback Message that disappears after five seconds'
 
     const Example = (): JSX.Element => {
       const { error } = useFeedbackMessage()
