@@ -2790,7 +2790,7 @@ __metadata:
     ts-jest: ^29.1.2
     typescript: ^5.3.3
     vite: ^4.5.2
-    vite-plugin-dts: ^3.7.2
+    vite-plugin-dts: ^3.7.3
     vite-plugin-svgr: ^4.2.0
     vite-tsconfig-paths: ^4.3.1
   peerDependencies:
@@ -15677,9 +15677,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:^3.7.2":
-  version: 3.7.2
-  resolution: "vite-plugin-dts@npm:3.7.2"
+"vite-plugin-dts@npm:^3.7.3":
+  version: 3.7.3
+  resolution: "vite-plugin-dts@npm:3.7.3"
   dependencies:
     "@microsoft/api-extractor": 7.39.0
     "@rollup/pluginutils": ^5.1.0
@@ -15693,7 +15693,7 @@ __metadata:
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: ee9cc1d4a63f6ab7d1b34df3113c74ef73181e76e2831134f7118257e01e703f4341c29d855133a516d55bad45b7c52b47c897377a7e894b0393fb34efc5d5b1
+  checksum: 24b977d397f43da63f763d311060975534c2be4b58bd18e5b76ff6cdffd729abd894320de9620aeb567c5c90deceb2cca551453edc8072548205888d87dae9bb
   languageName: node
   linkType: hard
 
