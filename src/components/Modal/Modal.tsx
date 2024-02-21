@@ -38,6 +38,8 @@ const {
   asideLabelWrapper,
   body,
   bodyFullWidth,
+  bodyWithAsideClosed,
+  bodyWithAsideOpened,
   content,
   contentWrapper,
   footerButtons,
@@ -74,6 +76,9 @@ export const Modal = ({
 
   const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])
 
+  const [isAsideOpen, setIsAsideOpen] = useState(false)
+  const hasAside = size !== Small && aside
+
   const modalClassNames = useMemo(() => classNames([
     modal,
     size === Small && modalSm,
@@ -83,13 +88,12 @@ export const Modal = ({
   const modalBodyClassNames = useMemo(() => classNames([
     body,
     isBodyFullWidth && bodyFullWidth,
-  ]), [isBodyFullWidth])
+    hasAside && (isAsideOpen ? bodyWithAsideOpened : bodyWithAsideClosed),
+  ]), [hasAside, isAsideOpen, isBodyFullWidth])
   const modalContentWrapperClassNames = useMemo(() => classNames([
     content,
     size !== Small && aside && contentWrapper,
   ]), [aside, size])
-
-  const [isAsideOpen, setIsAsideOpen] = useState(false)
 
   const modalTitle = useMemo(() => (
     <div className={styles.title}>
@@ -122,7 +126,7 @@ export const Modal = ({
   }, [footer])
 
   const modalContent = useMemo(() => {
-    if (size !== Small && aside) {
+    if (hasAside) {
       const {
         children: extChildren,
         isFixed,
@@ -174,7 +178,7 @@ export const Modal = ({
             </div>
             {modalAsideLabel}
           </div>
-          {isAsideOpen && modalAside}
+          {modalAside}
         </>
       )
     }
@@ -184,7 +188,7 @@ export const Modal = ({
         {children}
       </div>
     )
-  }, [aside, children, isAsideOpen, modalContentWrapperClassNames, size])
+  }, [aside, children, hasAside, isAsideOpen, modalContentWrapperClassNames])
 
   return (
     <AntModal
