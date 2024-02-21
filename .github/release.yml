@@ -18,6 +18,9 @@ changelog:
     - title: Security Fixes 🔐
       labels:
         - security
+    - title: Refactor 💅
+      labels:
+        - refactor
     - title: Other Changes
       labels:
         - "*"
