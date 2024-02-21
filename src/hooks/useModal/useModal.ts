@@ -20,12 +20,18 @@ import { useCallback, useState } from 'react'
 
 import { ModalAPI } from './useModal.types'
 
+/**
+ * A hook that allows the use of Modal components.
+ *
+ * @returns {ModalAPI} An object which includes the state of the modal (visible or hidden) and methods
+ * for opening, closing, and changing the state of the modal.
+ */
 export const useModal = (): ModalAPI => {
   const [isModalVisible, setIsModalVisible] = useState(false)
 
-  const openModal = useCallback(() => setIsModalVisible(true), [setIsModalVisible])
-  const closeModal = useCallback(() => setIsModalVisible(false), [setIsModalVisible])
-  const changeModalStatus = useCallback(() => setIsModalVisible(!isModalVisible), [setIsModalVisible, isModalVisible])
+  const openModal = useCallback(() => setIsModalVisible(true), [])
+  const closeModal = useCallback(() => setIsModalVisible(false), [])
+  const changeModalStatus = useCallback(() => setIsModalVisible(!isModalVisible), [isModalVisible])
 
   return { isModalVisible, openModal, closeModal, changeModalStatus }
 }

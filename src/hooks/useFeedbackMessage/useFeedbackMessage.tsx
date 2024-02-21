@@ -56,8 +56,7 @@ const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
  *   )
  * }
  *
- * @returns {MessageAPI} An object which includes several functions to
- * manage the rendering of feedback messages.
+ * @returns {MessageAPI} An object which includes several functions to manage the rendering of feedback messages.
  */
 export const useFeedbackMessage = (): MessageAPI => {
   const open = useCallback((type: Type, props: UseFeedbackMessageProps): void => {

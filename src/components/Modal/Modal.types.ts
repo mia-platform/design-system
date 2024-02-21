@@ -26,21 +26,41 @@ export enum Size {
 
 export type Extension = {
 
+  /**
+   * The children nodes to be rendered within the modal extension context.
+   */
   children?: ReactNode,
 
+  /**
+   * Whether the modal extension is fixed or can be opened and closed by a dedicated button.
+   */
   isFixed?: boolean,
 
+  /**
+   * Label to be applied to the extension close button (if the extension is not fixed).
+   */
   labelClose?: string,
 
+  /**
+   * Label to be applied to the extension open button (if the extension is not fixed).
+   */
   labelOpen?: string,
 
+  /**
+   * Title of the modal extension, which briefly conveys information about its contents.
+   */
   title?: ReactNode,
 }
 
 export type Footer = {
 
-  // TODO: documentare il fatto che ci andrebbero dei button
+  /**
+   * Array of buttons to be displayed in the right side of the footer.
+   */
   buttons?: ReactNode[],
 
+  /**
+   * Extra information to be displayed in the left side of the footer (such as text or checkbox).
+   */
   extra?: ReactNode,
 }

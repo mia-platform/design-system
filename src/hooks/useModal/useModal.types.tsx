@@ -18,11 +18,24 @@
 
 export type ModalAPI = {
 
+  /**
+   * Whether the modal is visible.
+   */
   isModalVisible: boolean,
 
+  /**
+   * Modal opening function, which makes the modal visible.
+   */
   openModal: () => void,
 
+  /**
+   * Modal closing function, which hides the modal. This function will need to be forwarded to the modal
+   * via the `onCloseClick` prop to ensure the effective closure of the modal.
+   */
   closeModal: () => void,
 
+  /**
+   * Modal status change function, which opens the modal if it is closed or closes the modal if it is opened.
+   */
   changeModalStatus: () => void,
 }

@@ -20,7 +20,7 @@ import { ReactElement, useCallback, useMemo, useState } from 'react'
 import { Modal as AntModal } from 'antd'
 import classNames from 'classnames'
 
-import { IconPosition, Shape, Type } from '../Button/Button.types'
+import { Shape, Type } from '../Button/Button.types'
 import { BodyM } from '../Typography/BodyX/BodyM'
 import { Button } from '../Button'
 import { H4 } from '../Typography/HX/H4'
@@ -30,7 +30,6 @@ import { Size } from './Modal.types'
 import styles from './Modal.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-const { Left, Right } = IconPosition
 const { Circle } = Shape
 const { Ghost } = Type
 const { Small, Large, FullScreen } = Size
@@ -40,6 +39,7 @@ const {
   content,
   contentWrapper,
   extensionLabel,
+  extensionLabelWrapper,
   footerButtons,
   modal,
   modalSm,
@@ -48,7 +48,8 @@ const {
 } = styles
 
 /**
- *
+ * Modal dialog that opens in overlay and allows to perform flows of actions, or to show specific
+ * but less relevant information than those displayed on the underlying page.
  *
  * @link https://ant.design/components/modal
  * @returns {Modal} Modal component
@@ -73,26 +74,20 @@ export const Modal = ({
 
   const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])
 
-  const modalClassNames = useMemo(() => classNames(
-    [
-      modal,
-      size === Small && modalSm,
-      size === Large && modalLg,
-      size === FullScreen && modalFs,
-    ]
-  ), [size])
-  const modalBodyClassNames = useMemo(() => classNames(
-    [
-      body,
-      isBodyFullWidth && bodyFullWidth,
-    ]
-  ), [isBodyFullWidth])
-  const modalContentWrapperClassNames = useMemo(() => classNames(
-    [
-      content,
-      size !== Small && extension && contentWrapper,
-    ]
-  ), [extension, size])
+  const modalClassNames = useMemo(() => classNames([
+    modal,
+    size === Small && modalSm,
+    size === Large && modalLg,
+    size === FullScreen && modalFs,
+  ]), [size])
+  const modalBodyClassNames = useMemo(() => classNames([
+    body,
+    isBodyFullWidth && bodyFullWidth,
+  ]), [isBodyFullWidth])
+  const modalContentWrapperClassNames = useMemo(() => classNames([
+    content,
+    size !== Small && extension && contentWrapper,
+  ]), [extension, size])
 
   const [isExtensionOpen, setIsExtensionOpen] = useState(false)
 
@@ -157,15 +152,17 @@ export const Modal = ({
       const changeExtensionStatus = (): void => setIsExtensionOpen(!isExtensionOpen)
 
       const modalExtensionLabel = (
-        <div className={extensionLabel}>
-          <Button
-            icon={<Icon color="currentColor" name={isExtensionOpen ? 'PiCaretLeft' : 'PiCaretRight'} size={16} />}
-            iconPosition={isExtensionOpen ? Left : Right}
-            type={Ghost}
-            onClick={changeExtensionStatus}
-          >
-            {isExtensionOpen ? labelClose : labelOpen}
-          </Button>
+        <div className={extensionLabelWrapper}>
+          <div className={extensionLabel} onClick={changeExtensionStatus}>
+            {isExtensionOpen && <>
+              <Icon color="currentColor" name="PiCaretLeft" size={16} />
+              {labelClose}
+            </>}
+            {!isExtensionOpen && <>
+              {labelOpen}
+              <Icon color="currentColor" name="PiCaretRight" size={16} />
+            </>}
+          </div>
         </div>
       )
 

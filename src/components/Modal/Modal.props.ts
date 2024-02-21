@@ -16,11 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/* eslint-disable max-len */
+
 import { ReactNode } from 'react'
 
 import { Extension, Footer, Size } from './Modal.types'
 
 export type ModalProps = {
+
+  /**
+   * The children nodes to be rendered within the modal context.
+   */
   children?: ReactNode,
 
   /**
@@ -29,16 +35,46 @@ export type ModalProps = {
    */
   docLink?: string,
 
+  /**
+   * Extension of the modal to be shown to the right of the content (occupies 35% of the width of the modal body).
+   *
+   * extension `object`:
+   *   - children: The children nodes to be rendered within the modal extension context. <br> `ReactNode`
+   *   - isFixed: Whether the modal extension is fixed or can be opened and closed by a dedicated button. <br> `boolean`
+   *   - labelClose: Label to be applied to the extension close button (if the extension is not fixed). <br> `string`
+   *   - labelOpen: Label to be applied to the extension open button (if the extension is not fixed). <br> `string`
+   *   - title: Title of the modal extension, which briefly conveys information about its contents. <br> `ReactNode`
+   */
   extension?: Extension,
 
+  /**
+   * Modal footer. If not passed by the user, an empty footer is displayed.
+   *
+   * footer `object`:
+   *   - buttons: Array of buttons to be displayed in the right side of the footer. <br> `ReactNode[]`
+   *   - extra: Extra information to be displayed in the left side of the footer (such as text or checkbox). <br> `ReactNode`
+   */
   footer?: Footer,
 
+  /**
+   * Whether the modal body (which includes content and possibly extension) should occupy the full width of the modal.
+   */
   isBodyFullWidth?: boolean,
 
+  /**
+   * Whether the modal is closable (via X button in the upper right corner or ESC key).
+   */
   isClosable?: boolean,
 
+  /**
+   * Whether the modal is visible.
+   */
   isVisible?: boolean,
 
+  /**
+   * Function performed at the click of the modal close (X) button. Typically one of the actions performed by
+   * this function will be the `closeModal` of the `useModal` hook to ensure the effective closure of the modal.
+   */
   onCloseClick?: () => void,
 
   /**
