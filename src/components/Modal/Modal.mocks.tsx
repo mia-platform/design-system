@@ -74,17 +74,17 @@ Ut in feugiat nunc, in eleifend ex.`}
   </>
 )
 
-export const extensionFixed = {
-  children: <div>Modal Extension Content</div>,
+export const asideFixed = {
+  children: <div>Modal Aside Content</div>,
   isFixed: true,
-  title: 'Modal Extension Title',
+  title: 'Modal Aside Title',
 }
 
-export const extensionOpenable = {
-  children: <div>Modal Extension Content</div>,
+export const asideOpenable = {
+  children: <div>Modal Aside Content</div>,
   labelClose: 'Close',
   labelOpen: 'Open',
-  title: 'Modal Extension Title',
+  title: 'Modal Aside Title',
 }
 
 export const footer = {

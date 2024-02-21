@@ -34,12 +34,12 @@ const { Circle } = Shape
 const { Ghost } = Type
 const { Small, Large, FullScreen } = Size
 const {
+  asideLabel,
+  asideLabelWrapper,
   body,
   bodyFullWidth,
   content,
   contentWrapper,
-  extensionLabel,
-  extensionLabelWrapper,
   footerButtons,
   modal,
   modalSm,
@@ -55,9 +55,9 @@ const {
  * @returns {Modal} Modal component
  */
 export const Modal = ({
+  aside,
   children,
   docLink,
-  extension,
   footer,
   isBodyFullWidth,
   isClosable,
@@ -86,10 +86,10 @@ export const Modal = ({
   ]), [isBodyFullWidth])
   const modalContentWrapperClassNames = useMemo(() => classNames([
     content,
-    size !== Small && extension && contentWrapper,
-  ]), [extension, size])
+    size !== Small && aside && contentWrapper,
+  ]), [aside, size])
 
-  const [isExtensionOpen, setIsExtensionOpen] = useState(false)
+  const [isAsideOpen, setIsAsideOpen] = useState(false)
 
   const modalTitle = useMemo(() => (
     <div className={styles.title}>
@@ -122,20 +122,20 @@ export const Modal = ({
   }, [footer])
 
   const modalContent = useMemo(() => {
-    if (size !== Small && extension) {
+    if (size !== Small && aside) {
       const {
         children: extChildren,
         isFixed,
         labelClose,
         labelOpen,
         title: extTitle,
-      } = extension || {}
+      } = aside || {}
 
-      const modalExtension = (
-        <div className={styles.extension}>
+      const modalAside = (
+        <aside className={styles.aside}>
           <BodyM>{extTitle}</BodyM>
           {extChildren}
-        </div>
+        </aside>
       )
 
       if (isFixed) {
@@ -144,21 +144,21 @@ export const Modal = ({
             <div className={content}>
               {children}
             </div>
-            {modalExtension}
+            {modalAside}
           </>
         )
       }
 
-      const changeExtensionStatus = (): void => setIsExtensionOpen(!isExtensionOpen)
+      const changeAsideStatus = (): void => setIsAsideOpen(prevState => !prevState)
 
-      const modalExtensionLabel = (
-        <div className={extensionLabelWrapper}>
-          <div className={extensionLabel} onClick={changeExtensionStatus}>
-            {isExtensionOpen && <>
+      const modalAsideLabel = (
+        <div className={asideLabelWrapper}>
+          <div className={asideLabel} onClick={changeAsideStatus}>
+            {isAsideOpen && <>
               <Icon color="currentColor" name="PiCaretLeft" size={16} />
               {labelClose}
             </>}
-            {!isExtensionOpen && <>
+            {!isAsideOpen && <>
               {labelOpen}
               <Icon color="currentColor" name="PiCaretRight" size={16} />
             </>}
@@ -172,9 +172,9 @@ export const Modal = ({
             <div className={content}>
               {children}
             </div>
-            {modalExtensionLabel}
+            {modalAsideLabel}
           </div>
-          {isExtensionOpen && modalExtension}
+          {isAsideOpen && modalAside}
         </>
       )
     }
@@ -184,7 +184,7 @@ export const Modal = ({
         {children}
       </div>
     )
-  }, [children, extension, isExtensionOpen, modalContentWrapperClassNames, size])
+  }, [aside, children, isAsideOpen, modalContentWrapperClassNames, size])
 
   return (
     <AntModal

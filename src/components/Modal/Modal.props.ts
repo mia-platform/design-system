@@ -20,7 +20,7 @@
 
 import { ReactNode } from 'react'
 
-import { Extension, Footer, Size } from './Modal.types'
+import { Aside, Footer, Size } from './Modal.types'
 
 export type ModalProps = {
 
@@ -36,16 +36,16 @@ export type ModalProps = {
   docLink?: string,
 
   /**
-   * Extension of the modal to be shown to the right of the content (occupies 35% of the width of the modal body).
+   * Aside element of the modal to be shown to the right of the content (occupies 35% of the width of the modal body).
    *
-   * extension `object`:
-   *   - children: The children nodes to be rendered within the modal extension context. <br> `ReactNode`
-   *   - isFixed: Whether the modal extension is fixed or can be opened and closed by a dedicated button. <br> `boolean`
-   *   - labelClose: Label to be applied to the extension close button (if the extension is not fixed). <br> `string`
-   *   - labelOpen: Label to be applied to the extension open button (if the extension is not fixed). <br> `string`
-   *   - title: Title of the modal extension, which briefly conveys information about its contents. <br> `ReactNode`
+   * aside `object`:
+   *   - children: The children nodes to be rendered within the modal aside context. <br> `ReactNode`
+   *   - isFixed: Whether the modal aside is fixed or can be opened and closed by a dedicated button. <br> `boolean`
+   *   - labelClose: Label to be applied to the aside close button (if the aside is not fixed). <br> `string`
+   *   - labelOpen: Label to be applied to the aside open button (if the aside is not fixed). <br> `string`
+   *   - title: Title of the modal aside, which briefly conveys information about its contents. <br> `ReactNode`
    */
-  extension?: Extension,
+  aside?: Aside,
 
   /**
    * Modal footer. If not passed by the user, an empty footer is displayed.
@@ -57,7 +57,7 @@ export type ModalProps = {
   footer?: Footer,
 
   /**
-   * Whether the modal body (which includes content and possibly extension) should occupy the full width of the modal.
+   * Whether the modal body (which includes content and possibly aside) should occupy the full width of the modal.
    */
   isBodyFullWidth?: boolean,
 

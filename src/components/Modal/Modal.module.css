@@ -83,7 +83,7 @@
       gap: calc(var(--spacing-gap-md, 8) * 1px) !important;
     }
 
-    .extension {
+    .aside {
       width: 35%;
       display: flex;
       flex-direction: column;
@@ -95,24 +95,24 @@
       overflow-y: auto;
     }
 
-    .extensionLabel {
+    .asideLabel {
       display: flex;
       align-items: center;
       cursor: pointer;
       gap: calc(var(--spacing-padding-md, 8) * 1px);
       color: var(--palette-action-link-active, #005dc9);
     }
-    .extensionLabel:active {
+    .asideLabel:active {
       color: var(--palette-action-link-selected, #00448c);
     }
-    .extensionLabel:focus {
+    .asideLabel:focus {
       color: var(--palette-action-link-focus, #005dc9);
     }
-    .extensionLabel:hover {
+    .asideLabel:hover {
       color: var(--palette-action-link-hover, #1890ff);
     }
 
-    .extensionLabelWrapper {
+    .asideLabelWrapper {
       display: flex;
       justify-content: flex-end;
     }

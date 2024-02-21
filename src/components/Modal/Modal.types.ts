@@ -24,30 +24,30 @@ export enum Size {
   FullScreen = 'fullscreen',
 }
 
-export type Extension = {
+export type Aside = {
 
   /**
-   * The children nodes to be rendered within the modal extension context.
+   * The children nodes to be rendered within the modal aside context.
    */
   children?: ReactNode,
 
   /**
-   * Whether the modal extension is fixed or can be opened and closed by a dedicated button.
+   * Whether the modal aside is fixed or can be opened and closed by a dedicated button.
    */
   isFixed?: boolean,
 
   /**
-   * Label to be applied to the extension close button (if the extension is not fixed).
+   * Label to be applied to the aside close button (if the aside is not fixed).
    */
   labelClose?: string,
 
   /**
-   * Label to be applied to the extension open button (if the extension is not fixed).
+   * Label to be applied to the aside open button (if the aside is not fixed).
    */
   labelOpen?: string,
 
   /**
-   * Title of the modal extension, which briefly conveys information about its contents.
+   * Title of the modal aside, which briefly conveys information about its contents.
    */
   title?: ReactNode,
 }

@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { docLink, extensionFixed, extensionOpenable, footer, footerCustom, title } from './Modal.mocks'
+import { asideFixed, asideOpenable, docLink, footer, footerCustom, title } from './Modal.mocks'
 import { fireEvent, render, screen, waitFor } from '../../test-utils'
 import { Modal } from '.'
 import { Size } from './Modal.types'
@@ -109,26 +109,26 @@ describe('Modal Component', () => {
     expect(baseElement).toMatchSnapshot()
   })
 
-  test('renders modal with extension fixed', async() => {
-    const { baseElement } = render(<Modal {...props} extension={extensionFixed} size={Large} />)
+  test('renders modal with aside fixed', async() => {
+    const { baseElement } = render(<Modal {...props} aside={asideFixed} size={Large} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
-    const extensionTitle = screen.getByRole('paragraph')
-    expect(extensionTitle).toBeVisible()
-    expect(screen.getByText(/Modal Extension Title/i)).toBeVisible()
-    expect(screen.getByText(/Modal Extension Content/i)).toBeVisible()
+    const asideTitle = screen.getByRole('paragraph')
+    expect(asideTitle).toBeVisible()
+    expect(screen.getByText(/Modal Aside Title/i)).toBeVisible()
+    expect(screen.getByText(/Modal Aside Content/i)).toBeVisible()
 
     expect(baseElement).toMatchSnapshot()
   })
 
-  test('renders modal with extension openable', async() => {
-    const { baseElement } = render(<Modal {...props} extension={extensionOpenable} size={Large} />)
+  test('renders modal with aside openable', async() => {
+    const { baseElement } = render(<Modal {...props} aside={asideOpenable} size={Large} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
-    const extensionTitle = screen.queryByRole('paragraph')
-    expect(extensionTitle).not.toBeInTheDocument()
-    expect(screen.queryByText(/Modal Extension Title/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/Modal Extension Content/i)).not.toBeInTheDocument()
+    const asideTitle = screen.queryByRole('paragraph')
+    expect(asideTitle).not.toBeInTheDocument()
+    expect(screen.queryByText(/Modal Aside Title/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/Modal Aside Content/i)).not.toBeInTheDocument()
 
     const openButton = screen.getByRole('img', { name: 'PiCaretRight' })
     expect(openButton).toBeVisible()
@@ -137,8 +137,8 @@ describe('Modal Component', () => {
     fireEvent.click(openButton)
 
     expect(screen.getByRole('paragraph')).toBeVisible()
-    expect(screen.getByText(/Modal Extension Title/i)).toBeVisible()
-    expect(screen.getByText(/Modal Extension Content/i)).toBeVisible()
+    expect(screen.getByText(/Modal Aside Title/i)).toBeVisible()
+    expect(screen.getByText(/Modal Aside Content/i)).toBeVisible()
 
     expect(baseElement).toMatchSnapshot()
   })
