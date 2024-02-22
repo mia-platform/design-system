@@ -95,12 +95,12 @@ export const Body = ({
       <div className={asideLabelWrapper}>
         <div className={asideLabel} onClick={toggleAside}>
           {isAsideOpen && <>
-            <Icon color="currentColor" name="PiCaretLeft" size={16} />
             {labelClose}
+            <Icon color="currentColor" name="PiCaretRight" size={16} />
           </>}
           {!isAsideOpen && <>
+            <Icon color="currentColor" name="PiCaretLeft" size={16} />
             {labelOpen}
-            <Icon color="currentColor" name="PiCaretRight" size={16} />
           </>}
         </div>
       </div>

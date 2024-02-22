@@ -64,7 +64,7 @@ describe('useModal', () => {
     fireEvent.click(screen.getByRole('button', { name: /Close/i }))
 
     await waitFor(() => expect(screen.queryByRole('h4', { name: title })).not.toBeInTheDocument())
-    expect(screen.queryByText(children)).not.toBeVisible()
+    expect(screen.queryByText(children)).toBeNull()
 
     fireEvent.click(screen.getByRole('button', { name: /Change Modal Status/i }))
 
