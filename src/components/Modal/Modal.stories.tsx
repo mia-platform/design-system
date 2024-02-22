@@ -68,7 +68,7 @@ export const FullScreenSize: Story = {
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }
 
-export const WithNoHeader: Story = {
+export const WithEmptyHeader: Story = {
   args: {
     ...meta.args,
     title: undefined,
@@ -76,7 +76,7 @@ export const WithNoHeader: Story = {
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }
 
-export const WithNoFooter: Story = {
+export const WithEmptyFooter: Story = {
   args: {
     ...meta.args,
     footer: undefined,

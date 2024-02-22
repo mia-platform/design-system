@@ -88,8 +88,8 @@ export const Modal = ({
   const modalBodyClassNames = useMemo(() => classNames([
     body,
     isBodyFullWidth && bodyFullWidth,
-    hasAside && (isAsideOpen ? bodyWithAsideOpened : bodyWithAsideClosed),
-  ]), [hasAside, isAsideOpen, isBodyFullWidth])
+    hasAside && (aside?.isFixed || isAsideOpen ? bodyWithAsideOpened : bodyWithAsideClosed),
+  ]), [aside?.isFixed, hasAside, isAsideOpen, isBodyFullWidth])
   const modalContentWrapperClassNames = useMemo(() => classNames([
     content,
     size !== Small && aside && contentWrapper,
@@ -110,20 +110,6 @@ export const Modal = ({
       </>}
     </div>
   ), [docLink, docLinkIcon, onClickDocLink, title])
-
-  const modalFooter = useMemo(() => {
-    const { buttons, extra } = footer || {}
-    return (
-      <div className={styles.footer}>
-        {footer && <>
-          <div className={footerButtons}>
-            {buttons}
-          </div>
-          {extra}
-        </>}
-      </div>
-    )
-  }, [footer])
 
   const modalContent = useMemo(() => {
     if (hasAside) {
@@ -153,11 +139,11 @@ export const Modal = ({
         )
       }
 
-      const changeAsideStatus = (): void => setIsAsideOpen(prevState => !prevState)
+      const toggleAside = (): void => setIsAsideOpen(prevState => !prevState)
 
       const modalAsideLabel = (
         <div className={asideLabelWrapper}>
-          <div className={asideLabel} onClick={changeAsideStatus}>
+          <div className={asideLabel} onClick={toggleAside}>
             {isAsideOpen && <>
               <Icon color="currentColor" name="PiCaretLeft" size={16} />
               {labelClose}
@@ -189,6 +175,20 @@ export const Modal = ({
       </div>
     )
   }, [aside, children, hasAside, isAsideOpen, modalContentWrapperClassNames])
+
+  const modalFooter = useMemo(() => {
+    const { buttons, extra } = footer || {}
+    return (
+      <div className={styles.footer}>
+        {footer && <>
+          <div className={footerButtons}>
+            {buttons}
+          </div>
+          {extra}
+        </>}
+      </div>
+    )
+  }, [footer])
 
   return (
     <AntModal

@@ -37,5 +37,5 @@ export type ModalAPI = {
   /**
    * Modal status change function, which opens the modal if it is closed or closes the modal if it is opened.
    */
-  changeModalStatus: () => void,
+  toggleModal: () => void,
 }

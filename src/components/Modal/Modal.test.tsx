@@ -49,7 +49,7 @@ describe('Modal Component', () => {
     expect(baseElement).toMatchSnapshot()
   })
 
-  test('renders large modal correctly (with no footer)', async() => {
+  test('renders large modal correctly (with empty footer)', async() => {
     const { baseElement } = render(<Modal {...props} footer={undefined} size={Large} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
@@ -60,7 +60,7 @@ describe('Modal Component', () => {
     expect(baseElement).toMatchSnapshot()
   })
 
-  test('renders fullscreen modal correctly (with no header)', async() => {
+  test('renders fullscreen modal correctly (with empty header)', async() => {
     const { baseElement } = render(<Modal {...props} size={FullScreen} title={undefined} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())

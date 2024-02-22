@@ -37,6 +37,7 @@ export type ModalProps = {
 
   /**
    * Aside element of the modal to be shown to the right of the content (occupies 35% of the width of the modal body).
+   * Small modals cannot have aside.
    *
    * aside `object`:
    *   - children: The children nodes to be rendered within the modal aside context. <br> `ReactNode`

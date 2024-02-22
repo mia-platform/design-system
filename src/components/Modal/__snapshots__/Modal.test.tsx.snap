@@ -6,7 +6,7 @@ exports[`Modal Component does not render modal in case it is not visible 1`] = `
 </body>
 `;
 
-exports[`Modal Component renders fullscreen modal correctly (with no header) 1`] = `
+exports[`Modal Component renders fullscreen modal correctly (with empty header) 1`] = `
 <body>
   <div />
   <div>
@@ -135,7 +135,7 @@ exports[`Modal Component renders fullscreen modal correctly (with no header) 1`]
 </body>
 `;
 
-exports[`Modal Component renders large modal correctly (with no footer) 1`] = `
+exports[`Modal Component renders large modal correctly (with empty footer) 1`] = `
 <body>
   <div />
   <div>
@@ -384,7 +384,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
               class="mia-platform-modal-body"
             >
               <div
-                class="body"
+                class="body bodyWithAsideOpened"
               >
                 <div
                   class="content"

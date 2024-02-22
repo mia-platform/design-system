@@ -17,9 +17,11 @@
  */
 
 import { useFeedbackMessage } from './useFeedbackMessage'
+import { useModal } from './useModal'
 import { useTheme } from './useTheme'
 
 export default {
   useFeedbackMessage,
+  useModal,
   useTheme,
 }

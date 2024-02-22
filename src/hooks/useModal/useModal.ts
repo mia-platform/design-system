@@ -31,7 +31,7 @@ export const useModal = (): ModalAPI => {
 
   const openModal = useCallback(() => setIsModalVisible(true), [])
   const closeModal = useCallback(() => setIsModalVisible(false), [])
-  const changeModalStatus = useCallback(() => setIsModalVisible(prevState => !prevState), [])
+  const toggleModal = useCallback(() => setIsModalVisible(prevState => !prevState), [])
 
-  return { isModalVisible, openModal, closeModal, changeModalStatus }
+  return { isModalVisible, openModal, closeModal, toggleModal }
 }

@@ -27,11 +27,11 @@ describe('useModal', () => {
     const children = 'Modal Content'
 
     const Example = (): JSX.Element => {
-      const { isModalVisible, openModal, closeModal, changeModalStatus } = useModal()
+      const { isModalVisible, openModal, closeModal, toggleModal } = useModal()
       return (
         <>
           <Button onClick={openModal}>Open Modal</Button>
-          <Button onClick={changeModalStatus}>Change Modal Status</Button>
+          <Button onClick={toggleModal}>Change Modal Status</Button>
           <Modal
             isVisible={isModalVisible}
             title={title}
