@@ -16,27 +16,38 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { act, fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react'
 
-import { Button, Modal } from '../..'
+import { Button } from '../..'
 import { useModal } from '.'
 
 describe('useModal', () => {
+  test('should return isModalVisible, openModal, closeModal and toggleModal properties', async() => {
+    const { result } = renderHook(() => useModal())
+    const { isModalVisible, openModal, closeModal, toggleModal } = result.current
+
+    expect(isModalVisible).toEqual(false)
+    act(() => openModal())
+    expect(result.current.isModalVisible).toEqual(true)
+    act(() => closeModal())
+    expect(result.current.isModalVisible).toEqual(false)
+    act(() => toggleModal())
+    expect(result.current.isModalVisible).toEqual(true)
+    act(() => toggleModal())
+    expect(result.current.isModalVisible).toEqual(false)
+  })
+
   test('should open and close Modal', async() => {
     const title = 'Modal Title'
     const children = 'Modal Content'
 
     const Example = (): JSX.Element => {
-      const { isModalVisible, openModal, closeModal, toggleModal } = useModal()
+      const { Modal, openModal, toggleModal } = useModal()
       return (
         <>
           <Button onClick={openModal}>Open Modal</Button>
           <Button onClick={toggleModal}>Change Modal Status</Button>
-          <Modal
-            isVisible={isModalVisible}
-            title={title}
-            onCloseClick={closeModal}
-          >
+          <Modal title={title}>
             {children}
           </Modal>
         </>

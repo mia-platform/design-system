@@ -92,3 +92,7 @@ export type ModalProps = {
    */
   title?: ReactNode,
 }
+
+export type TitleProps = Pick<ModalProps, 'title' | 'docLink'>
+export type BodyProps = Pick<ModalProps, 'aside' | 'children' | 'isBodyFullWidth' | 'size'>
+export type FooterProps = Pick<ModalProps, 'footer'>

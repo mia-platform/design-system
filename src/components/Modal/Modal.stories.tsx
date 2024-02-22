@@ -95,6 +95,7 @@ export const WithCustomFooter: Story = {
 export const NotClosable: Story = {
   args: {
     ...meta.args,
+    children: 'Please wait, this Modal will close automatically in 5 seconds! 😉',
     isClosable: false,
     footer: footerLoading,
   },

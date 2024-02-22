@@ -16,33 +16,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useCallback, useMemo, useState } from 'react'
+import { ReactElement, useMemo } from 'react'
 import { Modal as AntModal } from 'antd'
 import classNames from 'classnames'
 
-import { Shape, Type } from '../Button/Button.types'
-import { BodyM } from '../Typography/BodyX/BodyM'
-import { Button } from '../Button'
-import { H4 } from '../Typography/HX/H4'
-import { Icon } from '../Icon'
+import { Body } from './Modal.Body'
+import { Footer } from './Modal.Footer'
 import { ModalProps } from './Modal.props'
 import { Size } from './Modal.types'
+import { Title } from './Modal.Title'
 import styles from './Modal.module.css'
-import { useTheme } from '../../hooks/useTheme'
 
-const { Circle } = Shape
-const { Ghost } = Type
 const { Small, Large, FullScreen } = Size
 const {
-  asideLabel,
-  asideLabelWrapper,
-  body,
-  bodyFullWidth,
-  bodyWithAsideClosed,
-  bodyWithAsideOpened,
-  content,
-  contentWrapper,
-  footerButtons,
   modal,
   modalSm,
   modalLg,
@@ -68,143 +54,32 @@ export const Modal = ({
   size,
   title,
 }: ModalProps): ReactElement => {
-  const { palette } = useTheme()
-
-  const docLinkIcon = useMemo(() => (
-    <Icon color={palette?.action?.link?.active} name="PiBookOpen" size={16} />
-  ), [palette?.action?.link?.active])
-
-  const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])
-
-  const [isAsideOpen, setIsAsideOpen] = useState(false)
-  const hasAside = size !== Small && aside
-
   const modalClassNames = useMemo(() => classNames([
     modal,
     size === Small && modalSm,
     size === Large && modalLg,
     size === FullScreen && modalFs,
   ]), [size])
-  const modalBodyClassNames = useMemo(() => classNames([
-    body,
-    isBodyFullWidth && bodyFullWidth,
-    hasAside && (aside?.isFixed || isAsideOpen ? bodyWithAsideOpened : bodyWithAsideClosed),
-  ]), [aside?.isFixed, hasAside, isAsideOpen, isBodyFullWidth])
-  const modalContentWrapperClassNames = useMemo(() => classNames([
-    content,
-    size !== Small && aside && contentWrapper,
-  ]), [aside, size])
-
-  const modalTitle = useMemo(() => (
-    <div className={styles.title}>
-      {title && <>
-        <H4 ellipsis={{ rows: 1, tooltip: title }}>{title}</H4>
-        {docLink && <div className={styles.docLink}>
-          <Button
-            icon={docLinkIcon}
-            shape={Circle}
-            type={Ghost}
-            onClick={onClickDocLink}
-          />
-        </div>}
-      </>}
-    </div>
-  ), [docLink, docLinkIcon, onClickDocLink, title])
-
-  const modalContent = useMemo(() => {
-    if (hasAside) {
-      const {
-        children: extChildren,
-        isFixed,
-        labelClose,
-        labelOpen,
-        title: extTitle,
-      } = aside || {}
-
-      const modalAside = (
-        <aside className={styles.aside}>
-          <BodyM>{extTitle}</BodyM>
-          {extChildren}
-        </aside>
-      )
-
-      if (isFixed) {
-        return (
-          <>
-            <div className={content}>
-              {children}
-            </div>
-            {modalAside}
-          </>
-        )
-      }
-
-      const toggleAside = (): void => setIsAsideOpen(prevState => !prevState)
-
-      const modalAsideLabel = (
-        <div className={asideLabelWrapper}>
-          <div className={asideLabel} onClick={toggleAside}>
-            {isAsideOpen && <>
-              <Icon color="currentColor" name="PiCaretLeft" size={16} />
-              {labelClose}
-            </>}
-            {!isAsideOpen && <>
-              {labelOpen}
-              <Icon color="currentColor" name="PiCaretRight" size={16} />
-            </>}
-          </div>
-        </div>
-      )
-
-      return (
-        <>
-          <div className={modalContentWrapperClassNames}>
-            <div className={content}>
-              {children}
-            </div>
-            {modalAsideLabel}
-          </div>
-          {modalAside}
-        </>
-      )
-    }
-
-    return (
-      <div className={content}>
-        {children}
-      </div>
-    )
-  }, [aside, children, hasAside, isAsideOpen, modalContentWrapperClassNames])
-
-  const modalFooter = useMemo(() => {
-    const { buttons, extra } = footer || {}
-    return (
-      <div className={styles.footer}>
-        {footer && <>
-          <div className={footerButtons}>
-            {buttons}
-          </div>
-          {extra}
-        </>}
-      </div>
-    )
-  }, [footer])
 
   return (
     <AntModal
       centered
       className={modalClassNames}
       closable={isClosable}
-      footer={modalFooter}
+      footer={<Modal.Footer footer={footer} />}
       keyboard={isClosable}
       maskClosable={false}
       open={isVisible}
-      title={modalTitle}
+      title={<Modal.Title docLink={docLink} title={title} />}
       onCancel={onCloseClick}
     >
-      <div className={modalBodyClassNames}>
-        {modalContent}
-      </div>
+      <Modal.Body
+        aside={aside}
+        isBodyFullWidth={isBodyFullWidth}
+        size={size}
+      >
+        {children}
+      </Modal.Body>
     </AntModal>
   )
 }
@@ -215,3 +90,7 @@ Modal.defaultProps = {
   isVisible: false,
   size: Small,
 }
+
+Modal.Title = Title
+Modal.Body = Body
+Modal.Footer = Footer

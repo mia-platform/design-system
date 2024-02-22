@@ -16,7 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement } from 'react'
+
+import { ModalProps } from '../../components/Modal/Modal.props'
+
 export type ModalAPI = {
+
+  /**
+   * Modal component, in which the properties `isVisible` and `onCloseClick` are by default associated with
+   * the modal state `isModalVisible` and the `closeModal` function.
+   */
+  Modal: (props: ModalProps) => ReactElement,
 
   /**
    * Whether the modal is visible.
@@ -29,8 +39,7 @@ export type ModalAPI = {
   openModal: () => void,
 
   /**
-   * Modal closing function, which hides the modal. This function will need to be forwarded to the modal
-   * via the `onCloseClick` prop to ensure the effective closure of the modal.
+   * Modal closing function, which hides the modal.
    */
   closeModal: () => void,
 
