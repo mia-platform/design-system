@@ -125,16 +125,26 @@ describe('Modal Component', () => {
     const { baseElement } = render(<Modal {...props} aside={asideOpenable} size={Large} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
-    const asideTitle = screen.queryByRole('paragraph')
-    expect(asideTitle).not.toBeInTheDocument()
-    expect(screen.queryByText(/Modal Aside Title/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/Modal Aside Content/i)).not.toBeInTheDocument()
 
-    const openButton = screen.getByRole('img', { name: 'PiCaretRight' })
+    expect(baseElement.getElementsByClassName('bodyWithAsideClosed').length).toEqual(1)
+    expect(baseElement.getElementsByClassName('bodyWithAsideOpened').length).toEqual(0)
+
+    const openButton = screen.getByRole('img', { name: 'PiCaretLeft' })
     expect(openButton).toBeVisible()
     expect(screen.getByText('Open')).toBeVisible()
+    expect(screen.queryByText('Close')).toBeNull()
+
+    expect(baseElement).toMatchSnapshot()
 
     fireEvent.click(openButton)
+
+    expect(baseElement.getElementsByClassName('bodyWithAsideClosed').length).toEqual(0)
+    expect(baseElement.getElementsByClassName('bodyWithAsideOpened').length).toEqual(1)
+
+    const closeButton = screen.getByRole('img', { name: 'PiCaretRight' })
+    expect(closeButton).toBeVisible()
+    expect(screen.queryByText('Open')).toBeNull()
+    expect(screen.getByText('Close')).toBeVisible()
 
     expect(screen.getByRole('paragraph')).toBeVisible()
     expect(screen.getByText(/Modal Aside Title/i)).toBeVisible()
