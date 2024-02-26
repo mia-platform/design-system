@@ -16,12 +16,30 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
+import { ReactElement } from 'react'
 
-export default {
-  useFeedbackMessage,
-  useModal,
-  useTheme,
+import { FooterProps } from './Modal.props'
+import styles from './Modal.module.css'
+
+const { footerButtons } = styles
+
+/**
+ * Footer component of Modal, which has within it and manages the modal footer.
+ *
+ * @returns {Footer} Modal Footer component
+ */
+export const Footer = ({
+  footer,
+}: FooterProps): ReactElement => {
+  const { buttons, extra } = footer || {}
+  return (
+    <div className={styles.footer}>
+      {footer && <>
+        <div className={footerButtons}>
+          {buttons}
+        </div>
+        {extra}
+      </>}
+    </div>
+  )
 }

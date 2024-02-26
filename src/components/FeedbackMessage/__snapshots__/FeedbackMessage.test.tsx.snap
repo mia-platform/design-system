@@ -5,7 +5,7 @@ exports[`FeedbackMessage Component renders message 1`] = `
   <span
     class="feedbackMessage"
   >
-    Feedback message
+    Feedback Message
   </span>
 </DocumentFragment>
 `;
@@ -15,7 +15,7 @@ exports[`FeedbackMessage Component renders message with extra content 1`] = `
   <span
     class="feedbackMessage"
   >
-    Feedback message
+    Feedback Message
     <button
       class="mia-platform-btn mia-platform-btn-primary button buttonMd"
       type="button"

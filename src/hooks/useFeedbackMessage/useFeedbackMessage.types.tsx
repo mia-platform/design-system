@@ -35,50 +35,48 @@ export type MessageAPI = {
 
   /**
    * Destroys the FeedbackMessage with the given key.
-   *
-   * If the key is not passed, it removes the message shown at the bottom of the page,
-   * if there is one.
+   * If the key is not passed, it removes the message shown at the bottom of the page, if there is one.
    *
    * @param key - the key of the message to remove
    */
-  dismiss: (key?: string) => void
+  dismiss: (key?: string) => void,
 
   /**
-   * Renders a FeedbackMessage with a spinner animation
+   * Renders a FeedbackMessage with a spinner animation.
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    * @returns {PromiseLike<boolean>} a promise that the message has disappeared
    */
-  loading: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
+  loading: (props: UseFeedbackMessageProps) => PromiseLike<boolean>,
 
   /**
-   * Renders a FeedbackMessage with an "info" icon
+   * Renders a FeedbackMessage with an "info" icon.
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    * @returns {PromiseLike<boolean>} a promise that the message has disappeared
    */
-  info: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
+  info: (props: UseFeedbackMessageProps) => PromiseLike<boolean>,
 
   /**
-   * Renders a FeedbackMessage with a "success" icon
+   * Renders a FeedbackMessage with a "success" icon.
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    * @returns {PromiseLike<boolean>} a promise that the message has disappeared
    */
-  success: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
+  success: (props: UseFeedbackMessageProps) => PromiseLike<boolean>,
 
   /**
-   * Renders a FeedbackMessage with a "warning" icon
+   * Renders a FeedbackMessage with a "warning" icon.
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    * @returns {PromiseLike<boolean>} a promise that the message has disappeared
    */
-  error: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
+  error: (props: UseFeedbackMessageProps) => PromiseLike<boolean>,
 
   /**
-   * Renders a FeedbackMessage with an "error" icon
+   * Renders a FeedbackMessage with an "error" icon.
    *
    * @param {UseFeedbackMessageProps} props - the configuration of the message to render
    */
-  warning: (props: UseFeedbackMessageProps) => PromiseLike<boolean>
+  warning: (props: UseFeedbackMessageProps) => PromiseLike<boolean>,
 }

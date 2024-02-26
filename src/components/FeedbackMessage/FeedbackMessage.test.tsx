@@ -26,9 +26,9 @@ describe('FeedbackMessage Component', () => {
   })
 
   test('renders message', () => {
-    const { asFragment } = render(<FeedbackMessage message="Feedback message" />)
+    const { asFragment } = render(<FeedbackMessage message="Feedback Message" />)
 
-    expect(screen.getByText('Feedback message')).toBeVisible()
+    expect(screen.getByText('Feedback Message')).toBeVisible()
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -37,11 +37,11 @@ describe('FeedbackMessage Component', () => {
     const { asFragment } = render(
       <FeedbackMessage
         extra={<Button onClick={onButtonClickMock}>Button</Button>}
-        message="Feedback message"
+        message="Feedback Message"
       />
     )
 
-    expect(screen.getByText('Feedback message')).toBeVisible()
+    expect(screen.getByText('Feedback Message')).toBeVisible()
     const button = screen.getByRole('button', { name: 'Button' })
     expect(button).toBeVisible()
 
