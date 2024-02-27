@@ -69,7 +69,7 @@ export const Modal = ({
       closable={isClosable}
       footer={<Modal.Footer footer={footer} />}
       keyboard={isClosable}
-      maskClosable={isMaskClosable}
+      maskClosable={isClosable && isMaskClosable}
       open={isVisible}
       title={<Modal.Title docLink={docLink} title={title} />}
       onCancel={onCloseClick}
