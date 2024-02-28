@@ -74,3 +74,85 @@ export const divider = {
   type: Divider,
   dashed: false,
 }
+
+export const nestedGroup = {
+  key: 'nestedGroup1',
+  label: 'Nested Group 1',
+  type: Group,
+  icon: <Icon color="currentColor" name="PiAtom" size={16} />,
+  children: [
+    {
+      key: 'nested category 1',
+      label: 'Nested Category 1',
+      type: Category,
+      children: [
+        {
+          key: 'nested category item 1',
+          label: 'Nested Category Item 1',
+          title: 'Nested Category Item 1',
+          icon: <Icon color="currentColor" name="PiGlobeHemisphereEast" size={16} />,
+        },
+        {
+          key: 'nested category item 2',
+          label: 'Nested Category Item 2',
+          title: 'Nested Category Item 2',
+          icon: <Icon color="currentColor" name="PiGlobeHemisphereWest" size={16} />,
+        },
+        {
+          key: 'nestedGroup2',
+          label: 'Nested Group 2',
+          type: Group,
+          icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
+          children: [
+            {
+              key: 'nested category 2',
+              label: 'Nested Category 2',
+              type: Category,
+              children: [
+                {
+                  key: 'nested category item 3',
+                  label: 'Nested Category Item 3',
+                  title: 'Nested Category Item 3',
+                  icon: <Icon color="currentColor" name="PiAlien" size={16} />,
+                },
+                {
+                  key: 'nested category item 4',
+                  label: 'Nested Category Item 4',
+                  title: 'Nested Category Item 4',
+                  icon: <Icon color="currentColor" name="PiVirus" size={16} />,
+                },
+              ],
+            },
+            {
+              key: 'nestedGroup3',
+              label: 'Nested Group 3',
+              type: Group,
+              icon: <Icon color="currentColor" name="PiSkull" size={16} />,
+              children: [
+                {
+                  key: 'nested category 3',
+                  label: 'Nested Category 3',
+                  type: Category,
+                  children: [
+                    {
+                      key: 'nested category item 5',
+                      label: 'Nested Category Item 5',
+                      title: 'Nested Category Item 5',
+                      icon: <Icon color="currentColor" name="PiSword" size={16} />,
+                    },
+                    {
+                      key: 'nested category item 6',
+                      label: 'Nested Category Item 6',
+                      title: 'Nested Category Item 6',
+                      icon: <Icon color="currentColor" name="PiShield" size={16} />,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+}

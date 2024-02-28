@@ -18,6 +18,7 @@
 
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
+import classNames from 'classnames'
 
 import { Hierarchy, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
@@ -28,7 +29,7 @@ import { useTheme } from '../../hooks/useTheme'
 
 const { Default, Primary } = Hierarchy
 const { Inline } = Mode
-const { menu } = styles
+const { menu, primary } = styles
 
 /**
  * UI component for presenting nested lists of elements, organized by group or category
@@ -58,6 +59,11 @@ export const Menu = ({
     formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
   ), [items, selectedKey, selectedItem, isCollapsed, hierarchy])
 
+  const menuClassNames = useMemo(() => classNames([
+    menu,
+    hierarchy === Primary && primary,
+  ]), [hierarchy])
+
   return (
     <ConfigProvider theme={{ components: { Menu: menuTheme } }}>
       <Skeleton
@@ -66,7 +72,7 @@ export const Menu = ({
         paragraph={Menu.skeletonParagraph}
       >
         <AntMenu
-          className={menu}
+          className={menuClassNames}
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
           inlineCollapsed={isCollapsed}

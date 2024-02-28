@@ -20,7 +20,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 import { Hierarchy, Mode } from './Menu.types'
-import { category, divider, group, item } from './Menu.mocks'
+import { category, divider, group, item, nestedGroup } from './Menu.mocks'
 import { Menu } from './'
 
 const meta = {
@@ -33,6 +33,8 @@ const meta = {
       category,
       divider,
       group,
+      divider,
+      nestedGroup,
     ],
     onClick: action('click'),
     onOpenChange: action('open change'),
