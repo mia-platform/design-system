@@ -87,16 +87,24 @@ export const nestedGroup = {
       type: Category,
       children: [
         {
-          key: 'nested category item 1',
-          label: 'Nested Category Item 1',
-          title: 'Nested Category Item 1',
-          icon: <Icon color="currentColor" name="PiGlobeHemisphereEast" size={16} />,
-        },
-        {
-          key: 'nested category item 2',
-          label: 'Nested Category Item 2',
-          title: 'Nested Category Item 2',
-          icon: <Icon color="currentColor" name="PiGlobeHemisphereWest" size={16} />,
+          key: 'nestedGroup2',
+          label: 'Nested Group 2',
+          type: Group,
+          icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
+          children: [
+            {
+              key: 'nested category item 1',
+              label: 'Nested Category Item 1',
+              title: 'Nested Category Item 1',
+              icon: <Icon color="currentColor" name="PiGlobeHemisphereEast" size={16} />,
+            },
+            {
+              key: 'nested category item 2',
+              label: 'Nested Category Item 2',
+              title: 'Nested Category Item 2',
+              icon: <Icon color="currentColor" name="PiGlobeHemisphereWest" size={16} />,
+            },
+          ],
         },
         {
           key: 'nestedGroup2',

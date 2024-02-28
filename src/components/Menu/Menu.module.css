@@ -22,29 +22,11 @@
     align-items: center;
   }
 
-  ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--spacing-margin-xs, 4) * 1px + var(--shape-size-lg, 24) * 1px) !important;
+  ul[role*=menu] {
+    padding-left: 12px !important;
   }
 
-  ul[role*=menu] li ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--spacing-margin-xs, 4) * 1px + var(--shape-size-lg, 24) * 1px + var(--spacing-padding-md, 12) * 1px) !important;
-  }
-
-  ul[role*=menu] li ul[role*=menu] li ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--spacing-margin-xs, 4) * 1px + var(--shape-size-lg, 24) * 1px + var(--spacing-padding-md, 12) * 2px) !important;
-  }
-}
-
-.primary {
-  ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--shape-size-lg, 24) * 1px) !important;
-  }
-
-  ul[role*=menu] li ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--shape-size-lg, 24) * 1px + var(--spacing-padding-md, 12) * 1px) !important;
-  }
-
-  ul[role*=menu] li ul[role*=menu] li ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--shape-size-lg, 24) * 1px + var(--spacing-padding-md, 12) * 2px) !important;
+  div[role*=presentation] {
+    padding-left: 0 !important;
   }
 }
