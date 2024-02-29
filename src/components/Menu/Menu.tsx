@@ -75,6 +75,7 @@ export const Menu = ({
           className={menuClassNames}
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
+          getPopupContainer={() => document.querySelector(`.${menu}`)!}
           inlineCollapsed={isCollapsed}
           inlineIndent={0}
           items={formattedItems}

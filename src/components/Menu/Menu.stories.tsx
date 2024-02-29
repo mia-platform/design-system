@@ -52,6 +52,7 @@ export const Vertical: Story = {
   args: {
     ...meta.args,
     mode: Mode.Vertical,
+    defaultSelectedKey: 'nested category 33',
   },
   decorators: [Story => (
     <div style={{ width: '75%' }}>

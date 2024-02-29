@@ -22,11 +22,27 @@
     align-items: center;
   }
 
-  ul[role*=menu] {
+  /* Inline */
+  &:global(.mia-platform-menu-inline) ul[role*=menu] {
     padding-left: 12px !important;
   }
-
-  div[role*=presentation] {
+  &:global(.mia-platform-menu-inline) > li[role*=presentation] > div[role*=presentation] {
+    padding: 12px 12px 6px !important;
+  }
+  &:global(.mia-platform-menu-inline) div[role*=presentation] {
     padding-left: 0 !important;
+  }
+
+  /* Vertical */
+  &:global(.mia-platform-menu-vertical) :global(.mia-platform-menu-submenu-popup) {
+    background: none !important;
+  }
+  &:global(.mia-platform-menu-vertical) div[role*=presentation] {
+    padding: 12px 12px 6px !important;
+  }
+
+  &:global(:not(.mia-platform-menu-inline-collapsed)) li[role*=menuitem], 
+  &:global(:not(.mia-platform-menu-inline-collapsed)) div[role*=menuitem] {
+    padding-left: 6px !important;
   }
 }
