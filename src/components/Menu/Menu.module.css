@@ -17,34 +17,35 @@
  */
 
 .menu {
+  --menu-pad: calc(var(--spacing-padding-md, 12) * 1px);
+  --menu-pad-sm: calc((var(--spacing-padding-md, 12) * 1px) / 2);
+
   :global([role*=menuitem]) {
     display: flex;
     align-items: center;
   }
 
-  ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--spacing-margin-xs, 4) * 1px + var(--shape-size-lg, 24) * 1px) !important;
+  /* Inline */
+  &:global(.mia-platform-menu-inline) ul[role*=menu] {
+    padding-left: var(--menu-pad) !important;
+  }
+  &:global(.mia-platform-menu-inline) > li[role*=presentation] > div[role*=presentation] {
+    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) !important;
+  }
+  &:global(.mia-platform-menu-inline) div[role*=presentation] {
+    padding-left: 0 !important;
   }
 
-  ul[role*=menu] li ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--spacing-margin-xs, 4) * 1px + var(--shape-size-lg, 24) * 1px + var(--spacing-padding-md, 12) * 1px) !important;
+  /* Vertical */
+  &:global(.mia-platform-menu-vertical) :global(.mia-platform-menu-submenu-popup) {
+    background: none !important;
+  }
+  &:global(.mia-platform-menu-vertical) div[role*=presentation] {
+    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) !important;
   }
 
-  ul[role*=menu] li ul[role*=menu] li ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--spacing-margin-xs, 4) * 1px + var(--shape-size-lg, 24) * 1px + var(--spacing-padding-md, 12) * 2px) !important;
-  }
-}
-
-.primary {
-  ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--shape-size-lg, 24) * 1px) !important;
-  }
-
-  ul[role*=menu] li ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--shape-size-lg, 24) * 1px + var(--spacing-padding-md, 12) * 1px) !important;
-  }
-
-  ul[role*=menu] li ul[role*=menu] li ul[role*=menu] li div[role*=presentation] {
-    padding-left: calc(var(--shape-size-lg, 24) * 1px + var(--spacing-padding-md, 12) * 2px) !important;
+  &:global(:not(.mia-platform-menu-inline-collapsed)) li[role*=menuitem],
+  &:global(:not(.mia-platform-menu-inline-collapsed)) div[role*=menuitem] {
+    padding-left: var(--menu-pad-sm) !important;
   }
 }
