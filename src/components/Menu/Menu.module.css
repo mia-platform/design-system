@@ -17,6 +17,9 @@
  */
 
 .menu {
+  --mp: calc(var(--spacing-padding-md, 12) * 1px);
+  --mp-sm: calc((var(--spacing-padding-md, 12) * 1px) / 2);
+
   :global([role*=menuitem]) {
     display: flex;
     align-items: center;
@@ -24,10 +27,10 @@
 
   /* Inline */
   &:global(.mia-platform-menu-inline) ul[role*=menu] {
-    padding-left: 12px !important;
+    padding-left: var(--mp) !important;
   }
   &:global(.mia-platform-menu-inline) > li[role*=presentation] > div[role*=presentation] {
-    padding: 12px 12px 6px !important;
+    padding: var(--mp) var(--mp) var(--mp-sm) !important;
   }
   &:global(.mia-platform-menu-inline) div[role*=presentation] {
     padding-left: 0 !important;
@@ -38,11 +41,11 @@
     background: none !important;
   }
   &:global(.mia-platform-menu-vertical) div[role*=presentation] {
-    padding: 12px 12px 6px !important;
+    padding: var(--mp) var(--mp) var(--mp-sm) !important;
   }
 
   &:global(:not(.mia-platform-menu-inline-collapsed)) li[role*=menuitem], 
   &:global(:not(.mia-platform-menu-inline-collapsed)) div[role*=menuitem] {
-    padding-left: 6px !important;
+    padding-left: var(--mp-sm) !important;
   }
 }
