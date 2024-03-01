@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react'
 
 import Theme from '../../themes/schema'
 
@@ -25,7 +25,7 @@ export type ThemeProviderProps = {
   /**
    * The children nodes to be rendered with the theme context
    */
-  children?: ReactElement,
+  children?: ReactElement | ReactNode,
 
   /**
    * The theme configuration to be passed to children nodes

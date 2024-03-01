@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement, ReactNode } from 'react'
 import { RenderOptions, RenderResult, render } from '@testing-library/react'
 import { ConfigProvider } from 'antd'
-import { ReactElement } from 'react'
 
 import { ThemeContext, defaultTheme } from './components/ThemeProvider'
 import { ANT_PREFIX } from './components/ThemeProvider/Ant'
@@ -33,7 +33,7 @@ import { ANT_PREFIX } from './components/ThemeProvider/Ant'
  * @param {ReactElement} children - The React element to be wrapped.
  * @returns {ReactElement} The wrapped React element.
  */
-const TestWrapper = ({ children }: {children: ReactElement}): ReactElement => (
+const TestWrapper = ({ children }: {children: ReactNode | ReactElement}): ReactElement => (
   <ThemeContext.Provider value={defaultTheme}>
     <ConfigProvider prefixCls={ANT_PREFIX} theme={{ hashed: false }}>
       {children}
