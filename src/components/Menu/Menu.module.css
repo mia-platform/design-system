@@ -17,8 +17,8 @@
  */
 
 .menu {
-  --mp: calc(var(--spacing-padding-md, 12) * 1px);
-  --mp-sm: calc((var(--spacing-padding-md, 12) * 1px) / 2);
+  --menu-pad: calc(var(--spacing-padding-md, 12) * 1px);
+  --menu-pad-sm: calc((var(--spacing-padding-md, 12) * 1px) / 2);
 
   :global([role*=menuitem]) {
     display: flex;
@@ -27,10 +27,10 @@
 
   /* Inline */
   &:global(.mia-platform-menu-inline) ul[role*=menu] {
-    padding-left: var(--mp) !important;
+    padding-left: var(--menu-pad) !important;
   }
   &:global(.mia-platform-menu-inline) > li[role*=presentation] > div[role*=presentation] {
-    padding: var(--mp) var(--mp) var(--mp-sm) !important;
+    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) !important;
   }
   &:global(.mia-platform-menu-inline) div[role*=presentation] {
     padding-left: 0 !important;
@@ -41,11 +41,11 @@
     background: none !important;
   }
   &:global(.mia-platform-menu-vertical) div[role*=presentation] {
-    padding: var(--mp) var(--mp) var(--mp-sm) !important;
+    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) !important;
   }
 
   &:global(:not(.mia-platform-menu-inline-collapsed)) li[role*=menuitem], 
   &:global(:not(.mia-platform-menu-inline-collapsed)) div[role*=menuitem] {
-    padding-left: var(--mp-sm) !important;
+    padding-left: var(--menu-pad-sm) !important;
   }
 }
