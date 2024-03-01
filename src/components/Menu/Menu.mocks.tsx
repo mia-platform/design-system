@@ -87,8 +87,8 @@ export const nestedGroup = {
       type: Category,
       children: [
         {
-          key: 'nestedGroup2',
-          label: 'Nested Group 2',
+          key: 'nestedGroup1',
+          label: 'Nested Group 1',
           type: Group,
           icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
           children: [
@@ -107,51 +107,51 @@ export const nestedGroup = {
           ],
         },
         {
-          key: 'nestedGroup3',
-          label: 'Nested Group 3',
+          key: 'nestedGroup2',
+          label: 'Nested Group 2',
           type: Group,
           icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
           children: [
             {
-              key: 'nested category 2',
-              label: 'Nested Category 2',
+              key: 'nestedGroupCategory1',
+              label: 'Nested Group Category 1',
               type: Category,
               children: [
                 {
-                  key: 'nested category item 3',
-                  label: 'Nested Category Item 3',
-                  title: 'Nested Category Item 3',
+                  key: 'nestedGroupCategoryItem1',
+                  label: 'Nested Group Category Item 1',
+                  title: 'Nested Group Category Item 1',
                   icon: <Icon color="currentColor" name="PiAlien" size={16} />,
                 },
                 {
-                  key: 'nested category item 4',
-                  label: 'Nested Category Item 4',
-                  title: 'Nested Category Item 4',
+                  key: 'nestedGroupCategoryItem2',
+                  label: 'Nested Group Category Item 2',
+                  title: 'Nested Group Category Item 2',
                   icon: <Icon color="currentColor" name="PiVirus" size={16} />,
                 },
               ],
             },
             {
-              key: 'nestedGroup33',
-              label: 'Nested Group 33',
+              key: 'nestedGroupCategory2',
+              label: 'Nested Group Category 2',
               type: Group,
               icon: <Icon color="currentColor" name="PiSkull" size={16} />,
               children: [
                 {
-                  key: 'nested category 33',
-                  label: 'Nested Category 33',
+                  key: 'nestedGroupCategory2-1',
+                  label: 'Nested Group Category 2-1',
                   type: Category,
                   children: [
                     {
-                      key: 'nested category item 55',
-                      label: 'Nested Category Item 55',
+                      key: 'nestedGroupCategoryItem2-1',
+                      label: 'Nested Group Category Item 2-1',
                       title: 'Nested Category Item 55',
                       icon: <Icon color="currentColor" name="PiSword" size={16} />,
                     },
                     {
-                      key: 'nested category item 66',
-                      label: 'Nested Category Item 66',
-                      title: 'Nested Category Item 66',
+                      key: 'nestedGroupCategoryItem2-2',
+                      label: 'Nested Group Category Item 2-2',
+                      title: 'Nested Group Category Item 2-2',
                       icon: <Icon color="currentColor" name="PiShield" size={16} />,
                     },
                   ],
