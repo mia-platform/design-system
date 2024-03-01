@@ -31,6 +31,7 @@ export default ({ palette, shape, spacing, typography }: Partial<Theme>): Compon
   groupTitleColor: palette?.common?.grey?.[500],
   groupTitleFontSize: typography?.caption?.fontSize,
   groupTitleLineHeight: 1,
+  horizontalItemBorderRadius: parse(shape?.border?.radius?.md),
   iconSize: parse(shape?.size?.md),
   itemBorderRadius: parse(shape?.border?.radius?.md),
   itemHeight: (typography?.bodyM?.lineHeight ?? 24) + (parse(spacing?.padding?.sm) ?? 8),
@@ -47,8 +48,9 @@ export default ({ palette, shape, spacing, typography }: Partial<Theme>): Compon
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Menu Ant theme configuration.
  */
-export const primaryTheme = ({ palette, spacing }: Partial<Theme>): ComponentsTheme['Menu'] => ({
+export const primaryTheme = ({ palette, shape, spacing }: Partial<Theme>): ComponentsTheme['Menu'] => ({
   activeBarBorderWidth: 0,
+  horizontalItemBorderRadius: parse(shape?.border?.radius?.md),
   itemBg: 'transparent',
   itemHoverBg: palette?.action?.alternate?.primary?.hover,
   itemSelectedBg: palette?.common?.white,

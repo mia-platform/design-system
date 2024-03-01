@@ -25,6 +25,10 @@
     align-items: center;
   }
 
+  :global(.mia-platform-menu-sub) {
+    border-radius: calc(var(--shape-border-radius-md, 4) * 1px) !important;
+  }
+
   /* Inline */
   &:global(.mia-platform-menu-inline) ul[role*=menu] {
     padding-left: var(--menu-pad) !important;
