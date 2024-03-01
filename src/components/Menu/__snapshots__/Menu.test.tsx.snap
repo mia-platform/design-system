@@ -603,7 +603,7 @@ exports[`Menu Component renders item correctly 1`] = `
 exports[`Menu Component renders primary menu correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu primary"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
