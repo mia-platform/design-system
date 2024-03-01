@@ -44,7 +44,7 @@
     padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) !important;
   }
 
-  &:global(:not(.mia-platform-menu-inline-collapsed)) li[role*=menuitem], 
+  &:global(:not(.mia-platform-menu-inline-collapsed)) li[role*=menuitem],
   &:global(:not(.mia-platform-menu-inline-collapsed)) div[role*=menuitem] {
     padding-left: var(--menu-pad-sm) !important;
   }

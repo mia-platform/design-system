@@ -87,24 +87,16 @@ export const nestedGroup = {
       type: Category,
       children: [
         {
-          key: 'nestedGroup1',
-          label: 'Nested Group 1',
-          type: Group,
-          icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
-          children: [
-            {
-              key: 'nested category item 1',
-              label: 'Nested Category Item 1',
-              title: 'Nested Category Item 1',
-              icon: <Icon color="currentColor" name="PiGlobeHemisphereEast" size={16} />,
-            },
-            {
-              key: 'nested category item 2',
-              label: 'Nested Category Item 2',
-              title: 'Nested Category Item 2',
-              icon: <Icon color="currentColor" name="PiGlobeHemisphereWest" size={16} />,
-            },
-          ],
+          key: 'nested category item 1',
+          label: 'Nested Category Item 1',
+          title: 'Nested Category Item 1',
+          icon: <Icon color="currentColor" name="PiGlobeHemisphereEast" size={16} />,
+        },
+        {
+          key: 'nested category item 2',
+          label: 'Nested Category Item 2',
+          title: 'Nested Category Item 2',
+          icon: <Icon color="currentColor" name="PiGlobeHemisphereWest" size={16} />,
         },
         {
           key: 'nestedGroup2',
@@ -113,45 +105,45 @@ export const nestedGroup = {
           icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
           children: [
             {
-              key: 'nestedGroupCategory1',
-              label: 'Nested Group Category 1',
+              key: 'nested category 2',
+              label: 'Nested Category 2',
               type: Category,
               children: [
                 {
-                  key: 'nestedGroupCategoryItem1',
-                  label: 'Nested Group Category Item 1',
-                  title: 'Nested Group Category Item 1',
+                  key: 'nested category item 3',
+                  label: 'Nested Category Item 3',
+                  title: 'Nested Category Item 3',
                   icon: <Icon color="currentColor" name="PiAlien" size={16} />,
                 },
                 {
-                  key: 'nestedGroupCategoryItem2',
-                  label: 'Nested Group Category Item 2',
-                  title: 'Nested Group Category Item 2',
+                  key: 'nested category item 4',
+                  label: 'Nested Category Item 4',
+                  title: 'Nested Category Item 4',
                   icon: <Icon color="currentColor" name="PiVirus" size={16} />,
                 },
               ],
             },
             {
-              key: 'nestedGroupCategory2',
-              label: 'Nested Group Category 2',
+              key: 'nestedGroup3',
+              label: 'Nested Group 3',
               type: Group,
               icon: <Icon color="currentColor" name="PiSkull" size={16} />,
               children: [
                 {
-                  key: 'nestedGroupCategory2-1',
-                  label: 'Nested Group Category 2-1',
+                  key: 'nested category 3',
+                  label: 'Nested Category 3',
                   type: Category,
                   children: [
                     {
-                      key: 'nestedGroupCategoryItem2-1',
-                      label: 'Nested Group Category Item 2-1',
-                      title: 'Nested Category Item 55',
+                      key: 'nested category item 5',
+                      label: 'Nested Category Item 5',
+                      title: 'Nested Category Item 5',
                       icon: <Icon color="currentColor" name="PiSword" size={16} />,
                     },
                     {
-                      key: 'nestedGroupCategoryItem2-2',
-                      label: 'Nested Group Category Item 2-2',
-                      title: 'Nested Group Category Item 2-2',
+                      key: 'nested category item 6',
+                      label: 'Nested Category Item 6',
+                      title: 'Nested Category Item 6',
                       icon: <Icon color="currentColor" name="PiShield" size={16} />,
                     },
                   ],
