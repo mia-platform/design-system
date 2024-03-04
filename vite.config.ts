@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { PluginOption, defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
@@ -16,7 +16,7 @@ export default defineConfig({
     svgr({ exportAsDefault: true }),
     tsConfigPaths(),
     visualizer(),
-  ],
+  ] as PluginOption[],
   build: {
     lib: {
       entry: resolve('src', 'index.ts'),
