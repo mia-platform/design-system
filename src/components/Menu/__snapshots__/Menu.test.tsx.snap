@@ -27,7 +27,7 @@ exports[`Menu Component renders category correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
-          style="padding-left: 12px;"
+          style="padding-left: 0px;"
           tabindex="-1"
           title="Category Item 1"
         >
@@ -63,7 +63,7 @@ exports[`Menu Component renders category correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
-          style="padding-left: 12px;"
+          style="padding-left: 0px;"
           tabindex="-1"
           title="Category Item 2"
         >
@@ -314,7 +314,7 @@ exports[`Menu Component renders group correctly 1`] = `
         class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
-        style="padding-left: 12px;"
+        style="padding-left: 0px;"
         tabindex="-1"
       >
         <div
@@ -369,7 +369,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
       class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
-      style="padding-left: 12px;"
+      style="padding-left: 0px;"
       tabindex="-1"
       title="Item"
     >
@@ -412,7 +412,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
         class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
-        style="padding-left: 12px;"
+        style="padding-left: 0px;"
         tabindex="-1"
       >
         <div
@@ -470,7 +470,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
-          style="padding-left: 12px;"
+          style="padding-left: 0px;"
           tabindex="-1"
           title="Category Item 1"
         >
@@ -506,7 +506,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
-          style="padding-left: 12px;"
+          style="padding-left: 0px;"
           tabindex="-1"
           title="Category Item 2"
         >
@@ -560,7 +560,7 @@ exports[`Menu Component renders item correctly 1`] = `
       class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
-      style="padding-left: 12px;"
+      style="padding-left: 0px;"
       tabindex="-1"
       title="Item"
     >
@@ -612,7 +612,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
       class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
-      style="padding-left: 12px;"
+      style="padding-left: 0px;"
       tabindex="-1"
       title="Item"
     >
@@ -655,7 +655,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
         class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
-        style="padding-left: 12px;"
+        style="padding-left: 0px;"
         tabindex="-1"
       >
         <div
@@ -713,7 +713,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
-          style="padding-left: 12px;"
+          style="padding-left: 0px;"
           tabindex="-1"
           title="Category Item 1"
         >
@@ -749,7 +749,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
-          style="padding-left: 12px;"
+          style="padding-left: 0px;"
           tabindex="-1"
           title="Category Item 2"
         >
