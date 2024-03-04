@@ -68,7 +68,7 @@ export type ModalProps = {
   isClosable?: boolean,
 
   /**
-   * Whether the modal is closable with a click on the modal mask.
+   * Whether the modal is closable with a click on the modal mask (the area outside the modal body).
    */
   isMaskClosable?: boolean,
 
