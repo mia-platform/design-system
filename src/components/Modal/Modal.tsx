@@ -49,6 +49,7 @@ export const Modal = ({
   footer,
   isBodyFullWidth,
   isClosable,
+  isMaskClosable,
   isVisible,
   onCloseClick,
   size,
@@ -68,7 +69,7 @@ export const Modal = ({
       closable={isClosable}
       footer={<Modal.Footer footer={footer} />}
       keyboard={isClosable}
-      maskClosable={false}
+      maskClosable={isClosable && isMaskClosable}
       open={isVisible}
       title={<Modal.Title docLink={docLink} title={title} />}
       onCancel={onCloseClick}
@@ -87,6 +88,7 @@ export const Modal = ({
 Modal.defaultProps = {
   isBodyFullWidth: false,
   isClosable: true,
+  isMaskClosable: true,
   isVisible: false,
   size: Small,
 }
