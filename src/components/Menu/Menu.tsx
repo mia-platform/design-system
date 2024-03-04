@@ -69,6 +69,7 @@ export const Menu = ({
           className={menu}
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
+          // getPopupContainer is needed for nested menus to inherit CSS properties in the vertical mode
           getPopupContainer={() => document.querySelector(`.${menu}`)!}
           inlineCollapsed={isCollapsed}
           inlineIndent={0}
