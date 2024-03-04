@@ -16,24 +16,24 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode } from 'react'
 import { RenderOptions, RenderResult, render } from '@testing-library/react'
 import { ConfigProvider } from 'antd'
+import { ReactNode } from 'react'
 
 import { ThemeContext, defaultTheme } from './components/ThemeProvider'
 import { ANT_PREFIX } from './components/ThemeProvider/Ant'
 
 /**
- * Wraps a React element with a series of providers for testing purposes.
+ * Wraps a React node with a series of providers for testing purposes.
  *
  * @remarks It adds the default theme to components
  * @remarks It adds the default Ant class prefix
  * @remarks It removes the css-do-not-override classes from Ant Design components
  *
- * @param {ReactElement} children - The React element to be wrapped.
- * @returns {ReactElement} The wrapped React element.
+ * @param {ReactNode} children - The React node to be wrapped.
+ * @returns {ReactNode} The wrapped React node.
  */
-const TestWrapper = ({ children }: {children: ReactNode | ReactElement}): ReactElement => (
+const TestWrapper = ({ children }: {children: ReactNode}): ReactNode => (
   <ThemeContext.Provider value={defaultTheme}>
     <ConfigProvider prefixCls={ANT_PREFIX} theme={{ hashed: false }}>
       {children}
@@ -44,12 +44,12 @@ const TestWrapper = ({ children }: {children: ReactNode | ReactElement}): ReactE
 /**
  * Custom render function for testing React components.
  *
- * @param {ReactElement} element - The React element to be rendered.
+ * @param {ReactNode} element - The React node to be rendered.
  * @param {RenderOptions} [options] - Options for rendering.
- * @returns {RenderResult} The result of rendering the React element.
+ * @returns {RenderResult} The result of rendering the React node.
  */
 const customRender = (
-  element: ReactElement,
+  element: ReactNode,
   options?: Omit<RenderOptions, 'wrapper'>,
 ): RenderResult => render(element, { wrapper: TestWrapper, ...options })
 
@@ -58,4 +58,3 @@ export {
   customRender as render,
   TestWrapper,
 }
-
