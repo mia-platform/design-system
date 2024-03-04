@@ -76,7 +76,7 @@ export const divider = {
 }
 
 export const nestedGroup = {
-  key: 'nestedGroup1',
+  key: 'nested group 1',
   label: 'Nested Group 1',
   type: Group,
   icon: <Icon color="currentColor" name="PiAtom" size={16} />,
@@ -99,7 +99,7 @@ export const nestedGroup = {
           icon: <Icon color="currentColor" name="PiGlobeHemisphereWest" size={16} />,
         },
         {
-          key: 'nestedGroup2',
+          key: 'nested group 2',
           label: 'Nested Group 2',
           type: Group,
           icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
@@ -124,7 +124,7 @@ export const nestedGroup = {
               ],
             },
             {
-              key: 'nestedGroup3',
+              key: 'nested group 3',
               label: 'Nested Group 3',
               type: Group,
               icon: <Icon color="currentColor" name="PiSkull" size={16} />,
