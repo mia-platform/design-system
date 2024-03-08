@@ -22,6 +22,7 @@
   --menu-pad-xs: calc((var(--spacing-padding-xs, 4) * 1px));
 
   --collapsed-width: 80px;
+  --collapsed-pad: calc((var(--spacing-padding-lg, 12) * 1px))
   --collapsed-margin: calc(var(--spacing-margin-xs, 4) * 1px);
 
   :global([role*=menuitem]) {
