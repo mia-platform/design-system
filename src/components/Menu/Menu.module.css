@@ -19,9 +19,10 @@
 .menu {
   --menu-pad: calc(var(--spacing-padding-md, 12) * 1px);
   --menu-pad-sm: calc((var(--spacing-padding-md, 12) * 1px) / 2);
+  --menu-pad-xs: calc((var(--spacing-padding-xs, 4) * 1px));
 
   --collapsed-width: 80px;
-  --collapsed-pad: calc((var(--spacing-padding-lg, 16) * 1px));
+  --collapsed-margin: calc(var(--spacing-margin-xs, 4) * 1px);
   --collapsed-margin: calc(var(--spacing-padding-xs, 4) * 1px);
 
   :global([role*=menuitem]) {
@@ -39,7 +40,7 @@
     padding-left: var(--menu-pad) !important;
   }
   &:global(.mia-platform-menu-inline) > li[role*=presentation] > div[role*=presentation] {
-    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) 0 !important;
+    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) var(--menu-pad-xs) !important;
   } 
   &:global(.mia-platform-menu-inline) div[role*=presentation] {
     padding-left: 0 !important;
