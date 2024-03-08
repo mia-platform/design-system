@@ -18,6 +18,7 @@
 
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
+import classNames from 'classnames'
 
 import { Hierarchy, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
@@ -49,8 +50,15 @@ export const Menu = ({
   openKeys,
   selectedKey,
 }: MenuProps): ReactElement => {
+  const isPrimary = hierarchy === Primary
+
   const theme = useTheme()
-  const menuTheme = hierarchy === Primary ? primaryTheme(theme) : defaultTheme(theme)
+  const menuTheme = isPrimary ? primaryTheme(theme) : defaultTheme(theme)
+
+  const menuClassNames = useMemo(() => classNames([
+    menu,
+    isPrimary && 'primary',
+  ]), [isPrimary])
 
   const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
 
@@ -66,7 +74,7 @@ export const Menu = ({
         paragraph={Menu.skeletonParagraph}
       >
         <AntMenu
-          className={menu}
+          className={menuClassNames}
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
           // getPopupContainer is needed for nested menus to inherit CSS properties in the vertical mode

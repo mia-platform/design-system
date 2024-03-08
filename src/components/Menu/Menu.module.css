@@ -19,6 +19,11 @@
 .menu {
   --menu-pad: calc(var(--spacing-padding-md, 12) * 1px);
   --menu-pad-sm: calc((var(--spacing-padding-md, 12) * 1px) / 2);
+  --menu-pad-xs: calc((var(--spacing-padding-xs, 4) * 1px));
+
+  --collapsed-width: 80px;
+  --collapsed-pad: calc(var(--spacing-padding-lg, 16) * 1px);
+  --collapsed-margin: calc(var(--spacing-margin-xs, 4) * 1px);
 
   :global([role*=menuitem]) {
     display: flex;
@@ -27,17 +32,24 @@
 
   :global(.mia-platform-menu-sub) {
     border-radius: calc(var(--shape-border-radius-md, 4) * 1px) !important;
+    padding: 0 calc(var(--spacing-padding-xs, 4) * 1px) !important;
   }
 
   /* Inline */
   &:global(.mia-platform-menu-inline) ul[role*=menu] {
     padding-left: var(--menu-pad) !important;
   }
+  &:global(.mia-platform-menu-inline.primary) > li[role*=presentation] > div[role*=presentation] {
+    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) 0 !important;
+  }
   &:global(.mia-platform-menu-inline) > li[role*=presentation] > div[role*=presentation] {
-    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) !important;
+    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) var(--menu-pad-xs) !important;
+  } 
+  &:global(.mia-platform-menu-inline.primary) div[role*=presentation] {
+    padding-left: 0 !important;
   }
   &:global(.mia-platform-menu-inline) div[role*=presentation] {
-    padding-left: 0 !important;
+    padding-left: var(--menu-pad-xs) !important;
   }
 
   /* Vertical */
@@ -46,6 +58,16 @@
   }
   &:global(.mia-platform-menu-vertical) div[role*=presentation] {
     padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) !important;
+  }
+  
+  /*
+    The popover is generated on the left when the parent node has a width less than the popover content.
+    In the case of the left sidebar attached to the left side of the window causes the node to exit outside the screen.
+  */
+  /* Collapsed */
+  &:global(.mia-platform-menu-inline-collapsed) :global(.mia-platform-menu-submenu-popup) {
+    left: calc(var(--collapsed-width) + var(--collapsed-pad) + var(--collapsed-margin)) !important;
+    width: auto !important;
   }
 
   &:global(:not(.mia-platform-menu-inline-collapsed)) li[role*=menuitem],
