@@ -39,11 +39,17 @@
   &:global(.mia-platform-menu-inline) ul[role*=menu] {
     padding-left: var(--menu-pad) !important;
   }
+  &:global(.mia-platform-menu-inline.primary) > li[role*=presentation] > div[role*=presentation] {
+    padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) 0 !important;
+  }
   &:global(.mia-platform-menu-inline) > li[role*=presentation] > div[role*=presentation] {
     padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) var(--menu-pad-xs) !important;
   } 
-  &:global(.mia-platform-menu-inline) div[role*=presentation] {
+  &:global(.mia-platform-menu-inline.primary) div[role*=presentation] {
     padding-left: 0 !important;
+  }
+  &:global(.mia-platform-menu-inline) div[role*=presentation] {
+    padding-left: var(--menu-pad-xs) !important;
   }
 
   /* Vertical */

@@ -50,7 +50,8 @@ export const Menu = ({
   selectedKey,
 }: MenuProps): ReactElement => {
   const theme = useTheme()
-  const menuTheme = hierarchy === Primary ? primaryTheme(theme) : defaultTheme(theme)
+  const isPrimary = hierarchy === Primary
+  const menuTheme = isPrimary ? primaryTheme(theme) : defaultTheme(theme)
 
   const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
 
@@ -66,7 +67,7 @@ export const Menu = ({
         paragraph={Menu.skeletonParagraph}
       >
         <AntMenu
-          className={menu}
+          className={`${menu}${isPrimary ? ' primary' : ''}`}
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
           // getPopupContainer is needed for nested menus to inherit CSS properties in the vertical mode
