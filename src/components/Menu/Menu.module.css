@@ -46,6 +46,7 @@
   &:global(.mia-platform-menu-vertical) :global(.mia-platform-menu-submenu-popup) {
     background: none !important;
   }
+  /* The popover is generated on the left when the parent node has a width less than the popover content. In the case of the left sidebar attached to the left side of the window, this causes the node to exit outside the screen */
   &:global(.mia-platform-menu-inline-collapsed) :global(.mia-platform-menu-submenu-popup) {
     left: 100px !important;
     width: auto !important;
