@@ -49,6 +49,6 @@ export const getAction = <RecordType extends GenericRecord>({
       </div>
     ),
     align: ColumnAlignment.Right,
-    width: '0',
+    width: '0px',
   }
 }

@@ -49,8 +49,6 @@ const meta = {
     data,
     rowKey,
     onChange: action('onChange'),
-    onEditRow: action('edit'),
-    onDeleteRow: action('delete'),
   },
 } satisfies Meta<typeof Table<TableRecord>>
 
@@ -104,6 +102,8 @@ export const Actions: Story = {
       detail: action('detail'),
       overview: action('overview'),
     }),
+    onEditRow: action('edit'),
+    onDeleteRow: action('delete'),
   },
 }
 

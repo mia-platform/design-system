@@ -140,6 +140,8 @@ Table.defaultProps = {
   isBordered: false,
   isLoading: false,
   layout: Auto,
+  onDeleteRow: undefined,
+  onEditRow: undefined,
   pagination: Table.pagination,
   scroll: Table.scroll,
   size: Middle,
