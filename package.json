@@ -6,7 +6,9 @@
   "main": "dist/cjs/console-design-system-react.cjs",
   "module": "dist/es/console-design-system-react.js",
   "types": "dist/src/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "description": "Mia Platform Design System",
   "author": "Mia Platform Core Team <core@mia-platform.eu>",
   "license": "Apache-2.0",
