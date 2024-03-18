@@ -54,6 +54,7 @@
 
     [class~=ant-message-custom-content] {
       display: flex !important;
+      align-items: center;
     }
   }
 }
