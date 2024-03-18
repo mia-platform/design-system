@@ -165,19 +165,19 @@
 
 .modalSm {
   width: 40% !important;
-  min-width: 600px;
-  max-width: 800px;
+  min-width: 480px;
+  max-width: 640px;
   height: 50% !important;
-  min-height: 360px;
-  max-height: 480px;
+  min-height: 480px;
+  max-height: 640px;
 }
 
 .modalLg {
-  width: 70% !important;
-  min-width: 900px;
-  max-width: 1600px;
-  height: 85% !important;
-  min-height: 540px;
+  width: 55% !important;
+  min-width: 720px;
+  max-width: 1200px;
+  height: 50% !important;
+  min-height: 640px;
   max-height: 1080px;
 }
 
