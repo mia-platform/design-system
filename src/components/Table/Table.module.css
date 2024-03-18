@@ -38,3 +38,8 @@
     padding-bottom: var(--column-padding) !important;
   }
 }
+
+.action {
+  margin: calc(var(--spacing-margin-md, 12) * -1px);
+  overflow: hidden;
+}

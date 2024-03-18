@@ -24,6 +24,7 @@ import {
   WithExternalFiltersAndSorters,
   alignedColumns,
   columns,
+  customActions,
   data,
   expandable,
   filteredAndSortedColumns,
@@ -48,6 +49,8 @@ const meta = {
     data,
     rowKey,
     onChange: action('onChange'),
+    onEditRow: action('edit'),
+    onDeleteRow: action('delete'),
   },
 } satisfies Meta<typeof Table<TableRecord>>
 
@@ -91,6 +94,15 @@ export const Expandable: Story = {
     expandable: expandable({
       onExpand: action('onExpand'),
       onExpandedRowsChange: action('onExpandedRowsChange'),
+    }),
+  },
+}
+
+export const Actions: Story = {
+  args: { ...meta.args,
+    actions: customActions({
+      detail: action('detail'),
+      overview: action('overview'),
     }),
   },
 }

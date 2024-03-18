@@ -18,9 +18,18 @@
 
 /* eslint-disable max-len */
 
-import { HTMLAttributes, ReactElement } from 'react'
+import { HTMLAttributes, ReactElement, ReactNode } from 'react'
 
 import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, Scroll, Size, UserAction } from './Table.types'
+
+export type TableActionProps<RecordType extends GenericRecord> = {
+  dataIndex: string,
+  key?: string,
+  icon: ReactNode,
+  isDanger?: boolean,
+  onClick: (record: RecordType, index?: number) => void,
+  title?: ReactNode
+}
 
 export type TableProps<RecordType extends GenericRecord> = {
 
@@ -47,7 +56,7 @@ export type TableProps<RecordType extends GenericRecord> = {
    *   - filterResetToDefaultFilteredValue: Whether to apply the initial filter when filters reset. <br> `boolean`
    *   - fixed: Whether the column should stick to a fixed position. <br> `"left"` | `"right"`
    *   - key: Unique key for the column. Ignore if dataIndex is unique. <br> `string`
-   *   - render: Column custom render function. <br> `(value: any, record: RecordType, index: number) => ReactNode`
+   *   - render: Column custom render function. <br> `(value: unknown, record: RecordType, index: number) => ReactNode`
    *   - showSorterTooltip: Whether the sorter tooltip is displayed. <br> `booean`
    *   - sortDirections: Possible sort directions for the column. <br> `["ascend", "descend"]`
    *   - sorter: Sorting function applied between two records. <br>
@@ -61,7 +70,7 @@ export type TableProps<RecordType extends GenericRecord> = {
    *   - width: Column width, either a percentage or number of pixels. <br> `string` | `number`
    *   - onCell: Function to set props for specific cells. <br> `(record: RecordType, rowIndex: number) => void`
    *   - onHeaderCell: Function to set props for specific header cells. <br> `(record: RecordType, rowIndex: number) => void`
-   *   - onFilter: Function that determines filtered values. <br> `(value: any, record: RecordType) => boolean`
+   *   - onFilter: Function that determines filtered values. <br> `(value: unknown, record: RecordType) => boolean`
    *   - onFilterDropdownOpenChange: Callback invoked when opening or closing filter dropdown. <br> `(visible: boolean) => void`
    *
    * @see {@link https://ant.design/components/table#column} for advanced configurations.
@@ -72,6 +81,11 @@ export type TableProps<RecordType extends GenericRecord> = {
    * The array of data records to be displayed in the table.
    */
   data: RecordType[],
+
+  /**
+   * The array of custom actions to be displayed in the table last column.
+   */
+  actions?: TableActionProps<RecordType>[],
 
   /**
    * Configuration for making the table rows expandable.
@@ -165,6 +179,22 @@ export type TableProps<RecordType extends GenericRecord> = {
    * @returns The customized row component.
    */
   onRow?: (record: RecordType, index?: number) => HTMLAttributes<unknown>,
+
+  /**
+   * Callback function for editing each table row.
+   *
+   * @param record - The data record for the row.
+   * @param index - The index of the row.
+   */
+  onEditRow?: (record: RecordType, index?: number) => void,
+
+  /**
+   * Callback function for deleting each table row.
+   *
+   * @param record - The data record for the row.
+   * @param index - The index of the row.
+   */
+  onDeleteRow?: (record: RecordType, index?: number) => void,
 
   /**
    * Configuration for table pagination (disable it with `false`).

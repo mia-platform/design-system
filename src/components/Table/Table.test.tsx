@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { WithExternalFiltersAndSorters, alignedColumns, columns, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
+import { WithExternalFiltersAndSorters, alignedColumns, columns, customActions, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
 import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
 import { Size } from './Table.types'
 import { Table } from '.'
@@ -164,6 +164,58 @@ describe('Table Component', () => {
       [[data[0][rowKey], data[1][rowKey]]],
       [[data[1][rowKey]]],
     ])
+  })
+
+  test('renders actions correctly', async() => {
+    const onEditRow = jest.fn()
+    const onDeleteRow = jest.fn()
+    const onDetail = jest.fn()
+    const onOverview = jest.fn()
+
+    const { asFragment } = render(
+      <Table
+        {...props}
+        actions={customActions({ detail: onDetail, overview: onOverview })}
+        onDeleteRow={onDeleteRow}
+        onEditRow={onEditRow}
+      />
+    )
+
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+
+    const editButtons = screen.getAllByRole('button', { name: 'PiPencilSimpleLine' })
+    const deleteButtons = screen.getAllByRole('button', { name: 'PiTrash' })
+    const detailButtons = screen.getAllByRole('button', { name: 'PiArrowRight' })
+    const overviewButtons = screen.getAllByRole('button', { name: 'PiCircleHalfTilt' })
+
+    expect(editButtons).toHaveLength(props.data.length)
+    expect(deleteButtons).toHaveLength(props.data.length)
+    expect(detailButtons).toHaveLength(props.data.length)
+    expect(overviewButtons).toHaveLength(props.data.length)
+
+    const [editButton] = editButtons
+    expect(editButton).toBeVisible()
+    fireEvent.click(editButton)
+    expect(onEditRow).toHaveBeenCalledTimes(1)
+    expect(onEditRow).toHaveBeenCalledWith(props.data[0], 0)
+
+    const [, deleteButton] = deleteButtons
+    expect(deleteButton).toBeVisible()
+    fireEvent.click(deleteButton)
+    expect(onDeleteRow).toHaveBeenCalledTimes(1)
+    expect(onDeleteRow).toHaveBeenCalledWith(props.data[1], 1)
+
+    const [, , detailButton] = detailButtons
+    expect(detailButton).toBeVisible()
+    fireEvent.click(detailButton)
+    expect(onDetail).toHaveBeenCalledTimes(1)
+    expect(onDetail).toHaveBeenCalledWith(props.data[2], 2)
+
+    const [, , , overviewButton] = overviewButtons
+    expect(overviewButton).toBeVisible()
+    fireEvent.click(overviewButton)
+    expect(onOverview).toHaveBeenCalledTimes(1)
+    expect(onOverview).toHaveBeenCalledWith(props.data[3], 3)
   })
 
   test('renders pagination correctly', async() => {
