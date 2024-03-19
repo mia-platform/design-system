@@ -59,11 +59,11 @@ export const Table = <RecordType extends GenericRecord>({
   scroll,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
-  const iconSize = theme?.shape?.size?.lg as IconProps['size'] ?? 24
+  const iconSize = theme?.shape?.size?.lg as IconProps['size'] || 24
 
   const tableColumns = useMemo(() => [
     ...columns,
-    ...actions?.map(getAction) ?? [],
+    ...actions?.map(getAction) || [],
     ...onEditRow ? [getAction({
       dataIndex: 'edit',
       icon: <Icon color="currentColor" name="PiPencilSimpleLine" size={iconSize} />,
