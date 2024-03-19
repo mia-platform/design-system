@@ -19,7 +19,7 @@
 import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
-import { GenericRecord, Layout, Size } from './Table.types'
+import { Action, GenericRecord, Layout, Size } from './Table.types'
 import { Icon } from '../Icon'
 import { IconProps } from '../Icon/Icon.props'
 import { TableProps } from './Table.props'
@@ -29,6 +29,7 @@ import { useTheme } from '../../hooks/useTheme'
 
 const { Auto } = Layout
 const { Middle } = Size
+const { Edit, Delete } = Action
 const { table } = styles
 
 /**
@@ -61,21 +62,29 @@ export const Table = <RecordType extends GenericRecord>({
   const theme = useTheme()
   const iconSize = theme?.shape?.size?.lg as IconProps['size'] || 24
 
+  const editAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Edit), [actions])
+  const deleteAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Delete), [actions])
+  const customActions = useMemo(() => actions?.filter(({ dataIndex }) => (
+    dataIndex !== Edit && dataIndex !== Delete
+  )), [actions])
+
   const tableColumns = useMemo(() => [
     ...columns,
-    ...actions?.map(getAction) || [],
+    ...customActions?.map(getAction) || [],
     ...onEditRow ? [getAction({
-      dataIndex: 'edit',
+      dataIndex: Edit,
       icon: <Icon color="currentColor" name="PiPencilSimpleLine" size={iconSize} />,
       onClick: onEditRow,
+      ...editAction,
     })] : [],
     ...onDeleteRow ? [getAction({
-      dataIndex: 'delete',
+      dataIndex: Delete,
       icon: <Icon color="currentColor" name="PiTrash" size={iconSize} />,
       isDanger: true,
       onClick: onDeleteRow,
+      ...deleteAction,
     })] : [],
-  ], [actions, columns, iconSize, onDeleteRow, onEditRow])
+  ], [columns, customActions, deleteAction, editAction, iconSize, onDeleteRow, onEditRow])
 
   const tablePagination = useMemo(() => pagination !== false && ({
     ...Table.pagination,

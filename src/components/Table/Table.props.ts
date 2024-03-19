@@ -18,18 +18,9 @@
 
 /* eslint-disable max-len */
 
-import { HTMLAttributes, ReactElement, ReactNode } from 'react'
+import { HTMLAttributes, ReactElement } from 'react'
 
-import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, Scroll, Size, UserAction } from './Table.types'
-
-export type TableActionProps<RecordType extends GenericRecord> = {
-  dataIndex: string,
-  key?: string,
-  icon: ReactNode,
-  isDanger?: boolean,
-  onClick: (record: RecordType, index?: number) => void,
-  title?: ReactNode
-}
+import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, Scroll, Size, TableAction, UserAction } from './Table.types'
 
 export type TableProps<RecordType extends GenericRecord> = {
 
@@ -83,9 +74,18 @@ export type TableProps<RecordType extends GenericRecord> = {
   data: RecordType[],
 
   /**
-   * The array of custom actions to be displayed in the table last column.
+   * The array of custom actions, or default actions overrides, to be displayed in the table last column.
+   * When overriding a default action no field is required.
+   *
+   * action `object`:
+   *   - dataIndex*: The custom action identifier or, if "edit" or "delete", the default action to override. <br> `string`
+   *   - icon*: The icon to be displayed for the action. <br> `ReactNode`
+   *   - isDanger: Whether the action is a possibly dangerous action. <br> `boolean`
+   *   - isDisabled: Whether the action is disabled for a specific row. <br>  `(record: RecordType, index: number) => boolean` | `boolean`
+   *   - onClick*: The callback invoked when clicking the corresponding action button. <br>  `(record: RecordType, index: number) => void`
+   *   - title: Column displayed label for the action. <br> `ReactNode`
    */
-  actions?: TableActionProps<RecordType>[],
+  actions?: TableAction<RecordType>[],
 
   /**
    * Configuration for making the table rows expandable.

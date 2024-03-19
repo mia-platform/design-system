@@ -16,10 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ColumnAlignment, GenericRecord } from './Table.types'
+import { ColumnAlignment, GenericRecord, TableAction } from './Table.types'
 import { Hierarchy, Type } from '../Button/Button.types'
 import { Button } from '../Button'
-import { TableActionProps } from './Table.props'
 import styles from './Table.module.css'
 
 const { action } = styles
@@ -31,9 +30,10 @@ export const getAction = <RecordType extends GenericRecord>({
   key,
   icon,
   isDanger,
+  isDisabled,
   onClick,
   title,
-}: TableActionProps<RecordType>): object => {
+}: TableAction<RecordType>): object => {
   return {
     title,
     dataIndex,
@@ -43,8 +43,9 @@ export const getAction = <RecordType extends GenericRecord>({
         <Button
           hierarchy={isDanger ? Danger : Neutral}
           icon={icon}
+          isDisabled={typeof isDisabled === 'function' ? isDisabled(record, index) : isDisabled}
           type={Ghost}
-          onClick={() => onClick(record, index)}
+          onClick={() => onClick?.(record, index)}
         />
       </div>
     ),

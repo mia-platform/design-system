@@ -582,6 +582,7 @@ exports[`Table Component renders actions correctly 1`] = `
                       >
                         <button
                           class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          disabled=""
                           type="button"
                         >
                           <svg
