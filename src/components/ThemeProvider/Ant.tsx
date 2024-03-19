@@ -19,7 +19,7 @@
 import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
-import { DEFAULT_COLOR, DEFAULT_FONT_SIZE } from './utils/themeDefaultStyle'
+import { DEFAULT_COLOR, DEFAULT_FONT_FAMILY, DEFAULT_FONT_SIZE } from './utils/themeDefaultStyle'
 import ButtonTheme from '../Button/Button.theme'
 import DividerTheme from '../Divider/Divider.theme'
 import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
@@ -58,17 +58,19 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
 
   token: {
     // Palette
-    colorPrimary: palette?.primary?.['600'],
-    colorSuccess: palette?.success?.['600'],
-    colorInfo: palette?.info?.['600'],
-    colorWarning: palette?.warning?.['600'],
-    colorError: palette?.error?.['600'],
-    colorTextBase: palette?.common?.grey?.['700'] ?? DEFAULT_COLOR,
-    colorBgLayout: palette?.background?.primary?.['200'],
-    colorBgBase: palette?.background?.primary?.['400'],
-    colorBgElevated: palette?.background?.primary?.['600'],
+    colorPrimary: palette?.primary?.[600],
+    colorSuccess: palette?.success?.[600],
+    colorInfo: palette?.info?.[600],
+    colorWarning: palette?.warning?.[600],
+    colorError: palette?.error?.[600],
+    colorText: palette?.common?.grey?.[700] ?? DEFAULT_COLOR,
+    colorTextBase: palette?.common?.grey?.[700] ?? DEFAULT_COLOR,
+    colorBgLayout: palette?.background?.primary?.[200],
+    colorBgBase: palette?.background?.primary?.[400],
+    colorBgElevated: palette?.background?.primary?.[600],
 
     // Typography
+    fontFamily: typography?.bodyS?.fontFamily ?? DEFAULT_FONT_FAMILY,
     fontSize: typography?.bodyS?.fontSize ?? DEFAULT_FONT_SIZE,
 
     // Spacing
