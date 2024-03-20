@@ -74,13 +74,13 @@ export type TableProps<RecordType extends GenericRecord> = {
   data: RecordType[],
 
   /**
-   * The array of custom actions, or default actions overrides, to be displayed in the table last column.
+   * The array of custom actions, or default action overrides, to be displayed in the table's last column.
    * When overriding a default action no field is required.
    *
    * action `object`:
    *   - dataIndex*: The custom action identifier or, if "edit" or "delete", the default action to override. <br> `string`
    *   - icon*: The icon to be displayed for the action. <br> `ReactNode`
-   *   - isDanger: Whether the action is a possibly dangerous action. <br> `boolean`
+   *   - isDanger: Whether the action is possibly dangerous. <br> `boolean`
    *   - isDisabled: Whether the action is disabled for a specific row. <br>  `(record: RecordType, index: number) => boolean` | `boolean`
    *   - onClick*: The callback invoked when clicking the corresponding action button. <br>  `(record: RecordType, index: number) => void`
    *   - title: Column displayed label for the action. <br> `ReactNode`
