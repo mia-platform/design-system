@@ -38,3 +38,9 @@
     padding-bottom: var(--column-padding) !important;
   }
 }
+
+.action {
+  /* Removes the button ripple effect by adding a negative margin and hidden overflow */
+  margin: calc(var(--spacing-margin-md, 12) * -1px);
+  overflow: hidden;
+}
