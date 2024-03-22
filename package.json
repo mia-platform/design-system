@@ -1,7 +1,7 @@
 {
   "name": "@mia-platform-internal/console-design-system-react",
   "packageManager": "yarn@3.6.1",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "main": "dist/cjs/console-design-system-react.cjs",
   "module": "dist/es/console-design-system-react.js",
@@ -73,7 +73,7 @@
     "@types/react-dom": "^18.2.19",
     "@types/traverse": "^0.6.36",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.1.0",
+    "@typescript-eslint/parser": "^7.3.1",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "classnames": "^2.5.1",
     "eslint": "^8.57.0",
@@ -94,7 +94,7 @@
     "traverse": "^0.6.8",
     "ts-jest": "^29.1.2",
     "typescript": "^5.3.3",
-    "vite": "^5.1.4",
+    "vite": "^5.1.6",
     "vite-plugin-dts": "^3.7.3",
     "vite-plugin-svgr": "^3.3.0",
     "vite-tsconfig-paths": "^4.3.1"

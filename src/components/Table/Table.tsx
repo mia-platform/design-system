@@ -19,12 +19,17 @@
 import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
-import { GenericRecord, Layout, Size } from './Table.types'
+import { Action, GenericRecord, Layout, Size } from './Table.types'
+import { Icon } from '../Icon'
+import { IconProps } from '../Icon/Icon.props'
 import { TableProps } from './Table.props'
+import { getAction } from './Table.Action'
 import styles from './Table.module.css'
+import { useTheme } from '../../hooks/useTheme'
 
 const { Auto } = Layout
 const { Middle } = Size
+const { Edit, Delete } = Action
 const { table } = styles
 
 /**
@@ -36,6 +41,7 @@ const { table } = styles
 export const Table = <RecordType extends GenericRecord>({
   columns,
   data,
+  actions,
   expandable,
   footer,
   intlLocale,
@@ -45,13 +51,45 @@ export const Table = <RecordType extends GenericRecord>({
   onChange,
   onHeaderRow,
   onRow,
+  onEditRow,
+  onDeleteRow,
   rowKey,
   rowSelection,
   pagination,
   size,
   scroll,
 }: TableProps<RecordType>): ReactElement => {
-  const tablePagination = useMemo(() => pagination !== false && ({ ...Table.pagination, ...pagination }), [pagination])
+  const theme = useTheme()
+  const iconSize = theme?.shape?.size?.lg as IconProps['size'] || 24
+
+  const editAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Edit), [actions])
+  const deleteAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Delete), [actions])
+  const customActions = useMemo(() => actions?.filter(({ dataIndex }) => (
+    dataIndex !== Edit && dataIndex !== Delete
+  )), [actions])
+
+  const tableColumns = useMemo(() => [
+    ...columns,
+    ...customActions?.map(getAction) || [],
+    ...onEditRow ? [getAction({
+      dataIndex: Edit,
+      icon: <Icon color="currentColor" name="PiPencilSimpleLine" size={iconSize} />,
+      onClick: onEditRow,
+      ...editAction,
+    })] : [],
+    ...onDeleteRow ? [getAction({
+      dataIndex: Delete,
+      icon: <Icon color="currentColor" name="PiTrash" size={iconSize} />,
+      isDanger: true,
+      onClick: onDeleteRow,
+      ...deleteAction,
+    })] : [],
+  ], [columns, customActions, deleteAction, editAction, iconSize, onDeleteRow, onEditRow])
+
+  const tablePagination = useMemo(() => pagination !== false && ({
+    ...Table.pagination,
+    ...pagination,
+  }), [pagination])
 
   return (
     <Skeleton
@@ -61,7 +99,7 @@ export const Table = <RecordType extends GenericRecord>({
       <AntTable<RecordType>
         bordered={isBordered}
         className={table}
-        columns={columns}
+        columns={tableColumns}
         dataSource={data}
         expandable={expandable}
         footer={footer}
@@ -107,9 +145,12 @@ Table.pagination = {
 }
 
 Table.defaultProps = {
+  actions: [],
   isBordered: false,
   isLoading: false,
   layout: Auto,
+  onDeleteRow: undefined,
+  onEditRow: undefined,
   pagination: Table.pagination,
   scroll: Table.scroll,
   size: Middle,

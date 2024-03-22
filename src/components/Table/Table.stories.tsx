@@ -24,6 +24,7 @@ import {
   WithExternalFiltersAndSorters,
   alignedColumns,
   columns,
+  customActions,
   data,
   expandable,
   filteredAndSortedColumns,
@@ -92,6 +93,17 @@ export const Expandable: Story = {
       onExpand: action('onExpand'),
       onExpandedRowsChange: action('onExpandedRowsChange'),
     }),
+  },
+}
+
+export const Actions: Story = {
+  args: { ...meta.args,
+    actions: customActions({
+      detail: action('detail'),
+      overview: action('overview'),
+    }),
+    onEditRow: action('edit'),
+    onDeleteRow: action('delete'),
   },
 }
 

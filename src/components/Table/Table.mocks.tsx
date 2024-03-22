@@ -20,9 +20,10 @@ import { ReactElement, useState } from 'react'
 import { Space } from 'antd'
 import { get } from 'lodash'
 
-import { ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder } from './Table.types'
+import { Action, ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder, TableAction } from './Table.types'
 import { Button } from '../Button'
 import { Hierarchy as ButtonHierarchy } from '../Button/Button.types'
+import { Icon } from '../Icon'
 import { Table } from '.'
 import { TableProps } from './Table.props'
 
@@ -59,6 +60,25 @@ export const hugeData: TableRecord[] = Array.from({ length: 50 }).map((_, i) => 
 }))
 
 export const rowKey = Object.keys(data[0])[0] as keyof TableRecord
+
+/** Actions */
+
+export const customActions = (callbacks: Callbacks = {}): TableAction<TableRecord>[] => ([
+  {
+    dataIndex: 'detail',
+    icon: <Icon color="currentColor" name="PiArrowRight" size={24} />,
+    onClick: callbacks.detail,
+  },
+  {
+    dataIndex: 'overview',
+    icon: <Icon color="currentColor" name="PiCircleHalfTilt" size={24} />,
+    onClick: callbacks.overview,
+  },
+  {
+    dataIndex: Action.Edit, /* Override default edit action */
+    isDisabled: (_, index) => Boolean(index === 2),
+  },
+])
 
 /** Filters */
 

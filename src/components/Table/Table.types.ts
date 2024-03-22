@@ -19,6 +19,7 @@
 import type { AnyObject as GenericRecord } from 'antd/es/_util/type'
 export type { TablePaginationConfig as Pagination } from 'antd'
 export type { ColumnType, ColumnFilterItem, ExpandableConfig, TableLocale as Locale, TableRowSelection as RowSelection } from 'antd/es/table/interface'
+import type { ReactNode } from 'react'
 
 export type { GenericRecord }
 
@@ -56,3 +57,23 @@ export type Scroll = {
 }
 
 export type UserAction = 'paginate' | 'sort' | 'filter'
+
+export enum Action {
+  Edit = 'edit',
+  Delete= 'delete',
+}
+
+export type CustomAction<RecordType extends GenericRecord> = {
+  dataIndex: string,
+  key?: string,
+  icon: ReactNode,
+  isDanger?: boolean,
+  isDisabled?: (record: RecordType, index?: number) => boolean | boolean,
+  onClick: (record: RecordType, index?: number) => void,
+  title?: ReactNode
+}
+
+export type TableAction<RecordType extends GenericRecord> = (
+  CustomAction<RecordType> |
+  { dataIndex: Action } & Partial<CustomAction<RecordType>>
+)
