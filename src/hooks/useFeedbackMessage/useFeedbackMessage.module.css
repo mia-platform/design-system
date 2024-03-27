@@ -50,10 +50,18 @@
   }
 
   [class~=ant-message-notice-content] {
+    align-items: center;
     padding: calc(var(--spacing-padding-md, 8) * 1px) !important;
+    display: inline-flex !important;
+    height: 40px;
 
     [class~=ant-message-custom-content] {
       display: flex !important;
+      align-items: center;
+
+      [class~=anticon-loading] {
+        top: 0px !important;
+      }
     }
   }
 }
