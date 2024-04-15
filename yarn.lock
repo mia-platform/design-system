@@ -2944,7 +2944,7 @@ __metadata:
     lodash.isobject: ^3.0.2
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.11.0
+    react-icons: ^5.1.0
     rollup-plugin-visualizer: ^5.12.0
     storybook: ^7.6.17
     traverse: ^0.6.8
@@ -13999,12 +13999,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:^4.11.0":
-  version: 4.11.0
-  resolution: "react-icons@npm:4.11.0"
+"react-icons@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "react-icons@npm:5.1.0"
   peerDependencies:
     react: "*"
-  checksum: 7b8b80bbe2dabcc54b6c2129b7761a04b19caebe24389adc7683478ef41212b9ca0b53c63abcc06b3c01b94c84855ec5142b4c357e19c4aaaad9a4db23a3c485
+  checksum: 0ea6cfed7f2a98d58b3514a080a9d5451ab81fdf94fb0c94d2add0d22b754a38f4eb4cb4e8ce8c0685c0bfca2394ec0101391530a4a90f233256bd7a13f73111
   languageName: node
   linkType: hard
 
