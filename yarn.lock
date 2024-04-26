@@ -2921,7 +2921,7 @@ __metadata:
     "@testing-library/react": ^14.2.1
     "@types/jest": ^29.5.12
     "@types/lodash": ^4.14.202
-    "@types/react": ^18.2.66
+    "@types/react": ^18.3.0
     "@types/react-dom": ^18.2.19
     "@types/traverse": ^0.6.36
     "@typescript-eslint/eslint-plugin": ^7.2.0
@@ -2942,7 +2942,7 @@ __metadata:
     jest-watch-typeahead: ^2.2.2
     lodash.get: ^4.4.2
     lodash.isobject: ^3.0.2
-    react: ^18.2.0
+    react: ^18.3.0
     react-dom: ^18.2.0
     react-icons: ^4.11.0
     rollup-plugin-visualizer: ^5.12.0
@@ -2955,7 +2955,7 @@ __metadata:
     vite-plugin-svgr: ^3.3.0
     vite-tsconfig-paths: ^4.3.1
   peerDependencies:
-    react: ^18.2.0
+    react: ^18.3.0
     react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
@@ -5938,14 +5938,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.66":
-  version: 18.2.66
-  resolution: "@types/react@npm:18.2.66"
+"@types/react@npm:^18.3.0":
+  version: 18.3.0
+  resolution: "@types/react@npm:18.3.0"
   dependencies:
     "@types/prop-types": "*"
-    "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 266cdd046bd1bb4f1e2d07bba305e1264e91bedcb9e8643e303fc80468f3cf0860c82982589c67fc07a10f5496eb04c1cc2bf8283484f27a605c2651c6c8f3f3
+  checksum: 6addfffcf6220157217fd1487d831b41e725e170887a83bd4379e00b67c553dbb7b283c5f4555102f56536539f1f712635d27e27f377d17c2c0f171b66bc2f2d
   languageName: node
   linkType: hard
 
@@ -14095,12 +14094,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react@npm:18.2.0"
+"react@npm:^18.3.0":
+  version: 18.3.0
+  resolution: "react@npm:18.3.0"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
+  checksum: f1389bf7f9cc9295fded895635e54c4bf73626a8ea51afaa2da4988f89e71b68f249c1782f832d5912ba7d437da9292fc44ecf7c3dff072879253df93d703a10
   languageName: node
   linkType: hard
 
