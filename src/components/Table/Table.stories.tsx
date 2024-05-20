@@ -19,6 +19,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
+import './style.css'
 import {
   TableRecord,
   WithExternalFiltersAndSorters,
@@ -144,4 +145,11 @@ export const ColumnWidth: Story = {
 
 export const ColumnSpan: Story = {
   args: { ...meta.args, columns: spannedColumns, isBordered: true },
+}
+
+export const RowClassName: Story = {
+  args: {
+    ...meta.args,
+    rowClassName: (_record: unknown, index: number) => (index % 2 === 0 ? 'table-column-warning' : ''),
+  },
 }
