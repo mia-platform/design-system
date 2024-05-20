@@ -15,24 +15,51 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { ReactElement } from 'react'
+import { ReactElement, useMemo } from 'react'
+import classNames from 'classnames'
 
 import { BreadcrumbItemProps } from './Breadcrumb.props'
+import { Icon } from '../Icon'
+import styles from './Breadcrumb.module.css'
+import { useTheme } from '../../hooks/useTheme'
+
+const { breadcrumbItem, current, last, initial, intermediate } = styles
 
 export const BreadcrumbItem = ({
   icon,
   index,
+  itemsLength,
   onClick,
   title,
 }: BreadcrumbItemProps): ReactElement => {
-  if (index === 0) {
-    console.log('ciao')
-  }
+  const { palette } = useTheme()
+
+  const isFirstItem = index === 0
+  const isLastItem = index === (itemsLength - 1)
+  const isIntermediateItem = !isFirstItem && !isLastItem
+  const hasSeparator = itemsLength > 1 && !isLastItem
+
+  const breadcrumbItemClassNames = useMemo(() => classNames(
+    [
+      breadcrumbItem,
+      isFirstItem && initial,
+      isFirstItem && isLastItem && current,
+      isLastItem && last,
+      isIntermediateItem && intermediate,
+    ]
+  ), [isIntermediateItem, isFirstItem, isLastItem])
+
+  const separatorIcon = useMemo(() => (
+    <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
+  ), [palette?.common?.grey])
 
   return (
-    <div onClick={onClick}>
-      {icon}
-      {title}
-    </div>
+    <>
+      <div className={breadcrumbItemClassNames} onClick={onClick}>
+        {icon}
+        {title}
+      </div>
+      {hasSeparator && separatorIcon}
+    </>
   )
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement } from 'react'
+import { ReactElement, useMemo } from 'react'
+import classNames from 'classnames'
 
 import { BreadcrumbItem } from './BreadcrumbItem'
 import { BreadcrumbProps } from './Breadcrumb.props'
+import styles from './Breadcrumb.module.css'
+
+const { breadcrumb } = styles
 
 /**
  * UI component for displaying the current location within an hierarchy
@@ -29,17 +33,24 @@ import { BreadcrumbProps } from './Breadcrumb.props'
 export const Breadcrumb = ({
   items,
 }: BreadcrumbProps): ReactElement => {
+  const breadcrumbClassNames = useMemo(() => classNames(
+    [
+      breadcrumb,
+    ]
+  ), [])
+
   return (
-    <>
+    <div className={breadcrumbClassNames}>
       {items.map(({ icon, onClick, title }, index) =>
         <BreadcrumbItem
           icon={icon}
           index={index}
+          itemsLength={items.length}
           key={'breadcrumb-item'}
           title={title}
           onClick={onClick}
         />
       )}
-    </>
+    </div>
   )
 }

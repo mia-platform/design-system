@@ -21,7 +21,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Breadcrumb } from './Breadcrumb'
 import { Icon } from '../Icon'
 
-const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
+const icon = <Icon color="black" name="PiCircleHalfTiltLight" size={16} />
 const title = 'Text'
 
 const meta = {
@@ -31,12 +31,51 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const OneItem: Story = {
+export const Default: Story = {
   args: {
     items: [{
       icon,
-      onClick: (event) => console.log(event),
       title,
     }],
+  },
+}
+
+export const OneItemTitleOnly: Story = {
+  args: {
+    items: [{
+      title,
+    }],
+  },
+}
+
+export const OneItemIconOnly: Story = {
+  args: {
+    items: [{
+      icon,
+    }],
+  },
+}
+
+export const OneItemIconAndTitle: Story = {
+  args: {
+    items: [{
+      icon,
+      title,
+    }],
+  },
+}
+
+export const TwoItems: Story = {
+  args: {
+    items: [
+      {
+        icon,
+        title,
+      },
+      {
+        icon,
+        title,
+      },
+    ],
   },
 }

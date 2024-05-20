@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BreadcrumbItemType } from './Breadcrumb.types'
-
-export type BreadcrumbItemProps = BreadcrumbItemType &
-{
-  index: number
-  itemsLength: number
-}
-
-export type BreadcrumbProps = {
-  items: BreadcrumbItemType[]
-}
+export { Breadcrumb } from './Breadcrumb'
