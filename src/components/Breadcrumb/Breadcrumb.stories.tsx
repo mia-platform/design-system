@@ -33,10 +33,23 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    items: [{
-      icon,
-      title,
-    }],
+    items: [
+      {
+        icon,
+        title: 'first',
+      },
+      {
+        icon,
+        title: 'second',
+      },
+      {
+        title: 'third',
+      },
+      {
+        icon,
+        title: 'fourth',
+      },
+    ],
   },
 }
 
@@ -70,11 +83,33 @@ export const TwoItems: Story = {
     items: [
       {
         icon,
-        title,
+        title: 'first',
       },
       {
         icon,
-        title,
+        title: 'second',
+      },
+    ],
+  },
+}
+
+export const MultipleItems: Story = {
+  args: {
+    items: [
+      {
+        icon,
+        title: 'first',
+      },
+      {
+        icon,
+        title: 'second',
+      },
+      {
+        title: 'third',
+      },
+      {
+        icon,
+        title: 'fourth',
       },
     ],
   },

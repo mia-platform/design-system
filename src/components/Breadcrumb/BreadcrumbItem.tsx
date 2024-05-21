@@ -23,7 +23,7 @@ import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-const { breadcrumbItem, current, last, initial, intermediate } = styles
+const { breadcrumbItem, last, initial } = styles
 
 export const BreadcrumbItem = ({
   icon,
@@ -34,20 +34,17 @@ export const BreadcrumbItem = ({
 }: BreadcrumbItemProps): ReactElement => {
   const { palette } = useTheme()
 
-  const isFirstItem = index === 0
+  const isInitialItem = index === 0
   const isLastItem = index === (itemsLength - 1)
-  const isIntermediateItem = !isFirstItem && !isLastItem
   const hasSeparator = itemsLength > 1 && !isLastItem
 
   const breadcrumbItemClassNames = useMemo(() => classNames(
     [
       breadcrumbItem,
-      isFirstItem && initial,
-      isFirstItem && isLastItem && current,
+      isInitialItem && initial,
       isLastItem && last,
-      isIntermediateItem && intermediate,
     ]
-  ), [isIntermediateItem, isFirstItem, isLastItem])
+  ), [isInitialItem, isLastItem])
 
   const separatorIcon = useMemo(() => (
     <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
