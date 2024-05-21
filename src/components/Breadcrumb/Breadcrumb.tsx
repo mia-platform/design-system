@@ -41,13 +41,14 @@ export const Breadcrumb = ({
 
   return (
     <div className={breadcrumbClassNames}>
-      {items.map(({ icon, onClick, title }, index) =>
+      {items.map(({ icon, menu, onClick, label }, index) =>
         <BreadcrumbItem
           icon={icon}
           index={index}
           itemsLength={items.length}
           key={'breadcrumb-item'}
-          title={title}
+          label={label}
+          menu={menu}
           onClick={onClick}
         />
       )}

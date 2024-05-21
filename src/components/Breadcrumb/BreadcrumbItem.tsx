@@ -23,38 +23,74 @@ import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-const { breadcrumbItem, last, initial } = styles
+const {
+  breadcrumbItemLabelStyle, breadcrumbMenuIcon, breadcrumbItemWrapper, caretOnly, last, initial, withMenu,
+} = styles
 
 export const BreadcrumbItem = ({
   icon,
   index,
   itemsLength,
+  label,
+  menu,
   onClick,
-  title,
 }: BreadcrumbItemProps): ReactElement => {
   const { palette } = useTheme()
 
-  const isInitialItem = index === 0
-  const isLastItem = index === (itemsLength - 1)
-  const hasSeparator = itemsLength > 1 && !isLastItem
+  const isInitialItem = useMemo(() => index === 0, [index])
+  const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
 
-  const breadcrumbItemClassNames = useMemo(() => classNames(
+  const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
+  const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
+
+  const breadcrumbItemWrapperClassNames = useMemo(() => classNames(
     [
-      breadcrumbItem,
+      breadcrumbItemWrapper,
       isInitialItem && initial,
       isLastItem && last,
+      hasMenu && withMenu,
     ]
-  ), [isInitialItem, isLastItem])
+  ), [hasMenu, isInitialItem, isLastItem])
+
+  const breadcrumbItemLabelClassNames = useMemo(() => classNames([breadcrumbItemLabelStyle]), [])
+
+  const itemLabel
+    = label
+    ?? (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.label)
+      ?? menu?.placeholder
+  const hasLabel = icon || itemLabel
+
+  const breadcrumbItemMenuClassNames = useMemo(() => classNames([
+    breadcrumbMenuIcon,
+    !hasLabel && caretOnly,
+  ]), [hasLabel])
+
+  const menuIcon = useMemo(() => (
+    <Icon color={palette?.common?.grey?.[600]} name="AiOutlineCaretDown" size={16} />
+  ), [palette?.common?.grey])
 
   const separatorIcon = useMemo(() => (
     <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
   ), [palette?.common?.grey])
 
+  const breadcrumbItemLabel = useMemo(() => (
+    <div className={breadcrumbItemLabelClassNames} onClick={onClick}>
+      {icon}
+      {itemLabel}
+    </div>
+  ), [breadcrumbItemLabelClassNames, icon, itemLabel, onClick])
+
+  const breadcrumbItemMenu = useMemo(() => (
+    <div className={breadcrumbItemMenuClassNames}>
+      {menuIcon}
+    </div>
+  ), [breadcrumbItemMenuClassNames, menuIcon])
+
   return (
     <>
-      <div className={breadcrumbItemClassNames} onClick={onClick}>
-        {icon}
-        {title}
+      <div className={breadcrumbItemWrapperClassNames}>
+        {hasLabel && breadcrumbItemLabel}
+        {hasMenu && breadcrumbItemMenu}
       </div>
       {hasSeparator && separatorIcon}
     </>

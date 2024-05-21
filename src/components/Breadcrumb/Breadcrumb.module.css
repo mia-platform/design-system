@@ -22,15 +22,12 @@
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
 }
 
-.breadcrumbItem {
+.breadcrumbItemWrapper {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
-  font-family: var(--typography-caption-fontFamily, Inter);
-  font-size: calc(var(--typography-bodyL-fontSize, 18) * 1px);
-  color: var(--palette-common-grey, #636363);
-  line-height: calc(var(--typography-bodyM-lineHeight, 24) * 1px);
+  height: calc(var(--shape-size-xl, 32) * 1px);
   background-color: var(--palette-background-neutral, #89898914);
   border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
   padding-top: calc(var(--spacing-padding-xs, 4) * 1px);
@@ -39,19 +36,47 @@
   padding-left: calc(var(--spacing-padding-sm, 8) * 1px);
 }
 
-.breadcrumbItem:hover {
-  background-color: var(--palette-action-alternate-secondary-hover) !important;
-}
-
-/* TODO: check if it works when onClick is implemented */
-.segmentedOption:active {
-  background-color: var(--palette-action-alternate-secondary-active) !important;
-}
-
-.breadcrumbItem.initial {
+.breadcrumbItemWrapper.initial {
   background: none;
 }
 
-.breadcrumbItem.last {
+.breadcrumbItemWrapper.last {
   font-weight: var(--typography-bodyLBold-fontWeight);
+}
+
+.breadcrumbItemWrapper.withMenu {
+  padding-right: calc(var(--spacing-padding-xs, 4) * 1px) !important;
+}
+
+.breadcrumbItemWrapper:hover {
+  background-color: var(--palette-action-alternate-secondary-hover) !important;
+}
+
+/* TODO: breacrumbItemWrapper:active */
+
+.breadcrumbItemLabelStyle {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing-gap-xs, 4) * 1px);
+  font-family: var(--typography-caption-fontFamily, Inter);
+  font-size: calc(var(--typography-bodyL-fontSize, 18) * 1px);
+  line-height: calc(var(--typography-bodyM-lineHeight, 24) * 1px);
+  color: var(--palette-common-grey, #636363);
+}
+
+.breadcrumbMenuIcon {
+  --icon-border: 1px solid;
+
+  display: flex;
+  align-items: center;
+  height: calc((var(--shape-size-xl, 32) + var(--shape-size-s, 8)) * 1px);
+  border-left: var(--icon-border);
+  border-color: var(--palette-common-white, #ffffff);
+  padding-left: calc(var(--spacing-padding-xs, 4) * 1px);
+}
+
+.breadcrumbMenuIcon.caretOnly {
+  border-left: none;
+  padding-left: 0px;
+  padding-right: calc(var(--spacing-padding-xs, 4) * 1px);
 }

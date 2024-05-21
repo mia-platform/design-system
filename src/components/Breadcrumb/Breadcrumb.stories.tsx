@@ -22,7 +22,7 @@ import { Breadcrumb } from './Breadcrumb'
 import { Icon } from '../Icon'
 
 const icon = <Icon color="black" name="PiCircleHalfTiltLight" size={16} />
-const title = 'Text'
+const label = 'Text'
 
 const meta = {
   component: Breadcrumb,
@@ -36,18 +36,18 @@ export const Default: Story = {
     items: [
       {
         icon,
-        title: 'first',
+        label: 'first',
       },
       {
         icon,
-        title: 'second',
+        label: 'second',
       },
       {
-        title: 'third',
+        label: 'third',
       },
       {
         icon,
-        title: 'fourth',
+        label: 'fourth',
       },
     ],
   },
@@ -56,15 +56,7 @@ export const Default: Story = {
 export const OneItemTitleOnly: Story = {
   args: {
     items: [{
-      title,
-    }],
-  },
-}
-
-export const OneItemIconOnly: Story = {
-  args: {
-    items: [{
-      icon,
+      label,
     }],
   },
 }
@@ -73,7 +65,7 @@ export const OneItemIconAndTitle: Story = {
   args: {
     items: [{
       icon,
-      title,
+      label,
     }],
   },
 }
@@ -83,11 +75,11 @@ export const TwoItems: Story = {
     items: [
       {
         icon,
-        title: 'first',
+        label: 'first',
       },
       {
         icon,
-        title: 'second',
+        label: 'second',
       },
     ],
   },
@@ -98,18 +90,78 @@ export const MultipleItems: Story = {
     items: [
       {
         icon,
-        title: 'first',
+        label: 'first',
       },
       {
         icon,
-        title: 'second',
+        label: 'second',
       },
       {
-        title: 'third',
+        label: 'third',
       },
       {
         icon,
-        title: 'fourth',
+        label: 'fourth',
+      },
+    ],
+  },
+}
+
+export const MultipleItemsWithMenu: Story = {
+  args: {
+    items: [
+      {
+        icon,
+        menu: {
+          items: [],
+        },
+        label: 'first',
+      },
+      {
+        icon,
+        menu: {
+          items: [{
+            icon,
+            label: 'first nested',
+          }],
+        },
+        label: 'second',
+      },
+      {
+        menu: {
+          items: [{
+            icon,
+            label: 'first nested',
+          },
+          {
+            icon,
+            label: 'second nested',
+          },
+          {
+            icon,
+            label: 'third nested',
+          }],
+        },
+      },
+      {
+        menu: {
+          activeKey: '1',
+          items: [{
+            key: '1',
+            icon,
+            label: 'first nested',
+          },
+          {
+            key: '2',
+            icon,
+            label: 'second nested',
+          },
+          {
+            key: '3',
+            icon,
+            label: 'third nested',
+          }],
+        },
       },
     ],
   },

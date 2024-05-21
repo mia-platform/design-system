@@ -18,8 +18,30 @@
 
 import { ReactNode } from 'react'
 
+export type BreadcrumbItemMenuItem = {
+  icon?: ReactNode
+  key?: string
+  onClick?: (event: React.MouseEvent<Element, MouseEvent>) => void
+  label: ReactNode
+}
+
+export type BreadcrumbItemMenu = {
+  activeKey?: string
+  items?: BreadcrumbItemMenuItem[]
+  onClear?: () => void
+  onDropdownVisibleChange?: (open: boolean) => void
+  onSearch?: (value: string) => void
+  open?: boolean
+  placeholder?: ReactNode
+  searchAllowClear?: boolean
+  searchPlaceholder?: ReactNode
+  showSearch?: boolean
+}
+
 export type BreadcrumbItemType = {
   icon?: ReactNode
+  key?: string
+  label?: ReactNode
+  menu?: BreadcrumbItemMenu
   onClick?: (event: React.MouseEvent<Element, MouseEvent>) => void
-  title?: ReactNode
 }
