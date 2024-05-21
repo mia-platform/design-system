@@ -234,7 +234,7 @@ export type TableProps<RecordType extends GenericRecord> = {
    * Row's className
    *
    */
-  rowClassName: (record: RecordType, index:number) => string,
+  rowClassName?: (record: RecordType, index:number) => string,
 
   /**
    * Configuration for row selection in the table.
