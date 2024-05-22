@@ -26,34 +26,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: calc(var(--spacing-gap-xs, 4) * 1px);
   height: calc(var(--shape-size-xl, 32) * 1px);
-  background-color: var(--palette-background-neutral, #89898914);
-  border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
-  padding-top: calc(var(--spacing-padding-xs, 4) * 1px);
-  padding-right: calc(var(--spacing-padding-sm, 8) * 1px);
-  padding-bottom: calc(var(--spacing-padding-xs, 4) * 1px);
-  padding-left: calc(var(--spacing-padding-sm, 8) * 1px);
 }
-
-.breadcrumbItemWrapper.initial {
-  background: none;
-}
-
-.breadcrumbItemWrapper.last {
-  font-weight: var(--typography-bodyLBold-fontWeight);
-}
-
-.breadcrumbItemWrapper.withMenu {
-  padding-right: calc(var(--spacing-padding-xs, 4) * 1px) !important;
-}
-
-.breadcrumbItemWrapper:hover {
-  background-color: var(--palette-action-alternate-secondary-hover) !important;
-  cursor: pointer;
-}
-
-/* TODO: breacrumbItemWrapper:active */
 
 .breadcrumbItemLabelStyle {
   display: flex;
@@ -64,30 +38,70 @@
   font-size: calc(var(--typography-bodyL-fontSize, 18) * 1px);
   line-height: calc(var(--typography-bodyM-lineHeight, 24) * 1px);
   color: var(--palette-common-grey, #636363);
+  background-color: var(--palette-background-neutral, #89898914);
+  padding-right: calc(var(--spacing-padding-sm, 8) * 1px);
+  padding-left: calc(var(--spacing-padding-sm, 8) * 1px);
+  border-bottom-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  border-top-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+}
+
+.breadcrumbItemLabelStyle.withoutMenu {
+  border-bottom-right-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  border-top-right-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+}
+
+.breadcrumbItemLabelStyle.initial {
+  background: none !important;
+}
+
+.breadcrumbItemLabelStyle.last {
+  font-weight: var(--typography-bodyLBold-fontWeight);
+}
+
+.breadcrumbItemLabelStyle:hover {
+  background-color: var(--palette-action-alternate-secondary-hover) !important;
+  cursor: pointer;
+}
+
+.breadcrumbItemLabelStyle:active {
+  background-color: var(--palette-action-alternate-secondary-selected) !important;
 }
 
 .breadcrumbMenuIcon {
-  --icon-border: 1px solid;
-
   display: flex;
   align-items: center;
   height: calc((var(--shape-size-xl, 32) + var(--shape-size-s, 8)) * 1px);
-  border-left: var(--icon-border);
-  border-color: var(--palette-common-white, #ffffff);
+  background-color: var(--palette-background-neutral, #89898914);
+  padding-right: calc(var(--spacing-padding-xs, 4) * 1px);
   padding-left: calc(var(--spacing-padding-xs, 4) * 1px);
+  border-bottom-right-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  border-top-right-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  border-left: 1px solid;
+  border-color: var(--palette-common-white, #ffffff);
 }
 
 .breadcrumbMenuIcon.caretOnly {
-  border-left: none;
-  padding-left: 0px;
-  padding-right: calc(var(--spacing-padding-xs, 4) * 1px);
+  border-left: 0px;
+  border-bottom-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  border-top-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
 }
+
+.breadcrumbMenuIcon:hover {
+  background-color: var(--palette-action-alternate-secondary-hover) !important;
+  cursor: pointer;
+}
+
+.breadcrumbMenuIcon:active {
+  background-color: var(--palette-action-alternate-secondary-selected) !important;
+}
+
+/* TODO: fix scroll inside dropdown */
 
 .dropdownMenuContainer {
   display: grid;
   grid-template-rows: min-content min-content 1fr;
   max-height: 300px;
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--palette-common-white, #ffffff);
   border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
   box-shadow: 0 2px 4px 0 #0000000D, 0 1px 6px -1px #0000000D, 0 1px 2px 0 #00000014;
@@ -98,8 +112,4 @@
   justify-content: center;
   width: 100%;
   padding: (var(--shape-size-s, 8) * 1px);
-}
-
-.dropdownMenuStyle {
-  overflow: auto;
 }

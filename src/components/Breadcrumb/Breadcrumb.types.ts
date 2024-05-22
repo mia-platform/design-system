@@ -22,19 +22,23 @@ export type BreadcrumbItemMenuItem = {
   icon?: ReactNode
   key?: string
   onClick?: (event: React.MouseEvent<Element, MouseEvent>) => void
-  label: ReactNode
+  label: string
 }
+
+export type OnSearch = (
+  value: string,
+  event?: React.ChangeEvent<HTMLInputElement> | React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLInputElement>,
+  info?: { source?: 'clear' | 'input';}
+) => void
 
 export type BreadcrumbItemMenu = {
   activeKey?: string
   items?: BreadcrumbItemMenuItem[]
-  onClear?: () => void
   onDropdownVisibleChange?: (open: boolean) => void
-  onSearch?: (value: string) => void
+  onSearch?: OnSearch
   open?: boolean
-  placeholder?: ReactNode
   searchAllowClear?: boolean
-  searchPlaceholder?: ReactNode
+  searchPlaceholder?: string
   showSearch?: boolean
 }
 

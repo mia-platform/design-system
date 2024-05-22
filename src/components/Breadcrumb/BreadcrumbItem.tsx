@@ -33,10 +33,9 @@ const {
   caretOnly,
   dropdownMenuContainer,
   dropdownMenuSearch,
-  dropdownMenuStyle,
   last,
   initial,
-  withMenu,
+  withoutMenu,
 } = styles
 
 export const BreadcrumbItem = ({
@@ -57,24 +56,23 @@ export const BreadcrumbItem = ({
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
 
-  const breadcrumbItemWrapperClassNames = useMemo(() => classNames(
-    [
-      breadcrumbItemWrapper,
-      isInitialItem && initial,
-      isLastItem && last,
-      hasMenu && withMenu,
-    ]
-  ), [hasMenu, isInitialItem, isLastItem])
+  const breadcrumbItemWrapperClassNames = useMemo(() => classNames([breadcrumbItemWrapper]), [])
 
-  const breadcrumbItemLabelClassNames = useMemo(() => classNames([breadcrumbItemLabelStyle]), [])
+  const breadcrumbItemLabelClassNames = useMemo(() => classNames([
+    breadcrumbItemLabelStyle,
+    isInitialItem && !hasMenu && initial,
+    isLastItem && last,
+    !hasMenu && withoutMenu,
+  ]), [hasMenu, isInitialItem, isLastItem])
 
-  const itemLabel = useMemo(() => label
-    ?? (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.label)
-      ?? menu?.placeholder
+  const itemLabel = useMemo(() =>
+    (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.label)
+    ?? label
   , [label, menu])
 
-  const itemIcon = useMemo(() => icon
-   ?? (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.icon)
+  const itemIcon = useMemo(() =>
+    (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.icon)
+    ?? icon
   , [icon, menu])
 
   const hasLabel = itemIcon || itemLabel
@@ -106,6 +104,7 @@ export const BreadcrumbItem = ({
           ...acc,
           {
             key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
+            icon: itemData.icon,
             label: itemData.label,
           },
         ]
@@ -123,17 +122,17 @@ export const BreadcrumbItem = ({
 
   const dropdown = useCallback((dropdownMenu: ReactNode) => (
     <div className={dropdownMenuContainer}>
-      <div className={dropdownMenuSearch}>
+      {menu?.showSearch && <div className={dropdownMenuSearch}>
         <Input.Search
-          allowClear
+          allowClear={menu?.searchAllowClear ?? true}
           autoFocus
+          placeholder={menu?.searchPlaceholder ?? ''}
+          onSearch={menu?.onSearch}
         />
-      </div>
-      <div className={dropdownMenuStyle}>
-        {React.cloneElement(dropdownMenu as React.ReactElement, { style: { borderRadius: '0px', boxShadow: 'none' } })}
-      </div>
+      </div>}
+      {React.cloneElement(dropdownMenu as React.ReactElement, { style: { borderRadius: '0px', boxShadow: 'none' } })}
     </div>
-  ), [])
+  ), [menu?.onSearch, menu?.searchAllowClear, menu?.searchPlaceholder, menu?.showSearch])
 
   const breadcrumbItemMenu = useMemo(() => (
     <Dropdown
@@ -141,16 +140,22 @@ export const BreadcrumbItem = ({
       dropdownRender={dropdown}
       getPopupContainer={(trigger) => trigger}
       menu={itemMenu}
-      open={dropdownOpen}
+      open={menu?.open !== undefined ? menu.open : dropdownOpen}
       placement={'bottomLeft'}
       trigger={['click']}
-      onOpenChange={setDropdownOpen}
+      onOpenChange={(open) => {
+        if (menu?.open !== undefined && menu?.onDropdownVisibleChange !== undefined) {
+          menu.onDropdownVisibleChange(open)
+        } else {
+          setDropdownOpen(open)
+        }
+      }}
     >
       <div className={breadcrumbItemMenuClassNames}>
         {menuIcon}
       </div>
     </Dropdown>
-  ), [dropdown, itemMenu, dropdownOpen, breadcrumbItemMenuClassNames, menuIcon])
+  ), [dropdown, itemMenu, menu, dropdownOpen, breadcrumbItemMenuClassNames, menuIcon])
 
   return (
     <>

@@ -113,19 +113,34 @@ export const MultipleItemsWithMenu: Story = {
       {
         icon,
         menu: {
-          items: [],
+          items: [{
+            icon,
+            label: 'first nested',
+          }],
         },
         label: 'first',
       },
       {
         icon,
         menu: {
+          items: [],
+        },
+        label: 'empty items',
+      },
+      {
+        icon,
+        menu: {
+          showSearch: true,
           items: [{
             icon,
             label: 'first nested',
+          },
+          {
+            icon,
+            label: 'second nested',
           }],
         },
-        label: 'second',
+        label: 'with search',
       },
       {
         menu: {
@@ -137,11 +152,13 @@ export const MultipleItemsWithMenu: Story = {
             icon,
             label: 'second nested',
           }],
+          searchAllowClear: false,
+          searchPlaceholder: 'Search...',
         },
       },
       {
         menu: {
-          activeKey: '1',
+          activeKey: '2',
           items: [{
             key: '1',
             icon: <Icon color="black" name="PiAddressBook" size={16} />,
@@ -149,13 +166,43 @@ export const MultipleItemsWithMenu: Story = {
           },
           {
             key: '2',
-            icon,
-            label: 'second nested',
+            label: 'without search',
           },
           {
             key: '3',
             icon,
             label: 'third nested',
+          },
+          {
+            key: '4',
+            icon: <Icon color="black" name="PiAddressBook" size={16} />,
+            label: 'fourth nested',
+          },
+          {
+            key: '5',
+            icon,
+            label: 'fifth nested',
+          },
+          {
+            key: '6',
+            label: 'sixth nested',
+          },
+          {
+            key: '7',
+            label: 'seventh nested',
+          },
+          {
+            key: '8',
+            label: 'eighth nested',
+          },
+          {
+            key: '9',
+            label: 'ninth nested',
+          },
+          {
+            key: '10',
+            icon,
+            label: 'tenth nested',
           }],
         },
       },
