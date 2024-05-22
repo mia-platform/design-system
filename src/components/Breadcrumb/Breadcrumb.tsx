@@ -33,20 +33,16 @@ const { breadcrumb } = styles
 export const Breadcrumb = ({
   items,
 }: BreadcrumbProps): ReactElement => {
-  const breadcrumbClassNames = useMemo(() => classNames(
-    [
-      breadcrumb,
-    ]
-  ), [])
+  const breadcrumbClassNames = useMemo(() => classNames([breadcrumb]), [])
 
   return (
     <div className={breadcrumbClassNames}>
-      {items.map(({ icon, menu, onClick, label }, index) =>
+      {items.map(({ key, icon, menu, onClick, label }, index) =>
         <BreadcrumbItem
           icon={icon}
           index={index}
           itemsLength={items.length}
-          key={'breadcrumb-item'}
+          key={`breadcrumb-item-${key ?? index}`}
           label={label}
           menu={menu}
           onClick={onClick}

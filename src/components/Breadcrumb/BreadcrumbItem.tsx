@@ -15,7 +15,9 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { ReactElement, useMemo } from 'react'
+import { Dropdown, Input } from 'antd'
+import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
+import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 
 import { BreadcrumbItemProps } from './Breadcrumb.props'
@@ -23,8 +25,18 @@ import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
+
 const {
-  breadcrumbItemLabelStyle, breadcrumbMenuIcon, breadcrumbItemWrapper, caretOnly, last, initial, withMenu,
+  breadcrumbItemLabelStyle,
+  breadcrumbMenuIcon,
+  breadcrumbItemWrapper,
+  caretOnly,
+  dropdownMenuContainer,
+  dropdownMenuSearch,
+  dropdownMenuStyle,
+  last,
+  initial,
+  withMenu,
 } = styles
 
 export const BreadcrumbItem = ({
@@ -36,6 +48,8 @@ export const BreadcrumbItem = ({
   onClick,
 }: BreadcrumbItemProps): ReactElement => {
   const { palette } = useTheme()
+
+  const [dropdownOpen, setDropdownOpen] = useState(false)
 
   const isInitialItem = useMemo(() => index === 0, [index])
   const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
@@ -85,11 +99,58 @@ export const BreadcrumbItem = ({
     </div>
   ), [breadcrumbItemLabelClassNames, itemIcon, itemLabel, onClick])
 
-  const breadcrumbItemMenu = useMemo(() => (
-    <div className={breadcrumbItemMenuClassNames}>
-      {menuIcon}
+  const itemMenu = useMemo(() => {
+    const items = Object.values(menu?.items ?? {})
+      .reduce<ItemType[]>((acc, itemData, currentIndex) => {
+        return [
+          ...acc,
+          {
+            key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
+            label: itemData.label,
+          },
+        ]
+      }, [])
+
+    return {
+      items,
+      onClick: () => {
+        setDropdownOpen(false)
+      },
+      selectedKeys: menu?.activeKey ? [menu.activeKey] : [],
+    }
+  }, [menu])
+
+
+  const dropdown = useCallback((dropdownMenu: ReactNode) => (
+    <div className={dropdownMenuContainer}>
+      <div className={dropdownMenuSearch}>
+        <Input.Search
+          allowClear
+          autoFocus
+        />
+      </div>
+      <div className={dropdownMenuStyle}>
+        {React.cloneElement(dropdownMenu as React.ReactElement, { style: { borderRadius: '0px', boxShadow: 'none' } })}
+      </div>
     </div>
-  ), [breadcrumbItemMenuClassNames, menuIcon])
+  ), [])
+
+  const breadcrumbItemMenu = useMemo(() => (
+    <Dropdown
+      destroyPopupOnHide
+      dropdownRender={dropdown}
+      getPopupContainer={(trigger) => trigger}
+      menu={itemMenu}
+      open={dropdownOpen}
+      placement={'bottomLeft'}
+      trigger={['click']}
+      onOpenChange={setDropdownOpen}
+    >
+      <div className={breadcrumbItemMenuClassNames}>
+        {menuIcon}
+      </div>
+    </Dropdown>
+  ), [dropdown, itemMenu, dropdownOpen, breadcrumbItemMenuClassNames, menuIcon])
 
   return (
     <>

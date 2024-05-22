@@ -136,10 +136,6 @@ export const MultipleItemsWithMenu: Story = {
           {
             icon,
             label: 'second nested',
-          },
-          {
-            icon,
-            label: 'third nested',
           }],
         },
       },
