@@ -54,11 +54,16 @@ export const BreadcrumbItem = ({
 
   const breadcrumbItemLabelClassNames = useMemo(() => classNames([breadcrumbItemLabelStyle]), [])
 
-  const itemLabel
-    = label
+  const itemLabel = useMemo(() => label
     ?? (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.label)
       ?? menu?.placeholder
-  const hasLabel = icon || itemLabel
+  , [label, menu])
+
+  const itemIcon = useMemo(() => icon
+   ?? (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.icon)
+  , [icon, menu])
+
+  const hasLabel = itemIcon || itemLabel
 
   const breadcrumbItemMenuClassNames = useMemo(() => classNames([
     breadcrumbMenuIcon,
@@ -75,10 +80,10 @@ export const BreadcrumbItem = ({
 
   const breadcrumbItemLabel = useMemo(() => (
     <div className={breadcrumbItemLabelClassNames} onClick={onClick}>
-      {icon}
+      {itemIcon}
       {itemLabel}
     </div>
-  ), [breadcrumbItemLabelClassNames, icon, itemLabel, onClick])
+  ), [breadcrumbItemLabelClassNames, itemIcon, itemLabel, onClick])
 
   const breadcrumbItemMenu = useMemo(() => (
     <div className={breadcrumbItemMenuClassNames}>

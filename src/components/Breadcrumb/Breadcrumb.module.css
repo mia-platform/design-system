@@ -50,6 +50,7 @@
 
 .breadcrumbItemWrapper:hover {
   background-color: var(--palette-action-alternate-secondary-hover) !important;
+  cursor: pointer;
 }
 
 /* TODO: breacrumbItemWrapper:active */
@@ -58,6 +59,7 @@
   display: flex;
   align-items: center;
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
+  height: calc((var(--shape-size-xl, 32) + var(--shape-size-s, 8)) * 1px);
   font-family: var(--typography-caption-fontFamily, Inter);
   font-size: calc(var(--typography-bodyL-fontSize, 18) * 1px);
   line-height: calc(var(--typography-bodyM-lineHeight, 24) * 1px);

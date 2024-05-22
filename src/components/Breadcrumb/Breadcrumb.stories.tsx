@@ -148,7 +148,7 @@ export const MultipleItemsWithMenu: Story = {
           activeKey: '1',
           items: [{
             key: '1',
-            icon,
+            icon: <Icon color="black" name="PiAddressBook" size={16} />,
             label: 'first nested',
           },
           {
