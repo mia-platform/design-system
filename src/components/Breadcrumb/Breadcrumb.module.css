@@ -29,15 +29,11 @@
   height: calc(var(--shape-size-xl, 32) * 1px);
 }
 
-.breadcrumbItemLabelStyle {
+.breadcrumbItemLabelWrapper {
   display: flex;
   align-items: center;
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
   height: calc((var(--shape-size-xl, 32) + var(--shape-size-s, 8)) * 1px);
-  font-family: var(--typography-caption-fontFamily, Inter);
-  font-size: calc(var(--typography-bodyL-fontSize, 18) * 1px);
-  line-height: calc(var(--typography-bodyM-lineHeight, 24) * 1px);
-  color: var(--palette-common-grey, #636363);
   background-color: var(--palette-background-neutral, #89898914);
   padding-right: calc(var(--spacing-padding-sm, 8) * 1px);
   padding-left: calc(var(--spacing-padding-sm, 8) * 1px);
@@ -45,26 +41,30 @@
   border-top-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
 }
 
-.breadcrumbItemLabelStyle.withoutMenu {
+.breadcrumbItemLabelWrapper.withoutMenu {
   border-bottom-right-radius: calc(var(--shape-border-radius-md, 4) * 1px);
   border-top-right-radius: calc(var(--shape-border-radius-md, 4) * 1px);
 }
 
-.breadcrumbItemLabelStyle.initial {
+.breadcrumbItemLabelWrapper.initial {
   background: none !important;
 }
 
-.breadcrumbItemLabelStyle.last {
+.breadcrumbItemLabelWrapper.last {
   font-weight: var(--typography-bodyLBold-fontWeight);
 }
 
-.breadcrumbItemLabelStyle:hover {
+.breadcrumbItemLabelWrapper:hover {
   background-color: var(--palette-action-alternate-secondary-hover) !important;
   cursor: pointer;
 }
 
-.breadcrumbItemLabelStyle:active {
+.breadcrumbItemLabelWrapper:active {
   background-color: var(--palette-action-alternate-secondary-selected) !important;
+}
+
+.breadcrumbItemLabelStyle {
+  max-width: 250px;
 }
 
 .breadcrumbMenuIcon {

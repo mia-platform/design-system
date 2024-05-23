@@ -20,14 +20,15 @@ import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from '
 import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 
+import { BodyL } from '../Typography/BodyX/BodyL'
 import { BreadcrumbItemProps } from './Breadcrumb.props'
 import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-
 const {
   breadcrumbItemLabelStyle,
+  breadcrumbItemLabelWrapper,
   breadcrumbMenuIcon,
   breadcrumbItemWrapper,
   caretOnly,
@@ -58,12 +59,14 @@ export const BreadcrumbItem = ({
 
   const breadcrumbItemWrapperClassNames = useMemo(() => classNames([breadcrumbItemWrapper]), [])
 
-  const breadcrumbItemLabelClassNames = useMemo(() => classNames([
-    breadcrumbItemLabelStyle,
+  const breadcrumbItemLabelWrapperClassNames = useMemo(() => classNames([
+    breadcrumbItemLabelWrapper,
     isInitialItem && !hasMenu && initial,
     isLastItem && last,
     !hasMenu && withoutMenu,
   ]), [hasMenu, isInitialItem, isLastItem])
+
+  const breadcrumbItemLabelStyleClassnames = useMemo(() => classNames([breadcrumbItemLabelStyle]), [])
 
   const itemLabel = useMemo(() =>
     (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.label)
@@ -91,11 +94,13 @@ export const BreadcrumbItem = ({
   ), [palette?.common?.grey])
 
   const breadcrumbItemLabel = useMemo(() => (
-    <div className={breadcrumbItemLabelClassNames} onClick={onClick}>
+    <div className={breadcrumbItemLabelWrapperClassNames} onClick={onClick}>
       {itemIcon}
-      {itemLabel}
+      <div className={breadcrumbItemLabelStyleClassnames}>
+        <BodyL ellipsis={{ rows: 1, tooltip: itemLabel }}>{itemLabel}</BodyL>
+      </div>
     </div>
-  ), [breadcrumbItemLabelClassNames, itemIcon, itemLabel, onClick])
+  ), [breadcrumbItemLabelStyleClassnames, breadcrumbItemLabelWrapperClassNames, itemIcon, itemLabel, onClick])
 
   const itemMenu = useMemo(() => {
     const items = Object.values(menu?.items ?? {})
