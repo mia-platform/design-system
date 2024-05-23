@@ -284,6 +284,22 @@ exports[`Button Component renders primary filled button correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button Component renders primary filled button correctly with form ref and htmlType 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+    form="some-form"
+    type="submit"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button Component renders primary ghost button correctly 1`] = `
 <DocumentFragment>
   <button

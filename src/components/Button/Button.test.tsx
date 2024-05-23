@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
+import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 import { fireEvent, render, screen } from '../../test-utils'
 import { Button } from '.'
 import { Icon } from '../Icon'
@@ -124,6 +124,11 @@ describe('Button Component', () => {
 
   test('renders button with href correctly', () => {
     const { asFragment } = render(<Button href="https://mia-platform.eu">{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders primary filled button correctly with form ref and htmlType', () => {
+    const { asFragment } = render(<Button form="some-form" htmlType={HTMLType.Submit}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
