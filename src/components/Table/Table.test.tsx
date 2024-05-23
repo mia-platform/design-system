@@ -197,25 +197,25 @@ describe('Table Component', () => {
     expect(editButton).toBeVisible()
     fireEvent.click(editButton)
     expect(onEditRow).toHaveBeenCalledTimes(1)
-    expect(onEditRow).toHaveBeenCalledWith(props.data[0], 0)
+    expect(onEditRow).toHaveBeenCalledWith(props.data[0], 0, expect.any(Object))
 
     const [, deleteButton] = deleteButtons
     expect(deleteButton).toBeVisible()
     fireEvent.click(deleteButton)
     expect(onDeleteRow).toHaveBeenCalledTimes(1)
-    expect(onDeleteRow).toHaveBeenCalledWith(props.data[1], 1)
+    expect(onDeleteRow).toHaveBeenCalledWith(props.data[1], 1, expect.any(Object))
 
     const [, , detailButton] = detailButtons
     expect(detailButton).toBeVisible()
     fireEvent.click(detailButton)
     expect(onDetail).toHaveBeenCalledTimes(1)
-    expect(onDetail).toHaveBeenCalledWith(props.data[2], 2)
+    expect(onDetail).toHaveBeenCalledWith(props.data[2], 2, expect.any(Object))
 
     const [, , , overviewButton] = overviewButtons
     expect(overviewButton).toBeVisible()
     fireEvent.click(overviewButton)
     expect(onOverview).toHaveBeenCalledTimes(1)
-    expect(onOverview).toHaveBeenCalledWith(props.data[3], 3)
+    expect(onOverview).toHaveBeenCalledWith(props.data[3], 3, expect.any(Object))
   })
 
   test('renders pagination correctly', async() => {
