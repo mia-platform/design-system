@@ -61,7 +61,7 @@ export const Button = ({
   shape = defaults.shape,
   size = defaults.size,
   target,
-  type = Filled,
+  type = defaults.type,
 }: ButtonProps): ReactElement => {
   const buttonClassNames = useMemo(() => classnames(
     [
