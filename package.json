@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.18",
-    "antd": "^5.9.2",
+    "antd": "^5.17.3",
     "lodash-es": "^4.17.21",
     "react-icons": "^4.11.0"
   },
