@@ -32,6 +32,16 @@ const { Square } = Shape
 const { Small, Middle, Large } = Size
 const { Filled, Ghost } = Type
 
+export const defaults = {
+  hierarchy: Primary,
+  iconPosition: Left,
+  isDisabled: false,
+  isLoading: false,
+  shape: Square,
+  size: Middle,
+  type: Filled,
+}
+
 /**
  * UI component for performing actions on the page interacting through clicks
  *
@@ -40,19 +50,18 @@ const { Filled, Ghost } = Type
  */
 export const Button = ({
   children,
-  form,
-  hierarchy,
+  hierarchy = defaults.hierarchy,
   href,
   htmlType,
   icon,
-  iconPosition,
-  isDisabled,
-  isLoading,
+  iconPosition = defaults.iconPosition,
+  isDisabled = defaults.isDisabled,
+  isLoading = defaults.isLoading,
   onClick,
-  shape,
-  size,
+  shape = defaults.shape,
+  size = defaults.size,
   target,
-  type,
+  type = Filled,
 }: ButtonProps): ReactElement => {
   const buttonClassNames = useMemo(() => classnames(
     [
@@ -86,14 +95,4 @@ export const Button = ({
       {iconPosition === Right && icon}
     </AntButton>
   )
-}
-
-Button.defaultProps = {
-  hierarchy: Primary,
-  iconPosition: Left,
-  isDisabled: false,
-  isLoading: false,
-  shape: Square,
-  size: Middle,
-  type: Filled,
 }

@@ -35,6 +35,14 @@ const {
   modalFs,
 } = styles
 
+export const defaults = {
+  isBodyFullWidth: false,
+  isClosable: true,
+  isMaskClosable: true,
+  isVisible: false,
+  size: Small,
+}
+
 /**
  * Modal dialog that opens in overlay and allows to perform flows of actions, or to show specific
  * but less relevant information than those displayed on the underlying page.
@@ -47,12 +55,12 @@ export const Modal = ({
   children,
   docLink,
   footer,
-  isBodyFullWidth,
-  isClosable,
-  isMaskClosable,
-  isVisible,
+  isBodyFullWidth = defaults.isBodyFullWidth,
+  isClosable = defaults.isClosable,
+  isMaskClosable = defaults.isMaskClosable,
+  isVisible = defaults.isVisible,
   onCloseClick,
-  size,
+  size = defaults.size,
   title,
   destroyOnClose,
   getContainer,
@@ -87,14 +95,6 @@ export const Modal = ({
       </Modal.Body>
     </AntModal>
   )
-}
-
-Modal.defaultProps = {
-  isBodyFullWidth: false,
-  isClosable: true,
-  isMaskClosable: true,
-  isVisible: false,
-  size: Small,
 }
 
 Modal.Title = Title

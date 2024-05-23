@@ -28,6 +28,12 @@ const { Neutral, Primary } = Hierarchy
 const { Horizontal, Vertical } = OptionAlignment
 const { segmented, segmentedOption, primary, disabled, selected, vertical } = styles
 
+export const defaults = {
+  hierarchy: Neutral,
+  isDisabled: false,
+  optionsAlignment: Horizontal,
+}
+
 /**
  * UI component for displaying selectable segmented options
  *
@@ -35,11 +41,11 @@ const { segmented, segmentedOption, primary, disabled, selected, vertical } = st
  */
 export const SegmentedControl = ({
   defaultValue,
-  hierarchy,
-  isDisabled,
+  hierarchy = defaults.hierarchy,
+  isDisabled = defaults.isDisabled,
   onChange,
   options,
-  optionsAlignment,
+  optionsAlignment = defaults.optionsAlignment,
   value,
 }: SegmentedControlProps): ReactElement => {
   const [selectedValue, setSelectedValue] = useState(resolveKey(options, defaultValue))
@@ -101,10 +107,4 @@ export const SegmentedControl = ({
       })}
     </ul>
   )
-}
-
-SegmentedControl.defaultProps = {
-  hierarchy: Neutral,
-  isDisabled: false,
-  optionsAlignment: Horizontal,
 }

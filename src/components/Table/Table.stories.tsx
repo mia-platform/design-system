@@ -40,11 +40,12 @@ import {
 } from './Table.mocks'
 import { Size } from './Table.types'
 import { Table } from '.'
+import { defaults } from './Table'
 
 const meta = {
   component: Table<TableRecord>,
   args: {
-    ...Table.defaultProps,
+    ...defaults,
     columns,
     data,
     rowKey,

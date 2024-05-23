@@ -18,8 +18,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { HX, defaults } from './HX'
 import { customCopyable, customEllipsis, displayAll, fontUrl, loremIpsum } from '../Typography.mocks'
-import { HX } from './HX'
 import { Typography } from '..'
 
 const h1LongText = ['H1', loremIpsum].join(' | ')
@@ -39,7 +39,7 @@ const meta = {
     design: { type: 'iframe', name: 'Font Definition', url: fontUrl },
   },
   args: {
-    ...HX.defaultProps,
+    ...defaults,
     children: 'Text',
   },
   argTypes: {
