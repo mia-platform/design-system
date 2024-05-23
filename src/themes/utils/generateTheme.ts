@@ -20,7 +20,7 @@
 /* eslint-disable func-names */
 
 import { readFileSync, writeFileSync } from 'fs'
-import get from 'lodash/get'
+import { get } from 'lodash-es'
 import { resolve } from 'path'
 import traverse from 'traverse'
 
