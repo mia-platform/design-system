@@ -94,7 +94,7 @@
     "traverse": "^0.6.8",
     "ts-jest": "^29.1.2",
     "typescript": "^5.3.3",
-    "vite": "^5.1.6",
+    "vite": "^5.2.11",
     "vite-plugin-dts": "^3.7.3",
     "vite-plugin-svgr": "^3.3.0",
     "vite-tsconfig-paths": "^4.3.1"
