@@ -45,7 +45,7 @@ export const getAction = <RecordType extends GenericRecord>({
           icon={icon}
           isDisabled={typeof isDisabled === 'function' ? isDisabled(record, index) : isDisabled}
           type={Ghost}
-          onClick={() => onClick?.(record, index)}
+          onClick={(event) => onClick?.(record, index, event)}
         />
       </div>
     ),
