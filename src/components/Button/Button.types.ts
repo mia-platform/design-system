@@ -22,6 +22,12 @@ export enum Hierarchy {
   Danger = 'danger',
 }
 
+export enum HTMLType {
+  Button = 'button',
+  Reset = 'reset',
+  Submit = 'submit',
+}
+
 export enum IconPosition {
   Left = 'left',
   Right = 'right',

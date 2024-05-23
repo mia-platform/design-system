@@ -20,7 +20,7 @@ import { ReactElement, useMemo } from 'react'
 import { Button as AntButton } from 'antd'
 import classnames from 'classnames'
 
-import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
+import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 import { ButtonProps } from './Button.props'
 import styles from './Button.module.css'
 
@@ -40,8 +40,10 @@ const { Filled, Ghost } = Type
  */
 export const Button = ({
   children,
+  form,
   hierarchy,
   href,
+  htmlType,
   icon,
   iconPosition,
   isDisabled,
@@ -69,7 +71,9 @@ export const Button = ({
       className={buttonClassNames}
       danger={hierarchy === Danger}
       disabled={isDisabled}
+      form={form}
       ghost={type !== Filled && hierarchy !== Neutral}
+      htmlType={form && !htmlType ? HTMLType.Submit : htmlType}
       loading={isLoading}
       shape={shape === Square ? 'default' : 'circle'}
       size={size}
