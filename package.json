@@ -1,6 +1,6 @@
 {
   "name": "@mia-platform-internal/console-design-system-react",
-  "packageManager": "yarn@3.6.1",
+  "packageManager": "yarn@4.2.2",
   "version": "0.2.4",
   "type": "module",
   "main": "dist/cjs/console-design-system-react.cjs",
