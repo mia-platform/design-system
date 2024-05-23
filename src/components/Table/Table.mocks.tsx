@@ -18,7 +18,7 @@
 
 import { ReactElement, useState } from 'react'
 import { Space } from 'antd'
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 
 import { Action, ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder, TableAction } from './Table.types'
 import { Button } from '../Button'

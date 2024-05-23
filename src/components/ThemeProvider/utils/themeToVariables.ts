@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import isObject from 'lodash/isObject'
+import { isObject } from 'lodash-es'
 
 /**
  * Converts a theme configuration into CSS variables.

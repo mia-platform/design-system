@@ -41,8 +41,7 @@
   "dependencies": {
     "@fontsource/inter": "^5.0.18",
     "antd": "^5.9.2",
-    "lodash.get": "^4.4.2",
-    "lodash.isobject": "^3.0.2",
+    "lodash-es": "^4.17.21",
     "react-icons": "^4.11.0"
   },
   "peerDependencies": {
@@ -68,7 +67,7 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
-    "@types/lodash": "^4.14.202",
+    "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@types/traverse": "^0.6.36",
