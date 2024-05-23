@@ -132,6 +132,16 @@ describe('Button Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('renders primary outline button correctly with form ref and no htmlType', () => {
+    const { asFragment } = render(<Button form="some-form" type={Outlined}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders primary outline button correctly with form ref and reset htmlType', () => {
+    const { asFragment } = render(<Button form="some-form" htmlType={HTMLType.Reset} type={Outlined}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('calls onClick correctly', () => {
     const onClick = jest.fn()
 

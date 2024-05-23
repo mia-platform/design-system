@@ -330,6 +330,38 @@ exports[`Button Component renders primary outline button correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button Component renders primary outline button correctly with form ref and no htmlType 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMd"
+    form="some-form"
+    type="submit"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders primary outline button correctly with form ref and reset htmlType 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMd"
+    form="some-form"
+    type="reset"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button Component renders small button correctly 1`] = `
 <DocumentFragment>
   <button
