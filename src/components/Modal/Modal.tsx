@@ -54,6 +54,8 @@ export const Modal = ({
   onCloseClick,
   size,
   title,
+  destroyOnClose,
+  getContainer,
 }: ModalProps): ReactElement => {
   const modalClassNames = useMemo(() => classNames([
     modal,
@@ -67,7 +69,9 @@ export const Modal = ({
       centered
       className={modalClassNames}
       closable={isClosable}
+      destroyOnClose={destroyOnClose}
       footer={<Modal.Footer footer={footer} />}
+      getContainer={getContainer}
       keyboard={isClosable}
       maskClosable={isClosable && isMaskClosable}
       open={isVisible}
