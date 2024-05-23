@@ -100,3 +100,4 @@ export const Modal = ({
 Modal.Title = Title
 Modal.Body = Body
 Modal.Footer = Footer
+Modal.Size = Size

@@ -108,3 +108,6 @@ export const SegmentedControl = ({
     </ul>
   )
 }
+
+SegmentedControl.Hierarchy = Hierarchy
+SegmentedControl.OptionAlignment = OptionAlignment

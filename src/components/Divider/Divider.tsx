@@ -54,3 +54,6 @@ export const Divider = ({
     </AntDivider>
   )
 }
+
+Divider.Orientation = Orientation
+Divider.TextOrientation = TextOrientation

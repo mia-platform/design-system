@@ -20,7 +20,7 @@ import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
-import { Hierarchy, Mode } from './Menu.types'
+import { Hierarchy, ItemType, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import { MenuProps } from './Menu.props'
 import formatLabels from './Menu.utils'
@@ -109,3 +109,7 @@ Menu.skeletonParagraph = {
   rows: 6,
   width: ['30%', '80%', '65%', '30%', '70%', '60%'],
 }
+
+Menu.ItemType = ItemType
+Menu.Hierarchy = Hierarchy
+Menu.Mode = Mode

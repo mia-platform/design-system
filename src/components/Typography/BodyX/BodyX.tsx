@@ -67,3 +67,5 @@ export const BodyX = ({
     </AntParagraph>
   )
 }
+
+BodyX.Size = Size

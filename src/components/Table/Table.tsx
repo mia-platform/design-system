@@ -19,7 +19,7 @@
 import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
-import { Action, GenericRecord, Layout, Size } from './Table.types'
+import { Action, ColumnAlignment, ColumnFilterMode, GenericRecord, Layout, Size, SortOrder } from './Table.types'
 import { Icon } from '../Icon'
 import { IconProps } from '../Icon/Icon.props'
 import { TableProps } from './Table.props'
@@ -152,3 +152,10 @@ export const Table = <RecordType extends GenericRecord>({
 
 Table.scroll = defaults.scroll
 Table.pagination = defaults.pagination
+
+Table.ColumnAlignment = ColumnAlignment
+Table.ColumnFilterMode = ColumnFilterMode
+Table.Layout = Layout
+Table.Size = Size
+Table.SortOrder = SortOrder
+Table.Action = Action
