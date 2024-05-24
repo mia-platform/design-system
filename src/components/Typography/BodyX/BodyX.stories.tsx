@@ -18,8 +18,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { BodyX, defaults } from './BodyX'
 import { customCopyable, customEllipsis, displayAll, fontUrl, loremIpsum } from '../Typography.mocks'
-import { BodyX } from './BodyX'
 import { Size } from './BodyX.types'
 import { Typography } from '..'
 
@@ -46,7 +46,7 @@ const meta = {
     design: { type: 'iframe', name: 'Font Definition', url: fontUrl },
   },
   args: {
-    ...BodyX.defaultProps,
+    ...defaults,
     children: 'Text',
   },
   argTypes: {

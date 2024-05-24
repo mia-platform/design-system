@@ -24,13 +24,14 @@ import { WithOpenButton, asideFixed, asideOpenable, children, childrenFullWidth,
 import { Button } from '../Button'
 import { Modal } from '.'
 import { Size } from './Modal.types'
+import { defaults } from './Modal'
 import { useModal } from '../../hooks/useModal'
 
 const { Large, FullScreen } = Size
 const meta = {
   component: Modal,
   args: {
-    ...Modal.defaultProps,
+    ...defaults,
     children,
     docLink,
     footer,

@@ -22,11 +22,12 @@ import { action } from '@storybook/addon-actions'
 import { Hierarchy, Mode } from './Menu.types'
 import { category, divider, group, item, nestedGroup } from './Menu.mocks'
 import { Menu } from './'
+import { defaults } from './Menu'
 
 const meta = {
   component: Menu,
   args: {
-    ...Menu.defaultProps,
+    ...defaults,
     items: [
       item,
       divider,

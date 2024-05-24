@@ -32,6 +32,33 @@ const { Middle } = Size
 const { Edit, Delete } = Action
 const { table } = styles
 
+export const defaults = {
+  actions: [],
+  pagination: {
+    defaultCurrent: 1,
+    defaultPageSize: 10,
+    hideOnSinglePage: true,
+    pageSizeOptions: [10, 20, 50],
+    responsive: true,
+    showLessItems: false,
+    showSizeChanger: true,
+    showTitle: true,
+    showTotal: (total: number): ReactElement => (
+      <span>
+        <b>{total}</b>
+        {' in total'}
+      </span>
+    ),
+  },
+  scroll: { x: true as const },
+  isBordered: false,
+  isLoading: false,
+  layout: Auto,
+  onDeleteRow: undefined,
+  onEditRow: undefined,
+  size: Middle,
+}
+
 /**
  * UI component for presenting tabular structured data
  *
@@ -41,23 +68,23 @@ const { table } = styles
 export const Table = <RecordType extends GenericRecord>({
   columns,
   data,
-  actions,
+  actions = defaults.actions,
   expandable,
   footer,
   intlLocale,
-  isBordered,
-  isLoading,
-  layout,
+  isBordered = defaults.isBordered,
+  isLoading = defaults.isLoading,
+  layout = defaults.layout,
   onChange,
   onHeaderRow,
   onRow,
-  onEditRow,
-  onDeleteRow,
+  onEditRow = defaults.onEditRow,
+  onDeleteRow = defaults.onDeleteRow,
   rowKey,
   rowSelection,
-  pagination,
-  size,
-  scroll,
+  pagination = defaults.pagination,
+  size = defaults.size,
+  scroll = defaults.scroll,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
   const iconSize = theme?.shape?.size?.lg as IconProps['size'] || 24
@@ -123,35 +150,5 @@ export const Table = <RecordType extends GenericRecord>({
   )
 }
 
-Table.scroll = {
-  x: true as const,
-}
-
-Table.pagination = {
-  defaultCurrent: 1,
-  defaultPageSize: 10,
-  hideOnSinglePage: true,
-  pageSizeOptions: [10, 20, 50],
-  responsive: true,
-  showLessItems: false,
-  showSizeChanger: true,
-  showTitle: true,
-  showTotal: (total: number): ReactElement => (
-    <span>
-      <b>{total}</b>
-      {' in total'}
-    </span>
-  ),
-}
-
-Table.defaultProps = {
-  actions: [],
-  isBordered: false,
-  isLoading: false,
-  layout: Auto,
-  onDeleteRow: undefined,
-  onEditRow: undefined,
-  pagination: Table.pagination,
-  scroll: Table.scroll,
-  size: Middle,
-}
+Table.scroll = defaults.scroll
+Table.pagination = defaults.pagination

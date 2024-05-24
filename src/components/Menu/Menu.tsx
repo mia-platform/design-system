@@ -31,6 +31,15 @@ const { Default, Primary } = Hierarchy
 const { Inline } = Mode
 const { menu } = styles
 
+export const defaults: Partial<MenuProps> = {
+  defaultOpenKeys: [],
+  hierarchy: Default,
+  items: [],
+  isCollapsed: false,
+  isLoading: false,
+  mode: Inline,
+}
+
 /**
  * UI component for presenting nested lists of elements, organized by group or category
  *
@@ -38,13 +47,13 @@ const { menu } = styles
  * @returns {Menu} Menu component
  */
 export const Menu = ({
-  defaultOpenKeys,
+  defaultOpenKeys = defaults.defaultOpenKeys,
   defaultSelectedKey,
-  hierarchy,
-  items,
-  isCollapsed,
-  isLoading,
-  mode,
+  hierarchy = defaults.hierarchy,
+  items = defaults.items,
+  isCollapsed = defaults.isCollapsed,
+  isLoading = defaults.isLoading,
+  mode = defaults.mode,
   onClick,
   onOpenChange,
   openKeys,
@@ -99,13 +108,4 @@ export const Menu = ({
 Menu.skeletonParagraph = {
   rows: 6,
   width: ['30%', '80%', '65%', '30%', '70%', '60%'],
-}
-
-Menu.defaultProps = {
-  defaultOpenKeys: [],
-  hierarchy: Default,
-  isCollapsed: false,
-  isLoading: false,
-  items: [],
-  mode: Inline,
 }

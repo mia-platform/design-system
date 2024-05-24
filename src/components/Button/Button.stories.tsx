@@ -22,6 +22,7 @@ import { action } from '@storybook/addon-actions'
 import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 import { Button } from '.'
 import { Icon } from '../Icon'
+import { defaults } from './Button'
 
 const { Primary, Neutral, Danger } = Hierarchy
 const { Left, Right } = IconPosition
@@ -34,7 +35,7 @@ const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 const meta = {
   component: Button,
   args: {
-    ...Button.defaultProps,
+    ...defaults,
     children: 'Button',
     onClick: action('click'),
   },

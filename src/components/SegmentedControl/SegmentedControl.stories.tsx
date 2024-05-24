@@ -22,6 +22,7 @@ import { action } from '@storybook/addon-actions'
 import { Hierarchy, OptionAlignment } from './SegmentedControl.types'
 import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
 import { SegmentedControl } from '.'
+import { defaults } from './SegmentedControl'
 
 const meta = {
   title: 'Components/Segmented Control',
@@ -34,7 +35,7 @@ const meta = {
     value: { control: 'text' },
   },
   args: {
-    ...SegmentedControl.defaultProps,
+    ...defaults,
     onChange: action('onChange'),
     options: labeledOptions,
   },

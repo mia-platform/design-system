@@ -20,11 +20,10 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Divider } from '.'
 import { Orientation } from './Divider.types'
+import { defaults } from './Divider'
 
 const meta = {
-  args: {
-    ...Divider.defaultProps,
-  },
+  args: defaults,
   argTypes: {
     text: {
       control: {
