@@ -15,7 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { Dropdown, Input } from 'antd'
+import { Dropdown, Input, MenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
 import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
@@ -102,7 +102,7 @@ export const BreadcrumbItem = ({
     </div>
   ), [breadcrumbItemLabelStyleClassnames, breadcrumbItemLabelWrapperClassNames, itemIcon, itemLabel, onClick])
 
-  const itemMenu = useMemo(() => {
+  const itemMenu = useMemo<MenuProps>(() => {
     const items = Object.values(menu?.items ?? {})
       .reduce<ItemType[]>((acc, itemData, currentIndex) => {
         return [
