@@ -50,6 +50,7 @@ export const defaults = {
  */
 export const Button = ({
   children,
+  form,
   hierarchy = defaults.hierarchy,
   href,
   htmlType,
