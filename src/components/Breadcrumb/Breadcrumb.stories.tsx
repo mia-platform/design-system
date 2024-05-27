@@ -17,11 +17,9 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 
-import { breadcrumbIcon, breadcrumbLabel } from './Breadcrumb.mocks'
+import { multipleItemsProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
-import { Icon } from '../Icon'
 
 const meta = {
   component: Breadcrumb,
@@ -31,176 +29,21 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {
-    items: [
-      {
-        icon: breadcrumbIcon,
-        onClick: action('click'),
-        label: 'first',
-      },
-      {
-        icon: breadcrumbIcon,
-        onClick: action('click'),
-        label: 'second',
-      },
-      {
-        label: 'third',
-      },
-      {
-        icon: breadcrumbIcon,
-        onClick: action('click'),
-        label: 'fourth',
-      },
-    ],
-  },
+  args: multipleItemsProps,
 }
 
 export const OneItemTitleOnly: Story = {
-  args: {
-    items: [{
-      onClick: action('click'),
-      label: breadcrumbLabel,
-    }],
-  },
+  args: oneItemTitleOnlyProps,
 }
 
 export const OneItemIconAndTitle: Story = {
-  args: {
-    items: [{
-      icon: breadcrumbIcon,
-      onClick: action('click'),
-      label: breadcrumbLabel,
-    }],
-  },
+  args: oneItemIconAndTitleProps,
 }
 
 export const TwoItems: Story = {
-  args: {
-    items: [
-      {
-        icon: breadcrumbIcon,
-        onClick: action('click'),
-        label: 'first',
-      },
-      {
-        icon: breadcrumbIcon,
-        onClick: action('click'),
-        label: 'second',
-      },
-    ],
-  },
+  args: twoItemsProps,
 }
 
 export const MultipleItemsWithMenu: Story = {
-  args: {
-    items: [
-      {
-        icon: breadcrumbIcon,
-        onClick: action('click'),
-        menu: {
-          items: [{
-            icon: breadcrumbIcon,
-            onClick: action('click'),
-            label: 'first nested',
-          }],
-        },
-        label: 'first',
-      },
-      {
-        icon: breadcrumbIcon,
-        onClick: action('click'),
-        menu: {
-          items: [],
-        },
-        label: 'empty items',
-      },
-      {
-        icon: breadcrumbIcon,
-        onClick: action('click'),
-        menu: {
-          showSearch: true,
-          items: [{
-            icon: breadcrumbIcon,
-            onClick: action('click'),
-            label: 'first nested',
-          },
-          {
-            icon: breadcrumbIcon,
-            onClick: action('click'),
-            label: 'second nested',
-          }],
-        },
-        label: 'with search',
-      },
-      {
-        menu: {
-          items: [{
-            icon: breadcrumbIcon,
-            onClick: action('click'),
-            label: 'first nested',
-          },
-          {
-            icon: breadcrumbIcon,
-            onClick: action('click'),
-            label: 'second nested',
-          }],
-          searchAllowClear: false,
-          searchPlaceholder: 'Search...',
-        },
-      },
-      {
-        menu: {
-          activeKey: '2',
-          items: [{
-            key: '1',
-            icon: <Icon color="black" name="PiAddressBook" size={16} />,
-            label: 'first nested',
-          },
-          {
-            key: '2',
-            label: 'without search',
-          },
-          {
-            key: '3',
-            icon: breadcrumbIcon,
-            onClick: action('click'),
-            label: 'third nested',
-          },
-          {
-            key: '4',
-            icon: <Icon color="black" name="PiAddressBook" size={16} />,
-            label: 'fourth nested',
-          },
-          {
-            key: '5',
-            icon: breadcrumbIcon,
-            onClick: action('click'),
-            label: 'fifth nested',
-          },
-          {
-            key: '6',
-            label: 'sixth nested',
-          },
-          {
-            key: '7',
-            label: 'seventh nested',
-          },
-          {
-            key: '8',
-            label: 'eighth nested',
-          },
-          {
-            key: '9',
-            label: 'ninth nested',
-          },
-          {
-            key: '10',
-            icon: breadcrumbIcon,
-            onClick: action('click'),
-            label: 'tenth nested',
-          }],
-        },
-      },
-    ],
-  },
+  args: multipleItemsWithMenuProps,
 }
