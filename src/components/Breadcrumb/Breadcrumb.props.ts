@@ -46,9 +46,12 @@ export type BreadcrumbProps = {
    *   - icon: Icon to be displayed alongside the breadcrumb item. <br> `ReactNode`
    *   - key: Unique key for the breadcrumb item. <br> `string`
    *   - label: The label of the breadcrumb item, can be a string or ReactNode. <br> `ReactNode`
-   *   - menu: Menu associated with the breadcrumb item. <br> `BreadcrumbItemMenu` `object`:
+   *   - menu: Menu associated with the breadcrumb item. <br>
+   *
+   *    `BreadcrumbItemMenu` `object`:
    *    - activeKey: The key of the currently active menu item. <br> `string`
    *    - items: List of menu items in the breadcrumb. <br> `BreadcrumbItemMenuItem[]` <br>
+   *
    *      BreadcrumbItemMenuItem `object`:
    *        - icon: Icon to be displayed alongside the menu item. <br> `ReactNode`
    *        - key: Unique key for the menu item. <br> `string`
