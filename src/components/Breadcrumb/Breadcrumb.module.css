@@ -47,7 +47,7 @@
 }
 
 .breadcrumbItemLabelWrapper.initial {
-  background: none !important;
+  background: none;
 }
 
 .breadcrumbItemLabelWrapper.last {
@@ -55,12 +55,12 @@
 }
 
 .breadcrumbItemLabelWrapper:hover {
-  background-color: var(--palette-action-alternate-secondary-hover) !important;
+  background-color: var(--palette-action-alternate-secondary-hover);
   cursor: pointer;
 }
 
 .breadcrumbItemLabelWrapper:active {
-  background-color: var(--palette-action-alternate-secondary-selected) !important;
+  background-color: var(--palette-action-alternate-secondary-selected);
 }
 
 .breadcrumbItemLabelStyle {
@@ -87,12 +87,12 @@
 }
 
 .breadcrumbMenuIcon:hover {
-  background-color: var(--palette-action-alternate-secondary-hover) !important;
+  background-color: var(--palette-action-alternate-secondary-hover);
   cursor: pointer;
 }
 
 .breadcrumbMenuIcon:active {
-  background-color: var(--palette-action-alternate-secondary-selected) !important;
+  background-color: var(--palette-action-alternate-secondary-selected);
 }
 
 /* TODO: fix scroll inside dropdown */
