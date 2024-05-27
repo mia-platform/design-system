@@ -57,17 +57,6 @@ export const BreadcrumbItem = ({
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
 
-  const breadcrumbItemWrapperClassNames = useMemo(() => classNames([breadcrumbItemWrapper]), [])
-
-  const breadcrumbItemLabelWrapperClassNames = useMemo(() => classNames([
-    breadcrumbItemLabelWrapper,
-    isInitialItem && !hasMenu && initial,
-    isLastItem && last,
-    !hasMenu && withoutMenu,
-  ]), [hasMenu, isInitialItem, isLastItem])
-
-  const breadcrumbItemLabelStyleClassnames = useMemo(() => classNames([breadcrumbItemLabelStyle]), [])
-
   const itemLabel = useMemo(() =>
     (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.label)
     ?? label
@@ -80,11 +69,6 @@ export const BreadcrumbItem = ({
 
   const hasLabel = itemIcon || itemLabel
 
-  const breadcrumbItemMenuClassNames = useMemo(() => classNames([
-    breadcrumbMenuIcon,
-    !hasLabel && caretOnly,
-  ]), [hasLabel])
-
   const menuIcon = useMemo(() => (
     <Icon color={palette?.common?.grey?.[600]} name="AiOutlineCaretDown" size={16} />
   ), [palette?.common?.grey])
@@ -94,13 +78,21 @@ export const BreadcrumbItem = ({
   ), [palette?.common?.grey])
 
   const breadcrumbItemLabel = useMemo(() => (
-    <div className={breadcrumbItemLabelWrapperClassNames} onClick={onClick}>
+    <div
+      className={classNames([
+        breadcrumbItemLabelWrapper,
+        isInitialItem && !hasMenu && initial,
+        isLastItem && last,
+        !hasMenu && withoutMenu,
+      ])}
+      onClick={onClick}
+    >
       {itemIcon}
-      <div className={breadcrumbItemLabelStyleClassnames}>
+      <div className={classNames([breadcrumbItemLabelStyle])}>
         <BodyL ellipsis={{ rows: 1, tooltip: itemLabel }}>{itemLabel}</BodyL>
       </div>
     </div>
-  ), [breadcrumbItemLabelStyleClassnames, breadcrumbItemLabelWrapperClassNames, itemIcon, itemLabel, onClick])
+  ), [hasMenu, isInitialItem, isLastItem, itemIcon, itemLabel, onClick])
 
   const itemMenu = useMemo<MenuProps>(() => {
     const items = Object.values(menu?.items ?? {})
@@ -156,15 +148,20 @@ export const BreadcrumbItem = ({
         }
       }}
     >
-      <div className={breadcrumbItemMenuClassNames}>
+      <div
+        className={classNames([
+          breadcrumbMenuIcon,
+          !hasLabel && caretOnly,
+        ])}
+      >
         {menuIcon}
       </div>
     </Dropdown>
-  ), [dropdown, itemMenu, menu, dropdownOpen, breadcrumbItemMenuClassNames, menuIcon])
+  ), [dropdown, itemMenu, menu, dropdownOpen, hasLabel, menuIcon])
 
   return (
     <>
-      <div className={breadcrumbItemWrapperClassNames}>
+      <div className={classNames([breadcrumbItemWrapper])}>
         {hasLabel && breadcrumbItemLabel}
         {hasMenu && breadcrumbItemMenu}
       </div>

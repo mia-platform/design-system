@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useMemo } from 'react'
+import { ReactElement } from 'react'
 import classNames from 'classnames'
 
 import { BreadcrumbItem } from './BreadcrumbItem'
@@ -33,10 +33,8 @@ const { breadcrumb } = styles
 export const Breadcrumb = ({
   items,
 }: BreadcrumbProps): ReactElement => {
-  const breadcrumbClassNames = useMemo(() => classNames([breadcrumb]), [])
-
   return (
-    <div className={breadcrumbClassNames}>
+    <div className={classNames([breadcrumb])}>
       {items.map(({ key, icon, menu, onClick, label }, index) =>
         <BreadcrumbItem
           icon={icon}
