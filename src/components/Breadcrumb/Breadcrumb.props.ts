@@ -18,12 +18,59 @@
 
 import { BreadcrumbItemType } from './Breadcrumb.types'
 
-export type BreadcrumbItemProps = BreadcrumbItemType &
-{
-  index: number
-  itemsLength: number
+/**
+ * Represents the props for a breadcrumb item, extending `BreadcrumbItemType`.
+ */
+export type BreadcrumbItemProps = BreadcrumbItemType & {
+
+  /**
+   * The index of the breadcrumb item within the breadcrumb list.
+   */
+  index: number;
+
+  /**
+   * The total number of items in the breadcrumb list.
+   */
+  itemsLength: number;
 }
 
+/**
+ * Represents the props for a breadcrumb component.
+ */
 export type BreadcrumbProps = {
-  items: BreadcrumbItemType[]
+
+  /**
+   * The list of breadcrumb items.
+   *
+   * BreadcrumbItemType `object`:
+   *   - icon: Icon to be displayed alongside the breadcrumb item. <br> `ReactNode`
+   *   - key: Unique key for the breadcrumb item. <br> `string`
+   *   - label: The label of the breadcrumb item, can be a string or ReactNode. <br> `ReactNode`
+   *   - menu: Menu associated with the breadcrumb item. <br> `BreadcrumbItemMenu` `object`:
+   *    - activeKey: The key of the currently active menu item. <br> `string`
+   *    - items: List of menu items in the breadcrumb. <br> `BreadcrumbItemMenuItem[]` <br>
+   *      BreadcrumbItemMenuItem `object`:
+   *        - icon: Icon to be displayed alongside the menu item. <br> `ReactNode`
+   *        - key: Unique key for the menu item. <br> `string`
+   *        - onClick: Callback function to handle click events on the menu item. <br>
+   *        `(event: React.MouseEvent<Element, MouseEvent>) => void;`
+   *        - label*: The label of the menu item. <br> `string`
+   *    - onDropdownVisibleChange: Callback function to handle changes in dropdown visibility. <br>
+   *    `(open: boolean) => void;`
+   *    - onSearch: Callback function to handle search operations. <br>
+   *     `(` <br>
+   *     `  value*: string,` <br>
+   *     `  event: React.ChangeEvent<HTMLInputElement>`
+   *     `  | React.MouseEvent<HTMLElement>`
+   *     `  | React.KeyboardEvent<HTMLInputElement>`
+   *     `  info: { source 'clear' | 'input' }` <br>
+   *     `) => void`
+   *    - open: Indicates whether the menu is open. <br> `boolean`
+   *    - searchAllowClear: If true, allows clearing of the search input. <br> `boolean`
+   *    - searchPlaceholder: Placeholder text for the search input. <br> `string`
+   *    - showSearch: If true, displays the search input within the menu. <br> `boolean`
+   *   - onClick: Callback function to handle click events on the breadcrumb item. <br>
+   *   `(event: React.MouseEvent<Element, MouseEvent>) => void;`
+   */
+  items: BreadcrumbItemType[];
 }
