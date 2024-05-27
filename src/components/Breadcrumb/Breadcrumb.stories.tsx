@@ -19,11 +19,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
+import { breadcrumbIcon, breadcrumbLabel } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
 import { Icon } from '../Icon'
-
-const icon = <Icon color="black" name="PiCircleHalfTiltLight" size={16} />
-const label = 'Text'
 
 const meta = {
   component: Breadcrumb,
@@ -36,12 +34,12 @@ export const Default: Story = {
   args: {
     items: [
       {
-        icon,
+        icon: breadcrumbIcon,
         onClick: action('click'),
         label: 'first',
       },
       {
-        icon,
+        icon: breadcrumbIcon,
         onClick: action('click'),
         label: 'second',
       },
@@ -49,7 +47,7 @@ export const Default: Story = {
         label: 'third',
       },
       {
-        icon,
+        icon: breadcrumbIcon,
         onClick: action('click'),
         label: 'fourth',
       },
@@ -61,7 +59,7 @@ export const OneItemTitleOnly: Story = {
   args: {
     items: [{
       onClick: action('click'),
-      label,
+      label: breadcrumbLabel,
     }],
   },
 }
@@ -69,9 +67,9 @@ export const OneItemTitleOnly: Story = {
 export const OneItemIconAndTitle: Story = {
   args: {
     items: [{
-      icon,
+      icon: breadcrumbIcon,
       onClick: action('click'),
-      label,
+      label: breadcrumbLabel,
     }],
   },
 }
@@ -80,12 +78,12 @@ export const TwoItems: Story = {
   args: {
     items: [
       {
-        icon,
+        icon: breadcrumbIcon,
         onClick: action('click'),
         label: 'first',
       },
       {
-        icon,
+        icon: breadcrumbIcon,
         onClick: action('click'),
         label: 'second',
       },
@@ -97,11 +95,11 @@ export const MultipleItemsWithMenu: Story = {
   args: {
     items: [
       {
-        icon,
+        icon: breadcrumbIcon,
         onClick: action('click'),
         menu: {
           items: [{
-            icon,
+            icon: breadcrumbIcon,
             onClick: action('click'),
             label: 'first nested',
           }],
@@ -109,7 +107,7 @@ export const MultipleItemsWithMenu: Story = {
         label: 'first',
       },
       {
-        icon,
+        icon: breadcrumbIcon,
         onClick: action('click'),
         menu: {
           items: [],
@@ -117,17 +115,17 @@ export const MultipleItemsWithMenu: Story = {
         label: 'empty items',
       },
       {
-        icon,
+        icon: breadcrumbIcon,
         onClick: action('click'),
         menu: {
           showSearch: true,
           items: [{
-            icon,
+            icon: breadcrumbIcon,
             onClick: action('click'),
             label: 'first nested',
           },
           {
-            icon,
+            icon: breadcrumbIcon,
             onClick: action('click'),
             label: 'second nested',
           }],
@@ -137,12 +135,12 @@ export const MultipleItemsWithMenu: Story = {
       {
         menu: {
           items: [{
-            icon,
+            icon: breadcrumbIcon,
             onClick: action('click'),
             label: 'first nested',
           },
           {
-            icon,
+            icon: breadcrumbIcon,
             onClick: action('click'),
             label: 'second nested',
           }],
@@ -164,7 +162,7 @@ export const MultipleItemsWithMenu: Story = {
           },
           {
             key: '3',
-            icon,
+            icon: breadcrumbIcon,
             onClick: action('click'),
             label: 'third nested',
           },
@@ -175,7 +173,7 @@ export const MultipleItemsWithMenu: Story = {
           },
           {
             key: '5',
-            icon,
+            icon: breadcrumbIcon,
             onClick: action('click'),
             label: 'fifth nested',
           },
@@ -197,7 +195,7 @@ export const MultipleItemsWithMenu: Story = {
           },
           {
             key: '10',
-            icon,
+            icon: breadcrumbIcon,
             onClick: action('click'),
             label: 'tenth nested',
           }],
