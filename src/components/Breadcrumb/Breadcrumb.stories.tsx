@@ -17,6 +17,7 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 
 import { Breadcrumb } from './Breadcrumb'
 import { Icon } from '../Icon'
@@ -36,10 +37,12 @@ export const Default: Story = {
     items: [
       {
         icon,
+        onClick: action('click'),
         label: 'first',
       },
       {
         icon,
+        onClick: action('click'),
         label: 'second',
       },
       {
@@ -47,6 +50,7 @@ export const Default: Story = {
       },
       {
         icon,
+        onClick: action('click'),
         label: 'fourth',
       },
     ],
@@ -56,6 +60,7 @@ export const Default: Story = {
 export const OneItemTitleOnly: Story = {
   args: {
     items: [{
+      onClick: action('click'),
       label,
     }],
   },
@@ -65,6 +70,7 @@ export const OneItemIconAndTitle: Story = {
   args: {
     items: [{
       icon,
+      onClick: action('click'),
       label,
     }],
   },
@@ -75,33 +81,13 @@ export const TwoItems: Story = {
     items: [
       {
         icon,
+        onClick: action('click'),
         label: 'first',
       },
       {
         icon,
+        onClick: action('click'),
         label: 'second',
-      },
-    ],
-  },
-}
-
-export const MultipleItems: Story = {
-  args: {
-    items: [
-      {
-        icon,
-        label: 'first',
-      },
-      {
-        icon,
-        label: 'second',
-      },
-      {
-        label: 'third',
-      },
-      {
-        icon,
-        label: 'fourth',
       },
     ],
   },
@@ -112,9 +98,11 @@ export const MultipleItemsWithMenu: Story = {
     items: [
       {
         icon,
+        onClick: action('click'),
         menu: {
           items: [{
             icon,
+            onClick: action('click'),
             label: 'first nested',
           }],
         },
@@ -122,6 +110,7 @@ export const MultipleItemsWithMenu: Story = {
       },
       {
         icon,
+        onClick: action('click'),
         menu: {
           items: [],
         },
@@ -129,14 +118,17 @@ export const MultipleItemsWithMenu: Story = {
       },
       {
         icon,
+        onClick: action('click'),
         menu: {
           showSearch: true,
           items: [{
             icon,
+            onClick: action('click'),
             label: 'first nested',
           },
           {
             icon,
+            onClick: action('click'),
             label: 'second nested',
           }],
         },
@@ -146,10 +138,12 @@ export const MultipleItemsWithMenu: Story = {
         menu: {
           items: [{
             icon,
+            onClick: action('click'),
             label: 'first nested',
           },
           {
             icon,
+            onClick: action('click'),
             label: 'second nested',
           }],
           searchAllowClear: false,
@@ -171,6 +165,7 @@ export const MultipleItemsWithMenu: Story = {
           {
             key: '3',
             icon,
+            onClick: action('click'),
             label: 'third nested',
           },
           {
@@ -181,6 +176,7 @@ export const MultipleItemsWithMenu: Story = {
           {
             key: '5',
             icon,
+            onClick: action('click'),
             label: 'fifth nested',
           },
           {
@@ -202,6 +198,7 @@ export const MultipleItemsWithMenu: Story = {
           {
             key: '10',
             icon,
+            onClick: action('click'),
             label: 'tenth nested',
           }],
         },
