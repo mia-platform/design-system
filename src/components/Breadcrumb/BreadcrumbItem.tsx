@@ -15,7 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { Dropdown, Input, MenuProps } from 'antd'
+import { Dropdown, Input, MenuProps, Skeleton } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
 import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
@@ -43,6 +43,8 @@ const {
 export const BreadcrumbItem = ({
   icon,
   index,
+  isLoading,
+  isResized,
   itemsLength,
   label,
   menu,
@@ -92,10 +94,12 @@ export const BreadcrumbItem = ({
     >
       {itemIcon}
       <div className={classNames([breadcrumbItemLabelStyle])}>
-        <BodyL ellipsis={{ rows: 1, tooltip: itemLabel }}>{itemLabel}</BodyL>
+        <BodyL ellipsis={{ rows: 1, tooltip: itemLabel }}>
+          {(isResized && !isInitialItem && !isLastItem) ? '...' : itemLabel}
+        </BodyL>
       </div>
     </div>
-  ), [hasMenu, isInitialItem, isLastItem, itemIcon, itemLabel, onClick])
+  ), [hasMenu, isInitialItem, isLastItem, isResized, itemIcon, itemLabel, onClick])
 
   const itemMenu = useMemo<MenuProps>(() => {
     const items = Object.values(menu?.items ?? {})
@@ -164,10 +168,12 @@ export const BreadcrumbItem = ({
 
   return (
     <>
-      <div className={classNames([breadcrumbItemWrapper])}>
-        {hasLabel && breadcrumbItemLabel}
-        {hasMenu && breadcrumbItemMenu}
-      </div>
+      {isLoading
+        ? <Skeleton.Button active />
+        : <div className={classNames([breadcrumbItemWrapper])}>
+          {hasLabel && breadcrumbItemLabel}
+          {hasMenu && breadcrumbItemMenu}
+        </div>}
       {hasSeparator && separatorIcon}
     </>
   )

@@ -44,6 +44,13 @@ export const TwoItems: Story = {
   args: twoItemsProps,
 }
 
+export const MultipleItemsLoading: Story = {
+  args: {
+    isLoading: true,
+    ...multipleItemsProps,
+  },
+}
+
 export const MultipleItemsWithMenu: Story = {
   args: multipleItemsWithMenuProps,
 }

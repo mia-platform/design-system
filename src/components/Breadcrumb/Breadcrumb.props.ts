@@ -29,6 +29,16 @@ export type BreadcrumbItemProps = BreadcrumbItemType & {
   index: number;
 
   /**
+   * Indicates whether the component is loading or not.
+   */
+  isLoading?: boolean;
+
+  /**
+   * Indicates whether the item should be ellipsed to fit the parent max-width.
+   */
+  isResized?: boolean;
+
+  /**
    * The total number of items in the breadcrumb list.
    */
   itemsLength: number;
@@ -38,6 +48,11 @@ export type BreadcrumbItemProps = BreadcrumbItemType & {
  * Represents the props for a breadcrumb component.
  */
 export type BreadcrumbProps = {
+
+  /**
+   * Indicates whether the component is loading or not.
+   */
+  isLoading?: boolean;
 
   /**
    * The list of breadcrumb items.
@@ -72,6 +87,7 @@ export type BreadcrumbProps = {
    *    - searchAllowClear: If true, allows clearing of the search input. <br> `boolean`
    *    - searchPlaceholder: Placeholder text for the search input. <br> `string`
    *    - showSearch: If true, displays the search input within the menu. <br> `boolean`
+   *   - isLoading: Indicates whether the component is loading or not.. <br> `boolean`
    *   - onClick: Callback function to handle click events on the breadcrumb item. <br>
    *   `(event: React.MouseEvent<Element, MouseEvent>) => void;`
    */
