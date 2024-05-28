@@ -77,6 +77,11 @@ export const multipleItemsProps: BreadcrumbProps = {
   ],
 }
 
+export const multipleItemsLoadingProps: BreadcrumbProps = {
+  ...multipleItemsProps,
+  isLoading: true,
+}
+
 export const multipleItemsWithMenuProps: BreadcrumbProps = {
   items: [
     {

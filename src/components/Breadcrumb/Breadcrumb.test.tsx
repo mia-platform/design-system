@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { multipleItemsProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
+import { multipleItemsLoadingProps, multipleItemsProps, multipleItemsWithEllipsisProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
 import { render } from '../../test-utils'
 
@@ -40,6 +40,11 @@ describe('Breadcrumb Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('renders a breadcrumb with multiple items - loading', () => {
+    const { asFragment } = render(<Breadcrumb {...multipleItemsLoadingProps} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('renders a breadcrumb with multiple items - without menu (Default)', () => {
     const { asFragment } = render(<Breadcrumb {...multipleItemsProps} />)
     expect(asFragment()).toMatchSnapshot()
@@ -47,6 +52,15 @@ describe('Breadcrumb Component', () => {
 
   test('renders a breadcrumb with multiple items - with menu', () => {
     const { asFragment } = render(<Breadcrumb {...multipleItemsWithMenuProps} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders a breadcrumb with multiple items - ellipsed', () => {
+    const { asFragment } = render(
+      <div style={{ maxWidth: '500px' }}>
+        <Breadcrumb {...multipleItemsWithEllipsisProps} />
+      </div>
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 })

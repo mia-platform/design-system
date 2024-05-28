@@ -18,7 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { multipleItemsProps, multipleItemsWithEllipsisProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
+import { multipleItemsLoadingProps, multipleItemsProps, multipleItemsWithEllipsisProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
 
 const meta = {
@@ -45,10 +45,7 @@ export const TwoItems: Story = {
 }
 
 export const MultipleItemsLoading: Story = {
-  args: {
-    isLoading: true,
-    ...multipleItemsProps,
-  },
+  args: multipleItemsLoadingProps,
 }
 
 export const MultipleItemsWithMenu: Story = {
