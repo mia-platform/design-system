@@ -188,3 +188,152 @@ export const multipleItemsWithMenuProps: BreadcrumbProps = {
     },
   ],
 }
+
+export const multipleItemsWithEllipsisProps: BreadcrumbProps = {
+  items: [
+    {
+      icon: breadcrumbIcon,
+      onClick: action('click'),
+      menu: {
+        items: [{
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'first nested',
+        }],
+      },
+      label: 'first',
+    },
+    {
+      onClick: action('click'),
+      label: 'second',
+    },
+    {
+      icon: breadcrumbIcon,
+      onClick: action('click'),
+      menu: {
+        items: [],
+      },
+      label: 'empty items',
+    },
+    {
+      icon: breadcrumbIcon,
+      onClick: action('click'),
+      label: 'third',
+    },
+    {
+      icon: breadcrumbIcon,
+      onClick: action('click'),
+      menu: {
+        showSearch: true,
+        items: [{
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'first nested',
+        },
+        {
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'second nested',
+        }],
+      },
+      label: 'with search',
+    },
+    {
+      onClick: action('click'),
+      label: 'fourth',
+    },
+    {
+      menu: {
+        items: [{
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'first nested',
+        },
+        {
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'second nested',
+        }],
+        searchAllowClear: false,
+        searchPlaceholder: 'Search...',
+      },
+    },
+    {
+      onClick: action('click'),
+      label: 'fifth',
+    },
+    {
+      onClick: action('click'),
+      label: 'sixth',
+    },
+    {
+      onClick: action('click'),
+      label: 'seventh',
+    },
+    {
+      onClick: action('click'),
+      label: 'eighth',
+    },
+    {
+      onClick: action('click'),
+      label: 'nineth',
+    },
+    {
+      onClick: action('click'),
+      label: 'tenth',
+    },
+    {
+      menu: {
+        activeKey: '2',
+        items: [{
+          key: '1',
+          icon: <Icon color="black" name="PiAddressBook" size={16} />,
+          label: 'first nested',
+        },
+        {
+          key: '2',
+          label: 'without search',
+        },
+        {
+          key: '3',
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'third nested',
+        },
+        {
+          key: '4',
+          icon: <Icon color="black" name="PiAddressBook" size={16} />,
+          label: 'fourth nested',
+        },
+        {
+          key: '5',
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'fifth nested',
+        },
+        {
+          key: '6',
+          label: 'sixth nested',
+        },
+        {
+          key: '7',
+          label: 'seventh nested',
+        },
+        {
+          key: '8',
+          label: 'eighth nested',
+        },
+        {
+          key: '9',
+          label: 'ninth nested',
+        },
+        {
+          key: '10',
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'tenth nested',
+        }],
+      },
+    },
+  ],
+}

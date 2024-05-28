@@ -36,6 +36,7 @@ const {
   dropdownMenuSearch,
   last,
   initial,
+  separatorWrapper,
   withoutMenu,
 } = styles
 
@@ -74,7 +75,9 @@ export const BreadcrumbItem = ({
   ), [palette?.common?.grey])
 
   const separatorIcon = useMemo(() => (
-    <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
+    <div className={classNames([separatorWrapper])}>
+      <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
+    </div>
   ), [palette?.common?.grey])
 
   const breadcrumbItemLabel = useMemo(() => (

@@ -17,6 +17,7 @@
  */
 .breadcrumb {
   display: flex;
+  overflow-x: hidden;
   justify-content: flex-start;
   align-items: center;
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
@@ -36,8 +37,8 @@
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
   height: calc((var(--shape-size-xl, 32) + var(--shape-size-s, 8)) * 1px);
   background-color: var(--palette-background-neutral, #89898914);
-  padding-right: calc(var(--spacing-padding-sm, 8) * 1px);
-  padding-left: calc(var(--spacing-padding-sm, 8) * 1px);
+  padding-right: calc(var(--spacing-padding-sm, 12) * 1px);
+  padding-left: calc(var(--spacing-padding-sm, 12) * 1px);
   border-bottom-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
   border-top-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
 }
@@ -111,4 +112,8 @@
   display: flex;
   justify-content: center;
   padding: calc(var(--shape-size-2xs, 2) * 1px);
+}
+
+.separatorWrapper {
+  width: 16px;
 }

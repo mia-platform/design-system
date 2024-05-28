@@ -18,7 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { multipleItemsProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
+import { multipleItemsProps, multipleItemsWithEllipsisProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
 
 const meta = {
@@ -46,4 +46,8 @@ export const TwoItems: Story = {
 
 export const MultipleItemsWithMenu: Story = {
   args: multipleItemsWithMenuProps,
+}
+
+export const MultipleItemsWithEllipsis: Story = {
+  args: multipleItemsWithEllipsisProps,
 }
