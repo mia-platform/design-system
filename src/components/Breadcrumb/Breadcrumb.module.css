@@ -42,6 +42,7 @@
   align-items: center;
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
   height: calc((var(--shape-size-xl, 32)) * 1px);
+  width: 100%;
 }
 
 .breadcrumbItemWrapper {
