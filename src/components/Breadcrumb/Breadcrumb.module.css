@@ -31,6 +31,19 @@
   height: calc((var(--shape-size-xl, 32) + var(--shape-size-s, 8)) * 1px);
 }
 
+.breadcrumbItemSubmenu {
+  width: 200px;
+}
+
+.breadcrumbItemSubmenu :global(.mia-platform-dropdown-menu-item),
+.breadcrumbItemSubmenu :global(.mia-platform-dropdown-menu-submenu),
+.breadcrumbItemSubmenu :global(.mia-platform-dropdown-menu-submenu-title) {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing-gap-xs, 4) * 1px);
+  height: calc((var(--shape-size-xl, 32)) * 1px);
+}
+
 .breadcrumbItemWrapper {
   display: flex;
   align-items: center;

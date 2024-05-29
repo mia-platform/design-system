@@ -26,7 +26,7 @@ import { BreadcrumbItemType } from './Breadcrumb.types'
 import { BreadcrumbProps } from './Breadcrumb.props'
 import styles from './Breadcrumb.module.css'
 
-const { breadcrumbHiddenContainer, breadcrumbItemWrapper, breadcrumb } = styles
+const { breadcrumbHiddenContainer, breadcrumbItemSubmenu, breadcrumbItemWrapper, breadcrumb } = styles
 
 /**
  * UI component for displaying the current location within an hierarchy
@@ -106,8 +106,7 @@ export const Breadcrumb = ({
           dropdownItemSubmenu = itemData?.menu?.items?.map(({ icon, key, label, onClick }, index) => ({
             icon,
             key: `breadcrumb-item-collapsed-menu-item-${key ?? index}`,
-            label,
-            onClick,
+            label: <div onClick={onClick}>{label}</div>,
           }))
         }
 
@@ -116,6 +115,7 @@ export const Breadcrumb = ({
           key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
           icon: itemData.icon,
           label: <div onClick={itemData.onClick}>{itemData.label}</div>,
+          popupClassName: classNames([breadcrumbItemSubmenu]),
         }
 
         return [...acc, dropdownItem]
@@ -147,7 +147,7 @@ export const Breadcrumb = ({
 
   const renderCollapsedDropdown = (): ReactElement => {
     return (
-      <Dropdown menu={dropdownMenu}>
+      <Dropdown menu={dropdownMenu} overlayClassName={classNames([breadcrumbItemSubmenu])}>
         <div className={classNames([breadcrumbItemWrapper])}>
           <BreadcrumbItem
             isLoading={isLoading}
@@ -173,20 +173,4 @@ export const Breadcrumb = ({
       </div>
     </div>
   )
-  // return (
-  //   <div className={classNames([breadcrumb])} ref={breadcrumbRef}>
-  //     {items.map(({ key, icon, menu, onClick, label }, index) =>
-  //       <BreadcrumbItem
-  //         icon={icon}
-  //         index={index}
-  //         isLoading={isLoading}
-  //         itemsLength={items.length}
-  //         key={`breadcrumb-item-${key ?? index}`}
-  //         label={label}
-  //         menu={menu}
-  //         onClick={onClick}
-  //       />
-  //     )}
-  //   </div>
-  // )
 }

@@ -30,6 +30,7 @@ const {
   breadcrumbItemLabelStyle,
   breadcrumbItemLabelWrapper,
   breadcrumbMenuIcon,
+  breadcrumbItemSubmenu,
   breadcrumbItemWrapper,
   caretOnly,
   dropdownMenuContainer,
@@ -144,6 +145,7 @@ export const BreadcrumbItem = ({
       getPopupContainer={getPopupContainer}
       menu={itemMenu}
       open={menu?.open !== undefined ? menu.open : dropdownOpen}
+      overlayClassName={classNames([breadcrumbItemSubmenu])}
       placement={'bottomLeft'}
       trigger={['click']}
       onOpenChange={(open) => {
