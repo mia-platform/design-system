@@ -41,8 +41,10 @@ const {
 } = styles
 
 export const BreadcrumbItem = ({
+  getPopupContainer,
   icon,
-  index,
+  isInitialItem,
+  isLastItem,
   isLoading,
   isResized,
   itemsLength,
@@ -53,9 +55,6 @@ export const BreadcrumbItem = ({
   const { palette } = useTheme()
 
   const [dropdownOpen, setDropdownOpen] = useState(false)
-
-  const isInitialItem = useMemo(() => index === 0, [index])
-  const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
 
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
@@ -142,7 +141,7 @@ export const BreadcrumbItem = ({
     <Dropdown
       destroyPopupOnHide
       dropdownRender={dropdown}
-      getPopupContainer={(trigger) => trigger}
+      getPopupContainer={getPopupContainer}
       menu={itemMenu}
       open={menu?.open !== undefined ? menu.open : dropdownOpen}
       placement={'bottomLeft'}
@@ -164,7 +163,7 @@ export const BreadcrumbItem = ({
         {menuIcon}
       </div>
     </Dropdown>
-  ), [dropdown, itemMenu, menu, dropdownOpen, hasLabel, menuIcon])
+  ), [dropdown, getPopupContainer, itemMenu, menu, dropdownOpen, hasLabel, menuIcon])
 
   return (
     <>

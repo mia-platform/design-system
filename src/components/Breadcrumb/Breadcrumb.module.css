@@ -15,9 +15,16 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
+.breadcrumbHiddenContainer {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+}
+
 .breadcrumb {
   display: flex;
-  overflow-x: hidden;
   justify-content: flex-start;
   align-items: center;
   gap: calc(var(--spacing-gap-xs, 4) * 1px);

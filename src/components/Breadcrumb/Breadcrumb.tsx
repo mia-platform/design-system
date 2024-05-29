@@ -16,32 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useCallback, useEffect, useRef, useState } from 'react'
+import { Dropdown, MenuProps } from 'antd'
+import { ReactElement, useEffect, useMemo, useRef, useState } from 'react'
+import { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 
 import { BreadcrumbItem } from './BreadcrumbItem'
+import { BreadcrumbItemType } from './Breadcrumb.types'
 import { BreadcrumbProps } from './Breadcrumb.props'
 import styles from './Breadcrumb.module.css'
 
-const { breadcrumb } = styles
-
-const calculateTotalWidth = (items: HTMLElement[], iconWidth: number, resized: boolean[] = []): number => {
-  let total = 0
-
-  items.forEach((item, index) => {
-    if (resized[index]) {
-      // Approximate width for '...'
-      total += 20
-    } else {
-      total += item.offsetWidth
-    }
-    if (index < items.length - 1) {
-      total += iconWidth
-    }
-  })
-
-  return total
-}
+const { breadcrumbHiddenContainer, breadcrumbItemWrapper, breadcrumb } = styles
 
 /**
  * UI component for displaying the current location within an hierarchy
@@ -52,63 +37,148 @@ export const Breadcrumb = ({
   isLoading,
   items,
 }: BreadcrumbProps): ReactElement => {
+  const [visibleItems, setVisibleItems] = useState<BreadcrumbItemType[]>([])
+  const [collapsedItems, setCollapsedItems] = useState<BreadcrumbItemType[]>([])
   const breadcrumbRef = useRef<HTMLDivElement>(null)
-  const [maxWidth, setMaxWidth] = useState<number>(0)
-  const [resizedItems, setResizedItems] = useState<boolean[]>(new Array(items.length).fill(false))
+  const hiddenContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (breadcrumbRef.current) {
-      const parentMaxWidth = breadcrumbRef.current.parentElement?.offsetWidth || 0
-      setMaxWidth(parentMaxWidth)
-    }
-  }, [breadcrumbRef])
+    const calculateItems = (): void => {
+      const maxWidth = breadcrumbRef.current?.parentElement?.offsetWidth || 0
+      const hiddenContainer = hiddenContainerRef.current
 
-  const minimizeBreadcrumbItems = useCallback((
-    breadcrumbItems: HTMLElement[],
-    availableWidth: number,
-    iconWidth: number
-  ): boolean[] => {
-    let totalWidth = calculateTotalWidth(breadcrumbItems, iconWidth)
-    const newResizedItems = new Array(breadcrumbItems.length).fill(false)
-    // Start from the second item, keep the first and last as is
-    let i = 1
+      if (!hiddenContainer) { return }
 
-    while (totalWidth > availableWidth && i < breadcrumbItems.length - 1) {
-      newResizedItems[i] = true
-      totalWidth = calculateTotalWidth(breadcrumbItems, iconWidth, newResizedItems)
-      i += 1
-    }
+      const itemWidths = Array.from(hiddenContainer.children).map(
+        (child) => (child as HTMLElement).getBoundingClientRect().width
+      )
 
-    return newResizedItems
-  }, [])
+      let totalWidth = 0
+      const visible: BreadcrumbItemType[] = []
+      const collapsed: BreadcrumbItemType[] = []
 
-  useEffect(() => {
-    if (breadcrumbRef.current && maxWidth > 0) {
-      const breadcrumbItems = Array.from(breadcrumbRef.current.children) as HTMLElement[]
-      const totalWidth = calculateTotalWidth(breadcrumbItems, 16)
-
-      if (totalWidth > maxWidth) {
-        const newResizedItems = minimizeBreadcrumbItems(breadcrumbItems, maxWidth, 16)
-        setResizedItems(newResizedItems)
+      if (items.length > 0) {
+        // Add width of the first item
+        totalWidth += itemWidths[0]
       }
+
+      if (items.length > 1) {
+        // Add width of the last item with separator
+        totalWidth += itemWidths[itemWidths.length - 1] + 16
+      }
+
+      if (items.length > 2) {
+        // Add width of dropdown collapsed item
+        const collapsedItemWidth = 20
+        totalWidth += collapsedItemWidth
+
+        for (let i = items.length - 2; i > 0; i--) {
+        // Add width of the item with separator
+          const itemWidth = itemWidths[i] + 16
+          totalWidth += itemWidth
+
+          if (totalWidth <= maxWidth) {
+            visible.push(items[i])
+          } else {
+            collapsed.push(items[i])
+          }
+        }
+
+        visible.reverse()
+      }
+
+      if (collapsed.length > 0) { collapsed.reverse() }
+
+      setVisibleItems(visible)
+      setCollapsedItems(collapsed)
     }
-  }, [maxWidth, minimizeBreadcrumbItems])
+
+    calculateItems()
+    window.addEventListener('resize', calculateItems)
+    return () => window.removeEventListener('resize', calculateItems)
+  }, [items])
+
+  const dropdownMenu = useMemo<MenuProps>(() => {
+    const dropdownItems = Object.values(collapsedItems ?? {})
+      .reduce<ItemType[]>((acc, itemData, currentIndex) => {
+        return [
+          ...acc,
+          {
+            key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
+            icon: itemData.icon,
+            label: <div onClick={itemData.onClick}>{itemData.label}</div>,
+          },
+        ]
+      }, [])
+
+    return {
+      items: dropdownItems,
+    }
+  }, [collapsedItems])
+
+  const renderItem = (
+    item: BreadcrumbItemType,
+    index: number,
+    isInitialItem?: boolean,
+    isLastItem?: boolean
+  ): ReactElement => {
+    return (
+      <BreadcrumbItem
+        icon={item?.icon}
+        isInitialItem={isInitialItem}
+        isLastItem={isLastItem}
+        isLoading={isLoading}
+        itemsLength={items.length}
+        key={`breadcrumb-item-${item?.key ?? index}`}
+        label={item?.label}
+        menu={item?.menu}
+        onClick={item?.onClick}
+      />
+    )
+  }
+
+  const renderCollapsedDropdown = (): ReactElement => {
+    return (
+      <Dropdown menu={dropdownMenu}>
+        <div className={classNames([breadcrumbItemWrapper])}>
+          <BreadcrumbItem
+            isLoading={isLoading}
+            itemsLength={items.length}
+            key={`breadcrumb-item-collapsed`}
+            label={'...'}
+          />
+        </div>
+      </Dropdown>
+    )
+  }
 
   return (
-    <div className={classNames([breadcrumb])} ref={breadcrumbRef}>
-      {items.map(({ key, icon, menu, onClick, label }, index) =>
-        <BreadcrumbItem
-          icon={icon}
-          index={index}
-          isLoading={isLoading}
-          isResized={resizedItems[index]}
-          itemsLength={items.length}
-          key={`breadcrumb-item-${key ?? index}`}
-          label={label}
-          menu={menu}
-          onClick={onClick}
-        />
-      )}
+    <div ref={breadcrumbRef} >
+      <div className={classNames([breadcrumb])}>
+        {items.length > 0 && renderItem(items[0], 0, true)}
+        {collapsedItems.length > 0 && renderCollapsedDropdown()}
+        {visibleItems.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
+        {items.length > 1 && renderItem(items[items.length - 1], items.length - 1, false, true)}
+      </div>
+      <div className={classNames([breadcrumbHiddenContainer])} ref={hiddenContainerRef} >
+        {items.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
+      </div>
     </div>
   )
+  // return (
+  //   <div className={classNames([breadcrumb])} ref={breadcrumbRef}>
+  //     {items.map(({ key, icon, menu, onClick, label }, index) =>
+  //       <BreadcrumbItem
+  //         icon={icon}
+  //         index={index}
+  //         isLoading={isLoading}
+  //         itemsLength={items.length}
+  //         key={`breadcrumb-item-${key ?? index}`}
+  //         label={label}
+  //         menu={menu}
+  //         onClick={onClick}
+  //       />
+  //     )}
+  //   </div>
+  // )
 }

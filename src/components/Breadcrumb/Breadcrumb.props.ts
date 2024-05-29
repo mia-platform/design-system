@@ -24,14 +24,24 @@ import { BreadcrumbItemType } from './Breadcrumb.types'
 export type BreadcrumbItemProps = BreadcrumbItemType & {
 
   /**
-   * The index of the breadcrumb item within the breadcrumb list.
+   * The DOM element where the container is attached. Defaults to `document.body`.
    */
-  index: number;
+  getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
 
   /**
    * Indicates whether the component is loading or not.
    */
   isLoading?: boolean;
+
+  /**
+   * Indicates whether the item is the first one.
+   */
+  isInitialItem?: boolean;
+
+  /**
+   * Indicates whether the item is the last one.
+   */
+  isLastItem?: boolean;
 
   /**
    * Indicates whether the item should be ellipsed to fit the parent max-width.
@@ -58,6 +68,8 @@ export type BreadcrumbProps = {
    * The list of breadcrumb items.
    *
    * BreadcrumbItemType `object`:
+   *   - getPopupContainer: The DOM element where the container is attached. Defaults to `document.body`. <br>
+   *   `(triggerNode: HTMLElement) => HTMLElement;`
    *   - icon: Icon to be displayed alongside the breadcrumb item. <br> `ReactNode`
    *   - key: Unique key for the breadcrumb item. <br> `string`
    *   - label: The label of the breadcrumb item, can be a string or ReactNode. <br> `ReactNode`
@@ -87,7 +99,6 @@ export type BreadcrumbProps = {
    *    - searchAllowClear: If true, allows clearing of the search input. <br> `boolean`
    *    - searchPlaceholder: Placeholder text for the search input. <br> `string`
    *    - showSearch: If true, displays the search input within the menu. <br> `boolean`
-   *   - isLoading: Indicates whether the component is loading or not.. <br> `boolean`
    *   - onClick: Callback function to handle click events on the breadcrumb item. <br>
    *   `(event: React.MouseEvent<Element, MouseEvent>) => void;`
    */
