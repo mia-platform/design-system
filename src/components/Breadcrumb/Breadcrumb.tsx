@@ -69,7 +69,7 @@ export const Breadcrumb = ({
 
       if (items.length > 2) {
         // Add width of dropdown collapsed item
-        const collapsedItemWidth = 20
+        const collapsedItemWidth = 30 + 16
         totalWidth += collapsedItemWidth
 
         for (let i = items.length - 2; i > 0; i--) {
@@ -101,19 +101,27 @@ export const Breadcrumb = ({
   const dropdownMenu = useMemo<MenuProps>(() => {
     const dropdownItems = Object.values(collapsedItems ?? {})
       .reduce<ItemType[]>((acc, itemData, currentIndex) => {
-        return [
-          ...acc,
-          {
-            key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
-            icon: itemData.icon,
-            label: <div onClick={itemData.onClick}>{itemData.label}</div>,
-          },
-        ]
+        let dropdownItemSubmenu
+        if (Object.values(itemData.menu?.items ?? {}).length > 0) {
+          dropdownItemSubmenu = itemData?.menu?.items?.map(({ icon, key, label, onClick }, index) => ({
+            icon,
+            key: `breadcrumb-item-collapsed-menu-item-${key ?? index}`,
+            label,
+            onClick,
+          }))
+        }
+
+        const dropdownItem: ItemType = {
+          ...{ children: dropdownItemSubmenu },
+          key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
+          icon: itemData.icon,
+          label: <div onClick={itemData.onClick}>{itemData.label}</div>,
+        }
+
+        return [...acc, dropdownItem]
       }, [])
 
-    return {
-      items: dropdownItems,
-    }
+    return { items: dropdownItems }
   }, [collapsedItems])
 
   const renderItem = (
