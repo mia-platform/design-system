@@ -213,6 +213,20 @@ export const multipleItemsWithEllipsisProps: BreadcrumbProps = {
       label: 'second',
     },
     {
+      menu: {
+        activeKey: '2',
+        items: [{
+          key: '1',
+          icon: <Icon color="black" name="PiAddressBook" size={16} />,
+          label: 'first nested',
+        },
+        {
+          key: '2',
+          label: 'selected',
+        }],
+      },
+    },
+    {
       icon: breadcrumbIcon,
       onClick: action('click'),
       menu: {

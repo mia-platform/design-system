@@ -44,11 +44,6 @@ export type BreadcrumbItemProps = BreadcrumbItemType & {
   isLastItem?: boolean;
 
   /**
-   * Indicates whether the item should be ellipsed to fit the parent max-width.
-   */
-  isResized?: boolean;
-
-  /**
    * The total number of items in the breadcrumb list.
    */
   itemsLength: number;

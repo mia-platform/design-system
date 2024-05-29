@@ -47,7 +47,6 @@ export const BreadcrumbItem = ({
   isInitialItem,
   isLastItem,
   isLoading,
-  isResized,
   itemsLength,
   label,
   menu,
@@ -60,17 +59,7 @@ export const BreadcrumbItem = ({
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
 
-  const itemLabel = useMemo(() =>
-    (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.label)
-    ?? label
-  , [label, menu])
-
-  const itemIcon = useMemo(() =>
-    (menu?.activeKey && Object.values(menu?.items ?? {}).find(({ key }) => key === menu.activeKey)?.icon)
-    ?? icon
-  , [icon, menu])
-
-  const hasLabel = itemIcon || itemLabel
+  const hasLabel = icon || label
 
   const menuIcon = useMemo(() => (
     <Icon color={palette?.common?.grey?.[600]} name="AiOutlineCaretDown" size={16} />
@@ -92,14 +81,14 @@ export const BreadcrumbItem = ({
       ])}
       onClick={onClick}
     >
-      {itemIcon}
+      {icon}
       <div className={classNames([breadcrumbItemLabelStyle])}>
-        <BodyL ellipsis={{ rows: 1, tooltip: itemLabel }}>
-          {(isResized && !isInitialItem && !isLastItem) ? '...' : itemLabel}
+        <BodyL ellipsis={{ rows: 1, tooltip: label }}>
+          {label}
         </BodyL>
       </div>
     </div>
-  ), [hasMenu, isInitialItem, isLastItem, isResized, itemIcon, itemLabel, onClick])
+  ), [hasMenu, icon, isInitialItem, isLastItem, label, onClick])
 
   const itemMenu = useMemo<MenuProps>(() => {
     const items = Object.values(menu?.items ?? {})
