@@ -21,6 +21,7 @@ import { ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef, useSt
 import { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 
+import { BodyS } from '../Typography/BodyX/BodyS'
 import { BreadcrumbItem } from './BreadcrumbItem'
 import { BreadcrumbItemType } from './Breadcrumb.types'
 import { BreadcrumbProps } from './Breadcrumb.props'
@@ -42,8 +43,11 @@ export const Breadcrumb = ({
   const breadcrumbRef = useRef<HTMLDivElement>(null)
   const hiddenContainerRef = useRef<HTMLDivElement>(null)
 
+  /**
+ * Calculates page max width and distinguishes items between visible and collapsed
+ */
   useEffect(() => {
-    const calculateItems = (): void => {
+    const setItemsVisibility = (): void => {
       const maxWidth = breadcrumbRef.current?.parentElement?.offsetWidth || 0
       const hiddenContainer = hiddenContainerRef.current
 
@@ -93,9 +97,9 @@ export const Breadcrumb = ({
       setCollapsedItems(collapsed)
     }
 
-    calculateItems()
-    window.addEventListener('resize', calculateItems)
-    return () => window.removeEventListener('resize', calculateItems)
+    setItemsVisibility()
+    window.addEventListener('resize', setItemsVisibility)
+    return () => window.removeEventListener('resize', setItemsVisibility)
   }, [items])
 
   const getItemLabel = useCallback((item: BreadcrumbItemType): ReactNode => {
@@ -122,7 +126,13 @@ export const Breadcrumb = ({
           dropdownItemSubmenu = itemData?.menu?.items?.map(({ icon, key, label, onClick }, index) => ({
             icon,
             key: `breadcrumb-menu-item-${itemData.key ?? currentIndex}-collapsed-menu-item-${key ?? index}`,
-            label: <div onClick={onClick}>{label}</div>,
+            label: (
+              <div onClick={onClick}>
+                <BodyS ellipsis={{ rows: 1, tooltip: label }}>
+                  {label}
+                </BodyS>
+              </div>
+            ),
           }))
         }
 
@@ -130,7 +140,13 @@ export const Breadcrumb = ({
           ...{ children: dropdownItemSubmenu },
           key: `breadcrumb-menu-item--${itemData.key ?? currentIndex}`,
           icon: getItemIcon(itemData),
-          label: <div onClick={itemData.onClick}>{getItemLabel(itemData)}</div>,
+          label: (
+            <div onClick={itemData.onClick}>
+              <BodyS ellipsis={{ rows: 1, tooltip: getItemLabel(itemData) }}>
+                {getItemLabel(itemData)}
+              </BodyS>
+            </div>
+          ),
           popupClassName: classNames([breadcrumbItemSubmenu]),
         }
 
@@ -184,7 +200,7 @@ export const Breadcrumb = ({
         {visibleItems.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
         {items.length > 1 && renderItem(items[items.length - 1], items.length - 1, false, true)}
       </div>
-      <div className={classNames([breadcrumbHiddenContainer])} ref={hiddenContainerRef} >
+      <div className={classNames([breadcrumbHiddenContainer])} ref={hiddenContainerRef}>
         {items.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
       </div>
     </div>

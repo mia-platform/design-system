@@ -21,6 +21,7 @@ import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 
 import { BodyL } from '../Typography/BodyX/BodyL'
+import { BodyS } from '../Typography/BodyX/BodyS'
 import { BreadcrumbItemProps } from './Breadcrumb.props'
 import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
@@ -58,8 +59,7 @@ export const BreadcrumbItem = ({
 
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
-
-  const hasLabel = icon || label
+  const hasLabel = useMemo(() => icon || label, [icon, label])
 
   const menuIcon = useMemo(() => (
     <Icon color={palette?.common?.grey?.[600]} name="AiOutlineCaretDown" size={16} />
@@ -97,8 +97,12 @@ export const BreadcrumbItem = ({
           ...acc,
           {
             key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
-            icon: itemData.icon,
-            label: itemData.label,
+            icon: itemData?.icon,
+            label: (
+              <BodyS ellipsis={{ rows: 1, tooltip: itemData?.label }}>
+                {itemData?.label}
+              </BodyS>
+            ),
           },
         ]
       }, [])
