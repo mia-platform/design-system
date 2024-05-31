@@ -82,14 +82,8 @@ export type BreadcrumbProps = {
    *        - label*: The label of the menu item. <br> `string`
    *    - onDropdownVisibleChange: Callback function to handle changes in dropdown visibility. <br>
    *    `(open: boolean) => void;`
-   *    - onSearch: Callback function to handle search operations. <br>
-   *     `(` <br>
-   *     `  value*: string,` <br>
-   *     `  event: React.ChangeEvent<HTMLInputElement>`
-   *     `  | React.MouseEvent<HTMLElement>`
-   *     `  | React.KeyboardEvent<HTMLInputElement>`
-   *     `  info: { source 'clear' | 'input' }` <br>
-   *     `) => void`
+   *    - onChangeSearch: Callback function to handle search operations. <br>
+   *     `React.ChangeEventHandler<HTMLInputElement>` <br>
    *    - open: Indicates whether the menu is open. <br> `boolean`
    *    - searchAllowClear: If true, allows clearing of the search input. <br> `boolean`
    *    - searchPlaceholder: Placeholder text for the search input. <br> `string`

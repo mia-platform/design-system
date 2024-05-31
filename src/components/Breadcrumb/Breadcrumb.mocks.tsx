@@ -123,6 +123,25 @@ export const multipleItemsWithMenuProps: BreadcrumbProps = {
       label: 'with search',
     },
     {
+      icon: breadcrumbIcon,
+      onClick: action('click'),
+      menu: {
+        showSearch: true,
+        onChangeSearch: action('search'),
+        items: [{
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'first nested',
+        },
+        {
+          icon: breadcrumbIcon,
+          onClick: action('click'),
+          label: 'second nested',
+        }],
+      },
+      label: 'with controlled search',
+    },
+    {
       menu: {
         items: [{
           icon: breadcrumbIcon,
