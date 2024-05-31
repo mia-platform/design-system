@@ -46,7 +46,7 @@ export const Card = ({
   subtitle,
   title,
 }: CardProps): ReactElement => {
-  const { palette } = useTheme()
+  const { theme: { palette } } = useTheme()
 
   const docLinkIcon = useMemo(() => (
     <Icon color={palette?.action?.link?.active} name="PiBookOpen" size={16} />

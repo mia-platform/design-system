@@ -22,6 +22,7 @@
 import Theme from '../../themes/schema'
 import { ThemeProvider } from '../../components/ThemeProvider'
 import { ThemeProviderProps } from '../../components/ThemeProvider/ThemeProvider.props'
+import { generateAntTheme } from '../../components/ThemeProvider/Ant'
 import { renderHook } from '../../test-utils'
 import themes from '../../themes'
 import { useTheme } from './useTheme'
@@ -38,16 +39,22 @@ describe('useTheme', () => {
   }
 
   test('returns default theme', () => {
+    const antTheme = generateAntTheme(lightTheme)
+
     const { result } = renderHook(() => useTheme(), { wrapper: ThemeProvider })
 
-    expect(result.current).toEqual(lightTheme)
+    expect(result.current.theme).toEqual(lightTheme)
+    expect(result.current.antTheme).toEqual(antTheme)
   })
 
   for (const [themeName, theme] of Object.entries(themes)) {
     test(`returns ${themeName}`, () => {
+      const antTheme = generateAntTheme(theme)
+
       const { result } = renderHook(() => useTheme(), { wrapper: themeProvider(theme) })
 
-      expect(result.current).toEqual(theme)
+      expect(result.current.theme).toEqual(theme)
+      expect(result.current.antTheme).toEqual(antTheme)
     })
   }
 })

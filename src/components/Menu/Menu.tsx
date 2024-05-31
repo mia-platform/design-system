@@ -61,7 +61,7 @@ export const Menu = ({
 }: MenuProps): ReactElement => {
   const isPrimary = hierarchy === Primary
 
-  const theme = useTheme()
+  const { theme } = useTheme()
   const menuTheme = isPrimary ? primaryTheme(theme) : defaultTheme(theme)
 
   const menuClassNames = useMemo(() => classNames([

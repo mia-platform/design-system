@@ -34,7 +34,7 @@ export const Title = ({
   docLink,
   title,
 }: TitleProps): ReactElement => {
-  const { palette } = useTheme()
+  const { theme: { palette } } = useTheme()
 
   const docLinkIcon = useMemo(() => (
     <Icon color={palette?.action?.link?.active} name="PiBookOpen" size={16} />

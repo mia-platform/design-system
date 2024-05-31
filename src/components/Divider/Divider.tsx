@@ -42,7 +42,7 @@ export const Divider = ({
   text,
   textOrientation = defaults.textOrientation,
 }: DividerProps): ReactElement => {
-  const { spacing } = useTheme()
+  const { theme: { spacing } } = useTheme()
 
   return (
     <AntDivider

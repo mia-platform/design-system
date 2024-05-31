@@ -17,9 +17,11 @@
  */
 
 import { useContext, useMemo } from 'react'
+import { ThemeConfig } from 'antd'
 
 import type Theme from '../../themes/schema'
 import { ThemeContext } from '../../components/ThemeProvider'
+import { generateAntTheme } from '../../components/ThemeProvider/Ant'
 import themes from '../../themes'
 
 const { lightTheme: defaultTheme } = themes
@@ -29,8 +31,11 @@ const { lightTheme: defaultTheme } = themes
  *
  * @returns {Theme} The current theme.
  */
-export const useTheme = (): Theme => {
+export const useTheme = (): { theme: Theme, antTheme: ThemeConfig } => {
   const theme = useContext(ThemeContext)
 
-  return useMemo(() => theme ?? defaultTheme, [theme])
+  const themeWithFallback = useMemo(() => theme ?? defaultTheme, [theme])
+  const antTheme = useMemo(() => generateAntTheme(theme), [theme])
+
+  return { theme: themeWithFallback, antTheme }
 }
