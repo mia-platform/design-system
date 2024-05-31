@@ -23,6 +23,7 @@ import { debounce } from 'lodash-es'
 
 import { BodyL } from '../Typography/BodyX/BodyL'
 import { BodyS } from '../Typography/BodyX/BodyS'
+import { BreadcrumbItemMenu } from './Breadcrumb.types'
 import { BreadcrumbItemProps } from './Breadcrumb.props'
 import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
@@ -94,7 +95,7 @@ export const BreadcrumbItem = ({
 
   const itemMenu = useMemo<MenuProps>(() => {
     const items = Object.values(menu?.items ?? {})
-      .filter(item => (!menu?.onSearch ? item.label.toLowerCase().includes(searchValue.toLowerCase()) : item))
+      .filter(item => menu?.onChangeSearch || item.label.toLowerCase().includes(searchValue.toLowerCase()))
       .reduce<ItemType[]>((acc, itemData, currentIndex) => {
         return [
           ...acc,
@@ -121,6 +122,16 @@ export const BreadcrumbItem = ({
     }
   }, [menu, searchValue])
 
+  const handleChange = useCallback((
+    breadcrumbItemMenu: BreadcrumbItemMenu, event: ChangeEvent<HTMLInputElement>
+  ) => {
+    if (breadcrumbItemMenu?.onChangeSearch) {
+      breadcrumbItemMenu.onChangeSearch(event)
+    } else {
+      setSearchValue(event.target.value)
+    }
+  }, [])
+
   const dropdown = useCallback((dropdownMenu: ReactNode) => (
     <div className={dropdownMenuContainer}>
       {menu?.showSearch && <div className={dropdownMenuSearch}>
@@ -128,16 +139,12 @@ export const BreadcrumbItem = ({
           allowClear={menu?.searchAllowClear ?? true}
           autoFocus
           placeholder={menu?.searchPlaceholder ?? ''}
-          onChange={debounce(
-            (event: ChangeEvent<HTMLInputElement>) => !menu?.onSearch && setSearchValue(event.target.value),
-            150
-          )}
-          onSearch={menu?.onSearch}
+          onChange={debounce((event) => handleChange(menu, event), 150)}
         />
       </div>}
       {React.cloneElement(dropdownMenu as React.ReactElement, { style: { borderRadius: '0px', boxShadow: 'none' } })}
     </div>
-  ), [menu?.onSearch, menu?.searchAllowClear, menu?.searchPlaceholder, menu?.showSearch])
+  ), [handleChange, menu])
 
   const breadcrumbItemMenu = useMemo(() => (
     <Dropdown

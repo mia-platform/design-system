@@ -53,11 +53,6 @@ export type BreadcrumbItemMenuItem = {
  * @param event - Optional event that triggered the search.
  * @param info - Additional information about the search source.
  */
-export type OnSearch = (
-  value: string,
-  event?: React.ChangeEvent<HTMLInputElement> | React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLInputElement>,
-  info?: { source?: 'clear' | 'input' }
-) => void;
 
 /**
  * Represents a menu within a breadcrumb item.
@@ -84,7 +79,7 @@ export type BreadcrumbItemMenu = {
   /**
    * Callback function to handle search operations.
    */
-  onSearch?: OnSearch;
+  onChangeSearch?: React.ChangeEventHandler<HTMLInputElement>;
 
   /**
    * Indicates whether the menu is open.
