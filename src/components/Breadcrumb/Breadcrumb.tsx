@@ -29,6 +29,8 @@ import styles from './Breadcrumb.module.css'
 
 const { breadcrumbHiddenContainer, breadcrumbItemSubmenu, breadcrumbItemWrapper, breadcrumb } = styles
 
+const COLLAPSED_ITEM_WIDTH = 46
+
 /**
  * UI component for displaying the current location within an hierarchy
  *
@@ -68,17 +70,17 @@ export const Breadcrumb = ({
 
       if (items.length > 1) {
         // Add width of the last item with separator
-        totalWidth += itemWidths[itemWidths.length - 1] + 16
+        totalWidth += itemWidths[itemWidths.length - 1]
       }
 
       if (items.length > 2) {
         // Add width of dropdown collapsed item
-        const collapsedItemWidth = 30 + 16
+        const collapsedItemWidth = COLLAPSED_ITEM_WIDTH
         totalWidth += collapsedItemWidth
 
         for (let i = items.length - 2; i > 0; i--) {
         // Add width of the item with separator
-          const itemWidth = itemWidths[i] + 16
+          const itemWidth = itemWidths[i]
           totalWidth += itemWidth
 
           if (totalWidth <= maxWidth) {
@@ -121,11 +123,13 @@ export const Breadcrumb = ({
   const dropdownMenu = useMemo<MenuProps>(() => {
     const dropdownItems = Object.values(collapsedItems ?? {})
       .reduce<ItemType[]>((acc, itemData, currentIndex) => {
+        const itemKey = itemData.key ?? `breadcrumb-menu-item--${currentIndex}`
+
         let dropdownItemSubmenu
         if (Object.values(itemData.menu?.items ?? {}).length > 0) {
           dropdownItemSubmenu = itemData?.menu?.items?.map(({ icon, key, label, onClick }, index) => ({
             icon,
-            key: `breadcrumb-menu-item-${itemData.key ?? currentIndex}-collapsed-menu-item-${key ?? index}`,
+            key: key ?? `${itemKey}-collapsed-menu-item-${index}`,
             label: (
               <div onClick={onClick}>
                 <BodyS ellipsis={{ rows: 1, tooltip: label }}>
@@ -138,7 +142,7 @@ export const Breadcrumb = ({
 
         const dropdownItem: ItemType = {
           ...{ children: dropdownItemSubmenu },
-          key: `breadcrumb-menu-item--${itemData.key ?? currentIndex}`,
+          key: itemKey,
           icon: getItemIcon(itemData),
           label: (
             <div onClick={itemData.onClick}>
@@ -169,7 +173,7 @@ export const Breadcrumb = ({
         isLastItem={isLastItem}
         isLoading={isLoading}
         itemsLength={items.length}
-        key={`breadcrumb-item-${item?.key ?? index}`}
+        key={item?.key ?? `breadcrumb-item-${index}`}
         label={getItemLabel(item)}
         menu={item?.menu}
         onClick={item?.onClick}
