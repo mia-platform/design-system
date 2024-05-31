@@ -16,9 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { Dropdown, Input, MenuProps, Skeleton } from 'antd'
-import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
+import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
 import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
+import { debounce } from 'lodash-es'
 
 import { BodyL } from '../Typography/BodyX/BodyL'
 import { BodyS } from '../Typography/BodyX/BodyS'
@@ -56,6 +57,7 @@ export const BreadcrumbItem = ({
   const { palette } = useTheme()
 
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [searchValue, setSearchValue] = useState('')
 
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
@@ -92,6 +94,7 @@ export const BreadcrumbItem = ({
 
   const itemMenu = useMemo<MenuProps>(() => {
     const items = Object.values(menu?.items ?? {})
+      .filter(item => (!menu?.onSearch ? item.label.toLowerCase().includes(searchValue.toLowerCase()) : item))
       .reduce<ItemType[]>((acc, itemData, currentIndex) => {
         return [
           ...acc,
@@ -116,8 +119,7 @@ export const BreadcrumbItem = ({
       },
       selectedKeys: menu?.activeKey ? [menu.activeKey] : [],
     }
-  }, [menu])
-
+  }, [menu, searchValue])
 
   const dropdown = useCallback((dropdownMenu: ReactNode) => (
     <div className={dropdownMenuContainer}>
@@ -126,6 +128,10 @@ export const BreadcrumbItem = ({
           allowClear={menu?.searchAllowClear ?? true}
           autoFocus
           placeholder={menu?.searchPlaceholder ?? ''}
+          onChange={debounce(
+            (event: ChangeEvent<HTMLInputElement>) => !menu?.onSearch && setSearchValue(event.target.value),
+            150
+          )}
           onSearch={menu?.onSearch}
         />
       </div>}
