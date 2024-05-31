@@ -19,7 +19,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Divider } from '.'
-import { Orientation } from './Divider.types'
 import { defaults } from './Divider'
 
 const meta = {
@@ -44,7 +43,7 @@ export const Horizontal: Story = {
 export const Vertical: Story = {
   args: {
     ...meta.args,
-    orientation: Orientation.Vertical,
+    orientation: Divider.Orientation.Vertical,
   },
 }
 

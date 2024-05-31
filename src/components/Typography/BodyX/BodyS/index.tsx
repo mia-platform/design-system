@@ -20,10 +20,7 @@ import { ReactElement } from 'react'
 
 import { BodyX } from '../BodyX'
 import { BodyXProps } from '../BodyX.props'
-import { Size } from '../BodyX.types'
-
-const { S } = Size
 
 export const BodyS = (props: BodyXProps): ReactElement => {
-  return <BodyX {...props} size={S} />
+  return <BodyX {...props} size={BodyX.Size.S} />
 }

@@ -19,7 +19,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { Hierarchy, OptionAlignment } from './SegmentedControl.types'
 import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
 import { SegmentedControl } from '.'
 import { defaults } from './SegmentedControl'
@@ -53,11 +52,11 @@ export const StringOptions: Story = {
 }
 
 export const Primary: Story = {
-  args: { ...meta.args, hierarchy: Hierarchy.Primary },
+  args: { ...meta.args, hierarchy: SegmentedControl.Hierarchy.Primary },
 }
 
 export const Vertical: Story = {
-  args: { ...meta.args, optionsAlignment: OptionAlignment.Vertical },
+  args: { ...meta.args, optionsAlignment: SegmentedControl.OptionAlignment.Vertical },
 }
 
 export const Disabled: Story = {
@@ -78,7 +77,7 @@ export const MultiLine: Story = {
 }
 
 export const MultiLineVertical: Story = {
-  args: { ...meta.args, optionsAlignment: OptionAlignment.Vertical },
+  args: { ...meta.args, optionsAlignment: SegmentedControl.OptionAlignment.Vertical },
   decorators: [Story => (
     <div style={{ width: '40%' }}>
       <Story />

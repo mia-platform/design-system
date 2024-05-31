@@ -19,16 +19,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 import { Button } from '.'
 import { Icon } from '../Icon'
 import { defaults } from './Button'
-
-const { Primary, Neutral, Danger } = Hierarchy
-const { Left, Right } = IconPosition
-const { Square, Circle } = Shape
-const { Small, Middle, Large } = Size
-const { Filled, Outlined, Ghost } = Type
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 
@@ -47,64 +40,64 @@ type Story = StoryObj<typeof meta>
 export const PrimaryFilled: Story = {
   args: {
     ...meta.args,
-    hierarchy: Primary,
-    type: Filled,
+    hierarchy: Button.Hierarchy.Primary,
+    type: Button.Type.Filled,
   },
 }
 
 export const PrimaryOutlined: Story = {
   args: {
     ...meta.args,
-    hierarchy: Primary,
-    type: Outlined,
+    hierarchy: Button.Hierarchy.Primary,
+    type: Button.Type.Outlined,
   },
 }
 
 export const PrimaryGhost: Story = {
   args: {
     ...meta.args,
-    hierarchy: Primary,
-    type: Ghost,
+    hierarchy: Button.Hierarchy.Primary,
+    type: Button.Type.Ghost,
   },
 }
 
 export const NeutralOutlined: Story = {
   args: {
     ...meta.args,
-    hierarchy: Neutral,
-    type: Outlined,
+    hierarchy: Button.Hierarchy.Neutral,
+    type: Button.Type.Outlined,
   },
 }
 
 export const NeutralGhost: Story = {
   args: {
     ...meta.args,
-    hierarchy: Neutral,
-    type: Ghost,
+    hierarchy: Button.Hierarchy.Neutral,
+    type: Button.Type.Ghost,
   },
 }
 
 export const DangerFilled: Story = {
   args: {
     ...meta.args,
-    hierarchy: Danger,
-    type: Filled,
+    hierarchy: Button.Hierarchy.Danger,
+    type: Button.Type.Filled,
   },
 }
 
 export const DangerOutlined: Story = {
   args: {
     ...meta.args,
-    hierarchy: Danger,
-    type: Outlined,
+    hierarchy: Button.Hierarchy.Danger,
+    type: Button.Type.Outlined,
   },
 }
 
 export const DangerGhost: Story = {
   args: {
     ...meta.args,
-    hierarchy: Danger,
-    type: Ghost,
+    hierarchy: Button.Hierarchy.Danger,
+    type: Button.Type.Ghost,
   },
 }
 
@@ -113,7 +106,7 @@ export const SquareShape: Story = {
     ...meta.args,
     children: undefined,
     icon,
-    shape: Square,
+    shape: Button.Shape.Square,
   },
 }
 
@@ -122,28 +115,28 @@ export const CircleShape: Story = {
     ...meta.args,
     children: undefined,
     icon,
-    shape: Circle,
+    shape: Button.Shape.Circle,
   },
 }
 
 export const SmallSize: Story = {
   args: {
     ...meta.args,
-    size: Small,
+    size: Button.Size.Small,
   },
 }
 
 export const MiddleSize: Story = {
   args: {
     ...meta.args,
-    size: Middle,
+    size: Button.Size.Middle,
   },
 }
 
 export const LargeSize: Story = {
   args: {
     ...meta.args,
-    size: Large,
+    size: Button.Size.Large,
   },
 }
 
@@ -165,7 +158,7 @@ export const WithIconLeft: Story = {
   args: {
     ...meta.args,
     icon,
-    iconPosition: Left,
+    iconPosition: Button.IconPosition.Left,
   },
 }
 
@@ -173,6 +166,6 @@ export const WithIconRight: Story = {
   args: {
     ...meta.args,
     icon,
-    iconPosition: Right,
+    iconPosition: Button.IconPosition.Right,
   },
 }
