@@ -35,7 +35,7 @@ export const useTheme = (): { theme: Theme, antTheme: ThemeConfig } => {
   const theme = useContext(ThemeContext)
 
   const themeWithFallback = useMemo(() => theme ?? defaultTheme, [theme])
-  const antTheme = useMemo(() => generateAntTheme(theme), [theme])
+  const antTheme = useMemo(() => generateAntTheme(themeWithFallback), [themeWithFallback])
 
   return { theme: themeWithFallback, antTheme }
 }
