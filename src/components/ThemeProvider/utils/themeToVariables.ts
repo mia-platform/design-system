@@ -18,6 +18,14 @@
 
 import { isObject } from 'lodash-es'
 
+const varsInPixelSegments = ['shape', 'spacing', 'fontSize', 'lineHeight']
+
+function addUnitToValue(value: unknown, fieldName: string): unknown {
+  return varsInPixelSegments.some((segment) => fieldName.includes(segment))
+    ? `${value}px`
+    : value
+}
+
 /**
  * Converts a theme configuration into CSS variables.
  *
@@ -36,7 +44,7 @@ export default function themeToVariables(theme = {}, prefix = '-'): Record<strin
       ...variables,
       ...isNested
         ? themeToVariables(value, fieldName)
-        : { [fieldName]: value },
+        : { [fieldName]: addUnitToValue(value, fieldName) },
     }
   }, {})
 }
