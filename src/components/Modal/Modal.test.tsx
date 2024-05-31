@@ -19,9 +19,6 @@
 import { asideFixed, asideOpenable, docLink, footer, footerCustom, title } from './Modal.mocks'
 import { fireEvent, render, screen, waitFor } from '../../test-utils'
 import { Modal } from '.'
-import { Size } from './Modal.types'
-
-const { Large, FullScreen } = Size
 
 const props = {
   children: 'Modal Content',
@@ -50,7 +47,7 @@ describe('Modal Component', () => {
   })
 
   test('renders large modal correctly (with empty footer)', async() => {
-    const { baseElement } = render(<Modal {...props} footer={undefined} size={Large} />)
+    const { baseElement } = render(<Modal {...props} footer={undefined} size={Modal.Size.Large} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
     expect(screen.getByRole('h4', { name: title })).toBeVisible()
@@ -61,7 +58,7 @@ describe('Modal Component', () => {
   })
 
   test('renders fullscreen modal correctly (with empty header)', async() => {
-    const { baseElement } = render(<Modal {...props} size={FullScreen} title={undefined} />)
+    const { baseElement } = render(<Modal {...props} size={Modal.Size.FullScreen} title={undefined} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
     expect(screen.getByText(/Modal Content/i)).toBeVisible()
@@ -110,7 +107,7 @@ describe('Modal Component', () => {
   })
 
   test('renders modal with aside fixed', async() => {
-    const { baseElement } = render(<Modal {...props} aside={asideFixed} size={Large} />)
+    const { baseElement } = render(<Modal {...props} aside={asideFixed} size={Modal.Size.Large} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
     const asideTitle = screen.getByRole('paragraph')
@@ -122,7 +119,7 @@ describe('Modal Component', () => {
   })
 
   test('renders modal with aside openable', async() => {
-    const { baseElement } = render(<Modal {...props} aside={asideOpenable} size={Large} />)
+    const { baseElement } = render(<Modal {...props} aside={asideOpenable} size={Modal.Size.Large} />)
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
 

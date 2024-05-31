@@ -18,7 +18,6 @@
 
 import { render, screen } from '../../test-utils'
 import { Divider } from '.'
-import { Orientation } from './Divider.types'
 
 describe('Divider Component', () => {
   beforeEach(() => {
@@ -41,7 +40,7 @@ describe('Divider Component', () => {
   })
 
   test('renders vertical divider correctly', () => {
-    const { asFragment } = render(<Divider orientation={Orientation.Vertical} />)
+    const { asFragment } = render(<Divider orientation={Divider.Orientation.Vertical} />)
 
     expect(screen.getByRole('separator')).toBeVisible()
     expect(asFragment()).toMatchSnapshot()

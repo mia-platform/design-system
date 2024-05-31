@@ -18,10 +18,7 @@
 
 import { WithExternalFiltersAndSorters, alignedColumns, columns, customActions, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
 import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
-import { Size } from './Table.types'
 import { Table } from '.'
-
-const { Small, Large } = Size
 
 describe('Table Component', () => {
   beforeEach(() => {
@@ -59,12 +56,12 @@ describe('Table Component', () => {
   })
 
   test('renders small table correctly', async() => {
-    const { asFragment } = render(<Table {...props} size={Small} />)
+    const { asFragment } = render(<Table {...props} size={Table.Size.Small} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders large table correctly', async() => {
-    const { asFragment } = render(<Table {...props} size={Large} />)
+    const { asFragment } = render(<Table {...props} size={Table.Size.Large} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
