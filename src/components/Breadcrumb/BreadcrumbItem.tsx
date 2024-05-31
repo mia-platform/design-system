@@ -99,9 +99,11 @@ export const BreadcrumbItem = ({
             key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
             icon: itemData?.icon,
             label: (
-              <BodyS ellipsis={{ rows: 1, tooltip: itemData?.label }}>
-                {itemData?.label}
-              </BodyS>
+              <div onClick={itemData.onClick}>
+                <BodyS ellipsis={{ rows: 1, tooltip: itemData?.label }}>
+                  {itemData?.label}
+                </BodyS>
+              </div>
             ),
           },
         ]
