@@ -97,3 +97,6 @@ export function useFeedbackMessage(): MessageAPI {
     warning,
   }), [dismiss, error, info, loading, success, warning])
 }
+
+useFeedbackMessage.Position = Position
+useFeedbackMessage.Type = Type

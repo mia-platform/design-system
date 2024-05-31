@@ -17,7 +17,3 @@
  */
 
 export { useFeedbackMessage } from './useFeedbackMessage'
-export {
-  Position as UseFeedbackMessagePosition,
-  Type as UseFeedbackMessageType,
-} from './useFeedbackMessage.types'

@@ -27,9 +27,8 @@ import { SegmentedControl } from './components/SegmentedControl'
 import { Table } from './components/Table'
 import { ThemeProvider } from './components/ThemeProvider'
 import { Typography } from './components/Typography'
+import hooks from './hooks'
 import themes from './themes'
-
-export * from './hooks'
 
 export {
   Button,
@@ -42,6 +41,7 @@ export {
   Table,
   ThemeProvider,
   Typography,
+  hooks,
   themes,
   testUtils,
 }
