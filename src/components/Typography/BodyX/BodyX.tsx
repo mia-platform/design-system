@@ -16,7 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-
 import { ReactElement, useMemo } from 'react'
 import { Typography as AntTypography } from 'antd'
 import classnames from 'classnames'
