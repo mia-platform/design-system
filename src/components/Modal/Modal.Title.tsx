@@ -18,16 +18,12 @@
 
 import { ReactElement, useCallback, useMemo } from 'react'
 
-import { Shape, Type } from '../Button/Button.types'
 import { Button } from '../Button'
 import { H4 } from '../Typography/HX/H4'
 import { Icon } from '../Icon'
 import { TitleProps } from './Modal.props'
 import styles from './Modal.module.css'
 import { useTheme } from '../../hooks/useTheme'
-
-const { Circle } = Shape
-const { Ghost } = Type
 
 /**
  * Title component of Modal, which has within it and manages the modal title and the eventual docLink.
@@ -53,8 +49,8 @@ export const Title = ({
         {docLink && <div className={styles.docLink}>
           <Button
             icon={docLinkIcon}
-            shape={Circle}
-            type={Ghost}
+            shape={Button.Shape.Circle}
+            type={Button.Type.Ghost}
             onClick={onClickDocLink}
           />
         </div>}

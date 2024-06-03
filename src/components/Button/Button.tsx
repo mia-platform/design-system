@@ -97,3 +97,10 @@ export const Button = ({
     </AntButton>
   )
 }
+
+Button.Hierarchy = Hierarchy
+Button.IconPosition = IconPosition
+Button.Shape = Shape
+Button.Size = Size
+Button.Type = Type
+Button.HTMLType = HTMLType

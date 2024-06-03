@@ -19,7 +19,6 @@
 import { ReactElement, useCallback, useMemo } from 'react'
 import { Skeleton } from 'antd'
 
-import { Shape, Type } from '../Button/Button.types'
 import { BodyS } from '../Typography/BodyX/BodyS'
 import { Button } from '../Button'
 import { CardProps } from './Card.props'
@@ -28,8 +27,6 @@ import { Icon } from '../Icon'
 import styles from './Card.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-const { Circle } = Shape
-const { Ghost } = Type
 const { card, content, header, heading } = styles
 
 export const defaults = {
@@ -71,8 +68,8 @@ export const Card = ({
               {docLink && <div className={styles.docLink}>
                 <Button
                   icon={docLinkIcon}
-                  shape={Circle}
-                  type={Ghost}
+                  shape={Button.Shape.Circle}
+                  type={Button.Type.Ghost}
                   onClick={onClickDocLink}
                 />
               </div>}

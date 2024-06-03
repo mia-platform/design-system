@@ -22,7 +22,6 @@ import { get } from 'lodash-es'
 
 import { Action, ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder, TableAction } from './Table.types'
 import { Button } from '../Button'
-import { Hierarchy as ButtonHierarchy } from '../Button/Button.types'
 import { Icon } from '../Icon'
 import { Table } from '.'
 import { TableProps } from './Table.props'
@@ -244,10 +243,10 @@ export const WithExternalFiltersAndSorters = (props: TableProps<TableRecord>): R
   return (
     <Space direction="vertical" style={{ width: '100%' }} >
       <Space>
-        <Button hierarchy={ButtonHierarchy.Neutral} onClick={filterValue2}>{'Filter Value 2'}</Button>
-        <Button hierarchy={ButtonHierarchy.Neutral} onClick={sortField2Descending}>{'Sort Field 2 Descending'}</Button>
-        <Button hierarchy={ButtonHierarchy.Neutral} onClick={clearFilters}>{'Clear filters'}</Button>
-        <Button hierarchy={ButtonHierarchy.Neutral} onClick={clearSort}>{'Clear sort'}</Button>
+        <Button hierarchy={Button.Hierarchy.Neutral} onClick={filterValue2}>{'Filter Value 2'}</Button>
+        <Button hierarchy={Button.Hierarchy.Neutral} onClick={sortField2Descending}>{'Sort Field 2 Descending'}</Button>
+        <Button hierarchy={Button.Hierarchy.Neutral} onClick={clearFilters}>{'Clear filters'}</Button>
+        <Button hierarchy={Button.Hierarchy.Neutral} onClick={clearSort}>{'Clear sort'}</Button>
       </Space>
       <Table
         {...props}

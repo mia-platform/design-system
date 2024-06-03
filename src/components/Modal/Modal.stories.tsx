@@ -23,11 +23,9 @@ import { useEffect } from 'react'
 import { WithOpenButton, asideFixed, asideOpenable, children, childrenFullWidth, childrenLong, docLink, footer, footerCustom, footerLoading, title } from './Modal.mocks'
 import { Button } from '../Button'
 import { Modal } from '.'
-import { Size } from './Modal.types'
 import { defaults } from './Modal'
 import { useModal } from '../../hooks/useModal'
 
-const { Large, FullScreen } = Size
 const meta = {
   component: Modal,
   args: {
@@ -55,7 +53,7 @@ export const LargeSize: Story = {
   args: {
     ...meta.args,
     children: childrenLong,
-    size: Large,
+    size: Modal.Size.Large,
   },
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }
@@ -64,7 +62,7 @@ export const FullScreenSize: Story = {
   args: {
     ...meta.args,
     children: childrenLong,
-    size: FullScreen,
+    size: Modal.Size.FullScreen,
   },
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }
@@ -138,7 +136,7 @@ export const WithAsideFixed: Story = {
     ...meta.args,
     aside: asideFixed,
     children: childrenLong,
-    size: Large,
+    size: Modal.Size.Large,
   },
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }
@@ -148,7 +146,7 @@ export const WithAsideOpenable: Story = {
     ...meta.args,
     aside: asideOpenable,
     children: childrenLong,
-    size: Large,
+    size: Modal.Size.Large,
   },
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }

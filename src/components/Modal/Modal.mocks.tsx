@@ -19,16 +19,12 @@
 import { ReactElement } from 'react'
 import { action } from '@storybook/addon-actions'
 
-import { Hierarchy, Type } from '../Button/Button.types'
 import { columns, data, rowKey } from '../Table/Table.mocks'
 import { Button } from '../Button'
 import { Modal } from '.'
 import { ModalProps } from './Modal.props'
 import { Table } from '../Table'
 import { useModal } from '../../hooks/useModal'
-
-const { Neutral } = Hierarchy
-const { Outlined } = Type
 
 export const children = (
   <>
@@ -91,9 +87,9 @@ export const footer = {
   buttons: [
     <Button key={'ok'} onClick={action('ok')}>{'OK'}</Button>,
     <Button
-      hierarchy={Neutral}
+      hierarchy={Button.Hierarchy.Neutral}
       key={'cancel'}
-      type={Outlined}
+      type={Button.Type.Outlined}
       onClick={action('cancel')}
     >
       {'Cancel'}
@@ -107,25 +103,25 @@ export const footerCustom = {
       Button 1
     </Button>,
     <Button
-      hierarchy={Neutral}
+      hierarchy={Button.Hierarchy.Neutral}
       key={'2'}
-      type={Outlined}
+      type={Button.Type.Outlined}
       onClick={action('button 2')}
     >
       Button 2
     </Button>,
     <Button
-      hierarchy={Neutral}
+      hierarchy={Button.Hierarchy.Neutral}
       key={'3'}
-      type={Outlined}
+      type={Button.Type.Outlined}
       onClick={action('button 3')}
     >
       Button 3
     </Button>,
     <Button
-      hierarchy={Neutral}
+      hierarchy={Button.Hierarchy.Neutral}
       key={'4'}
-      type={Outlined}
+      type={Button.Type.Outlined}
       onClick={action('button 4')}
     >
       Button 4
@@ -138,10 +134,10 @@ export const footerLoading = {
   buttons: [
     <Button isLoading key={'ok'}>{'OK'}</Button>,
     <Button
-      hierarchy={Neutral}
+      hierarchy={Button.Hierarchy.Neutral}
       isDisabled
       key={'cancel'}
-      type={Outlined}
+      type={Button.Type.Outlined}
     >
       {'Cancel'}
     </Button>,
