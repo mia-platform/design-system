@@ -70,6 +70,7 @@ exports[`Icon Component renders Phosphor icon correctly 1`] = `
   </svg>
 </DocumentFragment>
 `;
+<<<<<<< HEAD
 
 exports[`Icon Component renders custom icon correctly 1`] = `
 <DocumentFragment>
@@ -84,3 +85,5 @@ exports[`Icon Component renders custom icon correctly 1`] = `
   />
 </DocumentFragment>
 `;
+=======
+>>>>>>> b0c6630 (Snapshots and docs)

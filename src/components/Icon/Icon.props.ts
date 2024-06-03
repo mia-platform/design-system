@@ -16,16 +16,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type IconComponentProps = React.SVGAttributes<SVGElement> & {
-  children?: React.ReactNode,
-  size?: string | number,
+export type IconComponentProps = {
+  'aria-label'?: string,
+  className?: string,
   color?: string,
-  title?: string
+  height?: string | number,
+  role?: string,
+  size?: string | number,
+  width?: string | number,
 }
 
 export type IconComponent = React.FunctionComponent<IconComponentProps>
 
 export type IconProps = {
+
+  /**
+   * The icon component to render.
+   *
+   * It should be a React function component accepting standard SVG attributes.
+   */
   component: IconComponent,
 
   /**
@@ -38,5 +47,10 @@ export type IconProps = {
    */
   size?: 16 | 24 | 32 | 48 | 64 | 96,
 
+  /**
+   * HTML `aria-label` attribute
+   *
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
+   */
   'aria-label'?: string
 }

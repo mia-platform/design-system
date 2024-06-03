@@ -21,6 +21,7 @@ import { AiOutlineHome } from 'react-icons/ai'
 import { FiHome } from 'react-icons/fi'
 import { PiHouse } from 'react-icons/pi'
 
+import { HeartSvg } from './Icon.mocks'
 import { Icon } from '.'
 import { defaults } from './Icon'
 
@@ -53,3 +54,6 @@ export const Phosphor: Story = {
   args: { ...meta.args, component: PiHouse },
 }
 
+export const CustomSvg: Story = {
+  args: { ...meta.args, component: HeartSvg },
+}
