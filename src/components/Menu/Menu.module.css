@@ -26,8 +26,8 @@
   --collapsed-margin: calc(var(--spacing-margin-xs, 4) * 1px);
 
   :global([role*=menuitem]) {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
   }
 
   :global(.mia-platform-menu-sub) {
