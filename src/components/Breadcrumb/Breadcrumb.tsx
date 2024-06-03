@@ -19,7 +19,6 @@
 import { Dropdown, MenuProps } from 'antd'
 import { ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ItemType } from 'antd/es/menu/hooks/useItems'
-import classNames from 'classnames'
 
 import { BodyS } from '../Typography/BodyX/BodyS'
 import { BreadcrumbItem } from './BreadcrumbItem'
@@ -151,7 +150,7 @@ export const Breadcrumb = ({
               </BodyS>
             </div>
           ),
-          popupClassName: classNames([breadcrumbItemSubmenu]),
+          popupClassName: breadcrumbItemSubmenu,
         }
 
         return [...acc, dropdownItem]
@@ -183,8 +182,8 @@ export const Breadcrumb = ({
 
   const renderCollapsedDropdown = useCallback((): ReactElement => {
     return (
-      <Dropdown menu={dropdownMenu} overlayClassName={classNames([breadcrumbItemSubmenu])}>
-        <div className={classNames([breadcrumbItemWrapper])}>
+      <Dropdown menu={dropdownMenu} overlayClassName={breadcrumbItemSubmenu}>
+        <div className={breadcrumbItemWrapper}>
           <BreadcrumbItem
             isLoading={isLoading}
             itemsLength={items.length}
@@ -198,13 +197,13 @@ export const Breadcrumb = ({
 
   return (
     <div ref={breadcrumbRef} >
-      <div className={classNames([breadcrumb])}>
+      <div className={breadcrumb}>
         {items.length > 0 && renderItem(items[0], 0, true)}
         {collapsedItems.length > 0 && renderCollapsedDropdown()}
         {visibleItems.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
         {items.length > 1 && renderItem(items[items.length - 1], items.length - 1, false, true)}
       </div>
-      <div className={classNames([breadcrumbHiddenContainer])} ref={hiddenContainerRef}>
+      <div className={breadcrumbHiddenContainer} ref={hiddenContainerRef}>
         {items.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
       </div>
     </div>

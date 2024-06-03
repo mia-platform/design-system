@@ -34,6 +34,7 @@ const {
   breadcrumbItemLabelWrapper,
   breadcrumbMenuIcon,
   breadcrumbItemSubmenu,
+  dropdownMenuStyle,
   breadcrumbItemWrapper,
   caretOnly,
   dropdownMenuContainer,
@@ -69,7 +70,7 @@ export const BreadcrumbItem = ({
   ), [palette?.common?.grey])
 
   const separatorIcon = useMemo(() => (
-    <div className={classNames([separatorWrapper])}>
+    <div className={separatorWrapper}>
       <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
     </div>
   ), [palette?.common?.grey])
@@ -85,7 +86,7 @@ export const BreadcrumbItem = ({
       onClick={onClick}
     >
       {icon}
-      <div className={classNames([breadcrumbItemLabelStyle])}>
+      <div className={breadcrumbItemLabelStyle}>
         <BodyL ellipsis={{ rows: 1, tooltip: label }}>
           {label}
         </BodyL>
@@ -142,7 +143,9 @@ export const BreadcrumbItem = ({
           onChange={debounce((event) => handleChange(menu, event), 150)}
         />
       </div>}
-      {React.cloneElement(dropdownMenu as React.ReactElement, { style: { borderRadius: '0px', boxShadow: 'none' } })}
+      <div className={dropdownMenuStyle}>
+        {React.cloneElement(dropdownMenu as React.ReactElement)}
+      </div>
     </div>
   ), [handleChange, menu])
 
@@ -153,7 +156,7 @@ export const BreadcrumbItem = ({
       getPopupContainer={getPopupContainer}
       menu={itemMenu}
       open={menu?.open !== undefined ? menu.open : dropdownOpen}
-      overlayClassName={classNames([breadcrumbItemSubmenu])}
+      overlayClassName={breadcrumbItemSubmenu}
       placement={'bottomLeft'}
       trigger={['click']}
       onOpenChange={(open) => {
@@ -179,7 +182,7 @@ export const BreadcrumbItem = ({
     <>
       {isLoading
         ? <Skeleton.Button active />
-        : <div className={classNames([breadcrumbItemWrapper])}>
+        : <div className={breadcrumbItemWrapper}>
           {hasLabel && breadcrumbItemLabel}
           {hasMenu && breadcrumbItemMenu}
         </div>}
