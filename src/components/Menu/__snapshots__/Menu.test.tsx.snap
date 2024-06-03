@@ -34,7 +34,6 @@ exports[`Menu Component renders category correctly 1`] = `
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiSun"
               aria-label="PiSun"
               color="currentColor"
               fill="currentColor"
@@ -69,7 +68,6 @@ exports[`Menu Component renders category correctly 1`] = `
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiMoon"
               aria-label="PiMoon"
               color="currentColor"
               fill="currentColor"
@@ -121,7 +119,6 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -162,7 +159,6 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -204,7 +200,6 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiSun"
           aria-label="PiSun"
           color="currentColor"
           fill="currentColor"
@@ -238,7 +233,6 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiMoon"
           aria-label="PiMoon"
           color="currentColor"
           fill="currentColor"
@@ -316,7 +310,6 @@ exports[`Menu Component renders group correctly 1`] = `
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -371,7 +364,6 @@ exports[`Menu Component renders inline menu correctly 1`] = `
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -413,7 +405,6 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -471,7 +462,6 @@ exports[`Menu Component renders inline menu correctly 1`] = `
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiSun"
               aria-label="PiSun"
               color="currentColor"
               fill="currentColor"
@@ -506,7 +496,6 @@ exports[`Menu Component renders inline menu correctly 1`] = `
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiMoon"
               aria-label="PiMoon"
               color="currentColor"
               fill="currentColor"
@@ -559,7 +548,6 @@ exports[`Menu Component renders item correctly 1`] = `
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -610,7 +598,6 @@ exports[`Menu Component renders primary menu correctly 1`] = `
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -652,7 +639,6 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -710,7 +696,6 @@ exports[`Menu Component renders primary menu correctly 1`] = `
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiSun"
               aria-label="PiSun"
               color="currentColor"
               fill="currentColor"
@@ -745,7 +730,6 @@ exports[`Menu Component renders primary menu correctly 1`] = `
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiMoon"
               aria-label="PiMoon"
               color="currentColor"
               fill="currentColor"
@@ -836,7 +820,6 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -877,7 +860,6 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -934,7 +916,6 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiSun"
               aria-label="PiSun"
               color="currentColor"
               fill="currentColor"
@@ -968,7 +949,6 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiMoon"
               aria-label="PiMoon"
               color="currentColor"
               fill="currentColor"
