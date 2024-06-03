@@ -1,5 +1,5 @@
 /**
- * Copyright 2024 Mia srl
+ * Copyright 2023 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useAntTheme } from './useAntTheme'
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
-
-export default {
-  useFeedbackMessage,
-  useModal,
-  useTheme,
-  useAntTheme,
-}
+export { useAntTheme } from './useAntTheme'

@@ -22,13 +22,14 @@
 import Theme from '../../themes/schema'
 import { ThemeProvider } from '../../components/ThemeProvider'
 import { ThemeProviderProps } from '../../components/ThemeProvider/ThemeProvider.props'
+import { generateAntTheme } from '../../components/ThemeProvider/Ant'
 import { renderHook } from '../../test-utils'
 import themes from '../../themes'
-import { useTheme } from './useTheme'
+import { useAntTheme } from './useAntTheme'
 
 const { lightTheme } = themes
 
-describe('useTheme', () => {
+describe('useAntTheme', () => {
   const themeProvider = (defaultTheme: Theme) => function({ theme, children }: ThemeProviderProps) {
     return (
       <ThemeProvider theme={theme ?? defaultTheme}>
@@ -37,17 +38,21 @@ describe('useTheme', () => {
     )
   }
 
-  test('returns default theme', () => {
-    const { result } = renderHook(() => useTheme(), { wrapper: ThemeProvider })
+  test('correctly generates ant theme from default theme', () => {
+    const antTheme = generateAntTheme(lightTheme)
 
-    expect(result.current).toEqual(lightTheme)
+    const { result } = renderHook(() => useAntTheme(), { wrapper: ThemeProvider })
+
+    expect(result.current).toEqual(antTheme)
   })
 
   for (const [themeName, theme] of Object.entries(themes)) {
-    test(`returns ${themeName}`, () => {
-      const { result } = renderHook(() => useTheme(), { wrapper: themeProvider(theme) })
+    test(`correctly generates ant theme from ${themeName} theme`, () => {
+      const antTheme = generateAntTheme(theme)
 
-      expect(result.current).toEqual(theme)
+      const { result } = renderHook(() => useAntTheme(), { wrapper: themeProvider(theme) })
+
+      expect(result.current).toEqual(antTheme)
     })
   }
 })

@@ -1,5 +1,5 @@
 /**
- * Copyright 2024 Mia srl
+ * Copyright 2023 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useAntTheme } from './useAntTheme'
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
+import { ThemeConfig } from 'antd'
+import { useMemo } from 'react'
 
-export default {
-  useFeedbackMessage,
-  useModal,
-  useTheme,
-  useAntTheme,
+import { generateAntTheme } from '../../components/ThemeProvider/Ant'
+import { useTheme } from '../useTheme'
+
+/**
+ * A hook to compute the Ant Design theme from the current theme.
+ *
+ * @link https://ant.design/docs/react/customize-theme#api
+ *
+ * @returns {ThemeConfig} The Ant Design theme.
+ */
+export const useAntTheme = (): ThemeConfig => {
+  const theme = useTheme()
+
+  return useMemo(() => generateAntTheme(theme), [theme])
 }
