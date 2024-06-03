@@ -17,6 +17,9 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { AiOutlineHome } from 'react-icons/ai'
+import { FiHome } from 'react-icons/fi'
+import { PiHouse } from 'react-icons/pi'
 
 import { Icon } from '.'
 import { defaults } from './Icon'
@@ -34,19 +37,19 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Custom: Story = {
-  args: { ...meta.args, name: 'MiaPlatform' },
-}
+// export const Custom: Story = {
+//   args: { ...meta.args, component: MiaPlatform },
+// }
 
 export const Ant: Story = {
-  args: { ...meta.args, name: 'AiOutlineHome' },
+  args: { ...meta.args, component: AiOutlineHome },
 }
 
 export const Feather: Story = {
-  args: { ...meta.args, name: 'FiHome' },
+  args: { ...meta.args, component: FiHome },
 }
 
 export const Phosphor: Story = {
-  args: { ...meta.args, name: 'PiHouse' },
+  args: { ...meta.args, component: PiHouse },
 }
 

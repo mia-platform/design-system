@@ -7,7 +7,8 @@
   "module": "dist/es/console-design-system-react.js",
   "types": "dist/src/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "icons"
   ],
   "description": "Mia Platform Design System",
   "author": "Mia Platform Core Team <core@mia-platform.eu>",
