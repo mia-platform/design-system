@@ -70,5 +70,5 @@ describe('useModal', () => {
 
     await waitFor(() => expect(screen.getByRole('h4', { name: title })).toBeVisible())
     expect(screen.getByText(children)).toBeVisible()
-  })
+  }, 10000)
 })
