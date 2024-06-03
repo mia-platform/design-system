@@ -11,6 +11,7 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       aria-label="one"
       class="segmentedOption disabled"
     >
+<<<<<<< HEAD
       <svg
         aria-label="MiaPlatform"
         data-file-name="SvgMiaPlatform"
@@ -19,6 +20,8 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
         size="16"
         width="16"
       />
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
       Option 1
     </li>
     <li
@@ -28,7 +31,10 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="PiChartPieSlice"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -51,7 +57,10 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption selected disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineDesktop"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -74,7 +83,10 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFieldTime"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -103,7 +115,10 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineLock"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -126,7 +141,10 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFork"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -149,7 +167,10 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFilter"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -180,6 +201,7 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       aria-label="one"
       class="segmentedOption"
     >
+<<<<<<< HEAD
       <svg
         aria-label="MiaPlatform"
         data-file-name="SvgMiaPlatform"
@@ -188,6 +210,8 @@ exports[`Segmented Control Component labeled options renders options correctly 1
         size="16"
         width="16"
       />
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
       Option 1
     </li>
     <li
@@ -197,7 +221,10 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
+<<<<<<< HEAD
         aria-label="PiChartPieSlice"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -220,7 +247,10 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption selected disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineDesktop"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -243,7 +273,10 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFieldTime"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -272,7 +305,10 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineLock"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -295,7 +331,10 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFork"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -318,7 +357,10 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFilter"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -349,6 +391,7 @@ exports[`Segmented Control Component labeled options renders primary options cor
       aria-label="one"
       class="segmentedOption primary"
     >
+<<<<<<< HEAD
       <svg
         aria-label="MiaPlatform"
         data-file-name="SvgMiaPlatform"
@@ -357,6 +400,8 @@ exports[`Segmented Control Component labeled options renders primary options cor
         size="16"
         width="16"
       />
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
       Option 1
     </li>
     <li
@@ -366,7 +411,10 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
+<<<<<<< HEAD
         aria-label="PiChartPieSlice"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -389,7 +437,10 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary selected disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineDesktop"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -412,7 +463,10 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFieldTime"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -441,7 +495,10 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineLock"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -464,7 +521,10 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFork"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -487,7 +547,10 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFilter"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -518,6 +581,7 @@ exports[`Segmented Control Component labeled options renders vertical options co
       aria-label="one"
       class="segmentedOption vertical"
     >
+<<<<<<< HEAD
       <svg
         aria-label="MiaPlatform"
         data-file-name="SvgMiaPlatform"
@@ -526,6 +590,8 @@ exports[`Segmented Control Component labeled options renders vertical options co
         size="16"
         width="16"
       />
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
       Option 1
     </li>
     <li
@@ -535,7 +601,10 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
+<<<<<<< HEAD
         aria-label="PiChartPieSlice"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -558,7 +627,10 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption selected vertical disabled"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineDesktop"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -581,7 +653,10 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFieldTime"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -610,7 +685,10 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineLock"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -633,7 +711,10 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFork"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"
@@ -656,7 +737,10 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
+<<<<<<< HEAD
         aria-label="AiOutlineFilter"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
         fill="currentColor"
         height="16"
         role="img"

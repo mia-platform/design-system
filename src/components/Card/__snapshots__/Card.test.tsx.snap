@@ -29,7 +29,10 @@ exports[`Card Component renders card correctly 1`] = `
               type="button"
             >
               <svg
+<<<<<<< HEAD
                 aria-label="PiBookOpen"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
                 color="#005dc9"
                 fill="currentColor"
                 height="16"
@@ -118,7 +121,10 @@ exports[`Card Component renders header only 1`] = `
               type="button"
             >
               <svg
+<<<<<<< HEAD
                 aria-label="PiBookOpen"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
                 color="#005dc9"
                 fill="currentColor"
                 height="16"

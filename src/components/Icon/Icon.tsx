@@ -30,7 +30,7 @@ export const defaults = {
  * UI component for displaying different icon packs (Ant, Feather, Phosphor) and custom SVGs
  *
  * @link https://react-icons.github.io/react-icons/
- * @returns {Icon} Icon component
+ * @returns {ReactNode} Icon component
  */
 export const Icon = ({
   'aria-label': ariaLabel,

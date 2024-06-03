@@ -24,7 +24,10 @@ exports[`Button Component renders button with icon left correctly 1`] = `
     type="button"
   >
     <svg
+<<<<<<< HEAD
       aria-label="PiCircleHalfTiltLight"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
       color="white"
       fill="currentColor"
       height="16"
@@ -61,7 +64,10 @@ exports[`Button Component renders button with icon right correctly 1`] = `
       Button
     </div>
     <svg
+<<<<<<< HEAD
       aria-label="PiCircleHalfTiltLight"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
       color="white"
       fill="currentColor"
       height="16"
@@ -88,7 +94,10 @@ exports[`Button Component renders circle button correctly 1`] = `
     type="button"
   >
     <svg
+<<<<<<< HEAD
       aria-label="PiCircleHalfTiltLight"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
       color="white"
       fill="currentColor"
       height="16"
@@ -382,7 +391,10 @@ exports[`Button Component renders square button correctly 1`] = `
     type="button"
   >
     <svg
+<<<<<<< HEAD
       aria-label="PiCircleHalfTiltLight"
+=======
+>>>>>>> b0c6630 (Snapshots and docs)
       color="white"
       fill="currentColor"
       height="16"
