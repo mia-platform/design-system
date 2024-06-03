@@ -39,7 +39,7 @@ function formatLabels(
   isCollapsed?: boolean,
   hierarchy?: Hierarchy
 ): AntItemType[] {
-  return items.map(({ title, label, type, key, children, icon, ...item }) => {
+  return items.flatMap(({ title, label, type, key, children, icon, ...item }) => {
     if (type === Category && isCollapsed) {
       return formatLabels(children, selectedItem, isCollapsed, hierarchy)
     }
@@ -47,7 +47,6 @@ function formatLabels(
     return {
       ...item,
       label,
-      title,
       key,
       icon: icon && <div>{icon}</div>,
       ...type === Category && {
@@ -66,7 +65,7 @@ function formatLabels(
         children: formatLabels(children, selectedItem, isCollapsed, hierarchy),
       },
     }
-  }).flat()
+  })
 }
 
 export default formatLabels

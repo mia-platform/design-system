@@ -17,7 +17,7 @@
  */
 
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
-import { ReactElement, useMemo, useState } from 'react'
+import { ReactElement, useCallback, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
 import { Hierarchy, ItemType, Mode } from './Menu.types'
@@ -63,17 +63,19 @@ export const Menu = ({
 
   const theme = useTheme()
   const menuTheme = isPrimary ? primaryTheme(theme) : defaultTheme(theme)
-
-  const menuClassNames = useMemo(() => classNames([
-    menu,
-    isPrimary && 'primary',
-  ]), [isPrimary])
-
   const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
 
-  const formattedItems = useMemo(() => (
-    formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
-  ), [items, selectedKey, selectedItem, isCollapsed, hierarchy])
+  const menuClassNames = useMemo(() => classNames([menu, isPrimary && 'primary']), [isPrimary])
+
+  const onSelect = useCallback(({ key }: {key: string}) => setSelectedItem(key), [])
+
+  const getPopupContainer = useCallback((targetNode: HTMLElement) => {
+    const element = document.querySelector(`.${menu}`)?.parentElement
+    if (!element) { return targetNode }
+    return element
+  }, [])
+
+  const formattedItems = formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
 
   return (
     <ConfigProvider theme={{ components: { Menu: menuTheme } }}>
@@ -87,7 +89,7 @@ export const Menu = ({
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
           // getPopupContainer is needed for nested menus to inherit CSS properties in the vertical mode
-          getPopupContainer={() => document.querySelector(`.${menu}`)!}
+          getPopupContainer={getPopupContainer}
           inlineCollapsed={isCollapsed}
           inlineIndent={0}
           items={formattedItems}
@@ -98,7 +100,7 @@ export const Menu = ({
           selectedKeys={(selectedKey && [selectedKey]) || (selectedItem && [selectedItem]) || undefined}
           onClick={onClick}
           onOpenChange={onOpenChange}
-          onSelect={({ key }) => setSelectedItem(key)}
+          onSelect={onSelect}
         />
       </Skeleton>
     </ConfigProvider>
