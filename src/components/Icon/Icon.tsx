@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useContext } from 'react'
+import { ReactNode, useContext } from 'react'
 import { IconContext } from 'react-icons'
 
-import { IconProps, customIcons, reactIcons } from './Icon.props'
+import { IconProps } from './Icon.props'
 import log from '../../utils/log'
 
 export const defaults = {
@@ -33,30 +33,25 @@ export const defaults = {
  * @returns {Icon} Icon component
  */
 export const Icon = ({
-  name,
+  'aria-label': ariaLabel,
+  component,
   size = defaults.size,
   color,
-}: IconProps): ReactElement | null => {
+}: IconProps): ReactNode => {
   const { size: defaultSize, className } = useContext(IconContext)
 
-  const IconComponent = name in customIcons
-    ? customIcons?.[name as keyof typeof customIcons]
-    : reactIcons?.[name as keyof typeof reactIcons]
-
-  if (!IconComponent) {
-    log.error(`icon name ${name} not supported`)
+  if (!component) {
+    log.error('no icon component provided')
     return null
   }
 
-  return (
-    <IconComponent
-      aria-label={name}
-      className={className}
-      color={color ?? 'currentColor'}
-      height={size ?? defaultSize}
-      role={'img'}
-      size={size ?? defaultSize}
-      width={size ?? defaultSize}
-    />
-  )
+  return component({
+    'aria-label': ariaLabel,
+    className,
+    color: color ?? 'currentColor',
+    height: size ?? defaultSize,
+    role: 'img',
+    size: size ?? defaultSize,
+    width: size ?? defaultSize,
+  })
 }

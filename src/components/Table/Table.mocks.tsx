@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiArrowRight, PiCircleHalfTilt } from 'react-icons/pi'
 import { ReactElement, useState } from 'react'
 import { Space } from 'antd'
 import { get } from 'lodash-es'
@@ -66,12 +67,12 @@ export const rowKey = Object.keys(data[0])[0] as keyof TableRecord
 export const customActions = (callbacks: Callbacks = {}): TableAction<TableRecord>[] => ([
   {
     dataIndex: 'detail',
-    icon: <Icon color="currentColor" name="PiArrowRight" size={16} />,
+    icon: <Icon color="currentColor" component={PiArrowRight} size={16} />,
     onClick: callbacks.detail,
   },
   {
     dataIndex: 'overview',
-    icon: <Icon color="currentColor" name="PiCircleHalfTilt" size={16} />,
+    icon: <Icon color="currentColor" component={PiCircleHalfTilt} size={16} />,
     onClick: callbacks.overview,
   },
   {

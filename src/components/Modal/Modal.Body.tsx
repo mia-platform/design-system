@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiCaretLeft, PiCaretRight } from 'react-icons/pi'
 import { ReactElement, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
@@ -96,10 +97,10 @@ export const Body = ({
         <div className={asideLabel} onClick={toggleAside}>
           {isAsideOpen && <>
             {labelClose}
-            <Icon color="currentColor" name="PiCaretRight" size={16} />
+            <Icon color="currentColor" component={PiCaretRight} size={16} />
           </>}
           {!isAsideOpen && <>
-            <Icon color="currentColor" name="PiCaretLeft" size={16} />
+            <Icon color="currentColor" component={PiCaretLeft} size={16} />
             {labelOpen}
           </>}
         </div>

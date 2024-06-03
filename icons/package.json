@@ -1,0 +1,6 @@
+{
+  "name": "@mia-platform-internal/console-design-system-react/icons",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts"
+}

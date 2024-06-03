@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiAlien, PiAtom, PiCloud, PiGlobeHemisphereEast, PiGlobeHemisphereWest, PiMoon, PiPlanet, PiShield, PiSkull, PiSnowflake, PiStar, PiSun, PiSword, PiVirus, PiWind } from 'react-icons/pi'
+
 import { Icon } from '../Icon'
 import { ItemType } from './Menu.types'
 
@@ -25,26 +27,26 @@ export const item = {
   key: 'item',
   label: 'Item',
   title: 'Item',
-  icon: <Icon color="currentColor" name="PiStar" size={16} />,
+  icon: <Icon color="currentColor" component={PiStar} size={16} />,
 }
 
 export const group = {
   key: 'group',
   label: 'Group',
   type: Group,
-  icon: <Icon color="currentColor" name="PiSnowflake" size={16} />,
+  icon: <Icon color="currentColor" component={PiSnowflake} size={16} />,
   children: [
     {
       key: 'group item 1',
       label: 'Group Item 1',
       title: 'Group Item 1',
-      icon: <Icon color="currentColor" name="PiCloud" size={16} />,
+      icon: <Icon color="currentColor" component={PiCloud} size={16} />,
     },
     {
       key: 'group item 2',
       label: 'Group Item 2',
       title: 'Group Item 2',
-      icon: <Icon color="currentColor" name="PiWind" size={16} />,
+      icon: <Icon color="currentColor" component={PiWind} size={16} />,
     },
   ],
 }
@@ -58,13 +60,13 @@ export const category = {
       key: 'category item 1',
       label: 'Category Item 1',
       title: 'Category Item 1',
-      icon: <Icon color="currentColor" name="PiSun" size={16} />,
+      icon: <Icon color="currentColor" component={PiSun} size={16} />,
     },
     {
       key: 'category item 2',
       label: 'Category Item 2',
       title: 'Category Item 2',
-      icon: <Icon color="currentColor" name="PiMoon" size={16} />,
+      icon: <Icon color="currentColor" component={PiMoon} size={16} />,
     },
   ],
 }
@@ -79,7 +81,7 @@ export const nestedGroup = {
   key: 'nested group 1',
   label: 'Nested Group 1',
   type: Group,
-  icon: <Icon color="currentColor" name="PiAtom" size={16} />,
+  icon: <Icon color="currentColor" component={PiAtom} size={16} />,
   children: [
     {
       key: 'nested category 1',
@@ -90,19 +92,19 @@ export const nestedGroup = {
           key: 'nested category item 1',
           label: 'Nested Category Item 1',
           title: 'Nested Category Item 1',
-          icon: <Icon color="currentColor" name="PiGlobeHemisphereEast" size={16} />,
+          icon: <Icon color="currentColor" component={PiGlobeHemisphereEast} size={16} />,
         },
         {
           key: 'nested category item 2',
           label: 'Nested Category Item 2',
           title: 'Nested Category Item 2',
-          icon: <Icon color="currentColor" name="PiGlobeHemisphereWest" size={16} />,
+          icon: <Icon color="currentColor" component={PiGlobeHemisphereWest} size={16} />,
         },
         {
           key: 'nested group 2',
           label: 'Nested Group 2',
           type: Group,
-          icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
+          icon: <Icon color="currentColor" component={PiPlanet} size={16} />,
           children: [
             {
               key: 'nested category 2',
@@ -113,13 +115,13 @@ export const nestedGroup = {
                   key: 'nested category item 3',
                   label: 'Nested Category Item 3',
                   title: 'Nested Category Item 3',
-                  icon: <Icon color="currentColor" name="PiAlien" size={16} />,
+                  icon: <Icon color="currentColor" component={PiAlien} size={16} />,
                 },
                 {
                   key: 'nested category item 4',
                   label: 'Nested Category Item 4',
                   title: 'Nested Category Item 4',
-                  icon: <Icon color="currentColor" name="PiVirus" size={16} />,
+                  icon: <Icon color="currentColor" component={PiVirus} size={16} />,
                 },
               ],
             },
@@ -127,7 +129,7 @@ export const nestedGroup = {
               key: 'nested group 3',
               label: 'Nested Group 3',
               type: Group,
-              icon: <Icon color="currentColor" name="PiSkull" size={16} />,
+              icon: <Icon color="currentColor" component={PiSkull} size={16} />,
               children: [
                 {
                   key: 'nested category 3',
@@ -138,13 +140,13 @@ export const nestedGroup = {
                       key: 'nested category item 5',
                       label: 'Nested Category Item 5',
                       title: 'Nested Category Item 5',
-                      icon: <Icon color="currentColor" name="PiSword" size={16} />,
+                      icon: <Icon color="currentColor" component={PiSword} size={16} />,
                     },
                     {
                       key: 'nested category item 6',
                       label: 'Nested Category Item 6',
                       title: 'Nested Category Item 6',
-                      icon: <Icon color="currentColor" name="PiShield" size={16} />,
+                      icon: <Icon color="currentColor" component={PiShield} size={16} />,
                     },
                   ],
                 },
