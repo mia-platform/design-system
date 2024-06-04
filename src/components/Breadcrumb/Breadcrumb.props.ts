@@ -44,6 +44,11 @@ export type BreadcrumbItemProps = BreadcrumbItemType & {
   isLastItem?: boolean;
 
   /**
+   * Indicates whether the dropdown menu is rendered.
+   */
+  isMenuHidden?: boolean;
+
+  /**
    * The total number of items in the breadcrumb list.
    */
   itemsLength: number;

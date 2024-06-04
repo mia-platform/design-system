@@ -162,6 +162,7 @@ export const Breadcrumb = ({
   const renderItem = useCallback((
     item: BreadcrumbItemType,
     index: number,
+    isMenuHidden?: boolean,
     isInitialItem?: boolean,
     isLastItem?: boolean
   ): ReactElement => {
@@ -171,6 +172,7 @@ export const Breadcrumb = ({
         isInitialItem={isInitialItem}
         isLastItem={isLastItem}
         isLoading={isLoading}
+        isMenuHidden={isMenuHidden}
         itemsLength={items.length}
         key={item?.key ?? `breadcrumb-item-${index}`}
         label={getItemLabel(item)}
@@ -198,13 +200,13 @@ export const Breadcrumb = ({
   return (
     <div ref={breadcrumbRef} >
       <div className={breadcrumb}>
-        {items.length > 0 && renderItem(items[0], 0, true)}
+        {items.length > 0 && renderItem(items[0], 0, false, true, false)}
         {collapsedItems.length > 0 && renderCollapsedDropdown()}
         {visibleItems.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
-        {items.length > 1 && renderItem(items[items.length - 1], items.length - 1, false, true)}
+        {items.length > 1 && renderItem(items[items.length - 1], items.length - 1, false, false, true)}
       </div>
       <div className={breadcrumbHiddenContainer} ref={hiddenContainerRef}>
-        {items.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
+        {items.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index, true, false, false))}
       </div>
     </div>
   )

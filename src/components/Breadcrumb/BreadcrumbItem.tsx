@@ -51,6 +51,7 @@ export const BreadcrumbItem = ({
   isInitialItem,
   isLastItem,
   isLoading,
+  isMenuHidden = false,
   itemsLength,
   label,
   menu,
@@ -150,33 +151,46 @@ export const BreadcrumbItem = ({
   ), [handleChange, menu])
 
   const breadcrumbItemMenu = useMemo(() => (
-    <Dropdown
-      destroyPopupOnHide
-      dropdownRender={dropdown}
-      getPopupContainer={getPopupContainer}
-      menu={itemMenu}
-      open={menu?.open !== undefined ? menu.open : dropdownOpen}
-      overlayClassName={breadcrumbItemSubmenu}
-      placement={'bottomLeft'}
-      trigger={['click']}
-      onOpenChange={(open) => {
-        if (menu?.open !== undefined && menu?.onDropdownVisibleChange !== undefined) {
-          menu.onDropdownVisibleChange(open)
-        } else {
-          setDropdownOpen(open)
-        }
-      }}
-    >
-      <div
-        className={classNames([
-          breadcrumbMenuIcon,
-          !hasLabel && caretOnly,
-        ])}
-      >
-        {menuIcon}
-      </div>
-    </Dropdown>
-  ), [dropdown, getPopupContainer, itemMenu, menu, dropdownOpen, hasLabel, menuIcon])
+    isMenuHidden
+      ? (
+        <div
+          className={classNames([
+            breadcrumbMenuIcon,
+            !hasLabel && caretOnly,
+          ])}
+        >
+          {menuIcon}
+        </div>
+      )
+      : (
+        <Dropdown
+          destroyPopupOnHide
+          dropdownRender={dropdown}
+          getPopupContainer={getPopupContainer}
+          menu={itemMenu}
+          open={menu?.open !== undefined ? menu.open : dropdownOpen}
+          overlayClassName={breadcrumbItemSubmenu}
+          placement={'bottomLeft'}
+          trigger={['click']}
+          onOpenChange={(open) => {
+            if (menu?.open !== undefined && menu?.onDropdownVisibleChange !== undefined) {
+              menu.onDropdownVisibleChange(open)
+            } else {
+              setDropdownOpen(open)
+            }
+          }}
+        >
+          <div
+            className={classNames([
+              breadcrumbMenuIcon,
+              !hasLabel && caretOnly,
+            ])}
+          >
+            {menuIcon}
+          </div>
+        </Dropdown>
+      )
+  ), [dropdown, getPopupContainer, isMenuHidden, itemMenu, menu, dropdownOpen, hasLabel, menuIcon])
 
   return (
     <>
