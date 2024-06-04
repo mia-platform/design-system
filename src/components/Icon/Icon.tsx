@@ -20,7 +20,6 @@ import { ReactNode, useContext } from 'react'
 import { IconContext } from 'react-icons'
 
 import { IconProps } from './Icon.props'
-import log from '../../utils/log'
 
 /**
  * UI component for displaying SVGs.
@@ -53,12 +52,7 @@ export const Icon = ({
 }: IconProps): ReactNode => {
   const { size: defaultSize, className } = useContext(IconContext)
 
-  if (!component) {
-    log.error('no icon component provided')
-    return null
-  }
-
-  return component({
+  return component?.({
     'aria-label': component.name,
     className,
     color: color ?? 'currentColor',
