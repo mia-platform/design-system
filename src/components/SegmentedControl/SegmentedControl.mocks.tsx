@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { AiOutlineDesktop, AiOutlineFieldTime, AiOutlineFilter, AiOutlineFork, AiOutlineLock } from 'react-icons/ai'
+import { AiOutlineDesktop, AiOutlineFieldTime, AiOutlineFilter, AiOutlineFork, AiOutlineHome, AiOutlineLock } from 'react-icons/ai'
 import { PiChartPieSlice } from 'react-icons/pi'
 
 import { Icon } from '../Icon'
@@ -30,7 +30,7 @@ export const stringOptions = [
 ]
 
 export const labeledOptions = [
-  { /* icon: <Icon component={MiaPlatform} size={16} />, */ label: 'Option 1', isDisabled: false, key: 'one' },
+  { icon: <Icon component={AiOutlineHome} size={16} />, label: 'Option 1', isDisabled: false, key: 'one' },
   { icon: <Icon component={PiChartPieSlice} size={16} />, label: 'Option 2', isDisabled: false, key: 'two' },
   { icon: <Icon component={AiOutlineDesktop} size={16} />, label: 'Option 3', isDisabled: true, key: 'three' },
   { icon: <Icon component={AiOutlineFieldTime} size={16} />, label: 'Option 4', isDisabled: false, key: 'four' },
