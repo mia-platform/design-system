@@ -31,16 +31,16 @@ export type IconComponent = React.FunctionComponent<IconComponentProps>
 export type IconProps = {
 
   /**
+   * The color of the icon.
+   */
+    color?: string,
+
+  /**
    * The icon component to render.
    *
    * It should be a React function component accepting standard SVG attributes.
    */
   component: IconComponent,
-
-  /**
-   * The color of the icon.
-   */
-  color?: string,
 
   /**
    * The size of the icon.
