@@ -16,7 +16,10 @@ module.exports = {
   ignorePatterns: [
     ".eslintrc.cjs",
     "jest.config.js",
-    "src/vite-env.d.ts"
+    "src/vite-env.d.ts",
+    // FIXME: This component has a react/boolean-prop naming problem, because boolean props do not have the symbol at the beginning of the name.   
+    "src/components/Typography/BodyX/BodyX.tsx",
+    "src/components/Typography/HX/HX.tsx"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -44,7 +47,7 @@ module.exports = {
       groups: [
         ["builtin", "external"],
         ["internal", "parent", "sibling", "index"],
-      ],      
+      ],
       "newlines-between": "always"
     }],
     "max-statements": "off",

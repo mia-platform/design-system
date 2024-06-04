@@ -36,6 +36,7 @@ type Callbacks = Record<string, () => void>
 /** Data */
 
 export type TableRecord = {
+  dataIndex?: string,
   field1: string,
   field2: string,
   field3: string,
@@ -259,8 +260,8 @@ export const WithExternalFiltersAndSorters = (props: TableProps<TableRecord>): R
 
           /* Apply filters */
           filtered: true,
-          filteredValue: filteredData.map(record => get(record, column.dataIndex!)),
-          onFilter: (value: unknown, record: TableRecord) => get(record, column.dataIndex!) === value,
+          filteredValue: filteredData.map(record => get(record, `${column.dataIndex}`!)),
+          onFilter: (value: unknown, record: TableRecord) => get(record, `${column.dataIndex}`!) === value,
         }))}
       />
     </Space>

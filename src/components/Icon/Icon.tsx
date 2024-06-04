@@ -50,7 +50,6 @@ export const Icon = ({
 
   return (
     <IconComponent
-      alt={name}
       aria-label={name}
       className={className}
       color={color ?? defaultColor}

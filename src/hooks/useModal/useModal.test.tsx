@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { act, fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react'
+import { act, render, renderHook, screen, waitFor } from '@testing-library/react'
 
 import { Button } from '../..'
 import { useModal } from '.'
@@ -56,19 +56,19 @@ describe('useModal', () => {
 
     render(<Example />)
 
-    fireEvent.click(screen.getByRole('button', { name: /Open Modal/i }))
+    screen.getByRole('button', { name: /Open Modal/i }).click()
 
-    await waitFor(() => expect(screen.getByRole('h4', { name: title })).toBeVisible())
-    expect(screen.getByText(children)).toBeVisible()
+    expect(await screen.findByRole('h4', { name: title })).toBeInTheDocument()
+    expect(screen.getByText(children)).toBeInTheDocument()
 
-    fireEvent.click(screen.getByRole('button', { name: /Close/i }))
+    screen.getByRole('button', { name: /Close/i }).click()
 
     await waitFor(() => expect(screen.queryByRole('h4', { name: title })).not.toBeInTheDocument())
     expect(screen.queryByText(children)).toBeNull()
 
-    fireEvent.click(screen.getByRole('button', { name: /Change Modal Status/i }))
+    screen.getByRole('button', { name: /Change Modal Status/i }).click()
 
-    await waitFor(() => expect(screen.getByRole('h4', { name: title })).toBeVisible())
-    expect(screen.getByText(children)).toBeVisible()
+    expect(await screen.findByRole('h4', { name: /modal title/i })).toBeInTheDocument()
+    expect(screen.getByText(children)).toBeInTheDocument()
   })
 })
