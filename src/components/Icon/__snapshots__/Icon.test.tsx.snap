@@ -70,14 +70,11 @@ exports[`Icon Component renders Phosphor icon correctly 1`] = `
   </svg>
 </DocumentFragment>
 `;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 71d5ffe (Updated svgr)
 
 exports[`Icon Component renders custom icon correctly 1`] = `
 <DocumentFragment>
   <svg
+<<<<<<< HEAD
 <<<<<<< HEAD
     aria-label="MiaPlatform"
     color="currentColor"
@@ -92,6 +89,8 @@ exports[`Icon Component renders custom icon correctly 1`] = `
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
 =======
+=======
+>>>>>>> edbef77 (Snapshots)
     aria-label="HeartSvg"
     fill="currentColor"
     height="1em"
@@ -106,4 +105,3 @@ exports[`Icon Component renders custom icon correctly 1`] = `
   </svg>
 </DocumentFragment>
 `;
->>>>>>> 71d5ffe (Updated svgr)
