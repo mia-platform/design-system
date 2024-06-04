@@ -357,14 +357,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                       type="button"
                     >
                       <svg
-<<<<<<< HEAD
-<<<<<<< HEAD
                         aria-label="PiBookOpen"
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-                        aria-label="PiBookOpen"
->>>>>>> e40dbed (Fixed tests)
                         color="#005dc9"
                         fill="currentColor"
                         height="16"
@@ -1054,14 +1047,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                       type="button"
                     >
                       <svg
-<<<<<<< HEAD
-<<<<<<< HEAD
                         aria-label="PiBookOpen"
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-                        aria-label="PiBookOpen"
->>>>>>> e40dbed (Fixed tests)
                         color="#005dc9"
                         fill="currentColor"
                         height="16"
