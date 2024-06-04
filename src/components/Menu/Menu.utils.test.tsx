@@ -112,7 +112,7 @@ describe('Menu Component', () => {
           children: [{
             key: 'uniqueKey',
             label: 'menu-item',
-            icon: <div><div /></div>,
+            icon: <div />,
           }],
         }],
         isCollapsed: true,
@@ -120,8 +120,7 @@ describe('Menu Component', () => {
       expectedResult: [{
         key: 'uniqueKey',
         label: 'menu-item',
-        // TOFIX: this is a possible bug
-        icon: <div><div><div /></div></div>,
+        icon: <div><div /></div>,
       }],
     },
     'expect to see styles for Primary item': {
