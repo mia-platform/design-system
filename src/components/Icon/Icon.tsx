@@ -33,7 +33,8 @@ import log from '../../utils/log'
  * - [Ant Design Icons](https://react-icons.github.io/react-icons/icons/ai/) importable from `@mia-platform-internal/console-design-system-react/icons/ai`
  * - [Phosphor Icons](https://react-icons.github.io/react-icons/icons/pi/) importable from `@mia-platform-internal/console-design-system-react/icons/pi`
  * - [Feather Icons](https://react-icons.github.io/react-icons/icons/fi/) importable from `@mia-platform-internal/console-design-system-react/icons/fi`
- * - Mia-Platform icons importable from `@mia-platform-internal/console-design-system-react/icons/mia`
+ * - [Mia-Platform Icons](/docs/icons-mia-platform--docs) importable from
+ * `@mia-platform-internal/console-design-system-react/icons/mi`
  *
  * To use one of the aforementioned icons, just import the component and pass it to `<Icon />`:
  *
