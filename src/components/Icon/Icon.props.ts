@@ -38,7 +38,14 @@ export type IconProps = {
   /**
    * The icon component to render.
    *
-   * It should be a React function component accepting standard SVG attributes.
+   * It should be a React function component accepting the following SVG attributes:
+   *   - aria-label: `string`
+   *   - className: `string`
+   *   - color: `string`
+   *   - height: `string | number`
+   *   - role: `string`
+   *   - size: `string | number`
+   *   - width: `string | number`
    */
   component: IconComponent,
 

@@ -23,16 +23,10 @@ import { PiHouse } from 'react-icons/pi'
 
 import { Icon } from '.'
 import MiaPlatform from '../../assets/icons/MiaPlatform.svg?react'
-import { defaults } from './Icon'
-
-const iconsUrl = 'https://react-icons.github.io/react-icons/search'
 
 const meta = {
   component: Icon,
-  parameters: {
-    design: { type: 'iframe', name: 'Search', url: iconsUrl },
-  },
-  args: defaults,
+  args: { size: 24 },
 } satisfies Meta<typeof Icon>
 
 export default meta
@@ -43,13 +37,22 @@ export const Custom: Story = {
 }
 
 export const Ant: Story = {
+  parameters: {
+    design: { type: 'iframe', name: 'Search', url: 'https://react-icons.github.io/react-icons/icons/ai/' },
+  },
   args: { ...meta.args, component: AiOutlineHome },
 }
 
 export const Feather: Story = {
+  parameters: {
+    design: { type: 'iframe', name: 'Search', url: 'https://react-icons.github.io/react-icons/icons/fi/' },
+  },
   args: { ...meta.args, component: FiHome },
 }
 
 export const Phosphor: Story = {
+  parameters: {
+    design: { type: 'iframe', name: 'Search', url: 'https://react-icons.github.io/react-icons/icons/pi/' },
+  },
   args: { ...meta.args, component: PiHouse },
 }
