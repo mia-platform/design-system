@@ -3039,10 +3039,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/resolve-uri@npm:^3.0.3, @jridgewell/resolve-uri@npm:^3.1.0":
+"@jridgewell/resolve-uri@npm:^3.0.3":
   version: 3.1.2
   resolution: "@jridgewell/resolve-uri@npm:3.1.2"
   checksum: 10/97106439d750a409c22c8bff822d648f6a71f3aa9bc8e5129efdc36343cd3096ddc4eeb1c62d2fe48e9bdd4db37b05d4646a17114ecebd3bbcacfa2de51c3c1d
+  languageName: node
+  linkType: hard
+
+"@jridgewell/resolve-uri@npm:^3.1.0":
+  version: 3.1.1
+  resolution: "@jridgewell/resolve-uri@npm:3.1.1"
+  checksum: 10/64d59df8ae1a4e74315eb1b61e012f1c7bc8aac47a3a1e683f6fe7008eab07bc512a742b7aa7c0405685d1421206de58c9c2e6adbfe23832f8bd69408ffc183e
   languageName: node
   linkType: hard
 
@@ -3198,7 +3205,7 @@ __metadata:
     typescript-plugin-css-modules: "npm:^5.1.0"
     vite: "npm:^5.3.1"
     vite-plugin-dts: "npm:^3.7.3"
-    vite-plugin-svgr: "npm:^3.3.0"
+    vite-plugin-svgr: "npm:^4.2.0"
     vite-tsconfig-paths: "npm:^4.3.1"
   peerDependencies:
     react: ^18.3.0
@@ -4012,7 +4019,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^5.0.2, @rollup/pluginutils@npm:^5.0.4, @rollup/pluginutils@npm:^5.1.0":
+"@rollup/pluginutils@npm:^5.0.2, @rollup/pluginutils@npm:^5.0.5, @rollup/pluginutils@npm:^5.1.0":
   version: 5.1.0
   resolution: "@rollup/pluginutils@npm:5.1.0"
   dependencies:
@@ -17033,16 +17040,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-svgr@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "vite-plugin-svgr@npm:3.3.0"
+"vite-plugin-svgr@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "vite-plugin-svgr@npm:4.2.0"
   dependencies:
-    "@rollup/pluginutils": "npm:^5.0.4"
+    "@rollup/pluginutils": "npm:^5.0.5"
     "@svgr/core": "npm:^8.1.0"
     "@svgr/plugin-jsx": "npm:^8.1.0"
   peerDependencies:
-    vite: ^2.6.0 || 3 || 4
-  checksum: 10/014840a0d98a54422fb94520086bb20c99c7ee21285d7049e4496f529b7be69e23d34f543a29867372e5cbdf135c5a96eae01474c88ec1223c78b7e4b18008b0
+    vite: ^2.6.0 || 3 || 4 || 5
+  checksum: 10/c860e65836509a144cf838eabcf420d848f35aea4c83044e75c9f9d00947f878217470536ea4098dc4e78510cb5fb683ec564f33cddde4dab0459e3a87f5ff79
   languageName: node
   linkType: hard
 
