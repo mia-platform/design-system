@@ -216,9 +216,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiArrowRight"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiArrowRight"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -250,9 +254,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiCircleHalfTilt"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiCircleHalfTilt"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -284,9 +292,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiPencilSimpleLine"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiPencilSimpleLine"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -318,9 +330,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiTrash"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiTrash"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -377,9 +393,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiArrowRight"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiArrowRight"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -411,9 +431,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiCircleHalfTilt"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiCircleHalfTilt"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -445,9 +469,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiPencilSimpleLine"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiPencilSimpleLine"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -479,9 +507,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiTrash"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiTrash"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -538,9 +570,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiArrowRight"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiArrowRight"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -572,9 +608,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiCircleHalfTilt"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiCircleHalfTilt"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -607,9 +647,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiPencilSimpleLine"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiPencilSimpleLine"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -641,9 +685,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiTrash"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiTrash"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -700,9 +748,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiArrowRight"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiArrowRight"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -734,9 +786,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiCircleHalfTilt"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiCircleHalfTilt"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -768,9 +824,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiPencilSimpleLine"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiPencilSimpleLine"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
@@ -802,9 +862,13 @@ exports[`Table Component renders actions correctly 1`] = `
                         >
                           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                             aria-label="PiTrash"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                            aria-label="PiTrash"
+>>>>>>> e40dbed (Fixed tests)
                             color="currentColor"
                             fill="currentColor"
                             height="16"
