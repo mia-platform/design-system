@@ -33,7 +33,6 @@ export const defaults = {
  * @returns {ReactNode} Icon component
  */
 export const Icon = ({
-  'aria-label': ariaLabel,
   component,
   size = defaults.size,
   color,
@@ -46,7 +45,7 @@ export const Icon = ({
   }
 
   return component({
-    'aria-label': ariaLabel,
+    'aria-label': component.name,
     className,
     color: color ?? 'currentColor',
     height: size ?? defaultSize,

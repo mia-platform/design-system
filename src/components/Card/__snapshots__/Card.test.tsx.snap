@@ -30,12 +30,16 @@ exports[`Card Component renders card correctly 1`] = `
             >
               <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                 aria-label="PiBookOpen"
 <<<<<<< HEAD
                 color="#004aaa"
 =======
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                aria-label="PiBookOpen"
+>>>>>>> e40dbed (Fixed tests)
                 color="#005dc9"
 >>>>>>> 1eba8d9 (Snapshots and docs)
                 fill="currentColor"
@@ -126,12 +130,16 @@ exports[`Card Component renders header only 1`] = `
             >
               <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
                 aria-label="PiBookOpen"
 <<<<<<< HEAD
                 color="#004aaa"
 =======
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+                aria-label="PiBookOpen"
+>>>>>>> e40dbed (Fixed tests)
                 color="#005dc9"
 >>>>>>> 1eba8d9 (Snapshots and docs)
                 fill="currentColor"

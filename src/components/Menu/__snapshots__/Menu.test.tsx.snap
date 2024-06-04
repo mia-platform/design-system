@@ -120,9 +120,13 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
       >
         <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
           aria-label="PiStar"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+          aria-label="PiStar"
+>>>>>>> e40dbed (Fixed tests)
           color="currentColor"
           fill="currentColor"
           height="16"
@@ -163,9 +167,13 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
         >
           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
             aria-label="PiSnowflake"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+            aria-label="PiSnowflake"
+>>>>>>> e40dbed (Fixed tests)
             color="currentColor"
             fill="currentColor"
             height="16"
@@ -207,9 +215,13 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
       >
         <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
           aria-label="PiSun"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+          aria-label="PiSun"
+>>>>>>> e40dbed (Fixed tests)
           color="currentColor"
           fill="currentColor"
           height="16"
@@ -243,9 +255,13 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
       >
         <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
           aria-label="PiMoon"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+          aria-label="PiMoon"
+>>>>>>> e40dbed (Fixed tests)
           color="currentColor"
           fill="currentColor"
           height="16"
@@ -377,9 +393,13 @@ exports[`Menu Component renders inline menu correctly 1`] = `
       >
         <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
           aria-label="PiStar"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+          aria-label="PiStar"
+>>>>>>> e40dbed (Fixed tests)
           color="currentColor"
           fill="currentColor"
           height="16"
@@ -421,9 +441,13 @@ exports[`Menu Component renders inline menu correctly 1`] = `
         >
           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
             aria-label="PiSnowflake"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+            aria-label="PiSnowflake"
+>>>>>>> e40dbed (Fixed tests)
             color="currentColor"
             fill="currentColor"
             height="16"
@@ -481,9 +505,13 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           >
             <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
               aria-label="PiSun"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+              aria-label="PiSun"
+>>>>>>> e40dbed (Fixed tests)
               color="currentColor"
               fill="currentColor"
               height="16"
@@ -518,9 +546,13 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           >
             <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
               aria-label="PiMoon"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+              aria-label="PiMoon"
+>>>>>>> e40dbed (Fixed tests)
               color="currentColor"
               fill="currentColor"
               height="16"
@@ -623,9 +655,13 @@ exports[`Menu Component renders primary menu correctly 1`] = `
       >
         <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
           aria-label="PiStar"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+          aria-label="PiStar"
+>>>>>>> e40dbed (Fixed tests)
           color="currentColor"
           fill="currentColor"
           height="16"
@@ -667,9 +703,13 @@ exports[`Menu Component renders primary menu correctly 1`] = `
         >
           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
             aria-label="PiSnowflake"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+            aria-label="PiSnowflake"
+>>>>>>> e40dbed (Fixed tests)
             color="currentColor"
             fill="currentColor"
             height="16"
@@ -727,9 +767,13 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           >
             <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
               aria-label="PiSun"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+              aria-label="PiSun"
+>>>>>>> e40dbed (Fixed tests)
               color="currentColor"
               fill="currentColor"
               height="16"
@@ -764,9 +808,13 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           >
             <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
               aria-label="PiMoon"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+              aria-label="PiMoon"
+>>>>>>> e40dbed (Fixed tests)
               color="currentColor"
               fill="currentColor"
               height="16"
@@ -857,9 +905,13 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
       >
         <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
           aria-label="PiStar"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+          aria-label="PiStar"
+>>>>>>> e40dbed (Fixed tests)
           color="currentColor"
           fill="currentColor"
           height="16"
@@ -900,9 +952,13 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
         >
           <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
             aria-label="PiSnowflake"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+            aria-label="PiSnowflake"
+>>>>>>> e40dbed (Fixed tests)
             color="currentColor"
             fill="currentColor"
             height="16"
@@ -959,9 +1015,13 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
           >
             <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
               aria-label="PiSun"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+              aria-label="PiSun"
+>>>>>>> e40dbed (Fixed tests)
               color="currentColor"
               fill="currentColor"
               height="16"
@@ -995,9 +1055,13 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
           >
             <svg
 <<<<<<< HEAD
+<<<<<<< HEAD
               aria-label="PiMoon"
 =======
 >>>>>>> b0c6630 (Snapshots and docs)
+=======
+              aria-label="PiMoon"
+>>>>>>> e40dbed (Fixed tests)
               color="currentColor"
               fill="currentColor"
               height="16"

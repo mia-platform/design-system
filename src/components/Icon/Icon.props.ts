@@ -46,11 +46,4 @@ export type IconProps = {
    * The size of the icon.
    */
   size?: 16 | 24 | 32 | 48 | 64 | 96,
-
-  /**
-   * HTML `aria-label` attribute
-   *
-   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
-   */
-  'aria-label'?: string
 }
