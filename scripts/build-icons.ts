@@ -102,7 +102,7 @@ async function svgStringToTree(svg: string): Promise<IconTree> {
 }
 
 async function buildMiaIcons(): Promise<void> {
-  const miaIconsPackageDir = path.resolve(outDir, 'mia')
+  const miaIconsPackageDir = path.resolve(outDir, 'mi')
   await fs.mkdir(miaIconsPackageDir)
 
   const packageJsonPath = path.resolve(miaIconsPackageDir, 'package.json')
@@ -138,7 +138,7 @@ async function buildMiaIcons(): Promise<void> {
 
   const promises = svgFiles.map(async(filePath) => {
     const iconNameRaw = path.basename(filePath, path.extname(filePath))
-    const iconName = camelcase(iconNameRaw, { pascalCase: true })
+    const iconName = `Mi${camelcase(iconNameRaw, { pascalCase: true })}`
 
     const svgStr = await fs.readFile(filePath, 'utf-8')
 
