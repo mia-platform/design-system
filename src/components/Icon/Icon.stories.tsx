@@ -21,8 +21,8 @@ import { AiOutlineHome } from 'react-icons/ai'
 import { FiHome } from 'react-icons/fi'
 import { PiHouse } from 'react-icons/pi'
 
-import { HeartSvg } from './Icon.mocks'
 import { Icon } from '.'
+import MiaPlatform from '../../assets/icons/MiaPlatform.svg?react'
 import { defaults } from './Icon'
 
 const iconsUrl = 'https://react-icons.github.io/react-icons/search'
@@ -38,9 +38,9 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-// export const Custom: Story = {
-//   args: { ...meta.args, component: MiaPlatform },
-// }
+export const Custom: Story = {
+  args: { ...meta.args, component: MiaPlatform },
+}
 
 export const Ant: Story = {
   args: { ...meta.args, component: AiOutlineHome },
@@ -52,8 +52,4 @@ export const Feather: Story = {
 
 export const Phosphor: Story = {
   args: { ...meta.args, component: PiHouse },
-}
-
-export const CustomSvg: Story = {
-  args: { ...meta.args, component: HeartSvg },
 }
