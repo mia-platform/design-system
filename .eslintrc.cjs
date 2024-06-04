@@ -17,7 +17,7 @@ module.exports = {
     ".eslintrc.cjs",
     "jest.config.js",
     "src/vite-env.d.ts",
-    // TOFIX: This component has a react/boolean-prop naming problem, because boolean props do not have the symbol at the beginning of the name.   
+    // FIXME: This component has a react/boolean-prop naming problem, because boolean props do not have the symbol at the beginning of the name.   
     "src/components/Typography/BodyX/BodyX.tsx",
     "src/components/Typography/HX/HX.tsx"
   ],
