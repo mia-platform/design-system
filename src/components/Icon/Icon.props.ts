@@ -33,7 +33,7 @@ export type IconProps = {
   /**
    * The color of the icon.
    */
-    color?: string,
+  color?: string,
 
   /**
    * The icon component to render.
