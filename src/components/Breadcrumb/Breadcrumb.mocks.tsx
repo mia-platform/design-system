@@ -139,7 +139,7 @@ export const multipleItemsWithMenuProps: BreadcrumbProps = {
           label: 'second nested',
         }],
       },
-      label: 'with controlled search',
+      label: 'controlled search',
     },
     {
       menu: {
@@ -167,7 +167,7 @@ export const multipleItemsWithMenuProps: BreadcrumbProps = {
         },
         {
           key: '2',
-          label: 'without search',
+          label: 'no search',
         },
         {
           key: '3',

@@ -29,6 +29,8 @@ import styles from './Breadcrumb.module.css'
 const { breadcrumbHiddenContainer, breadcrumbItemSubmenu, breadcrumbItemWrapper, breadcrumb } = styles
 
 const COLLAPSED_ITEM_WIDTH = 46
+const SEPARATOR_WIDTH = 16
+const SEPARATOR_ITEM_WITH_PADDING = SEPARATOR_WIDTH + 4
 
 /**
  * UI component for displaying the current location within an hierarchy
@@ -54,9 +56,13 @@ export const Breadcrumb = ({
 
       if (!hiddenContainer) { return }
 
-      const itemWidths = Array.from(hiddenContainer.children).map(
-        (child) => (child as HTMLElement).getBoundingClientRect().width
-      )
+      // Removes separator children for a correct mapping with items, sums width of elements inside the wrapper
+      const itemWidths = Array.from(hiddenContainer.children)
+        .filter((child) => (child as HTMLElement).offsetWidth !== SEPARATOR_WIDTH)
+        .map((wrapper) => {
+          const subElements = Array.from(wrapper.children)
+          return subElements.reduce((acc, subElement) => acc + (subElement as HTMLElement).offsetWidth, 0)
+        })
 
       let totalWidth = 0
       const visible: BreadcrumbItemType[] = []
@@ -69,17 +75,17 @@ export const Breadcrumb = ({
 
       if (items.length > 1) {
         // Add width of the last item with separator
-        totalWidth += itemWidths[itemWidths.length - 1]
+        totalWidth += (itemWidths[itemWidths.length - 1] + SEPARATOR_ITEM_WITH_PADDING)
       }
 
       if (items.length > 2) {
-        // Add width of dropdown collapsed item
+        // Add width of dropdown collapsed item with separator
         const collapsedItemWidth = COLLAPSED_ITEM_WIDTH
         totalWidth += collapsedItemWidth
 
         for (let i = items.length - 2; i > 0; i--) {
         // Add width of the item with separator
-          const itemWidth = itemWidths[i]
+          const itemWidth = (itemWidths[i] + SEPARATOR_ITEM_WITH_PADDING)
           totalWidth += itemWidth
 
           if (totalWidth <= maxWidth) {
