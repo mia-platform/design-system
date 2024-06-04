@@ -22,19 +22,32 @@ import { IconContext } from 'react-icons'
 import { IconProps } from './Icon.props'
 import log from '../../utils/log'
 
-export const defaults = {
-  size: 24 as const,
-}
-
 /**
- * UI component for displaying different icon packs (Ant, Feather, Phosphor) and custom SVGs
+ * UI component for displaying SVGs.
  *
- * @link https://react-icons.github.io/react-icons/
+ * The component needs to be provided with a React function component returning the SVG to render. This can be achieved,
+ * for example, using the [SVGR](https://react-svgr.com/) library to load the assets, or importing components from an icon
+ * pack such as [React Icons](https://react-icons.github.io/react-icons/).
+ *
+ * For convenience, the design system itself ships several icon packs ready to use with this components, namely:
+ * - [Ant Design Icons](https://react-icons.github.io/react-icons/icons/ai/) importable from `@mia-platform-internal/console-design-system-react/icons/ai`
+ * - [Phosphor Icons](https://react-icons.github.io/react-icons/icons/pi/) importable from `@mia-platform-internal/console-design-system-react/icons/pi`
+ * - [Feather Icons](https://react-icons.github.io/react-icons/icons/fi/) importable from `@mia-platform-internal/console-design-system-react/icons/fi`
+ * - Mia-Platform icons importable from `@mia-platform-internal/console-design-system-react/icons/mia`
+ *
+ * To use one of the aforementioned icons, just import the component and pass it to `<Icon />`:
+ *
+ * ```tsx
+ * import { PiAddressBook } from "@mia-platform-internal/console-design-system-react/icons/pi"
+ *
+ * const App = () => <Icon component={PiAddressBook} />
+ * ```
+ *
  * @returns {ReactNode} Icon component
  */
 export const Icon = ({
   component,
-  size = defaults.size,
+  size = 24,
   color,
 }: IconProps): ReactNode => {
   const { size: defaultSize, className } = useContext(IconContext)
