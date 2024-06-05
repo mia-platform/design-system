@@ -28,6 +28,7 @@
   "include": [
     "src",
     "scripts",
+    "typings",
     "vite.config.ts",
     "package.json"
   ],
