@@ -16,7 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { } from '../../test-utils'
 import { Hierarchy, Item, ItemType } from './Menu.types'
 import formatLabels from './Menu.utils'
 
