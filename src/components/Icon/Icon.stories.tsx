@@ -22,7 +22,7 @@ import { FiHome } from 'react-icons/fi'
 import { PiHouse } from 'react-icons/pi'
 
 import { Icon } from '.'
-import MiaPlatform from '../../assets/icons/MiaPlatform.svg?react'
+import MiaPlatform from '../../assets/icons/MiaPlatform.svg'
 
 const meta = {
   component: Icon,
