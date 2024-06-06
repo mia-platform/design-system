@@ -35,7 +35,7 @@ export const useModal = (): ModalAPI => {
   const closeModal = useCallback(() => setIsModalVisible(false), [])
   const toggleModal = useCallback(() => setIsModalVisible(prevState => !prevState), [])
 
-  const ModalComponent = (props: ModalProps): ReactElement => {
+  const ModalComponent = useCallback((props: ModalProps): ReactElement => {
     return (
       <Modal
         {...props}
@@ -43,7 +43,7 @@ export const useModal = (): ModalAPI => {
         onCloseClick={props.onCloseClick ?? closeModal}
       />
     )
-  }
+  }, [closeModal, isModalVisible])
 
   return { Modal: ModalComponent, isModalVisible, openModal, closeModal, toggleModal }
 }
