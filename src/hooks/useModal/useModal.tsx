@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useCallback, useState } from 'react'
+import { ReactElement, useCallback, useMemo, useState } from 'react'
 
 import { Modal } from '../../components/Modal/Modal'
 import { ModalAPI } from './useModal.types'
@@ -35,15 +35,17 @@ export const useModal = (): ModalAPI => {
   const closeModal = useCallback(() => setIsModalVisible(false), [])
   const toggleModal = useCallback(() => setIsModalVisible(prevState => !prevState), [])
 
-  const ModalComponent = useCallback((props: ModalProps): ReactElement => {
-    return (
-      <Modal
-        {...props}
-        isVisible={props.isVisible ?? isModalVisible}
-        onCloseClick={props.onCloseClick ?? closeModal}
-      />
-    )
+  const ModalComponentMemoized = useMemo(() => {
+    return function ModalComponent(props: ModalProps): ReactElement {
+      return (
+        <Modal
+          {...props}
+          isVisible={props.isVisible ?? isModalVisible}
+          onCloseClick={props.onCloseClick ?? closeModal}
+        />
+      )
+    }
   }, [closeModal, isModalVisible])
 
-  return { Modal: ModalComponent, isModalVisible, openModal, closeModal, toggleModal }
+  return { Modal: ModalComponentMemoized, isModalVisible, openModal, closeModal, toggleModal }
 }
