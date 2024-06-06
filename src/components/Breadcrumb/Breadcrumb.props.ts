@@ -23,6 +23,8 @@ import { BreadcrumbItemType } from './Breadcrumb.types'
  */
 export type BreadcrumbItemProps = BreadcrumbItemType & {
 
+  index: number
+
   /**
    * The DOM element where the container is attached. Defaults to `document.body`.
    */
@@ -32,16 +34,6 @@ export type BreadcrumbItemProps = BreadcrumbItemType & {
    * Indicates whether the component is loading or not.
    */
   isLoading?: boolean;
-
-  /**
-   * Indicates whether the item is the first one.
-   */
-  isInitialItem?: boolean;
-
-  /**
-   * Indicates whether the item is the last one.
-   */
-  isLastItem?: boolean;
 
   /**
    * Indicates whether the dropdown menu is rendered.

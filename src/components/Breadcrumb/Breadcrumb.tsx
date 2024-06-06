@@ -43,6 +43,7 @@ export const Breadcrumb = ({
 }: BreadcrumbProps): ReactElement => {
   const [visibleItems, setVisibleItems] = useState<BreadcrumbItemType[]>([])
   const [collapsedItems, setCollapsedItems] = useState<BreadcrumbItemType[]>([])
+
   const breadcrumbRef = useRef<HTMLDivElement>(null)
   const hiddenContainerRef = useRef<HTMLDivElement>(null)
 
@@ -104,9 +105,11 @@ export const Breadcrumb = ({
       setCollapsedItems(collapsed)
     }
 
-    setItemsVisibility()
-    window.addEventListener('resize', setItemsVisibility)
-    return () => window.removeEventListener('resize', setItemsVisibility)
+    // setItemsVisibility()
+    // window.addEventListener('resize', setItemsVisibility)
+    // return () => window.removeEventListener('resize', setItemsVisibility)
+
+    setVisibleItems(items)
   }, [items])
 
   const getItemLabel = useCallback((item: BreadcrumbItemType): ReactNode => {
@@ -165,18 +168,11 @@ export const Breadcrumb = ({
     return { items: dropdownItems }
   }, [collapsedItems, getItemIcon, getItemLabel])
 
-  const renderItem = useCallback((
-    item: BreadcrumbItemType,
-    index: number,
-    isMenuHidden?: boolean,
-    isInitialItem?: boolean,
-    isLastItem?: boolean
-  ): ReactElement => {
+  const renderItem = useCallback((item: BreadcrumbItemType, index: number, isMenuHidden?: boolean,): ReactElement => {
     return (
       <BreadcrumbItem
         icon={getItemIcon(item)}
-        isInitialItem={isInitialItem}
-        isLastItem={isLastItem}
+        index={index}
         isLoading={isLoading}
         isMenuHidden={isMenuHidden}
         itemsLength={items.length}
@@ -206,14 +202,14 @@ export const Breadcrumb = ({
   return (
     <div ref={breadcrumbRef} >
       <div className={breadcrumb}>
-        {items.length > 0 && renderItem(items[0], 0, false, true, false)}
-        {collapsedItems.length > 0 && renderCollapsedDropdown()}
+        {/* {items.length > 0 && renderItem(items[0], 0, false)} */}
+        {/* {collapsedItems.length > 0 && renderCollapsedDropdown()} */}
         {visibleItems.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}
-        {items.length > 1 && renderItem(items[items.length - 1], items.length - 1, false, false, true)}
+        {/* {items.length > 1 && renderItem(items[items.length - 1], items.length - 1, false)} */}
       </div>
-      <div className={breadcrumbHiddenContainer} ref={hiddenContainerRef}>
-        {items.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index, true, false, false))}
-      </div>
+      {/* <div className={breadcrumbHiddenContainer} ref={hiddenContainerRef}>
+        {items.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index, true))}
+      </div> */}
     </div>
   )
 }

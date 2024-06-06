@@ -40,16 +40,13 @@ const {
   dropdownMenuContainer,
   dropdownMenuSearch,
   last,
-  initial,
   separatorWrapper,
-  withoutMenu,
 } = styles
 
 export const BreadcrumbItem = ({
+  index,
   getPopupContainer,
   icon,
-  isInitialItem,
-  isLastItem,
   isLoading,
   isMenuHidden = false,
   itemsLength,
@@ -62,6 +59,8 @@ export const BreadcrumbItem = ({
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
 
+  const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
+
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
   const hasLabel = useMemo(() => icon || label, [icon, label])
@@ -70,30 +69,23 @@ export const BreadcrumbItem = ({
     <Icon color={palette?.common?.grey?.[600]} name="AiOutlineCaretDown" size={16} />
   ), [palette?.common?.grey])
 
-  const separatorIcon = useMemo(() => (
-    <div className={separatorWrapper}>
-      <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
-    </div>
-  ), [palette?.common?.grey])
-
   const breadcrumbItemLabel = useMemo(() => (
     <div
-      className={classNames([
-        breadcrumbItemLabelWrapper,
-        isInitialItem && !hasMenu && initial,
-        isLastItem && last,
-        !hasMenu && withoutMenu,
-      ])}
+      className={classNames([breadcrumbItemLabelWrapper, isLastItem && last])}
       onClick={onClick}
     >
       {icon}
-      <div className={breadcrumbItemLabelStyle}>
-        <BodyL ellipsis={{ rows: 1, tooltip: label }}>
-          {label}
-        </BodyL>
-      </div>
+      {
+        label && (
+          <div className={breadcrumbItemLabelStyle}>
+            <BodyL ellipsis={{ rows: 1, tooltip: label }}>
+              {label}
+            </BodyL>
+          </div>
+        )
+      }
     </div>
-  ), [hasMenu, icon, isInitialItem, isLastItem, label, onClick])
+  ), [icon, isLastItem, label, onClick])
 
   const itemMenu = useMemo<MenuProps>(() => {
     const items = Object.values(menu?.items ?? {})
@@ -194,13 +186,23 @@ export const BreadcrumbItem = ({
 
   return (
     <>
-      {isLoading
-        ? <Skeleton.Button active />
-        : <div className={breadcrumbItemWrapper}>
-          {hasLabel && breadcrumbItemLabel}
-          {hasMenu && breadcrumbItemMenu}
-        </div>}
-      {hasSeparator && separatorIcon}
+      {
+        isLoading
+          ? <Skeleton.Button active />
+          : (
+            <div className={breadcrumbItemWrapper}>
+              {breadcrumbItemLabel}
+              {hasMenu && breadcrumbItemMenu}
+            </div>
+          )
+      }
+      {
+        hasSeparator && (
+          <div className={separatorWrapper}>
+            <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
+          </div>
+        )
+      }
     </>
   )
 }

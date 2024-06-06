@@ -15,7 +15,8 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-.breadcrumbHiddenContainer {
+
+ .breadcrumbHiddenContainer {
   visibility: hidden;
   position: absolute;
   top: 0;
@@ -28,7 +29,6 @@
   justify-content: flex-start;
   align-items: center;
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
-  height: calc((var(--shape-size-xl, 32) + var(--shape-size-s, 8)) * 1px);
 }
 
 .breadcrumbItemSubmenu {
@@ -56,34 +56,29 @@
   display: flex;
   align-items: center;
   gap: calc(var(--spacing-gap-xs, 4) * 1px);
-  height: calc((var(--shape-size-xl, 32) + var(--shape-size-s, 8)) * 1px);
+  /* TODO: this CSS variable in missing in DS */
   background-color: var(--palette-background-neutral, #89898914);
-  padding-right: calc(var(--spacing-padding-sm, 12) * 1px);
-  padding-left: calc(var(--spacing-padding-sm, 12) * 1px);
-  border-bottom-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
-  border-top-left-radius: calc(var(--shape-border-radius-md, 4) * 1px);
-}
-
-.breadcrumbItemLabelWrapper.withoutMenu {
-  border-bottom-right-radius: calc(var(--shape-border-radius-md, 4) * 1px);
-  border-top-right-radius: calc(var(--shape-border-radius-md, 4) * 1px);
-}
-
-.breadcrumbItemLabelWrapper.initial {
-  background: none;
+  padding: calc(var(--spacing-padding-xs, 4) * 1px) calc(var(--spacing-padding-sm, 8) * 1px);
+  border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
+  transition: background-color 0.25s ease-in-out;
+  cursor: pointer;
+  height: 100%;
+  box-sizing: border-box;
+  min-width: calc(var(--shape-size-xl, 32) * 1px);
 }
 
 .breadcrumbItemLabelWrapper.last {
-  font-weight: var(--typography-bodyLBold-fontWeight);
+  font-weight: var(--typography-bodyLBold-fontWeight, 600);
 }
 
 .breadcrumbItemLabelWrapper:hover {
-  background-color: var(--palette-action-alternate-secondary-hover);
-  cursor: pointer;
+  /* TODO: this CSS variable in missing in DS */
+  background-color: var(--palette-action-alternate-secondary-hover, #8989891F);
 }
 
 .breadcrumbItemLabelWrapper:active {
-  background-color: var(--palette-action-alternate-secondary-selected);
+  /* TODO: this CSS variable in missing in DS */
+  background-color: var(--palette-action-alternate-secondary-selected, #8989893D);
 }
 
 .breadcrumbItemLabelStyle {
@@ -142,4 +137,5 @@
 
 .separatorWrapper {
   width: calc((var(--shape-size-md, 16)) * 1px);
+  height: calc((var(--shape-size-md, 16)) * 1px);
 }

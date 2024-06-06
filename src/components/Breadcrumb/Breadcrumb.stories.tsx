@@ -17,8 +17,9 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 
-import { multipleItemsLoadingProps, multipleItemsProps, multipleItemsWithEllipsisProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
+import { breadcrumbIcon, multipleItemsLoadingProps, multipleItemsProps, multipleItemsWithEllipsisProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
 
 const meta = {
@@ -29,29 +30,35 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: multipleItemsProps,
+  args: {
+    items: [
+      { onClick: action('click'), label: 'Text 1', icon: breadcrumbIcon },
+      { onClick: action('click'), label: 'Text 2', icon: breadcrumbIcon },
+      { onClick: action('click'), label: 'Text 3', icon: breadcrumbIcon },
+    ],
+  },
 }
 
-export const OneItemTitleOnly: Story = {
-  args: oneItemTitleOnlyProps,
-}
+// export const OneItemTitleOnly: Story = {
+//   args: oneItemTitleOnlyProps,
+// }
 
-export const OneItemIconAndTitle: Story = {
-  args: oneItemIconAndTitleProps,
-}
+// export const OneItemIconAndTitle: Story = {
+//   args: oneItemIconAndTitleProps,
+// }
 
-export const TwoItems: Story = {
-  args: twoItemsProps,
-}
+// export const TwoItems: Story = {
+//   args: twoItemsProps,
+// }
 
-export const MultipleItemsLoading: Story = {
-  args: multipleItemsLoadingProps,
-}
+// export const MultipleItemsLoading: Story = {
+//   args: multipleItemsLoadingProps,
+// }
 
-export const MultipleItemsWithMenu: Story = {
-  args: multipleItemsWithMenuProps,
-}
+// export const MultipleItemsWithMenu: Story = {
+//   args: multipleItemsWithMenuProps,
+// }
 
-export const MultipleItemsWithEllipsis: Story = {
-  args: multipleItemsWithEllipsisProps,
-}
+// export const MultipleItemsWithEllipsis: Story = {
+//   args: multipleItemsWithEllipsisProps,
+// }
