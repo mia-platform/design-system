@@ -31,7 +31,7 @@ const { Default, Primary } = Hierarchy
 const { Inline } = Mode
 const { menu } = styles
 
-export const defaults: Partial<MenuProps> = {
+export const defaults = {
   defaultOpenKeys: [],
   hierarchy: Default,
   items: [],

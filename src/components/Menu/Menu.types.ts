@@ -16,13 +16,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
+import type { MenuItemProps, MenuProps } from 'antd'
 
-export enum ItemType {
-  Category = 'category',
-  Divider = 'divider',
-  Group = 'group'
-}
+export const ItemTypes = {
+  Category: 'group',
+  Divider: 'divider',
+  Item: 'item',
+  SubMenu: 'submenu',
+} as const
+export type ItemType = (typeof ItemTypes)[keyof typeof ItemTypes] | undefined
 
 export enum Hierarchy {
   Default = 'default',
@@ -39,15 +41,16 @@ export enum Mode {
  *
  * @see {@link https://ant.design/components/menu#menuitemtype}
  */
-export type Item = MenuItemType & {
+// export type Item = NonNullable<MenuProps['items']>
+// & {
 
-  /**
-   * The type of the menu item.
-   */
-  type?: ItemType;
+//   /**
+//    * The type of the menu item.
+//    */
+//   type?: ItemType;
 
-  /**
-   * An array of child items for nested menus.
-   */
-  children?: Item[];
-}
+//   /**
+//    * An array of child items for nested menus.
+//    */
+//   children?: MenuProps['items'];
+// }
