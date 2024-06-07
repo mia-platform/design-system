@@ -44,7 +44,7 @@ function formatLabels(
       return formatLabels(item?.children, selectedItem, isCollapsed, hierarchy) || []
     }
 
-    return [{
+    return {
       ...item,
       ...item?.type === ItemTypes.Item && {
         icon: item?.icon && <div>{item?.icon}</div>,
@@ -63,7 +63,7 @@ function formatLabels(
         key: item?.key,
         children: formatLabels(item.children, selectedItem, isCollapsed, hierarchy) || [],
       },
-    }]
+    }
   })
 }
 
