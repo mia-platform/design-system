@@ -28,64 +28,121 @@
   /* TODO: this CSS variables are missing in DS */
   --item-bg: var(--palette-background-neutral, #89898914);
   --item-bg-hover: var(--palette-action-alternate-secondary-hover, #8989891F);
-  --item-bg-active: var(--palette-action-alternate-secondary-selected, #8989893D);;
+  --item-bg-active: var(--palette-action-alternate-secondary-selected, #8989893D);
+  --item-bg-transition: background-color 0.25s ease-in-out;
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: var(--spacing-gap-xs, 4px);
 
-  & .breadcrumbItemWrapper {
+  & .breadcrumbItemLast {
+    & .breadcrumbItemLabelText {
+      font-weight: var(--typography-bodyLBold-fontWeight, 600);
+    }
+  }
+
+  & .breadcrumbItemButton {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    cursor: pointer;
     height: var(--shape-size-xl, 32px);
-    gap: 1px;
+    box-sizing: border-box;
 
-    & .breadcrumbItemLabelWrapper {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-gap-xs, 4px);
+    & .breadcrumbItemButtonEmpty {
       background-color: var(--item-bg);
-      padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
+      transition: var(--item-bg-transition);
       border-radius: var(--shape-border-radius-md, 4px);
-      transition: background-color 0.25s ease-in-out;
-      cursor: pointer;
-      height: 100%;
-      box-sizing: border-box;
-      min-width: var(--shape-size-xl, 32px);
+      width: var(--shape-size-xl, 32px);
+      height: var(--shape-size-xl, 32px);
 
-      &:hover {
-        background-color: var(--item-bg-hover);
+      &.breadcrumbItemButtonNoInteraction {
+        cursor: auto;
       }
 
-      &:active {
-        background-color: var(--item-bg-active);
-      }
+      &:not(.breadcrumbItemButtonNoInteraction) {
+        &:hover {
+          background-color: var(--item-bg-hover);
+        }
 
-      &.last {
-        font-weight: var(--typography-bodyLBold-fontWeight, 600);
-      }
-
-      &.withMenu {
-        border-radius: var(--shape-border-radius-md, 4px) 0 0 var(--shape-border-radius-md, 4px);
-      }
-
-      & .breadcrumbItemLabelStyle {
-        max-width: 250px;
+        &:active {
+          background-color: var(--item-bg-active);
+        }
       }
     }
 
-    & .breadcrumbMenuIcon {
-      display: flex;
-      align-items: center;
+    &.breadcrumbItemButtonSegmented {
+      gap: 1px;
+
+      &.breadcrumbItemButtonNoInteraction {
+        cursor: default;
+
+        & .breadcrumbItemLabel {
+          &:hover {
+            background-color: var(--item-bg);
+          }
+
+          &:active {
+            background-color: var(--item-bg);
+          }
+        }
+      }
+
+      & .breadcrumbItemLabel {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-gap-xs, 4px);
+        background-color: var(--item-bg);
+        padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
+        border-radius: var(--shape-border-radius-md, 4px);
+        transition: var(--item-bg-transition);
+        height: 100%;
+        box-sizing: border-box;
+
+        &:hover {
+          background-color: var(--item-bg-hover);
+        }
+
+        &:active {
+          background-color: var(--item-bg-active);
+        }
+
+        &.withMenu {
+          border-radius: var(--shape-border-radius-md, 4px) 0 0 var(--shape-border-radius-md, 4px);
+        }
+      }
+
+      & .breadcrumbMenuIcon {
+        display: flex;
+        align-items: center;
+        background-color: var(--item-bg);
+        padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xs, 4px);
+        border-radius: var(--shape-border-radius-md, 4px);
+        transition: var(--item-bg-transition);
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--item-bg-hover);
+        }
+
+        &:active {
+          background-color: var(--item-bg-active);
+        }
+
+        &.withLabel {
+          border-radius: 0 var(--shape-border-radius-md, 4px) var(--shape-border-radius-md, 4px) 0;
+        }
+      }
+    }
+
+    &.breadcrumbItemButtonConnected {
+      gap: 4px;
       background-color: var(--item-bg);
-      padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xs, 4px);
+      padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
       border-radius: var(--shape-border-radius-md, 4px);
-      transition: background-color 0.25s ease-in-out;
       cursor: pointer;
-      height: 100%;
-      box-sizing: border-box;
+      transition: var(--item-bg-transition);
 
       &:hover {
         background-color: var(--item-bg-hover);
@@ -94,10 +151,10 @@
       &:active {
         background-color: var(--item-bg-active);
       }
+    }
 
-      &.withLabel {
-        border-radius: 0 var(--shape-border-radius-md, 4px) var(--shape-border-radius-md, 4px) 0;
-      }
+    & .breadcrumbItemLabelText {
+      max-width: 250px;
     }
   }
 

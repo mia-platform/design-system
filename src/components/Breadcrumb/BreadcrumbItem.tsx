@@ -23,7 +23,7 @@ import { debounce } from 'lodash-es'
 
 import { BodyL } from '../Typography/BodyX/BodyL'
 import { BodyS } from '../Typography/BodyX/BodyS'
-import { BreadcrumbItemMenu } from './Breadcrumb.types'
+import { BreadcrumbItemMenu, BreadcrumbItemMenuItem } from './Breadcrumb.types'
 import { BreadcrumbItemProps } from './Breadcrumb.props'
 import CaretFullDownSvg from './assets/caret-full-down.svg'
 import { Icon } from '../Icon'
@@ -66,60 +66,43 @@ export const BreadcrumbItem = ({
 
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasLabel = useMemo(() => icon || label, [icon, label])
-  const hasMenu = useMemo(() => menu?.items, [menu?.items])
+  const hasMenu = useMemo(() => Boolean(menu?.items), [menu?.items])
 
   const menuIcon = useMemo(() => <CaretFullDownSvg />, [])
 
-  const breadcrumbItemLabel = useMemo(() => {
-    if (!hasLabel && hasMenu) { return }
 
-    return (
-      <div
-        className={classNames([breadcrumbItemLabelWrapper, isLastItem && last, hasMenu && withMenu])}
-        onClick={onClick}
-      >
-        {icon}
+  const filteredMenuItems = useMemo<BreadcrumbItemMenuItem[]>(() => {
+    if (!menu?.items) { return [] }
+
+    if (searchValue === '') { return menu.items }
+
+    return menu.items.filter((item) => item.label.toLowerCase().includes(searchValue.toLowerCase()))
+  }, [menu?.items, searchValue])
+
+  const dropdownMenuProps = useMemo<MenuProps>(() => {
+    const items = filteredMenuItems.reduce<ItemType[]>((acc, itemData, currentIndex) => {
+      return [
+        ...acc,
         {
-          label && (
-            <div className={breadcrumbItemLabelStyle}>
-              <BodyL ellipsis={{ rows: 1, tooltip: label }}>
-                {label}
-              </BodyL>
+          key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
+          icon: itemData?.icon,
+          label: (
+            <div onClick={itemData.onClick}>
+              <BodyS ellipsis={{ rows: 1, tooltip: itemData?.label }}>
+                {itemData?.label}
+              </BodyS>
             </div>
-          )
-        }
-      </div>
-    )
-  }, [hasLabel, hasMenu, icon, isLastItem, label, onClick])
-
-  const itemMenu = useMemo<MenuProps>(() => {
-    const items = Object.values(menu?.items ?? {})
-      .filter(item => menu?.onChangeSearch || item.label.toLowerCase().includes(searchValue.toLowerCase()))
-      .reduce<ItemType[]>((acc, itemData, currentIndex) => {
-        return [
-          ...acc,
-          {
-            key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
-            icon: itemData?.icon,
-            label: (
-              <div onClick={itemData.onClick}>
-                <BodyS ellipsis={{ rows: 1, tooltip: itemData?.label }}>
-                  {itemData?.label}
-                </BodyS>
-              </div>
-            ),
-          },
-        ]
-      }, [])
+          ),
+        },
+      ]
+    }, [])
 
     return {
       items,
-      onClick: () => {
-        setDropdownOpen(false)
-      },
+      onClick: () => { setDropdownOpen(false) },
       selectedKeys: menu?.activeKey ? [menu.activeKey] : [],
     }
-  }, [menu, searchValue])
+  }, [filteredMenuItems, menu?.activeKey])
 
   const handleChange = useCallback((
     breadcrumbItemMenu: BreadcrumbItemMenu, event: ChangeEvent<HTMLInputElement>
@@ -131,72 +114,127 @@ export const BreadcrumbItem = ({
     }
   }, [])
 
-  const dropdown = useCallback((dropdownMenu: ReactNode) => (
-    <div className={dropdownMenuContainer}>
-      {menu?.showSearch && <div className={dropdownMenuSearch}>
-        <Input.Search
-          allowClear={menu?.searchAllowClear ?? true}
-          autoFocus
-          placeholder={menu?.searchPlaceholder ?? ''}
-          onChange={debounce((event) => handleChange(menu, event), 150)}
-        />
-      </div>}
-      <div className={dropdownMenuStyle}>
-        {React.cloneElement(dropdownMenu as React.ReactElement)}
+  const dropdownRender = useCallback((dropdownMenu: ReactNode) => {
+    return (
+      <div className={dropdownMenuContainer}>
+        {
+          menu?.showSearch && (
+            <div className={dropdownMenuSearch}>
+              <Input.Search
+                allowClear={menu?.searchAllowClear ?? true}
+                autoFocus
+                placeholder={menu?.searchPlaceholder ?? ''}
+                onChange={debounce((event) => handleChange(menu, event), 150)}
+              />
+            </div>
+          )
+        }
+        {
+          filteredMenuItems.length > 0
+            ? (
+              <div className={dropdownMenuStyle}>
+                {React.cloneElement(dropdownMenu as React.ReactElement)}
+              </div>
+            )
+            : (
+              <div>No data</div>
+            )
+        }
       </div>
-    </div>
-  ), [handleChange, menu])
+    )
+  }, [filteredMenuItems, handleChange, menu])
 
-  const breadcrumbItemMenu = useMemo(() => {
-    if (!hasMenu) { return }
 
-    if (isMenuHidden) {
+  const itemButton = useMemo(() => {
+    if (!hasLabel && !hasMenu) {
       return (
         <div
-          className={classNames([breadcrumbMenuIcon, hasLabel && withLabel])}
+          className={styles.breadcrumbItemButton}
+          onClick={onClick}
         >
-          {menuIcon}
+          <div
+            className={classNames([
+              styles.breadcrumbItemButtonEmpty,
+              !onClick && styles.breadcrumbItemButtonNoInteraction,
+            ])}
+          />
         </div>
       )
     }
 
+    const isButtonConnected = Boolean(!onClick && hasLabel && hasMenu)
+
     return (
-      // <Dropdown
-      //   destroyPopupOnHide
-      //   dropdownRender={dropdown}
-      //   getPopupContainer={getPopupContainer}
-      //   menu={itemMenu}
-      //   open={menu?.open !== undefined ? menu.open : dropdownOpen}
-      //   overlayClassName={breadcrumbItemSubmenu}
-      //   placement={'bottomLeft'}
-      //   trigger={['click']}
-      //   onOpenChange={(open) => {
-      //     if (menu?.open !== undefined && menu?.onDropdownVisibleChange !== undefined) {
-      //       menu.onDropdownVisibleChange(open)
-      //     } else {
-      //       setDropdownOpen(open)
-      //     }
-      //   }}
-      // >
-      <div className={classNames([breadcrumbMenuIcon, hasLabel && withLabel])} >
-        {menuIcon}
-      </div>
-      // </Dropdown>
+      <Dropdown
+        dropdownRender={dropdownRender}
+        menu={dropdownMenuProps}
+        open={false}
+        placement={'bottomLeft'}
+        trigger={['click']}
+      >
+        <div className={classNames([isLastItem && styles.breadcrumbItemLast])}>
+          {
+            isButtonConnected
+              ? (
+                <div className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}>
+                  {icon}
+                  {
+                    label && (
+                      <div className={styles.breadcrumbItemLabelText}>
+                        <BodyL ellipsis={{ rows: 1, tooltip: label }}>
+                          {label}
+                        </BodyL>
+                      </div>
+                    )
+                  }
+                  {menuIcon}
+                </div>
+              )
+              : (
+                <div
+                  className={classNames([
+                    styles.breadcrumbItemButton,
+                    styles.breadcrumbItemButtonSegmented,
+                    !onClick && styles.breadcrumbItemButtonNoInteraction,
+                  ])}
+                >
+                  {
+                    hasLabel && (
+                      <div
+                        className={classNames([styles.breadcrumbItemLabel, hasMenu && styles.withMenu])}
+                        onClick={onClick}
+                      >
+                        {icon}
+                        {
+                          label && (
+                            <div className={styles.breadcrumbItemLabelText}>
+                              <BodyL ellipsis={{ rows: 1, tooltip: label }}>
+                                {label}
+                              </BodyL>
+                            </div>
+                          )
+                        }
+                      </div>
+                    )
+                  }
+                  {
+                    hasMenu && (
+                      <div className={classNames([styles.breadcrumbMenuIcon, hasLabel && styles.withLabel])} >
+                        {menuIcon}
+                      </div>
+                    )
+                  }
+                </div>
+              )
+          }
+        </div>
+      </Dropdown>
     )
-  }, [hasMenu, isMenuHidden, hasLabel, menuIcon])
+  }, [dropdownMenuProps, dropdownRender, hasLabel, hasMenu, icon, isLastItem, label, menuIcon, onClick])
 
   return (
     <>
-      {
-        isLoading
-          ? <Skeleton.Button active />
-          : (
-            <div className={classNames([breadcrumbItemWrapper])}>
-              {breadcrumbItemLabel}
-              {breadcrumbItemMenu}
-            </div>
-          )
-      }
+      {isLoading ? <Skeleton.Button active /> : itemButton}
       {
         hasSeparator && (
           <div className={separatorWrapper}>

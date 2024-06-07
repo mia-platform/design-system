@@ -20,11 +20,14 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Plugins */
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [
     "src",
-    "vite.config.ts", 
+    "vite.config.ts",
     "package.json"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
