@@ -15,7 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import { Dropdown, Input, MenuProps, Skeleton } from 'antd'
+import { Dropdown, DropdownProps, Input, MenuProps, Skeleton } from 'antd'
 import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
 import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
@@ -44,17 +44,13 @@ export const BreadcrumbItem = ({
 }: BreadcrumbItemProps): ReactElement => {
   const { palette } = useTheme()
 
-  const [dropdownOpen, setDropdownOpen] = useState(menu?.open !== undefined ? menu.open : true)
+  const [dropdownOpen, setDropdownOpen] = useState(menu?.open !== undefined ? menu.open : false)
   const [searchValue, setSearchValue] = useState('')
 
   const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
-
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasLabel = useMemo(() => icon || label, [icon, label])
   const hasMenu = useMemo(() => Boolean(menu?.items), [menu?.items])
-
-  const menuIcon = useMemo(() => <CaretFullDownSvg />, [])
-
 
   const filteredMenuItems = useMemo<BreadcrumbItemMenuItem[]>(() => {
     if (!menu?.items) { return [] }
@@ -67,6 +63,7 @@ export const BreadcrumbItem = ({
   const dropdownMenuProps = useMemo<MenuProps>(() => {
     const items = filteredMenuItems.map<ItemType>((itemData, currentIndex) => {
       return {
+        onClick: ({ domEvent }) => itemData.onClick?.(domEvent),
         key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
         icon: itemData?.icon,
         label: (
@@ -77,14 +74,8 @@ export const BreadcrumbItem = ({
       }
     })
 
-    return {
-      items,
-      onClick: ({ key, domEvent }) => {
-        filteredMenuItems.find((item) => item.key === key)?.onClick?.(domEvent)
-      },
-      selectedKeys: menu?.activeKey ? [menu.activeKey] : [],
-    }
-  }, [filteredMenuItems, menu?.activeKey])
+    return { items, selectedKeys: menu?.activeKey ? [menu.activeKey] : [] }
+  }, [filteredMenuItems, menu])
 
   const handleChange = useCallback((
     breadcrumbItemMenu: BreadcrumbItemMenu, event: ChangeEvent<HTMLInputElement>
@@ -149,96 +140,84 @@ export const BreadcrumbItem = ({
       )
     }
 
-    const isButtonConnected = Boolean(!onClick && hasLabel && hasMenu)
-    const isDropdownOpen = hasMenu && (menu?.open !== undefined ? menu.open : dropdownOpen)
-
-    const onOpenChange = (next: boolean): void => {
-      if (next === false) {
+    const dropdownProps: DropdownProps = {
+      dropdownRender,
+      getPopupContainer: (trigger) => getPopupContainer?.(trigger) ?? containerRef.current ?? trigger,
+      menu: dropdownMenuProps,
+      open: hasMenu && (menu?.open !== undefined ? menu.open : dropdownOpen),
+      placement: 'bottomLeft',
+      trigger: ['click'],
+      onOpenChange: (next: boolean): void => {
         menu?.onDropdownVisibleChange?.(next)
-        setDropdownOpen(next)
-      }
+
+        if (menu?.open === undefined) {
+          setDropdownOpen(next)
+        }
+      },
     }
 
-    const changeOpenState = (): void => {
-      setDropdownOpen((prev) => {
-        menu?.onDropdownVisibleChange?.(!prev)
-        return menu?.open !== undefined ? menu.open : !prev
-      })
+    const isButtonConnected = Boolean(!onClick && hasLabel && hasMenu)
+    if (isButtonConnected) {
+      return (
+        <Dropdown {...dropdownProps}>
+          <div className={classNames([isLastItem && styles.breadcrumbItemLast])}>
+            <div className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}>
+              {icon}
+              {
+                label && (
+                  <div className={styles.breadcrumbItemLabelText}>
+                    <BodyL ellipsis={{ rows: 1, tooltip: label }}>
+                      {label}
+                    </BodyL>
+                  </div>
+                )
+              }
+              <CaretFullDownSvg />
+            </div>
+          </div>
+        </Dropdown>
+      )
     }
 
     return (
-      <Dropdown
-        dropdownRender={dropdownRender}
-        getPopupContainer={(trigger) => getPopupContainer?.(trigger) ?? containerRef.current ?? trigger}
-        menu={dropdownMenuProps}
-        open={isDropdownOpen}
-        placement={'bottomLeft'}
-        trigger={['click']}
-        onOpenChange={onOpenChange}
-      >
-        <div className={classNames([isLastItem && styles.breadcrumbItemLast])}>
+      <div className={classNames([isLastItem && styles.breadcrumbItemLast])}>
+        <div
+          className={classNames([
+            styles.breadcrumbItemButton,
+            styles.breadcrumbItemButtonSegmented,
+            !onClick && styles.breadcrumbItemButtonNoInteraction,
+          ])}
+        >
           {
-            isButtonConnected
-              ? (
-                <div
-                  className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}
-                  onClick={changeOpenState}
-                >
-                  {icon}
-                  {
-                    label && (
-                      <div className={styles.breadcrumbItemLabelText}>
-                        <BodyL ellipsis={{ rows: 1, tooltip: label }}>
-                          {label}
-                        </BodyL>
-                      </div>
-                    )
-                  }
-                  {menuIcon}
+            hasLabel && (
+              <div
+                className={classNames([styles.breadcrumbItemLabel, hasMenu && styles.withMenu])}
+                onClick={onClick}
+              >
+                {icon}
+                {
+                  label && (
+                    <div className={styles.breadcrumbItemLabelText}>
+                      <BodyL ellipsis={{ rows: 1, tooltip: label }}>
+                        {label}
+                      </BodyL>
+                    </div>
+                  )
+                }
+              </div>
+            )
+          }
+          {
+            hasMenu && (
+              <Dropdown {...dropdownProps}>
+                <div className={classNames([styles.breadcrumbMenuIcon, hasLabel && styles.withLabel])}>
+                  <CaretFullDownSvg />
                 </div>
-              )
-              : (
-                <div
-                  className={classNames([
-                    styles.breadcrumbItemButton,
-                    styles.breadcrumbItemButtonSegmented,
-                    !onClick && styles.breadcrumbItemButtonNoInteraction,
-                  ])}
-                >
-                  {
-                    hasLabel && (
-                      <div
-                        className={classNames([styles.breadcrumbItemLabel, hasMenu && styles.withMenu])}
-                        onClick={onClick}
-                      >
-                        {icon}
-                        {
-                          label && (
-                            <div className={styles.breadcrumbItemLabelText}>
-                              <BodyL ellipsis={{ rows: 1, tooltip: label }}>
-                                {label}
-                              </BodyL>
-                            </div>
-                          )
-                        }
-                      </div>
-                    )
-                  }
-                  {
-                    hasMenu && (
-                      <div
-                        className={classNames([styles.breadcrumbMenuIcon, hasLabel && styles.withLabel])}
-                        onClick={changeOpenState}
-                      >
-                        {menuIcon}
-                      </div>
-                    )
-                  }
-                </div>
-              )
+              </Dropdown>
+            )
           }
         </div>
-      </Dropdown>
+      </div>
     )
   }, [
     containerRef,
@@ -250,7 +229,6 @@ export const BreadcrumbItem = ({
     icon,
     isLastItem,
     label,
-    menuIcon,
     onClick,
     dropdownOpen,
     menu,

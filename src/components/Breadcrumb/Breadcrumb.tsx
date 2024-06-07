@@ -26,11 +26,28 @@ import { BreadcrumbItemType } from './Breadcrumb.types'
 import { BreadcrumbProps } from './Breadcrumb.props'
 import styles from './Breadcrumb.module.css'
 
-const { breadcrumbHiddenContainer, breadcrumbItemSubmenu, breadcrumbItemWrapper, breadcrumb } = styles
-
 const COLLAPSED_ITEM_WIDTH = 46
 const SEPARATOR_WIDTH = 16
 const SEPARATOR_ITEM_WITH_PADDING = SEPARATOR_WIDTH + 4
+
+function getItemLabel(item: BreadcrumbItemType): ReactNode {
+  if (item?.menu?.activeKey) {
+    return Object
+      .values(item?.menu?.items ?? {})
+      .find(({ key }) => key === item?.menu?.activeKey)
+      ?.label
+  }
+
+  return item?.label
+}
+
+function getItemIcon(item: BreadcrumbItemType): ReactNode {
+  return (
+    item?.menu?.activeKey
+    && Object.values(item?.menu?.items ?? {}).find(({ key }) => key === item?.menu?.activeKey)?.icon
+  )
+  ?? item?.icon
+}
 
 /**
  * UI component for displaying the current location within an hierarchy
@@ -112,22 +129,6 @@ export const Breadcrumb = ({
     setVisibleItems(items)
   }, [items])
 
-  const getItemLabel = useCallback((item: BreadcrumbItemType): ReactNode => {
-    return (
-      item?.menu?.activeKey
-      && Object.values(item?.menu?.items ?? {}).find(({ key }) => key === item?.menu?.activeKey)?.label
-    )
-    ?? item?.label
-  }, [])
-
-  const getItemIcon = useCallback((item: BreadcrumbItemType): ReactNode => {
-    return (
-      item?.menu?.activeKey
-      && Object.values(item?.menu?.items ?? {}).find(({ key }) => key === item?.menu?.activeKey)?.icon
-    )
-    ?? item?.icon
-  }, [])
-
   const dropdownMenu = useMemo<MenuProps>(() => {
     const dropdownItems = Object.values(collapsedItems ?? {})
       .reduce<ItemType[]>((acc, itemData, currentIndex) => {
@@ -159,16 +160,16 @@ export const Breadcrumb = ({
               </BodyS>
             </div>
           ),
-          popupClassName: breadcrumbItemSubmenu,
+          popupClassName: styles.breadcrumbItemSubmenu,
         }
 
         return [...acc, dropdownItem]
       }, [])
 
     return { items: dropdownItems }
-  }, [collapsedItems, getItemIcon, getItemLabel])
+  }, [collapsedItems])
 
-  const renderItem = useCallback((item: BreadcrumbItemType, index: number, isMenuHidden?: boolean,): ReactElement => {
+  const renderItem = useCallback((item: BreadcrumbItemType, index: number, isMenuHidden?: boolean): ReactElement => {
     return (
       <BreadcrumbItem
         containerRef={breadcrumbRef}
@@ -183,12 +184,12 @@ export const Breadcrumb = ({
         onClick={item?.onClick}
       />
     )
-  }, [getItemIcon, getItemLabel, isLoading, items.length])
+  }, [isLoading, items.length])
 
   const renderCollapsedDropdown = useCallback((): ReactElement => {
     return (
-      <Dropdown menu={dropdownMenu} overlayClassName={breadcrumbItemSubmenu}>
-        <div className={breadcrumbItemWrapper}>
+      <Dropdown menu={dropdownMenu} overlayClassName={styles.breadcrumbItemSubmenu}>
+        <div className={styles.breadcrumbItemWrapper}>
           <BreadcrumbItem
             isLoading={isLoading}
             itemsLength={items.length}
@@ -202,7 +203,7 @@ export const Breadcrumb = ({
 
   return (
     <div ref={breadcrumbRef} >
-      <div className={breadcrumb}>
+      <div className={styles.breadcrumb}>
         {/* {items.length > 0 && renderItem(items[0], 0, false)} */}
         {/* {collapsedItems.length > 0 && renderCollapsedDropdown()} */}
         {visibleItems.map((breadcrumbItem, index) => renderItem(breadcrumbItem, index))}

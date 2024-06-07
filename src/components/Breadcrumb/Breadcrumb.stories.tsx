@@ -55,14 +55,38 @@ export const Default: Story = {
         menu: {
           activeKey: '1',
           items: [
-            { label: 'Text 1', key: '1', onClick: action('click') },
-            { label: 'Text 2', key: '2', onClick: action('click') },
+            { label: 'Text 1', key: '1', onClick: action('click 1') },
+            { label: 'Text 2', key: '2', onClick: action('click 2') },
           ],
         },
       },
       { onClick: action('click'), label: 'Text' },
     ],
   },
+  // decorators: [
+  //   () => {
+  //     const [open, setOpen] = useState(false)
+  //     const [open2, setOpen2] = useState(false)
+
+  //     return (
+  //       <Breadcrumb
+  //         items={[
+  //           { label: 'Text', menu: { items: [{ label: 'Text 1', key: '1' }] }, onClick: action('onClick') },
+  //           {
+  //             onClick: action('onClick'),
+  //             menu: { open, onDropdownVisibleChange: setOpen, items: [{ label: 'Text 1', key: '1' }] },
+  //             label: 'Text',
+  //           },
+  //           { label: 'Text', menu: { items: [{ label: 'Text 1', key: '1' }] } },
+  //           {
+  //             menu: { open: open2, onDropdownVisibleChange: setOpen2, items: [{ label: 'Text 1', key: '1' }] },
+  //             label: 'Text',
+  //           },
+  //         ]}
+  //       />
+  //     )
+  //   },
+  // ],
 }
 
 // export const OneItemTitleOnly: Story = {
