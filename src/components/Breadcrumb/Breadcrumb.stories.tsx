@@ -18,6 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import { useState } from 'react'
 
 import { breadcrumbIcon, multipleItemsLoadingProps, multipleItemsProps, multipleItemsWithEllipsisProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
@@ -48,6 +49,7 @@ export const Default: Story = {
       // { icon: breadcrumbIcon, menu: { items: [] }, onClick: action('click') },
       // { label: 'Text', icon: breadcrumbIcon, menu: { items: [] } },
       { label: 'Text', icon: breadcrumbIcon, menu: { items: [] }, onClick: action('click') },
+      { label: 'Text', icon: breadcrumbIcon, menu: { items: [] } },
       { onClick: action('click'), label: 'Text' },
     ],
   },

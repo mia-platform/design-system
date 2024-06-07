@@ -44,7 +44,7 @@ export const BreadcrumbItem = ({
 }: BreadcrumbItemProps): ReactElement => {
   const { palette } = useTheme()
 
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(menu?.open !== undefined ? menu.open : false)
   const [searchValue, setSearchValue] = useState('')
 
   const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
@@ -153,21 +153,40 @@ export const BreadcrumbItem = ({
     }
 
     const isButtonConnected = Boolean(!onClick && hasLabel && hasMenu)
+    const isDropdownOpen = hasMenu && (menu?.open !== undefined ? menu.open : dropdownOpen)
+
+    const onOpenChange = (next: boolean): void => {
+      if (next === false) {
+        menu?.onDropdownVisibleChange?.(next)
+        setDropdownOpen(next)
+      }
+    }
+
+    const changeOpenState = (): void => {
+      setDropdownOpen((prev) => {
+        menu?.onDropdownVisibleChange?.(!prev)
+        return menu?.open !== undefined ? menu.open : !prev
+      })
+    }
 
     return (
       <Dropdown
         dropdownRender={dropdownRender}
         getPopupContainer={(trigger) => getPopupContainer?.(trigger) ?? containerRef.current ?? trigger}
         menu={dropdownMenuProps}
-        open={hasMenu}
+        open={isDropdownOpen}
         placement={'bottomLeft'}
         trigger={['click']}
+        onOpenChange={onOpenChange}
       >
         <div className={classNames([isLastItem && styles.breadcrumbItemLast])}>
           {
             isButtonConnected
               ? (
-                <div className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}>
+                <div
+                  className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}
+                  onClick={changeOpenState}
+                >
                   {icon}
                   {
                     label && (
@@ -210,7 +229,10 @@ export const BreadcrumbItem = ({
                   }
                   {
                     hasMenu && (
-                      <div className={classNames([styles.breadcrumbMenuIcon, hasLabel && styles.withLabel])} >
+                      <div
+                        className={classNames([styles.breadcrumbMenuIcon, hasLabel && styles.withLabel])}
+                        onClick={changeOpenState}
+                      >
                         {menuIcon}
                       </div>
                     )
@@ -233,6 +255,8 @@ export const BreadcrumbItem = ({
     label,
     menuIcon,
     onClick,
+    dropdownOpen,
+    menu,
   ])
 
   return (
