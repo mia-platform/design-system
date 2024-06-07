@@ -33,7 +33,14 @@ export const Default: Story = {
   args: {
     items: [
       { onClick: action('click'), label: 'Text 1', icon: breadcrumbIcon },
-      { onClick: action('click'), label: 'Text 2', icon: breadcrumbIcon },
+      {
+        onClick: action('click'),
+        label: 'Text 2',
+        icon: breadcrumbIcon,
+        menu: {
+          items: [],
+        },
+      },
       { onClick: action('click'), label: 'Text 3', icon: breadcrumbIcon },
     ],
   },

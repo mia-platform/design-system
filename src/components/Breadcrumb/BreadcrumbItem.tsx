@@ -25,6 +25,7 @@ import { BodyL } from '../Typography/BodyX/BodyL'
 import { BodyS } from '../Typography/BodyX/BodyS'
 import { BreadcrumbItemMenu } from './Breadcrumb.types'
 import { BreadcrumbItemProps } from './Breadcrumb.props'
+import CaretFullDownSvg from './assets/caret-full-down.svg'
 import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
 import { useTheme } from '../../hooks/useTheme'
@@ -62,12 +63,9 @@ export const BreadcrumbItem = ({
   const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
 
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
-  const hasMenu = useMemo(() => menu && Object.values(menu?.items ?? {}).length > 0, [menu])
   const hasLabel = useMemo(() => icon || label, [icon, label])
 
-  const menuIcon = useMemo(() => (
-    <Icon color={palette?.common?.grey?.[600]} name="AiOutlineCaretDown" size={16} />
-  ), [palette?.common?.grey])
+  const menuIcon = useMemo(() => <CaretFullDownSvg />, [])
 
   const breadcrumbItemLabel = useMemo(() => (
     <div
@@ -142,47 +140,43 @@ export const BreadcrumbItem = ({
     </div>
   ), [handleChange, menu])
 
-  const breadcrumbItemMenu = useMemo(() => (
-    isMenuHidden
-      ? (
+  const breadcrumbItemMenu = useMemo(() => {
+    if (!menu) { return }
+
+    if (isMenuHidden) {
+      return (
         <div
-          className={classNames([
-            breadcrumbMenuIcon,
-            !hasLabel && caretOnly,
-          ])}
+          className={classNames([breadcrumbMenuIcon, !hasLabel && caretOnly])}
         >
           {menuIcon}
         </div>
       )
-      : (
-        <Dropdown
-          destroyPopupOnHide
-          dropdownRender={dropdown}
-          getPopupContainer={getPopupContainer}
-          menu={itemMenu}
-          open={menu?.open !== undefined ? menu.open : dropdownOpen}
-          overlayClassName={breadcrumbItemSubmenu}
-          placement={'bottomLeft'}
-          trigger={['click']}
-          onOpenChange={(open) => {
-            if (menu?.open !== undefined && menu?.onDropdownVisibleChange !== undefined) {
-              menu.onDropdownVisibleChange(open)
-            } else {
-              setDropdownOpen(open)
-            }
-          }}
-        >
-          <div
-            className={classNames([
-              breadcrumbMenuIcon,
-              !hasLabel && caretOnly,
-            ])}
-          >
-            {menuIcon}
-          </div>
-        </Dropdown>
-      )
-  ), [dropdown, getPopupContainer, isMenuHidden, itemMenu, menu, dropdownOpen, hasLabel, menuIcon])
+    }
+
+    return (
+      // <Dropdown
+      //   destroyPopupOnHide
+      //   dropdownRender={dropdown}
+      //   getPopupContainer={getPopupContainer}
+      //   menu={itemMenu}
+      //   open={menu?.open !== undefined ? menu.open : dropdownOpen}
+      //   overlayClassName={breadcrumbItemSubmenu}
+      //   placement={'bottomLeft'}
+      //   trigger={['click']}
+      //   onOpenChange={(open) => {
+      //     if (menu?.open !== undefined && menu?.onDropdownVisibleChange !== undefined) {
+      //       menu.onDropdownVisibleChange(open)
+      //     } else {
+      //       setDropdownOpen(open)
+      //     }
+      //   }}
+      // >
+      <div className={classNames([breadcrumbMenuIcon, !hasLabel && caretOnly])} >
+        {menuIcon}
+      </div>
+      // </Dropdown>
+    )
+  }, [isMenuHidden, menu, hasLabel, menuIcon])
 
   return (
     <>
@@ -192,7 +186,7 @@ export const BreadcrumbItem = ({
           : (
             <div className={breadcrumbItemWrapper}>
               {breadcrumbItemLabel}
-              {hasMenu && breadcrumbItemMenu}
+              {breadcrumbItemMenu}
             </div>
           )
       }

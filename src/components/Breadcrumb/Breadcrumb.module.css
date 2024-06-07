@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
- .breadcrumbHiddenContainer {
+.breadcrumbHiddenContainer {
   visibility: hidden;
   position: absolute;
   top: 0;
@@ -25,6 +25,11 @@
 }
 
 .breadcrumb {
+  /* TODO: this CSS variables are missing in DS */
+  --item-bg: var(--palette-background-neutral, #89898914);
+  --item-bg-hover: var(--palette-action-alternate-secondary-hover, #8989891F);
+  --item-bg-active: var(--palette-action-alternate-secondary-selected, #8989893D);;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -50,14 +55,14 @@
   align-items: center;
   justify-content: flex-start;
   height: var(--shape-size-xl, 32px);
+  gap: 1px;
 }
 
 .breadcrumbItemLabelWrapper {
   display: flex;
   align-items: center;
   gap: var(--spacing-gap-xs, 4px);
-  /* TODO: this CSS variable in missing in DS */
-  background-color: var(--palette-background-neutral, #89898914);
+  background-color: var(--item-bg);
   padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
   border-radius: var(--shape-border-radius-md, 4px);
   transition: background-color 0.25s ease-in-out;
@@ -72,13 +77,11 @@
 }
 
 .breadcrumbItemLabelWrapper:hover {
-  /* TODO: this CSS variable in missing in DS */
-  background-color: var(--palette-action-alternate-secondary-hover, #8989891F);
+  background-color: var(--item-bg-hover);
 }
 
 .breadcrumbItemLabelWrapper:active {
-  /* TODO: this CSS variable in missing in DS */
-  background-color: var(--palette-action-alternate-secondary-selected, #8989893D);
+  background-color: var(--item-bg-active);
 }
 
 .breadcrumbItemLabelStyle {
@@ -88,29 +91,26 @@
 .breadcrumbMenuIcon {
   display: flex;
   align-items: center;
-  height: calc(var(--shape-size-xl, 32px) + var(--shape-size-s, 8px));
-  background-color: var(--palette-background-neutral, #89898914);
-  padding-right: var(--spacing-padding-xs, 4px);
-  padding-left: var(--spacing-padding-xs, 4px);
-  border-bottom-right-radius: var(--shape-border-radius-md, 4px);
-  border-top-right-radius: var(--shape-border-radius-md, 4px);
-  border-left: 1px solid;
-  border-color: var(--palette-common-white, #ffffff);
+  background-color: var(--item-bg);
+  padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xs, 4px);
+  border-radius: var(--shape-border-radius-md, 4px);
+  transition: background-color 0.25s ease-in-out;
+  cursor: pointer;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .breadcrumbMenuIcon.caretOnly {
-  border-left: 0px;
   border-bottom-left-radius: var(--shape-border-radius-md, 4px);
   border-top-left-radius: var(--shape-border-radius-md, 4px);
 }
 
 .breadcrumbMenuIcon:hover {
-  background-color: var(--palette-action-alternate-secondary-hover);
-  cursor: pointer;
+  background-color: var(--item-bg-hover);
 }
 
 .breadcrumbMenuIcon:active {
-  background-color: var(--palette-action-alternate-secondary-selected);
+  background-color: var(--item-bg-active);
 }
 
 .dropdownMenuContainer {
