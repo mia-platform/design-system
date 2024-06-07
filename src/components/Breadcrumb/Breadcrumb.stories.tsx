@@ -48,8 +48,18 @@ export const Default: Story = {
       // { icon: breadcrumbIcon, menu: { items: [] } },
       // { icon: breadcrumbIcon, menu: { items: [] }, onClick: action('click') },
       // { label: 'Text', icon: breadcrumbIcon, menu: { items: [] } },
-      { label: 'Text', icon: breadcrumbIcon, menu: { items: [] }, onClick: action('click') },
-      { label: 'Text', icon: breadcrumbIcon, menu: { items: [] } },
+      // { label: 'Text', icon: breadcrumbIcon, menu: { items: [] }, onClick: action('click') },
+      {
+        label: 'Text',
+        icon: breadcrumbIcon,
+        menu: {
+          activeKey: '1',
+          items: [
+            { label: 'Text 1', key: '1', onClick: action('click') },
+            { label: 'Text 2', key: '2', onClick: action('click') },
+          ],
+        },
+      },
       { onClick: action('click'), label: 'Text' },
     ],
   },

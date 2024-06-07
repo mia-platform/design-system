@@ -44,7 +44,7 @@ export const BreadcrumbItem = ({
 }: BreadcrumbItemProps): ReactElement => {
   const { palette } = useTheme()
 
-  const [dropdownOpen, setDropdownOpen] = useState(menu?.open !== undefined ? menu.open : false)
+  const [dropdownOpen, setDropdownOpen] = useState(menu?.open !== undefined ? menu.open : true)
   const [searchValue, setSearchValue] = useState('')
 
   const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
@@ -65,26 +65,23 @@ export const BreadcrumbItem = ({
   }, [menu?.items, searchValue])
 
   const dropdownMenuProps = useMemo<MenuProps>(() => {
-    const items = filteredMenuItems.reduce<ItemType[]>((acc, itemData, currentIndex) => {
-      return [
-        ...acc,
-        {
-          key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
-          icon: itemData?.icon,
-          label: (
-            <div onClick={itemData.onClick}>
-              <BodyS ellipsis={{ rows: 1, tooltip: itemData?.label }}>
-                {itemData?.label}
-              </BodyS>
-            </div>
-          ),
-        },
-      ]
-    }, [])
+    const items = filteredMenuItems.map<ItemType>((itemData, currentIndex) => {
+      return {
+        key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
+        icon: itemData?.icon,
+        label: (
+          <BodyS ellipsis={{ rows: 1, tooltip: itemData?.label }}>
+            {itemData?.label}
+          </BodyS>
+        ),
+      }
+    })
 
     return {
       items,
-      onClick: () => { setDropdownOpen(false) },
+      onClick: ({ key, domEvent }) => {
+        filteredMenuItems.find((item) => item.key === key)?.onClick?.(domEvent)
+      },
       selectedKeys: menu?.activeKey ? [menu.activeKey] : [],
     }
   }, [filteredMenuItems, menu?.activeKey])
@@ -117,7 +114,7 @@ export const BreadcrumbItem = ({
         {
           filteredMenuItems.length > 0
             ? (
-              <div className={dropdownMenuStyle}>
+              <div className={styles.dropdownMenu}>
                 {React.cloneElement(dropdownMenu as React.ReactElement)}
               </div>
             )

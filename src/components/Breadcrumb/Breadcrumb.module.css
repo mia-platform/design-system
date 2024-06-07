@@ -187,6 +187,18 @@
       color: var(--palette-common-grey-400, #ACACAC);
     }
   }
+
+  & .dropdownMenu {
+    & > ul {
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+
+      & > li {
+        padding: var(--spacing-padding-sm, 8px) !important;
+      }
+    }
+  }
 }
 
 
@@ -202,13 +214,6 @@
   gap: var(--spacing-gap-xs, 4px);
   height: var(--shape-size-xl, 32px);
   width: 100%;
-}
-
-
-
-.dropdownMenuStyle {
-  border-radius: 0;
-  box-shadow: none;
 }
 
 .dropdownMenuSearch {

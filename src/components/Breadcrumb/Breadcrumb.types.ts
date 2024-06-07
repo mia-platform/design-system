@@ -38,7 +38,7 @@ export type BreadcrumbItemMenuItem = {
    *
    * @param event - The click event.
    */
-  onClick?: (event: React.MouseEvent<Element, MouseEvent>) => void;
+  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
 
   /**
    * The label of the menu item.
