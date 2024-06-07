@@ -39,7 +39,8 @@ function formatLabels(
   isCollapsed?: boolean,
   hierarchy?: Hierarchy
 ): MenuProps['items'] {
-  return items.flatMap((item) => {
+  return items.flatMap(item => {
+    if (!item) { return [] }
     if (item?.type === ItemTypes.Category && isCollapsed) {
       return formatLabels(item?.children, selectedItem, isCollapsed, hierarchy) || []
     }
@@ -52,9 +53,6 @@ function formatLabels(
       ...item?.type === ItemTypes.Category && {
         label: `${item?.label}`?.toUpperCase(),
         // title: `${item?.title}`?.toUpperCase(),
-      },
-      ...item?.type === ItemTypes.Divider && {
-        type: item?.type,
       },
       ...selectedItem === item?.key && hierarchy === Primary && {
         style: { boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)' },

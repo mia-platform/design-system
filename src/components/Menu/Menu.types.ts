@@ -16,8 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { MenuItemProps, MenuProps } from 'antd'
-
 export const ItemTypes = {
   Category: 'group',
   Divider: 'divider',
@@ -35,22 +33,3 @@ export enum Mode {
   Inline = 'inline',
   Vertical = 'vertical',
 }
-
-/**
- * Represents a menu item, extending the base type {@link MenuItemType}.
- *
- * @see {@link https://ant.design/components/menu#menuitemtype}
- */
-// export type Item = NonNullable<MenuProps['items']>
-// & {
-
-//   /**
-//    * The type of the menu item.
-//    */
-//   type?: ItemType;
-
-//   /**
-//    * An array of child items for nested menus.
-//    */
-//   children?: MenuProps['items'];
-// }
