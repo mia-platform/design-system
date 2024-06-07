@@ -171,6 +171,7 @@ export const Breadcrumb = ({
   const renderItem = useCallback((item: BreadcrumbItemType, index: number, isMenuHidden?: boolean,): ReactElement => {
     return (
       <BreadcrumbItem
+        containerRef={breadcrumbRef}
         icon={getItemIcon(item)}
         index={index}
         isLoading={isLoading}

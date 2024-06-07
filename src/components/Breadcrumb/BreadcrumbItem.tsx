@@ -21,32 +21,17 @@ import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 import { debounce } from 'lodash-es'
 
+import { BreadcrumbItemMenu, BreadcrumbItemMenuItem } from './Breadcrumb.types'
 import { BodyL } from '../Typography/BodyX/BodyL'
 import { BodyS } from '../Typography/BodyX/BodyS'
-import { BreadcrumbItemMenu, BreadcrumbItemMenuItem } from './Breadcrumb.types'
 import { BreadcrumbItemProps } from './Breadcrumb.props'
 import CaretFullDownSvg from './assets/caret-full-down.svg'
 import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-const {
-  breadcrumbItemLabelStyle,
-  breadcrumbItemLabelWrapper,
-  breadcrumbMenuIcon,
-  breadcrumbItemSubmenu,
-  dropdownMenuStyle,
-  breadcrumbItemWrapper,
-  dropdownMenuContainer,
-  dropdownMenuSearch,
-  last,
-  separatorWrapper,
-  withMenu,
-  withLabel,
-  connected,
-} = styles
-
 export const BreadcrumbItem = ({
+  containerRef,
   index,
   getPopupContainer,
   icon,
@@ -116,7 +101,7 @@ export const BreadcrumbItem = ({
 
   const dropdownRender = useCallback((dropdownMenu: ReactNode) => {
     return (
-      <div className={dropdownMenuContainer}>
+      <div className={styles.dropdownMenuContainer}>
         {
           menu?.showSearch && (
             <div className={dropdownMenuSearch}>
@@ -137,7 +122,12 @@ export const BreadcrumbItem = ({
               </div>
             )
             : (
-              <div>No data</div>
+              <div className={styles.noItemsContainer}>
+                <BodyS>
+                  {/* TODO: personalize text */}
+                  No items
+                </BodyS>
+              </div>
             )
         }
       </div>
@@ -167,8 +157,9 @@ export const BreadcrumbItem = ({
     return (
       <Dropdown
         dropdownRender={dropdownRender}
+        getPopupContainer={(trigger) => getPopupContainer?.(trigger) ?? containerRef.current ?? trigger}
         menu={dropdownMenuProps}
-        open={false}
+        open={hasMenu}
         placement={'bottomLeft'}
         trigger={['click']}
       >
@@ -230,14 +221,26 @@ export const BreadcrumbItem = ({
         </div>
       </Dropdown>
     )
-  }, [dropdownMenuProps, dropdownRender, hasLabel, hasMenu, icon, isLastItem, label, menuIcon, onClick])
+  }, [
+    containerRef,
+    dropdownMenuProps,
+    dropdownRender,
+    getPopupContainer,
+    hasLabel,
+    hasMenu,
+    icon,
+    isLastItem,
+    label,
+    menuIcon,
+    onClick,
+  ])
 
   return (
     <>
       {isLoading ? <Skeleton.Button active /> : itemButton}
       {
         hasSeparator && (
-          <div className={separatorWrapper}>
+          <div className={styles.separatorWrapper}>
             <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
           </div>
         )

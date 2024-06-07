@@ -22,7 +22,7 @@ import { BreadcrumbItemType } from './Breadcrumb.types'
  * Represents the props for a breadcrumb item, extending `BreadcrumbItemType`.
  */
 export type BreadcrumbItemProps = BreadcrumbItemType & {
-
+  containerRef: React.RefObject<HTMLDivElement>
   index: number
 
   /**
