@@ -77,7 +77,7 @@ export type MenuProps = {
    *    - type: The type of the divider <br> `"divider"`
    *    - dashed: Indicates whether the divider is dashed <br> `boolean`
    */
-  items: AntdMenuProps['items'],
+  items?: AntdMenuProps['items'],
 
   /**
    * The mode in which sub-menu items are shown. Either:
