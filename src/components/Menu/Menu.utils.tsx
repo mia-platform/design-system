@@ -21,7 +21,6 @@ import { MenuProps } from 'antd'
 import { Hierarchy, ItemTypes } from './Menu.types'
 
 const { Primary } = Hierarchy
-// const { Category, Divider, Group } = ItemType
 
 /**
  * Formats menu items to ensure optimal display.
