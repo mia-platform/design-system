@@ -19,7 +19,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import './style.css'
 import {
   TableRecord,
   WithExternalFiltersAndSorters,
@@ -41,6 +40,7 @@ import {
 } from './Table.mocks'
 import { Size } from './Table.types'
 import { Table } from '.'
+import styles from './Table.module.css'
 
 const meta = {
   component: Table<TableRecord>,
@@ -150,6 +150,6 @@ export const ColumnSpan: Story = {
 export const RowClassName: Story = {
   args: {
     ...meta.args,
-    rowClassName: (_record: unknown, index: number) => (index % 2 === 0 ? 'table-column-warning' : ''),
+    rowClassName: (_record: unknown, index: number) => (index % 2 === 0 ? styles.tableRowWarning : ''),
   },
 }
