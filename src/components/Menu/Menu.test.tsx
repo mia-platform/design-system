@@ -60,7 +60,7 @@ describe('Menu Component', () => {
   })
 
   test('renders skeleton correctly', async() => {
-    const { asFragment } = render(<Menu isLoading={true} />)
+    const { asFragment } = render(<Menu isLoading={true} items={[]} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 

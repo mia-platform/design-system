@@ -47,14 +47,14 @@ function formatLabels(
 
     return {
       ...item,
-      ...item?.type === ItemTypes.Item && {
-        icon: item?.icon && <div>{item?.icon}</div>,
-      },
-      ...item?.type === ItemTypes.Category && {
-        label: `${item?.label}`?.toUpperCase(),
-      },
+      ...(item?.type === ItemTypes.Item || item?.type === ItemTypes.SubMenu || !item?.type)
+        && item?.icon && { icon: <div>{item?.icon}</div> },
       ...selectedItem === item?.key && hierarchy === Primary && {
         style: { boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)' },
+      },
+      ...item?.type === ItemTypes.Category && {
+        label: typeof item?.label === 'string' && item?.label.toUpperCase(),
+        children: formatLabels(item.children, selectedItem, isCollapsed, hierarchy) || [],
       },
       ...item?.type === ItemTypes.SubMenu && {
         key: item?.key,
