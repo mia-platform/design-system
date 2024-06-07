@@ -18,11 +18,10 @@
 
 import { ReactElement, useState } from 'react'
 import { Space } from 'antd'
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 
 import { Action, ColumnAlignment, ColumnFilterMode, ColumnType, ExpandableConfig, Pagination, RowSelection, SortOrder, TableAction } from './Table.types'
 import { Button } from '../Button'
-import { Hierarchy as ButtonHierarchy } from '../Button/Button.types'
 import { Icon } from '../Icon'
 import { Table } from '.'
 import { TableProps } from './Table.props'
@@ -37,6 +36,7 @@ type Callbacks = Record<string, () => void>
 /** Data */
 
 export type TableRecord = {
+  dataIndex?: string,
   field1: string,
   field2: string,
   field3: string,
@@ -244,10 +244,10 @@ export const WithExternalFiltersAndSorters = (props: TableProps<TableRecord>): R
   return (
     <Space direction="vertical" style={{ width: '100%' }} >
       <Space>
-        <Button hierarchy={ButtonHierarchy.Neutral} onClick={filterValue2}>{'Filter Value 2'}</Button>
-        <Button hierarchy={ButtonHierarchy.Neutral} onClick={sortField2Descending}>{'Sort Field 2 Descending'}</Button>
-        <Button hierarchy={ButtonHierarchy.Neutral} onClick={clearFilters}>{'Clear filters'}</Button>
-        <Button hierarchy={ButtonHierarchy.Neutral} onClick={clearSort}>{'Clear sort'}</Button>
+        <Button hierarchy={Button.Hierarchy.Neutral} onClick={filterValue2}>{'Filter Value 2'}</Button>
+        <Button hierarchy={Button.Hierarchy.Neutral} onClick={sortField2Descending}>{'Sort Field 2 Descending'}</Button>
+        <Button hierarchy={Button.Hierarchy.Neutral} onClick={clearFilters}>{'Clear filters'}</Button>
+        <Button hierarchy={Button.Hierarchy.Neutral} onClick={clearSort}>{'Clear sort'}</Button>
       </Space>
       <Table
         {...props}
@@ -260,8 +260,8 @@ export const WithExternalFiltersAndSorters = (props: TableProps<TableRecord>): R
 
           /* Apply filters */
           filtered: true,
-          filteredValue: filteredData.map(record => get(record, column.dataIndex!)),
-          onFilter: (value: unknown, record: TableRecord) => get(record, column.dataIndex!) === value,
+          filteredValue: filteredData.map(record => get(record, `${column.dataIndex}`!)),
+          onFilter: (value: unknown, record: TableRecord) => get(record, `${column.dataIndex}`!) === value,
         }))}
       />
     </Space>

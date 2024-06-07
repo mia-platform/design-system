@@ -96,6 +96,17 @@ export type ModalProps = {
    * Title of the modal, which briefly conveys information about its contents.
    */
   title?: ReactNode,
+
+  /**
+   * Whether to unmount child components on close.
+   */
+  destroyOnClose?: boolean
+
+  /**
+   * Mount node for Modal. It can be a CSS selector, an HTML element, or a function returning an HTML element.
+   * Defaults to `document.body`.
+   */
+  getContainer?: string | HTMLElement | (() => HTMLElement) | false
 }
 
 export type TitleProps = Pick<ModalProps, 'title' | 'docLink'>

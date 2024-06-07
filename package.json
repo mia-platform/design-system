@@ -1,7 +1,7 @@
 {
   "name": "@mia-platform-internal/console-design-system-react",
-  "packageManager": "yarn@3.6.1",
-  "version": "0.2.4",
+  "packageManager": "yarn@4.2.2",
+  "version": "0.4.0",
   "type": "module",
   "main": "dist/cjs/console-design-system-react.cjs",
   "module": "dist/es/console-design-system-react.js",
@@ -17,7 +17,8 @@
     "Davide Bianchi <davide.bianchi@mia-platform.eu>",
     "Federico Maggi <federico.maggi@mia-platform.eu>",
     "Giovanni Tommasi <giovanni.tommasi@mia-platform.eu>",
-    "Riccardo Corona <riccardo.corona@mia-platform.eu>"
+    "Riccardo Corona <riccardo.corona@mia-platform.eu>",
+    "Giovanna Monti <giovanna.monti@mia-platform.eu>"
   ],
   "repository": {
     "type": "git",
@@ -39,15 +40,14 @@
     "check-license": "addlicense -c 'Mia srl' -check -s -ignore src/**/*.ts"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.16",
-    "antd": "^5.9.2",
-    "lodash.get": "^4.4.2",
-    "lodash.isobject": "^3.0.2",
+    "@fontsource/inter": "^5.0.18",
+    "antd": "5.9.2",
+    "lodash-es": "^4.17.21",
     "react-icons": "^4.11.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.0",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
@@ -68,9 +68,9 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
-    "@types/lodash": "^4.14.202",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.19",
+    "@types/lodash-es": "^4.17.12",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
     "@types/traverse": "^0.6.36",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.3.1",
@@ -87,8 +87,8 @@
     "jest-environment-jsdom": "^29.6.2",
     "jest-transformer-svg": "^2.0.2",
     "jest-watch-typeahead": "^2.2.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.1",
     "rollup-plugin-visualizer": "^5.12.0",
     "storybook": "^7.6.17",
     "traverse": "^0.6.8",

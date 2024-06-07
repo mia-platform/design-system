@@ -22,10 +22,11 @@ import { actionButton, children, docLink, extra, subtitle, title } from './Card.
 import { hugeData, rowKey, scroll, scrollableColumns } from '../Table/Table.mocks'
 import { Card } from '.'
 import { Table } from '../Table'
+import { defaults } from './Card'
 
 const meta = {
   component: Card,
-  args: Card.defaultProps,
+  args: defaults,
   argTypes: {
     children: { control: false },
     extra: { control: false },

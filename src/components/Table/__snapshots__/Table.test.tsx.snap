@@ -215,7 +215,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiArrowRight"
                             aria-label="PiArrowRight"
                             color="currentColor"
                             fill="currentColor"
@@ -247,7 +246,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiCircleHalfTilt"
                             aria-label="PiCircleHalfTilt"
                             color="currentColor"
                             fill="currentColor"
@@ -279,7 +277,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiPencilSimpleLine"
                             aria-label="PiPencilSimpleLine"
                             color="currentColor"
                             fill="currentColor"
@@ -311,7 +308,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiTrash"
                             aria-label="PiTrash"
                             color="currentColor"
                             fill="currentColor"
@@ -368,7 +364,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiArrowRight"
                             aria-label="PiArrowRight"
                             color="currentColor"
                             fill="currentColor"
@@ -400,7 +395,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiCircleHalfTilt"
                             aria-label="PiCircleHalfTilt"
                             color="currentColor"
                             fill="currentColor"
@@ -432,7 +426,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiPencilSimpleLine"
                             aria-label="PiPencilSimpleLine"
                             color="currentColor"
                             fill="currentColor"
@@ -464,7 +457,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiTrash"
                             aria-label="PiTrash"
                             color="currentColor"
                             fill="currentColor"
@@ -521,7 +513,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiArrowRight"
                             aria-label="PiArrowRight"
                             color="currentColor"
                             fill="currentColor"
@@ -553,7 +544,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiCircleHalfTilt"
                             aria-label="PiCircleHalfTilt"
                             color="currentColor"
                             fill="currentColor"
@@ -586,7 +576,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiPencilSimpleLine"
                             aria-label="PiPencilSimpleLine"
                             color="currentColor"
                             fill="currentColor"
@@ -618,7 +607,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiTrash"
                             aria-label="PiTrash"
                             color="currentColor"
                             fill="currentColor"
@@ -675,7 +663,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiArrowRight"
                             aria-label="PiArrowRight"
                             color="currentColor"
                             fill="currentColor"
@@ -707,7 +694,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiCircleHalfTilt"
                             aria-label="PiCircleHalfTilt"
                             color="currentColor"
                             fill="currentColor"
@@ -739,7 +725,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiPencilSimpleLine"
                             aria-label="PiPencilSimpleLine"
                             color="currentColor"
                             fill="currentColor"
@@ -771,7 +756,6 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiTrash"
                             aria-label="PiTrash"
                             color="currentColor"
                             fill="currentColor"

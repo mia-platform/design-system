@@ -19,7 +19,7 @@
 .table {
   --table-border: 1px solid;
   --table-border-color: var(--palette-common-grey-100, #f2f2f2);
-  --column-padding: calc(var(--spacing-padding-sm, 8) * 1px);
+  --column-padding: var(--spacing-padding-sm, 8px);
 
   :global(.mia-platform-table-container) {
     border-left: var(--table-border);
@@ -41,7 +41,7 @@
 
 .action {
   /* Removes the button ripple effect by adding a negative margin and hidden overflow */
-  margin: calc(var(--spacing-margin-md, 12) * -1px);
+  margin: calc(var(--spacing-margin-md, 12px) * -1);
   overflow: hidden;
 }
 

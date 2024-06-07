@@ -16,13 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Hierarchy, Mode } from './Menu.types'
 import { category, divider, group, item } from './Menu.mocks'
 import { render, screen, waitFor } from '../../test-utils'
 import { Menu } from '.'
-
-const { Primary } = Hierarchy
-const { Vertical } = Mode
 
 const items = [item, group, divider, category]
 
@@ -47,7 +43,7 @@ describe('Menu Component', () => {
   test('renders vertical menu correctly', async() => {
     global.console.error = (msg) => !msg.toString().includes(warningToSuppress) && originalErr(msg)
 
-    const { asFragment } = render(<Menu items={items} mode={Vertical} />)
+    const { asFragment } = render(<Menu items={items} mode={Menu.Mode.Vertical} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
 
     global.console.error = originalErr
@@ -59,7 +55,7 @@ describe('Menu Component', () => {
   })
 
   test('renders primary menu correctly', async() => {
-    const { asFragment } = render(<Menu hierarchy={Primary} items={items} />)
+    const { asFragment } = render(<Menu hierarchy={Menu.Hierarchy.Primary} items={items} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 

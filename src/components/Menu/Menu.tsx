@@ -17,10 +17,10 @@
  */
 
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
-import { ReactElement, useMemo, useState } from 'react'
+import { ReactElement, useCallback, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
-import { Hierarchy, Mode } from './Menu.types'
+import { Hierarchy, ItemType, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import { MenuProps } from './Menu.props'
 import formatLabels from './Menu.utils'
@@ -31,6 +31,15 @@ const { Default, Primary } = Hierarchy
 const { Inline } = Mode
 const { menu } = styles
 
+export const defaults: Partial<MenuProps> = {
+  defaultOpenKeys: [],
+  hierarchy: Default,
+  items: [],
+  isCollapsed: false,
+  isLoading: false,
+  mode: Inline,
+}
+
 /**
  * UI component for presenting nested lists of elements, organized by group or category
  *
@@ -38,13 +47,13 @@ const { menu } = styles
  * @returns {Menu} Menu component
  */
 export const Menu = ({
-  defaultOpenKeys,
+  defaultOpenKeys = defaults.defaultOpenKeys,
   defaultSelectedKey,
-  hierarchy,
-  items,
-  isCollapsed,
-  isLoading,
-  mode,
+  hierarchy = defaults.hierarchy,
+  items = defaults.items,
+  isCollapsed = defaults.isCollapsed,
+  isLoading = defaults.isLoading,
+  mode = defaults.mode,
   onClick,
   onOpenChange,
   openKeys,
@@ -54,17 +63,19 @@ export const Menu = ({
 
   const theme = useTheme()
   const menuTheme = isPrimary ? primaryTheme(theme) : defaultTheme(theme)
-
-  const menuClassNames = useMemo(() => classNames([
-    menu,
-    isPrimary && 'primary',
-  ]), [isPrimary])
-
   const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
 
-  const formattedItems = useMemo(() => (
-    formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
-  ), [items, selectedKey, selectedItem, isCollapsed, hierarchy])
+  const menuClassNames = useMemo(() => classNames([menu, isPrimary && 'primary']), [isPrimary])
+
+  const onSelect = useCallback(({ key }: {key: string}) => setSelectedItem(key), [])
+
+  const getPopupContainer = useCallback((targetNode: HTMLElement) => {
+    const element = document.querySelector(`.${menu}`)?.parentElement
+    if (!element) { return targetNode }
+    return element
+  }, [])
+
+  const formattedItems = formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
 
   return (
     <ConfigProvider theme={{ components: { Menu: menuTheme } }}>
@@ -78,7 +89,7 @@ export const Menu = ({
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
           // getPopupContainer is needed for nested menus to inherit CSS properties in the vertical mode
-          getPopupContainer={() => document.querySelector(`.${menu}`)!}
+          getPopupContainer={getPopupContainer}
           inlineCollapsed={isCollapsed}
           inlineIndent={0}
           items={formattedItems}
@@ -89,7 +100,7 @@ export const Menu = ({
           selectedKeys={(selectedKey && [selectedKey]) || (selectedItem && [selectedItem]) || undefined}
           onClick={onClick}
           onOpenChange={onOpenChange}
-          onSelect={({ key }) => setSelectedItem(key)}
+          onSelect={onSelect}
         />
       </Skeleton>
     </ConfigProvider>
@@ -101,11 +112,6 @@ Menu.skeletonParagraph = {
   width: ['30%', '80%', '65%', '30%', '70%', '60%'],
 }
 
-Menu.defaultProps = {
-  defaultOpenKeys: [],
-  hierarchy: Default,
-  isCollapsed: false,
-  isLoading: false,
-  items: [],
-  mode: Inline,
-}
+Menu.ItemType = ItemType
+Menu.Hierarchy = Hierarchy
+Menu.Mode = Mode

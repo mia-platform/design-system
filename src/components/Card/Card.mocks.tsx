@@ -18,13 +18,8 @@
 
 import { action } from '@storybook/addon-actions'
 
-import { Hierarchy, Shape, Type } from '../Button/Button.types'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
-
-const { Danger } = Hierarchy
-const { Circle } = Shape
-const { Outlined } = Type
 
 const actionIcon = (
   <Icon
@@ -35,10 +30,10 @@ const actionIcon = (
 )
 export const actionButton = (
   <Button
-    hierarchy={Danger}
+    hierarchy={Button.Hierarchy.Danger}
     icon={actionIcon}
-    shape={Circle}
-    type={Outlined}
+    shape={Button.Shape.Circle}
+    type={Button.Type.Outlined}
     onClick={action('click')}
   />
 )

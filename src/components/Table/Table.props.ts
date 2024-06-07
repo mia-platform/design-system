@@ -185,16 +185,18 @@ export type TableProps<RecordType extends GenericRecord> = {
    *
    * @param record - The data record for the row.
    * @param index - The index of the row.
+   * @param event - The React mouse event.
    */
-  onEditRow?: (record: RecordType, index?: number) => void,
+  onEditRow?: (record: RecordType, index: number | undefined, event: React.MouseEvent<Element, MouseEvent>) => void,
 
   /**
    * Callback function for deleting each table row.
    *
    * @param record - The data record for the row.
    * @param index - The index of the row.
+   * @param event - The React mouse event.
    */
-  onDeleteRow?: (record: RecordType, index?: number) => void,
+  onDeleteRow?: (record: RecordType, index: number | undefined, event: React.MouseEvent<Element, MouseEvent>) => void,
 
   /**
    * Configuration for table pagination (disable it with `false`).

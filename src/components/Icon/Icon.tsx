@@ -22,6 +22,10 @@ import { IconContext } from 'react-icons'
 import { IconProps, customIcons, reactIcons } from './Icon.props'
 import log from '../../utils/log'
 
+export const defaults = {
+  size: 24 as const,
+}
+
 /**
  * UI component for displaying different icon packs (Ant, Feather, Phosphor) and custom SVGs
  *
@@ -30,7 +34,7 @@ import log from '../../utils/log'
  */
 export const Icon = ({
   name,
-  size,
+  size = defaults.size,
   color,
 }: IconProps): ReactElement | null => {
   const { color: defaultColor, size: defaultSize, className } = useContext(IconContext)
@@ -46,7 +50,6 @@ export const Icon = ({
 
   return (
     <IconComponent
-      alt={name}
       aria-label={name}
       className={className}
       color={color ?? defaultColor}
@@ -56,8 +59,4 @@ export const Icon = ({
       width={size ?? defaultSize}
     />
   )
-}
-
-Icon.defaultProps = {
-  size: 24 as const,
 }

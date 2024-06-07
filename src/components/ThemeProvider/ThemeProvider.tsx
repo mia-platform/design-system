@@ -40,7 +40,10 @@ export const ThemeContext = createContext(defaultTheme)
  *
  * @TODO check children wrapper div style does not clash with other divs (e.g. not full height or width)
  */
-export const ThemeProvider = ({ theme, children }: ThemeProviderProps): ReactElement => {
+export const ThemeProvider = ({
+  theme = defaultTheme,
+  children,
+}: ThemeProviderProps): ReactElement => {
   const style = useMemo(() => ({ ...themeDefaultStyle(theme), ...themeToVariables(theme) }), [theme])
 
   return (
@@ -54,9 +57,4 @@ export const ThemeProvider = ({ theme, children }: ThemeProviderProps): ReactEle
       </AntThemeProvider>
     </ThemeContext.Provider>
   )
-}
-
-ThemeProvider.defaultProps = {
-  children: undefined,
-  theme: defaultTheme,
 }

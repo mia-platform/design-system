@@ -219,7 +219,6 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
                       type="button"
                     >
                       <svg
-                        alt="PiBookOpen"
                         aria-label="PiBookOpen"
                         color="#005dc9"
                         fill="currentColor"
@@ -358,7 +357,6 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                       type="button"
                     >
                       <svg
-                        alt="PiBookOpen"
                         aria-label="PiBookOpen"
                         color="#005dc9"
                         fill="currentColor"
@@ -535,7 +533,6 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                       type="button"
                     >
                       <svg
-                        alt="PiBookOpen"
                         aria-label="PiBookOpen"
                         color="#005dc9"
                         fill="currentColor"
@@ -578,7 +575,6 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                       class="asideLabel"
                     >
                       <svg
-                        alt="PiCaretLeft"
                         aria-label="PiCaretLeft"
                         color="currentColor"
                         fill="currentColor"
@@ -743,7 +739,6 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                       type="button"
                     >
                       <svg
-                        alt="PiBookOpen"
                         aria-label="PiBookOpen"
                         color="#005dc9"
                         fill="currentColor"
@@ -787,7 +782,6 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                     >
                       Close
                       <svg
-                        alt="PiCaretRight"
                         aria-label="PiCaretRight"
                         color="currentColor"
                         fill="currentColor"
@@ -1053,7 +1047,6 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                       type="button"
                     >
                       <svg
-                        alt="PiBookOpen"
                         aria-label="PiBookOpen"
                         color="#005dc9"
                         fill="currentColor"
@@ -1310,7 +1303,6 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                       type="button"
                     >
                       <svg
-                        alt="PiBookOpen"
                         aria-label="PiBookOpen"
                         color="#005dc9"
                         fill="currentColor"

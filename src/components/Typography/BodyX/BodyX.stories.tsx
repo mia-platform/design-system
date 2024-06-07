@@ -18,12 +18,9 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { BodyX, defaults } from './BodyX'
 import { customCopyable, customEllipsis, displayAll, fontUrl, loremIpsum } from '../Typography.mocks'
-import { BodyX } from './BodyX'
-import { Size } from './BodyX.types'
 import { Typography } from '..'
-
-const { S } = Size
 
 const bodySLongText = ['BodyS', loremIpsum].join(' | ')
 const bodyMLongText = ['BodyM', loremIpsum].join(' | ')
@@ -46,7 +43,7 @@ const meta = {
     design: { type: 'iframe', name: 'Font Definition', url: fontUrl },
   },
   args: {
-    ...BodyX.defaultProps,
+    ...defaults,
     children: 'Text',
   },
   argTypes: {
@@ -61,7 +58,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const BodyXComponent: Story = {
-  args: { ...meta.args, size: S },
+  args: { ...meta.args, size: BodyX.Size.S },
   argTypes: {
     isBold: { table: { disable: false } },
     size: { table: { disable: false } },

@@ -16,13 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Hierarchy, OptionAlignment } from './SegmentedControl.types'
 import { fireEvent, render, screen } from '../../test-utils'
 import { labeledOptions, stringOptions } from './SegmentedControl.mocks'
 import { SegmentedControl } from '.'
-
-const { Primary } = Hierarchy
-const { Vertical } = OptionAlignment
 
 describe('Segmented Control Component', () => {
   beforeEach(() => {
@@ -58,7 +54,7 @@ describe('Segmented Control Component', () => {
     })
 
     test('renders primary options correctly', () => {
-      const { asFragment } = render(<SegmentedControl {...props} hierarchy={Primary} />)
+      const { asFragment } = render(<SegmentedControl {...props} hierarchy={SegmentedControl.Hierarchy.Primary} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -75,7 +71,12 @@ describe('Segmented Control Component', () => {
     })
 
     test('renders vertical options correctly', () => {
-      const { asFragment } = render(<SegmentedControl {...props} optionsAlignment={Vertical} />)
+      const { asFragment } = render(
+        <SegmentedControl
+          {...props}
+          optionsAlignment={SegmentedControl.OptionAlignment.Vertical}
+        />
+      )
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -168,7 +169,7 @@ describe('Segmented Control Component', () => {
     })
 
     test('renders primary options correctly', () => {
-      const { asFragment } = render(<SegmentedControl {...props} hierarchy={Primary} />)
+      const { asFragment } = render(<SegmentedControl {...props} hierarchy={SegmentedControl.Hierarchy.Primary} />)
 
       expect(screen.getByRole('list')).toBeVisible()
 
@@ -185,7 +186,12 @@ describe('Segmented Control Component', () => {
     })
 
     test('renders vertical options correctly', () => {
-      const { asFragment } = render(<SegmentedControl {...props} optionsAlignment={Vertical} />)
+      const { asFragment } = render(
+        <SegmentedControl
+          {...props}
+          optionsAlignment={SegmentedControl.OptionAlignment.Vertical}
+        />
+      )
 
       expect(screen.getByRole('list')).toBeVisible()
 

@@ -20,10 +20,10 @@ node_modules
 package-lock.json
 
 # Yarn
-.yarn
-.yarn-integrity
-!.yarn/cache/*
+.yarn/*
 !.yarn/patches
+!.yarn/plugins
+!.yarn/releases
 !.yarn/sdks
 !.yarn/versions
 
@@ -75,7 +75,7 @@ build
 dist
 dist-ssr
 
-# Eslint 
+# Eslint
 .eslintcache
 
 # Storybook

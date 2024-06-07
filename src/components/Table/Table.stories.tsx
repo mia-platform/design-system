@@ -38,14 +38,14 @@ import {
   sizedColumns,
   spannedColumns,
 } from './Table.mocks'
-import { Size } from './Table.types'
 import { Table } from '.'
+import { defaults } from './Table'
 import styles from './Table.module.css'
 
 const meta = {
   component: Table<TableRecord>,
   args: {
-    ...Table.defaultProps,
+    ...defaults,
     columns,
     data,
     rowKey,
@@ -61,11 +61,11 @@ export const Default: Story = {
 }
 
 export const Small: Story = {
-  args: { ...meta.args, size: Size.Small },
+  args: { ...meta.args, size: Table.Size.Small },
 }
 
 export const Large: Story = {
-  args: { ...meta.args, size: Size.Large },
+  args: { ...meta.args, size: Table.Size.Large },
 }
 
 export const Loading: Story = {

@@ -16,16 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 import { fireEvent, render, screen } from '../../test-utils'
 import { Button } from '.'
 import { Icon } from '../Icon'
-
-const { Neutral, Danger } = Hierarchy
-const { Right } = IconPosition
-const { Circle } = Shape
-const { Small, Large } = Size
-const { Outlined, Ghost } = Type
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 
@@ -40,37 +33,37 @@ describe('Button Component', () => {
   })
 
   test('renders primary outline button correctly', () => {
-    const { asFragment } = render(<Button type={Outlined}>{'Button'}</Button>)
+    const { asFragment } = render(<Button type={Button.Type.Outlined}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders primary ghost button correctly', () => {
-    const { asFragment } = render(<Button type={Ghost}>{'Button'}</Button>)
+    const { asFragment } = render(<Button type={Button.Type.Ghost}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders neutral outline button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Neutral} type={Outlined}>{'Button'}</Button>)
+    const { asFragment } = render(<Button hierarchy={Button.Hierarchy.Neutral} type={Button.Type.Outlined}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders neutral ghost button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Neutral} type={Ghost}>{'Button'}</Button>)
+    const { asFragment } = render(<Button hierarchy={Button.Hierarchy.Neutral} type={Button.Type.Ghost}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders danger filled button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Danger}>{'Button'}</Button>)
+    const { asFragment } = render(<Button hierarchy={Button.Hierarchy.Danger}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders danger outline button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Danger} type={Outlined}>{'Button'}</Button>)
+    const { asFragment } = render(<Button hierarchy={Button.Hierarchy.Danger} type={Button.Type.Outlined}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders danger ghost button correctly', () => {
-    const { asFragment } = render(<Button hierarchy={Danger} type={Ghost}>{'Button'}</Button>)
+    const { asFragment } = render(<Button hierarchy={Button.Hierarchy.Danger} type={Button.Type.Ghost}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -80,12 +73,12 @@ describe('Button Component', () => {
   })
 
   test('renders circle button correctly', () => {
-    const { asFragment } = render(<Button icon={icon} shape={Circle} />)
+    const { asFragment } = render(<Button icon={icon} shape={Button.Shape.Circle} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders small button correctly', () => {
-    const { asFragment } = render(<Button size={Small}>{'Button'}</Button>)
+    const { asFragment } = render(<Button size={Button.Size.Small}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -95,7 +88,7 @@ describe('Button Component', () => {
   })
 
   test('renders large button correctly', () => {
-    const { asFragment } = render(<Button size={Large}>{'Button'}</Button>)
+    const { asFragment } = render(<Button size={Button.Size.Large}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -118,12 +111,27 @@ describe('Button Component', () => {
   })
 
   test('renders button with icon right correctly', () => {
-    const { asFragment } = render(<Button icon={icon} iconPosition={Right}>{'Button'}</Button>)
+    const { asFragment } = render(<Button icon={icon} iconPosition={Button.IconPosition.Right}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders button with href correctly', () => {
     const { asFragment } = render(<Button href="https://mia-platform.eu">{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders primary filled button correctly with form ref and htmlType', () => {
+    const { asFragment } = render(<Button form="some-form" htmlType={Button.HTMLType.Submit}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders primary outline button correctly with form ref and no htmlType', () => {
+    const { asFragment } = render(<Button form="some-form" type={Button.Type.Outlined}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders primary outline button correctly with form ref and reset htmlType', () => {
+    const { asFragment } = render(<Button form="some-form" htmlType={Button.HTMLType.Reset} type={Button.Type.Outlined}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 
