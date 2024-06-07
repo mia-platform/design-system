@@ -32,16 +32,15 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     items: [
-      { onClick: action('click'), label: 'Text 1', icon: breadcrumbIcon },
-      {
-        onClick: action('click'),
-        label: 'Text 2',
-        icon: breadcrumbIcon,
-        menu: {
-          items: [],
-        },
-      },
-      { onClick: action('click'), label: 'Text 3', icon: breadcrumbIcon },
+      // { onClick: action('click') },
+      // { onClick: action('click'), label: 'Text' },
+      // { onClick: action('click'), icon: breadcrumbIcon },
+      // { onClick: action('click'), menu: { items: [] } },
+      { onClick: action('click'), label: 'Text', icon: breadcrumbIcon },
+      { onClick: action('click'), label: 'Text', menu: { items: [] } },
+      { onClick: action('click'), icon: breadcrumbIcon, menu: { items: [] } },
+      { onClick: action('click'), label: 'Text', icon: breadcrumbIcon, menu: { items: [] } },
+      { onClick: action('click'), label: 'Text' },
     ],
   },
 }

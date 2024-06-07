@@ -37,11 +37,13 @@ const {
   breadcrumbItemSubmenu,
   dropdownMenuStyle,
   breadcrumbItemWrapper,
-  caretOnly,
   dropdownMenuContainer,
   dropdownMenuSearch,
   last,
   separatorWrapper,
+  withMenu,
+  withLabel,
+  connected,
 } = styles
 
 export const BreadcrumbItem = ({
@@ -64,26 +66,31 @@ export const BreadcrumbItem = ({
 
   const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
   const hasLabel = useMemo(() => icon || label, [icon, label])
+  const hasMenu = useMemo(() => menu?.items, [menu?.items])
 
   const menuIcon = useMemo(() => <CaretFullDownSvg />, [])
 
-  const breadcrumbItemLabel = useMemo(() => (
-    <div
-      className={classNames([breadcrumbItemLabelWrapper, isLastItem && last])}
-      onClick={onClick}
-    >
-      {icon}
-      {
-        label && (
-          <div className={breadcrumbItemLabelStyle}>
-            <BodyL ellipsis={{ rows: 1, tooltip: label }}>
-              {label}
-            </BodyL>
-          </div>
-        )
-      }
-    </div>
-  ), [icon, isLastItem, label, onClick])
+  const breadcrumbItemLabel = useMemo(() => {
+    if (!hasLabel && hasMenu) { return }
+
+    return (
+      <div
+        className={classNames([breadcrumbItemLabelWrapper, isLastItem && last, hasMenu && withMenu])}
+        onClick={onClick}
+      >
+        {icon}
+        {
+          label && (
+            <div className={breadcrumbItemLabelStyle}>
+              <BodyL ellipsis={{ rows: 1, tooltip: label }}>
+                {label}
+              </BodyL>
+            </div>
+          )
+        }
+      </div>
+    )
+  }, [hasLabel, hasMenu, icon, isLastItem, label, onClick])
 
   const itemMenu = useMemo<MenuProps>(() => {
     const items = Object.values(menu?.items ?? {})
@@ -141,12 +148,12 @@ export const BreadcrumbItem = ({
   ), [handleChange, menu])
 
   const breadcrumbItemMenu = useMemo(() => {
-    if (!menu) { return }
+    if (!hasMenu) { return }
 
     if (isMenuHidden) {
       return (
         <div
-          className={classNames([breadcrumbMenuIcon, !hasLabel && caretOnly])}
+          className={classNames([breadcrumbMenuIcon, hasLabel && withLabel])}
         >
           {menuIcon}
         </div>
@@ -171,12 +178,12 @@ export const BreadcrumbItem = ({
       //     }
       //   }}
       // >
-      <div className={classNames([breadcrumbMenuIcon, !hasLabel && caretOnly])} >
+      <div className={classNames([breadcrumbMenuIcon, hasLabel && withLabel])} >
         {menuIcon}
       </div>
       // </Dropdown>
     )
-  }, [isMenuHidden, menu, hasLabel, menuIcon])
+  }, [hasMenu, isMenuHidden, hasLabel, menuIcon])
 
   return (
     <>
@@ -184,7 +191,7 @@ export const BreadcrumbItem = ({
         isLoading
           ? <Skeleton.Button active />
           : (
-            <div className={breadcrumbItemWrapper}>
+            <div className={classNames([breadcrumbItemWrapper])}>
               {breadcrumbItemLabel}
               {breadcrumbItemMenu}
             </div>

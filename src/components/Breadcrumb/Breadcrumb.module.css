@@ -34,7 +34,79 @@
   justify-content: flex-start;
   align-items: center;
   gap: var(--spacing-gap-xs, 4px);
+
+  & .breadcrumbItemWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--shape-size-xl, 32px);
+    gap: 1px;
+
+    & .breadcrumbItemLabelWrapper {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-gap-xs, 4px);
+      background-color: var(--item-bg);
+      padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
+      border-radius: var(--shape-border-radius-md, 4px);
+      transition: background-color 0.25s ease-in-out;
+      cursor: pointer;
+      height: 100%;
+      box-sizing: border-box;
+      min-width: var(--shape-size-xl, 32px);
+
+      &:hover {
+        background-color: var(--item-bg-hover);
+      }
+
+      &:active {
+        background-color: var(--item-bg-active);
+      }
+
+      &.last {
+        font-weight: var(--typography-bodyLBold-fontWeight, 600);
+      }
+
+      &.withMenu {
+        border-radius: var(--shape-border-radius-md, 4px) 0 0 var(--shape-border-radius-md, 4px);
+      }
+
+      & .breadcrumbItemLabelStyle {
+        max-width: 250px;
+      }
+    }
+
+    & .breadcrumbMenuIcon {
+      display: flex;
+      align-items: center;
+      background-color: var(--item-bg);
+      padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xs, 4px);
+      border-radius: var(--shape-border-radius-md, 4px);
+      transition: background-color 0.25s ease-in-out;
+      cursor: pointer;
+      height: 100%;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: var(--item-bg-hover);
+      }
+
+      &:active {
+        background-color: var(--item-bg-active);
+      }
+
+      &.withLabel {
+        border-radius: 0 var(--shape-border-radius-md, 4px) var(--shape-border-radius-md, 4px) 0;
+      }
+    }
+  }
+
+  & .separatorWrapper {
+    width: (var(--shape-size-md, 16px));
+    height: (var(--shape-size-md, 16px));
+  }
 }
+
 
 .breadcrumbItemSubmenu {
   width: 200px;
@@ -48,69 +120,6 @@
   gap: var(--spacing-gap-xs, 4px);
   height: var(--shape-size-xl, 32px);
   width: 100%;
-}
-
-.breadcrumbItemWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: var(--shape-size-xl, 32px);
-  gap: 1px;
-}
-
-.breadcrumbItemLabelWrapper {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-gap-xs, 4px);
-  background-color: var(--item-bg);
-  padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
-  border-radius: var(--shape-border-radius-md, 4px);
-  transition: background-color 0.25s ease-in-out;
-  cursor: pointer;
-  height: 100%;
-  box-sizing: border-box;
-  min-width: var(--shape-size-xl, 32px);
-}
-
-.breadcrumbItemLabelWrapper.last {
-  font-weight: var(--typography-bodyLBold-fontWeight, 600);
-}
-
-.breadcrumbItemLabelWrapper:hover {
-  background-color: var(--item-bg-hover);
-}
-
-.breadcrumbItemLabelWrapper:active {
-  background-color: var(--item-bg-active);
-}
-
-.breadcrumbItemLabelStyle {
-  max-width: 250px;
-}
-
-.breadcrumbMenuIcon {
-  display: flex;
-  align-items: center;
-  background-color: var(--item-bg);
-  padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xs, 4px);
-  border-radius: var(--shape-border-radius-md, 4px);
-  transition: background-color 0.25s ease-in-out;
-  cursor: pointer;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.breadcrumbMenuIcon.caretOnly {
-  border-bottom-left-radius: var(--shape-border-radius-md, 4px);
-  border-top-left-radius: var(--shape-border-radius-md, 4px);
-}
-
-.breadcrumbMenuIcon:hover {
-  background-color: var(--item-bg-hover);
-}
-
-.breadcrumbMenuIcon:active {
-  background-color: var(--item-bg-active);
 }
 
 .dropdownMenuContainer {
@@ -133,9 +142,4 @@
   display: flex;
   justify-content: center;
   padding: var(--shape-size-2xs, 2px);
-}
-
-.separatorWrapper {
-  width: (var(--shape-size-md, 16px));
-  height: (var(--shape-size-md, 16px));
 }
