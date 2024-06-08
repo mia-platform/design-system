@@ -15,15 +15,16 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
+
 import { Dropdown, DropdownProps, Input, MenuProps, Skeleton } from 'antd'
-import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
+import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
 import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 import { debounce } from 'lodash-es'
 
-import { BreadcrumbItemMenu, BreadcrumbItemMenuItem } from './Breadcrumb.types'
 import { BodyL } from '../Typography/BodyX/BodyL'
 import { BodyS } from '../Typography/BodyX/BodyS'
+import { BreadcrumbItemMenuItem } from './Breadcrumb.types'
 import { BreadcrumbItemProps } from './Breadcrumb.props'
 import CaretFullDownSvg from './assets/caret-full-down.svg'
 import { Icon } from '../Icon'
@@ -63,7 +64,6 @@ export const BreadcrumbItem = ({
   const dropdownMenuProps = useMemo<MenuProps>(() => {
     const items = filteredMenuItems.map<ItemType>((itemData, currentIndex) => {
       return {
-        onClick: ({ domEvent }) => itemData.onClick?.(domEvent),
         key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
         icon: itemData?.icon,
         label: (
@@ -74,30 +74,33 @@ export const BreadcrumbItem = ({
       }
     })
 
-    return { items, selectedKeys: menu?.activeKey ? [menu.activeKey] : [] }
-  }, [filteredMenuItems, menu])
-
-  const handleChange = useCallback((
-    breadcrumbItemMenu: BreadcrumbItemMenu, event: ChangeEvent<HTMLInputElement>
-  ) => {
-    if (breadcrumbItemMenu?.onChangeSearch) {
-      breadcrumbItemMenu.onChangeSearch(event)
-    } else {
-      setSearchValue(event.target.value)
+    return {
+      items,
+      onClick: ({ key, domEvent }) => menu?.onClick?.(key, domEvent),
+      // TODO: implement controlled selectedKeys
+      selectedKeys: menu?.activeKey ? [menu.activeKey] : [],
     }
-  }, [])
+  }, [filteredMenuItems, menu])
 
   const dropdownRender = useCallback((dropdownMenu: ReactNode) => {
     return (
       <div className={styles.dropdownMenuContainer}>
         {
           menu?.showSearch && (
-            <div className={dropdownMenuSearch}>
-              <Input.Search
-                allowClear={menu?.searchAllowClear ?? true}
+            <div className={styles.dropdownMenuSearch}>
+              <Input
+                allowClear={menu?.searchAllowClear !== undefined ? menu.searchAllowClear : true}
                 autoFocus
-                placeholder={menu?.searchPlaceholder ?? ''}
-                onChange={debounce((event) => handleChange(menu, event), 150)}
+                placeholder={menu?.searchPlaceholder ?? 'Search...'}
+                // @ts-expect-error size 12 is not accepted by Icon component but supported by underling SVG
+                suffix={<Icon name="PiMagnifyingGlass" size={12} />}
+                onChange={(event) => {
+                  if (menu?.onChangeSearch) {
+                    menu.onChangeSearch(event)
+                  } else {
+                    debounce(() => setSearchValue(event.target.value), 500)()
+                  }
+                }}
               />
             </div>
           )
@@ -120,8 +123,7 @@ export const BreadcrumbItem = ({
         }
       </div>
     )
-  }, [filteredMenuItems, handleChange, menu])
-
+  }, [filteredMenuItems, menu])
 
   const itemButton = useMemo(() => {
     if (!hasLabel && !hasMenu) {

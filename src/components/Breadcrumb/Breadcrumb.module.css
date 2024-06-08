@@ -188,6 +188,22 @@
     }
   }
 
+  & .dropdownMenuSearch {
+    display: flex;
+    justify-content: center;
+
+    & :global(.mia-platform-input-affix-wrapper) {
+      &:hover {
+        border: 1px solid var(--palette-action-primary-hover, #1890FF);
+      }
+
+      &:global(.mia-platform-input-affix-wrapper-focused) {
+        border: 1px solid var(--palette-action-primary-active, #005dc9);
+        box-shadow: 0px 0px 0px 2px #005DC940;
+      }
+    }
+  }
+
   & .dropdownMenu {
     & > ul {
       border-radius: 0;
@@ -196,6 +212,7 @@
 
       & > li {
         padding: var(--spacing-padding-sm, 8px) !important;
+        gap: var(--spacing-gap-sm, 8px)
       }
     }
   }
@@ -214,10 +231,4 @@
   gap: var(--spacing-gap-xs, 4px);
   height: var(--shape-size-xl, 32px);
   width: 100%;
-}
-
-.dropdownMenuSearch {
-  display: flex;
-  justify-content: center;
-  padding: var(--shape-size-2xs, 2px);
 }

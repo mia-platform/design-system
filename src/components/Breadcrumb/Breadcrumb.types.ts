@@ -34,25 +34,10 @@ export type BreadcrumbItemMenuItem = {
   key?: string;
 
   /**
-   * Callback function to handle click events on the menu item.
-   *
-   * @param event - The click event.
-   */
-  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
-
-  /**
    * The label of the menu item.
    */
   label: string;
 }
-
-/**
- * Callback type for handling search operations.
- *
- * @param value - The search input value.
- * @param event - Optional event that triggered the search.
- * @param info - Additional information about the search source.
- */
 
 /**
  * Represents a menu within a breadcrumb item.
@@ -75,6 +60,14 @@ export type BreadcrumbItemMenu = {
    * @param open - Indicates whether the dropdown is open.
    */
   onDropdownVisibleChange?: (open: boolean) => void;
+
+  /**
+  * Callback function to handle click events on menu items.
+  *
+  * @param key - The key of the clicked item.
+  * @param event - The click event.
+  */
+  onClick?: (key: string, event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
 
   /**
    * Callback function to handle search operations.

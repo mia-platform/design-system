@@ -53,11 +53,12 @@ export const Default: Story = {
         label: 'Text',
         icon: breadcrumbIcon,
         menu: {
-          activeKey: '1',
           items: [
-            { label: 'Text 1', key: '1', onClick: action('click 1') },
-            { label: 'Text 2', key: '2', onClick: action('click 2') },
+            { label: 'Text 1', icon: breadcrumbIcon, key: '1' },
+            { label: 'Text 2', key: '2' },
           ],
+          onClick: action('menu item click'),
+          showSearch: true,
         },
       },
       { onClick: action('click'), label: 'Text' },
