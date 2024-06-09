@@ -25,7 +25,7 @@
 }
 
 .breadcrumb {
-  /* TODO: this CSS variables are missing in DS */
+  /* TODO: these CSS variables are missing in DS */
   --item-bg: var(--palette-background-neutral, #89898914);
   --item-bg-hover: var(--palette-action-alternate-secondary-hover, #8989891F);
   --item-bg-active: var(--palette-action-alternate-secondary-selected, #8989893D);
@@ -166,7 +166,8 @@
 
 .dropdownMenuContainer {
   width: 300px;
-  max-height: 300px;
+  max-height: 224px;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-gap-xs, 4px);
@@ -212,7 +213,11 @@
 
       & > li {
         padding: var(--spacing-padding-sm, 8px) !important;
-        gap: var(--spacing-gap-sm, 8px)
+        gap: var(--spacing-gap-sm, 8px);
+
+        & > :global(.mia-platform-dropdown-menu-title-content) {
+          width: 100%;
+        }
       }
     }
   }

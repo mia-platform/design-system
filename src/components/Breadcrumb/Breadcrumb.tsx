@@ -30,24 +30,7 @@ const COLLAPSED_ITEM_WIDTH = 46
 const SEPARATOR_WIDTH = 16
 const SEPARATOR_ITEM_WITH_PADDING = SEPARATOR_WIDTH + 4
 
-function getItemLabel(item: BreadcrumbItemType): ReactNode {
-  if (item?.menu?.activeKey) {
-    return Object
-      .values(item?.menu?.items ?? {})
-      .find(({ key }) => key === item?.menu?.activeKey)
-      ?.label
-  }
-
-  return item?.label
-}
-
-function getItemIcon(item: BreadcrumbItemType): ReactNode {
-  return (
-    item?.menu?.activeKey
-    && Object.values(item?.menu?.items ?? {}).find(({ key }) => key === item?.menu?.activeKey)?.icon
-  )
-  ?? item?.icon
-}
+// TODO: implement overflow logic
 
 /**
  * UI component for displaying the current location within an hierarchy

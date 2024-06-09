@@ -63,14 +63,14 @@ export type SearchOptions = {
 export type BreadcrumbItemMenu = {
 
   /**
-   * The key of the currently active menu item.
-   */
-  activeKey?: string;
-
-  /**
    * List of menu items in the breadcrumb.
    */
   items?: BreadcrumbItemMenuItem[];
+
+  /**
+   * The key of the currently active menu item.
+   */
+  activeKey?: string;
 
   /**
   * Callback function to handle click events on menu items.

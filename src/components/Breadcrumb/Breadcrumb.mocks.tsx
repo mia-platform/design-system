@@ -35,347 +35,107 @@ export const withoutMenuProps: BreadcrumbProps = {
   ],
 }
 
-// export const oneItemIconAndTitleProps: BreadcrumbProps = {
-//   items: [{
-//     icon: breadcrumbIcon,
-//     onClick: action('click'),
-//     label: breadcrumbLabel,
-//   }],
-// }
+export const withMenuProps: BreadcrumbProps = {
+  items: [
+    {
+      onClick: action('click'),
+      icon: breadcrumbIcon,
+      label: 'Clickable button',
+      menu: {
+        items: [
+          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
+          { key: 'sibling-2', label: 'Sibling 2' },
+          { key: 'sibling-3', label: 'Sibling 3 with a very long text that should be ellipsed at some point' },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+      },
+    },
+    {
+      icon: breadcrumbIcon,
+      label: 'Not clickable button',
+      menu: {
+        items: [
+          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
+          { key: 'sibling-2', label: 'Sibling 2' },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+      },
+    },
+    {
+      label: 'With search',
+      menu: {
+        items: [
+          { key: 'orders', label: 'Orders', icon: breadcrumbIcon },
+          { key: 'shipping', label: 'Shipping', icon: breadcrumbIcon },
+          { key: 'refunds', label: 'Refunds', icon: breadcrumbIcon },
+          { key: 'packaging', label: 'Packaging', icon: breadcrumbIcon },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+        search: { allowClear: true },
+      },
+    },
+    {
+      menu: {
+        activeKey: 'sibling-1',
+        items: [
+          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
+          { key: 'sibling-2', label: 'Sibling 2' },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+      },
+    },
+  ],
+}
 
-// export const twoItemsProps: BreadcrumbProps = {
-//   items: [
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       label: 'first',
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       label: 'second',
-//     },
-//   ],
-// }
+export const uncontrolledProps: BreadcrumbProps = {
+  items: [
+    {
+      label: 'Fallback label',
+      menu: {
+        items: [
+          { key: 'orders', label: 'Orders', icon: breadcrumbIcon },
+          { key: 'shipping', label: 'Shipping', icon: breadcrumbIcon },
+          { key: 'refunds', label: 'Refunds', icon: breadcrumbIcon },
+          { key: 'packaging', label: 'Packaging', icon: breadcrumbIcon },
+        ],
+        search: true,
+      },
+    },
+  ],
+}
 
-// export const multipleItemsProps: BreadcrumbProps = {
-//   items: [
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       label: 'first',
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       label: 'second',
-//     },
-//     {
-//       label: 'third',
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       label: 'fourth',
-//     },
-//   ],
-// }
+export const controlledProps: BreadcrumbProps = {
+  items: [
+    {
+      label: 'Fallback label',
+      menu: {
+        activeKey: 'orders',
+        items: [
+          { key: 'orders', label: 'Orders', icon: breadcrumbIcon },
+          { key: 'shipping', label: 'Shipping', icon: breadcrumbIcon },
+          { key: 'refunds', label: 'Refunds', icon: breadcrumbIcon },
+          { key: 'packaging', label: 'Packaging', icon: breadcrumbIcon },
+        ],
+        onClick: action('click'),
+        open: true,
+        onDropdownVisibleChange: action('dropdown open'),
+        search: {
+          onChange: action('search'),
+        },
+      },
+    },
+  ],
+}
 
-// export const multipleItemsLoadingProps: BreadcrumbProps = {
-//   ...multipleItemsProps,
-//   isLoading: true,
-// }
-
-// export const multipleItemsWithMenuProps: BreadcrumbProps = {
-//   items: [
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       menu: {
-//         items: [{
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'first nested',
-//         }],
-//       },
-//       label: 'first',
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       menu: {
-//         items: [],
-//       },
-//       label: 'empty items',
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       menu: {
-//         showSearch: true,
-//         items: [{
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'first nested',
-//         },
-//         {
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'second nested',
-//         }],
-//       },
-//       label: 'with search',
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       menu: {
-//         showSearch: true,
-//         onChangeSearch: action('search'),
-//         items: [{
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'first nested',
-//         },
-//         {
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'second nested',
-//         }],
-//       },
-//       label: 'controlled search',
-//     },
-//     {
-//       menu: {
-//         items: [{
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'first nested',
-//         },
-//         {
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'second nested',
-//         }],
-//         searchAllowClear: false,
-//         searchPlaceholder: 'Search...',
-//       },
-//     },
-//     {
-//       menu: {
-//         activeKey: '2',
-//         items: [{
-//           key: '1',
-//           icon: <Icon color="black" name="PiAddressBook" size={16} />,
-//           label: 'first nested',
-//         },
-//         {
-//           key: '2',
-//           label: 'no search',
-//         },
-//         {
-//           key: '3',
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'third nested',
-//         },
-//         {
-//           key: '4',
-//           icon: <Icon color="black" name="PiAddressBook" size={16} />,
-//           label: 'fourth nested',
-//         },
-//         {
-//           key: '5',
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'fifth nested',
-//         },
-//         {
-//           key: '6',
-//           label: 'sixth nested',
-//         },
-//         {
-//           key: '7',
-//           label: 'seventh nested',
-//         },
-//         {
-//           key: '8',
-//           label: 'eighth nested',
-//         },
-//         {
-//           key: '9',
-//           label: 'ninth nested',
-//         },
-//         {
-//           key: '10',
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'tenth nested',
-//         }],
-//       },
-//     },
-//   ],
-// }
-
-// export const multipleItemsWithEllipsisProps: BreadcrumbProps = {
-//   items: [
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       menu: {
-//         items: [{
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'first nested',
-//         }],
-//       },
-//       label: 'first',
-//     },
-//     {
-//       onClick: action('click'),
-//       label: 'second',
-//     },
-//     {
-//       menu: {
-//         activeKey: '2',
-//         items: [{
-//           key: '1',
-//           icon: <Icon color="black" name="PiAddressBook" size={16} />,
-//           label: 'first nested',
-//         },
-//         {
-//           key: '2',
-//           label: 'selected',
-//         }],
-//       },
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       menu: {
-//         items: [],
-//       },
-//       label: 'empty items',
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       label: 'third',
-//     },
-//     {
-//       icon: breadcrumbIcon,
-//       onClick: action('click'),
-//       menu: {
-//         showSearch: true,
-//         items: [{
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'first nested',
-//         },
-//         {
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'second nested',
-//         }],
-//       },
-//       label: 'with search',
-//     },
-//     {
-//       onClick: action('click'),
-//       label: 'fourth',
-//     },
-//     {
-//       menu: {
-//         items: [{
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'first nested',
-//         },
-//         {
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'second nested',
-//         }],
-//         searchAllowClear: false,
-//         searchPlaceholder: 'Search...',
-//       },
-//     },
-//     {
-//       onClick: action('click'),
-//       label: 'fifth',
-//     },
-//     {
-//       onClick: action('click'),
-//       label: 'sixth',
-//     },
-//     {
-//       onClick: action('click'),
-//       label: 'seventh',
-//     },
-//     {
-//       onClick: action('click'),
-//       label: 'eighth',
-//     },
-//     {
-//       onClick: action('click'),
-//       label: 'nineth',
-//     },
-//     {
-//       onClick: action('click'),
-//       label: 'tenth',
-//     },
-//     {
-//       menu: {
-//         activeKey: '2',
-//         items: [{
-//           key: '1',
-//           icon: <Icon color="black" name="PiAddressBook" size={16} />,
-//           label: 'first nested',
-//         },
-//         {
-//           key: '2',
-//           label: 'without search',
-//         },
-//         {
-//           key: '3',
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'third nested',
-//         },
-//         {
-//           key: '4',
-//           icon: <Icon color="black" name="PiAddressBook" size={16} />,
-//           label: 'fourth nested',
-//         },
-//         {
-//           key: '5',
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'fifth nested',
-//         },
-//         {
-//           key: '6',
-//           label: 'sixth nested',
-//         },
-//         {
-//           key: '7',
-//           label: 'seventh nested',
-//         },
-//         {
-//           key: '8',
-//           label: 'eighth nested',
-//         },
-//         {
-//           key: '9',
-//           label: 'ninth nested',
-//         },
-//         {
-//           key: '10',
-//           icon: breadcrumbIcon,
-//           onClick: action('click'),
-//           label: 'tenth nested',
-//         }],
-//       },
-//     },
-//   ],
-// }
+export const loadingProps: BreadcrumbProps = {
+  isLoading: true,
+  items: [
+    { onClick: action('click'), label: 'Text' },
+    { onClick: action('click'), label: 'Text' },
+    { onClick: action('click'), label: 'Text' },
+  ],
+}

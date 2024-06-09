@@ -18,8 +18,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { controlledProps, loadingProps, uncontrolledProps, withMenuProps, withoutMenuProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
-import { withoutMenuProps } from './Breadcrumb.mocks'
 
 const meta = {
   component: Breadcrumb,
@@ -36,21 +36,21 @@ export const WithoutMenu: Story = {
   args: withoutMenuProps,
 }
 
-// export const OneItemIconAndTitle: Story = {
-//   args: oneItemIconAndTitleProps,
-// }
+export const WithMenu: Story = {
+  args: withMenuProps,
+}
 
-// export const TwoItems: Story = {
-//   args: twoItemsProps,
-// }
+export const Uncontrolled: Story = {
+  args: uncontrolledProps,
+}
 
-// export const MultipleItemsLoading: Story = {
-//   args: multipleItemsLoadingProps,
-// }
+export const Controlled: Story = {
+  args: controlledProps,
+}
 
-// export const MultipleItemsWithMenu: Story = {
-//   args: multipleItemsWithMenuProps,
-// }
+export const Loading: Story = {
+  args: loadingProps,
+}
 
 // export const MultipleItemsWithEllipsis: Story = {
 //   args: multipleItemsWithEllipsisProps,

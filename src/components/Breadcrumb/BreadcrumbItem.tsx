@@ -38,7 +38,7 @@ type Props = {
   isLastItem: boolean
 }
 
-const getSearchOption = <K extends keyof SearchOptions, >(search: BreadcrumbItemMenu['search'], opt: K): SearchOptions[K] | undefined => {
+export const getSearchOption = <K extends keyof SearchOptions, >(search: BreadcrumbItemMenu['search'], opt: K): SearchOptions[K] | undefined => {
   return typeof search === 'boolean' ? undefined : search?.[opt]
 }
 
@@ -52,7 +52,6 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
 
   const label = useMemo(() => {
     const maybeSubItem = item.menu?.items?.find(({ key }) => key === item.menu?.activeKey)
-
     const labelText = maybeSubItem?.label ?? item.label
     const labelIcon = maybeSubItem?.icon ?? item.icon
 
@@ -60,12 +59,12 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
       ? undefined
       : (
         <>
-          {item.icon}
+          {labelIcon}
           {
-            item.label && (
+            labelText && (
               <div className={styles.breadcrumbItemLabelText}>
-                <BodyL ellipsis={{ rows: 1, tooltip: item.label }}>
-                  {item.label}
+                <BodyL ellipsis={{ rows: 1, tooltip: labelText }}>
+                  {labelText}
                 </BodyL>
               </div>
             )
@@ -121,7 +120,7 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
                   if (onChange) {
                     onChange(event)
                   } else {
-                    debounce(() => setSearchValue(event.target.value), 500)()
+                    debounce(() => setSearchValue(event.target.value), 300)()
                   }
                 }}
               />
@@ -165,6 +164,7 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
       )
     }
 
+    // TODO: reset dropdown on hide
     const dropdownProps: DropdownProps = {
       dropdownRender,
       getPopupContainer: (trigger) => item.menu?.getPopupContainer?.(trigger) ?? containerRef.current ?? trigger,
