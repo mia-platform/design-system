@@ -19,34 +19,6 @@
 import { BreadcrumbItemType } from './Breadcrumb.types'
 
 /**
- * Represents the props for a breadcrumb item, extending `BreadcrumbItemType`.
- */
-export type BreadcrumbItemProps = BreadcrumbItemType & {
-  containerRef: React.RefObject<HTMLDivElement>
-  index: number
-
-  /**
-   * The DOM element where the container is attached. Defaults to `document.body`.
-   */
-  getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
-
-  /**
-   * Indicates whether the component is loading or not.
-   */
-  isLoading?: boolean;
-
-  /**
-   * Indicates whether the dropdown menu is rendered.
-   */
-  isMenuHidden?: boolean;
-
-  /**
-   * The total number of items in the breadcrumb list.
-   */
-  itemsLength: number;
-}
-
-/**
  * Represents the props for a breadcrumb component.
  */
 export type BreadcrumbProps = {
@@ -88,5 +60,5 @@ export type BreadcrumbProps = {
    *   - onClick: Callback function to handle click events on the breadcrumb item. <br>
    *   `(event: React.MouseEvent<Element, MouseEvent>) => void;`
    */
-  items: BreadcrumbItemType[];
+  items?: BreadcrumbItemType[];
 }

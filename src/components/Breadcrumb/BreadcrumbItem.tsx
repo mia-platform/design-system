@@ -22,81 +22,104 @@ import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 import { debounce } from 'lodash-es'
 
+import { BreadcrumbItemMenu, BreadcrumbItemMenuItem, BreadcrumbItemType, SearchOptions } from './Breadcrumb.types'
 import { BodyL } from '../Typography/BodyX/BodyL'
 import { BodyS } from '../Typography/BodyX/BodyS'
-import { BreadcrumbItemMenuItem } from './Breadcrumb.types'
-import { BreadcrumbItemProps } from './Breadcrumb.props'
 import CaretFullDownSvg from './assets/caret-full-down.svg'
 import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-export const BreadcrumbItem = ({
-  containerRef,
-  index,
-  getPopupContainer,
-  icon,
-  isLoading,
-  isMenuHidden = false,
-  itemsLength,
-  label,
-  menu,
-  onClick,
-}: BreadcrumbItemProps): ReactElement => {
+type Props = {
+  item: BreadcrumbItemType
+  containerRef: React.RefObject<HTMLDivElement>
+  isLoading?: boolean;
+  isMenuHidden?: boolean;
+  isLastItem: boolean
+}
+
+const getSearchOption = <K extends keyof SearchOptions, >(search: BreadcrumbItemMenu['search'], opt: K): SearchOptions[K] | undefined => {
+  return typeof search === 'boolean' ? undefined : search?.[opt]
+}
+
+export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, isLastItem }: Props): ReactElement => {
   const { palette } = useTheme()
 
-  const [dropdownOpen, setDropdownOpen] = useState(menu?.open !== undefined ? menu.open : false)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
 
-  const isLastItem = useMemo(() => index === (itemsLength - 1), [index, itemsLength])
-  const hasSeparator = useMemo(() => itemsLength > 1 && !isLastItem, [isLastItem, itemsLength])
-  const hasLabel = useMemo(() => icon || label, [icon, label])
-  const hasMenu = useMemo(() => Boolean(menu?.items), [menu?.items])
+  const hasMenu = useMemo(() => Boolean(item.menu?.items), [item])
+
+  const label = useMemo(() => {
+    const maybeSubItem = item.menu?.items?.find(({ key }) => key === item.menu?.activeKey)
+
+    const labelText = maybeSubItem?.label ?? item.label
+    const labelIcon = maybeSubItem?.icon ?? item.icon
+
+    return (!labelText && !labelIcon)
+      ? undefined
+      : (
+        <>
+          {item.icon}
+          {
+            item.label && (
+              <div className={styles.breadcrumbItemLabelText}>
+                <BodyL ellipsis={{ rows: 1, tooltip: item.label }}>
+                  {item.label}
+                </BodyL>
+              </div>
+            )
+          }
+        </>
+      )
+  }, [item])
 
   const filteredMenuItems = useMemo<BreadcrumbItemMenuItem[]>(() => {
-    if (!menu?.items) { return [] }
+    if (!item.menu?.items) { return [] }
 
-    if (searchValue === '') { return menu.items }
+    if (searchValue === '') { return item.menu.items }
 
-    return menu.items.filter((item) => item.label.toLowerCase().includes(searchValue.toLowerCase()))
-  }, [menu?.items, searchValue])
+    return item.menu.items.filter((subItem) => subItem.label?.toLowerCase().includes(searchValue.toLowerCase()))
+  }, [item, searchValue])
 
   const dropdownMenuProps = useMemo<MenuProps>(() => {
-    const items = filteredMenuItems.map<ItemType>((itemData, currentIndex) => {
+    const menuItems = filteredMenuItems.map<ItemType>((menuItemData, currentIndex) => {
       return {
-        key: itemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
-        icon: itemData?.icon,
+        key: menuItemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
+        icon: menuItemData?.icon,
         label: (
-          <BodyS ellipsis={{ rows: 1, tooltip: itemData?.label }}>
-            {itemData?.label}
+          <BodyS ellipsis={{ rows: 1, tooltip: menuItemData?.label }}>
+            {menuItemData?.label}
           </BodyS>
         ),
       }
     })
 
     return {
-      items,
-      onClick: ({ key, domEvent }) => menu?.onClick?.(key, domEvent),
+      items: menuItems,
+      onClick: ({ key, domEvent }) => item.menu?.onClick?.(key, domEvent),
       // TODO: implement controlled selectedKeys
-      selectedKeys: menu?.activeKey ? [menu.activeKey] : [],
+      selectedKeys: item.menu?.activeKey ? [item.menu.activeKey] : [],
     }
-  }, [filteredMenuItems, menu])
+  }, [filteredMenuItems, item])
 
   const dropdownRender = useCallback((dropdownMenu: ReactNode) => {
     return (
       <div className={styles.dropdownMenuContainer}>
         {
-          menu?.showSearch && (
+          Boolean(item.menu?.search) && (
             <div className={styles.dropdownMenuSearch}>
               <Input
-                allowClear={menu?.searchAllowClear !== undefined ? menu.searchAllowClear : true}
+                allowClear={getSearchOption(item.menu?.search, 'allowClear')}
                 autoFocus
-                placeholder={menu?.searchPlaceholder ?? 'Search...'}
+                placeholder={getSearchOption(item.menu?.search, 'placeholder') ?? 'Search...'}
                 // @ts-expect-error size 12 is not accepted by Icon component but supported by underling SVG
                 suffix={<Icon name="PiMagnifyingGlass" size={12} />}
                 onChange={(event) => {
-                  if (menu?.onChangeSearch) {
-                    menu.onChangeSearch(event)
+                  const onChange = getSearchOption(item.menu?.search, 'onChange')
+
+                  if (onChange) {
+                    onChange(event)
                   } else {
                     debounce(() => setSearchValue(event.target.value), 500)()
                   }
@@ -123,19 +146,19 @@ export const BreadcrumbItem = ({
         }
       </div>
     )
-  }, [filteredMenuItems, menu])
+  }, [filteredMenuItems, item])
 
   const itemButton = useMemo(() => {
-    if (!hasLabel && !hasMenu) {
+    if (!label && !hasMenu) {
       return (
         <div
           className={styles.breadcrumbItemButton}
-          onClick={onClick}
+          onClick={item.onClick}
         >
           <div
             className={classNames([
               styles.breadcrumbItemButtonEmpty,
-              !onClick && styles.breadcrumbItemButtonNoInteraction,
+              !item.onClick && styles.breadcrumbItemButtonNoInteraction,
             ])}
           />
         </div>
@@ -144,36 +167,27 @@ export const BreadcrumbItem = ({
 
     const dropdownProps: DropdownProps = {
       dropdownRender,
-      getPopupContainer: (trigger) => getPopupContainer?.(trigger) ?? containerRef.current ?? trigger,
+      getPopupContainer: (trigger) => item.menu?.getPopupContainer?.(trigger) ?? containerRef.current ?? trigger,
       menu: dropdownMenuProps,
-      open: hasMenu && (menu?.open !== undefined ? menu.open : dropdownOpen),
+      open: hasMenu && (item.menu?.open !== undefined ? item.menu.open : dropdownOpen),
       placement: 'bottomLeft',
       trigger: ['click'],
       onOpenChange: (next: boolean): void => {
-        menu?.onDropdownVisibleChange?.(next)
+        item.menu?.onDropdownVisibleChange?.(next)
 
-        if (menu?.open === undefined) {
+        if (item.menu?.open === undefined) {
           setDropdownOpen(next)
         }
       },
     }
 
-    const isButtonConnected = Boolean(!onClick && hasLabel && hasMenu)
+    const isButtonConnected = Boolean(!item.onClick && label && hasMenu)
     if (isButtonConnected) {
       return (
         <Dropdown {...dropdownProps}>
           <div className={classNames([isLastItem && styles.breadcrumbItemLast])}>
             <div className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}>
-              {icon}
-              {
-                label && (
-                  <div className={styles.breadcrumbItemLabelText}>
-                    <BodyL ellipsis={{ rows: 1, tooltip: label }}>
-                      {label}
-                    </BodyL>
-                  </div>
-                )
-              }
+              {label}
               <CaretFullDownSvg />
             </div>
           </div>
@@ -187,32 +201,23 @@ export const BreadcrumbItem = ({
           className={classNames([
             styles.breadcrumbItemButton,
             styles.breadcrumbItemButtonSegmented,
-            !onClick && styles.breadcrumbItemButtonNoInteraction,
+            !item.onClick && styles.breadcrumbItemButtonNoInteraction,
           ])}
         >
           {
-            hasLabel && (
+            label && (
               <div
                 className={classNames([styles.breadcrumbItemLabel, hasMenu && styles.withMenu])}
-                onClick={onClick}
+                onClick={item.onClick}
               >
-                {icon}
-                {
-                  label && (
-                    <div className={styles.breadcrumbItemLabelText}>
-                      <BodyL ellipsis={{ rows: 1, tooltip: label }}>
-                        {label}
-                      </BodyL>
-                    </div>
-                  )
-                }
+                {label}
               </div>
             )
           }
           {
             hasMenu && (
               <Dropdown {...dropdownProps}>
-                <div className={classNames([styles.breadcrumbMenuIcon, hasLabel && styles.withLabel])}>
+                <div className={classNames([styles.breadcrumbMenuIcon, label && styles.withLabel])}>
                   <CaretFullDownSvg />
                 </div>
               </Dropdown>
@@ -221,26 +226,13 @@ export const BreadcrumbItem = ({
         </div>
       </div>
     )
-  }, [
-    containerRef,
-    dropdownMenuProps,
-    dropdownRender,
-    getPopupContainer,
-    hasLabel,
-    hasMenu,
-    icon,
-    isLastItem,
-    label,
-    onClick,
-    dropdownOpen,
-    menu,
-  ])
+  }, [label, hasMenu, dropdownRender, dropdownMenuProps, item, dropdownOpen, isLastItem, containerRef])
 
   return (
     <>
       {isLoading ? <Skeleton.Button active /> : itemButton}
       {
-        hasSeparator && (
+        !isLastItem && (
           <div className={styles.separatorWrapper}>
             <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
           </div>

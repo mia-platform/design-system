@@ -36,7 +36,25 @@ export type BreadcrumbItemMenuItem = {
   /**
    * The label of the menu item.
    */
-  label: string;
+  label?: string;
+}
+
+export type SearchOptions = {
+
+  /**
+   * If true, allows clearing of the search input.
+   */
+  allowClear?: boolean;
+
+  /**
+   * Placeholder text for the search input.
+   */
+  placeholder?: string;
+
+  /**
+   * Callback function to handle search operations.
+   */
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 /**
@@ -55,13 +73,6 @@ export type BreadcrumbItemMenu = {
   items?: BreadcrumbItemMenuItem[];
 
   /**
-   * Callback function to handle changes in dropdown visibility.
-   *
-   * @param open - Indicates whether the dropdown is open.
-   */
-  onDropdownVisibleChange?: (open: boolean) => void;
-
-  /**
   * Callback function to handle click events on menu items.
   *
   * @param key - The key of the clicked item.
@@ -70,29 +81,23 @@ export type BreadcrumbItemMenu = {
   onClick?: (key: string, event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
 
   /**
-   * Callback function to handle search operations.
-   */
-  onChangeSearch?: React.ChangeEventHandler<HTMLInputElement>;
-
-  /**
    * Indicates whether the menu is open.
    */
   open?: boolean;
 
   /**
-   * If true, allows clearing of the search input.
+   * Callback function to handle changes in dropdown visibility.
+   *
+   * @param open - Indicates whether the dropdown is open.
    */
-  searchAllowClear?: boolean;
+  onDropdownVisibleChange?: (open: boolean) => void;
+
+  search?: boolean | SearchOptions;
 
   /**
-   * Placeholder text for the search input.
+   * The DOM element where the dropdown is attached. Defaults to the Breadcrumb component itself.
    */
-  searchPlaceholder?: string;
-
-  /**
-   * If true, displays the search input within the menu.
-   */
-  showSearch?: boolean;
+  getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
 }
 
 /**
