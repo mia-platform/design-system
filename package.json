@@ -1,7 +1,7 @@
 {
   "name": "@mia-platform-internal/console-design-system-react",
   "packageManager": "yarn@4.2.2",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "type": "module",
   "main": "dist/cjs/console-design-system-react.cjs",
   "module": "dist/es/console-design-system-react.js",
@@ -17,7 +17,8 @@
     "Davide Bianchi <davide.bianchi@mia-platform.eu>",
     "Federico Maggi <federico.maggi@mia-platform.eu>",
     "Giovanni Tommasi <giovanni.tommasi@mia-platform.eu>",
-    "Riccardo Corona <riccardo.corona@mia-platform.eu>"
+    "Riccardo Corona <riccardo.corona@mia-platform.eu>",
+    "Giovanna Monti <giovanna.monti@mia-platform.eu>"
   ],
   "repository": {
     "type": "git",
