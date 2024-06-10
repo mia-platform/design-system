@@ -21,7 +21,7 @@ import React, { ReactElement, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
 import { BodyL } from '../Typography/BodyX/BodyL'
-import { BreadcrumbItemMenuDropdown } from './BreadcrumbItemMenuDropdown'
+import { BreadcrumbItemMenuDropdown } from './Breadcrumb.Dropdown'
 import { BreadcrumbItemType } from './Breadcrumb.types'
 import CaretFullDownSvg from './assets/caret-full-down.svg'
 import { Icon } from '../Icon'

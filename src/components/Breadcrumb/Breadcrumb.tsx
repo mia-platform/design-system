@@ -16,12 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Dropdown, MenuProps } from 'antd'
-import { ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { ItemType } from 'antd/es/menu/hooks/useItems'
+import { ReactElement, useCallback, useEffect, useRef, useState } from 'react'
 
-import { BodyS } from '../Typography/BodyX/BodyS'
-import { BreadcrumbItem } from './BreadcrumbItem'
+import { BreadcrumbItem } from './Breadcrumb.Item'
 import { BreadcrumbItemType } from './Breadcrumb.types'
 import { BreadcrumbProps } from './Breadcrumb.props'
 import styles from './Breadcrumb.module.css'
