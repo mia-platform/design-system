@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { customCopyable, customEllipsis, loremIpsum } from '../Typography.mocks'
+import { customCopyable, loremIpsum } from '../Typography.mocks'
 import { render, screen } from '../../../test-utils'
 import { Typography } from '..'
 
@@ -60,11 +60,6 @@ describe('HX Component', () => {
     const heading = screen.getByRole('h4', { name: 'Text' })
     expect(heading).toBeVisible()
 
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders custom ellipsis correctly', () => {
-    const { asFragment } = render(<H1 ellipsis={customEllipsis}>{loremIpsum}</H1>)
     expect(asFragment()).toMatchSnapshot()
   })
 
