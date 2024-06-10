@@ -114,6 +114,18 @@ describe('Menu Component', () => {
         icon: <div><div /></div>,
       }],
     },
+    'expect to return empty category type with children and collapse set to true': {
+      params: {
+        items: [{
+          type: ItemTypes.Category,
+          label: 'category label',
+          key: 'category',
+          children: [],
+        }],
+        isCollapsed: true,
+      },
+      expectedResult: [],
+    },
     'expect to see styles for Primary item': {
       params: {
         items: [{ label: 'menu-item', key: 'uniqueKey', icon: <div /> }],
@@ -128,6 +140,10 @@ describe('Menu Component', () => {
           boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)',
         },
       }],
+    },
+    'expect to see empty items': {
+      params: { items: [] },
+      expectedResult: [],
     },
   }
 
