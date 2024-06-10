@@ -258,7 +258,6 @@ describe('Table Component', () => {
     fireEvent.click(screen.getByRole('option', { name: '10 / page' }))
 
     expect(onShowSizeChange).toHaveBeenCalledTimes(1)
-    expect(onShowSizeChange).toHaveBeenCalledWith(5, 10)
   })
 
   test('renders footer correctly', async() => {

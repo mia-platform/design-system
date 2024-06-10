@@ -20,7 +20,7 @@ import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useCallback, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
-import { Hierarchy, ItemType, Mode } from './Menu.types'
+import { Hierarchy, ItemTypes, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import { MenuProps } from './Menu.props'
 import formatLabels from './Menu.utils'
@@ -31,7 +31,7 @@ const { Default, Primary } = Hierarchy
 const { Inline } = Mode
 const { menu } = styles
 
-export const defaults: Partial<MenuProps> = {
+export const defaults = {
   defaultOpenKeys: [],
   hierarchy: Default,
   items: [],
@@ -112,6 +112,6 @@ Menu.skeletonParagraph = {
   width: ['30%', '80%', '65%', '30%', '70%', '60%'],
 }
 
-Menu.ItemType = ItemType
+Menu.ItemType = ItemTypes
 Menu.Hierarchy = Hierarchy
 Menu.Mode = Mode

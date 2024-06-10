@@ -16,13 +16,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { } from '../../test-utils'
-import { Hierarchy, Item, ItemType } from './Menu.types'
+import { MenuProps } from 'antd'
+
+import { Hierarchy, ItemTypes } from './Menu.types'
 import formatLabels from './Menu.utils'
 
 type TestCaseType = Record<string, {
   params: {
-    items?: Item[],
+    items?: MenuProps['items'],
     selectedItem?: string,
     isCollapsed?: boolean,
     hierarchy?: Hierarchy
@@ -47,7 +48,12 @@ describe('Menu Component', () => {
     },
     'expect to return corretly items': {
       params: {
-        items: [{ label: 'menu-item', key: 'uniqueKey', icon: <div /> }],
+        items: [{
+          label: 'menu-item',
+          key: 'uniqueKey',
+          title: 'title',
+          icon: <div />,
+        }],
         selectedItem: 'key',
         isCollapsed: false,
         hierarchy: Hierarchy.Default,
@@ -55,32 +61,20 @@ describe('Menu Component', () => {
       expectedResult: [{
         key: 'uniqueKey',
         label: 'menu-item',
+        title: 'title',
         icon: <div><div /></div>,
       }],
     },
     'expect to return divider type': {
       params: {
         items: [{
-          type: ItemType.Divider,
+          type: ItemTypes.Divider,
           key: 'divider',
         }],
       },
       expectedResult: [{
-        type: ItemType.Divider,
+        type: ItemTypes.Divider,
         key: 'divider',
-        icon: undefined,
-        label: undefined,
-      }],
-    },
-    'expect to return group type': {
-      params: {
-        items: [{
-          type: ItemType.Group,
-          key: 'group',
-        }],
-      },
-      expectedResult: [{
-        key: 'group',
         icon: undefined,
         label: undefined,
       }],
@@ -88,27 +82,24 @@ describe('Menu Component', () => {
     'expect to return category type': {
       params: {
         items: [{
-          type: ItemType.Category,
+          type: ItemTypes.Category,
           label: 'category label',
           key: 'category',
-          title: 'title',
         }],
       },
       expectedResult: [{
         key: 'category',
-        icon: undefined,
+        children: [],
         type: 'group',
         label: 'CATEGORY LABEL',
-        title: 'TITLE',
       }],
     },
     'expect to return category type with children and collapse set to true': {
       params: {
         items: [{
-          type: ItemType.Category,
+          type: ItemTypes.Category,
           label: 'category label',
           key: 'category',
-          title: 'title',
           children: [{
             key: 'uniqueKey',
             label: 'menu-item',
@@ -122,6 +113,18 @@ describe('Menu Component', () => {
         label: 'menu-item',
         icon: <div><div /></div>,
       }],
+    },
+    'expect to return empty category type with children and collapse set to true': {
+      params: {
+        items: [{
+          type: ItemTypes.Category,
+          label: 'category label',
+          key: 'category',
+          children: [],
+        }],
+        isCollapsed: true,
+      },
+      expectedResult: [],
     },
     'expect to see styles for Primary item': {
       params: {
@@ -137,6 +140,10 @@ describe('Menu Component', () => {
           boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)',
         },
       }],
+    },
+    'expect to see empty items': {
+      params: { items: [] },
+      expectedResult: [],
     },
   }
 
