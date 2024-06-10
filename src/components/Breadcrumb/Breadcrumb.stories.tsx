@@ -17,9 +17,13 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { cloneDeep, set } from 'lodash-es'
+import { useCallback, useMemo, useState } from 'react'
+import { action } from '@storybook/addon-actions'
 
 import { controlledProps, loadingProps, uncontrolledProps, withMenuProps, withoutMenuProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
+import { BreadcrumbItemMenu } from './Breadcrumb.types'
 
 const meta = {
   component: Breadcrumb,
@@ -42,6 +46,27 @@ export const WithMenu: Story = {
 
 export const Uncontrolled: Story = {
   args: uncontrolledProps,
+  decorators: [
+    (_, { args }) => {
+      const [activeKey, setActiveKey] = useState<string | undefined>()
+
+      const onSubItemClick = useCallback<Exclude<BreadcrumbItemMenu['onClick'], undefined>>((key, event) => {
+        action('click')(key, event)
+        setActiveKey(key)
+      }, [])
+
+      const items = useMemo(() => {
+        let nextItems = cloneDeep(args.items!)
+
+        nextItems = set(nextItems, [0, 'menu', 'activeKey'], activeKey)
+        nextItems = set(nextItems, [0, 'menu', 'onClick'], onSubItemClick)
+
+        return nextItems
+      }, [activeKey, args, onSubItemClick])
+
+      return <Breadcrumb {...args} items={items} />
+    },
+  ],
 }
 
 export const Controlled: Story = {

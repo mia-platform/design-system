@@ -96,8 +96,13 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
 
     return {
       items: menuItems,
-      onClick: ({ key, domEvent }) => item.menu?.onClick?.(key, domEvent),
-      // TODO: implement controlled selectedKeys
+      onClick: ({ key, domEvent }) => {
+        item.menu?.onClick?.(key, domEvent)
+
+        if (item.menu?.open === undefined) {
+          setDropdownOpen(false)
+        }
+      },
       selectedKeys: item.menu?.activeKey ? [item.menu.activeKey] : [],
     }
   }, [filteredMenuItems, item])
@@ -137,8 +142,7 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
             : (
               <div className={styles.noItemsContainer}>
                 <BodyS>
-                  {/* TODO: personalize text */}
-                  No items
+                  {item.menu?.emptyText ?? 'No items'}
                 </BodyS>
               </div>
             )

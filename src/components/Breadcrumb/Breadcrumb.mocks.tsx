@@ -96,6 +96,7 @@ export const uncontrolledProps: BreadcrumbProps = {
     {
       label: 'Fallback label',
       menu: {
+        onClick: action('click'),
         items: [
           { key: 'orders', label: 'Orders', icon: breadcrumbIcon },
           { key: 'shipping', label: 'Shipping', icon: breadcrumbIcon },

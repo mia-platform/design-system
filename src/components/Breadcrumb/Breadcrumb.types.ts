@@ -98,6 +98,11 @@ export type BreadcrumbItemMenu = {
    * The DOM element where the dropdown is attached. Defaults to the Breadcrumb component itself.
    */
   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
+
+  /**
+   * Text to show if menu is empty or search matched no elements. Defaults to "No items"
+   */
+  emptyText?: string
 }
 
 /**
