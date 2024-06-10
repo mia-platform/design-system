@@ -190,29 +190,6 @@ Etiam at mi lacinia, gravida diam ac, sodales elit. Maecenas vitae rutrum nisl.
 Nunc pellentesque, arcu vitae bibendum rutrum, mi sapien aliquam ipsum, sit amet mollis quam orci quis est.
 Curabitur sagittis mauris volutpat lorem elementum, nec porttitor eros commodo. Suspendisse lorem orci, commodo mollis quam eget, facilisis tincidunt mauris.
 Ut in feugiat nunc, in eleifend ex. END
-    <span
-      aria-hidden="true"
-      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
-    >
-      lg
-    </span>
-    <span
-      aria-hidden="true"
-      style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
-    >
-      <span
-        aria-hidden="true"
-      >
-        ...
-      </span>
-       END
-      <a
-        aria-label="Expand"
-        class="mia-platform-typography-expand"
-      >
-        Show more
-      </a>
-    </span>
   </h1>
 </DocumentFragment>
 `;
