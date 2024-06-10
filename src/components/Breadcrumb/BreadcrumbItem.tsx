@@ -16,15 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Dropdown, DropdownProps, Input, MenuProps, Skeleton } from 'antd'
-import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
-import type { ItemType } from 'antd/es/menu/hooks/useItems'
+import { Dropdown, DropdownProps, Skeleton } from 'antd'
+import React, { ReactElement, useMemo, useState } from 'react'
 import classNames from 'classnames'
-import { debounce } from 'lodash-es'
 
-import { BreadcrumbItemMenu, BreadcrumbItemMenuItem, BreadcrumbItemType, SearchOptions } from './Breadcrumb.types'
 import { BodyL } from '../Typography/BodyX/BodyL'
-import { BodyS } from '../Typography/BodyX/BodyS'
+import { BreadcrumbItemMenuDropdown } from './BreadcrumbItemMenuDropdown'
+import { BreadcrumbItemType } from './Breadcrumb.types'
 import CaretFullDownSvg from './assets/caret-full-down.svg'
 import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
@@ -38,15 +36,10 @@ type Props = {
   isLastItem: boolean
 }
 
-export const getSearchOption = <K extends keyof SearchOptions, >(search: BreadcrumbItemMenu['search'], opt: K): SearchOptions[K] | undefined => {
-  return typeof search === 'boolean' ? undefined : search?.[opt]
-}
-
 export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, isLastItem }: Props): ReactElement => {
   const { palette } = useTheme()
 
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const [searchValue, setSearchValue] = useState('')
 
   const hasMenu = useMemo(() => Boolean(item.menu?.items), [item])
 
@@ -73,84 +66,6 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
       )
   }, [item])
 
-  const filteredMenuItems = useMemo<BreadcrumbItemMenuItem[]>(() => {
-    if (!item.menu?.items) { return [] }
-
-    if (searchValue === '') { return item.menu.items }
-
-    return item.menu.items.filter((subItem) => subItem.label?.toLowerCase().includes(searchValue.toLowerCase()))
-  }, [item, searchValue])
-
-  const dropdownMenuProps = useMemo<MenuProps>(() => {
-    const menuItems = filteredMenuItems.map<ItemType>((menuItemData, currentIndex) => {
-      return {
-        key: menuItemData.key ?? `breadcrumb-menu-item-${currentIndex}`,
-        icon: menuItemData?.icon,
-        label: (
-          <BodyS ellipsis={{ rows: 1, tooltip: menuItemData?.label }}>
-            {menuItemData?.label}
-          </BodyS>
-        ),
-      }
-    })
-
-    return {
-      items: menuItems,
-      onClick: ({ key, domEvent }) => {
-        item.menu?.onClick?.(key, domEvent)
-
-        if (item.menu?.open === undefined) {
-          setDropdownOpen(false)
-        }
-      },
-      selectedKeys: item.menu?.activeKey ? [item.menu.activeKey] : [],
-    }
-  }, [filteredMenuItems, item])
-
-  const dropdownRender = useCallback((dropdownMenu: ReactNode) => {
-    return (
-      <div className={styles.dropdownMenuContainer}>
-        {
-          Boolean(item.menu?.search) && (
-            <div className={styles.dropdownMenuSearch}>
-              <Input
-                allowClear={getSearchOption(item.menu?.search, 'allowClear')}
-                autoFocus
-                placeholder={getSearchOption(item.menu?.search, 'placeholder') ?? 'Search...'}
-                // @ts-expect-error size 12 is not accepted by Icon component but supported by underling SVG
-                suffix={<Icon name="PiMagnifyingGlass" size={12} />}
-                onChange={(event) => {
-                  const onChange = getSearchOption(item.menu?.search, 'onChange')
-
-                  if (onChange) {
-                    onChange(event)
-                  } else {
-                    debounce(() => setSearchValue(event.target.value), 300)()
-                  }
-                }}
-              />
-            </div>
-          )
-        }
-        {
-          filteredMenuItems.length > 0
-            ? (
-              <div className={styles.dropdownMenu}>
-                {React.cloneElement(dropdownMenu as React.ReactElement)}
-              </div>
-            )
-            : (
-              <div className={styles.noItemsContainer}>
-                <BodyS>
-                  {item.menu?.emptyText ?? 'No items'}
-                </BodyS>
-              </div>
-            )
-        }
-      </div>
-    )
-  }, [filteredMenuItems, item])
-
   const itemButton = useMemo(() => {
     if (!label && !hasMenu) {
       return (
@@ -168,11 +83,10 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
       )
     }
 
-    // TODO: reset dropdown on hide
     const dropdownProps: DropdownProps = {
-      dropdownRender,
+      destroyPopupOnHide: true,
+      dropdownRender: () => <BreadcrumbItemMenuDropdown item={item} setOpen={setDropdownOpen} />,
       getPopupContainer: (trigger) => item.menu?.getPopupContainer?.(trigger) ?? containerRef.current ?? trigger,
-      menu: dropdownMenuProps,
       open: hasMenu && (item.menu?.open !== undefined ? item.menu.open : dropdownOpen),
       placement: 'bottomLeft',
       trigger: ['click'],
@@ -230,7 +144,7 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
         </div>
       </div>
     )
-  }, [label, hasMenu, dropdownRender, dropdownMenuProps, item, dropdownOpen, isLastItem, containerRef])
+  }, [label, hasMenu, item, dropdownOpen, isLastItem, containerRef])
 
   return (
     <>

@@ -215,6 +215,18 @@
         padding: var(--spacing-padding-sm, 8px) !important;
         gap: var(--spacing-gap-sm, 8px);
 
+        &:global(.mia-platform-dropdown-menu-item-selected) {
+          background-color: var(--palette-action-alternate-primary-active, #1890ff14) !important;
+
+          &:hover {
+            background-color: var(--palette-action-alternate-primary-active, #1890ff14) !important;
+          }
+        }
+
+        &:hover {
+          background-color: var(--palette-action-alternate-secondary-hover, #00000014);
+        }
+
         & > :global(.mia-platform-dropdown-menu-title-content) {
           width: 100%;
         }
