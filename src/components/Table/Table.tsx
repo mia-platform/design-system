@@ -87,7 +87,7 @@ export const Table = <RecordType extends GenericRecord>({
   scroll = defaults.scroll,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
-  const iconSize = theme?.shape?.size?.lg as IconProps['size'] || 24
+  const iconSize = theme?.shape?.size?.md as IconProps['size'] || 16
 
   const editAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Edit), [actions])
   const deleteAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Delete), [actions])
