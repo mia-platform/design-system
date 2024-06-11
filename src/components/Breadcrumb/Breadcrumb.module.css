@@ -16,14 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.breadcrumbHiddenContainer {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-}
-
 .breadcrumb {
   /* TODO: these CSS variables are missing in DS */
   --item-bg: var(--palette-background-neutral, #89898914);
@@ -31,96 +23,122 @@
   --item-bg-active: var(--palette-action-alternate-secondary-selected, #8989893D);
   --item-bg-transition: background-color 0.25s ease-in-out;
 
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: var(--spacing-gap-xs, 4px);
+  width: 100%;
+  overflow: hidden;
 
-  & .breadcrumbItemLast {
-    & .breadcrumbItemLabelText {
-      font-weight: var(--typography-bodyLBold-fontWeight, 600);
-    }
-  }
-
-  & .breadcrumbItemButton {
+  & .breadcrumbItems {
     display: flex;
-    align-items: center;
     justify-content: flex-start;
-    cursor: pointer;
-    height: var(--shape-size-xl, 32px);
-    box-sizing: border-box;
+    align-items: center;
+    gap: var(--spacing-gap-xs, 4px);
 
-    & .breadcrumbItemButtonEmpty {
-      background-color: var(--item-bg);
-      transition: var(--item-bg-transition);
-      border-radius: var(--shape-border-radius-md, 4px);
-      width: var(--shape-size-xl, 32px);
-      height: var(--shape-size-xl, 32px);
-
-      &.breadcrumbItemButtonNoInteraction {
-        cursor: auto;
-      }
-
-      &:not(.breadcrumbItemButtonNoInteraction) {
-        &:hover {
-          background-color: var(--item-bg-hover);
-        }
-
-        &:active {
-          background-color: var(--item-bg-active);
-        }
+    & .breadcrumbItemLast {
+      & .breadcrumbItemLabelText {
+        font-weight: var(--typography-bodyLBold-fontWeight, 600);
       }
     }
 
-    &.breadcrumbItemButtonSegmented {
-      gap: 1px;
+    & .breadcrumbItemButton {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      height: var(--shape-size-xl, 32px);
+      box-sizing: border-box;
 
-      &.breadcrumbItemButtonNoInteraction {
-        cursor: default;
+      & .breadcrumbItemButtonEmpty {
+        background-color: var(--item-bg);
+        transition: var(--item-bg-transition);
+        border-radius: var(--shape-border-radius-md, 4px);
+        width: var(--shape-size-xl, 32px);
+        height: var(--shape-size-xl, 32px);
 
-        & .breadcrumbItemLabel {
+        &.breadcrumbItemButtonNoInteraction {
+          cursor: auto;
+        }
+
+        &:not(.breadcrumbItemButtonNoInteraction) {
           &:hover {
-            background-color: var(--item-bg);
+            background-color: var(--item-bg-hover);
           }
 
           &:active {
-            background-color: var(--item-bg);
+            background-color: var(--item-bg-active);
           }
         }
       }
 
-      & .breadcrumbItemLabel {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-gap-xs, 4px);
+      &.breadcrumbItemButtonSegmented {
+        gap: 1px;
+
+        &.breadcrumbItemButtonNoInteraction {
+          cursor: default;
+
+          & .breadcrumbItemLabel {
+            &:hover {
+              background-color: var(--item-bg);
+            }
+
+            &:active {
+              background-color: var(--item-bg);
+            }
+          }
+        }
+
+        & .breadcrumbItemLabel {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-gap-xs, 4px);
+          background-color: var(--item-bg);
+          padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
+          border-radius: var(--shape-border-radius-md, 4px);
+          transition: var(--item-bg-transition);
+          height: 100%;
+          box-sizing: border-box;
+
+          &:hover {
+            background-color: var(--item-bg-hover);
+          }
+
+          &:active {
+            background-color: var(--item-bg-active);
+          }
+
+          &.withMenu {
+            border-radius: var(--shape-border-radius-md, 4px) 0 0 var(--shape-border-radius-md, 4px);
+          }
+        }
+
+        & .breadcrumbMenuIcon {
+          display: flex;
+          align-items: center;
+          background-color: var(--item-bg);
+          padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xs, 4px);
+          border-radius: var(--shape-border-radius-md, 4px);
+          transition: var(--item-bg-transition);
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--item-bg-hover);
+          }
+
+          &:active {
+            background-color: var(--item-bg-active);
+          }
+
+          &.withLabel {
+            border-radius: 0 var(--shape-border-radius-md, 4px) var(--shape-border-radius-md, 4px) 0;
+          }
+        }
+      }
+
+      &.breadcrumbItemButtonConnected {
+        gap: 4px;
         background-color: var(--item-bg);
         padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
         border-radius: var(--shape-border-radius-md, 4px);
-        transition: var(--item-bg-transition);
-        height: 100%;
-        box-sizing: border-box;
-
-        &:hover {
-          background-color: var(--item-bg-hover);
-        }
-
-        &:active {
-          background-color: var(--item-bg-active);
-        }
-
-        &.withMenu {
-          border-radius: var(--shape-border-radius-md, 4px) 0 0 var(--shape-border-radius-md, 4px);
-        }
-      }
-
-      & .breadcrumbMenuIcon {
-        display: flex;
-        align-items: center;
-        background-color: var(--item-bg);
-        padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xs, 4px);
-        border-radius: var(--shape-border-radius-md, 4px);
-        transition: var(--item-bg-transition);
         cursor: pointer;
+        transition: var(--item-bg-transition);
 
         &:hover {
           background-color: var(--item-bg-hover);
@@ -129,38 +147,20 @@
         &:active {
           background-color: var(--item-bg-active);
         }
-
-        &.withLabel {
-          border-radius: 0 var(--shape-border-radius-md, 4px) var(--shape-border-radius-md, 4px) 0;
-        }
-      }
-    }
-
-    &.breadcrumbItemButtonConnected {
-      gap: 4px;
-      background-color: var(--item-bg);
-      padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
-      border-radius: var(--shape-border-radius-md, 4px);
-      cursor: pointer;
-      transition: var(--item-bg-transition);
-
-      &:hover {
-        background-color: var(--item-bg-hover);
       }
 
-      &:active {
-        background-color: var(--item-bg-active);
+      & .breadcrumbItemLabelText {
+        max-width: 250px;
       }
-    }
-
-    & .breadcrumbItemLabelText {
-      max-width: 250px;
     }
   }
 
-  & .separatorWrapper {
-    width: (var(--shape-size-md, 16px));
-    height: (var(--shape-size-md, 16px));
+  & .breadcrumbHidden {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
   }
 }
 
@@ -234,7 +234,6 @@
     }
   }
 }
-
 
 .breadcrumbItemSubmenu {
   width: 200px;

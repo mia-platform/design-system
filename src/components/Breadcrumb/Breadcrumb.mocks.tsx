@@ -140,3 +140,23 @@ export const loadingProps: BreadcrumbProps = {
     { onClick: action('click'), label: 'Text' },
   ],
 }
+
+export const collapsedProps: BreadcrumbProps = {
+  items: [
+    { onClick: action('click'), label: 'Text 1' },
+    { onClick: action('click'), icon: breadcrumbIcon, label: 'Text 2' },
+    {
+      icon: breadcrumbIcon,
+      label: 'Text 3',
+      menu: { items: [], onDropdownVisibleChange: action('dropdown open') },
+    },
+    {
+      onClick: action('click'),
+      label: 'Text 4',
+      menu: { items: [], onDropdownVisibleChange: action('dropdown open') },
+    },
+    { label: 'Text 5' },
+    { label: 'Text 6' },
+    { label: 'Text 7' },
+  ],
+}

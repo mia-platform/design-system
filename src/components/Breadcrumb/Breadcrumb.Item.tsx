@@ -17,28 +17,25 @@
  */
 
 import { Dropdown, DropdownProps, Skeleton } from 'antd'
-import React, { ReactElement, useMemo, useState } from 'react'
+import React, { ReactElement, useCallback, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
 import { BodyL } from '../Typography/BodyX/BodyL'
 import { BreadcrumbItemMenuDropdown } from './Breadcrumb.Dropdown'
 import { BreadcrumbItemType } from './Breadcrumb.types'
+import { BreadcrumbSeparator } from './Breadcrumb.Separator'
 import CaretFullDownSvg from './assets/caret-full-down.svg'
-import { Icon } from '../Icon'
 import styles from './Breadcrumb.module.css'
-import { useTheme } from '../../hooks/useTheme'
 
 type Props = {
   item: BreadcrumbItemType
   containerRef: React.RefObject<HTMLDivElement>
   isLoading?: boolean;
-  isMenuHidden?: boolean;
+  isHidden?: boolean;
   isLastItem: boolean
 }
 
-export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, isLastItem }: Props): ReactElement => {
-  const { palette } = useTheme()
-
+export const BreadcrumbItem = ({ item, containerRef, isLoading, isHidden, isLastItem }: Props): ReactElement => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   const hasMenu = useMemo(() => Boolean(item.menu?.items), [item])
@@ -66,12 +63,18 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
       )
   }, [item])
 
+  const onItemClick = useCallback<Exclude<BreadcrumbItemType['onClick'], undefined>>((...args) => {
+    if (isHidden) { return }
+
+    return item.onClick?.(...args)
+  }, [isHidden, item])
+
   const itemButton = useMemo(() => {
     if (!label && !hasMenu) {
       return (
         <div
           className={styles.breadcrumbItemButton}
-          onClick={item.onClick}
+          onClick={onItemClick}
         >
           <div
             className={classNames([
@@ -87,10 +90,12 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
       destroyPopupOnHide: true,
       dropdownRender: () => <BreadcrumbItemMenuDropdown item={item} setOpen={setDropdownOpen} />,
       getPopupContainer: (trigger) => item.menu?.getPopupContainer?.(trigger) ?? containerRef.current ?? trigger,
-      open: hasMenu && (item.menu?.open !== undefined ? item.menu.open : dropdownOpen),
+      open: !isHidden && hasMenu && (item.menu?.open !== undefined ? item.menu.open : dropdownOpen),
       placement: 'bottomLeft',
       trigger: ['click'],
       onOpenChange: (next: boolean): void => {
+        if (isHidden) { return }
+
         item.menu?.onDropdownVisibleChange?.(next)
 
         if (item.menu?.open === undefined) {
@@ -126,7 +131,7 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
             label && (
               <div
                 className={classNames([styles.breadcrumbItemLabel, hasMenu && styles.withMenu])}
-                onClick={item.onClick}
+                onClick={onItemClick}
               >
                 {label}
               </div>
@@ -144,18 +149,12 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isMenuHidden, is
         </div>
       </div>
     )
-  }, [label, hasMenu, item, dropdownOpen, isLastItem, containerRef])
+  }, [label, hasMenu, isHidden, item, dropdownOpen, isLastItem, onItemClick, containerRef])
 
   return (
     <>
       {isLoading ? <Skeleton.Button active /> : itemButton}
-      {
-        !isLastItem && (
-          <div className={styles.separatorWrapper}>
-            <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={16} />
-          </div>
-        )
-      }
+      {!isLastItem && !isHidden && <BreadcrumbSeparator />}
     </>
   )
 }

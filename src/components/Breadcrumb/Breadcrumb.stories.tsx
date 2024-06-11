@@ -21,7 +21,7 @@ import { cloneDeep, set } from 'lodash-es'
 import { useCallback, useMemo, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
-import { controlledProps, loadingProps, uncontrolledProps, withMenuProps, withoutMenuProps } from './Breadcrumb.mocks'
+import { collapsedProps, controlledProps, loadingProps, uncontrolledProps, withMenuProps, withoutMenuProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
 import { BreadcrumbItemMenu } from './Breadcrumb.types'
 
@@ -31,10 +31,6 @@ const meta = {
 
 export default meta
 type Story = StoryObj<typeof meta>
-
-// export const Default: Story = {
-//   args: multipleItemsProps,
-// }
 
 export const WithoutMenu: Story = {
   args: withoutMenuProps,
@@ -77,6 +73,15 @@ export const Loading: Story = {
   args: loadingProps,
 }
 
-// export const MultipleItemsWithEllipsis: Story = {
-//   args: multipleItemsWithEllipsisProps,
-// }
+export const Collapsed: Story = {
+  args: collapsedProps,
+  decorators: [
+    (_, { args }) => {
+      return (
+        <div style={{ width: 500, border: '1px dashed #029CFD', overflow: 'hidden' }}>
+          <Breadcrumb {...args} />
+        </div>
+      )
+    },
+  ],
+}

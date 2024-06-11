@@ -137,3 +137,10 @@ export type BreadcrumbItemType = {
    */
   onClick?: (event: React.MouseEvent<Element, MouseEvent>) => void;
 }
+
+export type BreadcrumbCollapsedItem = {
+  type: 'collapsed'
+  items: BreadcrumbItemType[]
+}
+
+export type BreadcrumbButton = BreadcrumbItemType | BreadcrumbCollapsedItem
