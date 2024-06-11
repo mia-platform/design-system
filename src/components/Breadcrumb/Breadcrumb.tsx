@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useEffect, useRef, useState } from 'react'
+import { ReactElement, useCallback, useEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 import { computeItems, renderItem } from './Breadcrumb.utils'
@@ -29,11 +29,17 @@ import styles from './Breadcrumb.module.css'
  *
  * @returns {Breadcrumb} Breadcrumb component
  */
-export const Breadcrumb = ({ isLoading, items }: BreadcrumbProps): ReactElement => {
+export const Breadcrumb = ({ isLoading, items, getPopupContainer }: BreadcrumbProps): ReactElement => {
   const [visibleItems, setVisibleItems] = useState<BreadcrumbButton[]>([])
 
   const breadcrumbRef = useRef<HTMLDivElement>(null)
   const hiddenContainerRef = useRef<HTMLDivElement>(null)
+
+  const getDropdownContainer = useCallback(() => {
+    if (!breadcrumbRef.current) { return }
+
+    return getPopupContainer?.(breadcrumbRef.current) ?? breadcrumbRef.current
+  }, [getPopupContainer])
 
   // Computes visible and collapsed items
   useEffect(() => {
@@ -69,7 +75,7 @@ export const Breadcrumb = ({ isLoading, items }: BreadcrumbProps): ReactElement 
             breadcrumbItem,
             index,
             itemList,
-            { isHidden: false, isLoading, containerRef: breadcrumbRef }
+            { isHidden: false, isLoading, getDropdownContainer }
           ))
         }
       </div>
@@ -82,7 +88,7 @@ export const Breadcrumb = ({ isLoading, items }: BreadcrumbProps): ReactElement 
             breadcrumbItem,
             index,
             itemList,
-            { isHidden: true, isLoading, containerRef: breadcrumbRef }
+            { isHidden: true, isLoading, getDropdownContainer }
           ))
         }
       </div>

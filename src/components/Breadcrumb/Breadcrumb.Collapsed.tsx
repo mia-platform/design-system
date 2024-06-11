@@ -27,13 +27,13 @@ import styles from './Breadcrumb.module.css'
 
 type Props = {
   isLoading?: boolean
-  containerRef: React.RefObject<HTMLDivElement>
+  getDropdownContainer: () => HTMLElement | undefined
   items: BreadcrumbItemType[]
 }
 
 export const BREADCRUMB_COLLAPSED_WIDTH = 32
 
-export const BreadcrumbCollapsed = ({ isLoading, containerRef }: Props): ReactElement => {
+export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer }: Props): ReactElement => {
   const dropdown = useMemo(() => {
     return (
       <div>
@@ -48,7 +48,7 @@ export const BreadcrumbCollapsed = ({ isLoading, containerRef }: Props): ReactEl
       <>
         <Dropdown
           dropdownRender={() => dropdown}
-          getPopupContainer={(trigger) => containerRef.current?.parentElement?.parentElement ?? trigger}
+          getPopupContainer={(trigger) => getDropdownContainer() ?? trigger}
           open
           placement={'bottom'}
           trigger={['click']}

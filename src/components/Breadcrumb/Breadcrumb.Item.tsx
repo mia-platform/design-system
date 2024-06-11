@@ -17,7 +17,7 @@
  */
 
 import { Dropdown, DropdownProps, Skeleton } from 'antd'
-import React, { ReactElement, useCallback, useMemo, useState } from 'react'
+import { ReactElement, useCallback, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
 import { BodyL } from '../Typography/BodyX/BodyL'
@@ -29,13 +29,19 @@ import styles from './Breadcrumb.module.css'
 
 type Props = {
   item: BreadcrumbItemType
-  containerRef: React.RefObject<HTMLDivElement>
+  getDropdownContainer: () => HTMLElement | undefined
   isLoading?: boolean;
   isHidden?: boolean;
   isLastItem: boolean
 }
 
-export const BreadcrumbItem = ({ item, containerRef, isLoading, isHidden, isLastItem }: Props): ReactElement => {
+export const BreadcrumbItem = ({
+  item,
+  getDropdownContainer,
+  isLoading,
+  isHidden,
+  isLastItem,
+}: Props): ReactElement => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   const hasMenu = useMemo(() => Boolean(item.menu?.items), [item])
@@ -89,7 +95,7 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isHidden, isLast
     const dropdownProps: DropdownProps = {
       destroyPopupOnHide: true,
       dropdownRender: () => <BreadcrumbItemMenuDropdown item={item} setOpen={setDropdownOpen} />,
-      getPopupContainer: (trigger) => item.menu?.getPopupContainer?.(trigger) ?? containerRef.current ?? trigger,
+      getPopupContainer: (trigger) => getDropdownContainer() ?? trigger,
       open: !isHidden && hasMenu && (item.menu?.open !== undefined ? item.menu.open : dropdownOpen),
       placement: 'bottomLeft',
       trigger: ['click'],
@@ -149,7 +155,7 @@ export const BreadcrumbItem = ({ item, containerRef, isLoading, isHidden, isLast
         </div>
       </div>
     )
-  }, [label, hasMenu, isHidden, item, dropdownOpen, isLastItem, onItemClick, containerRef])
+  }, [label, hasMenu, isHidden, item, dropdownOpen, isLastItem, onItemClick, getDropdownContainer])
 
   return (
     <>

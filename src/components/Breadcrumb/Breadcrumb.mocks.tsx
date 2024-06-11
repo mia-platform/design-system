@@ -24,6 +24,8 @@ import { Icon } from '../Icon'
 export const breadcrumbIcon = <Icon color="black" name="PiCircleHalfTiltLight" size={16} />
 export const breadcrumbLabel = 'Text'
 
+const getPopupContainer: BreadcrumbProps['getPopupContainer'] = (containerNode) => containerNode.parentElement ?? containerNode
+
 export const withoutMenuProps: BreadcrumbProps = {
   items: [
     { onClick: action('click'), label: 'Text only' },
@@ -89,6 +91,7 @@ export const withMenuProps: BreadcrumbProps = {
       },
     },
   ],
+  getPopupContainer,
 }
 
 export const uncontrolledProps: BreadcrumbProps = {
@@ -107,6 +110,7 @@ export const uncontrolledProps: BreadcrumbProps = {
       },
     },
   ],
+  getPopupContainer,
 }
 
 export const controlledProps: BreadcrumbProps = {
@@ -130,6 +134,7 @@ export const controlledProps: BreadcrumbProps = {
       },
     },
   ],
+  getPopupContainer,
 }
 
 export const loadingProps: BreadcrumbProps = {
@@ -159,4 +164,5 @@ export const collapsedProps: BreadcrumbProps = {
     { label: 'Text 6' },
     { label: 'Text 7' },
   ],
+  getPopupContainer: (containerNode) => containerNode.parentElement?.parentElement ?? containerNode,
 }

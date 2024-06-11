@@ -61,4 +61,11 @@ export type BreadcrumbProps = {
    *   `(event: React.MouseEvent<Element, MouseEvent>) => void;`
    */
   items?: BreadcrumbItemType[];
+
+  /**
+   * The DOM element where menu and collapse dropdowns are attached. Defaults to the Breadcrumb component itself.
+   *
+   * @param containerNode - The Breadcrumb HTML element.
+   */
+  getPopupContainer?: (containerNode: HTMLElement) => HTMLElement;
 }

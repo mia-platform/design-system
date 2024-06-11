@@ -27,12 +27,12 @@ export const renderItem = (
   item: BreadcrumbButton,
   idx: number,
   itemList: BreadcrumbButton[],
-  ctx: { isHidden?: boolean, isLoading?: boolean, containerRef: React.RefObject<HTMLDivElement> }
+  ctx: { isHidden?: boolean, isLoading?: boolean, getDropdownContainer: () => HTMLElement | undefined }
 ): ReactElement => {
   if ('type' in item && item.type === 'collapsed') {
     return (
       <BreadcrumbCollapsed
-        containerRef={ctx.containerRef}
+        getDropdownContainer={ctx.getDropdownContainer}
         isLoading={ctx.isLoading}
         items={item.items}
       />
@@ -44,7 +44,7 @@ export const renderItem = (
 
   return (
     <BreadcrumbItem
-      containerRef={ctx.containerRef}
+      getDropdownContainer={ctx.getDropdownContainer}
       isHidden={ctx.isHidden}
       isLastItem={idx === (itemList?.length ?? 1) - 1}
       isLoading={ctx.isLoading}
