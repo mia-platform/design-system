@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// import '@fontsource/inter'
+import '@fontsource/inter'
 
 import Theme from '../../../themes/schema'
 
@@ -29,25 +29,6 @@ const DEFAULT_FONT_SIZE = 14
 const DEFAULT_FONT_WEIGHT = 400
 
 /**
- * Loads the default font-face (Inter) if the theme configuration uses the default font family.
- *
- * @link https://fonts.google.com/specimen/Inter?query=inter
- * @link https://fontsource.org/fonts/inter
- *
- * @param {Theme} theme - The theme configuration object.
- * @returns {void}
- */
-function loadDefaultFontFace({ typography }: Partial<Theme>): void {
-  const useDefaultFontFace = !typography || Object
-    .values(typography)
-    .some(({ fontFamily }) => fontFamily === DEFAULT_FONT_FAMILY)
-
-  if (useDefaultFontFace) {
-    import('@fontsource/inter' as 'inter-font-face')
-  }
-}
-
-/**
  * Converts a theme configuration into the theme default style applied to the DOM.
  *
  * @param {Theme} theme - The theme configuration to convert.
@@ -55,8 +36,6 @@ function loadDefaultFontFace({ typography }: Partial<Theme>): void {
  */
 export default function themeDefaultStyle(theme: Partial<Theme> = {}): Record<string, string> {
   const { palette, typography } = theme
-
-  loadDefaultFontFace(theme)
 
   return {
     color: palette?.common?.grey?.[700] ?? DEFAULT_COLOR,
