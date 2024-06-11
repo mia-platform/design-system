@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+// import '@fontsource/inter'
+
 import Theme from '../../../themes/schema'
 
 /**
