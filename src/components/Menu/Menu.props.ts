@@ -16,9 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { MenuProps as AntdMenuProps } from 'antd'
-
-import { Hierarchy, Mode } from './Menu.types'
+import { Hierarchy, Item, Mode } from './Menu.types'
 
 export type MenuProps = {
 
@@ -77,7 +75,7 @@ export type MenuProps = {
    *    - type: The type of the divider <br> `"divider"`
    *    - dashed: Indicates whether the divider is dashed <br> `boolean`
    */
-  items?: AntdMenuProps['items'],
+  items?: Item[],
 
   /**
    * The mode in which sub-menu items are shown. Either:

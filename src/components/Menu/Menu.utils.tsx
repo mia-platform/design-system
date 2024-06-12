@@ -16,11 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { MenuProps } from 'antd'
+import { ItemType as AntItemType } from 'antd/es/menu/hooks/useItems'
 
-import { Hierarchy, ItemTypes } from './Menu.types'
+import { Hierarchy, Item, ItemType } from './Menu.types'
 
 const { Primary } = Hierarchy
+const { Category, Divider, Group } = ItemType
 
 /**
  * Formats menu items to ensure optimal display.
@@ -33,34 +34,38 @@ const { Primary } = Hierarchy
  * @returns {AntItemType[]} array of formatted menu items.
  */
 function formatLabels(
-  items: MenuProps['items'] = [],
+  items: Item[] = [],
   selectedItem?: string,
   isCollapsed?: boolean,
   hierarchy?: Hierarchy
-): MenuProps['items'] {
-  return items.flatMap(item => {
-    if (!item) { return [] }
-    if (item?.type === ItemTypes.Category && isCollapsed) {
-      return formatLabels(item?.children, selectedItem, isCollapsed, hierarchy) || []
+): AntItemType[] {
+  return items.map(({ title, label, type, key, children, icon, ...item }) => {
+    if (type === Category && isCollapsed) {
+      return formatLabels(children, selectedItem, isCollapsed, hierarchy)
     }
 
     return {
       ...item,
-      ...(item?.type === ItemTypes.Item || item?.type === ItemTypes.SubMenu || !item?.type)
-        && item?.icon && { icon: <div>{item?.icon}</div> },
-      ...selectedItem === item?.key && hierarchy === Primary && {
-        style: { boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)' },
+      label,
+      key,
+      icon: icon && <div>{icon}</div>,
+      ...type === Category && {
+        type: 'group',
+        label: typeof label === 'string' && label?.toUpperCase(),
+        title: title?.toUpperCase(),
       },
-      ...item?.type === ItemTypes.Category && {
-        label: typeof item?.label === 'string' && item?.label.toUpperCase(),
-        children: formatLabels(item.children, selectedItem, isCollapsed, hierarchy) || [],
+      ...type === Divider && { type },
+      ...type === Group && {},
+      ...selectedItem === key && hierarchy === Primary && {
+        style: {
+          boxShadow: '0px 1px 4px -1px rgba(0, 0, 0, 0.12)',
+        },
       },
-      ...item?.type === ItemTypes.SubMenu && {
-        key: item?.key,
-        children: formatLabels(item.children, selectedItem, isCollapsed, hierarchy) || [],
+      ...children && Array.isArray(children) && children.length > 0 && {
+        children: formatLabels(children, selectedItem, isCollapsed, hierarchy),
       },
     }
-  })
+  }).flat()
 }
 
 export default formatLabels

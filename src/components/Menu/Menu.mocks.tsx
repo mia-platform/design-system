@@ -17,9 +17,9 @@
  */
 
 import { Icon } from '../Icon'
-import { ItemTypes } from './Menu.types'
+import { ItemType } from './Menu.types'
 
-const { Category, Divider, SubMenu } = ItemTypes
+const { Category, Divider, Group } = ItemType
 
 export const item = {
   key: 'item',
@@ -31,7 +31,7 @@ export const item = {
 export const group = {
   key: 'group',
   label: 'Group',
-  type: SubMenu,
+  type: Group,
   icon: <Icon color="currentColor" name="PiSnowflake" size={16} />,
   children: [
     {
@@ -78,7 +78,7 @@ export const divider = {
 export const nestedGroup = {
   key: 'nested group 1',
   label: 'Nested Group 1',
-  type: SubMenu,
+  type: Group,
   icon: <Icon color="currentColor" name="PiAtom" size={16} />,
   children: [
     {
@@ -101,7 +101,7 @@ export const nestedGroup = {
         {
           key: 'nested group 2',
           label: 'Nested Group 2',
-          type: SubMenu,
+          type: Group,
           icon: <Icon color="currentColor" name="PiPlanet" size={16} />,
           children: [
             {
@@ -126,7 +126,7 @@ export const nestedGroup = {
             {
               key: 'nested group 3',
               label: 'Nested Group 3',
-              type: SubMenu,
+              type: Group,
               icon: <Icon color="currentColor" name="PiSkull" size={16} />,
               children: [
                 {
