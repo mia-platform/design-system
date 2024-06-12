@@ -31,34 +31,33 @@ export type BreadcrumbProps = {
   /**
    * The list of breadcrumb items.
    *
-   * BreadcrumbItemType `object`:
-   *   - getPopupContainer: The DOM element where the container is attached. Defaults to `document.body`. <br>
-   *   `(triggerNode: HTMLElement) => HTMLElement;`
-   *   - icon: Icon to be displayed alongside the breadcrumb item. <br> `ReactNode`
-   *   - key: Unique key for the breadcrumb item. <br> `string`
-   *   - label: The label of the breadcrumb item, can be a string or ReactNode. <br> `ReactNode`
-   *   - menu: Menu associated with the breadcrumb item. <br>
-   *
-   *    `BreadcrumbItemMenu` `object`:
-   *    - activeKey: The key of the currently active menu item. <br> `string`
-   *    - items: List of menu items in the breadcrumb. <br> `BreadcrumbItemMenuItem[]` <br>
-   *
-   *      BreadcrumbItemMenuItem `object`:
-   *        - icon: Icon to be displayed alongside the menu item. <br> `ReactNode`
-   *        - key: Unique key for the menu item. <br> `string`
-   *        - onClick: Callback function to handle click events on the menu item. <br>
-   *        `(event: React.MouseEvent<Element, MouseEvent>) => void;`
-   *        - label*: The label of the menu item. <br> `string`
-   *    - onDropdownVisibleChange: Callback function to handle changes in dropdown visibility. <br>
-   *    `(open: boolean) => void;`
-   *    - onChangeSearch: Callback function to handle search operations. <br>
-   *     `React.ChangeEventHandler<HTMLInputElement>` <br>
-   *    - open: Indicates whether the menu is open. <br> `boolean`
-   *    - searchAllowClear: If true, allows clearing of the search input. <br> `boolean`
-   *    - searchPlaceholder: Placeholder text for the search input. <br> `string`
-   *    - showSearch: If true, displays the search input within the menu. <br> `boolean`
-   *   - onClick: Callback function to handle click events on the breadcrumb item. <br>
-   *   `(event: React.MouseEvent<Element, MouseEvent>) => void;`
+   * `object`:
+   *   - icon: icon to be displayed alongside the breadcrumb item. <br> `ReactNode`
+   *   - key: unique key for the breadcrumb item. If not specified defaults to item index. <br> `string`
+   *   - label: the label of the breadcrumb item. <br> `ReactNode`
+   *   - onClick: callback function to handle click events on the breadcrumb item. <br>
+   *   `(event: React.MouseEvent<Element, MouseEvent>) => void`
+   *   - menu: menu associated with the breadcrumb item. <br>
+   *   `object`:
+   *     - activeKey: the key of the currently active menu item. <br> `string`
+   *     - onClick: callback function to handle click events on the menu item. <br>
+   *     `(event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void`
+   *     - open: indicates whether the menu is open for a controlled behavior. <br> `boolean`
+   *     - onDropdownVisibleChange: callback function to handle changes in dropdown visibility. <br>
+   *     `(open: boolean) => void`
+   *     - emptyText: text to show if menu is empty or search matched no elements. Defaults to "No items" <br>
+   *     `string`
+   *     - search: searchbar visibility and options. <br>
+   *     `boolean | object`:
+   *       - onChange: callback function to handle search operations. <br>
+   *       `React.ChangeEventHandler<HTMLInputElement>`
+   *       - allowClear: if true, allows clearing of the search input. <br> `boolean`
+   *       - placeholder: placeholder text for the search input. <br> `string`
+   *     - items: list of menu items in the breadcrumb. <br>
+   *     `object[]`:
+   *       - icon: icon to be displayed alongside the menu item. <br> `ReactNode`
+   *       - key: unique key for the menu item. If not specified defaults to item index. <br> `string`
+   *       - label: label of the menu item. <br> `string`
    */
   items?: BreadcrumbItemType[];
 

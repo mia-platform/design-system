@@ -16,13 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Dropdown, Skeleton } from 'antd'
+import { Dropdown, Menu, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
+import { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 
+import { BodyS } from '../Typography/BodyX/BodyS'
 import { BreadcrumbItemType } from './Breadcrumb.types'
 import { BreadcrumbSeparator } from './Breadcrumb.Separator'
 import { Icon } from '../Icon'
+import { buildItemKey } from './Breadcrumb.utils'
 import styles from './Breadcrumb.module.css'
 
 type Props = {
@@ -33,14 +36,36 @@ type Props = {
 
 export const BREADCRUMB_COLLAPSED_WIDTH = 32
 
-export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer }: Props): ReactElement => {
+export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer, items }: Props): ReactElement => {
+  const menuItems = useMemo<ItemType[]>(() => {
+    return items.map<ItemType>((item, idx) => {
+      const maybeSubItem = item.menu?.items?.find(({ key }) => key === item.menu?.activeKey)
+      const labelText = maybeSubItem?.label ?? item.label
+      const labelIcon = maybeSubItem?.icon ?? item.icon
+
+      return {
+        className: !item.onClick ? styles.noInteraction : '',
+        key: buildItemKey(item, idx),
+        label: (
+          <BodyS ellipsis={{ rows: 1, tooltip: item?.label }}>
+            {labelText}
+          </BodyS>
+        ),
+        icon: labelIcon ? <div>{labelIcon}</div> : undefined,
+        onClick: ({ domEvent }) => item.onClick?.(domEvent as React.MouseEvent<Element, MouseEvent>),
+      }
+    })
+  }, [items])
+
   const dropdown = useMemo(() => {
     return (
-      <div>
-        Ciao
+      <div className={classNames([styles.dropdownMenuContainer, styles.dropdownCollapseMenuContainer])}>
+        <div className={styles.dropdownMenu}>
+          <Menu items={menuItems} />
+        </div>
       </div>
     )
-  }, [])
+  }, [menuItems])
 
   return isLoading
     ? <Skeleton.Button active />
@@ -49,8 +74,7 @@ export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer }: Props):
         <Dropdown
           dropdownRender={() => dropdown}
           getPopupContainer={(trigger) => getDropdownContainer() ?? trigger}
-          open
-          placement={'bottom'}
+          placement="bottomRight"
           trigger={['click']}
         >
           <div
@@ -64,58 +88,3 @@ export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer }: Props):
       </>
     )
 }
-
-// const dropdownMenu = useMemo<MenuProps>(() => {
-//   const dropdownItems = Object.values(collapsedItems ?? {})
-//     .reduce<ItemType[]>((acc, itemData, currentIndex) => {
-//       const itemKey = itemData.key ?? `breadcrumb-menu-item--${currentIndex}`
-
-//       let dropdownItemSubmenu
-//       if (Object.values(itemData.menu?.items ?? {}).length > 0) {
-//         dropdownItemSubmenu = itemData?.menu?.items?.map(({ icon, key, label, onClick }, index) => ({
-//           icon,
-//           key: key ?? `${itemKey}-collapsed-menu-item-${index}`,
-//           label: (
-//             <div onClick={onClick}>
-//               <BodyS ellipsis={{ rows: 1, tooltip: label }}>
-//                 {label}
-//               </BodyS>
-//             </div>
-//           ),
-//         }))
-//       }
-
-//       const dropdownItem: ItemType = {
-//         ...{ children: dropdownItemSubmenu },
-//         key: itemKey,
-//         icon: getItemIcon(itemData),
-//         label: (
-//           <div onClick={itemData.onClick}>
-//             <BodyS ellipsis={{ rows: 1, tooltip: getItemLabel(itemData) }}>
-//               {getItemLabel(itemData)}
-//             </BodyS>
-//           </div>
-//         ),
-//         popupClassName: styles.breadcrumbItemSubmenu,
-//       }
-
-//       return [...acc, dropdownItem]
-//     }, [])
-
-//   return { items: dropdownItems }
-// }, [collapsedItems])
-
-// const renderCollapsedDropdown = useCallback((): ReactElement => {
-//   return (
-//     <Dropdown menu={dropdownMenu} overlayClassName={styles.breadcrumbItemSubmenu}>
-//       <div className={styles.breadcrumbItemWrapper}>
-//         <BreadcrumbItem
-//           isLoading={isLoading}
-//           itemsLength={items.length}
-//           key={`breadcrumb-item-collapsed`}
-//           label={'...'}
-//         />
-//       </div>
-//     </Dropdown>
-//   )
-// }, [dropdownMenu, isLoading, items.length])

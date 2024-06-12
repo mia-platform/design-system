@@ -20,7 +20,7 @@ import { ReactElement } from 'react'
 
 import { BREADCRUMB_COLLAPSED_WIDTH, BreadcrumbCollapsed } from './Breadcrumb.Collapsed'
 import { BREADCRUMB_SEPARATOR_PADDING, BREADCRUMB_SEPARATOR_SIZE } from './Breadcrumb.Separator'
-import { BreadcrumbButton, BreadcrumbItemType } from './Breadcrumb.types'
+import { BreadcrumbButton, BreadcrumbItemMenuItem, BreadcrumbItemType } from './Breadcrumb.types'
 import { BreadcrumbItem } from './Breadcrumb.Item'
 
 export const renderItem = (
@@ -91,3 +91,6 @@ export const computeItems = (
 
   return nextVisibleItems
 }
+
+export const buildItemKey = (item: BreadcrumbItemType, idx: number): string => item.key ?? `breadcrumb-item-${idx}`
+export const buildMenuItemKey = (item: BreadcrumbItemMenuItem, idx: number): string => item.key ?? `breadcrumb-menu-item-${idx}`

@@ -148,21 +148,40 @@ export const loadingProps: BreadcrumbProps = {
 
 export const collapsedProps: BreadcrumbProps = {
   items: [
-    { onClick: action('click'), label: 'Text 1' },
-    { onClick: action('click'), icon: breadcrumbIcon, label: 'Text 2' },
+    { onClick: action('click 0'), label: 'Text 1' },
+    { onClick: action('click 1'), icon: breadcrumbIcon, label: 'Text 2' },
+    {
+      // icon: breadcrumbIcon,
+      label: 'Text 3',
+      onClick: action('click 2'),
+      menu: {
+        activeKey: 'orders',
+        items: [
+          { key: 'orders', label: 'Orders', icon: breadcrumbIcon },
+          { key: 'shipping', label: 'Shipping', icon: breadcrumbIcon },
+          { key: 'refunds', label: 'Refunds', icon: breadcrumbIcon },
+          { key: 'packaging', label: 'Packaging', icon: breadcrumbIcon },
+        ],
+        onClick: action('click menu 2'),
+        onDropdownVisibleChange: action('dropdown open'),
+      },
+    },
     {
       icon: breadcrumbIcon,
-      label: 'Text 3',
       menu: { items: [], onDropdownVisibleChange: action('dropdown open') },
     },
     {
-      onClick: action('click'),
+      onClick: action('click 4'),
+      menu: { items: [], onDropdownVisibleChange: action('dropdown open') },
+    },
+    {
+      onClick: action('click 5'),
       label: 'Text 4',
       menu: { items: [], onDropdownVisibleChange: action('dropdown open') },
     },
     { label: 'Text 5' },
     { label: 'Text 6' },
-    { label: 'Text 7' },
+    { label: 'Text 7', onClick: action('click 8') },
   ],
   getPopupContainer: (containerNode) => containerNode.parentElement?.parentElement ?? containerNode,
 }
