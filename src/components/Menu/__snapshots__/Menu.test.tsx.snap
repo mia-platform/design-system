@@ -3,7 +3,7 @@
 exports[`Menu Component renders category correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-vertical mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
@@ -27,15 +27,12 @@ exports[`Menu Component renders category correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
-          style="padding-left: 0px;"
           tabindex="-1"
-          title="Category Item 1"
         >
           <div
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiSun"
               aria-label="PiSun"
               color="currentColor"
               fill="currentColor"
@@ -63,15 +60,12 @@ exports[`Menu Component renders category correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
-          style="padding-left: 0px;"
           tabindex="-1"
-          title="Category Item 2"
         >
           <div
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiMoon"
               aria-label="PiMoon"
               color="currentColor"
               fill="currentColor"
@@ -118,13 +112,11 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
       tabindex="-1"
-      title="Item"
     >
       <div
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -165,7 +157,6 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -202,13 +193,11 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
       data-menu-id="rc-menu-uuid-test-category item 1"
       role="menuitem"
       tabindex="-1"
-      title="Category Item 1"
     >
       <div
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiSun"
           aria-label="PiSun"
           color="currentColor"
           fill="currentColor"
@@ -237,13 +226,11 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
       data-menu-id="rc-menu-uuid-test-category item 2"
       role="menuitem"
       tabindex="-1"
-      title="Category Item 2"
     >
       <div
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiMoon"
           aria-label="PiMoon"
           color="currentColor"
           fill="currentColor"
@@ -278,7 +265,7 @@ exports[`Menu Component renders collapsed menu correctly 1`] = `
 exports[`Menu Component renders divider correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-vertical mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
@@ -298,13 +285,13 @@ exports[`Menu Component renders divider correctly 1`] = `
 exports[`Menu Component renders group correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-vertical mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
   >
     <li
-      class="mia-platform-menu-submenu mia-platform-menu-submenu-inline"
+      class="mia-platform-menu-submenu mia-platform-menu-submenu-vertical"
       role="none"
     >
       <div
@@ -314,14 +301,12 @@ exports[`Menu Component renders group correctly 1`] = `
         class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
-        style="padding-left: 0px;"
         tabindex="-1"
       >
         <div
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -360,7 +345,7 @@ exports[`Menu Component renders group correctly 1`] = `
 exports[`Menu Component renders inline menu correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-vertical mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
@@ -369,15 +354,12 @@ exports[`Menu Component renders inline menu correctly 1`] = `
       class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
-      style="padding-left: 0px;"
       tabindex="-1"
-      title="Item"
     >
       <div
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -402,7 +384,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
       </span>
     </li>
     <li
-      class="mia-platform-menu-submenu mia-platform-menu-submenu-inline"
+      class="mia-platform-menu-submenu mia-platform-menu-submenu-vertical"
       role="none"
     >
       <div
@@ -412,14 +394,12 @@ exports[`Menu Component renders inline menu correctly 1`] = `
         class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
-        style="padding-left: 0px;"
         tabindex="-1"
       >
         <div
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -470,15 +450,12 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
-          style="padding-left: 0px;"
           tabindex="-1"
-          title="Category Item 1"
         >
           <div
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiSun"
               aria-label="PiSun"
               color="currentColor"
               fill="currentColor"
@@ -506,15 +483,12 @@ exports[`Menu Component renders inline menu correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
-          style="padding-left: 0px;"
           tabindex="-1"
-          title="Category Item 2"
         >
           <div
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiMoon"
               aria-label="PiMoon"
               color="currentColor"
               fill="currentColor"
@@ -551,7 +525,7 @@ exports[`Menu Component renders inline menu correctly 1`] = `
 exports[`Menu Component renders item correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-vertical mia-platform-menu-light menu"
     data-menu-list="true"
     role="menu"
     tabindex="0"
@@ -560,15 +534,12 @@ exports[`Menu Component renders item correctly 1`] = `
       class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
-      style="padding-left: 0px;"
       tabindex="-1"
-      title="Item"
     >
       <div
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -603,7 +574,7 @@ exports[`Menu Component renders item correctly 1`] = `
 exports[`Menu Component renders primary menu correctly 1`] = `
 <DocumentFragment>
   <ul
-    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-inline mia-platform-menu-light menu primary"
+    class="mia-platform-menu mia-platform-menu-root mia-platform-menu-vertical mia-platform-menu-light menu primary"
     data-menu-list="true"
     role="menu"
     tabindex="0"
@@ -612,15 +583,12 @@ exports[`Menu Component renders primary menu correctly 1`] = `
       class="mia-platform-menu-item"
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
-      style="padding-left: 0px;"
       tabindex="-1"
-      title="Item"
     >
       <div
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -645,7 +613,7 @@ exports[`Menu Component renders primary menu correctly 1`] = `
       </span>
     </li>
     <li
-      class="mia-platform-menu-submenu mia-platform-menu-submenu-inline"
+      class="mia-platform-menu-submenu mia-platform-menu-submenu-vertical"
       role="none"
     >
       <div
@@ -655,14 +623,12 @@ exports[`Menu Component renders primary menu correctly 1`] = `
         class="mia-platform-menu-submenu-title"
         data-menu-id="rc-menu-uuid-test-group"
         role="menuitem"
-        style="padding-left: 0px;"
         tabindex="-1"
       >
         <div
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -713,15 +679,12 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
-          style="padding-left: 0px;"
           tabindex="-1"
-          title="Category Item 1"
         >
           <div
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiSun"
               aria-label="PiSun"
               color="currentColor"
               fill="currentColor"
@@ -749,15 +712,12 @@ exports[`Menu Component renders primary menu correctly 1`] = `
           class="mia-platform-menu-item"
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
-          style="padding-left: 0px;"
           tabindex="-1"
-          title="Category Item 2"
         >
           <div
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiMoon"
               aria-label="PiMoon"
               color="currentColor"
               fill="currentColor"
@@ -843,13 +803,11 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
       data-menu-id="rc-menu-uuid-test-item"
       role="menuitem"
       tabindex="-1"
-      title="Item"
     >
       <div
         class="mia-platform-menu-item-icon"
       >
         <svg
-          alt="PiStar"
           aria-label="PiStar"
           color="currentColor"
           fill="currentColor"
@@ -890,7 +848,6 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
           class="mia-platform-menu-item-icon"
         >
           <svg
-            alt="PiSnowflake"
             aria-label="PiSnowflake"
             color="currentColor"
             fill="currentColor"
@@ -942,13 +899,11 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
           data-menu-id="rc-menu-uuid-test-category item 1"
           role="menuitem"
           tabindex="-1"
-          title="Category Item 1"
         >
           <div
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiSun"
               aria-label="PiSun"
               color="currentColor"
               fill="currentColor"
@@ -977,13 +932,11 @@ exports[`Menu Component renders vertical menu correctly 1`] = `
           data-menu-id="rc-menu-uuid-test-category item 2"
           role="menuitem"
           tabindex="-1"
-          title="Category Item 2"
         >
           <div
             class="mia-platform-menu-item-icon"
           >
             <svg
-              alt="PiMoon"
               aria-label="PiMoon"
               color="currentColor"
               fill="currentColor"

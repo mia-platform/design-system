@@ -53,19 +53,19 @@ exports[`Table Component renders actions correctly 1`] = `
                     >
                       Field 4
                     </th>
-                    <th
+                    <td
                       class="mia-platform-table-cell"
                       style="text-align: right;"
                     />
-                    <th
+                    <td
                       class="mia-platform-table-cell"
                       style="text-align: right;"
                     />
-                    <th
+                    <td
                       class="mia-platform-table-cell"
                       style="text-align: right;"
                     />
-                    <th
+                    <td
                       class="mia-platform-table-cell"
                       style="text-align: right;"
                     />
@@ -1910,7 +1910,7 @@ exports[`Table Component renders expandable rows correctly 1`] = `
                   class="mia-platform-table-thead"
                 >
                   <tr>
-                    <th
+                    <td
                       class="mia-platform-table-cell mia-platform-table-row-expand-icon-cell"
                     />
                     <th
@@ -3548,7 +3548,7 @@ exports[`Table Component renders pagination correctly 1`] = `
           >
             <div
               aria-label="Page Size"
-              class="mia-platform-select mia-platform-select-sm mia-platform-select-outlined mia-platform-pagination-options-size-changer mia-platform-select-single mia-platform-select-show-arrow mia-platform-select-show-search"
+              class="mia-platform-select mia-platform-select-sm mia-platform-pagination-options-size-changer mia-platform-select-single mia-platform-select-show-arrow mia-platform-select-show-search"
             >
               <div
                 class="mia-platform-select-selector"
