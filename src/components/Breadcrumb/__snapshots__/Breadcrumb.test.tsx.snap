@@ -392,7 +392,7 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
           class="dropdownMenuSearch"
         >
           <span
-            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused"
+            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused mia-platform-input-outlined"
           >
             <input
               class="mia-platform-input"
@@ -722,7 +722,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
           class="dropdownMenuSearch"
         >
           <span
-            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused"
+            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused mia-platform-input-outlined"
           >
             <input
               class="mia-platform-input"

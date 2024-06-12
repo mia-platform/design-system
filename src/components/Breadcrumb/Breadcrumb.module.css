@@ -218,7 +218,6 @@
       & :global(.mia-platform-dropdown-menu-item) {
         padding: var(--spacing-padding-sm, 8px) !important;
         gap: var(--spacing-gap-sm, 8px);
-        height: 32px;
 
         &:hover {
           background-color: var(--palette-action-alternate-secondary-hover, #00000014) !important;

@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,16 @@ export const Uncontrolled: Story = {
 
 export const Controlled: Story = {
   args: controlledProps,
+  decorators: [
+    (_, { args }) => {
+      return (
+        <Breadcrumb
+          {...args}
+          getPopupContainer={() => window.document.getElementById('storybook-root') ?? document.body}
+        />
+      )
+    },
+  ],
 }
 
 export const Loading: Story = {

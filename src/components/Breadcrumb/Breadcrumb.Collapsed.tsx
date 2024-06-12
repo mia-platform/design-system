@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 
 import { Dropdown, Menu, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
-import { ItemType } from 'antd/es/menu/hooks/useItems'
+import { ItemType } from 'antd/es/menu/interface'
 import classNames from 'classnames'
 
 import { BodyS } from '../Typography/BodyX/BodyS'
