@@ -26,6 +26,28 @@ export const breadcrumbLabel = 'Text'
 
 const getPopupContainer: BreadcrumbProps['getPopupContainer'] = (containerNode) => containerNode.parentElement ?? containerNode
 
+export const defaultProps: BreadcrumbProps = {
+  items: [
+    {
+      onClick: action('click'),
+      label: 'Orders',
+      icon: <Icon color="black" name="PiShoppingCart" size={16} />,
+    },
+    {
+      menu: {
+        onClick: action('click'),
+        activeKey: '1',
+        items: [
+          { key: '1', label: 'Order #1', icon: <Icon color="black" name="PiBasket" size={16} /> },
+          { key: '2', label: 'Order #2', icon: <Icon color="black" name="PiBasket" size={16} /> },
+          { key: '3', label: 'Order #3', icon: <Icon color="black" name="PiBasket" size={16} /> },
+        ],
+      },
+    },
+    { label: 'Details' },
+  ],
+}
+
 export const withoutMenuProps: BreadcrumbProps = {
   items: [
     { onClick: action('click'), label: 'Text only' },
@@ -91,7 +113,6 @@ export const withMenuProps: BreadcrumbProps = {
       },
     },
   ],
-  getPopupContainer,
 }
 
 export const uncontrolledProps: BreadcrumbProps = {
@@ -148,40 +169,15 @@ export const loadingProps: BreadcrumbProps = {
 
 export const collapsedProps: BreadcrumbProps = {
   items: [
-    { onClick: action('click 0'), label: 'Text 1' },
-    { onClick: action('click 1'), icon: breadcrumbIcon, label: 'Text 2' },
-    {
-      // icon: breadcrumbIcon,
-      label: 'Text 3',
-      onClick: action('click 2'),
-      menu: {
-        activeKey: 'orders',
-        items: [
-          { key: 'orders', label: 'Orders', icon: breadcrumbIcon },
-          { key: 'shipping', label: 'Shipping', icon: breadcrumbIcon },
-          { key: 'refunds', label: 'Refunds', icon: breadcrumbIcon },
-          { key: 'packaging', label: 'Packaging', icon: breadcrumbIcon },
-        ],
-        onClick: action('click menu 2'),
-        onDropdownVisibleChange: action('dropdown open'),
-      },
-    },
-    {
-      icon: breadcrumbIcon,
-      menu: { items: [], onDropdownVisibleChange: action('dropdown open') },
-    },
-    {
-      onClick: action('click 4'),
-      menu: { items: [], onDropdownVisibleChange: action('dropdown open') },
-    },
-    {
-      onClick: action('click 5'),
-      label: 'Text 4',
-      menu: { items: [], onDropdownVisibleChange: action('dropdown open') },
-    },
-    { label: 'Text 5' },
-    { label: 'Text 6' },
-    { label: 'Text 7', onClick: action('click 8') },
+    { onClick: action('click'), label: 'Text' },
+    { onClick: action('click'), icon: breadcrumbIcon, label: 'Text' },
+    { onClick: action('click'), label: 'Text' },
+    { onClick: action('click'), icon: breadcrumbIcon, label: 'Text' },
+    { onClick: action('click'), icon: breadcrumbIcon, label: 'Text' },
+    { onClick: action('click'), icon: breadcrumbIcon, label: 'Text' },
+    { onClick: action('click'), label: 'Text' },
+    { onClick: action('click'), label: 'Text' },
+    { onClick: action('click'), label: 'Text' },
   ],
   getPopupContainer: (containerNode) => containerNode.parentElement?.parentElement ?? containerNode,
 }

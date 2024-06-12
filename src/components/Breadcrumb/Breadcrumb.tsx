@@ -25,7 +25,7 @@ import { BreadcrumbProps } from './Breadcrumb.props'
 import styles from './Breadcrumb.module.css'
 
 /**
- * UI component for displaying the current location within an hierarchy
+ * UI component for displaying the current location within an hierarchy.
  *
  * @returns {Breadcrumb} Breadcrumb component
  */

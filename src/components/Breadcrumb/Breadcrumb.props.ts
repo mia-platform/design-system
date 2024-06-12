@@ -18,13 +18,10 @@
 
 import { BreadcrumbItemType } from './Breadcrumb.types'
 
-/**
- * Represents the props for a breadcrumb component.
- */
 export type BreadcrumbProps = {
 
   /**
-   * Indicates whether the component is loading or not.
+   * Indicates whether the component is loading.
    */
   isLoading?: boolean;
 
@@ -33,7 +30,7 @@ export type BreadcrumbProps = {
    *
    * `object`:
    *   - icon: icon to be displayed alongside the breadcrumb item. <br> `ReactNode`
-   *   - key: unique key for the breadcrumb item. If not specified defaults to item index. <br> `string`
+   *   - key: unique key for the breadcrumb item. Defaults to item index. <br> `string`
    *   - label: the label of the breadcrumb item. <br> `ReactNode`
    *   - onClick: callback function to handle click events on the breadcrumb item. <br>
    *   `(event: React.MouseEvent<Element, MouseEvent>) => void`
@@ -41,7 +38,7 @@ export type BreadcrumbProps = {
    *   `object`:
    *     - activeKey: the key of the currently active menu item. <br> `string`
    *     - onClick: callback function to handle click events on the menu item. <br>
-   *     `(event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void`
+   *     `(key: string, event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void`
    *     - open: indicates whether the menu is open for a controlled behavior. <br> `boolean`
    *     - onDropdownVisibleChange: callback function to handle changes in dropdown visibility. <br>
    *     `(open: boolean) => void`
@@ -56,7 +53,7 @@ export type BreadcrumbProps = {
    *     - items: list of menu items in the breadcrumb. <br>
    *     `object[]`:
    *       - icon: icon to be displayed alongside the menu item. <br> `ReactNode`
-   *       - key: unique key for the menu item. If not specified defaults to item index. <br> `string`
+   *       - key: unique key for the menu item. Defaults to item index. <br> `string`
    *       - label: label of the menu item. <br> `string`
    */
   items?: BreadcrumbItemType[];

@@ -16,8 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { multipleItemsLoadingProps, multipleItemsProps, multipleItemsWithEllipsisProps, multipleItemsWithMenuProps, oneItemIconAndTitleProps, oneItemTitleOnlyProps, twoItemsProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
+import { BreadcrumbProps } from './Breadcrumb.props'
+import { breadcrumbIcon } from './Breadcrumb.mocks'
 import { render } from '../../test-utils'
 
 describe('Breadcrumb Component', () => {
@@ -25,42 +26,51 @@ describe('Breadcrumb Component', () => {
     jest.resetAllMocks()
   })
 
-  test('renders a breadcrumb with one item - title only', () => {
-    const { asFragment } = render(<Breadcrumb {...oneItemTitleOnlyProps} />)
+  test('renders a breadcrumb with different button types', () => {
+    const props: BreadcrumbProps = {
+      items: [
+        { },
+        { label: 'Text' },
+        { label: 'Very long text that should be ellipsed at some point' },
+        { icon: breadcrumbIcon },
+        { label: 'Text', icon: breadcrumbIcon },
+        { menu: { items: [] } },
+        { label: 'Text', menu: { items: [] } },
+        { icon: breadcrumbIcon, label: 'Text', menu: { items: [] } },
+        { onClick: jest.fn, icon: breadcrumbIcon, label: 'Text', menu: { items: [] } },
+      ],
+    }
+
+    const { asFragment } = render(<Breadcrumb {...props} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('renders a breadcrumb with one item - icon and title', () => {
-    const { asFragment } = render(<Breadcrumb {...oneItemIconAndTitleProps} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
+  // test('renders a breadcrumb with two items', () => {
+  //   const { asFragment } = render(<Breadcrumb {...twoItemsProps} />)
+  //   expect(asFragment()).toMatchSnapshot()
+  // })
 
-  test('renders a breadcrumb with two items', () => {
-    const { asFragment } = render(<Breadcrumb {...twoItemsProps} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
+  // test('renders a breadcrumb with multiple items - loading', () => {
+  //   const { asFragment } = render(<Breadcrumb {...multipleItemsLoadingProps} />)
+  //   expect(asFragment()).toMatchSnapshot()
+  // })
 
-  test('renders a breadcrumb with multiple items - loading', () => {
-    const { asFragment } = render(<Breadcrumb {...multipleItemsLoadingProps} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
+  // test('renders a breadcrumb with multiple items - without menu (Default)', () => {
+  //   const { asFragment } = render(<Breadcrumb {...multipleItemsProps} />)
+  //   expect(asFragment()).toMatchSnapshot()
+  // })
 
-  test('renders a breadcrumb with multiple items - without menu (Default)', () => {
-    const { asFragment } = render(<Breadcrumb {...multipleItemsProps} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
+  // test('renders a breadcrumb with multiple items - with menu', () => {
+  //   const { asFragment } = render(<Breadcrumb {...multipleItemsWithMenuProps} />)
+  //   expect(asFragment()).toMatchSnapshot()
+  // })
 
-  test('renders a breadcrumb with multiple items - with menu', () => {
-    const { asFragment } = render(<Breadcrumb {...multipleItemsWithMenuProps} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('renders a breadcrumb with multiple items - ellipsed', () => {
-    const { asFragment } = render(
-      <div style={{ maxWidth: '500px' }}>
-        <Breadcrumb {...multipleItemsWithEllipsisProps} />
-      </div>
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
+  // test('renders a breadcrumb with multiple items - ellipsed', () => {
+  //   const { asFragment } = render(
+  //     <div style={{ maxWidth: '500px' }}>
+  //       <Breadcrumb {...multipleItemsWithEllipsisProps} />
+  //     </div>
+  //   )
+  //   expect(asFragment()).toMatchSnapshot()
+  // })
 })

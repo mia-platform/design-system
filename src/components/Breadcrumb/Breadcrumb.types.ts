@@ -18,9 +18,6 @@
 
 import { ReactNode } from 'react'
 
-/**
- * Represents a menu item within a breadcrumb.
- */
 export type BreadcrumbItemMenuItem = {
 
   /**
@@ -57,9 +54,6 @@ export type SearchOptions = {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-/**
- * Represents a menu within a breadcrumb item.
- */
 export type BreadcrumbItemMenu = {
 
   /**
@@ -81,7 +75,7 @@ export type BreadcrumbItemMenu = {
   onClick?: (key: string, event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
 
   /**
-   * Indicates whether the menu is open.
+   * Indicates whether the menu is open for a controlled behavior.
    */
   open?: boolean;
 
@@ -92,17 +86,17 @@ export type BreadcrumbItemMenu = {
    */
   onDropdownVisibleChange?: (open: boolean) => void;
 
+  /**
+   * Searchbar visibility and options.
+   */
   search?: boolean | SearchOptions;
 
   /**
-   * Text to show if menu is empty or search matched no elements. Defaults to "No items"
+   * Text to show if menu is empty or search matched no elements. Defaults to "No items".
    */
   emptyText?: string
 }
 
-/**
- * Represents a breadcrumb item.
- */
 export type BreadcrumbItemType = {
 
   /**
@@ -116,7 +110,7 @@ export type BreadcrumbItemType = {
   key?: string;
 
   /**
-   * The label of the breadcrumb item, can be a string or ReactNode.
+   * The label of the breadcrumb item.
    */
   label?: ReactNode;
 
