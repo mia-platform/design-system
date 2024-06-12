@@ -20,7 +20,7 @@ import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useCallback, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
-import { Hierarchy, ItemTypes, Mode } from './Menu.types'
+import { Hierarchy, ItemType, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import { MenuProps } from './Menu.props'
 import formatLabels from './Menu.utils'
@@ -43,17 +43,17 @@ export const defaults = {
 /**
  * UI component for presenting nested lists of elements, organized by group or category
  *
- * @link https://ant.design/components/menu
+ * @link https://ant.design/components/menudefaults
  * @returns {Menu} Menu component
  */
 export const Menu = ({
-  defaultOpenKeys = defaults.defaultOpenKeys,
+  defaultOpenKeys,
   defaultSelectedKey,
-  hierarchy = defaults.hierarchy,
-  items = defaults.items,
-  isCollapsed = defaults.isCollapsed,
-  isLoading = defaults.isLoading,
-  mode = defaults.mode,
+  hierarchy,
+  items,
+  isCollapsed,
+  isLoading,
+  mode,
   onClick,
   onOpenChange,
   openKeys,
@@ -63,9 +63,13 @@ export const Menu = ({
 
   const theme = useTheme()
   const menuTheme = isPrimary ? primaryTheme(theme) : defaultTheme(theme)
-  const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
 
-  const menuClassNames = useMemo(() => classNames([menu, isPrimary && 'primary']), [isPrimary])
+  const menuClassNames = useMemo(() => classNames([
+    menu,
+    isPrimary && 'primary',
+  ]), [isPrimary])
+
+  const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
 
   const onSelect = useCallback(({ key }: {key: string}) => setSelectedItem(key), [])
 
@@ -112,6 +116,6 @@ Menu.skeletonParagraph = {
   width: ['30%', '80%', '65%', '30%', '70%', '60%'],
 }
 
-Menu.ItemType = ItemTypes
+Menu.ItemType = ItemType
 Menu.Hierarchy = Hierarchy
 Menu.Mode = Mode
