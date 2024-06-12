@@ -117,7 +117,7 @@ export const BreadcrumbItem = ({
           <div className={classNames([isLastItem && styles.breadcrumbItemLast])}>
             <div className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}>
               {label}
-              <CaretFullDownSvg />
+              <CaretFullDownSvg aria-label="caret-full-down" />
             </div>
           </div>
         </Dropdown>
@@ -147,7 +147,7 @@ export const BreadcrumbItem = ({
             hasMenu && (
               <Dropdown {...dropdownProps}>
                 <div className={classNames([styles.breadcrumbMenuIcon, label && styles.withLabel])}>
-                  <CaretFullDownSvg />
+                  <CaretFullDownSvg aria-label="caret-full-down" />
                 </div>
               </Dropdown>
             )

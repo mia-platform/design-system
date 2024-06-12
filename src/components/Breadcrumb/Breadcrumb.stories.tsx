@@ -108,7 +108,7 @@ export const Collapsed: Story = {
   decorators: [
     (_, { args, id }) => {
       return (
-        <div style={{ width: 550, border: '1px dashed #029CFD', overflow: 'hidden' }}>
+        <div style={{ width: 500, overflow: 'hidden' }}>
           <Breadcrumb
             {...args}
             getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}

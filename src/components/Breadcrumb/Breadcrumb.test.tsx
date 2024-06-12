@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from '../../test-utils'
 import { Breadcrumb } from './Breadcrumb'
 import { BreadcrumbProps } from './Breadcrumb.props'
 import { breadcrumbIcon } from './Breadcrumb.mocks'
-import { render } from '../../test-utils'
 
 describe('Breadcrumb Component', () => {
   beforeEach(() => {
@@ -45,32 +45,122 @@ describe('Breadcrumb Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  // test('renders a breadcrumb with two items', () => {
-  //   const { asFragment } = render(<Breadcrumb {...twoItemsProps} />)
-  //   expect(asFragment()).toMatchSnapshot()
-  // })
+  test('renders a breadcrumb in loading state', () => {
+    const props: BreadcrumbProps = {
+      isLoading: true,
+      items: [{ label: 'Text' }],
+    }
 
-  // test('renders a breadcrumb with multiple items - loading', () => {
-  //   const { asFragment } = render(<Breadcrumb {...multipleItemsLoadingProps} />)
-  //   expect(asFragment()).toMatchSnapshot()
-  // })
+    const { asFragment } = render(<Breadcrumb {...props} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
 
-  // test('renders a breadcrumb with multiple items - without menu (Default)', () => {
-  //   const { asFragment } = render(<Breadcrumb {...multipleItemsProps} />)
-  //   expect(asFragment()).toMatchSnapshot()
-  // })
+  test('renders item menu correctly', async() => {
+    const buttonClickMock = jest.fn()
+    const menuItemClickMock = jest.fn()
+    const onDropdownVisibleChangeMock = jest.fn()
 
-  // test('renders a breadcrumb with multiple items - with menu', () => {
-  //   const { asFragment } = render(<Breadcrumb {...multipleItemsWithMenuProps} />)
-  //   expect(asFragment()).toMatchSnapshot()
-  // })
+    const props: BreadcrumbProps = {
+      items: [
+        {
+          key: 'root',
+          onClick: buttonClickMock,
+          label: 'Text',
+          icon: breadcrumbIcon,
+          menu: {
+            onClick: menuItemClickMock,
+            onDropdownVisibleChange: onDropdownVisibleChangeMock,
+            search: true,
+            items: [
+              { key: 'item-1', label: 'Item 1' },
+              { key: 'item-2', label: 'Item 2', icon: breadcrumbIcon },
+            ],
+          },
+        },
+      ],
+    }
 
-  // test('renders a breadcrumb with multiple items - ellipsed', () => {
-  //   const { asFragment } = render(
-  //     <div style={{ maxWidth: '500px' }}>
-  //       <Breadcrumb {...multipleItemsWithEllipsisProps} />
-  //     </div>
-  //   )
-  //   expect(asFragment()).toMatchSnapshot()
-  // })
+    const { asFragment } = render(<Breadcrumb {...props} />)
+    expect(asFragment()).toMatchSnapshot()
+
+    const [button] = screen.getAllByText('Text')
+    fireEvent.click(button)
+    expect(buttonClickMock).toHaveBeenCalledTimes(1)
+
+    const [dropdownTrigger] = screen.getAllByLabelText('caret-full-down')
+    fireEvent.click(dropdownTrigger)
+    expect(buttonClickMock).toHaveBeenCalledTimes(1)
+    expect(onDropdownVisibleChangeMock).toHaveBeenCalledTimes(1)
+    expect(onDropdownVisibleChangeMock).toHaveBeenCalledWith(true)
+
+    expect(asFragment()).toMatchSnapshot()
+
+    fireEvent.click(screen.getByText('Item 1'))
+    expect(menuItemClickMock).toHaveBeenCalledTimes(1)
+    expect(menuItemClickMock).toHaveBeenCalledWith('item-1', expect.any(Object))
+
+    fireEvent.click(dropdownTrigger)
+    fireEvent.click(screen.getByText('Item 2'))
+    expect(menuItemClickMock).toHaveBeenNthCalledWith(2, 'item-2', expect.any(Object))
+
+    fireEvent.click(dropdownTrigger)
+    fireEvent.change(screen.getByPlaceholderText('Search...'), { target: { value: 'foo' } })
+    await waitFor(() => expect(screen.getByText('No items')).toBeInTheDocument())
+
+    fireEvent.click(dropdownTrigger)
+    expect(screen.queryByText('No items')).not.toBeInTheDocument()
+
+    fireEvent.click(dropdownTrigger)
+    expect(screen.queryByText('No items')).not.toBeInTheDocument()
+    expect(screen.getByText('Item 1')).toBeInTheDocument()
+    expect(screen.getByText('Item 2')).toBeInTheDocument()
+    fireEvent.change(screen.getByPlaceholderText('Search...'), { target: { value: '1' } })
+    await waitFor(() => expect(screen.getByText('Item 1')).toBeInTheDocument())
+    await waitForElementToBeRemoved(() => screen.queryByText('Item 2'))
+  })
+
+  test('renders controlled item menu correctly', () => {
+    const onSearchMock = jest.fn()
+    const menuItemClickMock = jest.fn()
+    const onDropdownVisibleChangeMock = jest.fn()
+
+    const props: BreadcrumbProps = {
+      items: [
+        {
+          key: 'root',
+          label: 'Text',
+          icon: breadcrumbIcon,
+          menu: {
+            open: true,
+            onClick: menuItemClickMock,
+            onDropdownVisibleChange: onDropdownVisibleChangeMock,
+            search: {
+              onChange: onSearchMock,
+            },
+            items: [
+              { key: 'item-1', label: 'Item 1' },
+              { key: 'item-2', label: 'Item 2', icon: breadcrumbIcon },
+            ],
+          },
+        },
+      ],
+    }
+
+    const { asFragment } = render(<Breadcrumb {...props} />)
+    expect(asFragment()).toMatchSnapshot()
+
+    expect(screen.getByText('Item 1')).toBeInTheDocument()
+    expect(screen.getByText('Item 2')).toBeInTheDocument()
+
+    const [button] = screen.getAllByText('Text')
+    fireEvent.click(button)
+    expect(onDropdownVisibleChangeMock).toHaveBeenNthCalledWith(1, false)
+    expect(screen.getByText('Item 1')).toBeInTheDocument()
+    expect(screen.getByText('Item 2')).toBeInTheDocument()
+
+    fireEvent.change(screen.getByPlaceholderText('Search...'), { target: { value: 'foo' } })
+    expect(onSearchMock).toHaveBeenNthCalledWith(1, expect.any(Object))
+    expect(screen.getByText('Item 1')).toBeInTheDocument()
+    expect(screen.getByText('Item 2')).toBeInTheDocument()
+  })
 })
