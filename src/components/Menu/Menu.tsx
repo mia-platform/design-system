@@ -17,10 +17,10 @@
  */
 
 import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
-import { ReactElement, useCallback, useMemo, useState } from 'react'
+import { ReactElement, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
-import { Hierarchy, ItemTypes, Mode } from './Menu.types'
+import { Hierarchy, ItemType, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import { MenuProps } from './Menu.props'
 import formatLabels from './Menu.utils'
@@ -34,9 +34,9 @@ const { menu } = styles
 export const defaults = {
   defaultOpenKeys: [],
   hierarchy: Default,
-  items: [],
   isCollapsed: false,
   isLoading: false,
+  items: [],
   mode: Inline,
 }
 
@@ -63,17 +63,13 @@ export const Menu = ({
 
   const theme = useTheme()
   const menuTheme = isPrimary ? primaryTheme(theme) : defaultTheme(theme)
+
+  const menuClassNames = useMemo(() => classNames([
+    menu,
+    isPrimary && 'primary',
+  ]), [isPrimary])
+
   const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
-
-  const menuClassNames = useMemo(() => classNames([menu, isPrimary && 'primary']), [isPrimary])
-
-  const onSelect = useCallback(({ key }: {key: string}) => setSelectedItem(key), [])
-
-  const getPopupContainer = useCallback((targetNode: HTMLElement) => {
-    const element = document.querySelector(`.${menu}`)?.parentElement
-    if (!element) { return targetNode }
-    return element
-  }, [])
 
   const formattedItems = formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
 
@@ -89,7 +85,7 @@ export const Menu = ({
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
           // getPopupContainer is needed for nested menus to inherit CSS properties in the vertical mode
-          getPopupContainer={getPopupContainer}
+          getPopupContainer={() => document.querySelector(`.${menu}`)!}
           inlineCollapsed={isCollapsed}
           inlineIndent={0}
           items={formattedItems}
@@ -100,7 +96,7 @@ export const Menu = ({
           selectedKeys={(selectedKey && [selectedKey]) || (selectedItem && [selectedItem]) || undefined}
           onClick={onClick}
           onOpenChange={onOpenChange}
-          onSelect={onSelect}
+          onSelect={({ key }) => setSelectedItem(key)}
         />
       </Skeleton>
     </ConfigProvider>
@@ -112,6 +108,6 @@ Menu.skeletonParagraph = {
   width: ['30%', '80%', '65%', '30%', '70%', '60%'],
 }
 
-Menu.ItemType = ItemTypes
+Menu.ItemType = ItemType
 Menu.Hierarchy = Hierarchy
 Menu.Mode = Mode
