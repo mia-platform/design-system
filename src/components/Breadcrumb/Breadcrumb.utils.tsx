@@ -35,6 +35,7 @@ export const renderItem = (
         getDropdownContainer={ctx.getDropdownContainer}
         isLoading={ctx.isLoading}
         items={item.items}
+        key="breadcrumb-collapsed"
       />
     )
   }

@@ -163,4 +163,33 @@ describe('Breadcrumb Component', () => {
     expect(screen.getByText('Item 1')).toBeInTheDocument()
     expect(screen.getByText('Item 2')).toBeInTheDocument()
   })
+
+  test('renders a breadcrumb with collapsed items', () => {
+    const props: BreadcrumbProps = {
+      items: [
+        { label: 'Text 1' },
+        { label: 'Text 2' },
+        { label: 'Text 3' },
+        { label: 'Text 4' },
+        { label: 'Text 5' },
+        { label: 'Text 6' },
+        { label: 'Text 7' },
+        { label: 'Text 8' },
+        { label: 'Text 9' },
+      ],
+    }
+
+    const { asFragment } = render(<Breadcrumb {...props} />)
+
+    // Fire a resize to trigger hidden items computation
+    fireEvent(window, new Event('resize'))
+
+    expect(asFragment()).toMatchSnapshot()
+
+    expect(screen.getAllByText('Text 2')).toHaveLength(1)
+
+    const collapseButton = screen.getByLabelText('PiDotsThree')
+    fireEvent.click(collapseButton)
+    expect(screen.getAllByText('Text 2')).toHaveLength(2)
+  })
 })

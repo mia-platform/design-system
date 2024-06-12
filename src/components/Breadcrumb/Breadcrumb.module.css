@@ -90,7 +90,7 @@
           align-items: center;
           gap: var(--spacing-gap-xs, 4px);
           background-color: var(--item-bg);
-          padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
+          padding: var(--spacing-padding-xs, 4px) var(--spacing-padding-sm, 8px);
           border-radius: var(--shape-border-radius-md, 4px);
           transition: var(--item-bg-transition);
           height: 100%;
@@ -135,7 +135,7 @@
       &.breadcrumbItemButtonConnected {
         gap: 4px;
         background-color: var(--item-bg);
-        padding: var(--spacing-padding-xs, 4) var(--spacing-padding-sm, 8px);
+        padding: var(--spacing-padding-xs, 4px) var(--spacing-padding-sm, 8px);
         border-radius: var(--shape-border-radius-md, 4px);
         cursor: pointer;
         transition: var(--item-bg-transition);
