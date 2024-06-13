@@ -1327,7 +1327,7 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
           class="dropdownMenuSearch"
         >
           <span
-            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused mia-platform-input-outlined"
+            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused"
           >
             <input
               class="mia-platform-input"
@@ -1855,7 +1855,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
           class="dropdownMenuSearch"
         >
           <span
-            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused mia-platform-input-outlined"
+            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused"
           >
             <input
               class="mia-platform-input"
@@ -2002,7 +2002,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
             </div>
           </div>
           <div
-            class="mia-platform-dropdown-trigger breadcrumbMenuIcon withLabel mia-platform-dropdown-open"
+            class="mia-platform-dropdown-trigger breadcrumbMenuIcon withLabel"
           >
             <svg
               aria-label="caret-full-down"
@@ -2158,80 +2158,6 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
           <svg
             aria-label="caret-full-down"
             data-file-name="SvgCaretFullDown"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="mia-platform-dropdown mia-platform-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
-    >
-      <div
-        class="dropdownMenuContainer"
-      >
-        <div
-          class="dropdownMenuSearch"
-        >
-          <span
-            class="mia-platform-input-affix-wrapper mia-platform-input-affix-wrapper-focused mia-platform-input-outlined"
-          >
-            <input
-              class="mia-platform-input"
-              placeholder="Search..."
-              type="text"
-              value="1"
-            />
-            <span
-              class="mia-platform-input-suffix"
-            >
-              <svg
-                aria-label="PiMagnifyingGlass"
-                fill="currentColor"
-                height="12"
-                role="img"
-                stroke="currentColor"
-                stroke-width="0"
-                viewBox="0 0 256 256"
-                width="12"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                />
-              </svg>
-            </span>
-          </span>
-        </div>
-        <div
-          class="dropdownMenu"
-        >
-          <ul
-            class="mia-platform-dropdown-menu mia-platform-dropdown-menu-root mia-platform-dropdown-menu-vertical mia-platform-dropdown-menu-light"
-            data-menu-list="true"
-            role="menu"
-            tabindex="0"
-          >
-            <li
-              class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
-              data-menu-id="rc-menu-uuid-test-item-1"
-              role="menuitem"
-              tabindex="-1"
-            >
-              <span
-                class="mia-platform-dropdown-menu-title-content"
-              >
-                <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
-                  role="paragraph"
-                >
-                  Item 1
-                </div>
-              </span>
-            </li>
-          </ul>
-          <div
-            aria-hidden="true"
-            style="display: none;"
           />
         </div>
       </div>
