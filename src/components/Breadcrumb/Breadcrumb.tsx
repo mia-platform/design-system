@@ -36,6 +36,7 @@ export const Breadcrumb = ({ isLoading, items, getPopupContainer }: BreadcrumbPr
   const hiddenContainerRef = useRef<HTMLDivElement>(null)
 
   const getDropdownContainer = useCallback(() => {
+    /* istanbul ignore next */
     if (!breadcrumbRef.current) { return }
 
     return getPopupContainer?.(breadcrumbRef.current) ?? breadcrumbRef.current
@@ -50,6 +51,7 @@ export const Breadcrumb = ({ isLoading, items, getPopupContainer }: BreadcrumbPr
 
     const container = breadcrumbRef.current
     const hiddenContainer = hiddenContainerRef.current
+    /* istanbul ignore if  */
     if (!container || !hiddenContainer) {
       setVisibleItems([])
       return

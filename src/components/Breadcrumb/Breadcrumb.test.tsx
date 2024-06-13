@@ -98,6 +98,7 @@ describe('Breadcrumb Component', () => {
           },
         },
       ],
+      getPopupContainer: (containerNode) => containerNode,
     }
 
     const { asFragment } = render(<Breadcrumb {...props} />)
