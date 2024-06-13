@@ -17,13 +17,18 @@
  */
 
 import { fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from '../../test-utils'
-import { Breadcrumb } from './Breadcrumb'
+import { Breadcrumb } from '.'
 import { BreadcrumbProps } from './Breadcrumb.props'
 import { breadcrumbIcon } from './Breadcrumb.mocks'
 
 describe('Breadcrumb Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
+  })
+
+  test('renders a breadcrumb with no props', () => {
+    const { asFragment } = render(<Breadcrumb />)
+    expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders a breadcrumb with different button types', () => {
@@ -48,10 +53,19 @@ describe('Breadcrumb Component', () => {
   test('renders a breadcrumb in loading state', () => {
     const props: BreadcrumbProps = {
       isLoading: true,
-      items: [{ label: 'Text' }],
+      items: [
+        { label: 'Text' },
+        { label: 'Text' },
+        { label: 'Text' },
+      ],
     }
 
     const { asFragment } = render(<Breadcrumb {...props} />)
+
+    expect(asFragment()).toMatchSnapshot()
+
+    // Fire a resize to trigger hidden items computation
+    fireEvent(window, new Event('resize'))
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -77,6 +91,12 @@ describe('Breadcrumb Component', () => {
             ],
           },
         },
+        {
+          menu: {
+            activeKey: 'sub-item',
+            items: [{ key: 'sub-item', label: 'Sub item', icon: breadcrumbIcon }],
+          },
+        },
       ],
     }
 
@@ -87,8 +107,9 @@ describe('Breadcrumb Component', () => {
     fireEvent.click(button)
     expect(buttonClickMock).toHaveBeenCalledTimes(1)
 
-    const [dropdownTrigger] = screen.getAllByLabelText('caret-full-down')
-    fireEvent.click(dropdownTrigger)
+    const [dropdownTrigger1, dropdownTrigger2] = screen.getAllByLabelText('caret-full-down')
+
+    fireEvent.click(dropdownTrigger1)
     expect(buttonClickMock).toHaveBeenCalledTimes(1)
     expect(onDropdownVisibleChangeMock).toHaveBeenCalledTimes(1)
     expect(onDropdownVisibleChangeMock).toHaveBeenCalledWith(true)
@@ -99,24 +120,27 @@ describe('Breadcrumb Component', () => {
     expect(menuItemClickMock).toHaveBeenCalledTimes(1)
     expect(menuItemClickMock).toHaveBeenCalledWith('item-1', expect.any(Object))
 
-    fireEvent.click(dropdownTrigger)
+    fireEvent.click(dropdownTrigger1)
     fireEvent.click(screen.getByText('Item 2'))
     expect(menuItemClickMock).toHaveBeenNthCalledWith(2, 'item-2', expect.any(Object))
 
-    fireEvent.click(dropdownTrigger)
+    fireEvent.click(dropdownTrigger1)
     fireEvent.change(screen.getByPlaceholderText('Search...'), { target: { value: 'foo' } })
     await waitFor(() => expect(screen.getByText('No items')).toBeInTheDocument())
 
-    fireEvent.click(dropdownTrigger)
+    fireEvent.click(dropdownTrigger1)
     expect(screen.queryByText('No items')).not.toBeInTheDocument()
 
-    fireEvent.click(dropdownTrigger)
+    fireEvent.click(dropdownTrigger1)
     expect(screen.queryByText('No items')).not.toBeInTheDocument()
     expect(screen.getByText('Item 1')).toBeInTheDocument()
     expect(screen.getByText('Item 2')).toBeInTheDocument()
     fireEvent.change(screen.getByPlaceholderText('Search...'), { target: { value: '1' } })
     await waitFor(() => expect(screen.getByText('Item 1')).toBeInTheDocument())
     await waitForElementToBeRemoved(() => screen.queryByText('Item 2'))
+
+    fireEvent.click(dropdownTrigger2)
+    expect(asFragment()).toMatchSnapshot()
   })
 
   test('renders controlled item menu correctly', () => {
@@ -165,17 +189,30 @@ describe('Breadcrumb Component', () => {
   })
 
   test('renders a breadcrumb with collapsed items', () => {
+    const onClickMock = jest.fn()
+    const onDropdownVisibleChangeMock = jest.fn()
+
     const props: BreadcrumbProps = {
       items: [
         { label: 'Text 1' },
         { label: 'Text 2' },
-        { label: 'Text 3' },
-        { label: 'Text 4' },
-        { label: 'Text 5' },
-        { label: 'Text 6' },
-        { label: 'Text 7' },
-        { label: 'Text 8' },
-        { label: 'Text 9' },
+        { label: 'Text 3', onClick: jest.fn },
+        { label: 'Text 4', icon: breadcrumbIcon },
+        { label: 'Text 5', menu: { items: [{ label: 'Item 1' }] } },
+        {
+          menu: {
+            activeKey: '1',
+            items: [{ key: '1', label: 'Item 1', icon: breadcrumbIcon }],
+          },
+        },
+        { label: 'Text 7', onClick: onClickMock },
+        {
+          label: 'Text 8',
+          menu: {
+            onDropdownVisibleChange: onDropdownVisibleChangeMock,
+            items: [{ label: 'Item 2' }],
+          },
+        },
       ],
     }
 
@@ -190,6 +227,23 @@ describe('Breadcrumb Component', () => {
 
     const collapseButton = screen.getByLabelText('PiDotsThree')
     fireEvent.click(collapseButton)
+
+    expect(asFragment()).toMatchSnapshot()
+
     expect(screen.getAllByText('Text 2')).toHaveLength(2)
+
+    fireEvent.click(screen.getAllByText('Text 7')[1])
+    expect(onClickMock).toHaveBeenCalledTimes(1)
+
+    fireEvent.click(screen.getAllByText('Text 7')[0])
+    expect(onClickMock).toHaveBeenCalledTimes(1)
+
+    screen.logTestingPlaygroundURL()
+
+    fireEvent.click(screen.getAllByText('Text 8')[0])
+    expect(onDropdownVisibleChangeMock).toHaveBeenCalledTimes(1)
+
+    fireEvent.click(screen.getAllByText('Text 8')[1])
+    expect(onDropdownVisibleChangeMock).toHaveBeenCalledTimes(1)
   })
 })

@@ -47,7 +47,7 @@ export const BreadcrumbItem = ({
   const hasMenu = useMemo(() => Boolean(item.menu?.items), [item])
 
   const label = useMemo(() => {
-    const maybeSubItem = item.menu?.items?.find(({ key }) => key === item.menu?.activeKey)
+    const maybeSubItem = item.menu?.items?.find(({ key }) => key && key === item.menu?.activeKey)
     const labelText = maybeSubItem?.label ?? item.label
     const labelIcon = maybeSubItem?.icon ?? item.icon
 

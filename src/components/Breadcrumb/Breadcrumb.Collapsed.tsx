@@ -39,7 +39,7 @@ export const BREADCRUMB_COLLAPSED_WIDTH = 32
 export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer, items }: Props): ReactElement => {
   const menuItems = useMemo<ItemType[]>(() => {
     return items.map<ItemType>((item, idx) => {
-      const maybeSubItem = item.menu?.items?.find(({ key }) => key === item.menu?.activeKey)
+      const maybeSubItem = item.menu?.items?.find(({ key }) => key && key === item.menu?.activeKey)
       const labelText = maybeSubItem?.label ?? item.label
       const labelIcon = maybeSubItem?.icon ?? item.icon
 
