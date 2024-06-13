@@ -18,7 +18,7 @@
 
 import { Input, Menu } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
-import { ItemType } from 'antd/es/menu/interface'
+import { ItemType } from 'antd/es/menu/hooks/useItems'
 import { debounce } from 'lodash-es'
 
 import { BreadcrumbItemMenu, BreadcrumbItemMenuItem, BreadcrumbItemType, SearchOptions } from './Breadcrumb.types'

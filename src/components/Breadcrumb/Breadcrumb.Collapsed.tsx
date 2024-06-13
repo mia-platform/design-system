@@ -18,7 +18,7 @@
 
 import { Dropdown, Menu, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
-import { ItemType } from 'antd/es/menu/interface'
+import { ItemType } from 'antd/es/menu/hooks/useItems'
 import classNames from 'classnames'
 
 import { BodyS } from '../Typography/BodyX/BodyS'
