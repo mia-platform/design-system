@@ -23,7 +23,7 @@ exports[`Drawer renders drawer with provided title and footer 1`] = `
       >
         <div
           aria-modal="true"
-          class="mia-platform-drawer-content"
+          class="mia-platform-drawer-content drawer"
           role="dialog"
         >
           <div
@@ -50,13 +50,22 @@ exports[`Drawer renders drawer with provided title and footer 1`] = `
           <div
             class="mia-platform-drawer-body"
           >
-            the-content
+            <div
+              style="display: flex; flex-direction: column; gap: 24px;"
+            >
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a semper diam, nec congue lectus. Mauris pellentesque convallis augue eu ornare. Sed pulvinar velit ut congue vulputate. Etiam elementum lacus vitae felis vulputate ultricies. Vivamus eu erat orci. Proin a accumsan nunc, eget rutrum arcu. Donec efficitur justo vel porta placerat. Nunc euismod at nisi vel interdum. Morbi id pellentesque quam. Donec eleifend nisi feugiat est rutrum dapibus quis at urna. Ut vehicula hendrerit neque, vel ultrices diam dignissim id. Aliquam erat volutpat. Sed porta iaculis dolor, ac egestas mi accumsan quis. Nam justo ex, facilisis in nunc id, suscipit aliquam arcu.
+              </span>
+              <span>
+                Nullam tempor nisi nulla, ac lacinia dolor porta in. Nam non velit enim. Nullam a orci id diam pretium sollicitudin. Nunc vitae mauris pretium, finibus orci non, varius diam. Donec sollicitudin, libero non blandit pellentesque, dolor neque elementum ante, in molestie massa ipsum sed odio. Morbi vestibulum pretium tempor. Suspendisse placerat faucibus velit, ac condimentum eros placerat sit amet. Etiam non finibus ipsum, vitae sagittis lorem. Curabitur convallis nisl sapien, quis placerat metus tempus ac. Maecenas molestie neque lorem, non ornare risus egestas ut.
+              </span>
+            </div>
           </div>
           <div
             class="mia-platform-drawer-footer"
-            style="padding: 24px;"
+            style="padding: 0px;"
           >
-            <span>
+            <footer>
               <div>
                 <button
                   class="mia-platform-btn mia-platform-btn-primary button buttonMd"
@@ -69,7 +78,7 @@ exports[`Drawer renders drawer with provided title and footer 1`] = `
                   </div>
                 </button>
               </div>
-            </span>
+            </footer>
           </div>
         </div>
       </div>

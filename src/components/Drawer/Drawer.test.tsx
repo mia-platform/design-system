@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { DrawerLipsumFooter, DrawerLipumTitle } from './Drawer.mocks'
+import { DrawerLipsum, DrawerLipsumFooter, DrawerLipumTitle } from './Drawer.mocks'
 import { render, screen } from '../../test-utils'
 import { Drawer } from './Drawer'
 import { DrawerProps } from './Drawer.props'
@@ -34,11 +34,11 @@ describe('Drawer', () => {
   beforeEach(() => jest.resetAllMocks())
 
   it('renders drawer with provided title and footer', () => {
-    const { baseElement } = render(<Drawer {...props} >{'the-content'}</Drawer>)
+    const { baseElement } = render(<Drawer {...props} ><DrawerLipsum /></Drawer>)
 
     expect(screen.getByText(/drawer lipsum/i)).toBeVisible()
     expect(screen.getByRole('button', { name: /close/i })).toBeInTheDocument()
-    expect(screen.getByText('the-content')).toBeInTheDocument()
+    expect(screen.getByText(/Lorem ipsum dolor sit amet,/i)).toBeInTheDocument()
 
     expect(baseElement).toMatchSnapshot()
   })
