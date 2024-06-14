@@ -20,6 +20,12 @@ import { Drawer as AntdDrawer } from 'antd'
 import { ReactElement } from 'react'
 
 import { DrawerProps } from './Drawer.props'
+import { Footer } from './Drawer.Footer'
+import { Title } from './Drawer.Title'
+
+const styles = {
+  footer: { padding: '24px' },
+}
 
 export const Drawer = ({
   children,
@@ -29,26 +35,25 @@ export const Drawer = ({
   isVisible,
   key,
   onClose,
-  ref,
   title,
 }: DrawerProps): ReactElement => {
   return (
-    <div ref={ref}>
-      <AntdDrawer
-        closeIcon={null}
-        destroyOnClose={destroyOnClose}
-        footer={footer}
-        id={id}
-        key={key}
-        open={isVisible}
-        styles={{
-          footer,
-        }}
-        title={title}
-        onClose={onClose}
-      >
-        {children}
-      </AntdDrawer>
-    </div>
+    <AntdDrawer
+      closeIcon={null}
+      destroyOnClose={destroyOnClose}
+      footer={<Drawer.Footer footer={footer} />}
+      id={id}
+      key={key}
+      open={isVisible}
+      styles={styles}
+      title={<Drawer.Title title={title} />}
+      width={512}
+      onClose={onClose}
+    >
+      {children}
+    </AntdDrawer>
   )
 }
+
+Drawer.Title = Title
+Drawer.Footer = Footer

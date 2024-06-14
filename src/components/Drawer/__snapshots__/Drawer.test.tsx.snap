@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer renders drawer with provided title and footer 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="mia-platform-drawer mia-platform-drawer-right mia-platform-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="mia-platform-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="mia-platform-drawer-content-wrapper"
+        style="width: 512px;"
+      >
+        <div
+          aria-modal="true"
+          class="mia-platform-drawer-content"
+          role="dialog"
+        >
+          <div
+            class="mia-platform-drawer-header"
+          >
+            <div
+              class="mia-platform-drawer-header-title"
+            >
+              <div
+                class="mia-platform-drawer-title"
+              >
+                <h4
+                  aria-label=""
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
+                  role="h4"
+                >
+                  <span>
+                    Drawer Lipsum
+                  </span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mia-platform-drawer-body"
+          >
+            the-content
+          </div>
+          <div
+            class="mia-platform-drawer-footer"
+            style="padding: 24px;"
+          >
+            <span>
+              <div>
+                <button
+                  class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                  type="button"
+                >
+                  <div
+                    class="buttonText"
+                  >
+                    Close
+                  </div>
+                </button>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;

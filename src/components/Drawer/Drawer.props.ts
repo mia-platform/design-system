@@ -18,6 +18,8 @@
 
 import { ReactNode } from 'react'
 
+import { DrawerTitle } from './Drawer.Title'
+
 export type DrawerProps = {
 
     /**
@@ -26,25 +28,29 @@ export type DrawerProps = {
     children?: ReactNode,
 
     /**
-     * Whether to unmount child components on close.
+     * Controls whether to unmount child components on close.
      */
     destroyOnClose?: boolean,
-
-    ref?: React.ForwardedRef<HTMLDivElement>,
 
     /**
      * Drawer footer.
      */
     footer?: ReactNode,
 
+    /**
+     * drawer id for DOM node.
+     */
     id?: string,
 
-    key?: string,
-
     /**
-     * Whether the modal is visible.
+     * Controls whether the modal is visible.
      */
     isVisible?: boolean,
+
+    /**
+     * React drawer key
+     */
+    key?: string,
 
     /**
      * Function invoked at the click of the Drwaer close (X) button.
@@ -54,5 +60,5 @@ export type DrawerProps = {
     /**
      * Title of the drawer, which briefly conveys information about its contents.
      */
-    title: ReactNode,
+    title: DrawerTitle,
 }
