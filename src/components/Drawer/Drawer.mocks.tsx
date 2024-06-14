@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 /**
  * Copyright 2024 Mia srl
  *
@@ -18,7 +19,6 @@
 
 // This is a file containing mock components and helpers
 /* eslint-disable react/no-multi-comp */
-/* istanbul ignore file */
 
 import { ReactElement } from 'react'
 
