@@ -20,6 +20,7 @@ import * as testUtils from './test-utils'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
 import { Divider } from './components/Divider'
+import { Drawer } from './components/Drawer'
 import { Icon } from './components/Icon'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
@@ -34,6 +35,7 @@ export {
   Button,
   Card,
   Divider,
+  Drawer,
   Icon,
   Menu,
   Modal,
