@@ -27,6 +27,8 @@ const styles = {
   footer: { padding: '24px' },
 }
 
+const DRAWER_WIDTH = 512
+
 export const Drawer = ({
   children,
   destroyOnClose,
@@ -47,7 +49,7 @@ export const Drawer = ({
       open={isVisible}
       styles={styles}
       title={<Drawer.Title title={title} />}
-      width={512}
+      width={DRAWER_WIDTH}
       onClose={onClose}
     >
       {children}
