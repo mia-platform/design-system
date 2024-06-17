@@ -26,5 +26,5 @@ export type FooterProps = {
 }
 
 export const Footer = ({ footer }: FooterProps): ReactElement => {
-  return <span>{footer}</span>
+  return <footer>{footer}</footer>
 }
