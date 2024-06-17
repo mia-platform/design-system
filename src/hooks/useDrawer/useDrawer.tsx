@@ -23,7 +23,7 @@ import { DrawerAPI } from './types'
 /**
  * useDrawer hook allows for hiding visibility state .
  *
- * @returns {DrawerAPI} An object which includes the Drawer component, the drawer state (visible or hidden) and methods
+ * @returns {DrawerAPI} An object which encapsulate the drawer state (visible or hidden) and methods
  * for opening, closing, and changing the modal state.
  */
 export const useDrawer = (): DrawerAPI => {

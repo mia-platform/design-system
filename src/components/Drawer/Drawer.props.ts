@@ -53,7 +53,7 @@ export type DrawerProps = {
     key?: string,
 
     /**
-     * Function invoked at the click of the Drwaer close (X) button.
+     * Function invoked at the click of the Drawer close (X) button.
      */
     onClose?: () => void,
 
