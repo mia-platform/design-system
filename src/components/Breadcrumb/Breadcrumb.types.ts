@@ -77,7 +77,7 @@ export type BreadcrumbItemMenu = {
   /**
    * Indicates whether the menu is open for a controlled behavior.
    */
-  open?: boolean;
+  isOpen?: boolean;
 
   /**
    * Callback function to handle changes in dropdown visibility.

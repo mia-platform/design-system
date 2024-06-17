@@ -64,14 +64,17 @@ export const computeItems = (
 
   const separatorWidth = BREADCRUMB_SEPARATOR_SIZE + (BREADCRUMB_SEPARATOR_PADDING * 2)
 
-  const nextVisibleItems: BreadcrumbButton[] = []
-  const nextCollapsedItems = items.slice(1, items.length - 1)
-
   const elements = Array.from(hiddenContainer.children)
-  let currWidth = 0
+  const nextVisibleItems: BreadcrumbButton[] = []
 
+  if (!elements.length || !items.length) {
+    return nextVisibleItems
+  }
+
+  const nextCollapsedItems = items.slice(1, items.length - 1)
   nextVisibleItems.push(items[items.length - 1])
 
+  let currWidth = 0
   currWidth += elements[elements.length - 1].getBoundingClientRect().width
   currWidth += elements[0].getBoundingClientRect().width + separatorWidth
   currWidth += BREADCRUMB_COLLAPSED_WIDTH + separatorWidth
@@ -93,5 +96,5 @@ export const computeItems = (
   return nextVisibleItems
 }
 
-export const buildItemKey = (item: BreadcrumbItemType, idx: number): string => item.key ?? `breadcrumb-item-${idx}`
-export const buildMenuItemKey = (item: BreadcrumbItemMenuItem, idx: number): string => item.key ?? `breadcrumb-menu-item-${idx}`
+export const buildItemKey = (item: BreadcrumbItemType, idx: number): string => item.key || `breadcrumb-item-${idx}`
+export const buildMenuItemKey = (item: BreadcrumbItemMenuItem, idx: number): string => item.key || `breadcrumb-menu-item-${idx}`

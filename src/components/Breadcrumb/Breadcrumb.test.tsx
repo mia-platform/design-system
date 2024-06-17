@@ -156,7 +156,7 @@ describe('Breadcrumb Component', () => {
           label: 'Text',
           icon: breadcrumbIcon,
           menu: {
-            open: true,
+            isOpen: true,
             onClick: menuItemClickMock,
             onDropdownVisibleChange: onDropdownVisibleChangeMock,
             search: {
@@ -238,8 +238,6 @@ describe('Breadcrumb Component', () => {
 
     fireEvent.click(screen.getAllByText('Text 7')[0])
     expect(onClickMock).toHaveBeenCalledTimes(1)
-
-    screen.logTestingPlaygroundURL()
 
     fireEvent.click(screen.getAllByText('Text 8')[0])
     expect(onDropdownVisibleChangeMock).toHaveBeenCalledTimes(1)

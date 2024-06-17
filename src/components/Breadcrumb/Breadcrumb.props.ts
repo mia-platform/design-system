@@ -39,7 +39,7 @@ export type BreadcrumbProps = {
    *     - activeKey: the key of the currently active menu item. <br> `string`
    *     - onClick: callback function to handle click events on the menu item. <br>
    *     `(key: string, event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void`
-   *     - open: indicates whether the menu is open for a controlled behavior. <br> `boolean`
+   *     - isOpen: indicates whether the menu is open for a controlled behavior. <br> `boolean`
    *     - onDropdownVisibleChange: callback function to handle changes in dropdown visibility. <br>
    *     `(open: boolean) => void`
    *     - emptyText: text to show if menu is empty or search matched no elements. Defaults to "No items" <br>

@@ -144,7 +144,7 @@ export const controlledProps: BreadcrumbProps = {
           { key: 'packaging', label: 'Packaging', icon: breadcrumbIcon },
         ],
         onClick: action('click'),
-        open: true,
+        isOpen: true,
         onDropdownVisibleChange: action('dropdown open'),
         search: {
           onChange: action('search'),

@@ -24,11 +24,16 @@ import { useTheme } from '../../hooks/useTheme'
 export const BREADCRUMB_SEPARATOR_SIZE = 16
 export const BREADCRUMB_SEPARATOR_PADDING = 4
 
+const separatorStyle: React.CSSProperties = {
+  width: BREADCRUMB_SEPARATOR_SIZE,
+  height: BREADCRUMB_SEPARATOR_SIZE,
+}
+
 export const BreadcrumbSeparator = (): ReactElement => {
   const { palette } = useTheme()
 
   return (
-    <div style={{ width: BREADCRUMB_SEPARATOR_SIZE, height: BREADCRUMB_SEPARATOR_SIZE }}>
+    <div style={separatorStyle}>
       <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={BREADCRUMB_SEPARATOR_SIZE} />
     </div>
   )

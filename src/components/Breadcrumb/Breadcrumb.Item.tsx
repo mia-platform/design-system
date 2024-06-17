@@ -96,7 +96,7 @@ export const BreadcrumbItem = ({
       destroyPopupOnHide: true,
       dropdownRender: () => <BreadcrumbItemMenuDropdown item={item} setOpen={setDropdownOpen} />,
       getPopupContainer: (trigger) => getDropdownContainer() ?? trigger,
-      open: !isHidden && hasMenu && (item.menu?.open !== undefined ? item.menu.open : dropdownOpen),
+      open: !isHidden && hasMenu && (item.menu?.isOpen !== undefined ? item.menu.isOpen : dropdownOpen),
       placement: 'bottomLeft',
       trigger: ['click'],
       onOpenChange: (next: boolean): void => {
@@ -104,7 +104,7 @@ export const BreadcrumbItem = ({
 
         item.menu?.onDropdownVisibleChange?.(next)
 
-        if (item.menu?.open === undefined) {
+        if (item.menu?.isOpen === undefined) {
           setDropdownOpen(next)
         }
       },

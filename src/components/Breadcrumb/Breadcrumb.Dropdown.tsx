@@ -47,7 +47,7 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
     return item.menu.items.filter((subItem) => subItem.label?.toLowerCase().includes(searchValue.toLowerCase()))
   }, [item, searchValue])
 
-  const menuItems = filteredItems.map<ItemType>((menuItemData, currentIndex) => {
+  const menuItems = useMemo(() => filteredItems.map<ItemType>((menuItemData, currentIndex) => {
     return {
       key: buildMenuItemKey(menuItemData, currentIndex),
       icon: menuItemData?.icon,
@@ -57,7 +57,7 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
         </BodyS>
       ),
     }
-  })
+  }), [filteredItems])
 
   return (
     <div className={styles.dropdownMenuContainer}>
@@ -93,7 +93,7 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
                 onClick={({ key, domEvent }) => {
                   item.menu?.onClick?.(key, domEvent)
 
-                  if (item.menu?.open === undefined) {
+                  if (item.menu?.isOpen === undefined) {
                     setOpen(false)
                   }
                 }}
