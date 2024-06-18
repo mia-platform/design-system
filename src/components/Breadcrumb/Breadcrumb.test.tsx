@@ -26,8 +26,8 @@ describe('Breadcrumb Component', () => {
     jest.resetAllMocks()
   })
 
-  test('renders a breadcrumb with no props', () => {
-    const { asFragment } = render(<Breadcrumb />)
+  test('renders a breadcrumb with empty items', () => {
+    const { asFragment } = render(<Breadcrumb items={[]} />)
     expect(asFragment()).toMatchSnapshot()
   })
 

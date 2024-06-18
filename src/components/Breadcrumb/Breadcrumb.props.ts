@@ -56,7 +56,7 @@ export type BreadcrumbProps = {
    *       - key: unique key for the menu item. Defaults to item index. <br> `string`
    *       - label: label of the menu item. <br> `string`
    */
-  items?: BreadcrumbItemType[];
+  items: BreadcrumbItemType[];
 
   /**
    * The DOM element where menu and collapse dropdowns are attached. Defaults to the Breadcrumb component itself.

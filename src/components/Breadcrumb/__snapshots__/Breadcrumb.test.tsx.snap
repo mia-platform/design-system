@@ -1210,7 +1210,7 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
 </DocumentFragment>
 `;
 
-exports[`Breadcrumb Component renders a breadcrumb with no props 1`] = `
+exports[`Breadcrumb Component renders a breadcrumb with empty items 1`] = `
 <DocumentFragment>
   <div
     class="breadcrumb"
