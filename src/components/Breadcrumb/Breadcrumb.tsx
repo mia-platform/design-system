@@ -19,7 +19,7 @@
 import { ReactElement, useCallback, useEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 
-import { computeItems, renderItem } from './Breadcrumb.utils'
+import { getItemsFittingInParent, renderItem } from './Breadcrumb.utils'
 import { BreadcrumbButton } from './Breadcrumb.types'
 import { BreadcrumbProps } from './Breadcrumb.props'
 import styles from './Breadcrumb.module.css'
@@ -58,7 +58,7 @@ export const Breadcrumb = ({ isLoading, items, getPopupContainer }: BreadcrumbPr
     }
 
     const setItems = (): void => {
-      const nextItems = computeItems(items, container, hiddenContainer)
+      const nextItems = getItemsFittingInParent(items, container, hiddenContainer)
       setVisibleItems(nextItems)
     }
 

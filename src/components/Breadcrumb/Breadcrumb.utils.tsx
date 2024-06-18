@@ -55,7 +55,7 @@ export const renderItem = (
   )
 }
 
-export const computeItems = (
+export const getItemsFittingInParent = (
   items: BreadcrumbItemType[],
   container: HTMLDivElement,
   hiddenContainer: HTMLDivElement
