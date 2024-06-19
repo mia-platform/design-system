@@ -54,6 +54,7 @@ const customRender = (
 ): RenderResult => render(element, { wrapper: TestWrapper, ...options })
 
 export * from '@testing-library/react'
+export * from '@testing-library/user-event'
 export {
   customRender as render,
   TestWrapper,

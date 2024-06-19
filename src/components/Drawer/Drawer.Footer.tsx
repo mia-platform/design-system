@@ -16,16 +16,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useAntTheme } from './useAntTheme'
-import { useDrawer } from './useDrawer'
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
+import { ReactElement, ReactNode } from 'react'
 
-export default {
-  useDrawer,
-  useFeedbackMessage,
-  useModal,
-  useTheme,
-  useAntTheme,
+
+export type DrawerFooter = ReactNode
+
+export type FooterProps = {
+  footer: DrawerFooter,
+}
+
+export const Footer = ({ footer }: FooterProps): ReactElement => {
+  return <footer>{footer}</footer>
 }

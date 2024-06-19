@@ -16,16 +16,24 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useAntTheme } from './useAntTheme'
-import { useDrawer } from './useDrawer'
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
+import { act } from 'react'
 
-export default {
-  useDrawer,
-  useFeedbackMessage,
-  useModal,
-  useTheme,
-  useAntTheme,
-}
+import { renderHook } from '../../test-utils'
+import { useDrawer } from './useDrawer'
+
+describe('useDrawer', () => {
+  it('returns updated visibility state', () => {
+    const { result } = renderHook(() => useDrawer())
+    const { isVisible, openDrawer, closeDrawer, toggleDrawer } = result.current
+
+    expect(isVisible).toBeFalsy()
+    act(() => openDrawer())
+    expect(result.current.isVisible).toEqual(true)
+    act(() => closeDrawer())
+    expect(result.current.isVisible).toEqual(false)
+    act(() => toggleDrawer())
+    expect(result.current.isVisible).toEqual(true)
+    act(() => toggleDrawer())
+    expect(result.current.isVisible).toEqual(false)
+  })
+})

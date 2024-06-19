@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactNode, useCallback, useState } from 'react'
-import { act, render, renderHook, screen, waitFor } from '@testing-library/react'
+import { ReactNode, act, useCallback, useState } from 'react'
+import { render, renderHook, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { Button } from '../..'

@@ -16,16 +16,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useAntTheme } from './useAntTheme'
-import { useDrawer } from './useDrawer'
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
+import type { Meta, StoryObj } from '@storybook/react'
 
-export default {
-  useDrawer,
-  useFeedbackMessage,
-  useModal,
-  useTheme,
-  useAntTheme,
+import { DrawerLipumTitle, WithOpenButton } from './Drawer.mocks'
+import { Drawer } from '.'
+
+const defaults = {
+  title: <DrawerLipumTitle />,
+}
+
+const meta = {
+  component: Drawer,
+  args: defaults,
+  argTypes: {
+    children: { control: false },
+  },
+} satisfies Meta<typeof Drawer>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const BasicExample: Story = {
+  decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }

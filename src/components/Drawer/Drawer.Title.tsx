@@ -16,16 +16,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useAntTheme } from './useAntTheme'
-import { useDrawer } from './useDrawer'
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
+import { ReactElement, ReactNode, useMemo } from 'react'
 
-export default {
-  useDrawer,
-  useFeedbackMessage,
-  useModal,
-  useTheme,
-  useAntTheme,
+import { H4 } from '../Typography/HX/H4'
+
+
+export type DrawerTitle = ReactNode
+
+export type TitleProps = {
+  title: DrawerTitle,
+}
+
+export const Title = ({ title }: TitleProps): ReactElement => {
+  const ellipsis = useMemo(() => ({ rows: 1, tooltip: title }), [title])
+  return <H4 ellipsis={ellipsis}>{title}</H4>
 }

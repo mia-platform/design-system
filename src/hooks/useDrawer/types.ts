@@ -16,16 +16,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useAntTheme } from './useAntTheme'
-import { useDrawer } from './useDrawer'
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
+export type DrawerAPI = {
 
-export default {
-  useDrawer,
-  useFeedbackMessage,
-  useModal,
-  useTheme,
-  useAntTheme,
+  /**
+   * Whether the modal is visible.
+   */
+  isVisible: boolean,
+
+  /**
+   * Drawer opening function, which makes it visible.
+   */
+  openDrawer: () => void,
+
+  /**
+   * Drawer closing function, which closes it.
+   */
+  closeDrawer: () => void,
+
+  /**
+   * Drawer status change function to toggle its visibility.
+   */
+  toggleDrawer: () => void,
 }

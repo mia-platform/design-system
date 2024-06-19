@@ -6,6 +6,7 @@ exports[`Button Component renders button with href correctly 1`] = `
     class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     href="https://mia-platform.eu"
     rel="noopener noreferrer"
+    tabindex="0"
   >
     <div
       class="buttonText"
