@@ -1,0 +1,253 @@
+/**
+ * Copyright 2024 Mia srl
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.breadcrumb {
+  /* TODO: these CSS variables are missing in DS */
+  --item-bg: var(--palette-background-neutral, #89898914);
+  --item-bg-hover: var(--palette-action-alternate-secondary-hover, #8989891F);
+  --item-bg-active: var(--palette-action-alternate-secondary-selected, #8989893D);
+  --item-bg-transition: background-color 0.25s ease-in-out;
+
+  width: 100%;
+  overflow: hidden;
+
+  & .breadcrumbItems {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-gap-xs, 4px);
+
+    & .breadcrumbItemLast {
+      & .breadcrumbItemLabelText {
+        font-weight: var(--typography-bodyLBold-fontWeight, 600);
+      }
+    }
+
+    & .breadcrumbItemButton {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      height: var(--shape-size-xl, 32px);
+      box-sizing: border-box;
+
+      & .breadcrumbItemButtonEmpty {
+        background-color: var(--item-bg);
+        transition: var(--item-bg-transition);
+        border-radius: var(--shape-border-radius-md, 4px);
+        width: var(--shape-size-xl, 32px);
+        height: var(--shape-size-xl, 32px);
+
+        &.breadcrumbItemButtonNoInteraction {
+          cursor: auto;
+        }
+
+        &:not(.breadcrumbItemButtonNoInteraction) {
+          &:hover {
+            background-color: var(--item-bg-hover);
+          }
+
+          &:active {
+            background-color: var(--item-bg-active);
+          }
+        }
+      }
+
+      &.breadcrumbItemButtonSegmented {
+        gap: 1px;
+
+        &.breadcrumbItemButtonNoInteraction {
+          cursor: default;
+
+          & .breadcrumbItemLabel {
+            &:hover {
+              background-color: var(--item-bg);
+            }
+
+            &:active {
+              background-color: var(--item-bg);
+            }
+          }
+        }
+
+        & .breadcrumbItemLabel {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-gap-xs, 4px);
+          background-color: var(--item-bg);
+          padding: var(--spacing-padding-xs, 4px) var(--spacing-padding-sm, 8px);
+          border-radius: var(--shape-border-radius-md, 4px);
+          transition: var(--item-bg-transition);
+          height: 100%;
+          box-sizing: border-box;
+
+          &:hover {
+            background-color: var(--item-bg-hover);
+          }
+
+          &:active {
+            background-color: var(--item-bg-active);
+          }
+
+          &.withMenu {
+            border-radius: var(--shape-border-radius-md, 4px) 0 0 var(--shape-border-radius-md, 4px);
+          }
+        }
+
+        & .breadcrumbMenuIcon {
+          display: flex;
+          align-items: center;
+          background-color: var(--item-bg);
+          padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xs, 4px);
+          border-radius: var(--shape-border-radius-md, 4px);
+          transition: var(--item-bg-transition);
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--item-bg-hover);
+          }
+
+          &:active {
+            background-color: var(--item-bg-active);
+          }
+
+          &.withLabel {
+            border-radius: 0 var(--shape-border-radius-md, 4px) var(--shape-border-radius-md, 4px) 0;
+          }
+        }
+      }
+
+      &.breadcrumbItemButtonConnected {
+        gap: 4px;
+        background-color: var(--item-bg);
+        padding: var(--spacing-padding-xs, 4px) var(--spacing-padding-sm, 8px);
+        border-radius: var(--shape-border-radius-md, 4px);
+        cursor: pointer;
+        transition: var(--item-bg-transition);
+
+        &:hover {
+          background-color: var(--item-bg-hover);
+        }
+
+        &:active {
+          background-color: var(--item-bg-active);
+        }
+      }
+
+      & .breadcrumbItemLabelText {
+        max-width: 250px;
+      }
+    }
+  }
+
+  & .breadcrumbHidden {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+  }
+}
+
+.dropdownMenuContainer {
+  width: 300px;
+  max-height: 224px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gap-xs, 4px);
+  padding: var(--spacing-padding-xs, 4px);
+  background-color: var(--palette-common-white, #ffffff);
+  border-radius: var(--shape-border-radius-lg, 8px);
+  box-shadow: 0 2px 4px 0 #0000000D, 0 1px 6px -1px #0000000D, 0 1px 2px 0 #00000014;
+
+  &.dropdownCollapseMenuContainer {
+    width: 200px;
+  }
+
+  & .noItemsContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-padding-sm, 8px);
+    box-sizing: border-box;
+
+    & > div {
+      color: var(--palette-common-grey-400, #ACACAC);
+    }
+  }
+
+  & .dropdownMenuSearch {
+    display: flex;
+    justify-content: center;
+
+    & :global(.mia-platform-input-affix-wrapper) {
+      &:hover {
+        border: 1px solid var(--palette-action-primary-hover, #1890FF);
+      }
+
+      &:global(.mia-platform-input-affix-wrapper-focused) {
+        border: 1px solid var(--palette-action-primary-active, #005dc9);
+        box-shadow: 0px 0px 0px 2px #005DC940;
+      }
+    }
+  }
+
+  & .dropdownMenu {
+    & :global(.mia-platform-dropdown-menu) {
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+
+      & :global(.mia-platform-dropdown-menu-item) {
+        padding: var(--spacing-padding-sm, 8px) !important;
+        gap: var(--spacing-gap-sm, 8px);
+
+        &:hover {
+          background-color: var(--palette-action-alternate-secondary-hover, #00000014) !important;
+          cursor: pointer;
+        }
+
+        &:global(.mia-platform-dropdown-menu-item-selected) {
+          background-color: var(--palette-action-alternate-primary-active, #1890ff14) !important;
+
+          &:hover {
+            background-color: var(--palette-action-alternate-primary-active, #1890ff14) !important;
+          }
+        }
+
+        &.noInteraction {
+          cursor: default !important;
+          background-color: white !important;
+        }
+
+        & :global(.mia-platform-dropdown-menu-title-content) {
+          width: 100%;
+        }
+
+        & :global(.mia-platform-dropdown-menu-item-icon) {
+          width: 16px;
+          height: 16px;
+          min-width: unset;
+          margin-inline-end: unset;
+        }
+      }
+    }
+  }
+}

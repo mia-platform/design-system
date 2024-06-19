@@ -17,6 +17,7 @@
  */
 
 import * as testUtils from './test-utils'
+import { Breadcrumb } from './components/Breadcrumb'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
 import { Divider } from './components/Divider'
@@ -32,6 +33,7 @@ import hooks from './hooks'
 import themes from './themes'
 
 export {
+  Breadcrumb,
   Button,
   Card,
   Divider,
