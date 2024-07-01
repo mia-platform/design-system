@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiCaretRight } from 'react-icons/pi'
 import { ReactElement } from 'react'
 
 import { Icon } from '../Icon'
@@ -34,7 +35,7 @@ export const BreadcrumbSeparator = (): ReactElement => {
 
   return (
     <div style={separatorStyle}>
-      <Icon color={palette?.common?.grey?.[600]} name="PiCaretRight" size={BREADCRUMB_SEPARATOR_SIZE} />
+      <Icon color={palette?.common?.grey?.[600]} component={PiCaretRight} size={BREADCRUMB_SEPARATOR_SIZE} />
     </div>
   )
 }

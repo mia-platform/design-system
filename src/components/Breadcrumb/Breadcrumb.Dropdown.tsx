@@ -19,6 +19,7 @@
 import { Input, Menu } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
 import { ItemType } from 'antd/es/menu/hooks/useItems'
+import { PiMagnifyingGlass } from 'react-icons/pi'
 import { debounce } from 'lodash-es'
 
 import { BreadcrumbItemMenu, BreadcrumbItemMenuItem, BreadcrumbItemType, SearchOptions } from './Breadcrumb.types'
@@ -69,7 +70,7 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
               autoFocus
               placeholder={getSearchOption(item.menu?.search, 'placeholder') ?? 'Search...'}
               // @ts-expect-error size 12 is not accepted by Icon component but supported by underling SVG
-              suffix={<Icon name="PiMagnifyingGlass" size={12} />}
+              suffix={<Icon component={PiMagnifyingGlass} size={12} />}
               onChange={(event) => {
                 const onChange = getSearchOption(item.menu?.search, 'onChange')
 

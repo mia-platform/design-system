@@ -16,12 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiBasket, PiCircleHalfTiltLight, PiShoppingCart } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { BreadcrumbProps } from './Breadcrumb.props'
 import { Icon } from '../Icon'
 
-export const breadcrumbIcon = <Icon color="black" name="PiCircleHalfTiltLight" size={16} />
+export const breadcrumbIcon = <Icon color="black" component={PiCircleHalfTiltLight} size={16} />
 export const breadcrumbLabel = 'Text'
 
 export const defaultProps: BreadcrumbProps = {
@@ -29,16 +30,16 @@ export const defaultProps: BreadcrumbProps = {
     {
       onClick: action('click'),
       label: 'Orders',
-      icon: <Icon color="black" name="PiShoppingCart" size={16} />,
+      icon: <Icon color="black" component={PiShoppingCart} size={16} />,
     },
     {
       menu: {
         onClick: action('click'),
         activeKey: '1',
         items: [
-          { key: '1', label: 'Order #1', icon: <Icon color="black" name="PiBasket" size={16} /> },
-          { key: '2', label: 'Order #2', icon: <Icon color="black" name="PiBasket" size={16} /> },
-          { key: '3', label: 'Order #3', icon: <Icon color="black" name="PiBasket" size={16} /> },
+          { key: '1', label: 'Order #1', icon: <Icon color="black" component={PiBasket} size={16} /> },
+          { key: '2', label: 'Order #2', icon: <Icon color="black" component={PiBasket} size={16} /> },
+          { key: '3', label: 'Order #3', icon: <Icon color="black" component={PiBasket} size={16} /> },
         ],
       },
     },
