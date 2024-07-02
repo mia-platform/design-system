@@ -17,13 +17,14 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { PiCircleHalfTiltLight } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { Button } from '.'
 import { Icon } from '../Icon'
 import { defaults } from './Button'
 
-const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
+const icon = <Icon color="white" component={PiCircleHalfTiltLight} size={16} />
 
 const meta = {
   component: Button,

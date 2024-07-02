@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,5 +16,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/// <reference types="vite/client" />
-/// <reference types="vite-plugin-svgr/client" />
+declare module '*.svg' {
+  import * as React from 'react'
+
+  const ReactComponent: React.FunctionComponent<React.ComponentProps<'svg'>>
+
+  export default ReactComponent
+}
+
+declare module '*.module.css' {
+  const classes: CSSModuleClasses
+  export default classes
+}

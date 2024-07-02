@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { FiCheck, FiCopy } from 'react-icons/fi'
+
 import { Icon } from '../Icon'
 
 export const fontUrl = 'https://fontsource.org/fonts/inter'
@@ -32,14 +34,14 @@ export const customCopyable = {
   icon: [
     <Icon
       color="magenta"
+      component={FiCopy}
       key="FiCopy"
-      name="FiCopy"
       size={16}
     />,
     <Icon
       color="magenta"
+      component={FiCheck}
       key="FiCheck"
-      name="FiCheck"
       size={16}
     />,
   ],

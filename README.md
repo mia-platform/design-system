@@ -58,6 +58,16 @@ To run tests:
 yarn test
 ```
 
+### Icons
+
+Icons are shipped in the `@mia-platform-internal/console-design-system-react/icons` sub-package. The SVG components can be created and placed in the `/icons` directory running:
+
+```bash
+yarn build-icons
+```
+
+This command launches a script that copies a set of icon packs from the dist of the [react-icons](https://github.com/react-icons/react-icons) dependency and build the set of Mia-Platform icons from the files contained in `/src/assets/icons`. To add a new icon you just need to place a new `.svg` file here (and don't forget to update the `/src/assets/icons/icons.stories.mdx` story file).
+
 ## License
 
 All files under the src folder must have the license boilerplate attached to files. This is checked by CI.
