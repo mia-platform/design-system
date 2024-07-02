@@ -36,6 +36,6 @@ describe('Generate Theme', () => {
   test('throws error if there is some error on theme generation file', async() => {
     const structure = await readFileSync(resolve(__dirname, '../mocks/theme-generator-with-error.json')).toString()
     const values = await readFileSync(resolve(__dirname, '../mocks/primitives.json')).toString()
-    expect(() => resolveThemeTokens(structure, values)).toThrow('Something goes wrong resolving {this.primitive.not.exists}')
+    expect(() => resolveThemeTokens(structure, values)).toThrow('Something went wrong resolving {this.primitive.not.exists}')
   })
 })
