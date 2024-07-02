@@ -44,3 +44,7 @@
   margin: calc(var(--spacing-margin-md, 12px) * -1);
   overflow: hidden;
 }
+
+.tableRowWarning {
+  background-color: var(--palette-warning-100);
+}

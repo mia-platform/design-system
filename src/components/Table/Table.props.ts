@@ -233,6 +233,12 @@ export type TableProps<RecordType extends GenericRecord> = {
   rowKey: keyof RecordType,
 
   /**
+   * Row's className
+   *
+   */
+  rowClassName?: (record: RecordType, index:number) => string,
+
+  /**
    * Configuration for row selection in the table.
    *
    * rowSelection `object`:

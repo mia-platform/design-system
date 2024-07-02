@@ -40,6 +40,7 @@ import {
 } from './Table.mocks'
 import { Table } from '.'
 import { defaults } from './Table'
+import styles from './Table.module.css'
 
 const meta = {
   component: Table<TableRecord>,
@@ -144,4 +145,11 @@ export const ColumnWidth: Story = {
 
 export const ColumnSpan: Story = {
   args: { ...meta.args, columns: spannedColumns, isBordered: true },
+}
+
+export const RowClassName: Story = {
+  args: {
+    ...meta.args,
+    rowClassName: (_record: unknown, index: number) => (index % 2 === 0 ? styles.tableRowWarning : ''),
+  },
 }

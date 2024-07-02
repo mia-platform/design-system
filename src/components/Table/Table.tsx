@@ -85,6 +85,7 @@ export const Table = <RecordType extends GenericRecord>({
   pagination = defaults.pagination,
   size = defaults.size,
   scroll = defaults.scroll,
+  rowClassName,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
   const iconSize = theme?.shape?.size?.md as IconProps['size'] || 16
@@ -133,6 +134,7 @@ export const Table = <RecordType extends GenericRecord>({
         loading={false}
         locale={intlLocale}
         pagination={tablePagination}
+        rowClassName={rowClassName}
         rowKey={rowKey}
         rowSelection={rowSelection}
         scroll={scroll}
