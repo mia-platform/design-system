@@ -26,24 +26,29 @@
       },
       "danger": {
         "active": "#e50020",
+        "disabled": "#e5e5e5",
         "focus": "#e50020",
         "hover": "#ff544f",
         "selected": "#a80014"
       },
       "link": {
         "active": "#005dc9",
+        "disabled": "#e5e5e5",
         "focus": "#005dc9",
         "hover": "#1890ff",
         "selected": "#00448c"
       },
       "primary": {
         "active": "#005dc9",
+        "contrastText": "#ffffff",
+        "disabled": "#e5e5e5",
         "focus": "#005dc9",
         "hover": "#1890ff",
         "selected": "#00448c"
       },
       "secondary": {
         "active": "#636363",
+        "disabled": "#e5e5e5",
         "focus": "#636363",
         "hover": "#898989",
         "selected": "#464646"
@@ -190,6 +195,7 @@
   },
   "spacing": {
     "gap": {
+      "2xl": 32,
       "lg": 16,
       "md": 12,
       "sm": 8,
@@ -197,6 +203,7 @@
       "xs": 4
     },
     "margin": {
+      "2xl": 32,
       "lg": 16,
       "md": 12,
       "sm": 8,
@@ -204,6 +211,7 @@
       "xs": 4
     },
     "padding": {
+      "2xl": 32,
       "lg": 16,
       "md": 12,
       "sm": 8,
