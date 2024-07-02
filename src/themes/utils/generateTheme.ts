@@ -56,7 +56,7 @@ const resolveThemeValues = (themeValues: Theme, themeTokens: object) => (nodeVal
     // The value is referred to another token value instead of a primitive
     const { $value: tokenValue } = get(themeTokens, path) || {}
     if (!tokenValue) {
-      throw new Error(`Something goes wrong resolving ${nodeValue}`)
+      throw new Error(`Something went wrong resolving ${nodeValue}`)
     }
 
     return resolveThemeValues(themeValues, themeTokens)(tokenValue)
