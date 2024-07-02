@@ -19,7 +19,9 @@
 import { readFileSync, readdirSync } from 'fs'
 import { resolve } from 'path'
 
-import generateTheme, { GENERATED_FILE, THEMES_DIR } from '../generateTheme'
+import generateTheme, { GENERATED_FILE, THEMES_DIR, forTest } from '../generateTheme'
+
+const { resolveThemeTokens } = forTest
 
 describe('Generate Theme', () => {
   for (const themeName of readdirSync(THEMES_DIR)) {
@@ -30,4 +32,10 @@ describe('Generate Theme', () => {
       expect(JSON.parse(generated)).toMatchSnapshot()
     })
   }
+
+  test('throws error if there is some error on theme generation file', async() => {
+    const structure = await readFileSync(resolve(__dirname, '../mocks/theme-generator-with-error.json')).toString()
+    const values = await readFileSync(resolve(__dirname, '../mocks/primitives.json')).toString()
+    expect(() => resolveThemeTokens(structure, values)).toThrow('Something went wrong resolving {this.primitive.not.exists}')
+  })
 })

@@ -1,0 +1,20 @@
+{
+  "colors": {
+    "Red": {
+      "300A": {
+        "$type": "color",
+        "$value": "#ff544f3d"
+      },
+      "100A": {
+        "$type": "color",
+        "$value": "#ff544f14"
+      }
+    },
+    "Neutral": {
+      "100A": {
+        "$type": "color",
+        "$value": "#00000014"
+      }
+    }
+  }
+}

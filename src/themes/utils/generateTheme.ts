@@ -40,17 +40,29 @@ const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, the
  * Resolves interpolated values from a global definitions file in the theme.
  *
  * @param {Theme} themeValues - The theme values to resolve interpolated values from.
+ * @param {object} themeTokens - The theme tokens to resolve recursive token values referring to other tokens values.
  * @returns {func} A function that resolves interpolated values.
  */
-const resolveThemeValues = (themeValues: Theme) => (node: string) => {
-  if (node.match?.(INTERPOLATED_VALUE)) {
-    const path = node.replace(PARENTHESES, '').split('.')
-
-    const { $value } = get(themeValues, path) || {}
-
-    return $value
+const resolveThemeValues = (themeValues: Theme, themeTokens: object) => (nodeValue: string): (string|undefined) => {
+  if (!nodeValue.match?.(INTERPOLATED_VALUE)) {
+    // The value does not require interpolation
+    return nodeValue
   }
-  return node
+
+  const path = nodeValue.replace(PARENTHESES, '').split('.')
+  const { $value } = get(themeValues, path) || {}
+
+  if (!$value) {
+    // The value is referred to another token value instead of a primitive
+    const { $value: tokenValue } = get(themeTokens, path) || {}
+    if (!tokenValue) {
+      throw new Error(`Something went wrong resolving ${nodeValue}`)
+    }
+
+    return resolveThemeValues(themeValues, themeTokens)(tokenValue)
+  }
+
+  return $value
 }
 
 /**
@@ -63,17 +75,29 @@ export default async function generateTheme(themeName: string): Promise<void> {
   const structure = await readFileSync(getFile(themeName, THEME_GENERATOR_FILE)).toString()
   const values = await readFileSync(getFile(themeName, PRIMITIVES_FILE)).toString()
 
+  const resolvedTheme = resolveThemeTokens(structure, values)
+
+  writeFileSync(getFile(themeName, GENERATED_FILE), JSON.stringify(resolvedTheme, null, 2))
+}
+
+function resolveThemeTokens(structure: string, values: string): Theme {
   const themeStructure: object = JSON.parse(structure)
   const themeValues: Theme = JSON.parse(values)
 
-  const resolveVariable = resolveThemeValues(themeValues)
+  const resolveVariable = resolveThemeValues(themeValues, themeStructure)
 
-  const resolvedTheme: Theme = traverse(themeStructure).map(function(node) {
+  return traverse(themeStructure).map(function(node) {
     const isLeaf = node?.$value && node?.$type
-    const resolvedNode = resolveVariable(isLeaf ? node.$value : node)
 
-    this.update(resolvedNode)
+    if (!isLeaf) {
+      this.update(node)
+      return
+    }
+
+    this.update(resolveVariable(node.$value))
   })
+}
 
-  writeFileSync(getFile(themeName, GENERATED_FILE), JSON.stringify(resolvedTheme, null, 2))
+export const forTest = {
+  resolveThemeTokens,
 }
