@@ -19,22 +19,14 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable func-names */
 
-import { readFileSync, writeFileSync } from 'fs'
 import { get } from 'lodash-es'
-import { resolve } from 'path'
+import { readFileSync } from 'fs'
 import traverse from 'traverse'
 
 import Theme from '../schema'
 
-export const THEMES_DIR = resolve(__dirname, '../files')
-export const THEME_GENERATOR_FILE = 'theme-generator.json'
-export const PRIMITIVES_FILE = 'primitives.json'
-export const GENERATED_FILE = 'theme.json'
-
 const INTERPOLATED_VALUE = /^{.*}$/g
 const PARENTHESES = /[{}]/g
-
-const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, theme, file)
 
 /**
  * Resolves interpolated values from a global definitions file in the theme.
@@ -44,7 +36,7 @@ const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, the
  * @returns {func} A function that resolves interpolated values.
  */
 const resolveThemeValues = (themeValues: Theme, themeTokens: object) => (nodeValue: string): (string|undefined) => {
-  if (!nodeValue.match?.(INTERPOLATED_VALUE)) {
+  if (!nodeValue.match(INTERPOLATED_VALUE)) {
     // The value does not require interpolation
     return nodeValue
   }
@@ -68,19 +60,13 @@ const resolveThemeValues = (themeValues: Theme, themeTokens: object) => (nodeVal
 /**
  * Generates a theme based on the provided theme name.
  *
- * @param {string} themeName - The name of the theme to generate.
- * @returns {Promise<void>} A promise that resolves when the theme generation is complete.
+ * @param {string} themeGeneratorFilePath - The path of the theme generator file.
+ * @param {string} primitivesFilePath - The path of the primitives file.
+ * @returns {Theme} The generated theme with all the resolved values.
  */
-export default async function generateTheme(themeName: string): Promise<void> {
-  const structure = await readFileSync(getFile(themeName, THEME_GENERATOR_FILE)).toString()
-  const values = await readFileSync(getFile(themeName, PRIMITIVES_FILE)).toString()
-
-  const resolvedTheme = resolveThemeTokens(structure, values)
-
-  writeFileSync(getFile(themeName, GENERATED_FILE), JSON.stringify(resolvedTheme, null, 2))
-}
-
-function resolveThemeTokens(structure: string, values: string): Theme {
+export function generateTheme(themeGeneratorFilePath: string, primitivesFilePath: string): Theme {
+  const structure = readFileSync(themeGeneratorFilePath).toString()
+  const values = readFileSync(primitivesFilePath).toString()
   const themeStructure: object = JSON.parse(structure)
   const themeValues: Theme = JSON.parse(values)
 
@@ -98,6 +84,4 @@ function resolveThemeTokens(structure: string, values: string): Theme {
   })
 }
 
-export const forTest = {
-  resolveThemeTokens,
-}
+

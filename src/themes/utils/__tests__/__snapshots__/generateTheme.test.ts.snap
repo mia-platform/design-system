@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Generate Theme generates dark theme configuration 1`] = `
+exports[`Generate Theme dark matches snapshot 1`] = `
 {
   "palette": {
     "action": {
@@ -312,7 +312,7 @@ exports[`Generate Theme generates dark theme configuration 1`] = `
 }
 `;
 
-exports[`Generate Theme generates light theme configuration 1`] = `
+exports[`Generate Theme light matches snapshot 1`] = `
 {
   "palette": {
     "action": {
