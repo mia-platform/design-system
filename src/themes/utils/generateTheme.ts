@@ -75,12 +75,18 @@ export default async function generateTheme(themeName: string): Promise<void> {
   const structure = await readFileSync(getFile(themeName, THEME_GENERATOR_FILE)).toString()
   const values = await readFileSync(getFile(themeName, PRIMITIVES_FILE)).toString()
 
+  const resolvedTheme = resolveThemeTokens(structure, values)
+
+  writeFileSync(getFile(themeName, GENERATED_FILE), JSON.stringify(resolvedTheme, null, 2))
+}
+
+function resolveThemeTokens(structure: string, values: string): Theme {
   const themeStructure: object = JSON.parse(structure)
   const themeValues: Theme = JSON.parse(values)
 
   const resolveVariable = resolveThemeValues(themeValues, themeStructure)
 
-  const resolvedTheme: Theme = traverse(themeStructure).map(function(node) {
+  return traverse(themeStructure).map(function(node) {
     const isLeaf = node?.$value && node?.$type
 
     if (!isLeaf) {
@@ -90,6 +96,8 @@ export default async function generateTheme(themeName: string): Promise<void> {
 
     this.update(resolveVariable(node.$value))
   })
+}
 
-  writeFileSync(getFile(themeName, GENERATED_FILE), JSON.stringify(resolvedTheme, null, 2))
+export const forTest = {
+  resolveThemeTokens,
 }
