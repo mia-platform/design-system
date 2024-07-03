@@ -54,4 +54,3 @@ export const WithText: Story = {
   },
 }
 
-

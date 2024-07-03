@@ -20,7 +20,6 @@ import { resolve } from 'path'
 
 import { generateTheme } from '../generateTheme'
 
-
 describe('Generate Theme', () => {
   test('generates theme correctly from generator that is not recursive', () => {
     const themeGeneratorFilePath = resolve(__dirname, '../mocks/theme-generator-referring-to-only-primitives.json')

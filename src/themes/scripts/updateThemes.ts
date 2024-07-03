@@ -27,9 +27,7 @@ import {
 } from '../constants'
 import { generateTheme } from '../utils/generateTheme'
 
-
 const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, theme, file)
-
 
 function main(): void {
   for (const themeName of readdirSync(THEMES_DIR)) {

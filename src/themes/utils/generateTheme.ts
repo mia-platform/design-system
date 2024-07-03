@@ -84,4 +84,3 @@ export function generateTheme(themeGeneratorFilePath: string, primitivesFilePath
   })
 }
 
-

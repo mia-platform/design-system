@@ -18,7 +18,6 @@
 
 import { ReactElement, ReactNode } from 'react'
 
-
 export type DrawerFooter = ReactNode
 
 export type FooterProps = {

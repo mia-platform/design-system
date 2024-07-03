@@ -21,7 +21,6 @@ import { useContext, useMemo } from 'react'
 import type Theme from '../../themes/schema'
 import { ThemeContext } from '../../components/ThemeProvider'
 
-
 /**
  * A hook to access the current theme from the context.
  *

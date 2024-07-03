@@ -43,6 +43,7 @@ module.exports = {
     }
   },
   rules: {
+    "no-multiple-empty-lines": [2, {max: 1}],
     "import/order": ["error", {
       groups: [
         ["builtin", "external"],
