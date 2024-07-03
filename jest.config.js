@@ -27,8 +27,7 @@ export default {
     "/src/setupTests.ts",
     "/src/test-utils.tsx",
     "/src/utils/log.ts",
-    "/src/themes/scripts/",
-    "/src/themes/constants.ts",
+    "/src/themes/",
     "assets"
   ]
 }
