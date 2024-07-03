@@ -9,7 +9,7 @@
           },
           "disabled": {
             "$type": "color",
-            "$value": "{colors.Neutral.100A}"
+            "$value": "#0000000a"
           },
           "focus": {
             "$type": "color",

@@ -13,7 +13,7 @@
           },
           "focus": {
             "$type": "color",
-            "$value": "{colors.Red.100A}"
+            "$value": "#0000000a"
           },
           "hover": {
             "$type": "color",

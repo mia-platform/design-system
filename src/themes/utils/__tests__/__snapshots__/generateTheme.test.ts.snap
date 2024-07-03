@@ -7,7 +7,7 @@ exports[`Generate Theme generates theme correctly from generator that is not rec
       "alternate": {
         "danger": {
           "active": "#ff544f14",
-          "disabled": "#00000014",
+          "disabled": "#0000000a",
           "focus": "#ff544f14",
           "hover": "#00000014",
           "selected": "#ff544f3d",
@@ -26,7 +26,7 @@ exports[`Generate Theme generates theme correctly from recursived generator 1`] 
         "danger": {
           "active": "#00000014",
           "disabled": "#00000014",
-          "focus": "#ff544f14",
+          "focus": "#0000000a",
           "hover": "#00000014",
           "selected": "#ff544f3d",
         },
