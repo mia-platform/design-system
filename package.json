@@ -38,7 +38,7 @@
     "build-storybook": "storybook build",
     "addlicense": "addlicense -c 'Mia srl' -s -ignore src/**/*.ts",
     "check-license": "addlicense -c 'Mia srl' -check -s -ignore src/**/*.ts",
-    "update-theme": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/themes/scripts/updateThemes.ts"
+    "update-themes": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/themes/scripts/updateThemes.ts"
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.18",

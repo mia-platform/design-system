@@ -58,6 +58,16 @@ To run tests:
 yarn test
 ```
 
+## Update the themes
+
+The themes are generated from the `theme-generator.json` file exported from Figma and they are coupled in each of different folder in `src/themes/files/`.
+
+If a `theme-generator.json` file is changed, it is required to regenerate the new theme lauching the command:
+
+```bash
+yarn update-themes
+```
+
 ## License
 
 All files under the src folder must have the license boilerplate attached to files. This is checked by CI.
