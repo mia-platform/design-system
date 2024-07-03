@@ -1,0 +1,30 @@
+{
+  "palette": {
+    "action": {
+      "alternate": {
+        "danger": {
+          "active": {
+            "$type": "color",
+            "$value": "{palette.action.alternate.danger.disabled}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{colors.Neutral.100A}"
+          },
+          "focus": {
+            "$type": "color",
+            "$value": "{colors.Red.100A}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{palette.action.alternate.danger.active}"
+          },
+          "selected": {
+            "$type": "color",
+            "$value": "{colors.Red.300A}"
+          }
+        }
+      }
+    }
+  }
+}

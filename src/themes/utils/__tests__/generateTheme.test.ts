@@ -16,20 +16,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { readFileSync, readdirSync } from 'fs'
 import { resolve } from 'path'
 
-import { GENERATED_FILE, THEMES_DIR } from '../../constants'
 import { generateTheme } from '../generateTheme'
 
 
 describe('Generate Theme', () => {
-  for (const themeName of readdirSync(THEMES_DIR)) {
-    test(`${themeName} matches snapshot`, async() => {
-      const generated = readFileSync(resolve(THEMES_DIR, themeName, GENERATED_FILE)).toString()
-      expect(JSON.parse(generated)).toMatchSnapshot()
-    })
-  }
+  test('generates theme correctly from generator that is not recursive', () => {
+    const themeGeneratorFilePath = resolve(__dirname, '../mocks/theme-generator-referring-to-only-primitives.json')
+    const primitivesFilePath = resolve(__dirname, '../mocks/primitives.json')
+
+    expect(generateTheme(themeGeneratorFilePath, primitivesFilePath)).toMatchSnapshot()
+  })
+
+  test('generates theme correctly from recursived generator', () => {
+    const themeGeneratorFilePath = resolve(__dirname, '../mocks/theme-generator-recursive.json')
+    const primitivesFilePath = resolve(__dirname, '../mocks/primitives.json')
+
+    expect(generateTheme(themeGeneratorFilePath, primitivesFilePath)).toMatchSnapshot()
+  })
 
   test('throws error if there is some error on theme generation file', async() => {
     const themeGeneratorFilePath = resolve(__dirname, '../mocks/theme-generator-with-error.json')
