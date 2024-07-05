@@ -25,10 +25,11 @@ const { feedbackMessage } = styles
 
 /**
  * Renders a message in response to user operations.
- * This component is intended to be used along with the `useFeedbackMessage` hook.
+ * This component is intended to be used along with the `useFeedbackMessage`
+ * or `useFeedbackMessageWithContext` hook.
  *
  * @link https://ant.design/components/message
- * @returns {FeedbackMessage} FeedbackMessage component
+ * @returns {ReactElement} FeedbackMessage component
  */
 export const FeedbackMessage = ({
   message,

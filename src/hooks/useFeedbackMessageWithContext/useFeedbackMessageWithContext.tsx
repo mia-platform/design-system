@@ -18,25 +18,21 @@
 
 import { message } from 'antd'
 
-import { MessageAPI, Position } from './useFeedbackMessage.types'
-import { useMessageWrapper } from './useMessageWrapper/useMessageWrapper'
+import { MessageWithContextHolderAPI, Position } from './useFeedbackMessageWithContext.types'
+import { useMessageWrapper } from '../useFeedbackMessage/useMessageWrapper/useMessageWrapper'
 
 /**
- * A hook that allows to display global informative messages to the user. It is intended to give
- * feedback messages on a certain operation being executed or information regarding the context of the application.
+ * A hook that allows to display global informative messages to the user. It is very similar to
+ * the useFeedbackMessages hook, but it allows to propagate the React Context to the message popover content,
+ * so it is possible to resolve contexts as intl or token theme.
  *
  * The hook returns several methods to be used to show a message of a different type
- * (each type will use a different icon) or to manually remove rendered messages.
- *
- * The Position values are exposed on the useFeedbackMessage object.
- *
- * Warning: the popover content opened by this hook cannot resolve any React Context,
- * so in this cases React always uses the default context value. If this behaviour is undesired,
- * it suggest to use the useFeedbackMessageWithContext custom hook instead.
+ * (each type will use a different icon) or to manually remove rendered messages and
+ * a contextHolder React element that must be rendered to work.
  *
  * @example
  * export const Component(props: {...}) => {
- *   const {success, dismiss} = useFeedbackMessage()
+ *   const {success, dismiss, contextHolder} = useFeedbackMessageWithContext()
  *
  *   // When called, shows a FeedbackMessage
  *   const onClick = (): void => {
@@ -44,7 +40,6 @@ import { useMessageWrapper } from './useMessageWrapper/useMessageWrapper'
  *       extra: <Button size={Size.Small} onClick={onDismiss}>Close</Button>,
  *       key: 'messageKey',
  *       message: 'This is a Feedback Message',
- *       position: useFeedbackMessage.Position.Bottom
  *     })
  *   }
  *
@@ -55,16 +50,22 @@ import { useMessageWrapper } from './useMessageWrapper/useMessageWrapper'
  *     <div>
  *       {...}
  *       <Button onClick={onClick}>Click me to show a Feedback Message</Button>
+ *       {contextHolder}
  *     </div>
  *   )
  * }
  *
- * @returns {MessageAPI} An object which includes several functions to manage the rendering of feedback messages.
+ * @returns {MessageWithContextHolderAPI} An object which includes several functions
+ * to manage the rendering of feedback messages and the contextHolder that must be rendered to work.
  */
-export const useFeedbackMessage = (): MessageAPI => {
-  const wrappedAPI = useMessageWrapper(message)
-  return wrappedAPI
+export const useFeedbackMessageWithContext = (): MessageWithContextHolderAPI => {
+  const [api, contextHolder] = message.useMessage()
+  const wrappedAPI = useMessageWrapper(api)
+  return {
+    ...wrappedAPI,
+    contextHolder,
+  }
 }
 
-useFeedbackMessage.Position = Position
+useFeedbackMessageWithContext.Position = Position
 

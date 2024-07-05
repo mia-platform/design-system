@@ -17,20 +17,24 @@
  */
 
 /* eslint-disable react/no-multi-comp */
+
+import { createContext, useContext } from 'react'
+
 import { act, fireEvent, render, screen, waitFor } from '../../test-utils'
-import { useFeedbackMessage } from './useFeedbackMessage'
+import { useFeedbackMessageWithContext } from './useFeedbackMessageWithContext'
 
 jest.useFakeTimers()
 
-describe('useFeedbackMessage', () => {
+describe('useFeedbackMessageWithContext', () => {
   test('should show FeedbackMessage', async() => {
     const message = 'This is a Feedback Message'
     const Example = (): JSX.Element => {
-      const { info } = useFeedbackMessage()
+      const { info, contextHolder } = useFeedbackMessageWithContext()
 
       return (
         <button type="button" onClick={() => info({ message })}>
-          Open
+          {'Open'}
+          {contextHolder}
         </button>
       )
     }
@@ -46,7 +50,7 @@ describe('useFeedbackMessage', () => {
     const message = 'This is Feedback Message with some extra content'
 
     const Example = (): JSX.Element => {
-      const { success } = useFeedbackMessage()
+      const { success, contextHolder } = useFeedbackMessageWithContext()
 
       return (
         <button
@@ -56,7 +60,8 @@ describe('useFeedbackMessage', () => {
             extra: <button type="button">Close</button>,
           })}
         >
-          Open
+          {'Open'}
+          {contextHolder}
         </button>
       )
     }
@@ -69,11 +74,11 @@ describe('useFeedbackMessage', () => {
     expect(screen.getByRole('button', { name: 'Close' })).toBeVisible()
   })
 
-  test('useFeedbackMessage methods return a Promise', async() => {
+  test('useFeedbackMessageWithContext methods return a Promise', async() => {
     const afterCloseMockFn = jest.fn()
 
     const Example = (): JSX.Element => {
-      const { info } = useFeedbackMessage()
+      const { info, contextHolder } = useFeedbackMessageWithContext()
 
       const onClick = (): void => {
         info(
@@ -81,7 +86,12 @@ describe('useFeedbackMessage', () => {
         ).then(() => { afterCloseMockFn() })
       }
 
-      return <button type="button" onClick={onClick}>Open</button>
+      return (
+        <button type="button" onClick={onClick}>
+          {'Open'}
+          {contextHolder}
+        </button>
+      )
     }
 
     render(<Example />)
@@ -96,14 +106,15 @@ describe('useFeedbackMessage', () => {
     const message = 'This is a Feedback Message that disappears after five seconds'
 
     const Example = (): JSX.Element => {
-      const { error } = useFeedbackMessage()
+      const { error, contextHolder } = useFeedbackMessageWithContext()
 
       return (
         <button
           type="button"
           onClick={() => error({ message, duration: 5 })}
         >
-          Open
+          {'Open'}
+          {contextHolder}
         </button>
       )
     }
@@ -124,11 +135,12 @@ describe('useFeedbackMessage', () => {
     const message = 'This is a sticky Feedback Message'
 
     const Example = (): JSX.Element => {
-      const { info } = useFeedbackMessage()
+      const { info, contextHolder } = useFeedbackMessageWithContext()
 
       return (
         <button type="button" onClick={() => info({ message, sticky: true })}>
-          Open
+          {'Open'}
+          {contextHolder}
         </button>
       )
     }
@@ -147,18 +159,21 @@ describe('useFeedbackMessage', () => {
     const message = 'Loading...'
 
     const Example = (): JSX.Element => {
-      const { loading, dismiss } = useFeedbackMessage()
+      const { loading, dismiss, contextHolder } = useFeedbackMessageWithContext()
       const onDismiss = (): void => dismiss(key)
 
       const extra = <button type="button" onClick={onDismiss}>Dismiss</button>
 
       return (
-        <button
-          type="button"
-          onClick={() => loading({ key, message, extra })}
-        >
-          Open
-        </button>
+        <>
+          {contextHolder}
+          <button
+            type="button"
+            onClick={() => loading({ key, message, extra })}
+          >
+            {'Open'}
+          </button>
+        </>
       )
     }
 
@@ -179,14 +194,15 @@ describe('useFeedbackMessage', () => {
     const updatedMessage = 'This is an updated Feedback Message placed to the bottom of the page'
 
     const Example = (): JSX.Element => {
-      const { info } = useFeedbackMessage()
+      const { info, contextHolder } = useFeedbackMessageWithContext()
 
       return (
         <>
-          <button type="button" onClick={() => info({ message, position: useFeedbackMessage.Position.Bottom })}>
+          {contextHolder}
+          <button type="button" onClick={() => info({ message, position: useFeedbackMessageWithContext.Position.Bottom })}>
             Open message
           </button>
-          <button type="button" onClick={() => info({ message: updatedMessage, position: useFeedbackMessage.Position.Bottom })}>
+          <button type="button" onClick={() => info({ message: updatedMessage, position: useFeedbackMessageWithContext.Position.Bottom })}>
             Open updated message
           </button>
         </>
@@ -202,5 +218,58 @@ describe('useFeedbackMessage', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Open updated message' }))
     expect(screen.queryByText(message)).not.toBeInTheDocument()
     expect(screen.getByText(updatedMessage)).toBeVisible()
+  })
+
+  test('propagates the React context using the contextHolder', async() => {
+    jest.useRealTimers()
+    type MockedContext = {
+      message: string
+    }
+
+    // message: 'This is a feedback message'
+    const MockedReactContext = createContext<MockedContext>({ message: '' })
+    const mockedContextValue = { message: 'PROPAGATED MESSAGE' }
+
+    const FeedbackMessageContent = (): JSX.Element => {
+      const { message } = useContext(MockedReactContext)
+      return <span>{message}</span>
+    }
+
+    const Example = (): JSX.Element => {
+      const { info, contextHolder } = useFeedbackMessageWithContext()
+
+      const onClick = (): void => {
+        info({
+          message: (
+            <div>
+              {'The message in the context is: '}
+              <FeedbackMessageContent />
+            </div>
+          ),
+          duration: 0,
+        })
+      }
+
+      return (
+        <>
+          {contextHolder}
+          <button type="button" onClick={onClick}>Open</button>
+        </>
+      )
+    }
+
+    const ProviderWrapper = ({ children }: {children: JSX.Element}): JSX.Element => {
+      return (
+        <MockedReactContext.Provider value={mockedContextValue}>
+          {children}
+        </MockedReactContext.Provider>
+      )
+    }
+
+    render(<ProviderWrapper><Example /></ProviderWrapper>)
+
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }))
+    await screen.findByText(/the message in the context is/i)
+    expect(screen.getByText(mockedContextValue.message)).toBeInTheDocument()
   })
 })

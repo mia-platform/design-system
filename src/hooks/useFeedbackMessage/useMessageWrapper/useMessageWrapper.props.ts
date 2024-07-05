@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FeedbackMessageProps } from '../../components/FeedbackMessage/FeedbackMessage.props'
-import { Position } from './useFeedbackMessage.types'
+import { FeedbackMessageProps } from '../../../components/FeedbackMessage/FeedbackMessage.props'
+import { Position } from './useMessageWrapper.types'
 
-export type UseFeedbackMessageProps = FeedbackMessageProps & {
+export type useMessageWrapperProps = FeedbackMessageProps & {
 
   /**
    * Key of the message. This will be used as an identifier, in case of manual dismission of a message.

@@ -22,15 +22,18 @@ import Theme from '../../themes/schema'
 /**
  * Generates a Ant theme configuration for Message component based on a theme configuration.
  *
+ * This values works only using useFeedbackMessageWithContext
+ *
  * @link https://ant.design/components/message#design-token
  *
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Message Ant theme configuration.
  */
 export default ({ palette }: Partial<Theme>): ComponentsTheme['Message'] => ({
-  colorError: palette?.error?.[600],
-  colorInfo: palette?.info?.[600],
-  colorSuccess: palette?.success?.[600],
+  colorError: palette?.error?.[500],
+  colorInfo: palette?.info?.[500],
+  colorSuccess: palette?.success?.[500],
   colorText: palette?.common.grey?.[600],
-  colorWarning: palette?.warning?.[600],
+  colorWarning: palette?.warning?.[400],
+  zIndexPopup: 990,
 })

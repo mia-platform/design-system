@@ -36,7 +36,7 @@
   }
 }
 
-.feedbackMessage {
+.messageWrapper {
   &.bottom {
     margin-top: calc(100vh - 72px);
 
@@ -45,6 +45,14 @@
     }
 
     &[class~=ant-message-move-up-leave] {
+      animation-name: fadeOut;
+    }
+
+    &[class~=mia-platform-message-move-up] {
+      animation-name: fadeIn;
+    }
+
+    &[class~=mia-platform-message-move-up-leave] {
       animation-name: fadeOut;
     }
   }

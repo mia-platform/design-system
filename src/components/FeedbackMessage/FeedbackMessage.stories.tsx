@@ -17,12 +17,14 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
-import { useState } from 'react'
+import { createContext, useContext, useMemo, useState } from 'react'
 
 import { Button } from '../Button'
 import { FeedbackMessage } from '.'
 import { Icon } from '../Icon'
+import { ThemeProvider } from '../ThemeProvider'
 import { useFeedbackMessage } from '../../hooks/useFeedbackMessage'
+import { useFeedbackMessageWithContext } from '../../hooks/useFeedbackMessageWithContext'
 
 const meta = {
   args: {
@@ -165,6 +167,49 @@ export const ReplaceFeedbackMessages: Story = {
             : <Button onClick={onCreateLoadingMessage}>Create a Loading Feedback Message</Button>
         }
       </div >
+    )
+  }],
+}
+
+const reactContext = createContext<{message?: string}>({})
+
+const FeedbackMessageContentFromContext = (): JSX.Element => {
+  const { message } = useContext(reactContext)
+  return <span>{message}</span>
+}
+
+export const FeedbackMessageAtTheBottomOfThePageWithContext: Story = {
+  decorators: [(_Story, context) => {
+    const { warning, dismiss, contextHolder } = useFeedbackMessageWithContext()
+
+    const { message } = context.args
+
+    const contextValue = useMemo(() => ({ message: String(message) }), [message])
+
+    return (
+      <ThemeProvider >
+        <reactContext.Provider value={contextValue} >
+          <div style={{ display: 'flex', gap: 4 }}>
+            {contextHolder}
+            <Button
+              hierarchy={Button.Hierarchy.Neutral}
+              onClick={() => warning({
+                message: <FeedbackMessageContentFromContext />,
+                position: useFeedbackMessage.Position.Bottom,
+                sticky: true,
+              })}
+            >
+          Open
+            </Button>
+            <Button
+              hierarchy={Button.Hierarchy.Neutral}
+              onClick={() => dismiss()}
+            >
+          Dismiss
+            </Button>
+          </div>
+        </reactContext.Provider>
+      </ThemeProvider>
     )
   }],
 }

@@ -16,18 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useAntTheme } from './useAntTheme'
-import { useDrawer } from './useDrawer'
-import { useFeedbackMessage } from './useFeedbackMessage'
-import { useFeedbackMessageWithContext } from './useFeedbackMessageWithContext'
-import { useModal } from './useModal'
-import { useTheme } from './useTheme'
+import { ReactElement } from 'react'
 
-export default {
-  useDrawer,
-  useFeedbackMessage,
-  useFeedbackMessageWithContext,
-  useModal,
-  useTheme,
-  useAntTheme,
+import { MessageAPI } from '../useFeedbackMessage/useFeedbackMessage.types'
+
+export { Position } from '../useFeedbackMessage/useMessageWrapper/useMessageWrapper.types'
+export type MessageWithContextHolderAPI = MessageAPI & {
+
+  /**
+  * This is a React element that must be rendered to capture the React Contexts and propagates them
+  * to message popover content.
+  */
+  contextHolder: ReactElement
 }
