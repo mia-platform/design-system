@@ -98,13 +98,13 @@ export const Table = <RecordType extends GenericRecord>({
   const tableColumns = useMemo(() => [
     ...columns,
     ...customActions?.map(getAction) || [],
-    ...onEditRow ? [getAction({
+    ...editAction?.onClick || onEditRow ? [getAction({
       dataIndex: Edit,
       icon: <Icon color="currentColor" name="PiPencilSimpleLine" size={iconSize} />,
       onClick: onEditRow,
       ...editAction,
     })] : [],
-    ...onDeleteRow ? [getAction({
+    ...deleteAction?.onClick || onDeleteRow ? [getAction({
       dataIndex: Delete,
       icon: <Icon color="currentColor" name="PiTrash" size={iconSize} />,
       isDanger: true,
