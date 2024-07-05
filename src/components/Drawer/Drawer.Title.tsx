@@ -20,7 +20,6 @@ import { ReactElement, ReactNode, useMemo } from 'react'
 
 import { H4 } from '../Typography/HX/H4'
 
-
 export type DrawerTitle = ReactNode
 
 export type TitleProps = {

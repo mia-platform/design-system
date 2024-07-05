@@ -21,7 +21,6 @@ import { render, screen } from '../../test-utils'
 import { Drawer } from './Drawer'
 import { DrawerProps } from './Drawer.props'
 
-
 describe('Drawer', () => {
   const props: DrawerProps = {
     children: 'Drawer Content',

@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Mia srl
+ * Copyright 2024 Mia srl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useContext, useMemo } from 'react'
+import { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
 
-import type Theme from '../../themes/schema'
-import { ThemeContext } from '../../components/ThemeProvider'
+// eslint-disable-next-line no-underscore-dangle
+const __filename = fileURLToPath(import.meta.url)
+// eslint-disable-next-line no-underscore-dangle
+const __dirname = dirname(__filename)
 
-/**
- * A hook to access the current theme from the context.
- *
- * @returns {Theme} The current theme.
- */
-export const useTheme = (): Theme => {
-  const theme = useContext(ThemeContext)
-
-  return useMemo(() => theme, [theme])
-}
+export const THEMES_DIR = resolve(__dirname, 'files')
+export const THEME_GENERATOR_FILE = 'theme-generator.json'
+export const PRIMITIVES_FILE = 'primitives.json'
+export const GENERATED_FILE = 'theme.json'
