@@ -42,7 +42,7 @@
     "update-themes": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/themes/scripts/updateThemes.ts"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.18",
+    "@fontsource/inter": "^5.0.19",
     "antd": "5.13.0",
     "lodash-es": "^4.17.21",
     "react-icons": "^4.11.0"

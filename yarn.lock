@@ -2055,10 +2055,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/inter@npm:^5.0.18":
-  version: 5.0.18
-  resolution: "@fontsource/inter@npm:5.0.18"
-  checksum: 10/be9c47c534d22c9a0685d219296784c50fba8034bcf8c5118f9e9461fc28ac1f1796ee0c270bb18399d69b1409b6317fb2674c03dd0cb84dc6d67a2b41285d74
+"@fontsource/inter@npm:^5.0.19":
+  version: 5.0.19
+  resolution: "@fontsource/inter@npm:5.0.19"
+  checksum: 10/b0f5c67cbbb1d62c60efa4046840e8869a78ef8c29e3bfaaffb73bcd8a7af57eae55766cb77a4464ec1b5affdab05543d0e3eb81ff4c258c11d4462e67bcc0a7
   languageName: node
   linkType: hard
 
@@ -2505,7 +2505,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mia-platform-internal/console-design-system-react@workspace:."
   dependencies:
-    "@fontsource/inter": "npm:^5.0.18"
+    "@fontsource/inter": "npm:^5.0.19"
     "@mia-platform/eslint-config-mia": "npm:^3.0.0"
     "@playwright/test": "npm:^1.45.1"
     "@storybook/addon-a11y": "npm:^7.6.17"
