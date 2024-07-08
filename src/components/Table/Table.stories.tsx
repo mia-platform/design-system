@@ -38,6 +38,7 @@ import {
   sizedColumns,
   spannedColumns,
 } from './Table.mocks'
+import { Action } from './Table.types'
 import { Table } from '.'
 import { defaults } from './Table'
 
@@ -93,6 +94,15 @@ export const Expandable: Story = {
       onExpand: action('onExpand'),
       onExpandedRowsChange: action('onExpandedRowsChange'),
     }),
+  },
+}
+
+export const SimpleActionsUsage: Story = {
+  args: { ...meta.args,
+    actions: [
+      { dataIndex: Action.Edit, onClick: action('edit') },
+      { dataIndex: Action.Delete, onClick: action('delete') },
+    ],
   },
 }
 
