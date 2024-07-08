@@ -3,16 +3,16 @@ changelog:
     authors:
       - dependabot
   categories:
-    - title: Breaking Changes 🛠
+    - title: Breaking Changes 💢
       labels:
         - breaking
-    - title: New Components 🎉
+    - title: New Components 🎊
       labels:
         - new component
     - title: Exciting New Features 🎉
       labels:
         - enhancement
-    - title: Bug fixes 🎉
+    - title: Bug fixes 🐛
       labels:
         - bug
     - title: Security Fixes 🔐
@@ -21,6 +21,6 @@ changelog:
     - title: Refactor 💅
       labels:
         - refactor
-    - title: Other Changes
+    - title: Other Changes 🛠
       labels:
         - "*"
