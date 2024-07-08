@@ -38,9 +38,9 @@ import {
   sizedColumns,
   spannedColumns,
 } from './Table.mocks'
+import { Action } from './Table.types'
 import { Table } from '.'
 import { defaults } from './Table'
-import { Action } from './Table.types'
 
 const meta = {
   component: Table<TableRecord>,
