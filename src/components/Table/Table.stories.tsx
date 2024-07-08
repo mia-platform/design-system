@@ -40,6 +40,7 @@ import {
 } from './Table.mocks'
 import { Table } from '.'
 import { defaults } from './Table'
+import { Action } from './Table.types'
 
 const meta = {
   component: Table<TableRecord>,
@@ -93,6 +94,15 @@ export const Expandable: Story = {
       onExpand: action('onExpand'),
       onExpandedRowsChange: action('onExpandedRowsChange'),
     }),
+  },
+}
+
+export const SimpleActionsUsage: Story = {
+  args: { ...meta.args,
+    actions: [
+      { dataIndex: Action.Edit, onClick: action('edit') },
+      { dataIndex: Action.Delete, onClick: action('delete') },
+    ],
   },
 }
 

@@ -63,7 +63,7 @@ export const defaults = {
  * UI component for presenting tabular structured data
  *
  * @link https://ant.design/components/table
- * @returns {Table} Table component
+ * @returns {ReactElement} Table component
  */
 export const Table = <RecordType extends GenericRecord>({
   columns,
