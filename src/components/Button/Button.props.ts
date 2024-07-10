@@ -110,7 +110,7 @@ export type ButtonProps = {
   target?: string,
 
   /**
-   * Adds a tooltip that contains the value of the property.
+   * HTML `title` global attribute.
    */
   title?: string,
 
