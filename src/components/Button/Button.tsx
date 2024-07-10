@@ -62,6 +62,7 @@ export const Button = ({
   shape = defaults.shape,
   size = defaults.size,
   target,
+  title,
   type = defaults.type,
 }: ButtonProps): ReactElement => {
   const buttonClassNames = useMemo(() => classnames(
@@ -87,6 +88,7 @@ export const Button = ({
       loading={isLoading}
       shape={shape === Square ? 'default' : 'circle'}
       size={size}
+      title={title}
       type={hierarchy === Neutral ? 'default' : 'primary'}
       onClick={onClick}
       {...href && { href, rel: 'noopener noreferrer', target }}

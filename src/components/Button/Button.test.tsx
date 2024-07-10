@@ -145,4 +145,11 @@ describe('Button Component', () => {
     expect(onClick).toHaveBeenCalledTimes(1)
     expect(onClick).toBeCalledWith(expect.objectContaining({ ...MouseEvent }))
   })
+
+  test('renders title correctly', async() => {
+    render(<Button title={'title test'}>{'Button'}</Button>)
+
+    const button = screen.getByTitle('title test')
+    expect(button).toBeVisible()
+  })
 })

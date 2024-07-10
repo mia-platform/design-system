@@ -110,6 +110,11 @@ export type ButtonProps = {
   target?: string,
 
   /**
+   * Adds a tooltip that contains the value of the property.
+   */
+  title?: string,
+
+  /**
    * Defines the button type. Either:
    *
    * - "filled": button with a solid fill, typically used for primary actions;
