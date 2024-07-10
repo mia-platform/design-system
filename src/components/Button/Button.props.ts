@@ -110,6 +110,11 @@ export type ButtonProps = {
   target?: string,
 
   /**
+   * HTML `title` global attribute.
+   */
+  title?: string,
+
+  /**
    * Defines the button type. Either:
    *
    * - "filled": button with a solid fill, typically used for primary actions;
