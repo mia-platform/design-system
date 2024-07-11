@@ -40,18 +40,24 @@ export const DrawerLipsum = (): ReactElement => {
   )
 }
 
-export const DrawerLipumTitle = (): ReactElement => {
+export const DrawerLipsumTitle = (): ReactElement => {
   return <span>{'Drawer Lipsum'}</span>
 }
 
-export const DrawerLipsumFooter = ({ closeDrawer }: {closeDrawer: () => void}): ReactElement => {
+export const DrawerLipsumFooterButton = (): ReactElement => {
+  const { closeDrawer } = useDrawer()
   return (
-    <div>
-      <Button onClick={closeDrawer}>
-        {'Close'}
-      </Button>
-    </div>
+    <Button onClick={closeDrawer}>
+      {'Close'}
+    </Button>
   )
+}
+
+export const drawerLipsumFooter = {
+  buttons: [
+    <DrawerLipsumFooterButton key="close-button" />,
+  ],
+  extra: 'Extra text',
 }
 
 export const WithOpenButton = (props: DrawerProps): ReactElement => {
@@ -61,7 +67,6 @@ export const WithOpenButton = (props: DrawerProps): ReactElement => {
       <Button onClick={openDrawer}>Open Drawer</Button>
       <Drawer
         {...props}
-        footer={<DrawerLipsumFooter closeDrawer={closeDrawer} />}
         isVisible={isVisible}
         onClose={closeDrawer}
       >

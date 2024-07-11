@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { DrawerLipsum, DrawerLipsumFooter, DrawerLipumTitle } from './Drawer.mocks'
+import { DrawerLipsum, DrawerLipsumFooterButton, DrawerLipsumTitle } from './Drawer.mocks'
 import { render, screen } from '../../test-utils'
 import { Drawer } from './Drawer'
 import { DrawerProps } from './Drawer.props'
@@ -24,9 +24,9 @@ import { DrawerProps } from './Drawer.props'
 describe('Drawer', () => {
   const props: DrawerProps = {
     children: 'Drawer Content',
-    footer: <DrawerLipsumFooter closeDrawer={jest.fn()} />,
+    footer: <DrawerLipsumFooterButton />,
     isVisible: true,
-    title: <DrawerLipumTitle />,
+    title: <DrawerLipsumTitle />,
     onClose: jest.fn(),
   }
 

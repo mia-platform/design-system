@@ -18,6 +18,7 @@
 
 import { ReactNode } from 'react'
 
+import { CustomDrawerFooter, DrawerFooter } from './Drawer.Footer'
 import { DrawerTitle } from './Drawer.Title'
 
 export type DrawerProps = {
@@ -35,7 +36,7 @@ export type DrawerProps = {
     /**
      * Drawer footer.
      */
-    footer?: ReactNode,
+    footer?: DrawerFooter | CustomDrawerFooter,
 
     /**
      * drawer id for DOM node.

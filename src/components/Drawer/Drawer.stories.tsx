@@ -18,11 +18,12 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { DrawerLipumTitle, WithOpenButton } from './Drawer.mocks'
+import { DrawerLipsumFooterButton, DrawerLipsumTitle, WithOpenButton, drawerLipsumFooter } from './Drawer.mocks'
 import { Drawer } from '.'
 
 const defaults = {
-  title: <DrawerLipumTitle />,
+  title: <DrawerLipsumTitle />,
+  footer: <DrawerLipsumFooterButton />,
 }
 
 const meta = {
@@ -36,6 +37,17 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const BasicExample: Story = {
+export const BasicExampleWithFooter: Story = {
+  args: {
+    ...meta.args,
+    footer: drawerLipsumFooter,
+  },
+  decorators: [(_, { args }) => <WithOpenButton {...args} />],
+}
+
+export const BasicExampleWithCustomFooter: Story = {
+  args: {
+    ...meta.args,
+  },
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }

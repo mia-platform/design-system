@@ -23,10 +23,6 @@ import { DrawerProps } from './Drawer.props'
 import { Footer } from './Drawer.Footer'
 import { Title } from './Drawer.Title'
 
-const styles = {
-  footer: { padding: '24px' },
-}
-
 const DRAWER_WIDTH = 512
 
 export const Drawer = ({
@@ -47,7 +43,6 @@ export const Drawer = ({
       id={id}
       key={key}
       open={isVisible}
-      styles={styles}
       title={<Drawer.Title title={title} />}
       width={DRAWER_WIDTH}
       onClose={onClose}

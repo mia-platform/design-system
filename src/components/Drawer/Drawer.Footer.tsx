@@ -16,14 +16,50 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 
-export type DrawerFooter = ReactNode
+export type DrawerFooter = {
+  buttons?: ReactElement[]
+  extra?: ReactNode
+}
+
+export type CustomDrawerFooter = ReactElement
 
 export type FooterProps = {
-  footer: DrawerFooter,
+  footer?: DrawerFooter | CustomDrawerFooter,
+}
+
+const styles = {
+  footer: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '16px 24px',
+    justifyContent: 'end',
+    gap: '8px',
+  },
+  extra: {
+    flex: 1,
+  },
+  footerButtons: {
+    display: 'flex',
+    'flex-direction': 'row-reverse',
+    gap: '8px',
+  },
 }
 
 export const Footer = ({ footer }: FooterProps): ReactElement => {
-  return <footer>{footer}</footer>
+  if (React.isValidElement(footer)) {
+    return <footer style={styles.footer}>{footer}</footer>
+  }
+
+  const drawerFooter = footer as DrawerFooter
+  const { buttons, extra } = drawerFooter
+  return <footer style={styles.footer}>
+    {(buttons || extra) && <>
+      <div style={styles.extra}>{extra}</div>
+      <div style={styles.footerButtons}>
+        {buttons}
+      </div>
+    </>}
+  </footer>
 }
