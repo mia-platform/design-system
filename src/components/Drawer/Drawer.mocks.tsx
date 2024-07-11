@@ -23,9 +23,7 @@
 import { ReactElement } from 'react'
 
 import { Button } from '../Button'
-import { Drawer } from './Drawer'
-import { DrawerProps } from './Drawer.props'
-import { useDrawer } from '../../hooks/useDrawer'
+import { Hierarchy } from '../Button/Button.types'
 
 export const DrawerLipsum = (): ReactElement => {
   return (
@@ -44,10 +42,9 @@ export const DrawerLipsumTitle = (): ReactElement => {
   return <span>{'Drawer Lipsum'}</span>
 }
 
-export const DrawerLipsumFooterButton = ({ text } : {text: string}): ReactElement => {
-  const { closeDrawer } = useDrawer()
+export const DrawerLipsumFooterButton = ({ text, hierarchy } : {text: string, hierarchy?: Hierarchy}): ReactElement => {
   return (
-    <Button onClick={closeDrawer}>
+    <Button hierarchy={hierarchy}>
       {text}
     </Button>
   )
@@ -55,23 +52,8 @@ export const DrawerLipsumFooterButton = ({ text } : {text: string}): ReactElemen
 
 export const drawerLipsumFooter = {
   buttons: [
-    <DrawerLipsumFooterButton key="close-button" text="Close" />,
+    <DrawerLipsumFooterButton key="action-button" text="Primary Action" />,
+    <DrawerLipsumFooterButton hierarchy={Hierarchy.Neutral} key="action-button" text="Secondary Action" />,
   ],
   extra: 'Extra text',
-}
-
-export const WithOpenButton = (props: DrawerProps): ReactElement => {
-  const { isVisible, openDrawer, closeDrawer } = useDrawer()
-  return (
-    <>
-      <Button onClick={openDrawer}>Open Drawer</Button>
-      <Drawer
-        {...props}
-        isVisible={isVisible}
-        onClose={closeDrawer}
-      >
-        <DrawerLipsum />
-      </Drawer>
-    </>
-  )
 }
