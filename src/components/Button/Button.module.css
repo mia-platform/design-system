@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-gap-xs, 4px);
+  box-shadow: none;
 }
 
 /* TODO: add 12px padding to theme */
