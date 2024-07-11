@@ -24,7 +24,10 @@ import { DrawerProps } from './Drawer.props'
 describe('Drawer', () => {
   const props: DrawerProps = {
     children: 'Drawer Content',
-    footer: <DrawerLipsumFooterButton text="Close" />,
+    footer: {
+      buttons: [<DrawerLipsumFooterButton key="close-drawer" text="Close drawer" />],
+      extra: 'extra content',
+    },
     isVisible: true,
     title: <DrawerLipsumTitle />,
     onClose: jest.fn(),
@@ -36,7 +39,8 @@ describe('Drawer', () => {
     const { baseElement } = render(<Drawer {...props} ><DrawerLipsum /></Drawer>)
 
     expect(screen.getByText(/drawer lipsum/i)).toBeVisible()
-    expect(screen.getByRole('button', { name: /close/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /close drawer/i })).toBeInTheDocument()
+    expect(screen.getByText(/extra content/i)).toBeInTheDocument()
     expect(screen.getByText(/Lorem ipsum dolor sit amet,/i)).toBeInTheDocument()
 
     expect(baseElement).toMatchSnapshot()

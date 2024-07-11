@@ -33,7 +33,7 @@ export type FooterProps = {
 
 export const Footer = ({ footer }: FooterProps): ReactElement | null => {
   if (React.isValidElement(footer)) {
-    return <footer className={styles.footer}>{footer}</footer>
+    return footer
   }
 
   const drawerFooter = footer as DrawerFooter

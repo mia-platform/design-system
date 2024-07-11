@@ -17,9 +17,9 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
-import { useArgs } from '@storybook/preview-api'
+import { useMemo, useState } from 'react'
 
-import { DrawerLipsumFooterButton, DrawerLipsumTitle, drawerLipsumFooter } from './Drawer.mocks'
+import { DrawerLipsum, DrawerLipsumTitle, drawerLipsumFooter } from './Drawer.mocks'
 import { Button } from '../Button'
 import { Drawer } from '.'
 
@@ -32,26 +32,34 @@ const meta = {
   args: defaults,
   argTypes: {
     children: { control: false },
+    isVisible: { control: false },
   },
   decorators: [
-    (Story) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const [_, setArgs] = useArgs()
+    (Story, context) => {
+      const [isVisible, setIsVisible] = useState(false)
+
+      const customContext = useMemo(() => ({
+        ...context,
+        args: {
+          ...context.args,
+          isVisible,
+          onClose: () => setIsVisible(false),
+        },
+      }), [context, isVisible])
+
       return <div>
         <Button
-          onClick={() => setArgs(
-            {
-              isVisible: true,
-              onClose: () => { setArgs({ isVisible: false }) },
-            }
-          )}
+          onClick={() => setIsVisible(true)}
         >
           Open drawer
         </Button>
-        <Story />
+        <Story {...customContext} />
       </div>
     },
   ],
+  render: (_, { args }) => <Drawer {...args}>
+    <DrawerLipsum />
+  </Drawer>,
 } satisfies Meta<typeof Drawer>
 
 export default meta
@@ -59,7 +67,7 @@ type Story = StoryObj<typeof meta>
 
 export const BasicExample: Story = {}
 
-export const WithStandardFooter: Story = {
+export const WithStandardFooterProps: Story = {
   args: {
     ...meta.args,
     footer: drawerLipsumFooter,
@@ -69,6 +77,6 @@ export const WithStandardFooter: Story = {
 export const WithCustomFooter: Story = {
   args: {
     ...meta.args,
-    footer: <DrawerLipsumFooterButton text="Custom footer button" />,
+    footer: <div>{'Custom footer content'}</div>,
   },
 }

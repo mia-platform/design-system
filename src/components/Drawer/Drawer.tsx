@@ -19,8 +19,6 @@
 import { ReactElement, useMemo } from 'react'
 import { Drawer as AntdDrawer } from 'antd'
 
-import { Hierarchy, Size, Type } from '../Button/Button.types'
-import { Button } from '../Button'
 import { DrawerProps } from './Drawer.props'
 import { Footer } from './Drawer.Footer'
 import { Icon } from '../Icon'
@@ -39,20 +37,14 @@ export const Drawer = ({
   onClose,
   title,
 }: DrawerProps): ReactElement => {
-  const closeButton = useMemo(() =>
-    <Button
-      hierarchy={Hierarchy.Neutral}
-      icon={
-        <Icon color="currentColor" name="PiX" size={16} />
-      }
-      size={Size.Small}
-      type={Type.Ghost}
-    />, [])
+  const closeIcon = useMemo(() =>
+    <Icon color="currentColor" name="PiX" size={16} />
+  , [])
 
   return (
     <AntdDrawer
       className={styles.drawer}
-      closeIcon={closeButton}
+      closeIcon={closeIcon}
       destroyOnClose={destroyOnClose}
       footer={footer && <Drawer.Footer footer={footer} />}
       id={id}
