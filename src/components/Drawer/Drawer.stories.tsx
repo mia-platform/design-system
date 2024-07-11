@@ -17,8 +17,10 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { useArgs } from '@storybook/preview-api'
 
-import { DrawerLipsumFooterButton, DrawerLipsumTitle, WithOpenButton, drawerLipsumFooter } from './Drawer.mocks'
+import { DrawerLipsumFooterButton, DrawerLipsumTitle, drawerLipsumFooter } from './Drawer.mocks'
+import { Button } from '../Button'
 import { Drawer } from '.'
 
 const defaults = {
@@ -31,21 +33,37 @@ const meta = {
   argTypes: {
     children: { control: false },
   },
+  decorators: [
+    (Story) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const [_, setArgs] = useArgs()
+      return <div>
+        <Button
+          onClick={() => setArgs(
+            {
+              isVisible: true,
+              onClose: () => { setArgs({ isVisible: false }) },
+            }
+          )}
+        >
+          Open drawer
+        </Button>
+        <Story />
+      </div>
+    },
+  ],
 } satisfies Meta<typeof Drawer>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const BasicExample: Story = {
-  decorators: [(_, { args }) => <WithOpenButton {...args} />],
-}
+export const BasicExample: Story = {}
 
 export const WithStandardFooter: Story = {
   args: {
     ...meta.args,
     footer: drawerLipsumFooter,
   },
-  decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }
 
 export const WithCustomFooter: Story = {
@@ -53,5 +71,4 @@ export const WithCustomFooter: Story = {
     ...meta.args,
     footer: <DrawerLipsumFooterButton text="Custom footer button" />,
   },
-  decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }
