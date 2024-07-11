@@ -16,20 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { ReactElement, ReactNode } from 'react'
+import React, { ReactElement } from 'react'
 
+import { DrawerFooter, FooterProps } from './Drawer.types'
 import styles from './Drawer.module.css'
-
-export type DrawerFooter = {
-  buttons?: ReactElement[]
-  extra?: ReactNode
-}
-
-export type CustomDrawerFooter = ReactElement
-
-export type FooterProps = {
-  footer?: DrawerFooter | CustomDrawerFooter,
-}
 
 export const Footer = ({ footer }: FooterProps): ReactElement | null => {
   if (React.isValidElement(footer)) {

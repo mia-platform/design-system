@@ -16,15 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode, useMemo } from 'react'
+import { ReactElement, useMemo } from 'react'
 
 import { H4 } from '../Typography/HX/H4'
-
-export type DrawerTitle = ReactNode
-
-export type TitleProps = {
-  title: DrawerTitle,
-}
+import { TitleProps } from './Drawer.types'
 
 export const Title = ({ title }: TitleProps): ReactElement => {
   const ellipsis = useMemo(() => ({ rows: 1, tooltip: title }), [title])

@@ -18,8 +18,7 @@
 
 import { ReactNode } from 'react'
 
-import { CustomDrawerFooter, DrawerFooter } from './Drawer.Footer'
-import { DrawerTitle } from './Drawer.Title'
+import { CustomDrawerFooter, DrawerFooter, DrawerTitle } from './Drawer.types'
 
 export type DrawerProps = {
 
