@@ -44,18 +44,18 @@ export const DrawerLipsumTitle = (): ReactElement => {
   return <span>{'Drawer Lipsum'}</span>
 }
 
-export const DrawerLipsumFooterButton = (): ReactElement => {
+export const DrawerLipsumFooterButton = ({ text } : {text: string}): ReactElement => {
   const { closeDrawer } = useDrawer()
   return (
     <Button onClick={closeDrawer}>
-      {'Close'}
+      {text}
     </Button>
   )
 }
 
 export const drawerLipsumFooter = {
   buttons: [
-    <DrawerLipsumFooterButton key="close-button" />,
+    <DrawerLipsumFooterButton key="close-button" text="Close" />,
   ],
   extra: 'Extra text',
 }

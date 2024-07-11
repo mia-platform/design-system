@@ -23,7 +23,6 @@ import { Drawer } from '.'
 
 const defaults = {
   title: <DrawerLipsumTitle />,
-  footer: <DrawerLipsumFooterButton />,
 }
 
 const meta = {
@@ -37,7 +36,11 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const BasicExampleWithFooter: Story = {
+export const BasicExample: Story = {
+  decorators: [(_, { args }) => <WithOpenButton {...args} />],
+}
+
+export const WithStandardFooter: Story = {
   args: {
     ...meta.args,
     footer: drawerLipsumFooter,
@@ -45,9 +48,10 @@ export const BasicExampleWithFooter: Story = {
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }
 
-export const BasicExampleWithCustomFooter: Story = {
+export const WithCustomFooter: Story = {
   args: {
     ...meta.args,
+    footer: <DrawerLipsumFooterButton text="Custom footer button" />,
   },
   decorators: [(_, { args }) => <WithOpenButton {...args} />],
 }

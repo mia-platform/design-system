@@ -16,12 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement, useMemo } from 'react'
 import { Drawer as AntdDrawer } from 'antd'
-import { ReactElement } from 'react'
 
+import { Hierarchy, Size, Type } from '../Button/Button.types'
+import { Button } from '../Button'
 import { DrawerProps } from './Drawer.props'
 import { Footer } from './Drawer.Footer'
+import { Icon } from '../Icon'
 import { Title } from './Drawer.Title'
+import styles from './Drawer.module.css'
 
 const DRAWER_WIDTH = 512
 
@@ -35,11 +39,22 @@ export const Drawer = ({
   onClose,
   title,
 }: DrawerProps): ReactElement => {
+  const closeButton = useMemo(() =>
+    <Button
+      hierarchy={Hierarchy.Neutral}
+      icon={
+        <Icon color="currentColor" name="PiX" size={16} />
+      }
+      size={Size.Small}
+      type={Type.Ghost}
+    />, [])
+
   return (
     <AntdDrawer
-      closeIcon={null}
+      className={styles.drawer}
+      closeIcon={closeButton}
       destroyOnClose={destroyOnClose}
-      footer={<Drawer.Footer footer={footer} />}
+      footer={footer && <Drawer.Footer footer={footer} />}
       id={id}
       key={key}
       open={isVisible}

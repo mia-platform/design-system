@@ -1,0 +1,42 @@
+.drawer {
+
+  :global(.mia-platform-drawer-header-title) {
+    flex-direction: row-reverse;
+
+    :global(.mia-platform-drawer-close) {
+      margin: 0;
+      padding: 0;
+    }
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  :global(.mia-platform-drawer-footer) {
+    padding: var(--spacing-padding-lg, 16px) var(--spacing-padding-xl, 24px);
+    min-height: var(--shape-size-xl, 32px);
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: var(--spacing-gap-sm, 8px);
+  }
+
+  .footerButtons {
+    margin-inline-start: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: var(--spacing-gap-sm, 8px);
+
+    :global(*) {
+      margin: 0 !important;
+    }
+  }
+
+  .extra {
+    flex: 1;
+  }
+}

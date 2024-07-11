@@ -18,6 +18,8 @@
 
 import React, { ReactElement, ReactNode } from 'react'
 
+import styles from './Drawer.module.css'
+
 export type DrawerFooter = {
   buttons?: ReactElement[]
   extra?: ReactNode
@@ -29,35 +31,17 @@ export type FooterProps = {
   footer?: DrawerFooter | CustomDrawerFooter,
 }
 
-const styles = {
-  footer: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '16px 24px',
-    justifyContent: 'end',
-    gap: '8px',
-  },
-  extra: {
-    flex: 1,
-  },
-  footerButtons: {
-    display: 'flex',
-    'flex-direction': 'row-reverse',
-    gap: '8px',
-  },
-}
-
-export const Footer = ({ footer }: FooterProps): ReactElement => {
+export const Footer = ({ footer }: FooterProps): ReactElement | null => {
   if (React.isValidElement(footer)) {
-    return <footer style={styles.footer}>{footer}</footer>
+    return <footer className={styles.footer}>{footer}</footer>
   }
 
   const drawerFooter = footer as DrawerFooter
   const { buttons, extra } = drawerFooter
-  return <footer style={styles.footer}>
+  return <footer className={styles.footer}>
     {(buttons || extra) && <>
-      <div style={styles.extra}>{extra}</div>
-      <div style={styles.footerButtons}>
+      <div className={styles.extra}>{extra}</div>
+      <div className={styles.footerButtons}>
         {buttons}
       </div>
     </>}

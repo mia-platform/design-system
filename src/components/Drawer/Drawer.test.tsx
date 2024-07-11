@@ -24,7 +24,7 @@ import { DrawerProps } from './Drawer.props'
 describe('Drawer', () => {
   const props: DrawerProps = {
     children: 'Drawer Content',
-    footer: <DrawerLipsumFooterButton />,
+    footer: <DrawerLipsumFooterButton text="Close" />,
     isVisible: true,
     title: <DrawerLipsumTitle />,
     onClose: jest.fn(),
