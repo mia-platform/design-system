@@ -46,6 +46,18 @@ describe('Drawer', () => {
     expect(baseElement).toMatchSnapshot()
   })
 
+  it('renders drawer with custom footer', () => {
+    const customProps = {
+      ...props,
+      footer: <div>Custom footer content</div>,
+    }
+    render(<Drawer {...customProps} ><DrawerLipsum /></Drawer>)
+
+    expect(screen.getByText(/drawer lipsum/i)).toBeVisible()
+    expect(screen.getByText(/custom footer content/i)).toBeInTheDocument()
+    expect(screen.getByText(/Lorem ipsum dolor sit amet,/i)).toBeInTheDocument()
+  })
+
   it('does not render drawer when isVisible is false', () => {
     render(<Drawer {...props} isVisible={false} >{'the-content'}</Drawer>)
     expect(screen.queryByText(/drawer lipsum/i)).toBeNull()
