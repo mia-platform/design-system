@@ -12,17 +12,17 @@ export type TitleProps = {
 
 export type DrawerFooter = {
 
-   /**
-   * Array of buttons to be displayed in the right side of the footer.
-   * Note that the rendering order is the opposite of the list order.
+  /**
+  * Array of buttons to be displayed in the right side of the footer.
+  * Note that the rendering order is the opposite of the list order.
    */
-    buttons?: ReactElement[]
+  buttons?: ReactElement[]
 
-    /**
-   * Extra information to be displayed in the left side of the footer (such as text or a checkbox).
+  /**
+  * Extra information to be displayed in the left side of the footer (such as text or a checkbox).
    */
-    extra?: ReactNode
-  }
+  extra?: ReactNode
+}
 
 export type CustomDrawerFooter = ReactElement
 
