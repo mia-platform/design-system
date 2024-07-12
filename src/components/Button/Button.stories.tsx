@@ -122,7 +122,7 @@ export const CircleShape: Story = {
 export const Block: Story = {
   args: {
     ...meta.args,
-    block: true,
+    isBlock: true,
   },
 }
 

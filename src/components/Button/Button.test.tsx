@@ -154,7 +154,7 @@ describe('Button Component', () => {
   })
 
   test('renders block button correctly', () => {
-    const { asFragment } = render(<Button block>{'Button'}</Button>)
+    const { asFragment } = render(<Button isBlock={true}>{'Button'}</Button>)
     expect(asFragment()).toMatchSnapshot()
   })
 })

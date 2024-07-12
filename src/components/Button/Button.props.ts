@@ -25,7 +25,7 @@ export type ButtonProps = {
   /**
    * Fits button width to its parent width
    */
-  block?: boolean,
+  isBlock?: boolean,
 
   /**
    * The children nodes to be rendered within the button context.
