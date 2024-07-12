@@ -40,6 +40,7 @@ export const defaults = {
  * @returns {SegmentedControl} SegmentedControl component
  */
 export const SegmentedControl = ({
+  dataTestId,
   defaultValue,
   hierarchy = defaults.hierarchy,
   isDisabled = defaults.isDisabled,
@@ -67,6 +68,7 @@ export const SegmentedControl = ({
         optionsAlignment === Vertical && vertical,
         hierarchy === Primary && primary,
       ])}
+      data-testid={dataTestId}
     >
       {options.map((option) => {
         const currentKey = resolveKey(options, value) ?? selectedValue

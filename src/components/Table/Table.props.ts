@@ -25,6 +25,11 @@ import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination
 export type TableProps<RecordType extends GenericRecord> = {
 
   /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
+
+  /**
    * An array of column configurations for the table.
    *
    * column `object`:

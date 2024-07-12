@@ -427,4 +427,9 @@ describe('Table Component', () => {
     const { asFragment } = render(<Table {...props} columns={spannedColumns} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
+
+  test('should get table by test id', () => {
+    render(<Table {...props} dataTestId="table-test" />)
+    expect(screen.getByTestId('table-test')).toBeTruthy()
+  })
 })

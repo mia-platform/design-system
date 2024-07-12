@@ -23,6 +23,11 @@ import { Hierarchy, Option, OptionAlignment } from './SegmentedControl.types'
 export type SegmentedControlProps = {
 
   /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
+
+  /**
    * The option initially selected. Either one of the following:
    *
    * - `string`: the key of the initially selected option
