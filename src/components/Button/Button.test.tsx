@@ -152,4 +152,9 @@ describe('Button Component', () => {
     const button = screen.getByTitle('title test')
     expect(button).toBeVisible()
   })
+
+  test('should get button by test id', () => {
+    render(<Button dataTestId="button-test">{'Button'}</Button>)
+    expect(screen.getByTestId('button-test')).toBeTruthy()
+  })
 })

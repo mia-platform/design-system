@@ -68,6 +68,7 @@ export const defaults = {
 export const Table = <RecordType extends GenericRecord>({
   columns,
   data,
+  dataTestId,
   actions = defaults.actions,
   expandable,
   footer,
@@ -127,6 +128,7 @@ export const Table = <RecordType extends GenericRecord>({
         bordered={isBordered}
         className={table}
         columns={tableColumns}
+        data-testId={dataTestId}
         dataSource={data}
         expandable={expandable}
         footer={footer}

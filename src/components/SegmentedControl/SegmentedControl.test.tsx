@@ -135,8 +135,8 @@ describe('Segmented Control Component', () => {
 
       fireEvent.click(screen.getByRole('listitem', { name: clickedOption.key }))
 
-      expect(onChange).toBeCalledTimes(1)
-      expect(onChange).toBeCalledWith(clickedOption, expect.objectContaining({ ...MouseEvent }))
+      expect(onChange).toHaveBeenCalledTimes(1)
+      expect(onChange).toHaveBeenCalledWith(clickedOption, expect.objectContaining({ ...MouseEvent }))
     })
   })
 
@@ -250,8 +250,13 @@ describe('Segmented Control Component', () => {
 
       fireEvent.click(screen.getByRole('listitem', { name: clickedOption }))
 
-      expect(onChange).toBeCalledTimes(1)
-      expect(onChange).toBeCalledWith(clickedOption, expect.objectContaining({ ...MouseEvent }))
+      expect(onChange).toHaveBeenCalledTimes(1)
+      expect(onChange).toHaveBeenCalledWith(clickedOption, expect.objectContaining({ ...MouseEvent }))
+    })
+
+    test('should get segment control by test id', () => {
+      render(<SegmentedControl {...props} dataTestId="segment-control-test" />)
+      expect(screen.getByTestId('segment-control-test')).toBeTruthy()
     })
   })
 })

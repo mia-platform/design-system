@@ -71,4 +71,9 @@ describe('Card Component', () => {
     const { asFragment } = render(<Card isLoading={true} />)
     expect(asFragment()).toMatchSnapshot()
   })
+
+  test('should get card by test id', () => {
+    render(<Card dataTestId="card-test" />)
+    expect(screen.getByTestId('card-test')).toBeTruthy()
+  })
 })

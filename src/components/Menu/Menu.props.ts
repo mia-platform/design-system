@@ -21,6 +21,11 @@ import { Hierarchy, Item, Mode } from './Menu.types'
 export type MenuProps = {
 
   /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
+
+  /**
    * Array with the keys of initially opened sub-menus.
    */
   defaultOpenKeys?: string[],

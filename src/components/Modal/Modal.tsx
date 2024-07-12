@@ -51,6 +51,7 @@ export const defaults = {
  * @returns {Modal} Modal component
  */
 export const Modal = ({
+  dataTestId,
   aside,
   children,
   docLink,
@@ -77,6 +78,7 @@ export const Modal = ({
       centered
       className={modalClassNames}
       closable={isClosable}
+      data-testid={dataTestId}
       destroyOnClose={destroyOnClose}
       footer={<Modal.Footer footer={footer} />}
       getContainer={getContainer}

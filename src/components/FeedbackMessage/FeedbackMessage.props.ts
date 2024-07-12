@@ -21,6 +21,11 @@ import { ReactNode } from 'react'
 export type FeedbackMessageProps = {
 
   /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
+
+  /**
    * The content to be shown as a message, after the icon. Could be either a string or a ReactNode.
    */
   message: string | ReactNode

@@ -40,6 +40,7 @@ export const defaults = {
  */
 export const Card = ({
   children,
+  dataTestId,
   docLink,
   extra,
   isLoading = defaults.isLoading,
@@ -55,7 +56,7 @@ export const Card = ({
   const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])
 
   return (
-    <div className={card}>
+    <div className={card} data-testid={dataTestId}>
       <Skeleton
         active
         loading={isLoading}

@@ -50,6 +50,7 @@ export const defaults = {
  */
 export const Button = ({
   children,
+  dataTestId,
   form,
   hierarchy = defaults.hierarchy,
   href,
@@ -81,6 +82,7 @@ export const Button = ({
     <AntButton
       className={buttonClassNames}
       danger={hierarchy === Danger}
+      data-testid={dataTestId}
       disabled={isDisabled}
       form={form}
       ghost={type !== Filled && hierarchy !== Neutral}

@@ -29,7 +29,12 @@ import styles from './Breadcrumb.module.css'
  *
  * @returns {Breadcrumb} Breadcrumb component
  */
-export const Breadcrumb = ({ isLoading, items, getPopupContainer }: BreadcrumbProps): ReactElement => {
+export const Breadcrumb = ({
+  dataTestId,
+  isLoading,
+  items,
+  getPopupContainer,
+}: BreadcrumbProps): ReactElement => {
   const [visibleItems, setVisibleItems] = useState<BreadcrumbButton[]>([])
 
   const breadcrumbRef = useRef<HTMLDivElement>(null)
@@ -70,7 +75,7 @@ export const Breadcrumb = ({ isLoading, items, getPopupContainer }: BreadcrumbPr
   }, [items])
 
   return (
-    <div className={styles.breadcrumb} ref={breadcrumbRef} >
+    <div className={styles.breadcrumb} data-testid={dataTestId} ref={breadcrumbRef}>
       <div className={styles.breadcrumbItems}>
         {
           visibleItems.map((breadcrumbItem, index, itemList) => renderItem(

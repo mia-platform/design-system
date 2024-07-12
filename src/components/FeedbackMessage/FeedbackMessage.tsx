@@ -32,11 +32,12 @@ const { feedbackMessage } = styles
  * @returns {ReactElement} FeedbackMessage component
  */
 export const FeedbackMessage = ({
+  dataTestId,
   message,
   extra,
 }: FeedbackMessageProps): ReactElement => {
   return (
-    <span className={feedbackMessage}>
+    <span className={feedbackMessage} data-testid={dataTestId}>
       {message}
       {extra}
     </span>
