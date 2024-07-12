@@ -27,6 +27,7 @@ import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Table } from './components/Table'
+import { Tag } from './components/Tag'
 import { ThemeProvider } from './components/ThemeProvider'
 import { Typography } from './components/Typography'
 import hooks from './hooks'
@@ -43,6 +44,7 @@ export {
   Modal,
   SegmentedControl,
   Table,
+  Tag,
   ThemeProvider,
   Typography,
   hooks,
