@@ -17,12 +17,14 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { useMemo, useState } from 'react'
 
-import { DrawerLipumTitle, WithOpenButton } from './Drawer.mocks'
+import { DrawerLipsum, DrawerLipsumTitle, drawerLipsumFooter } from './Drawer.mocks'
+import { Button } from '../Button'
 import { Drawer } from '.'
 
 const defaults = {
-  title: <DrawerLipumTitle />,
+  title: <DrawerLipsumTitle />,
 }
 
 const meta = {
@@ -30,12 +32,58 @@ const meta = {
   args: defaults,
   argTypes: {
     children: { control: false },
+    isVisible: { control: false },
   },
+  decorators: [
+    (Story, context) => {
+      const [isVisible, setIsVisible] = useState(false)
+
+      const customContext = useMemo(() => ({
+        ...context,
+        args: {
+          ...context.args,
+          isVisible,
+          onClose: () => setIsVisible(false),
+        },
+      }), [context, isVisible])
+
+      return <div>
+        <Button
+          onClick={() => setIsVisible(true)}
+        >
+          Open drawer
+        </Button>
+        <Story {...customContext} />
+      </div>
+    },
+  ],
+  render: (_, { args }) => <Drawer {...args}>
+    <DrawerLipsum />
+  </Drawer>,
 } satisfies Meta<typeof Drawer>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const BasicExample: Story = {
-  decorators: [(_, { args }) => <WithOpenButton {...args} />],
+export const BasicExample: Story = {}
+
+export const WithDocLink: Story = {
+  args: {
+    ...meta.args,
+    docLink: 'https://www.google.com/',
+  },
+}
+
+export const WithStandardFooterProps: Story = {
+  args: {
+    ...meta.args,
+    footer: drawerLipsumFooter,
+  },
+}
+
+export const WithCustomFooter: Story = {
+  args: {
+    ...meta.args,
+    footer: <div>{'Custom footer content'}</div>,
+  },
 }

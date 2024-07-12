@@ -18,7 +18,7 @@
 
 import { ReactNode } from 'react'
 
-import { DrawerTitle } from './Drawer.Title'
+import { CustomDrawerFooter, DrawerFooter, DrawerTitle } from './Drawer.types'
 
 export type DrawerProps = {
 
@@ -33,9 +33,15 @@ export type DrawerProps = {
     destroyOnClose?: boolean,
 
     /**
+     * The reference url for documentation of the drawer contents.
+     * If present, a button is shown next to the title that, when clicked, opens the url in a new tab.
+     */
+    docLink?: string,
+
+    /**
      * Drawer footer.
      */
-    footer?: ReactNode,
+    footer?: DrawerFooter | CustomDrawerFooter,
 
     /**
      * drawer id for DOM node.

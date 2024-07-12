@@ -21,17 +21,17 @@ import { ReactElement } from 'react'
 
 import { DrawerProps } from './Drawer.props'
 import { Footer } from './Drawer.Footer'
+import { Icon } from '../Icon'
 import { Title } from './Drawer.Title'
-
-const styles = {
-  footer: { padding: '24px' },
-}
+import styles from './Drawer.module.css'
 
 const DRAWER_WIDTH = 512
+const closeIcon = <Icon color="currentColor" name="PiX" size={16} />
 
 export const Drawer = ({
   children,
   destroyOnClose,
+  docLink,
   footer,
   id,
   isVisible,
@@ -41,14 +41,14 @@ export const Drawer = ({
 }: DrawerProps): ReactElement => {
   return (
     <AntdDrawer
-      closeIcon={null}
+      className={styles.drawer}
+      closeIcon={closeIcon}
       destroyOnClose={destroyOnClose}
-      footer={<Drawer.Footer footer={footer} />}
+      footer={footer && <Drawer.Footer footer={footer} />}
       id={id}
       key={key}
       open={isVisible}
-      styles={styles}
-      title={<Drawer.Title title={title} />}
+      title={<Drawer.Title docLink={docLink} title={title} />}
       width={DRAWER_WIDTH}
       onClose={onClose}
     >

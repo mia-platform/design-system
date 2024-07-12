@@ -16,17 +16,33 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode, useMemo } from 'react'
+import { ReactElement, useCallback, useMemo } from 'react'
 
+import { Button } from '../Button'
 import { H4 } from '../Typography/HX/H4'
+import { Icon } from '../Icon'
+import { TitleProps } from './Drawer.types'
+import { useTheme } from '../../hooks/useTheme'
 
-export type DrawerTitle = ReactNode
+export const Title = ({ docLink, title }: TitleProps): ReactElement => {
+  const { palette } = useTheme()
 
-export type TitleProps = {
-  title: DrawerTitle,
-}
+  const docLinkIcon = useMemo(() => (
+    <Icon color={palette?.action?.link?.active} name="PiBookOpen" size={16} />
+  ), [palette?.action?.link?.active])
 
-export const Title = ({ title }: TitleProps): ReactElement => {
+  const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])
+
   const ellipsis = useMemo(() => ({ rows: 1, tooltip: title }), [title])
-  return <H4 ellipsis={ellipsis}>{title}</H4>
+  return <>
+    <H4 ellipsis={ellipsis}>{title}</H4>
+    {docLink && <div>
+      <Button
+        icon={docLinkIcon}
+        shape={Button.Shape.Circle}
+        type={Button.Type.Ghost}
+        onClick={onClickDocLink}
+      />
+    </div>}
+  </>
 }

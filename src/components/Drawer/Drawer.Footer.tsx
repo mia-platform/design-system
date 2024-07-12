@@ -16,14 +16,34 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, ReactNode } from 'react'
+import { ReactNode } from 'react'
+import { isEmpty } from 'lodash-es'
 
-export type DrawerFooter = ReactNode
+import { CustomDrawerFooter, DrawerFooter, FooterProps } from './Drawer.types'
+import styles from './Drawer.module.css'
 
-export type FooterProps = {
-  footer: DrawerFooter,
+function isDrawerFooter(obj: DrawerFooter | CustomDrawerFooter): obj is DrawerFooter {
+  return (
+    obj
+    && ('buttons' in obj || 'extra' in obj)
+  )
 }
 
-export const Footer = ({ footer }: FooterProps): ReactElement => {
-  return <footer>{footer}</footer>
+export const Footer = ({ footer }: FooterProps): ReactNode => {
+  if (!footer || isEmpty(footer)) {
+    return null
+  }
+
+  if (isDrawerFooter(footer)) {
+    const { buttons, extra } = footer
+    return <footer className={styles.footer}>
+      <div className={styles.extra}>{extra}</div>
+      <div className={styles.footerButtons}>
+        {buttons}
+      </div>
+    </footer>
+  }
+
+  return footer
 }
+
