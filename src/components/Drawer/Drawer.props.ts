@@ -22,49 +22,54 @@ import { CustomDrawerFooter, DrawerFooter, DrawerTitle } from './Drawer.types'
 
 export type DrawerProps = {
 
-    /**
-     * The children nodes to be rendered within the Drawer body.
-     */
-    children?: ReactNode,
+  /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
 
-    /**
-     * Controls whether to unmount child components on close.
-     */
-    destroyOnClose?: boolean,
+  /**
+   * The children nodes to be rendered within the Drawer body.
+   */
+  children?: ReactNode,
 
-    /**
-     * The reference url for documentation of the drawer contents.
-     * If present, a button is shown next to the title that, when clicked, opens the url in a new tab.
-     */
-    docLink?: string,
+  /**
+   * Controls whether to unmount child components on close.
+   */
+  destroyOnClose?: boolean,
 
-    /**
-     * Drawer footer.
-     */
-    footer?: DrawerFooter | CustomDrawerFooter,
+  /**
+   * The reference url for documentation of the drawer contents.
+   * If present, a button is shown next to the title that, when clicked, opens the url in a new tab.
+   */
+  docLink?: string,
 
-    /**
-     * drawer id for DOM node.
-     */
-    id?: string,
+  /**
+   * Drawer footer.
+   */
+  footer?: DrawerFooter | CustomDrawerFooter,
 
-    /**
-     * Controls whether the modal is visible.
-     */
-    isVisible?: boolean,
+  /**
+   * drawer id for DOM node.
+   */
+  id?: string,
 
-    /**
-     * React drawer key
-     */
-    key?: string,
+  /**
+   * Controls whether the modal is visible.
+   */
+  isVisible?: boolean,
 
-    /**
-     * Function invoked at the click of the Drawer close (X) button.
-     */
-    onClose?: () => void,
+  /**
+   * React drawer key
+   */
+  key?: string,
 
-    /**
-     * Title of the drawer, which briefly conveys information about its contents.
-     */
-    title: DrawerTitle,
+  /**
+   * Function invoked at the click of the Drawer close (X) button.
+   */
+  onClose?: () => void,
+
+  /**
+   * Title of the drawer, which briefly conveys information about its contents.
+   */
+  title: DrawerTitle,
 }

@@ -25,6 +25,11 @@ import { Aside, Footer, Size } from './Modal.types'
 export type ModalProps = {
 
   /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
+
+  /**
    * The children nodes to be rendered within the modal context.
    */
   children?: ReactNode,

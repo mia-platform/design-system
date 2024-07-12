@@ -73,4 +73,9 @@ describe('Drawer', () => {
     render(<Drawer {...props} isVisible={false} >{'the-content'}</Drawer>)
     expect(screen.queryByText(/drawer lipsum/i)).toBeNull()
   })
+
+  test('should get drawer by test id', () => {
+    render(<Drawer {...props} dataTestId="drawer-test" />)
+    expect(screen.getByTestId('drawer-test')).toBeTruthy()
+  })
 })

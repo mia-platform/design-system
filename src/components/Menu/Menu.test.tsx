@@ -97,4 +97,9 @@ describe('Menu Component', () => {
 
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
+
+  test('should get menu by test id', () => {
+    render(<Menu dataTestId="menu-test" items={[]} />)
+    expect(screen.getByTestId('menu-test')).toBeTruthy()
+  })
 })

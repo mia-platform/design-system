@@ -47,6 +47,7 @@ export const defaults = {
  * @returns {Menu} Menu component
  */
 export const Menu = ({
+  dataTestId,
   defaultOpenKeys = defaults.defaultOpenKeys,
   defaultSelectedKey,
   hierarchy = defaults.hierarchy,
@@ -82,6 +83,7 @@ export const Menu = ({
       >
         <AntMenu
           className={menuClassNames}
+          data-testid={dataTestId}
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={defaultSelectedKey ? [defaultSelectedKey] : undefined}
           // getPopupContainer is needed for nested menus to inherit CSS properties in the vertical mode

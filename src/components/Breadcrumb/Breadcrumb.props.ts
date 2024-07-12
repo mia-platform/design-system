@@ -21,6 +21,11 @@ import { BreadcrumbItemType } from './Breadcrumb.types'
 export type BreadcrumbProps = {
 
   /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
+
+  /**
    * Indicates whether the component is loading.
    */
   isLoading?: boolean;

@@ -30,6 +30,7 @@ const closeIcon = <Icon color="currentColor" name="PiX" size={16} />
 
 export const Drawer = ({
   children,
+  dataTestId,
   destroyOnClose,
   docLink,
   footer,
@@ -43,6 +44,7 @@ export const Drawer = ({
     <AntdDrawer
       className={styles.drawer}
       closeIcon={closeIcon}
+      data-testid={dataTestId}
       destroyOnClose={destroyOnClose}
       footer={footer && <Drawer.Footer footer={footer} />}
       id={id}

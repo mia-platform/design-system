@@ -23,6 +23,11 @@ import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.t
 export type ButtonProps = {
 
   /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
+
+  /**
    * The children nodes to be rendered within the button context.
    */
   children?: ReactNode,

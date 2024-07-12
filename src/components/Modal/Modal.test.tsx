@@ -149,4 +149,12 @@ describe('Modal Component', () => {
 
     expect(baseElement).toMatchSnapshot()
   })
+
+  test('should get modal by test id', async() => {
+    render(<Modal {...props} dataTestId="modal-test" />)
+
+    await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
+
+    expect(screen.getByTestId('modal-test')).toBeTruthy()
+  })
 })

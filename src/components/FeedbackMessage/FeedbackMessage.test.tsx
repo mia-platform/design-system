@@ -50,4 +50,9 @@ describe('FeedbackMessage Component', () => {
 
     expect(asFragment()).toMatchSnapshot()
   })
+
+  test('should get feedbackmessage by test id', () => {
+    render(<FeedbackMessage dataTestId="feedback-message-test" message="Feedback Message" />)
+    expect(screen.getByTestId('feedback-message-test')).toBeTruthy()
+  })
 })

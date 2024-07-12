@@ -245,4 +245,9 @@ describe('Breadcrumb Component', () => {
     fireEvent.click(screen.getAllByText('Text 8')[1])
     expect(onDropdownVisibleChangeMock).toHaveBeenCalledTimes(1)
   })
+
+  test('should get breadcrumb by test id', () => {
+    render(<Breadcrumb dataTestId="breadcrumb-test" items={[]} />)
+    expect(screen.getByTestId('breadcrumb-test')).toBeTruthy()
+  })
 })

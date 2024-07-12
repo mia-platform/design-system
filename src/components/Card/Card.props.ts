@@ -21,6 +21,11 @@ import { ReactNode } from 'react'
 export type CardProps = {
 
   /**
+   * Identifies the component for testing purposes
+   */
+  dataTestId?: string;
+
+  /**
    * The children nodes to be rendered within the card context.
    */
   children?: ReactNode,
