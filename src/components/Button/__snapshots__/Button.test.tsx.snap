@@ -401,3 +401,18 @@ exports[`Button Component renders square button correctly 1`] = `
   </button>
 </DocumentFragment>
 `;
+
+exports[`Button Component rendersblock button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-block button buttonMd"
+    type="button"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
