@@ -43,7 +43,7 @@ export const Drawer = ({
       className={styles.drawer}
       closeIcon={closeIcon}
       destroyOnClose={destroyOnClose}
-      footer={<Drawer.Footer footer={footer} />}
+      footer={footer && <Drawer.Footer footer={footer} />}
       id={id}
       key={key}
       open={isVisible}
