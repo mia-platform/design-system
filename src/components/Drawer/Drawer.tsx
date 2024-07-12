@@ -31,6 +31,7 @@ const closeIcon = <Icon color="currentColor" name="PiX" size={16} />
 export const Drawer = ({
   children,
   destroyOnClose,
+  docLink,
   footer,
   id,
   isVisible,
@@ -47,7 +48,7 @@ export const Drawer = ({
       id={id}
       key={key}
       open={isVisible}
-      title={<Drawer.Title title={title} />}
+      title={<Drawer.Title docLink={docLink} title={title} />}
       width={DRAWER_WIDTH}
       onClose={onClose}
     >

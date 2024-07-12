@@ -33,6 +33,12 @@ export type DrawerProps = {
     destroyOnClose?: boolean,
 
     /**
+     * The reference url for documentation of the drawer contents.
+     * If present, a button is shown next to the title that, when clicked, opens the url in a new tab.
+     */
+    docLink?: string,
+
+    /**
      * Drawer footer.
      */
     footer?: DrawerFooter | CustomDrawerFooter,

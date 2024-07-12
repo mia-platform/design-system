@@ -35,6 +35,17 @@ describe('Drawer', () => {
 
   beforeEach(() => jest.resetAllMocks())
 
+  it('renders drawer with doc link', () => {
+    const customProps = {
+      ...props,
+      docLink: 'https://www.google.com/',
+    }
+    render(<Drawer {...customProps} ><DrawerLipsum /></Drawer>)
+
+    expect(screen.getByText(/drawer lipsum/i)).toBeVisible()
+    expect(screen.getByRole('button', { name: /pibookopen/i })).toBeVisible()
+  })
+
   it('renders drawer with provided title and footer', () => {
     const { baseElement } = render(<Drawer {...props} ><DrawerLipsum /></Drawer>)
 

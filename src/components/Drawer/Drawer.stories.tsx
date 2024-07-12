@@ -67,6 +67,13 @@ type Story = StoryObj<typeof meta>
 
 export const BasicExample: Story = {}
 
+export const WithDocLink: Story = {
+  args: {
+    ...meta.args,
+    docLink: 'https://www.google.com/',
+  },
+}
+
 export const WithStandardFooterProps: Story = {
   args: {
     ...meta.args,

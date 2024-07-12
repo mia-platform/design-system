@@ -5,6 +5,7 @@ import { ReactElement, ReactNode } from 'react'
 export type DrawerTitle = ReactNode
 
 export type TitleProps = {
+  docLink?: string,
   title: DrawerTitle,
 }
 
