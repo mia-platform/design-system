@@ -29,7 +29,6 @@ You can see the `npm` scripts available inside the `package.json` file and use t
 :warning: All changes **MUST** pass through merge request approvals.
 
 ## Before submitting a PR
- * Your PR title should follow the `<type>(<scope>): <subject>` format, so that it gets correctly categorized in the release notes.
  * Are you in the contributors section inside the `package.json`? Add yourself!
 
 ## How to tag
