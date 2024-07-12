@@ -53,7 +53,7 @@ export const DrawerLipsumFooterButton = ({ text, hierarchy } : {text: string, hi
 export const drawerLipsumFooter = {
   buttons: [
     <DrawerLipsumFooterButton key="action-button" text="Primary Action" />,
-    <DrawerLipsumFooterButton hierarchy={Hierarchy.Neutral} key="action-button" text="Secondary Action" />,
+    <DrawerLipsumFooterButton hierarchy={Hierarchy.Neutral} key="secondary-action-button" text="Secondary Action" />,
   ],
   extra: 'Extra text',
 }
