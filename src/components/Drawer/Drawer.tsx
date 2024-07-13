@@ -17,6 +17,7 @@
  */
 
 import { Drawer as AntdDrawer } from 'antd'
+import { PiX } from 'react-icons/pi'
 import { ReactElement } from 'react'
 
 import { DrawerProps } from './Drawer.props'
@@ -26,7 +27,7 @@ import { Title } from './Drawer.Title'
 import styles from './Drawer.module.css'
 
 const DRAWER_WIDTH = 512
-const closeIcon = <Icon color="currentColor" name="PiX" size={16} />
+const closeIcon = <Icon color="currentColor" component={PiX} size={16} />
 
 export const Drawer = ({
   children,
