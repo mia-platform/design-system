@@ -23,6 +23,11 @@ import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.t
 export type ButtonProps = {
 
   /**
+   * Fits button width to its parent width
+   */
+  isBlock?: boolean,
+
+  /**
    * The children nodes to be rendered within the button context.
    */
   children?: ReactNode,

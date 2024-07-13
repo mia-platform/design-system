@@ -152,4 +152,9 @@ describe('Button Component', () => {
     const button = screen.getByTitle('title test')
     expect(button).toBeVisible()
   })
+
+  test('renders block button correctly', () => {
+    const { asFragment } = render(<Button isBlock={true}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
 })

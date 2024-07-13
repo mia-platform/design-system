@@ -119,6 +119,13 @@ export const CircleShape: Story = {
   },
 }
 
+export const Block: Story = {
+  args: {
+    ...meta.args,
+    isBlock: true,
+  },
+}
+
 export const SmallSize: Story = {
   args: {
     ...meta.args,

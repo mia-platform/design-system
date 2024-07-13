@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button Component renders block button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-block button buttonMd"
+    type="button"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button Component renders button with href correctly 1`] = `
 <DocumentFragment>
   <a

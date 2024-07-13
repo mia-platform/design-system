@@ -49,6 +49,7 @@ export const defaults = {
  * @returns {Button} Button component
  */
 export const Button = ({
+  isBlock,
   children,
   form,
   hierarchy = defaults.hierarchy,
@@ -79,6 +80,7 @@ export const Button = ({
 
   return (
     <AntButton
+      block={isBlock}
       className={buttonClassNames}
       danger={hierarchy === Danger}
       disabled={isDisabled}
