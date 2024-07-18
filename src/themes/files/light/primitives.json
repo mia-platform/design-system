@@ -454,6 +454,10 @@
     }
   },
   "sizing": {
+    "none": {
+      "$type": "dimension",
+      "$value": 0
+    },
     "xs": {
       "$type": "dimension",
       "$value": 1
