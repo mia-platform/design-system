@@ -76,7 +76,7 @@ type Palette = {
     grey: ColorGrades,
   },
   primary: ColorGrades,
-  secondary: ColorGrades,
+  neutral: ColorGrades,
   error: ColorGrades,
   warning: ColorGrades,
   info: ColorGrades,
@@ -87,12 +87,12 @@ type Palette = {
   },
   action: {
     primary: ColorInteractions,
-    secondary: ColorInteractions,
+    neutral: ColorInteractions,
     danger: ColorInteractions,
     link: ColorInteractions,
     alternate: {
       primary: ColorInteractions,
-      secondary: ColorInteractions,
+      neutral: ColorInteractions,
       danger: ColorInteractions
     }
   }
