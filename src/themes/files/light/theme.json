@@ -99,7 +99,7 @@
       "100A": "#1890ff14"
     },
     "mode": "light",
-    "neutral": {
+    "secondary": {
       "50": "#f9f9f9",
       "100": "#f2f2f2",
       "200": "#e5e5e5",
@@ -188,7 +188,7 @@
         "selected": "#004aaa",
         "contrastText": "#ffffff"
       },
-      "neutral": {
+      "secondary": {
         "main": "#ffffff",
         "bold": "#cdcdcd",
         "bolder": "#acacac",
@@ -219,7 +219,7 @@
           "selected": "#1890ff29",
           "contrastText": "#1261e4"
         },
-        "neutral": {
+        "secondary": {
           "default": "#89898914",
           "hover": "#8989891f",
           "focus": "#89898914",
