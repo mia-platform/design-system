@@ -23,7 +23,7 @@ import { Button } from '.'
 import { Icon } from '../Icon'
 import { defaults } from './Button'
 
-const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
+const icon = <Icon name="PiArrowArcRight" size={16} />
 
 const meta = {
   component: Button,
@@ -174,5 +174,13 @@ export const WithIconRight: Story = {
     ...meta.args,
     icon,
     iconPosition: Button.IconPosition.Right,
+  },
+}
+
+export const NeutralWithIcon: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Neutral,
+    icon,
   },
 }

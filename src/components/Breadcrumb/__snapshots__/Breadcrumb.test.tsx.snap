@@ -174,11 +174,13 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
       >
         <svg
           aria-label="PiDotsThree"
+          color="currentColor"
           fill="currentColor"
           height="16"
           role="img"
           stroke="currentColor"
           stroke-width="0"
+          style="color: currentColor;"
           viewBox="0 0 256 256"
           width="16"
           xmlns="http://www.w3.org/2000/svg"
@@ -507,11 +509,13 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
       >
         <svg
           aria-label="PiDotsThree"
+          color="currentColor"
           fill="currentColor"
           height="16"
           role="img"
           stroke="currentColor"
           stroke-width="0"
+          style="color: currentColor;"
           viewBox="0 0 256 256"
           width="16"
           xmlns="http://www.w3.org/2000/svg"
@@ -1340,11 +1344,13 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
             >
               <svg
                 aria-label="PiMagnifyingGlass"
+                color="currentColor"
                 fill="currentColor"
                 height="12"
                 role="img"
                 stroke="currentColor"
                 stroke-width="0"
+                style="color: currentColor;"
                 viewBox="0 0 256 256"
                 width="12"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1868,11 +1874,13 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
             >
               <svg
                 aria-label="PiMagnifyingGlass"
+                color="currentColor"
                 fill="currentColor"
                 height="12"
                 role="img"
                 stroke="currentColor"
                 stroke-width="0"
+                style="color: currentColor;"
                 viewBox="0 0 256 256"
                 width="12"
                 xmlns="http://www.w3.org/2000/svg"

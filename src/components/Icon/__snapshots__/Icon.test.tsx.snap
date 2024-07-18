@@ -4,11 +4,13 @@ exports[`Icon Component renders Ant icon correctly 1`] = `
 <DocumentFragment>
   <svg
     aria-label="AiOutlineHome"
+    color="currentColor"
     fill="currentColor"
     height="24"
     role="img"
     stroke="currentColor"
     stroke-width="0"
+    style="color: currentColor;"
     viewBox="0 0 1024 1024"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
@@ -24,6 +26,7 @@ exports[`Icon Component renders Feather icon correctly 1`] = `
 <DocumentFragment>
   <svg
     aria-label="FiHome"
+    color="currentColor"
     fill="none"
     height="24"
     role="img"
@@ -31,6 +34,7 @@ exports[`Icon Component renders Feather icon correctly 1`] = `
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="2"
+    style="color: currentColor;"
     viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
@@ -49,11 +53,13 @@ exports[`Icon Component renders Phosphor icon correctly 1`] = `
 <DocumentFragment>
   <svg
     aria-label="PiHouse"
+    color="currentColor"
     fill="currentColor"
     height="24"
     role="img"
     stroke="currentColor"
     stroke-width="0"
+    style="color: currentColor;"
     viewBox="0 0 256 256"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
@@ -69,6 +75,7 @@ exports[`Icon Component renders custom icon correctly 1`] = `
 <DocumentFragment>
   <svg
     aria-label="MiaPlatform"
+    color="currentColor"
     data-file-name="SvgMiaPlatform"
     height="24"
     role="img"
