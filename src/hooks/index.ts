@@ -16,12 +16,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useAntTheme } from './useAntTheme'
+import { useDrawer } from './useDrawer'
 import { useFeedbackMessage } from './useFeedbackMessage'
+import { useFeedbackMessageWithContext } from './useFeedbackMessageWithContext'
 import { useModal } from './useModal'
 import { useTheme } from './useTheme'
 
 export default {
+  useDrawer,
   useFeedbackMessage,
+  useFeedbackMessageWithContext,
   useModal,
   useTheme,
+  useAntTheme,
 }

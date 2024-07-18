@@ -1,5 +1,5 @@
-/** 
- * @type {import('ts-jest').JestConfigWithTsJest} 
+/**
+ * @type {import('ts-jest').JestConfigWithTsJest}
  */
 
 export default {
@@ -17,6 +17,7 @@ export default {
   ],
   moduleNameMapper: {
     '\\.(css|less)$': 'identity-obj-proxy',
+    '^lodash-es$': 'lodash',
   },
   transform: {
     "\\.(svg)$": "jest-transformer-svg"

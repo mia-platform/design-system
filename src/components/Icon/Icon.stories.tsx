@@ -19,6 +19,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Icon } from '.'
+import { defaults } from './Icon'
 
 const iconsUrl = 'https://react-icons.github.io/react-icons/search'
 
@@ -27,9 +28,7 @@ const meta = {
   parameters: {
     design: { type: 'iframe', name: 'Search', url: iconsUrl },
   },
-  args: {
-    ...Icon.defaultProps,
-  },
+  args: defaults,
 } satisfies Meta<typeof Icon>
 
 export default meta

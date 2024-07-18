@@ -24,6 +24,11 @@ import { HXProps } from './HX.props'
 
 const { Title: AntTitle } = AntTypography
 
+export const defaults = {
+  copyable: false,
+  ellipsis: false,
+}
+
 /**
  * UI component for displaying headers (H1, H2, H3, H4).
  *
@@ -32,8 +37,8 @@ const { Title: AntTitle } = AntTypography
  */
 export const HX = ({
   children,
-  copyable,
-  ellipsis,
+  copyable = defaults.copyable,
+  ellipsis = defaults.ellipsis,
   level,
   role,
 }: HXProps & HXLevel): ReactElement => {
@@ -48,9 +53,4 @@ export const HX = ({
       {children}
     </AntTitle>
   )
-}
-
-HX.defaultProps = {
-  copyable: false,
-  ellipsis: false,
 }

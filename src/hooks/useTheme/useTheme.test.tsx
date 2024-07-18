@@ -16,9 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/* eslint-disable func-names */
-/* eslint-disable react/display-name */
-
 import Theme from '../../themes/schema'
 import { ThemeProvider } from '../../components/ThemeProvider'
 import { ThemeProviderProps } from '../../components/ThemeProvider/ThemeProvider.props'
@@ -29,7 +26,7 @@ import { useTheme } from './useTheme'
 const { lightTheme } = themes
 
 describe('useTheme', () => {
-  const themeProvider = (defaultTheme: Theme) => function({ theme, children }: ThemeProviderProps) {
+  const themeProvider = (defaultTheme: Theme) => function component({ theme, children }: ThemeProviderProps) {
     return (
       <ThemeProvider theme={theme ?? defaultTheme}>
         {children}

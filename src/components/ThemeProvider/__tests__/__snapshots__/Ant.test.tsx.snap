@@ -24,11 +24,12 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "itemSelectedBg": "#1890ff14",
     },
     "Message": {
-      "colorError": "#b91200",
-      "colorInfo": "#005dc9",
+      "colorError": "#ff3822",
+      "colorInfo": "#1890ff",
       "colorSuccess": "#52c41a",
       "colorText": "#636363",
       "colorWarning": "#ff9933",
+      "zIndexPopup": 990,
     },
     "Table": {
       "borderColor": "#f2f2f2",
@@ -102,6 +103,7 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "colorSuccess": undefined,
       "colorText": undefined,
       "colorWarning": undefined,
+      "zIndexPopup": 990,
     },
     "Table": {
       "borderColor": undefined,

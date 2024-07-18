@@ -26,6 +26,11 @@ import { useTheme } from '../../hooks/useTheme'
 const { Horizontal } = Orientation
 const { Left } = TextOrientation
 
+export const defaults = {
+  orientation: Horizontal,
+  textOrientation: Left,
+}
+
 /**
  * A divider line to separate different content
  *
@@ -33,9 +38,9 @@ const { Left } = TextOrientation
  * @returns {Divider} Divider component
  */
 export const Divider = ({
-  orientation,
+  orientation = defaults.orientation,
   text,
-  textOrientation,
+  textOrientation = defaults.textOrientation,
 }: DividerProps): ReactElement => {
   const { spacing } = useTheme()
 
@@ -50,7 +55,5 @@ export const Divider = ({
   )
 }
 
-Divider.defaultProps = {
-  orientation: Horizontal,
-  textOrientation: Left,
-}
+Divider.Orientation = Orientation
+Divider.TextOrientation = TextOrientation

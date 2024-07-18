@@ -30,6 +30,12 @@ const { bodyS, bodyM, bodyL } = styles
 
 const { S, M, L } = Size
 
+export const defaults = {
+  copyable: false,
+  ellipsis: false,
+  isBold: false,
+}
+
 /**
  * UI component for displaying bodies (BodyS, BodyM, BodyL).
  *
@@ -38,9 +44,9 @@ const { S, M, L } = Size
  */
 export const BodyX = ({
   children,
-  copyable,
-  ellipsis,
-  isBold,
+  copyable = defaults.copyable,
+  ellipsis = defaults.ellipsis,
+  isBold = defaults.isBold,
   size,
 }: BodyXProps & BodyXSize): ReactElement => {
   const bodyClassName = useMemo(() => classnames([
@@ -62,8 +68,4 @@ export const BodyX = ({
   )
 }
 
-BodyX.defaultProps = {
-  copyable: false,
-  ellipsis: false,
-  isBold: false,
-}
+BodyX.Size = Size

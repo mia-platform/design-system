@@ -66,10 +66,10 @@ export enum Action {
 export type CustomAction<RecordType extends GenericRecord> = {
   dataIndex: string,
   key?: string,
-  icon: ReactNode,
+  icon?: ReactNode,
   isDanger?: boolean,
   isDisabled?: (record: RecordType, index?: number) => boolean | boolean,
-  onClick: (record: RecordType, index?: number) => void,
+  onClick?: (record: RecordType, index: number | undefined, event: React.MouseEvent<Element, MouseEvent>) => void,
   title?: ReactNode
 }
 

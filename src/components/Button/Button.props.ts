@@ -18,14 +18,24 @@
 
 import { MouseEvent, ReactNode } from 'react'
 
-import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
+import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 
 export type ButtonProps = {
+
+  /**
+   * Fits button width to its parent width
+   */
+  isBlock?: boolean,
 
   /**
    * The children nodes to be rendered within the button context.
    */
   children?: ReactNode,
+
+  /**
+   * The form id the button should take care of submit or reset.
+   */
+  form?: string,
 
   /**
    * Defines the button hierarchy. Either:
@@ -41,6 +51,15 @@ export type ButtonProps = {
    * For security reasons, the attribute "rel: 'noopener noreferrer'" is always specified.
    */
   href?: string,
+
+  /**
+   * The underlying html button type. Either:
+   *
+   * - "button"
+   * - "reset"
+   * - "submit"
+   */
+  htmlType?: HTMLType
 
   /**
    * Sets an icon for the button component.
@@ -94,6 +113,11 @@ export type ButtonProps = {
    * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
    */
   target?: string,
+
+  /**
+   * HTML `title` global attribute.
+   */
+  title?: string,
 
   /**
    * Defines the button type. Either:

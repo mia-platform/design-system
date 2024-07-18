@@ -17,28 +17,34 @@
  */
 
 import * as testUtils from './test-utils'
+import { Breadcrumb } from './components/Breadcrumb'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
 import { Divider } from './components/Divider'
+import { Drawer } from './components/Drawer'
 import { Icon } from './components/Icon'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Table } from './components/Table'
+import { Tag } from './components/Tag'
 import { ThemeProvider } from './components/ThemeProvider'
 import { Typography } from './components/Typography'
 import hooks from './hooks'
 import themes from './themes'
 
 export {
+  Breadcrumb,
   Button,
   Card,
   Divider,
+  Drawer,
   Icon,
   Menu,
   Modal,
   SegmentedControl,
   Table,
+  Tag,
   ThemeProvider,
   Typography,
   hooks,

@@ -215,17 +215,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiArrowRight"
                             aria-label="PiArrowRight"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -247,17 +246,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiCircleHalfTilt"
                             aria-label="PiCircleHalfTilt"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -279,17 +277,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiPencilSimpleLine"
                             aria-label="PiPencilSimpleLine"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -311,17 +308,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiTrash"
                             aria-label="PiTrash"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -368,17 +364,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiArrowRight"
                             aria-label="PiArrowRight"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -400,17 +395,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiCircleHalfTilt"
                             aria-label="PiCircleHalfTilt"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -432,17 +426,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiPencilSimpleLine"
                             aria-label="PiPencilSimpleLine"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -464,17 +457,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiTrash"
                             aria-label="PiTrash"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -521,17 +513,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiArrowRight"
                             aria-label="PiArrowRight"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -553,17 +544,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiCircleHalfTilt"
                             aria-label="PiCircleHalfTilt"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -586,17 +576,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiPencilSimpleLine"
                             aria-label="PiPencilSimpleLine"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -618,17 +607,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiTrash"
                             aria-label="PiTrash"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -675,17 +663,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiArrowRight"
                             aria-label="PiArrowRight"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -707,17 +694,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiCircleHalfTilt"
                             aria-label="PiCircleHalfTilt"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -739,17 +725,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiPencilSimpleLine"
                             aria-label="PiPencilSimpleLine"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -771,17 +756,16 @@ exports[`Table Component renders actions correctly 1`] = `
                           type="button"
                         >
                           <svg
-                            alt="PiTrash"
                             aria-label="PiTrash"
                             color="currentColor"
                             fill="currentColor"
-                            height="24"
+                            height="16"
                             role="img"
                             stroke="currentColor"
                             stroke-width="0"
                             style="color: currentColor;"
                             viewBox="0 0 256 256"
-                            width="24"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -3564,7 +3548,7 @@ exports[`Table Component renders pagination correctly 1`] = `
           >
             <div
               aria-label="Page Size"
-              class="mia-platform-select mia-platform-select-sm mia-platform-pagination-options-size-changer mia-platform-select-single mia-platform-select-show-arrow mia-platform-select-show-search"
+              class="mia-platform-select mia-platform-select-sm mia-platform-select-outlined mia-platform-pagination-options-size-changer mia-platform-select-single mia-platform-select-show-arrow mia-platform-select-show-search"
             >
               <div
                 class="mia-platform-select-selector"

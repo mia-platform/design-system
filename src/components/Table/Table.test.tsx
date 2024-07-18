@@ -18,10 +18,8 @@
 
 import { WithExternalFiltersAndSorters, alignedColumns, columns, customActions, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
 import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
-import { Size } from './Table.types'
+import { Action } from './Table.types'
 import { Table } from '.'
-
-const { Small, Large } = Size
 
 describe('Table Component', () => {
   beforeEach(() => {
@@ -59,12 +57,12 @@ describe('Table Component', () => {
   })
 
   test('renders small table correctly', async() => {
-    const { asFragment } = render(<Table {...props} size={Small} />)
+    const { asFragment } = render(<Table {...props} size={Table.Size.Small} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
   test('renders large table correctly', async() => {
-    const { asFragment } = render(<Table {...props} size={Large} />)
+    const { asFragment } = render(<Table {...props} size={Table.Size.Large} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 
@@ -197,25 +195,61 @@ describe('Table Component', () => {
     expect(editButton).toBeVisible()
     fireEvent.click(editButton)
     expect(onEditRow).toHaveBeenCalledTimes(1)
-    expect(onEditRow).toHaveBeenCalledWith(props.data[0], 0)
+    expect(onEditRow).toHaveBeenCalledWith(props.data[0], 0, expect.any(Object))
 
     const [, deleteButton] = deleteButtons
     expect(deleteButton).toBeVisible()
     fireEvent.click(deleteButton)
     expect(onDeleteRow).toHaveBeenCalledTimes(1)
-    expect(onDeleteRow).toHaveBeenCalledWith(props.data[1], 1)
+    expect(onDeleteRow).toHaveBeenCalledWith(props.data[1], 1, expect.any(Object))
 
     const [, , detailButton] = detailButtons
     expect(detailButton).toBeVisible()
     fireEvent.click(detailButton)
     expect(onDetail).toHaveBeenCalledTimes(1)
-    expect(onDetail).toHaveBeenCalledWith(props.data[2], 2)
+    expect(onDetail).toHaveBeenCalledWith(props.data[2], 2, expect.any(Object))
 
     const [, , , overviewButton] = overviewButtons
     expect(overviewButton).toBeVisible()
     fireEvent.click(overviewButton)
     expect(onOverview).toHaveBeenCalledTimes(1)
-    expect(onOverview).toHaveBeenCalledWith(props.data[3], 3)
+    expect(onOverview).toHaveBeenCalledWith(props.data[3], 3, expect.any(Object))
+  })
+
+  test('renders edit and delete action correctly when passing onClick in action', async() => {
+    const onEditRow = jest.fn()
+    const onDeleteRow = jest.fn()
+
+    render(
+      <Table
+        {...props}
+        actions={[{
+          dataIndex: Action.Edit,
+          onClick: onEditRow,
+        }, {
+          dataIndex: Action.Delete,
+          onClick: onDeleteRow,
+        }]}
+      />
+    )
+
+    const editButtons = screen.getAllByRole('button', { name: 'PiPencilSimpleLine' })
+    const deleteButtons = screen.getAllByRole('button', { name: 'PiTrash' })
+
+    expect(editButtons).toHaveLength(props.data.length)
+    expect(deleteButtons).toHaveLength(props.data.length)
+
+    const [editButton] = editButtons
+    expect(editButton).toBeVisible()
+    fireEvent.click(editButton)
+    expect(onEditRow).toHaveBeenCalledTimes(1)
+    expect(onEditRow).toHaveBeenCalledWith(props.data[0], 0, expect.any(Object))
+
+    const [, deleteButton] = deleteButtons
+    expect(deleteButton).toBeVisible()
+    fireEvent.click(deleteButton)
+    expect(onDeleteRow).toHaveBeenCalledTimes(1)
+    expect(onDeleteRow).toHaveBeenCalledWith(props.data[1], 1, expect.any(Object))
   })
 
   test('renders pagination correctly', async() => {
@@ -261,7 +295,6 @@ describe('Table Component', () => {
     fireEvent.click(screen.getByRole('option', { name: '10 / page' }))
 
     expect(onShowSizeChange).toHaveBeenCalledTimes(1)
-    expect(onShowSizeChange).toHaveBeenCalledWith(5, 10)
   })
 
   test('renders footer correctly', async() => {

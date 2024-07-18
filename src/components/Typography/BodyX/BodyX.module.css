@@ -18,18 +18,18 @@
 
 .bodyS {
   margin: 0 !important;
-  font-size: calc(var(--typography-bodyS-fontSize, 14) * 1px);
-  line-height: calc(var(--typography-bodyS-lineHeight, 16) * 1px);
+  font-size: var(--typography-bodyS-fontSize, 14px);
+  line-height: var(--typography-bodyS-lineHeight, 16px);
 }
 
 .bodyM {
   margin: 0 !important;
-  font-size: calc(var(--typography-bodyM-fontSize, 16) * 1px);
-  line-height: calc(var(--typography-bodyM-lineHeight, 24) * 1px);
+  font-size: var(--typography-bodyM-fontSize, 16px);
+  line-height: var(--typography-bodyM-lineHeight, 24px);
 }
 
 .bodyL {
   margin: 0 !important;
-  font-size: calc(var(--typography-bodyL-fontSize, 18) * 1px);
-  line-height: calc(var(--typography-bodyL-lineHeight, 24) * 1px);
+  font-size: var(--typography-bodyL-fontSize, 18px);
+  line-height: var(--typography-bodyL-lineHeight, 24px);
 }

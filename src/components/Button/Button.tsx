@@ -20,7 +20,7 @@ import { ReactElement, useMemo } from 'react'
 import { Button as AntButton } from 'antd'
 import classnames from 'classnames'
 
-import { Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
+import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.types'
 import { ButtonProps } from './Button.props'
 import styles from './Button.module.css'
 
@@ -32,6 +32,16 @@ const { Square } = Shape
 const { Small, Middle, Large } = Size
 const { Filled, Ghost } = Type
 
+export const defaults = {
+  hierarchy: Primary,
+  iconPosition: Left,
+  isDisabled: false,
+  isLoading: false,
+  shape: Square,
+  size: Middle,
+  type: Filled,
+}
+
 /**
  * UI component for performing actions on the page interacting through clicks
  *
@@ -39,18 +49,22 @@ const { Filled, Ghost } = Type
  * @returns {Button} Button component
  */
 export const Button = ({
+  isBlock,
   children,
-  hierarchy,
+  form,
+  hierarchy = defaults.hierarchy,
   href,
+  htmlType,
   icon,
-  iconPosition,
-  isDisabled,
-  isLoading,
+  iconPosition = defaults.iconPosition,
+  isDisabled = defaults.isDisabled,
+  isLoading = defaults.isLoading,
   onClick,
-  shape,
-  size,
+  shape = defaults.shape,
+  size = defaults.size,
   target,
-  type,
+  title,
+  type = defaults.type,
 }: ButtonProps): ReactElement => {
   const buttonClassNames = useMemo(() => classnames(
     [
@@ -66,13 +80,17 @@ export const Button = ({
 
   return (
     <AntButton
+      block={isBlock}
       className={buttonClassNames}
       danger={hierarchy === Danger}
       disabled={isDisabled}
+      form={form}
       ghost={type !== Filled && hierarchy !== Neutral}
+      htmlType={form && !htmlType ? HTMLType.Submit : htmlType}
       loading={isLoading}
       shape={shape === Square ? 'default' : 'circle'}
       size={size}
+      title={title}
       type={hierarchy === Neutral ? 'default' : 'primary'}
       onClick={onClick}
       {...href && { href, rel: 'noopener noreferrer', target }}
@@ -84,12 +102,9 @@ export const Button = ({
   )
 }
 
-Button.defaultProps = {
-  hierarchy: Primary,
-  iconPosition: Left,
-  isDisabled: false,
-  isLoading: false,
-  shape: Square,
-  size: Middle,
-  type: Filled,
-}
+Button.Hierarchy = Hierarchy
+Button.IconPosition = IconPosition
+Button.Shape = Shape
+Button.Size = Size
+Button.Type = Type
+Button.HTMLType = HTMLType

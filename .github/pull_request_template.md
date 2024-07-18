@@ -2,29 +2,30 @@
 
 ### Description
 
-<!-- Please provide a brief description of the work you have done and the motivations linked to these modifications. -->
+<!-- Please provide a brief description of the work you have done and the motivations linked to these modifications. E.g.
 
-##### [INVOLVED_COMPONENT_HERE]
+##### <Changed component name>
+    - change 1
+    - change 2
+    - ...
+-->
 
-[CHANGES_HERE]
+### Addressed issue
 
-### Issue ticket number and link
-
-<!-- Be sure to provide the link to the relative Jira issue, if present. -->
-
-[Link to the Jira Task](LINK_HERE)
+<!-- Link to the issue, if present. E.g 
+    Closes #XYZ
+-->
 
 ### Checklist
 
 <!-- For further details regarding standards and conventions adopted in this repository please take a look at the CONTRIBUTING.md file. -->
 
-- [ ] added the link to the Jira task
 - [ ] commit message and branch name follow conventions
 - [ ] tests are included
 - [ ] changes are accessible and documented from components stories
 - [ ] typings are updated or integrated accordingly with your changes
 - [ ] all added components are exported from index file (if necessary)
 - [ ] all added files include Apache 2.0 license
-- [ ] you are not committing extraneous files or sensible data
+- [ ] you are not committing extraneous files or sensitive data
 - [ ] the browser console does not have any logged errors
 - [ ] necessary labels have been applied to this pull request (enhancement, bug, ecc.)

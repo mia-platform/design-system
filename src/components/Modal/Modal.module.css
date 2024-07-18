@@ -22,9 +22,9 @@
 
   :global(.mia-platform-modal-close) {
     top: unset;
-    inset-inline-end: calc(var(--spacing-padding-xl, 24) * 1px);
-    width: calc(var(--shape-size-xl, 32) * 1px);
-    min-height: calc(var(--shape-size-xl, 32) * 1px);
+    inset-inline-end: var(--spacing-padding-xl, 24px);
+    width: var(--shape-size-xl, 32px);
+    min-height: var(--shape-size-xl, 32px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,25 +32,25 @@
 
   :global(.mia-platform-modal-content) {
     height: 100%;
-    padding: calc(var(--spacing-padding-lg, 16) * 1px) 0;
+    padding: var(--spacing-padding-lg, 16px) 0;
   }
 
   :global(.mia-platform-modal-header) {
     margin-bottom: 0;
-    padding: 0 calc(var(--spacing-padding-xl, 24) * 1px);
+    padding: 0 var(--spacing-padding-xl, 24px);
 
     .docLink {
       display: flex;
       align-items: center;
     }
-    
+
     .title {
-      max-width: calc(100% - calc(var(--shape-size-xl, 32) * 1px));
-      min-height: calc(var(--shape-size-xl, 32) * 1px);
+      max-width: calc(100% - var(--shape-size-xl, 32px));
+      min-height: var(--shape-size-xl, 32px);
       display: flex;
       align-items: center;
-      gap: calc(var(--spacing-gap-md, 12) * 1px);
-    
+      gap: var(--spacing-gap-md, 12px);
+
       :global(*) {
         margin: 0 !important;
       }
@@ -58,14 +58,14 @@
   }
 
   :global(.mia-platform-modal-body) {
-    height: calc(100% - 2 * calc(var(--shape-size-xl, 32) * 1px));
-    padding: calc(var(--spacing-padding-lg, 16) * 1px) 0;
+    height: calc(100% - 2 * var(--shape-size-xl, 32px));
+    padding: var(--spacing-padding-lg, 16px) 0;
 
     .body {
       height: 100%;
       display: grid;
       grid-template-columns: 1fr;
-      padding: 0 calc(var(--spacing-padding-xl, 24) * 1px);
+      padding: 0 var(--spacing-padding-xl, 24px);
       transition: grid-template-columns 0.2s ease-in-out;
       will-change: transform;
     }
@@ -95,22 +95,22 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      gap: calc(var(--spacing-gap-xl, 24) * 1px);
+      gap: var(--spacing-gap-xl, 24px);
       overflow-y: auto;
     }
 
     .contentWrapper {
-      gap: calc(var(--spacing-gap-sm, 8) * 1px) !important;
+      gap: var(--spacing-gap-sm, 8px) !important;
     }
 
     .aside {
       display: flex;
       flex-direction: column;
       background-color: var(--palette-background-neutral-300, #f9f9f9);
-      border-radius: calc(var(--shape-border-radius-md, 4) * 1px);
-      margin-left: calc(var(--spacing-padding-lg, 16) * 1px);
-      padding: calc(var(--spacing-padding-lg, 16) * 1px);
-      gap: calc(var(--spacing-gap-sm, 8) * 1px);
+      border-radius: var(--shape-border-radius-md, 4px);
+      margin-left: var(--spacing-padding-lg, 16px);
+      padding: var(--spacing-padding-lg, 16px);
+      gap: var(--spacing-gap-sm, 8px);
       overflow-y: auto;
     }
 
@@ -118,7 +118,7 @@
       display: flex;
       align-items: center;
       cursor: pointer;
-      gap: calc(var(--spacing-padding-xs, 4) * 1px);
+      gap: var(--spacing-padding-xs, 4px);
       color: var(--palette-action-link-active, #005dc9);
       transition: color 0.2s ease-in-out;
     }
@@ -140,21 +140,21 @@
 
   :global(.mia-platform-modal-footer) {
     margin-top: 0;
-    padding: 0 calc(var(--spacing-padding-xl, 24) * 1px);
+    padding: 0 var(--spacing-padding-xl, 24px);
 
     .footer {
-      min-height: calc(var(--shape-size-xl, 32) * 1px);
+      min-height: var(--shape-size-xl, 32px);
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
       justify-content: space-between;
     }
-    
+
     .footerButtons {
       margin-inline-start: 0;
       display: flex;
       flex-direction: row-reverse;
-      gap: calc(var(--spacing-gap-sm, 8) * 1px);
+      gap: var(--spacing-gap-sm, 8px);
 
       :global(*) {
         margin: 0 !important;
@@ -201,7 +201,7 @@
     display: flex;
     opacity: 0;
   }
-  
+
   100% {
     display: flex;
     opacity: 1;
@@ -218,7 +218,7 @@
     display: flex;
     opacity: 0;
   }
-  
+
   100% {
     display: none;
     opacity: 0;

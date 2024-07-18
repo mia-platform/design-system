@@ -47,7 +47,6 @@ function formatLabels(
     return {
       ...item,
       label,
-      title,
       key,
       icon: icon && <div>{icon}</div>,
       ...type === Category && {

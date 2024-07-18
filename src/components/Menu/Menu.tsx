@@ -20,7 +20,7 @@ import { Menu as AntMenu, ConfigProvider, Skeleton } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
-import { Hierarchy, Mode } from './Menu.types'
+import { Hierarchy, ItemType, Mode } from './Menu.types'
 import defaultTheme, { primaryTheme } from './Menu.theme'
 import { MenuProps } from './Menu.props'
 import formatLabels from './Menu.utils'
@@ -31,6 +31,15 @@ const { Default, Primary } = Hierarchy
 const { Inline } = Mode
 const { menu } = styles
 
+export const defaults = {
+  defaultOpenKeys: [],
+  hierarchy: Default,
+  isCollapsed: false,
+  isLoading: false,
+  items: [],
+  mode: Inline,
+}
+
 /**
  * UI component for presenting nested lists of elements, organized by group or category
  *
@@ -38,13 +47,13 @@ const { menu } = styles
  * @returns {Menu} Menu component
  */
 export const Menu = ({
-  defaultOpenKeys,
+  defaultOpenKeys = defaults.defaultOpenKeys,
   defaultSelectedKey,
-  hierarchy,
-  items,
-  isCollapsed,
-  isLoading,
-  mode,
+  hierarchy = defaults.hierarchy,
+  items = defaults.items,
+  isCollapsed = defaults.isCollapsed,
+  isLoading = defaults.isLoading,
+  mode = defaults.mode,
   onClick,
   onOpenChange,
   openKeys,
@@ -62,9 +71,7 @@ export const Menu = ({
 
   const [selectedItem, setSelectedItem] = useState(defaultSelectedKey)
 
-  const formattedItems = useMemo(() => (
-    formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
-  ), [items, selectedKey, selectedItem, isCollapsed, hierarchy])
+  const formattedItems = formatLabels(items, selectedKey || selectedItem, isCollapsed, hierarchy)
 
   return (
     <ConfigProvider theme={{ components: { Menu: menuTheme } }}>
@@ -101,11 +108,6 @@ Menu.skeletonParagraph = {
   width: ['30%', '80%', '65%', '30%', '70%', '60%'],
 }
 
-Menu.defaultProps = {
-  defaultOpenKeys: [],
-  hierarchy: Default,
-  isCollapsed: false,
-  isLoading: false,
-  items: [],
-  mode: Inline,
-}
+Menu.ItemType = ItemType
+Menu.Hierarchy = Hierarchy
+Menu.Mode = Mode

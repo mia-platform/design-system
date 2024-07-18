@@ -35,6 +35,14 @@ const {
   modalFs,
 } = styles
 
+export const defaults = {
+  isBodyFullWidth: false,
+  isClosable: true,
+  isMaskClosable: true,
+  isVisible: false,
+  size: Small,
+}
+
 /**
  * Modal dialog that opens in overlay and allows to perform flows of actions, or to show specific
  * but less relevant information than those displayed on the underlying page.
@@ -47,13 +55,15 @@ export const Modal = ({
   children,
   docLink,
   footer,
-  isBodyFullWidth,
-  isClosable,
-  isMaskClosable,
-  isVisible,
+  isBodyFullWidth = defaults.isBodyFullWidth,
+  isClosable = defaults.isClosable,
+  isMaskClosable = defaults.isMaskClosable,
+  isVisible = defaults.isVisible,
   onCloseClick,
-  size,
+  size = defaults.size,
   title,
+  destroyOnClose,
+  getContainer,
 }: ModalProps): ReactElement => {
   const modalClassNames = useMemo(() => classNames([
     modal,
@@ -67,7 +77,9 @@ export const Modal = ({
       centered
       className={modalClassNames}
       closable={isClosable}
+      destroyOnClose={destroyOnClose}
       footer={<Modal.Footer footer={footer} />}
+      getContainer={getContainer}
       keyboard={isClosable}
       maskClosable={isClosable && isMaskClosable}
       open={isVisible}
@@ -85,14 +97,7 @@ export const Modal = ({
   )
 }
 
-Modal.defaultProps = {
-  isBodyFullWidth: false,
-  isClosable: true,
-  isMaskClosable: true,
-  isVisible: false,
-  size: Small,
-}
-
 Modal.Title = Title
 Modal.Body = Body
 Modal.Footer = Footer
+Modal.Size = Size

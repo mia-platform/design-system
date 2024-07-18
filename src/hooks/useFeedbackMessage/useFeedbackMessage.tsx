@@ -16,16 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useCallback, useMemo } from 'react'
-import classnames from 'classnames'
 import { message } from 'antd'
 
-import { MessageAPI, Position, Type } from './useFeedbackMessage.types'
-import { FeedbackMessage } from '../../components/FeedbackMessage'
-import { UseFeedbackMessageProps } from './useFeedbackMessage.props'
-import styles from './useFeedbackMessage.module.css'
-
-const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
+import { MessageAPI, Position } from './useFeedbackMessage.types'
+import { useMessageWrapper } from './useMessageWrapper/useMessageWrapper'
 
 /**
  * A hook that allows to display global informative messages to the user. It is intended to give
@@ -34,14 +28,23 @@ const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
  * The hook returns several methods to be used to show a message of a different type
  * (each type will use a different icon) or to manually remove rendered messages.
  *
+ * The Position values are exposed on the useFeedbackMessage object.
+ *
+ * Warning: the popover content opened by this hook cannot resolve any React Context,
+ * so in this cases React always uses the default context value. If this behaviour is undesired,
+ * it suggest to use the useFeedbackMessageWithContext custom hook instead.
+ *
  * @example
  * export const Component(props: {...}) => {
+ *   const {success, dismiss} = useFeedbackMessage()
+ *
  *   // When called, shows a FeedbackMessage
  *   const onClick = (): void => {
  *     success({
  *       extra: <Button size={Size.Small} onClick={onDismiss}>Close</Button>,
  *       key: 'messageKey',
  *       message: 'This is a Feedback Message',
+ *       position: useFeedbackMessage.Position.Bottom
  *     })
  *   }
  *
@@ -58,42 +61,10 @@ const BOTTOM_MESSAGE_KEY = '__BOTTOM_MESSAGE_KEY__'
  *
  * @returns {MessageAPI} An object which includes several functions to manage the rendering of feedback messages.
  */
-export function useFeedbackMessage(): MessageAPI {
-  const open = useCallback((type: Type, props: UseFeedbackMessageProps): PromiseLike<boolean> => {
-    const { key, duration, sticky, position, ...messageProps } = props
-
-    const messageKey = position === Position.Bottom
-      ? BOTTOM_MESSAGE_KEY
-      : key
-
-    return message.open({
-      className: classnames([
-        styles.feedbackMessage,
-        position === Position.Bottom && styles.bottom,
-      ]),
-      content: <FeedbackMessage extra={messageProps.extra} message={messageProps.message} />,
-      duration: sticky ? 0 : duration,
-      type,
-      key: messageKey,
-    })
-  }, [])
-
-  const dismiss = useCallback((key: string = BOTTOM_MESSAGE_KEY) => {
-    message.destroy(key)
-  }, [])
-
-  const loading = useCallback((props: UseFeedbackMessageProps) => open(Type.Loading, props), [open])
-  const info = useCallback((props: UseFeedbackMessageProps) => open(Type.Info, props), [open])
-  const success = useCallback((props: UseFeedbackMessageProps) => open(Type.Success, props), [open])
-  const error = useCallback((props: UseFeedbackMessageProps) => open(Type.Error, props), [open])
-  const warning = useCallback((props: UseFeedbackMessageProps) => open(Type.Warning, props), [open])
-
-  return useMemo(() => ({
-    dismiss,
-    loading,
-    info,
-    success,
-    error,
-    warning,
-  }), [dismiss, error, info, loading, success, warning])
+export const useFeedbackMessage = (): MessageAPI => {
+  const wrappedAPI = useMessageWrapper(message)
+  return wrappedAPI
 }
+
+useFeedbackMessage.Position = Position
+

@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer renders drawer with provided title and footer 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="mia-platform-drawer mia-platform-drawer-right mia-platform-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="mia-platform-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="mia-platform-drawer-content-wrapper"
+        style="width: 512px;"
+      >
+        <div
+          aria-modal="true"
+          class="mia-platform-drawer-content drawer"
+          role="dialog"
+        >
+          <div
+            class="mia-platform-drawer-header"
+          >
+            <div
+              class="mia-platform-drawer-header-title"
+            >
+              <button
+                aria-label="Close"
+                class="mia-platform-drawer-close"
+                type="button"
+              >
+                <svg
+                  aria-label="PiX"
+                  color="currentColor"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+                  />
+                </svg>
+              </button>
+              <div
+                class="mia-platform-drawer-title"
+              >
+                <h4
+                  aria-label=""
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
+                  role="h4"
+                >
+                  <span>
+                    Drawer Lipsum
+                  </span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mia-platform-drawer-body"
+          >
+            <div
+              style="display: flex; flex-direction: column; gap: 24px;"
+            >
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a semper diam, nec congue lectus. Mauris pellentesque convallis augue eu ornare. Sed pulvinar velit ut congue vulputate. Etiam elementum lacus vitae felis vulputate ultricies. Vivamus eu erat orci. Proin a accumsan nunc, eget rutrum arcu. Donec efficitur justo vel porta placerat. Nunc euismod at nisi vel interdum. Morbi id pellentesque quam. Donec eleifend nisi feugiat est rutrum dapibus quis at urna. Ut vehicula hendrerit neque, vel ultrices diam dignissim id. Aliquam erat volutpat. Sed porta iaculis dolor, ac egestas mi accumsan quis. Nam justo ex, facilisis in nunc id, suscipit aliquam arcu.
+              </span>
+              <span>
+                Nullam tempor nisi nulla, ac lacinia dolor porta in. Nam non velit enim. Nullam a orci id diam pretium sollicitudin. Nunc vitae mauris pretium, finibus orci non, varius diam. Donec sollicitudin, libero non blandit pellentesque, dolor neque elementum ante, in molestie massa ipsum sed odio. Morbi vestibulum pretium tempor. Suspendisse placerat faucibus velit, ac condimentum eros placerat sit amet. Etiam non finibus ipsum, vitae sagittis lorem. Curabitur convallis nisl sapien, quis placerat metus tempus ac. Maecenas molestie neque lorem, non ornare risus egestas ut.
+              </span>
+            </div>
+          </div>
+          <div
+            class="mia-platform-drawer-footer"
+          >
+            <footer
+              class="footer"
+            >
+              <div
+                class="extra"
+              >
+                extra content
+              </div>
+              <div
+                class="footerButtons"
+              >
+                <button
+                  class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                  type="button"
+                >
+                  <div
+                    class="buttonText"
+                  >
+                    Close drawer
+                  </div>
+                </button>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;

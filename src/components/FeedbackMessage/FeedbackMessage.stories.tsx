@@ -17,14 +17,14 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
-import { useState } from 'react'
+import { createContext, useContext, useMemo, useState } from 'react'
 
-import { Hierarchy, Size } from '../Button/Button.types'
 import { Button } from '../Button'
 import { FeedbackMessage } from '.'
 import { Icon } from '../Icon'
-import { Position } from '../../hooks/useFeedbackMessage/useFeedbackMessage.types'
+import { ThemeProvider } from '../ThemeProvider'
 import { useFeedbackMessage } from '../../hooks/useFeedbackMessage'
+import { useFeedbackMessageWithContext } from '../../hooks/useFeedbackMessageWithContext'
 
 const meta = {
   args: {
@@ -45,35 +45,35 @@ export const FeedbackMessages: Story = {
     return (
       <div style={{ display: 'flex', gap: '4px' }}>
         <Button
-          hierarchy={Hierarchy.Neutral}
+          hierarchy={Button.Hierarchy.Neutral}
           icon={<Icon color="blue" name="PiInfo" size={16} />}
           onClick={() => info({ message })}
         >
           Info
         </Button>
         <Button
-          hierarchy={Hierarchy.Neutral}
+          hierarchy={Button.Hierarchy.Neutral}
           icon={<Icon color="green" name="PiCheck" size={16} />}
           onClick={() => success({ message })}
         >
           Success
         </Button>
         <Button
-          hierarchy={Hierarchy.Neutral}
+          hierarchy={Button.Hierarchy.Neutral}
           icon={<Icon name="PiSpinner" size={16} />}
           onClick={() => loading({ message })}
         >
           Loading
         </Button>
         <Button
-          hierarchy={Hierarchy.Neutral}
+          hierarchy={Button.Hierarchy.Neutral}
           icon={<Icon color="orange" name="PiWarning" size={16} />}
           onClick={() => warning({ message })}
         >
           Warning
         </Button>
         <Button
-          hierarchy={Hierarchy.Neutral}
+          hierarchy={Button.Hierarchy.Neutral}
           icon={<Icon color="red" name="PiXCircle" size={16} />}
           onClick={() => error({ message })}
         >
@@ -94,7 +94,7 @@ export const FeedbackMessageWithExtraContent: Story = {
 
     const onClick = (): void => {
       success({
-        extra: <Button size={Size.Small} onClick={onDismiss}>Dismiss</Button>,
+        extra: <Button size={Button.Size.Small} onClick={onDismiss}>Dismiss</Button>,
         key: 'messageKey',
         message,
         sticky: true,
@@ -114,13 +114,13 @@ export const FeedbackMessageAtTheBottomOfThePage: Story = {
     return (
       <div style={{ display: 'flex', gap: 4 }}>
         <Button
-          hierarchy={Hierarchy.Neutral}
-          onClick={() => info({ message, position: Position.Bottom, duration: 10 })}
+          hierarchy={Button.Hierarchy.Neutral}
+          onClick={() => info({ message, position: useFeedbackMessage.Position.Bottom, duration: 10 })}
         >
           Open
         </Button>
         <Button
-          hierarchy={Hierarchy.Neutral}
+          hierarchy={Button.Hierarchy.Neutral}
           onClick={() => dismiss()}
         >
           Dismiss
@@ -167,6 +167,49 @@ export const ReplaceFeedbackMessages: Story = {
             : <Button onClick={onCreateLoadingMessage}>Create a Loading Feedback Message</Button>
         }
       </div >
+    )
+  }],
+}
+
+const reactContext = createContext<{message?: string}>({})
+
+const FeedbackMessageContentFromContext = (): JSX.Element => {
+  const { message } = useContext(reactContext)
+  return <span>{message}</span>
+}
+
+export const FeedbackMessageAtTheBottomOfThePageWithContext: Story = {
+  decorators: [(_Story, context) => {
+    const { warning, dismiss, contextHolder } = useFeedbackMessageWithContext()
+
+    const { message } = context.args
+
+    const contextValue = useMemo(() => ({ message: String(message) }), [message])
+
+    return (
+      <ThemeProvider >
+        <reactContext.Provider value={contextValue} >
+          <div style={{ display: 'flex', gap: 4 }}>
+            {contextHolder}
+            <Button
+              hierarchy={Button.Hierarchy.Neutral}
+              onClick={() => warning({
+                message: <FeedbackMessageContentFromContext />,
+                position: useFeedbackMessage.Position.Bottom,
+                sticky: true,
+              })}
+            >
+          Open
+            </Button>
+            <Button
+              hierarchy={Button.Hierarchy.Neutral}
+              onClick={() => dismiss()}
+            >
+          Dismiss
+            </Button>
+          </div>
+        </reactContext.Provider>
+      </ThemeProvider>
     )
   }],
 }

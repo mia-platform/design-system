@@ -1,11 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button Component renders block button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-block button buttonMd"
+    type="button"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button Component renders button with href correctly 1`] = `
 <DocumentFragment>
   <a
     class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     href="https://mia-platform.eu"
     rel="noopener noreferrer"
+    tabindex="0"
   >
     <div
       class="buttonText"
@@ -23,7 +39,6 @@ exports[`Button Component renders button with icon left correctly 1`] = `
     type="button"
   >
     <svg
-      alt="PiCircleHalfTiltLight"
       aria-label="PiCircleHalfTiltLight"
       color="white"
       fill="currentColor"
@@ -61,7 +76,6 @@ exports[`Button Component renders button with icon right correctly 1`] = `
       Button
     </div>
     <svg
-      alt="PiCircleHalfTiltLight"
       aria-label="PiCircleHalfTiltLight"
       color="white"
       fill="currentColor"
@@ -89,7 +103,6 @@ exports[`Button Component renders circle button correctly 1`] = `
     type="button"
   >
     <svg
-      alt="PiCircleHalfTiltLight"
       aria-label="PiCircleHalfTiltLight"
       color="white"
       fill="currentColor"
@@ -284,6 +297,22 @@ exports[`Button Component renders primary filled button correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button Component renders primary filled button correctly with form ref and htmlType 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+    form="some-form"
+    type="submit"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button Component renders primary ghost button correctly 1`] = `
 <DocumentFragment>
   <button
@@ -304,6 +333,38 @@ exports[`Button Component renders primary outline button correctly 1`] = `
   <button
     class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMd"
     type="button"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders primary outline button correctly with form ref and no htmlType 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMd"
+    form="some-form"
+    type="submit"
+  >
+    <div
+      class="buttonText"
+    >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders primary outline button correctly with form ref and reset htmlType 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMd"
+    form="some-form"
+    type="reset"
   >
     <div
       class="buttonText"
@@ -336,7 +397,6 @@ exports[`Button Component renders square button correctly 1`] = `
     type="button"
   >
     <svg
-      alt="PiCircleHalfTiltLight"
       aria-label="PiCircleHalfTiltLight"
       color="white"
       fill="currentColor"

@@ -20,14 +20,14 @@
   display: flex;
   flex-direction: column;
   background-color: var(--palette-common-white, #ffffff);
-  border-radius: calc(var(--shape-border-radius-lg, 8) * 1px);
-  border-width: calc(var(--shape-border-width-xs, 1) * 1px);
-  padding: calc(var(--spacing-padding-sm, 8) * 1px) 0;
+  border-radius: var(--shape-border-radius-lg, 8px);
+  border-width: var(--shape-border-width-xs, 1px);
+  padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xl, 24px);
 }
 
 .content {
-  padding: calc(var(--spacing-padding-lg, 16) * 1px) calc(var(--spacing-padding-xl, 24) * 1px);
-  gap: calc(var(--spacing-gap-xl, 24) * 1px);
+  padding: var(--spacing-padding-lg, 16px) 0;
+  gap: var(--spacing-gap-xl, 24px);
 }
 
 .docLink {
@@ -38,14 +38,14 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: calc(var(--spacing-padding-sm, 8) * 1px) calc(var(--spacing-padding-xl, 24) * 1px);
-  gap: calc(var(--spacing-gap-xl, 24) * 1px);
+  padding: var(--spacing-padding-sm, 8px) 0;
+  gap: var(--spacing-gap-xl, 24px);
 }
 
 .heading {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--spacing-gap-sm, 8) * 1px);
+  gap: var(--spacing-gap-sm, 8px);
   overflow-x: hidden;
 
  :global(*) {
@@ -56,5 +56,5 @@
 .title {
   display: flex;
   align-items: center;
-  gap: calc(var(--spacing-gap-sm, 8) * 1px);
+  gap: var(--spacing-gap-sm, 8px);
 }

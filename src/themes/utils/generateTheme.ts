@@ -19,61 +19,68 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable func-names */
 
-import { readFileSync, writeFileSync } from 'fs'
-import get from 'lodash/get'
-import { resolve } from 'path'
+import { get } from 'lodash-es'
+import { readFileSync } from 'fs'
 import traverse from 'traverse'
 
 import Theme from '../schema'
 
-export const THEMES_DIR = resolve(__dirname, '../files')
-export const THEME_GENERATOR_FILE = 'theme-generator.json'
-export const PRIMITIVES_FILE = 'primitives.json'
-export const GENERATED_FILE = 'theme.json'
-
 const INTERPOLATED_VALUE = /^{.*}$/g
 const PARENTHESES = /[{}]/g
-
-const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, theme, file)
 
 /**
  * Resolves interpolated values from a global definitions file in the theme.
  *
  * @param {Theme} themeValues - The theme values to resolve interpolated values from.
+ * @param {object} themeTokens - The theme tokens to resolve recursive token values referring to other tokens values.
  * @returns {func} A function that resolves interpolated values.
  */
-const resolveThemeValues = (themeValues: Theme) => (node: string) => {
-  if (node.match?.(INTERPOLATED_VALUE)) {
-    const path = node.replace(PARENTHESES, '').split('.')
-
-    const { $value } = get(themeValues, path) || {}
-
-    return $value
+const resolveThemeValues = (themeValues: Theme, themeTokens: object) => (nodeValue: string): (string|undefined) => {
+  if (!nodeValue.match(INTERPOLATED_VALUE)) {
+    // The value does not require interpolation
+    return nodeValue
   }
-  return node
+
+  const path = nodeValue.replace(PARENTHESES, '').split('.')
+  const { $value } = get(themeValues, path) || {}
+
+  if (!$value) {
+    // The value is referred to another token value instead of a primitive
+    const { $value: tokenValue } = get(themeTokens, path) || {}
+    if (!tokenValue) {
+      throw new Error(`Something went wrong resolving ${nodeValue}`)
+    }
+
+    return resolveThemeValues(themeValues, themeTokens)(tokenValue)
+  }
+
+  return $value
 }
 
 /**
  * Generates a theme based on the provided theme name.
  *
- * @param {string} themeName - The name of the theme to generate.
- * @returns {Promise<void>} A promise that resolves when the theme generation is complete.
+ * @param {string} themeGeneratorFilePath - The path of the theme generator file.
+ * @param {string} primitivesFilePath - The path of the primitives file.
+ * @returns {Theme} The generated theme with all the resolved values.
  */
-export default async function generateTheme(themeName: string): Promise<void> {
-  const structure = await readFileSync(getFile(themeName, THEME_GENERATOR_FILE)).toString()
-  const values = await readFileSync(getFile(themeName, PRIMITIVES_FILE)).toString()
-
+export function generateTheme(themeGeneratorFilePath: string, primitivesFilePath: string): Theme {
+  const structure = readFileSync(themeGeneratorFilePath).toString()
+  const values = readFileSync(primitivesFilePath).toString()
   const themeStructure: object = JSON.parse(structure)
   const themeValues: Theme = JSON.parse(values)
 
-  const resolveVariable = resolveThemeValues(themeValues)
+  const resolveVariable = resolveThemeValues(themeValues, themeStructure)
 
-  const resolvedTheme: Theme = traverse(themeStructure).map(function(node) {
+  return traverse(themeStructure).map(function(node) {
     const isLeaf = node?.$value && node?.$type
-    const resolvedNode = resolveVariable(isLeaf ? node.$value : node)
 
-    this.update(resolvedNode)
+    if (!isLeaf) {
+      this.update(node)
+      return
+    }
+
+    this.update(resolveVariable(node.$value))
   })
-
-  writeFileSync(getFile(themeName, GENERATED_FILE), JSON.stringify(resolvedTheme, null, 2))
 }
+

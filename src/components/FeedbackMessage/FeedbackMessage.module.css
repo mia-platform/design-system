@@ -19,5 +19,5 @@
 .feedbackMessage {
   align-items: center;
   display: inline-flex;
-  gap: calc(var(--spacing-padding-lg, 16) * 1px);
+  gap: var(--spacing-padding-lg, 16px);
 }

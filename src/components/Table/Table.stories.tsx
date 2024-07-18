@@ -38,13 +38,14 @@ import {
   sizedColumns,
   spannedColumns,
 } from './Table.mocks'
-import { Size } from './Table.types'
+import { Action } from './Table.types'
 import { Table } from '.'
+import { defaults } from './Table'
 
 const meta = {
   component: Table<TableRecord>,
   args: {
-    ...Table.defaultProps,
+    ...defaults,
     columns,
     data,
     rowKey,
@@ -60,11 +61,11 @@ export const Default: Story = {
 }
 
 export const Small: Story = {
-  args: { ...meta.args, size: Size.Small },
+  args: { ...meta.args, size: Table.Size.Small },
 }
 
 export const Large: Story = {
-  args: { ...meta.args, size: Size.Large },
+  args: { ...meta.args, size: Table.Size.Large },
 }
 
 export const Loading: Story = {
@@ -93,6 +94,15 @@ export const Expandable: Story = {
       onExpand: action('onExpand'),
       onExpandedRowsChange: action('onExpandedRowsChange'),
     }),
+  },
+}
+
+export const SimpleActionsUsage: Story = {
+  args: { ...meta.args,
+    actions: [
+      { dataIndex: Action.Edit, onClick: action('edit') },
+      { dataIndex: Action.Delete, onClick: action('delete') },
+    ],
   },
 }
 

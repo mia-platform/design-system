@@ -19,7 +19,7 @@
 import { Table as AntTable, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
 
-import { Action, GenericRecord, Layout, Size } from './Table.types'
+import { Action, ColumnAlignment, ColumnFilterMode, GenericRecord, Layout, Size, SortOrder } from './Table.types'
 import { Icon } from '../Icon'
 import { IconProps } from '../Icon/Icon.props'
 import { TableProps } from './Table.props'
@@ -32,35 +32,62 @@ const { Middle } = Size
 const { Edit, Delete } = Action
 const { table } = styles
 
+export const defaults = {
+  actions: [],
+  pagination: {
+    defaultCurrent: 1,
+    defaultPageSize: 10,
+    hideOnSinglePage: true,
+    pageSizeOptions: [10, 20, 50],
+    responsive: true,
+    showLessItems: false,
+    showSizeChanger: true,
+    showTitle: true,
+    showTotal: (total: number): ReactElement => (
+      <span>
+        <b>{total}</b>
+        {' in total'}
+      </span>
+    ),
+  },
+  scroll: { x: true as const },
+  isBordered: false,
+  isLoading: false,
+  layout: Auto,
+  onDeleteRow: undefined,
+  onEditRow: undefined,
+  size: Middle,
+}
+
 /**
  * UI component for presenting tabular structured data
  *
  * @link https://ant.design/components/table
- * @returns {Table} Table component
+ * @returns {ReactElement} Table component
  */
 export const Table = <RecordType extends GenericRecord>({
   columns,
   data,
-  actions,
+  actions = defaults.actions,
   expandable,
   footer,
   intlLocale,
-  isBordered,
-  isLoading,
-  layout,
+  isBordered = defaults.isBordered,
+  isLoading = defaults.isLoading,
+  layout = defaults.layout,
   onChange,
   onHeaderRow,
   onRow,
-  onEditRow,
-  onDeleteRow,
+  onEditRow = defaults.onEditRow,
+  onDeleteRow = defaults.onDeleteRow,
   rowKey,
   rowSelection,
-  pagination,
-  size,
-  scroll,
+  pagination = defaults.pagination,
+  size = defaults.size,
+  scroll = defaults.scroll,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
-  const iconSize = theme?.shape?.size?.lg as IconProps['size'] || 24
+  const iconSize = theme?.shape?.size?.md as IconProps['size'] || 16
 
   const editAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Edit), [actions])
   const deleteAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Delete), [actions])
@@ -71,13 +98,13 @@ export const Table = <RecordType extends GenericRecord>({
   const tableColumns = useMemo(() => [
     ...columns,
     ...customActions?.map(getAction) || [],
-    ...onEditRow ? [getAction({
+    ...editAction?.onClick || onEditRow ? [getAction({
       dataIndex: Edit,
       icon: <Icon color="currentColor" name="PiPencilSimpleLine" size={iconSize} />,
       onClick: onEditRow,
       ...editAction,
     })] : [],
-    ...onDeleteRow ? [getAction({
+    ...deleteAction?.onClick || onDeleteRow ? [getAction({
       dataIndex: Delete,
       icon: <Icon color="currentColor" name="PiTrash" size={iconSize} />,
       isDanger: true,
@@ -123,35 +150,12 @@ export const Table = <RecordType extends GenericRecord>({
   )
 }
 
-Table.scroll = {
-  x: true as const,
-}
+Table.scroll = defaults.scroll
+Table.pagination = defaults.pagination
 
-Table.pagination = {
-  defaultCurrent: 1,
-  defaultPageSize: 10,
-  hideOnSinglePage: true,
-  pageSizeOptions: [10, 20, 50],
-  responsive: true,
-  showLessItems: false,
-  showSizeChanger: true,
-  showTitle: true,
-  showTotal: (total: number): ReactElement => (
-    <span>
-      <b>{total}</b>
-      {' in total'}
-    </span>
-  ),
-}
-
-Table.defaultProps = {
-  actions: [],
-  isBordered: false,
-  isLoading: false,
-  layout: Auto,
-  onDeleteRow: undefined,
-  onEditRow: undefined,
-  pagination: Table.pagination,
-  scroll: Table.scroll,
-  size: Middle,
-}
+Table.ColumnAlignment = ColumnAlignment
+Table.ColumnFilterMode = ColumnFilterMode
+Table.Layout = Layout
+Table.Size = Size
+Table.SortOrder = SortOrder
+Table.Action = Action

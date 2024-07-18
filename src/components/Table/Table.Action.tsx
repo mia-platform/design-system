@@ -17,13 +17,10 @@
  */
 
 import { ColumnAlignment, GenericRecord, TableAction } from './Table.types'
-import { Hierarchy, Type } from '../Button/Button.types'
 import { Button } from '../Button'
 import styles from './Table.module.css'
 
 const { action } = styles
-const { Danger, Neutral } = Hierarchy
-const { Ghost } = Type
 
 export const getAction = <RecordType extends GenericRecord>({
   dataIndex,
@@ -41,11 +38,11 @@ export const getAction = <RecordType extends GenericRecord>({
     render: (_: unknown, record: RecordType, index: number | undefined) => (
       <div className={action}>
         <Button
-          hierarchy={isDanger ? Danger : Neutral}
+          hierarchy={isDanger ? Button.Hierarchy.Danger : Button.Hierarchy.Neutral}
           icon={icon}
           isDisabled={typeof isDisabled === 'function' ? isDisabled(record, index) : isDisabled}
-          type={Ghost}
-          onClick={() => onClick?.(record, index)}
+          type={Button.Type.Ghost}
+          onClick={(event) => onClick?.(record, index, event)}
         />
       </div>
     ),

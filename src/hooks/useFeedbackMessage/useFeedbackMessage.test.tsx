@@ -17,10 +17,8 @@
  */
 
 /* eslint-disable react/no-multi-comp */
-
 import { act, fireEvent, render, screen, waitFor } from '../../test-utils'
-import { Position } from './useFeedbackMessage.types'
-import { useFeedbackMessage } from '.'
+import { useFeedbackMessage } from './useFeedbackMessage'
 
 jest.useFakeTimers()
 
@@ -185,10 +183,10 @@ describe('useFeedbackMessage', () => {
 
       return (
         <>
-          <button type="button" onClick={() => info({ message, position: Position.Bottom })}>
+          <button type="button" onClick={() => info({ message, position: useFeedbackMessage.Position.Bottom })}>
             Open message
           </button>
-          <button type="button" onClick={() => info({ message: updatedMessage, position: Position.Bottom })}>
+          <button type="button" onClick={() => info({ message: updatedMessage, position: useFeedbackMessage.Position.Bottom })}>
             Open updated message
           </button>
         </>

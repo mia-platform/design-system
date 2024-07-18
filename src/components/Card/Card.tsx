@@ -19,7 +19,6 @@
 import { ReactElement, useCallback, useMemo } from 'react'
 import { Skeleton } from 'antd'
 
-import { Shape, Type } from '../Button/Button.types'
 import { BodyS } from '../Typography/BodyX/BodyS'
 import { Button } from '../Button'
 import { CardProps } from './Card.props'
@@ -28,9 +27,11 @@ import { Icon } from '../Icon'
 import styles from './Card.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-const { Circle } = Shape
-const { Ghost } = Type
 const { card, content, header, heading } = styles
+
+export const defaults = {
+  isLoading: false,
+}
 
 /**
  * UI component used to display content related to a single subject
@@ -41,7 +42,7 @@ export const Card = ({
   children,
   docLink,
   extra,
-  isLoading,
+  isLoading = defaults.isLoading,
   subtitle,
   title,
 }: CardProps): ReactElement => {
@@ -67,8 +68,8 @@ export const Card = ({
               {docLink && <div className={styles.docLink}>
                 <Button
                   icon={docLinkIcon}
-                  shape={Circle}
-                  type={Ghost}
+                  shape={Button.Shape.Circle}
+                  type={Button.Type.Ghost}
                   onClick={onClickDocLink}
                 />
               </div>}
@@ -88,8 +89,4 @@ export const Card = ({
 Card.skeletonParagraph = {
   rows: 3,
   width: ['80%', '65%', '70%'],
-}
-
-Card.defaultProps = {
-  isLoading: false,
 }
