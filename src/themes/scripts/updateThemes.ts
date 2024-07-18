@@ -31,6 +31,9 @@ const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, the
 
 function main(): void {
   for (const themeName of readdirSync(THEMES_DIR)) {
+    if (themeName===".DS_Store") {
+      continue
+    }
     const themeGeneratorFilePath = getFile(themeName, THEME_GENERATOR_FILE)
     const primitivesFilePath = getFile(themeName, PRIMITIVES_FILE)
 
