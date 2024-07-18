@@ -26,5 +26,19 @@
         }
       }
     }
+  },
+  "shape": {
+    "border": {
+      "radius": {
+        "sharp": {
+          "$type": "dimension",
+          "$value": "{sizing.none}"
+        },
+        "anotherSharp": {
+          "$type": "dimension",
+          "$value": "{shape.border.radius.sharp}"
+        }
+      }
+    }
   }
 }
