@@ -29,16 +29,16 @@ import { IconProps } from './Icon.props'
  * pack such as [React Icons](https://react-icons.github.io/react-icons/).
  *
  * For convenience, the design system itself ships several icon packs ready to use with this components, namely:
- * - [Ant Design Icons](https://react-icons.github.io/react-icons/icons/ai/) importable from `@mia-platform-internal/console-design-system-react/icons/ai`
- * - [Phosphor Icons](https://react-icons.github.io/react-icons/icons/pi/) importable from `@mia-platform-internal/console-design-system-react/icons/pi`
- * - [Feather Icons](https://react-icons.github.io/react-icons/icons/fi/) importable from `@mia-platform-internal/console-design-system-react/icons/fi`
+ * - [Ant Design Icons](https://react-icons.github.io/react-icons/icons/ai/) importable from `@mia-platform-internal/console-design-system-react/icons/ai/<name-of-the-icon>`
+ * - [Phosphor Icons](https://react-icons.github.io/react-icons/icons/pi/) importable from `@mia-platform-internal/console-design-system-react/icons/pi/<name-of-the-icon>`
+ * - [Feather Icons](https://react-icons.github.io/react-icons/icons/fi/) importable from `@mia-platform-internal/console-design-system-react/icons/fi/<name-of-the-icon>`
  * - [Mia-Platform Icons](/docs/icons-mia-platform--docs) importable from
- * `@mia-platform-internal/console-design-system-react/icons/mi`
+ * `@mia-platform-internal/console-design-system-react/icons/mi/<name-of-the-icon>`
  *
  * To use one of the aforementioned icons, just import the component and pass it to `<Icon />`:
  *
  * ```tsx
- * import { PiAddressBook } from "@mia-platform-internal/console-design-system-react/icons/pi"
+ * import { PiAddressBook } from "@mia-platform-internal/console-design-system-react/icons/pi/PiAddressBook"
  *
  * const App = () => <Icon component={PiAddressBook} />
  * ```

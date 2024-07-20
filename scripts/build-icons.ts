@@ -19,24 +19,23 @@
 /* eslint-disable no-console */
 
 import { Cheerio, Element, load } from 'cheerio'
+import { type TarOptionsWithAliasesAsyncNoFile, extract } from 'tar'
 import { IconTree } from 'react-icons'
 import camelcase from 'camelcase'
-import { createRequire } from 'module'
 import fs from 'fs/promises'
 import { glob } from 'glob'
+import https from 'https'
 import path from 'path'
 import url from 'url'
 
-const require = createRequire(import.meta.url)
-const reactIconsPath = path.dirname(require.resolve('react-icons/package.json'))
+const REACT_ICONS_VERSION = '5.2.1'
+const REACT_ICONS_PACKAGES = ['lib', 'ai', 'fi', 'pi']
 
 const dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const rootDir = path.resolve(dirname, '..')
 const outDir = path.resolve(rootDir, 'icons')
 
-const reactIconsPackages = ['ai', 'fi', 'pi']
-
-async function initialize(): Promise<void> {
+async function setup(): Promise<void> {
   const outDirContent = await fs.readdir(outDir)
 
   const promises = outDirContent.reduce<Promise<void>[]>((acc, cur) => {
@@ -51,17 +50,36 @@ async function initialize(): Promise<void> {
   await Promise.all(promises)
 }
 
-async function copyReactIconsPackages(): Promise<void> {
-  const packagesToCopy = ['lib', ...reactIconsPackages]
+async function downloadReactIconsPackage(): Promise<void> {
+  const pkgUrl = `https://github.com/react-icons/react-icons/releases/download/v${REACT_ICONS_VERSION}/react-icons-all-files-${REACT_ICONS_VERSION}.tgz`
 
-  const promises = packagesToCopy.map((packageName) => {
-    const source = path.resolve(reactIconsPath, packageName)
-    const dest = path.resolve(outDir, packageName)
+  const tarOptions: TarOptionsWithAliasesAsyncNoFile = {
+    cwd: outDir,
+    filter: (entryPath) => REACT_ICONS_PACKAGES.some((pkgName) => entryPath.startsWith(`package/${pkgName}`)),
+    strip: 1,
+  }
 
-    return fs.cp(source, dest, { recursive: true })
+  const urlToCall = await new Promise<string>((resolve, reject) => {
+    const reqUrl = new url.URL(pkgUrl)
+
+    const request = https.get(reqUrl, (res) => resolve(res.headers.location ?? ''))
+
+    request.on('error', reject)
   })
 
-  await Promise.all(promises)
+  await new Promise<void>((resolve, reject) => {
+    const request = https.get(urlToCall)
+
+    request.on('response', (res) => {
+      res.pipe(extract(tarOptions), { end: true })
+
+      res.on('error', reject)
+
+      res.on('end', resolve)
+    })
+
+    request.on('error', reject)
+  })
 }
 
 async function svgStringToTree(svg: string): Promise<IconTree> {
@@ -105,35 +123,6 @@ async function buildMiaIcons(): Promise<void> {
   const miaIconsPackageDir = path.resolve(outDir, 'mi')
   await fs.mkdir(miaIconsPackageDir)
 
-  const packageJsonPath = path.resolve(miaIconsPackageDir, 'package.json')
-  const esmIndexPath = path.resolve(miaIconsPackageDir, 'index.mjs')
-  const cjsIndexPath = path.resolve(miaIconsPackageDir, 'index.js')
-  const declarationsPath = path.resolve(miaIconsPackageDir, 'index.d.ts')
-
-  await fs.appendFile(
-    packageJsonPath,
-    '{\n  "sideEffects": false,\n  "module": "./index.esm.js"\n}',
-    'utf-8'
-  )
-
-  await fs.appendFile(
-    esmIndexPath,
-    '// THIS FILE IS AUTO GENERATED\nimport { GenIcon } from \'../lib\';\n',
-    'utf-8'
-  )
-
-  await fs.appendFile(
-    cjsIndexPath,
-    '// THIS FILE IS AUTO GENERATED\nvar GenIcon = require(\'../lib\').GenIcon\n',
-    'utf-8'
-  )
-
-  await fs.appendFile(
-    declarationsPath,
-    '// THIS FILE IS AUTO GENERATED\nimport { IconType } from \'../lib\'\n',
-    'utf-8'
-  )
-
   const svgFiles = await glob(path.resolve(rootDir, 'src/assets/icons/*.svg'))
 
   const promises = svgFiles.map(async(filePath) => {
@@ -145,28 +134,44 @@ async function buildMiaIcons(): Promise<void> {
     const iconTree = await svgStringToTree(svgStr)
     const iconTreeStr = JSON.stringify(iconTree)
 
-    const esmTemplate = `export function ${iconName} (props) {\n`
+    const esmFilePath = path.resolve(miaIconsPackageDir, `${iconName}.mjs`)
+    const esmTemplate = `// THIS FILE IS AUTO GENERATED\n`
+    + `import { GenIcon } from '../lib/index.mjs';\n`
+    + `export function ${iconName} (props) {\n`
     + `  return GenIcon(${iconTreeStr})(props);\n`
     + `};\n`
 
-    const cjsTemplate = `module.exports.${iconName} = function ${iconName} (props) {\n`
+    const cjsFilePath = path.resolve(miaIconsPackageDir, `${iconName}.js`)
+    const cjsTemplate = `// THIS FILE IS AUTO GENERATED\n`
+    + `var GenIcon = require('../lib').GenIcon\n`
+    + `module.exports.${iconName} = function ${iconName} (props) {\n`
     + `  return GenIcon(${iconTreeStr})(props);\n`
     + `};\n`
 
-    const declarationsTemplate = `export declare const ${iconName}: IconType;\n`
+    const declarationsFilePath = path.resolve(miaIconsPackageDir, `${iconName}.d.ts`)
+    const declarationsTemplate = `// THIS FILE IS AUTO GENERATED\n`
+    + `import { IconType } from '../lib/index.mjs'\n`
+    + `export declare const ${iconName}: IconType;\n`
 
-    await fs.appendFile(esmIndexPath, esmTemplate, 'utf-8')
-    await fs.appendFile(cjsIndexPath, cjsTemplate, 'utf-8')
-    await fs.appendFile(declarationsPath, declarationsTemplate, 'utf-8')
+    await fs.writeFile(esmFilePath, esmTemplate, 'utf-8')
+    await fs.writeFile(cjsFilePath, cjsTemplate, 'utf-8')
+    await fs.writeFile(declarationsFilePath, declarationsTemplate, 'utf-8')
   })
 
   await Promise.all(promises)
 }
 
 async function main(): Promise<void> {
-  await initialize()
-  await copyReactIconsPackages()
+  console.info(`» Start icons building process`)
+
+  await setup()
+
+  console.debug(`» Downloading icons from react-icons v${REACT_ICONS_VERSION} archive...`)
+  await downloadReactIconsPackage()
+  console.debug('» Icon files downloaded and extracted')
+
   await buildMiaIcons()
+  console.debug('» Mia-Platform icons built')
 }
 
 main()
