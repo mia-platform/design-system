@@ -24,13 +24,23 @@ import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.t
 import { ButtonProps } from './Button.props'
 import styles from './Button.module.css'
 
-const { button, buttonSm, buttonSmIconOnly, buttonMd, buttonMdIconOnly, buttonLg, buttonGhost, buttonText } = styles
+const {
+  button,
+  buttonSm,
+  buttonSmIconOnly,
+  buttonMd,
+  buttonMdIconOnly,
+  buttonLg,
+  buttonGhost,
+  buttonLink,
+  buttonText,
+} = styles
 
 const { Primary, Neutral, Danger } = Hierarchy
 const { Left, Right } = IconPosition
 const { Square } = Shape
 const { Small, Middle, Large } = Size
-const { Filled, Ghost } = Type
+const { Filled, Ghost, Link } = Type
 
 export const defaults = {
   hierarchy: Primary,
@@ -69,14 +79,21 @@ export const Button = ({
   const buttonClassNames = useMemo(() => classnames(
     [
       button,
-      children && size === Small && buttonSm,
-      !children && size === Small && buttonSmIconOnly,
-      children && size === Middle && buttonMd,
-      !children && size === Middle && buttonMdIconOnly,
-      size === Large && buttonLg,
-      type === Ghost && buttonGhost,
+      children && size === Small && type !== Link && buttonSm,
+      !children && size === Small && type !== Link && buttonSmIconOnly,
+      children && size === Middle && type !== Link && buttonMd,
+      !children && size === Middle && type !== Link && buttonMdIconOnly,
+      size === Large && type !== Link && buttonLg,
+      (type === Ghost || type === Link) && buttonGhost,
+      type === Link && buttonLink,
     ]
   ), [children, size, type])
+
+  const buttonTextClassNames = useMemo(() => classnames(
+    [
+      type !== Link && buttonText,
+    ]
+  ), [type])
 
   return (
     <AntButton
@@ -96,7 +113,7 @@ export const Button = ({
       {...href && { href, rel: 'noopener noreferrer', target }}
     >
       {iconPosition === Left && icon}
-      {children && <div className={buttonText}>{children}</div>}
+      {children && <div className={buttonTextClassNames}>{children}</div>}
       {iconPosition === Right && icon}
     </AntButton>
   )

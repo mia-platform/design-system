@@ -22,6 +22,7 @@ import { action } from '@storybook/addon-actions'
 import { Button } from '.'
 import { Icon } from '../Icon'
 import { defaults } from './Button'
+import { BodyS } from '../Typography/BodyX/BodyS'
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 
@@ -100,6 +101,24 @@ export const DangerGhost: Story = {
     type: Button.Type.Ghost,
   },
 }
+
+export const PrimaryLink: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Primary,
+    type: Button.Type.Link,
+    href: '#',
+    // children: <BodyS isBold>{'Button'}</BodyS>,
+  },
+  decorators: [(_Story, context) => {
+    return (
+      <Button
+        {...context.args}
+      />
+    )
+  }],
+}
+
 
 export const SquareShape: Story = {
   args: {

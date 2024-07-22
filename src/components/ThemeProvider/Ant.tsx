@@ -58,7 +58,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
 
   token: {
     // Palette
-    colorPrimary: palette?.primary?.[600],
+    colorPrimary: palette?.primary?.[600], // default
     colorSuccess: palette?.success?.[600],
     colorInfo: palette?.info?.[600],
     colorWarning: palette?.warning?.[600],
@@ -68,6 +68,10 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     colorBgLayout: palette?.background?.primary?.[200],
     colorBgBase: palette?.background?.primary?.[400],
     colorBgElevated: palette?.background?.primary?.[600],
+    colorPrimaryHover: palette?.action?.primary.hover, // hover
+    colorPrimaryActive: palette?.action?.primary.active, // active
+    colorLink: 'yellow',
+    colorLinkHover: 'yellow',
 
     // Typography
     fontFamily: typography?.bodyS?.fontFamily ?? DEFAULT_FONT_FAMILY,

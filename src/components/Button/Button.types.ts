@@ -48,4 +48,5 @@ export enum Type {
   Filled = 'filled',
   Outlined = 'outlined',
   Ghost = 'ghost',
+  Link = 'link',
 }

@@ -126,6 +126,7 @@ export type ButtonProps = {
    * - "outlined": medium-emphasis button with a stroke around the button container and no fill,
    *   typically used for secondary actions;
    * - "ghost": transparent button with no stroke, typically used for links.
+   * - "link": button link without padding and margin.
    */
   type?: Type,
 }
