@@ -280,6 +280,19 @@ exports[`Button Component renders neutral ghost button correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button Component renders neutral link button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-default button buttonGhost buttonLink"
+    type="button"
+  >
+    <div>
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button Component renders neutral outline button correctly 1`] = `
 <DocumentFragment>
   <button
@@ -412,6 +425,33 @@ exports[`Button Component renders small button correctly 1`] = `
     >
       Button
     </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders small button icon only correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-sm button buttonSmIconOnly"
+    type="button"
+  >
+    <svg
+      aria-label="PiCircleHalfTiltLight"
+      color="white"
+      fill="currentColor"
+      height="16"
+      role="img"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: white;"
+      viewBox="0 0 256 256"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+      />
+    </svg>
   </button>
 </DocumentFragment>
 `;

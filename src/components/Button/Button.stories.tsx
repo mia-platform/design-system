@@ -118,6 +118,23 @@ export const PrimaryLinkBold: Story = {
   },
 }
 
+export const NeutralLink: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Neutral,
+    type: Button.Type.Link,
+  },
+}
+
+export const NeutralLinkBold: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Neutral,
+    type: Button.Type.Link,
+    children: <div style={{ fontWeight: 'var(--typography-bodySBold-fontWeight, 600)' }}>{'Button'}</div>,
+  },
+}
+
 export const DangerLink: Story = {
   args: {
     ...meta.args,
