@@ -61,6 +61,8 @@
   padding: 0;
   border: 0;
   height: auto;
+  width: fit-content;
+  text-decoration: none;
 }
 
 .buttonText {
