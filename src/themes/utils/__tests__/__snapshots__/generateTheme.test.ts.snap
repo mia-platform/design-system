@@ -15,6 +15,13 @@ exports[`Generate Theme generates theme correctly from generator that is not rec
       },
     },
   },
+  "shape": {
+    "border": {
+      "radius": {
+        "sharp": 0,
+      },
+    },
+  },
 }
 `;
 
@@ -30,6 +37,14 @@ exports[`Generate Theme generates theme correctly from recursived generator 1`] 
           "hover": "#00000014",
           "selected": "#ff544f3d",
         },
+      },
+    },
+  },
+  "shape": {
+    "border": {
+      "radius": {
+        "anotherSharp": 0,
+        "sharp": 0,
       },
     },
   },
