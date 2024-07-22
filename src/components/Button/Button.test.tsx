@@ -67,6 +67,16 @@ describe('Button Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('renders primary link button correctly', () => {
+    const { asFragment } = render(<Button hierarchy={Button.Hierarchy.Primary} type={Button.Type.Link}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('renders danger link button correctly', () => {
+    const { asFragment } = render(<Button hierarchy={Button.Hierarchy.Danger} type={Button.Type.Link}>{'Button'}</Button>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('renders square button correctly', () => {
     const { asFragment } = render(<Button icon={icon} />)
     expect(asFragment()).toMatchSnapshot()

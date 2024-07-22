@@ -89,12 +89,6 @@ export const Button = ({
     ]
   ), [children, size, type])
 
-  const buttonTextClassNames = useMemo(() => classnames(
-    [
-      type !== Link && buttonText,
-    ]
-  ), [type])
-
   return (
     <AntButton
       block={isBlock}
@@ -113,7 +107,7 @@ export const Button = ({
       {...href && { href, rel: 'noopener noreferrer', target }}
     >
       {iconPosition === Left && icon}
-      {children && <div className={buttonTextClassNames}>{children}</div>}
+      {children && <div className={type !== Link ? buttonText : undefined}>{children}</div>}
       {iconPosition === Right && icon}
     </AntButton>
   )

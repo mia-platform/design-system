@@ -22,7 +22,6 @@ import { action } from '@storybook/addon-actions'
 import { Button } from '.'
 import { Icon } from '../Icon'
 import { defaults } from './Button'
-import { BodyS } from '../Typography/BodyX/BodyS'
 
 const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
 
@@ -107,18 +106,34 @@ export const PrimaryLink: Story = {
     ...meta.args,
     hierarchy: Button.Hierarchy.Primary,
     type: Button.Type.Link,
-    href: '#',
-    // children: <BodyS isBold>{'Button'}</BodyS>,
   },
-  decorators: [(_Story, context) => {
-    return (
-      <Button
-        {...context.args}
-      />
-    )
-  }],
 }
 
+export const PrimaryLinkBold: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Primary,
+    type: Button.Type.Link,
+    children: <div style={{ fontWeight: 'var(--typography-bodySBold-fontWeight, 600)' }}>{'Button'}</div>,
+  },
+}
+
+export const DangerLink: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Danger,
+    type: Button.Type.Link,
+  },
+}
+
+export const DangerLinkBold: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Danger,
+    type: Button.Type.Link,
+    children: <div style={{ fontWeight: 'var(--typography-bodySBold-fontWeight, 600)' }}>{'Button'}</div>,
+  },
+}
 
 export const SquareShape: Story = {
   args: {

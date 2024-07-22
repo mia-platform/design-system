@@ -153,6 +153,19 @@ exports[`Button Component renders danger ghost button correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button Component renders danger link button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonGhost buttonLink"
+    type="button"
+  >
+    <div>
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button Component renders danger outline button correctly 1`] = `
 <DocumentFragment>
   <button
@@ -322,6 +335,19 @@ exports[`Button Component renders primary ghost button correctly 1`] = `
     <div
       class="buttonText"
     >
+      Button
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component renders primary link button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost button buttonGhost buttonLink"
+    type="button"
+  >
+    <div>
       Button
     </div>
   </button>
