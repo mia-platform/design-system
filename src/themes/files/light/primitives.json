@@ -580,63 +580,63 @@
   "fontWeights": {
     "regular": {
       "$type": "dimension",
-      "$value": "400"
+      "$value": 400
     },
     "semi-bold": {
       "$type": "dimension",
-      "$value": "600"
+      "$value": 600
     }
   },
   "lineHeights": {
     "0": {
       "$type": "dimension",
-      "$value": "12px"
+      "$value": 12
     },
     "1": {
       "$type": "dimension",
-      "$value": "16px"
+      "$value": 16
     },
     "2": {
       "$type": "dimension",
-      "$value": "24px"
+      "$value": 24
     },
     "3": {
       "$type": "dimension",
-      "$value": "32px"
+      "$value": 32
     }
   },
   "fontSize": {
     "0": {
       "$type": "dimension",
-      "$value": "10px"
+      "$value": 10
     },
     "1": {
       "$type": "dimension",
-      "$value": "11px"
+      "$value": 11
     },
     "2": {
       "$type": "dimension",
-      "$value": "12px"
+      "$value": 12
     },
     "3": {
       "$type": "dimension",
-      "$value": "14px"
+      "$value": 14
     },
     "4": {
       "$type": "dimension",
-      "$value": "16px"
+      "$value": 16
     },
     "5": {
       "$type": "dimension",
-      "$value": "18px"
+      "$value": 18
     },
     "6": {
       "$type": "dimension",
-      "$value": "20px"
+      "$value": 20
     },
     "7": {
       "$type": "dimension",
-      "$value": "24px"
+      "$value": 24
     }
   },
   "textDecoration": {
