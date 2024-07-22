@@ -16,5 +16,11 @@
         "$value": "#00000014"
       }
     }
+  },
+  "sizing": {
+    "none": {
+      "$type": "dimension",
+      "$value": 0
+    }
   }
 }

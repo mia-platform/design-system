@@ -29,8 +29,16 @@ import { generateTheme } from '../utils/generateTheme'
 
 const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, theme, file)
 
+const folderNamesToIgnore = [
+  '.DS_Store',
+]
+
 function main(): void {
   for (const themeName of readdirSync(THEMES_DIR)) {
+    if (folderNamesToIgnore.includes(themeName)) {
+      continue
+    }
+
     const themeGeneratorFilePath = getFile(themeName, THEME_GENERATOR_FILE)
     const primitivesFilePath = getFile(themeName, PRIMITIVES_FILE)
 

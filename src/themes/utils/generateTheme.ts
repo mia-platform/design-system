@@ -44,10 +44,10 @@ const resolveThemeValues = (themeValues: Theme, themeTokens: object) => (nodeVal
   const path = nodeValue.replace(PARENTHESES, '').split('.')
   const { $value } = get(themeValues, path) || {}
 
-  if (!$value) {
+  if ($value === undefined) {
     // The value is referred to another token value instead of a primitive
     const { $value: tokenValue } = get(themeTokens, path) || {}
-    if (!tokenValue) {
+    if (tokenValue === undefined) {
       throw new Error(`Something went wrong resolving ${nodeValue}`)
     }
 
