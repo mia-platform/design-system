@@ -591,24 +591,6 @@
       }
     },
     "action": {
-      "disabled": {
-        "main": {
-          "$type": "color",
-          "$value": "{palette.secondary.100}"
-        },
-        "bold": {
-          "$type": "color",
-          "$value": "{palette.secondary.200}"
-        },
-        "bolder": {
-          "$type": "color",
-          "$value": "{palette.secondary.300}"
-        },
-        "contrastText": {
-          "$type": "color",
-          "$value": "{palette.secondary.400}"
-        }
-      },
       "primary": {
         "default": {
           "$type": "color",

@@ -29,13 +29,13 @@ import { generateTheme } from '../utils/generateTheme'
 
 const getFile = (theme: string, file: string): string => resolve(THEMES_DIR, theme, file)
 
-const folderNameToIgnore = [
+const folderNamesToIgnore = [
   '.DS_Store',
 ]
 
 function main(): void {
   for (const themeName of readdirSync(THEMES_DIR)) {
-    if (folderNameToIgnore.includes(themeName)) {
+    if (folderNamesToIgnore.includes(themeName)) {
       continue
     }
 

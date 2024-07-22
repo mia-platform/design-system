@@ -174,12 +174,6 @@
       "900": "#361400"
     },
     "action": {
-      "disabled": {
-        "main": "#f2f2f2",
-        "bold": "#e5e5e5",
-        "bolder": "#cdcdcd",
-        "contrastText": "#acacac"
-      },
       "primary": {
         "default": "#1261e4",
         "hover": "#1890ff",
