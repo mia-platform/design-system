@@ -30,19 +30,7 @@ exports[`Card Component renders card correctly 1`] = `
             >
               <svg
                 aria-label="PiBookOpen"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 color="#004aaa"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-                aria-label="PiBookOpen"
->>>>>>> e40dbed (Fixed tests)
-=======
->>>>>>> f9ef184 (Snapshots)
-                color="#005dc9"
->>>>>>> 1eba8d9 (Snapshots and docs)
                 fill="currentColor"
                 height="16"
                 role="img"
@@ -131,19 +119,7 @@ exports[`Card Component renders header only 1`] = `
             >
               <svg
                 aria-label="PiBookOpen"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 color="#004aaa"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-                aria-label="PiBookOpen"
->>>>>>> e40dbed (Fixed tests)
-=======
->>>>>>> f9ef184 (Snapshots)
-                color="#005dc9"
->>>>>>> 1eba8d9 (Snapshots and docs)
                 fill="currentColor"
                 height="16"
                 role="img"
