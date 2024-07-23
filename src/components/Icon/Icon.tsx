@@ -37,7 +37,7 @@ export const Icon = ({
   size = defaults.size,
   color,
 }: IconProps): ReactElement | null => {
-  const { color: defaultColor, size: defaultSize, className } = useContext(IconContext)
+  const { size: defaultSize, className } = useContext(IconContext)
 
   const IconComponent = name in customIcons
     ? customIcons?.[name as keyof typeof customIcons]
@@ -52,7 +52,7 @@ export const Icon = ({
     <IconComponent
       aria-label={name}
       className={className}
-      color={color ?? defaultColor}
+      color={color ?? 'currentColor'}
       height={size ?? defaultSize}
       role={'img'}
       size={size ?? defaultSize}

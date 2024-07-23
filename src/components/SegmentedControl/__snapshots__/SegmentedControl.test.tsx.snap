@@ -13,6 +13,7 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="MiaPlatform"
+        color="currentColor"
         data-file-name="SvgMiaPlatform"
         height="16"
         role="img"
@@ -29,11 +30,13 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="PiChartPieSlice"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 256 256"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -52,11 +55,13 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineDesktop"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -75,11 +80,13 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineFieldTime"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         t="1569683618210"
         version="1.1"
         viewBox="0 0 1024 1024"
@@ -104,11 +111,13 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineLock"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -127,11 +136,13 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineFork"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -150,11 +161,13 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineFilter"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -182,6 +195,7 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="MiaPlatform"
+        color="currentColor"
         data-file-name="SvgMiaPlatform"
         height="16"
         role="img"
@@ -198,11 +212,13 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="PiChartPieSlice"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 256 256"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -221,11 +237,13 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineDesktop"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -244,11 +262,13 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineFieldTime"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         t="1569683618210"
         version="1.1"
         viewBox="0 0 1024 1024"
@@ -273,11 +293,13 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineLock"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -296,11 +318,13 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineFork"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -319,11 +343,13 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineFilter"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -351,6 +377,7 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="MiaPlatform"
+        color="currentColor"
         data-file-name="SvgMiaPlatform"
         height="16"
         role="img"
@@ -367,11 +394,13 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="PiChartPieSlice"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 256 256"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -390,11 +419,13 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineDesktop"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -413,11 +444,13 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineFieldTime"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         t="1569683618210"
         version="1.1"
         viewBox="0 0 1024 1024"
@@ -442,11 +475,13 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineLock"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -465,11 +500,13 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineFork"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -488,11 +525,13 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineFilter"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -520,6 +559,7 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="MiaPlatform"
+        color="currentColor"
         data-file-name="SvgMiaPlatform"
         height="16"
         role="img"
@@ -536,11 +576,13 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="PiChartPieSlice"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 256 256"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -559,11 +601,13 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineDesktop"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -582,11 +626,13 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineFieldTime"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         t="1569683618210"
         version="1.1"
         viewBox="0 0 1024 1024"
@@ -611,11 +657,13 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineLock"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -634,11 +682,13 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineFork"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -657,11 +707,13 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineFilter"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
