@@ -123,10 +123,10 @@ export type ButtonProps = {
    * Defines the button type. Either:
    *
    * - "filled": button with a solid fill, typically used for primary actions;
-   * - "outlined": medium-emphasis button with a stroke around the button container and no fill,
+   * - "outlined": medium-emphasis button with a stroke around the button container and no fill;
    *   typically used for secondary actions;
-   * - "ghost": transparent button with no stroke, typically used for links.
-   * - "link": button link without padding and margin.
+   * - "ghost": transparent button with no stroke;
+   * - "link": button link without padding and margin;
    */
   type?: Type,
 }
