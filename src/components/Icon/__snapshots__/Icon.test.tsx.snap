@@ -74,24 +74,8 @@ exports[`Icon Component renders Phosphor icon correctly 1`] = `
 exports[`Icon Component renders custom icon correctly 1`] = `
 <DocumentFragment>
   <svg
-<<<<<<< HEAD
-<<<<<<< HEAD
-    aria-label="MiaPlatform"
-    color="currentColor"
-    data-file-name="SvgMiaPlatform"
-    height="24"
-    role="img"
-    size="24"
-    width="24"
-  />
-</DocumentFragment>
-`;
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-=======
->>>>>>> edbef77 (Snapshots)
     aria-label="HeartSvg"
+    color="currentColor"
     fill="currentColor"
     height="1em"
     role="img"

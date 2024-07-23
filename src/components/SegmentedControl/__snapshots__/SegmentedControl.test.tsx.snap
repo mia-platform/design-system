@@ -11,30 +11,15 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       aria-label="one"
       class="segmentedOption disabled"
     >
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <svg
-        aria-label="MiaPlatform"
-        color="currentColor"
-        data-file-name="SvgMiaPlatform"
-        height="16"
-        role="img"
-        size="16"
-        width="16"
-      />
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-=======
->>>>>>> edbef77 (Snapshots)
       <svg
         aria-label="AiOutlineHome"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -53,21 +38,7 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="PiChartPieSlice"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="PiChartPieSlice"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -92,21 +63,7 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineDesktop"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineDesktop"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -131,21 +88,7 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineFieldTime"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFieldTime"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -176,21 +119,7 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineLock"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineLock"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -215,21 +144,7 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineFork"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFork"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -254,21 +169,7 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
     >
       <svg
         aria-label="AiOutlineFilter"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFilter"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -300,30 +201,15 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       aria-label="one"
       class="segmentedOption"
     >
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <svg
-        aria-label="MiaPlatform"
-        color="currentColor"
-        data-file-name="SvgMiaPlatform"
-        height="16"
-        role="img"
-        size="16"
-        width="16"
-      />
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-=======
->>>>>>> edbef77 (Snapshots)
       <svg
         aria-label="AiOutlineHome"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -342,21 +228,7 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="PiChartPieSlice"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="PiChartPieSlice"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -381,21 +253,7 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineDesktop"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineDesktop"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -420,21 +278,7 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineFieldTime"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFieldTime"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -465,21 +309,7 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineLock"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineLock"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -504,21 +334,7 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineFork"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFork"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -543,21 +359,7 @@ exports[`Segmented Control Component labeled options renders options correctly 1
     >
       <svg
         aria-label="AiOutlineFilter"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFilter"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -589,30 +391,15 @@ exports[`Segmented Control Component labeled options renders primary options cor
       aria-label="one"
       class="segmentedOption primary"
     >
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <svg
-        aria-label="MiaPlatform"
-        color="currentColor"
-        data-file-name="SvgMiaPlatform"
-        height="16"
-        role="img"
-        size="16"
-        width="16"
-      />
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-=======
->>>>>>> edbef77 (Snapshots)
       <svg
         aria-label="AiOutlineHome"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -631,21 +418,7 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="PiChartPieSlice"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="PiChartPieSlice"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -670,21 +443,7 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineDesktop"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineDesktop"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -709,21 +468,7 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineFieldTime"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFieldTime"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -754,21 +499,7 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineLock"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineLock"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -793,21 +524,7 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineFork"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFork"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -832,21 +549,7 @@ exports[`Segmented Control Component labeled options renders primary options cor
     >
       <svg
         aria-label="AiOutlineFilter"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFilter"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -878,30 +581,15 @@ exports[`Segmented Control Component labeled options renders vertical options co
       aria-label="one"
       class="segmentedOption vertical"
     >
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <svg
-        aria-label="MiaPlatform"
-        color="currentColor"
-        data-file-name="SvgMiaPlatform"
-        height="16"
-        role="img"
-        size="16"
-        width="16"
-      />
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-=======
-=======
->>>>>>> edbef77 (Snapshots)
       <svg
         aria-label="AiOutlineHome"
+        color="currentColor"
         fill="currentColor"
         height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
+        style="color: currentColor;"
         viewBox="0 0 1024 1024"
         width="16"
         xmlns="http://www.w3.org/2000/svg"
@@ -920,21 +608,7 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="PiChartPieSlice"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="PiChartPieSlice"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -959,21 +633,7 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineDesktop"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineDesktop"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -998,21 +658,7 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineFieldTime"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFieldTime"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -1043,21 +689,7 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineLock"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineLock"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -1082,21 +714,7 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineFork"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFork"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
@@ -1121,21 +739,7 @@ exports[`Segmented Control Component labeled options renders vertical options co
     >
       <svg
         aria-label="AiOutlineFilter"
-<<<<<<< HEAD
-<<<<<<< HEAD
         color="currentColor"
-=======
-=======
->>>>>>> b0c6630 (Snapshots and docs)
-<<<<<<< HEAD
->>>>>>> 288452d (Snapshots and docs)
-=======
-=======
-        aria-label="AiOutlineFilter"
->>>>>>> e40dbed (Fixed tests)
->>>>>>> 4ee905d (Fixed tests)
-=======
->>>>>>> edbef77 (Snapshots)
         fill="currentColor"
         height="16"
         role="img"
