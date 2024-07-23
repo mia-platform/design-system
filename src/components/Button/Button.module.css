@@ -57,6 +57,14 @@
   background-color: transparent;
 }
 
+.buttonLink {
+  padding: 0;
+  border: 0;
+  height: auto;
+  width: fit-content;
+  text-decoration: none;
+}
+
 .buttonText {
   padding: 0 var(--spacing-padding-xs, 4px);
 }

@@ -101,6 +101,57 @@ export const DangerGhost: Story = {
   },
 }
 
+export const PrimaryLink: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Primary,
+    type: Button.Type.Link,
+  },
+}
+
+export const PrimaryLinkBold: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Primary,
+    type: Button.Type.Link,
+    children: <div style={{ fontWeight: 'var(--typography-bodySBold-fontWeight, 600)' }}>{'Button'}</div>,
+  },
+}
+
+export const NeutralLink: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Neutral,
+    type: Button.Type.Link,
+  },
+}
+
+export const NeutralLinkBold: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Neutral,
+    type: Button.Type.Link,
+    children: <div style={{ fontWeight: 'var(--typography-bodySBold-fontWeight, 600)' }}>{'Button'}</div>,
+  },
+}
+
+export const DangerLink: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Danger,
+    type: Button.Type.Link,
+  },
+}
+
+export const DangerLinkBold: Story = {
+  args: {
+    ...meta.args,
+    hierarchy: Button.Hierarchy.Danger,
+    type: Button.Type.Link,
+    children: <div style={{ fontWeight: 'var(--typography-bodySBold-fontWeight, 600)' }}>{'Button'}</div>,
+  },
+}
+
 export const SquareShape: Story = {
   args: {
     ...meta.args,
