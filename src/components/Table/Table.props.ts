@@ -20,7 +20,7 @@
 
 import { HTMLAttributes, ReactElement } from 'react'
 
-import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, Scroll, Size, TableAction, UserAction } from './Table.types'
+import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, RowState, Scroll, Size, TableAction, UserAction } from './Table.types'
 
 export type TableProps<RecordType extends GenericRecord> = {
 
@@ -288,4 +288,13 @@ export type TableProps<RecordType extends GenericRecord> = {
    *   - scrollToFirstRowOnChange: Whether to automatically scroll to the first row of the page after onChange is invoked. <br> `boolean`
    */
   scroll?: Scroll,
+
+  /**
+   * Configuration for row state in table.
+   *
+   * @param record - The data record for the row.
+   * @param index - The index of the row.
+   * @returns The state of the row.
+   */
+  rowState?: (record: RecordType, index: number) => RowState | undefined
 }

@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { WithExternalFiltersAndSorters, alignedColumns, columns, customActions, data, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
+import { Action, RowState } from './Table.types'
+import { TableRecordState, WithExternalFiltersAndSorters, alignedColumns, columns, columnsState, customActions, data, dataState, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
 import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
-import { Action } from './Table.types'
 import { Table } from '.'
 
 describe('Table Component', () => {
@@ -425,6 +425,19 @@ describe('Table Component', () => {
 
   test('renders spanned columns correctly', async() => {
     const { asFragment } = render(<Table {...props} columns={spannedColumns} />)
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders rows with state correctly', async() => {
+    const { asFragment } = render(
+      <Table
+        {...props}
+        columns={columnsState}
+        data={dataState}
+        rowState={(record: TableRecordState) => (record.state?.toLowerCase() as RowState)}
+      />
+    )
+
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
 })

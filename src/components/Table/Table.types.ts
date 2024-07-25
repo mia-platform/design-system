@@ -50,6 +50,13 @@ export enum SortOrder {
   Descend = 'descend',
 }
 
+export enum RowState {
+  Info = 'info',
+  Warning = 'warning',
+  Error = 'error',
+  Success = 'success'
+}
+
 export type Scroll = {
   x?: number | string | true,
   y?: number | string,

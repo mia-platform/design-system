@@ -19,13 +19,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
+import { Action, RowState as RowStateEnum } from './Table.types'
 import {
   TableRecord,
+  TableRecordState,
   WithExternalFiltersAndSorters,
   alignedColumns,
   columns,
+  columnsState,
   customActions,
   data,
+  dataState,
   expandable,
   filteredAndSortedColumns,
   footer,
@@ -38,7 +42,6 @@ import {
   sizedColumns,
   spannedColumns,
 } from './Table.mocks'
-import { Action } from './Table.types'
 import { Table } from '.'
 import { defaults } from './Table'
 
@@ -154,4 +157,13 @@ export const ColumnWidth: Story = {
 
 export const ColumnSpan: Story = {
   args: { ...meta.args, columns: spannedColumns, isBordered: true },
+}
+
+export const RowState: Story = {
+  args: {
+    ...meta.args,
+    columns: columnsState,
+    data: dataState,
+    rowState: (record: TableRecordState) => (record.state?.toLowerCase() as RowStateEnum),
+  },
 }

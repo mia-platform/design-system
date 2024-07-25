@@ -37,6 +37,48 @@
     padding-top: var(--column-padding) !important;
     padding-bottom: var(--column-padding) !important;
   }
+
+  :global(.mia-platform-table-row) {
+    &.infoState {
+      & > td {
+        background: var(--palette-info-100, #E5F0FC);
+      }
+
+      &:hover > td {
+        background: var(--palette-info-200, #D2E5FC);
+      }
+    }
+
+    &.warningState {
+      & > td {
+        background: var(--palette-warning-100, #FFF0B3);
+      }
+
+      &:hover > td {
+        background: var(--palette-warning-200, #FFE1A0);
+      }
+    }
+
+    &.errorState {
+      & > td {
+        background: var(--palette-error-100, #FFEBEB);
+      }
+
+      &:hover > td {
+        background: var(--palette-error-200, #FFDBDB);
+      }
+    }
+
+    &.successState {
+      & > td {
+        background: var(--palette-success-100, #DEF8D8);
+      }
+
+      &:hover > td {
+        background: var(--palette-success-200, #C8F2BF);
+      }
+    }
+  }
 }
 
 .action {

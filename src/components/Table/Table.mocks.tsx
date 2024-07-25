@@ -200,6 +200,20 @@ export const expandable = (callbacks: Callbacks = {}): ExpandableConfig<TableRec
   ...callbacks,
 })
 
+/** Row State */
+
+export type TableRecordState = TableRecord & { state?: string }
+
+export const dataState: TableRecordState[] = [
+  { state: 'Default', field1: 'Value 1', field2: 'Value 1', field3: 'Value 1', nested: { field4: 'Value 1' } },
+  { state: 'Info', field1: 'Value 2', field2: 'Value 2', field3: 'Value 2', nested: { field4: 'Value 2' } },
+  { state: 'Warning', field1: 'Value 3', field2: 'Value 3', field3: 'Value 3', nested: { field4: 'Value 3' } },
+  { state: 'Error', field1: 'Value 4', field2: 'Value 4', field3: 'Value 4', nested: { field4: 'Value 4' } },
+  { state: 'Success', field1: 'Value 5', field2: 'Value 5', field3: 'Value 5', nested: { field4: 'Value 5' } },
+]
+
+export const columnsState: ColumnType<TableRecordState>[] = [{ dataIndex: 'state', title: 'State' }, ...columns]
+
 /** Pagination */
 
 export const pagination = (callbacks: Callbacks = {}): Pagination => ({
