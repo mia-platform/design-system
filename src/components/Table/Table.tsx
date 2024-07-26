@@ -17,9 +17,9 @@
  */
 
 import { Table as AntTable, Skeleton } from 'antd'
-import { ReactElement, useMemo } from 'react'
+import { ReactElement, useCallback, useMemo } from 'react'
 
-import { Action, ColumnAlignment, ColumnFilterMode, GenericRecord, Layout, Size, SortOrder } from './Table.types'
+import { Action, ColumnAlignment, ColumnFilterMode, GenericRecord, Layout, RowState, Size, SortOrder } from './Table.types'
 import { Icon } from '../Icon'
 import { IconProps } from '../Icon/Icon.props'
 import { TableProps } from './Table.props'
@@ -85,6 +85,7 @@ export const Table = <RecordType extends GenericRecord>({
   pagination = defaults.pagination,
   size = defaults.size,
   scroll = defaults.scroll,
+  rowState,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
   const iconSize = theme?.shape?.size?.md as IconProps['size'] || 16
@@ -118,6 +119,12 @@ export const Table = <RecordType extends GenericRecord>({
     ...pagination,
   }), [pagination])
 
+  const rowClassName = useCallback((record: RecordType, index: number) => {
+    const state = rowState?.(record, index)
+    const isValidState = state && Object.values(Table.RowState).includes(state)
+    return isValidState ? styles[`${state}State`] : ''
+  }, [rowState])
+
   return (
     <Skeleton
       active
@@ -133,6 +140,7 @@ export const Table = <RecordType extends GenericRecord>({
         loading={false}
         locale={intlLocale}
         pagination={tablePagination}
+        rowClassName={rowState ? rowClassName : undefined}
         rowKey={rowKey}
         rowSelection={rowSelection}
         scroll={scroll}
@@ -159,3 +167,4 @@ Table.Layout = Layout
 Table.Size = Size
 Table.SortOrder = SortOrder
 Table.Action = Action
+Table.RowState = RowState
