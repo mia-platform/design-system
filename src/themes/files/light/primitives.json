@@ -574,6 +574,10 @@
     },
     "code": {
       "$type": "string",
+      "$value": "IBM Plex Mono"
+    },
+    "code-alternate": {
+      "$type": "string",
       "$value": "Menlo"
     }
   },

@@ -280,86 +280,100 @@
       "fontFamily": "Inter",
       "lineHeight": 32,
       "fontSize": 24,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "h2": {
       "fontFamily": "Inter",
       "lineHeight": 32,
       "fontSize": 20,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "h3": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 18,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "h4": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 16,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "bodyLBold": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 18,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "bodyL": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 18,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     },
     "bodyMBold": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 16,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "bodyM": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 16,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     },
     "bodySBold": {
       "fontFamily": "Inter",
       "lineHeight": 16,
       "fontSize": 14,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "bodyS": {
       "fontFamily": "Inter",
       "lineHeight": 16,
       "fontSize": 14,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     },
     "action": {
       "fontFamily": "Inter",
       "lineHeight": 16,
       "fontSize": 14,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#1261e4"
     },
     "link": {
       "fontFamily": "Inter",
       "lineHeight": 16,
       "fontSize": 14,
       "fontWeight": 400,
-      "textDecoration": "underline"
+      "textDecoration": "underline",
+      "color": "#1261e4"
     },
     "caption": {
       "fontFamily": "Inter",
       "lineHeight": 12,
       "fontSize": 12,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     },
     "code": {
-      "fontFamily": "Menlo",
+      "fontFamily": "IBM Plex Mono",
       "lineHeight": 24,
       "fontSize": 14,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     }
   }
 }
