@@ -1,0 +1,15 @@
+.h1 {
+    color: var(--typography-h1-color, #636363);
+}
+
+.h2 {
+    color: var(--typography-h2-color, #636363);
+}
+
+.h3 {
+    color: var(--typography-h3-color, #636363);
+}
+
+.h4 {
+    color: var(--typography-h4-color, #636363);
+}
