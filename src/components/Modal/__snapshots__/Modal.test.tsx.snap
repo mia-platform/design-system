@@ -206,7 +206,7 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -344,7 +344,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -520,7 +520,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -726,7 +726,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -1034,7 +1034,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -1290,7 +1290,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title

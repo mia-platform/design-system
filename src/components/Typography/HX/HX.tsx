@@ -17,12 +17,16 @@
  */
 
 import { Typography as AntTypography } from 'antd'
-import { ReactElement } from 'react'
+import { ReactElement, useMemo } from 'react'
+import classnames from 'classnames'
 
 import { HXLevel } from './HX.types'
 import { HXProps } from './HX.props'
+import styles from './HX.module.css'
 
 const { Title: AntTitle } = AntTypography
+
+const { h1, h2, h3, h4 } = styles
 
 export const defaults = {
   copyable: false,
@@ -42,9 +46,17 @@ export const HX = ({
   level,
   role,
 }: HXProps & HXLevel): ReactElement => {
+  const classNames = useMemo(() => classnames([
+    level === 1 && h1,
+    level === 2 && h2,
+    level === 3 && h3,
+    level === 4 && h4,
+  ]), [level])
+
   return (
     <AntTitle
       aria-label={typeof children === 'string' ? children : ''}
+      className={classNames}
       copyable={copyable}
       ellipsis={ellipsis}
       level={level}

@@ -574,7 +574,7 @@
     },
     "code": {
       "$type": "string",
-      "$value": "Menlo"
+      "$value": "IBM Plex Mono"
     }
   },
   "lineHeights": {
