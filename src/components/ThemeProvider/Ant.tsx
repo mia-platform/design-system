@@ -57,7 +57,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     ? darkAlgorithm
     : defaultAlgorithm,
 
-  // TODO: Add global tokens required by Tree
+  // TODO: Missing: colorBorder, colorText, colorTextDisabled, fontFamily (what is that we need there?)
   token: {
     // Palette
     colorPrimary: palette?.primary?.[600],
@@ -81,7 +81,10 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
 
     // Spacing
     padding: parse(spacing?.padding?.lg),
+    paddingXS: parse(spacing?.padding?.sm),
+    paddingXXS: parse(spacing?.padding?.xs),
     margin: parse(spacing?.margin?.lg),
+    marginXXS: parse(spacing?.margin?.xs),
 
     // Shape
     borderRadius: parse(shape?.border?.radius.md),
