@@ -27,6 +27,7 @@ import MenuTheme from '../Menu/Menu.theme'
 import TableTheme from '../Table/Table.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from './ThemeProvider.props'
+import TreeTheme from '../Tree/Tree.theme'
 import TypographyTheme from '../Typography/Typography.theme'
 
 const ANT_PREFIX = 'mia-platform'
@@ -56,6 +57,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     ? darkAlgorithm
     : defaultAlgorithm,
 
+  // TODO: Add global tokens required by Tree
   token: {
     // Palette
     colorPrimary: palette?.primary?.[600],
@@ -93,6 +95,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Message: FeedbackMessageTheme({ palette }),
     Menu: MenuTheme({ palette, shape, spacing, typography }),
     Table: TableTheme({ palette, spacing }),
+    Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
   },
 })
