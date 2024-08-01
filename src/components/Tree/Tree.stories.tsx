@@ -23,93 +23,60 @@ import { Icon } from '../Icon'
 import { Tree } from '.'
 import { defaults } from './Tree'
 
-const icon = <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icon name="PiFile" size={16} /></div>
-
 const treeData: TreeDataNode[] = [
   {
-    title: 'parent 1',
-    key: '0-0',
-    icon,
+    title: 'Fruits',
+    key: 'fruit',
     children: [
       {
-        title: 'parent 1-0',
-        key: '0-0-0',
-        icon: <Icon name="PiFile" size={16} />,
+        title: 'Favorites',
+        key: 'favorites',
         children: [
           {
-            title: 'leaf',
-            key: '0-0-0-0',
-            icon: <Icon name="PiFile" size={16} />,
+            title: 'Apple',
+            key: 'apple',
           },
           {
-            title: (
-              <>
-                <div>multiple line title</div>
-                <div>multiple line title</div>
-              </>
-            ),
-            key: '0-0-0-1',
-            icon: <Icon name="PiFile" size={16} />,
+            title: 'Banana',
+            key: 'banana',
           },
           {
-            title: 'leaf',
-            key: '0-0-0-2',
-            icon: <Icon name="PiFile" size={16} />,
+            title: 'Peach',
+            key: 'peach',
           },
         ],
       },
       {
-        title: 'parent 1-1',
-        key: '0-0-1',
-        icon: <Icon name="PiFile" size={16} />,
+        title: 'Others',
+        key: 'others',
         children: [
           {
-            title: 'leaf',
-            key: '0-0-1-0',
-            icon: <Icon name="PiFile" size={16} />,
-          },
-        ],
-      },
-      {
-        title: 'parent 1-2',
-        key: '0-0-2',
-        icon: <Icon name="PiFile" size={16} />,
-        children: [
-          {
-            title: 'leaf',
-            key: '0-0-2-0',
-            icon: <Icon name="PiFile" size={16} />,
+            title: 'Strawberry',
+            key: 'strawberry',
           },
           {
-            title: 'leaf',
-            key: '0-0-2-1',
-            icon: <Icon name="PiFile" size={16} />,
+            title: 'Pineapple',
+            key: 'pineapple',
+          },
+          {
+            title: 'Fig',
+            key: 'fig',
           },
         ],
       },
     ],
   },
   {
-    title: 'parent 2',
-    key: '0-1',
-    icon: <Icon name="PiFile" size={16} />,
+    title: 'Vegetables',
+    key: 'vegetables',
     children: [
       {
-        title: 'parent 2-0',
-        key: '0-1-0',
-        icon: <Icon name="PiFile" size={16} />,
-        children: [
-          {
-            title: 'leaf',
-            key: '0-1-0-0',
-            icon: <Icon name="PiFile" size={16} />,
-          },
-          {
-            title: 'leaf',
-            key: '0-1-0-1',
-            icon: <Icon name="PiFile" size={16} />,
-          },
-        ],
+        title: 'Spinach',
+        key: 'spinach',
+      },
+      {
+        title: 'Leek',
+        key: 'leek',
       },
     ],
   },
@@ -137,7 +104,64 @@ export const TreeWithoutLines: Story = {
 }
 
 export const TreeWithIcons: Story = {
-  args: { ...meta.args, showIcon: true },
+  args: {
+    ...meta.args,
+    showIcon: true,
+    treeData: [
+      {
+        title: 'Arrows',
+        key: 'arrow',
+        children: [
+          {
+            title: 'Up',
+            key: 'arrow-up',
+            icon: <Icon name="PiArrowUp" size={16} />,
+          },
+          {
+            title: 'Left',
+            key: 'arrow-left',
+            icon: <Icon name="PiArrowLeft" size={16} />,
+          },
+          {
+            title: 'Down',
+            key: 'arrow-down',
+            icon: <Icon name="PiArrowDown" size={16} />,
+          },
+          {
+            title: 'Right',
+            key: 'arrow-right',
+            icon: <Icon name="PiArrowRight" size={16} />,
+          },
+        ],
+      },
+      {
+        title: 'Carets',
+        key: 'caret',
+        children: [
+          {
+            title: 'Up',
+            key: 'caret-up',
+            icon: <Icon name="PiCaretUp" size={16} />,
+          },
+          {
+            title: 'Left',
+            key: 'caret-left',
+            icon: <Icon name="PiCaretLeft" size={16} />,
+          },
+          {
+            title: 'Down',
+            key: 'caret-down',
+            icon: <Icon name="PiCaretDown" size={16} />,
+          },
+          {
+            title: 'Right',
+            key: 'caret-right',
+            icon: <Icon name="PiCaretRight" size={16} />,
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const TreeWithCheckboxes: Story = {
