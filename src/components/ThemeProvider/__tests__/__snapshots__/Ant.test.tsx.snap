@@ -40,6 +40,11 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "headerBg": "#f2f2f2",
       "rowHoverBg": "#00000029",
     },
+    "Tree": {
+      "nodeHoverBg": "#898989",
+      "nodeSelectedBg": "#1890ff",
+      "titleHeight": 24,
+    },
     "Typography": {
       "fontSizeHeading1": 24,
       "fontSizeHeading2": 20,
@@ -118,6 +123,11 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "headerBg": undefined,
       "rowHoverBg": undefined,
     },
+    "Tree": {
+      "nodeHoverBg": undefined,
+      "nodeSelectedBg": undefined,
+      "titleHeight": undefined,
+    },
     "Typography": {
       "fontSizeHeading1": undefined,
       "fontSizeHeading2": undefined,
@@ -195,6 +205,11 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "colorText": "#636363",
       "headerBg": "#f2f2f2",
       "rowHoverBg": "#00000029",
+    },
+    "Tree": {
+      "nodeHoverBg": "#898989",
+      "nodeSelectedBg": "#1890ff",
+      "titleHeight": 24,
     },
     "Typography": {
       "fontSizeHeading1": 24,
