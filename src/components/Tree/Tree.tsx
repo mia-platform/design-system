@@ -17,6 +17,7 @@
  */
 
 import { Tree as AntTree } from 'antd'
+import { CaretDownOutlined } from '@ant-design/icons'
 import { ReactElement } from 'react'
 
 import { TreeProps } from './Tree.props'
@@ -39,12 +40,16 @@ export const Tree = ({
   showLine,
   treeData,
 }: TreeProps): ReactElement => {
-  // TODO: We can show the caret only if showLine is false. Find a solution about this.
   return (
     <AntTree
       checkable={checkable}
       showIcon={showIcon}
       showLine={showLine}
+      // We need to explicitly use the CaretDownOutline as icon for the switcher to ensure
+      // that it is always used (also when the tree has "showLine" with "true")
+      // We use the AntDesign icon because it includes instructions used by the Tree Component for
+      // automatically handle the rotation
+      switcherIcon={<CaretDownOutlined />}
       treeData={treeData}
       onCheck={onCheck}
       onSelect={onSelect}
