@@ -111,6 +111,7 @@ export const TreeWithIcons: Story = {
       {
         title: 'Arrows',
         key: 'arrow',
+        icon: <Icon name="PiArrowUpFill" size={16} />,
         children: [
           {
             title: 'Up',
@@ -137,6 +138,7 @@ export const TreeWithIcons: Story = {
       {
         title: 'Carets',
         key: 'caret',
+        icon: <Icon name="PiCaretUpFill" size={16} />,
         children: [
           {
             title: 'Up',
