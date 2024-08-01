@@ -21,7 +21,9 @@ import { CaretDownOutlined } from '@ant-design/icons'
 import { ReactElement } from 'react'
 
 import { TreeProps } from './Tree.props'
+import styles from './Tree.module.css'
 
+const { customTree } = styles
 export const defaults = {
   showLine: true,
 }
@@ -43,6 +45,7 @@ export const Tree = ({
   return (
     <AntTree
       checkable={checkable}
+      className={customTree}
       showIcon={showIcon}
       showLine={showLine}
       // We need to explicitly use the CaretDownOutline as icon for the switcher to ensure

@@ -1,0 +1,7 @@
+.customTree {
+    /* This is required to ensure that Icon components of the Design System are aligned with the node text */
+    :global(.mia-platform-tree-node-content-wrapper) :global(.mia-platform-tree-iconEle) {
+        align-items: center;
+        display: inline-flex;
+    }
+}
