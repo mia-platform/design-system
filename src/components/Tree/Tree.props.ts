@@ -26,11 +26,6 @@ export type TreeProps = {
   checkable?: boolean,
 
   /**
-   * Specifies the keys of the checked treeNodes
-   */
-  checkedKeys?: string[] | { checked: string[], halfChecked: string[] },
-
-  /**
    * Check treeNode precisely; parent treeNode and children treeNodes are not associated
    */
   checkStrictly?: boolean,

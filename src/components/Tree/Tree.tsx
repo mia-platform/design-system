@@ -37,7 +37,6 @@ export const defaults = {
 export const Tree = ({
   checkable,
   checkStrictly,
-  checkedKeys,
   defaultCheckedKeys,
   defaultExpandAll,
   defaultExpandParent,
@@ -56,7 +55,6 @@ export const Tree = ({
     <AntTree
       checkStrictly={checkStrictly}
       checkable={checkable}
-      checkedKeys={checkedKeys}
       className={customTree}
       defaultCheckedKeys={defaultCheckedKeys}
       defaultExpandAll={defaultExpandAll}
