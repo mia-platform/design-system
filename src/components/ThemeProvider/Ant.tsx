@@ -57,16 +57,18 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     ? darkAlgorithm
     : defaultAlgorithm,
 
-  // TODO: Missing: colorBorder, colorText, colorTextDisabled, fontFamily (what is that we need there?)
+  // TODO: Missing: Typography/Font Weight/fontWeightNormal (?), Typography/Steps/Global/lineHeight (?)
   token: {
     // Palette
+    colorBorder: palette?.text?.neutral?.subtler,
     colorPrimary: palette?.primary?.[600],
     colorSuccess: palette?.success?.[600],
     colorInfo: palette?.info?.[600],
     colorWarning: palette?.warning?.[600],
     colorError: palette?.error?.[600],
-    colorText: palette?.common?.grey?.[700] ?? DEFAULT_COLOR,
+    colorText: palette?.text?.neutral?.main ?? DEFAULT_COLOR,
     colorTextBase: palette?.common?.grey?.[700] ?? DEFAULT_COLOR,
+    colorTextDisabled: palette?.text?.neutral?.subtle,
     colorBgLayout: palette?.background?.primary?.[200],
     colorBgBase: palette?.background?.primary?.[400],
     colorBgElevated: palette?.background?.primary?.[600],
