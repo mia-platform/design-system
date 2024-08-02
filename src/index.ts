@@ -29,6 +29,7 @@ import { SegmentedControl } from './components/SegmentedControl'
 import { Table } from './components/Table'
 import { Tag } from './components/Tag'
 import { ThemeProvider } from './components/ThemeProvider'
+import { Tree } from './components/Tree'
 import { Typography } from './components/Typography'
 import hooks from './hooks'
 import themes from './themes'
@@ -46,6 +47,7 @@ export {
   Table,
   Tag,
   ThemeProvider,
+  Tree,
   Typography,
   hooks,
   themes,

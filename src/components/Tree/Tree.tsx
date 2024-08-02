@@ -23,7 +23,7 @@ import { ReactElement } from 'react'
 import { TreeProps } from './Tree.props'
 import styles from './Tree.module.css'
 
-const { customTree } = styles
+const { tree } = styles
 export const defaults = {
   showLine: true,
 }
@@ -55,7 +55,7 @@ export const Tree = ({
     <AntTree
       checkStrictly={checkStrictly}
       checkable={checkable}
-      className={customTree}
+      className={tree}
       defaultCheckedKeys={defaultCheckedKeys}
       defaultExpandAll={defaultExpandAll}
       defaultExpandParent={defaultExpandParent}
