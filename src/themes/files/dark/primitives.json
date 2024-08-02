@@ -41,37 +41,37 @@
         "$type": "color",
         "$value": "#181818"
       },
-      "White": {
-        "$type": "color",
-        "$value": "#ffffff"
-      },
       "Black": {
         "$type": "color",
         "$value": "#000000"
       },
-      "100A": {
+      "White": {
         "$type": "color",
-        "$value": "#00000014"
-      },
-      "200A": {
-        "$type": "color",
-        "$value": "#00000029"
-      },
-      "300A": {
-        "$type": "color",
-        "$value": "#0000003d"
-      },
-      "400A": {
-        "$type": "color",
-        "$value": "#00000052"
-      },
-      "500A": {
-        "$type": "color",
-        "$value": "#0000007a"
+        "$value": "#ffffff"
       },
       "600A": {
         "$type": "color",
-        "$value": "#000000a3"
+        "$value": "#898989a3"
+      },
+      "500A": {
+        "$type": "color",
+        "$value": "#8989897a"
+      },
+      "400A": {
+        "$type": "color",
+        "$value": "#89898952"
+      },
+      "300A": {
+        "$type": "color",
+        "$value": "#8989893d"
+      },
+      "200A": {
+        "$type": "color",
+        "$value": "#8989891f"
+      },
+      "100A": {
+        "$type": "color",
+        "$value": "#89898914"
       }
     },
     "Blue": {
