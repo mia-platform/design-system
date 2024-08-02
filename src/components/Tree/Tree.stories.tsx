@@ -174,3 +174,18 @@ export const TreeWithCheckboxes: Story = {
     onCheck: (checkedItems, event) => console.log({ selectedItems: checkedItems, event }),
   },
 }
+
+export const TreeWithLimitedHeight: Story = {
+  args: {
+    ...meta.args,
+    height: 200,
+  },
+}
+
+export const TreeWithVirtualScrolling: Story = {
+  args: {
+    ...meta.args,
+    height: 200,
+    virtual: true,
+  },
+}

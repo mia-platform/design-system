@@ -26,6 +26,51 @@ export type TreeProps = {
   checkable?: boolean,
 
   /**
+   * Specifies the keys of the checked treeNodes
+   */
+  checkedKeys?: string[] | { checked: string[], halfChecked: string[] },
+
+  /**
+   * Check treeNode precisely; parent treeNode and children treeNodes are not associated
+   */
+  checkStrictly?: boolean,
+
+  /**
+   * Specifies the keys of the default checked treeNodes
+   */
+  defaultCheckedKeys?: string[]
+
+  /**
+   * Whether to expand all treeNodes by default. Default: `false`.
+   */
+  defaultExpandAll?: boolean
+
+  /**
+   * Specify the keys of the default expanded treeNodes
+   */
+  defaultExpandedKeys?: string[]
+
+  /**
+   * If auto expand parent treeNodes when init. Default: `true`.
+   */
+  defaultExpandParent?: boolean
+
+  /**
+   * Specifies the keys of the default selected treeNodes
+   */
+  defaultSelectedKeys?: string[]
+
+  /**
+   * If set to `true`, the tree component is fully disabled
+   */
+  disabled?: boolean
+
+  /**
+   * Config virtual scroll height. Will not support horizontal scroll when enable this.
+   */
+  height?: number
+
+  /**
    * Emit an event if a checkbox has been pressed. Works only if `checkable` is set to `true`.
    */
   onCheck?: AntTreeProps['onCheck'],
@@ -51,4 +96,9 @@ export type TreeProps = {
    * The list of nodes to be included in the tree component
    */
   treeData: TreeDataNode[]
+
+  /**
+   * If set to `true`, virtual scrolling is enabled. Default: `false`.
+   */
+  virtual?: boolean
 }

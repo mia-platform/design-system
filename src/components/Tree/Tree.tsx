@@ -36,16 +36,35 @@ export const defaults = {
  */
 export const Tree = ({
   checkable,
+  checkStrictly,
+  checkedKeys,
+  defaultCheckedKeys,
+  defaultExpandAll,
+  defaultExpandParent,
+  defaultExpandedKeys,
+  defaultSelectedKeys,
+  disabled,
+  height,
   onCheck,
   onSelect,
   showIcon,
   showLine,
   treeData,
+  virtual,
 }: TreeProps): ReactElement => {
   return (
     <AntTree
+      checkStrictly={checkStrictly}
       checkable={checkable}
+      checkedKeys={checkedKeys}
       className={customTree}
+      defaultCheckedKeys={defaultCheckedKeys}
+      defaultExpandAll={defaultExpandAll}
+      defaultExpandParent={defaultExpandParent}
+      defaultExpandedKeys={defaultExpandedKeys}
+      defaultSelectedKeys={defaultSelectedKeys}
+      disabled={disabled}
+      height={height}
       showIcon={showIcon}
       showLine={showLine}
       // We need to explicitly use the CaretDownOutline as icon for the switcher to ensure
@@ -54,6 +73,7 @@ export const Tree = ({
       // automatically handle the rotation
       switcherIcon={<CaretDownOutlined />}
       treeData={treeData}
+      virtual={virtual}
       onCheck={onCheck}
       onSelect={onSelect}
     />
