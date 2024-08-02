@@ -26,7 +26,7 @@ import { defaults } from './Tree'
 const treeData: TreeDataNode[] = [
   {
     title: 'Fruits',
-    key: 'fruit',
+    key: 'fruits',
     children: [
       {
         title: 'Favorites',

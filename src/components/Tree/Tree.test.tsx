@@ -17,16 +17,15 @@
  */
 
 import { TreeDataNode } from 'antd'
-import userEvent from '@testing-library/user-event'
 
-import { render, screen, waitFor } from '../../test-utils'
+import { fireEvent, render, screen, waitFor } from '../../test-utils'
 import { Icon } from '../Icon'
 import { Tree } from '.'
 
 const defaultTreeData: TreeDataNode[] = [
   {
     title: 'Fruits',
-    key: 'fruit',
+    key: 'fruits',
     children: [
       {
         title: 'Favorites',
@@ -94,7 +93,7 @@ describe('Tree Component', () => {
 
     expect(screen.getByText('Vegetables')).toBeInTheDocument()
     const [, vegetablesCaret] = screen.getAllByRole('img', { name: /caret-down/i })
-    userEvent.click(vegetablesCaret)
+    fireEvent.click(vegetablesCaret)
 
     await waitFor(() => { expect(screen.getByText('Spinach')).toBeInTheDocument() })
     expect(screen.getByText('Leek')).toBeInTheDocument()
@@ -105,34 +104,45 @@ describe('Tree Component', () => {
     render(<Tree treeData={defaultTreeData} onSelect={onSelectMock} />)
 
     const [, vegetablesCaret] = screen.getAllByRole('img', { name: /caret-down/i })
-    userEvent.click(vegetablesCaret)
+    fireEvent.click(vegetablesCaret)
 
     const leekNode = await screen.findByText('Leek')
-    userEvent.click(leekNode)
+    fireEvent.click(leekNode)
 
     await waitFor(() => { expect(onSelectMock).toHaveBeenCalledTimes(1) })
     expect(onSelectMock).toHaveBeenCalledWith(['leek'], expect.any(Object))
   })
 
   test('nodes can be checked', async() => {
-    // TODO: Fails. Looks like checkbox are not there. Plus they have not the "checkbox" role
-    const onCheckMock = jest.fn()
-    render(<Tree checkable={true} treeData={defaultTreeData} onCheck={onCheckMock} />)
+    const treeData: TreeDataNode[] = [
+      {
+        title: 'Fruits',
+        key: 'fruits',
+      },
+      {
+        title: 'Vegetables',
+        key: 'vegetables',
+      },
+    ]
 
-    screen.logTestingPlaygroundURL()
-    const checkboxes = await screen.findAllByRole('checkbox')
+    const onCheckMock = jest.fn()
+    const { container } = render(<Tree checkable={true} treeData={treeData} onCheck={onCheckMock} />)
+
+    // Unfortunately, checkboxes inside the tree does not include the "checkbox" attribute
+    // We need to find them via class name
+    const checkboxes = container.getElementsByClassName('mia-platform-tree-checkbox')
     expect(checkboxes).toHaveLength(2)
 
-    userEvent.click(checkboxes[0])
-    expect(onCheckMock).toHaveBeenCalledTimes(1)
+    fireEvent.click(checkboxes[0])
+    await waitFor(() => { expect(onCheckMock).toHaveBeenCalledTimes(1) })
     expect(onCheckMock).toHaveBeenCalledWith(['fruits'], expect.any(Object))
 
-    userEvent.click(checkboxes[1])
-    expect(onCheckMock).toHaveBeenCalledTimes(2)
+    fireEvent.click(checkboxes[1])
+    await waitFor(() => { expect(onCheckMock).toHaveBeenCalledTimes(2) })
     expect(onCheckMock).toHaveBeenCalledWith(['fruits', 'vegetables'], expect.any(Object))
 
-    userEvent.click(checkboxes[0])
-    expect(onCheckMock).toHaveBeenCalledTimes(3)
+    fireEvent.click(checkboxes[0])
+    await waitFor(() => { expect(onCheckMock).toHaveBeenCalledTimes(3) })
     expect(onCheckMock).toHaveBeenCalledWith(['vegetables'], expect.any(Object))
   })
 
@@ -171,7 +181,7 @@ describe('Tree Component', () => {
 
     expect(screen.getByRole('img', { name: 'PiArrowUpFill' })).toBeInTheDocument()
 
-    userEvent.click(screen.getByRole('img', { name: /caret-down/i }))
+    fireEvent.click(screen.getByRole('img', { name: /caret-down/i }))
 
     await waitFor(() => { expect(screen.getByRole('img', { name: 'PiArrowUp' })).toBeInTheDocument() })
     expect(screen.getByRole('img', { name: 'PiArrowDown' })).toBeInTheDocument()
