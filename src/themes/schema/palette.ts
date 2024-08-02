@@ -95,6 +95,20 @@ type Palette = {
       secondary: ColorInteractions,
       danger: ColorInteractions
     }
+  },
+  text: {
+    neutral: {
+      bold: Color,
+      main: Color,
+      subtle: Color,
+      subtler: Color,
+      inverted: Color
+    },
+    primary: {
+      bold: Color,
+      main: Color,
+      subtle: Color,
+    }
   }
 }
 
