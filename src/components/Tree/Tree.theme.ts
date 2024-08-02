@@ -30,6 +30,6 @@ import Theme from '../../themes/schema'
 
 export default ({ palette, shape }: Partial<Theme>): ComponentsTheme['Tree'] => ({
   nodeHoverBg: palette?.action?.alternate?.secondary?.hover,
-  nodeSelectedBg: palette?.action?.alternate?.secondary?.selected,
+  nodeSelectedBg: palette?.action?.alternate?.primary?.selected,
   titleHeight: parse(shape?.size?.lg),
 })
