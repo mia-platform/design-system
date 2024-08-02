@@ -171,7 +171,7 @@ export const TreeWithCheckboxes: Story = {
     ...meta.args,
     checkable: true,
     // eslint-disable-next-line no-console
-    onCheck: (checkedItems, event) => console.log({ selectedItems: checkedItems, event }),
+    onCheck: (checkedItems, event) => console.log({ checkedItems, event }),
   },
 }
 
