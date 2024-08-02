@@ -3,7 +3,7 @@
 exports[`Tree Component renders Tree 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-tree mia-platform-tree-icon-hide customTree"
+    class="mia-platform-tree mia-platform-tree-icon-hide tree"
     role="tree"
   >
     <div>
