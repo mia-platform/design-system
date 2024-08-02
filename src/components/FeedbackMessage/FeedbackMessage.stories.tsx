@@ -17,6 +17,7 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { PiCheck, PiInfo, PiSpinner, PiWarning, PiXCircle } from 'react-icons/pi'
 import { createContext, useContext, useMemo, useState } from 'react'
 
 import { Button } from '../Button'
@@ -46,35 +47,35 @@ export const FeedbackMessages: Story = {
       <div style={{ display: 'flex', gap: '4px' }}>
         <Button
           hierarchy={Button.Hierarchy.Neutral}
-          icon={<Icon color="blue" name="PiInfo" size={16} />}
+          icon={<Icon color="blue" component={PiInfo} size={16} />}
           onClick={() => info({ message })}
         >
           Info
         </Button>
         <Button
           hierarchy={Button.Hierarchy.Neutral}
-          icon={<Icon color="green" name="PiCheck" size={16} />}
+          icon={<Icon color="green" component={PiCheck} size={16} />}
           onClick={() => success({ message })}
         >
           Success
         </Button>
         <Button
           hierarchy={Button.Hierarchy.Neutral}
-          icon={<Icon name="PiSpinner" size={16} />}
+          icon={<Icon component={PiSpinner} size={16} />}
           onClick={() => loading({ message })}
         >
           Loading
         </Button>
         <Button
           hierarchy={Button.Hierarchy.Neutral}
-          icon={<Icon color="orange" name="PiWarning" size={16} />}
+          icon={<Icon color="orange" component={PiWarning} size={16} />}
           onClick={() => warning({ message })}
         >
           Warning
         </Button>
         <Button
           hierarchy={Button.Hierarchy.Neutral}
-          icon={<Icon color="red" name="PiXCircle" size={16} />}
+          icon={<Icon color="red" component={PiXCircle} size={16} />}
           onClick={() => error({ message })}
         >
           Error

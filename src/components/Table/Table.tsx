@@ -17,6 +17,7 @@
  */
 
 import { Table as AntTable, Skeleton } from 'antd'
+import { PiPencilSimpleLine, PiTrash } from 'react-icons/pi'
 import { ReactElement, useCallback, useMemo } from 'react'
 
 import { Action, ColumnAlignment, ColumnFilterMode, GenericRecord, Layout, RowState, Size, SortOrder } from './Table.types'
@@ -101,13 +102,13 @@ export const Table = <RecordType extends GenericRecord>({
     ...customActions?.map(getAction) || [],
     ...editAction?.onClick || onEditRow ? [getAction({
       dataIndex: Edit,
-      icon: <Icon color="currentColor" name="PiPencilSimpleLine" size={iconSize} />,
+      icon: <Icon color="currentColor" component={PiPencilSimpleLine} size={iconSize} />,
       onClick: onEditRow,
       ...editAction,
     })] : [],
     ...deleteAction?.onClick || onDeleteRow ? [getAction({
       dataIndex: Delete,
-      icon: <Icon color="currentColor" name="PiTrash" size={iconSize} />,
+      icon: <Icon color="currentColor" component={PiTrash} size={iconSize} />,
       isDanger: true,
       onClick: onDeleteRow,
       ...deleteAction,

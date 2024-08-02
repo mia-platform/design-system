@@ -16,47 +16,49 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useContext } from 'react'
+import { ReactNode, useContext } from 'react'
 import { IconContext } from 'react-icons'
 
-import { IconProps, customIcons, reactIcons } from './Icon.props'
-import log from '../../utils/log'
-
-export const defaults = {
-  size: 24 as const,
-}
+import { IconProps } from './Icon.props'
 
 /**
- * UI component for displaying different icon packs (Ant, Feather, Phosphor) and custom SVGs
+ * UI component for displaying SVGs.
  *
- * @link https://react-icons.github.io/react-icons/
- * @returns {Icon} Icon component
+ * The component needs to be provided with a React function component returning the SVG to render. This can be achieved,
+ * for example, using the [SVGR](https://react-svgr.com/) library to load the assets, or importing components from an icon
+ * pack such as [React Icons](https://react-icons.github.io/react-icons/).
+ *
+ * For convenience, the design system itself ships several icon packs ready to use with this components, namely:
+ * - [Ant Design Icons](https://react-icons.github.io/react-icons/icons/ai/) importable from `@mia-platform-internal/console-design-system-react/icons/ai/<name-of-the-icon>`
+ * - [Phosphor Icons](https://react-icons.github.io/react-icons/icons/pi/) importable from `@mia-platform-internal/console-design-system-react/icons/pi/<name-of-the-icon>`
+ * - [Feather Icons](https://react-icons.github.io/react-icons/icons/fi/) importable from `@mia-platform-internal/console-design-system-react/icons/fi/<name-of-the-icon>`
+ * - [Mia-Platform Icons](/docs/icons-mia-platform--docs) importable from
+ * `@mia-platform-internal/console-design-system-react/icons/mi/<name-of-the-icon>`
+ *
+ * To use one of the aforementioned icons, just import the component and pass it to `<Icon />`:
+ *
+ * ```tsx
+ * import { PiAddressBook } from "@mia-platform-internal/console-design-system-react/icons/pi/PiAddressBook"
+ *
+ * const App = () => <Icon component={PiAddressBook} />
+ * ```
+ *
+ * @returns {ReactNode} Icon component
  */
 export const Icon = ({
-  name,
-  size = defaults.size,
+  component,
+  size = 24,
   color,
-}: IconProps): ReactElement | null => {
+}: IconProps): ReactNode => {
   const { size: defaultSize, className } = useContext(IconContext)
 
-  const IconComponent = name in customIcons
-    ? customIcons?.[name as keyof typeof customIcons]
-    : reactIcons?.[name as keyof typeof reactIcons]
-
-  if (!IconComponent) {
-    log.error(`icon name ${name} not supported`)
-    return null
-  }
-
-  return (
-    <IconComponent
-      aria-label={name}
-      className={className}
-      color={color ?? 'currentColor'}
-      height={size ?? defaultSize}
-      role={'img'}
-      size={size ?? defaultSize}
-      width={size ?? defaultSize}
-    />
-  )
+  return component?.({
+    'aria-label': component.name,
+    className,
+    color: color ?? 'currentColor',
+    height: size ?? defaultSize,
+    role: 'img',
+    size: size ?? defaultSize,
+    width: size ?? defaultSize,
+  })
 }
