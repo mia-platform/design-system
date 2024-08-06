@@ -55,8 +55,8 @@ export const Tree = ({
 }: TreeProps): ReactElement => {
   return (
     <AntTree
-      // NOTE: This props force a controlled state to the component
-      // that is enabled also if its value is undefined, probably
+      // NOTE: The presence of this property forces a controlled state to the component
+      // even if its value is undefined, probably
       // because the controlled mode is based exclusively on the props key definitions.
       {...checkedKeys ? { checkedKeys } : {}}
       checkStrictly={checkStrictly}
