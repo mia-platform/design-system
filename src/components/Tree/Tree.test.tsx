@@ -113,6 +113,30 @@ describe('Tree Component', () => {
     expect(onSelectMock).toHaveBeenCalledWith(['leek'], expect.any(Object))
   })
 
+  test('nodes can be unselectable', async() => {
+    const onCheckMock = jest.fn()
+    const onSelectMock = jest.fn()
+    render(
+      <Tree
+        checkable
+        selectable={false}
+        treeData={defaultTreeData}
+        onCheck={onCheckMock}
+        onSelect={onSelectMock}
+      />
+    )
+
+    const [, vegetablesCaret] = screen.getAllByRole('img', { name: /caret-down/i })
+    fireEvent.click(vegetablesCaret)
+
+    const leekNode = await screen.findByText('Leek')
+    fireEvent.click(leekNode)
+
+    await waitFor(() => { expect(onCheckMock).toHaveBeenCalledTimes(1) })
+    expect(onCheckMock).toHaveBeenCalledWith(['leek'], expect.any(Object))
+    expect(onSelectMock).not.toHaveBeenCalled()
+  })
+
   test('nodes can be checked', async() => {
     const treeData: TreeDataNode[] = [
       {
@@ -187,5 +211,37 @@ describe('Tree Component', () => {
     expect(screen.getByRole('img', { name: 'PiArrowDown' })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'PiArrowLeft' })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'PiArrowRight' })).toBeInTheDocument()
+  })
+
+  test('the nodes are checked correctly in controlled mode', () => {
+    const treeData: TreeDataNode[] = [
+      {
+        title: 'Fruits',
+        key: 'fruits',
+      },
+      {
+        title: 'Vegetables',
+        key: 'vegetables',
+      },
+    ]
+
+    const onCheckMock = jest.fn()
+    const { container } = render(
+      <Tree
+        checkable={true}
+        checkedKeys={['vegetables']}
+        treeData={treeData}
+        onCheck={onCheckMock}
+      />
+    )
+
+    // Unfortunately, checkboxes inside the tree does not include the "checkbox" attribute
+    // We need to find them via class name
+    const checkboxes = container.getElementsByClassName('mia-platform-tree-checkbox')
+    expect(checkboxes).toHaveLength(2)
+
+    const [fruitCheckbox, vegetablesCheckbox] = checkboxes
+    expect(fruitCheckbox).not.toHaveClass(/tree-checkbox-checked/i)
+    expect(vegetablesCheckbox).toHaveClass(/tree-checkbox-checked/i)
   })
 })

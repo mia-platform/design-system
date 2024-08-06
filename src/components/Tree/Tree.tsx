@@ -36,6 +36,7 @@ export const defaults = {
  */
 export const Tree = ({
   checkable,
+  checkedKeys,
   checkStrictly,
   defaultCheckedKeys,
   defaultExpandAll,
@@ -46,6 +47,7 @@ export const Tree = ({
   height,
   onCheck,
   onSelect,
+  selectable,
   showIcon,
   showLine,
   treeData,
@@ -53,6 +55,10 @@ export const Tree = ({
 }: TreeProps): ReactElement => {
   return (
     <AntTree
+      // NOTE: This props force a controlled state to the component
+      // that is enabled also if its value is undefined, probably
+      // because the controlled mode is based exclusively on the props key definitions.
+      {...checkedKeys ? { checkedKeys } : {}}
       checkStrictly={checkStrictly}
       checkable={checkable}
       className={tree}
@@ -63,6 +69,7 @@ export const Tree = ({
       defaultSelectedKeys={defaultSelectedKeys}
       disabled={disabled}
       height={height}
+      selectable={selectable}
       showIcon={showIcon}
       showLine={showLine}
       // We need to explicitly use the CaretDownOutline as icon for the switcher to ensure

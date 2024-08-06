@@ -166,10 +166,21 @@ export const TreeWithIcons: Story = {
   },
 }
 
-export const TreeWithCheckboxes: Story = {
+export const TreeWithCheckboxesAndNotSelectable: Story = {
   args: {
     ...meta.args,
     checkable: true,
+    selectable: false,
+    // eslint-disable-next-line no-console
+    onCheck: (checkedItems, event) => console.log({ checkedItems, event }),
+  },
+}
+
+export const ControlledTreeWithCheckboxes: Story = {
+  args: {
+    ...meta.args,
+    checkable: true,
+    checkedKeys: ['apple'],
     // eslint-disable-next-line no-console
     onCheck: (checkedItems, event) => console.log({ checkedItems, event }),
   },
