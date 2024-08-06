@@ -50,6 +50,7 @@ export const Tree = ({
   showLine,
   treeData,
   virtual,
+  selectable,
 }: TreeProps): ReactElement => {
   return (
     <AntTree
@@ -63,6 +64,7 @@ export const Tree = ({
       defaultSelectedKeys={defaultSelectedKeys}
       disabled={disabled}
       height={height}
+      selectable={selectable}
       showIcon={showIcon}
       showLine={showLine}
       // We need to explicitly use the CaretDownOutline as icon for the switcher to ensure

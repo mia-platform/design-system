@@ -113,6 +113,19 @@ describe('Tree Component', () => {
     expect(onSelectMock).toHaveBeenCalledWith(['leek'], expect.any(Object))
   })
 
+  test('nodes cannot be selected', async() => {
+    const onSelectMock = jest.fn()
+    render(<Tree selectable={false} treeData={defaultTreeData} onSelect={onSelectMock} />)
+
+    const [, vegetablesCaret] = screen.getAllByRole('img', { name: /caret-down/i })
+    fireEvent.click(vegetablesCaret)
+
+    const leekNode = await screen.findByText('Leek')
+    fireEvent.click(leekNode)
+
+    expect(onSelectMock).toHaveBeenCalledTimes(0)
+  })
+
   test('nodes can be checked', async() => {
     const treeData: TreeDataNode[] = [
       {

@@ -175,6 +175,13 @@ export const TreeWithCheckboxes: Story = {
   },
 }
 
+export const TreeWithNotSelectableNodes: Story = {
+  args: {
+    ...meta.args,
+    selectable: false,
+  },
+}
+
 export const TreeWithLimitedHeight: Story = {
   args: {
     ...meta.args,

@@ -76,6 +76,11 @@ export type TreeProps = {
   onSelect?: AntTreeProps['onSelect'],
 
   /**
+   * Set to `true` if the nodes can be selected. Default: `true`
+   */
+  selectable?: boolean,
+
+  /**
    * If set to `true`, the tree will render the icons near to the label of each node.
    *
    * The icon shown must be defined in the node definition itself.
