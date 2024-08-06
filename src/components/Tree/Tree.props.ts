@@ -26,6 +26,15 @@ export type TreeProps = {
   checkable?: boolean,
 
   /**
+   * (Controlled) Specifies the keys of the checked treeNodes (PS: When this specifies the key of a treeNode
+   * which is also a parent treeNode, all the children treeNodes of will be checked; and vice versa,
+   * when it specifies the key of a treeNode which is a child treeNode, its parent treeNode will also be checked.
+   * When checkable and checkStrictly is true, its object has checked and halfChecked property.
+   * Regardless of whether the child or parent treeNode is checked, they won't impact each other
+   */
+  checkedKeys?: string[] | {checked: string[], halfChecked: string[]}
+
+  /**
    * Check treeNode precisely; parent treeNode and children treeNodes are not associated
    */
   checkStrictly?: boolean,
@@ -46,7 +55,7 @@ export type TreeProps = {
   defaultExpandedKeys?: string[]
 
   /**
-   * If auto expand parent treeNodes when init. Default: `true`.
+   * If set to `true`, expand the parent treeNodes on init. Default: `true`.
    */
   defaultExpandParent?: boolean
 
@@ -74,6 +83,13 @@ export type TreeProps = {
    * Emit an event when a node is selected (its label has been clicked on)
    */
   onSelect?: AntTreeProps['onSelect'],
+
+  /**
+   * If set to `true`, the node labels are selectable. Default: `true`.
+   *
+   * Note: The selected and checked keys are different and associated to different events.
+   */
+  selectable?: boolean,
 
   /**
    * If set to `true`, the tree will render the icons near to the label of each node.
