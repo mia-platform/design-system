@@ -97,6 +97,9 @@ export type DropdownProps = {
    */
   isDisabled?: boolean,
 
+  /**
+   * Allows to control the Dropdown label layout (accepts: horizontal, vertical)
+   */
   itemLayout?: ItemLayout,
 
   /**
