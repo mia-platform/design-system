@@ -16,18 +16,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement } from 'react'
+import { ReactElement, useMemo } from 'react'
+import classNames from 'classnames'
 
 import { DropdownItem } from '../../props'
-import styles from './label.module.css'
+import styles from '../../dropdown.module.css'
 
 const LABEL_DIVIDER = '·'
 
 type LabelProps = DropdownItem
 
 const Label = ({ danger, label, secondaryLabel }: LabelProps): ReactElement => {
-  const primaryLabelClassName = danger ? '' : styles.primaryLabel
-  const secondaryLabelClassName = danger ? '' : styles.secondaryLabel
+  const primaryLabelClassName = useMemo(() => classNames(
+    styles.primaryLabel,
+    danger ? styles.danger : undefined
+  ), [danger])
+
+  const secondaryLabelClassName = useMemo(() => classNames(
+    styles.secondaryLabel,
+    danger ? styles.danger : undefined
+  ), [danger])
 
   return (
     <div className={styles.labelContainer}>

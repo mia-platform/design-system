@@ -16,16 +16,33 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+
+.primaryLabel {
+  color: var(--palette-text-neutral-main, #636363);
+}
+
+.danger {
+  color: var(--palette-action-danger-default, #E50020);
+}
+
+.secondaryLabel {
+  color: var(--palette-text-neutral-subtle, #898989);
+}
+
+.dropdownWrapper {
+  & :global(.mia-platform-dropdown-menu-item-danger):hover {
+    /* overwrite antd default background */
+    background-color: var(--palette-action-danger-hover, #FF5453) !important;
+  }
+
+  & :global(.mia-platform-dropdown-menu-item-danger):hover .danger {
+    color: white;
+  }
+}
+
 .labelContainer {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-gap-sm, 8px);
-
-  & .primaryLabel {
-    color: var(--palette-text-neutral-main, #636363);
-  }
-
-  & .secondaryLabel {
-    color: var(--palette-text-neutral-subtle, #898989);
-  }
 }
+

@@ -21,6 +21,7 @@ import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
 
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger } from './props'
 import Label from './components/Label/Label'
+import styles from './dropdown.module.css'
 
 type ArrayElement<ArrayType extends readonly unknown[] | undefined> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -73,6 +74,7 @@ export const Dropdown = ({
       disabled={isDisabled}
       dropdownRender={dropdownRender}
       menu={menu}
+      overlayClassName={styles.dropdownWrapper}
       trigger={triggers}
     >
       {innerNode}

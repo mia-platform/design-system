@@ -35,7 +35,9 @@ const defaults: Partial<DropdownProps> = {
     id: 'id3',
     label: 'I am danger!',
     danger: true,
+    secondaryLabel: 'Some additional info 3',
   }],
+  triggers: [DropdownTrigger.Click],
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),
 }

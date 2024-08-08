@@ -24,6 +24,7 @@ import { Dropdown } from './Dropdown'
 const items: DropdownItem[] = [
   { id: '1', label: 'Label 1' },
   { id: '2', label: 'Label 2', secondaryLabel: 'Additional Info 2' },
+  { id: '3', label: 'Danger Label', secondaryLabel: 'Additional Info 2', danger: true },
 ]
 const defaultProps: DropdownProps = {
   items,
@@ -58,11 +59,12 @@ describe('Dropdown Component', () => {
 
       await screen.findByRole('menuitem', { name: 'Label 1' })
 
-      expect(screen.getAllByRole('menuitem')).toHaveLength(2)
+      expect(screen.getAllByRole('menuitem')).toHaveLength(3)
 
-      const [first, second] = screen.getAllByRole('menuitem')
+      const [first, second, third] = screen.getAllByRole('menuitem')
       expect(first).toMatchSnapshot()
       expect(second).toMatchSnapshot()
+      expect(third).toMatchSnapshot()
     })
   })
 
