@@ -43,6 +43,7 @@ const itemMatcher = (id: string) => (item: DropdownItem): boolean => item.id ===
 export const Dropdown = ({
   autoFocus,
   children,
+  isDisabled,
   items,
   onClick,
   triggers,
@@ -78,6 +79,7 @@ export const Dropdown = ({
   return (
     <AntdDropdown
       autoFocus={autoFocus}
+      disabled={isDisabled}
       dropdownRender={dropdownRender}
       menu={menu}
       trigger={triggers}

@@ -19,9 +19,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
+import { DropdownProps, DropdownTrigger } from './props'
 import { Button } from '../Button'
 import { Dropdown } from '.'
-import { DropdownProps } from './props'
 
 const defaults: Partial<DropdownProps> = {
   items: [{
@@ -49,6 +49,17 @@ type Story = StoryObj<typeof meta>
 
 export default meta
 
-export const BasicExample: Story = {
+export const BasicExample: Story = {}
 
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
+}
+
+export const ContextMenuTrigger: Story = {
+  args: {
+    children: <span>{'right-click on me'}</span>,
+    triggers: [DropdownTrigger.ContextMenu],
+  },
 }

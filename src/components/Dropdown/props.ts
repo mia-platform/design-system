@@ -43,10 +43,26 @@ export enum DropdownTrigger {
 }
 
 export type DropdownClickEvent = {
-  id: string
-  selectedPath: string[]
-  domEvent: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>
-  item?: DropdownItem
+
+  /**
+   * original dom event.
+   */
+  domEvent: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>,
+
+  /**
+   * id of the clicked item.
+   */
+  id: string,
+
+  /**
+   * selected item data.
+   */
+  item?: DropdownItem,
+
+  /**
+   * array of strings representing the selected item json path.
+   */
+  selectedPath: string[],
 }
 
 export type DropdownProps = {
@@ -66,6 +82,16 @@ export type DropdownProps = {
    */
   items: DropdownItem[],
 
+  /**
+   * Whether the dropdown menu is disabled.
+   */
+  isDisabled?: boolean,
+
+  /**
+   * @param DropdownClickEvent event contains the reference to the clicked item, specifically it holds
+   * - id: the id of the item
+   * - selectedPath: array of strings representing the selected item json path
+   */
   onClick: (event: DropdownClickEvent) => void
 
   /**
