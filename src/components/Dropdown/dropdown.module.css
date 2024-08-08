@@ -39,7 +39,7 @@
   }
 
   & :global(.mia-platform-dropdown-menu-item-danger):hover .danger {
-    color: white;
+    color: var(--palette-common-white, #ffffff);;
   }
 }
 
