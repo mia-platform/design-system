@@ -56,7 +56,7 @@ export const Dropdown = ({
       : null
   ), [children])
 
-  const onMenuClick = useCallback((antdEvent: AntdMenuClickEvent) => {
+  const onAntdMenuClick = useCallback((antdEvent: AntdMenuClickEvent) => {
     const event: DropdownClickEvent = {
       id: antdEvent.key,
       selectedPath: antdEvent.keyPath,
@@ -72,8 +72,8 @@ export const Dropdown = ({
 
   const menu = useMemo(() => ({
     items: antdItems,
-    onClick: onMenuClick,
-  }), [antdItems, onMenuClick])
+    onClick: onAntdMenuClick,
+  }), [antdItems, onAntdMenuClick])
 
   return (
     <AntdDropdown
