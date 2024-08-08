@@ -21,6 +21,11 @@ import { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react'
 export type DropdownItem = {
 
   /**
+   * renders the icon in a danger fashion, with red tones.
+   */
+  danger?: boolean,
+
+  /**
    * The id for the item.
    */
   id: string,
@@ -34,8 +39,6 @@ export type DropdownItem = {
    * A secondary label to be displayed for the item.
    */
   secondaryLabel?: ReactNode,
-
-  danger?: boolean,
 }
 
 export enum DropdownTrigger {
