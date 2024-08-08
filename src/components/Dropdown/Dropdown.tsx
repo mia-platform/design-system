@@ -51,11 +51,7 @@ export const Dropdown = ({
   const findItem = useCallback((id: string) => items.find(itemMatcher(id)), [items])
 
   const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(items), [items])
-  const innerNode = useMemo(() => (
-    children
-      ? <span>{children}</span>
-      : null
-  ), [children])
+  const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
   const onAntdMenuClick = useCallback(
     (antdEvent: AntdMenuClickEvent) => onClick(eventAdapter(antdEvent, findItem)),
