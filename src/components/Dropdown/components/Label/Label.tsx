@@ -19,32 +19,50 @@
 import { ReactElement, useMemo } from 'react'
 import classNames from 'classnames'
 
-import { DropdownItem } from '../../props'
+import { DropdownItem, ItemLayout } from '../../props'
 import styles from '../../dropdown.module.css'
 
 const LABEL_DIVIDER = '·'
 
-type LabelProps = DropdownItem
+export type LabelProps = {
+  layout?: ItemLayout
+  item: DropdownItem
+}
 
-const Label = ({ danger, label, secondaryLabel }: LabelProps): ReactElement => {
+const defaults = {
+  layout: ItemLayout.Horizontal,
+}
+
+const Label = ({
+  item: { danger, label, secondaryLabel },
+  layout = defaults.layout,
+}: LabelProps): ReactElement => {
   const primaryLabelClassName = useMemo(() => classNames(
     styles.primaryLabel,
-    danger ? styles.danger : undefined
-  ), [danger])
+    danger ? styles.danger : undefined,
+    layout === ItemLayout.Vertical ? styles.strong : undefined
+  ), [danger, layout])
 
   const secondaryLabelClassName = useMemo(() => classNames(
     styles.secondaryLabel,
     danger ? styles.danger : undefined
   ), [danger])
 
+  const containerClassName = useMemo(() => classNames(
+    styles.labelContainer,
+    layout === ItemLayout.Horizontal
+      ? styles.horizontalContainer
+      : styles.verticalContainer
+  ), [layout])
+
   return (
-    <div className={styles.labelContainer}>
+    <div className={containerClassName}>
       <span className={primaryLabelClassName}>{label}</span>
       {
         !secondaryLabel
           ? null
           : <>
-            <span className={secondaryLabelClassName}>{LABEL_DIVIDER}</span>
+            {layout === ItemLayout.Horizontal && <span className={secondaryLabelClassName}>{LABEL_DIVIDER}</span>}
             <span className={secondaryLabelClassName}>{secondaryLabel}</span>
           </>
       }

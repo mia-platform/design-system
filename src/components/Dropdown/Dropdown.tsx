@@ -19,7 +19,7 @@
 import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
 
-import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger } from './props'
+import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
 import Label from './components/Label/Label'
 import styles from './dropdown.module.css'
 
@@ -36,6 +36,7 @@ type AntdMenuClickEvent = {
 }
 
 export const defaults = {
+  itemLayout: ItemLayout.Horizontal,
   trigger: [DropdownTrigger.Click],
 }
 
@@ -45,13 +46,14 @@ export const Dropdown = ({
   autoFocus,
   children,
   isDisabled,
+  itemLayout = defaults.itemLayout,
   items,
   onClick,
-  triggers,
+  triggers = defaults.trigger,
 }: DropdownProps): ReactElement => {
   const findItem = useCallback((id: string) => items.find(itemMatcher(id)), [items])
 
-  const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(items), [items])
+  const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(items, itemLayout), [itemLayout, items])
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
   const onAntdMenuClick = useCallback(
@@ -82,11 +84,12 @@ export const Dropdown = ({
   )
 }
 
+Dropdown.ItemLayout = ItemLayout
 Dropdown.Trigger = DropdownTrigger
 
-function itemsAdapter(items: DropdownItem[]): AntdMenuItems {
+function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems {
   return items.map<AntdMenuItem>((item: DropdownItem) => ({
-    label: <Label {...item} />,
+    label: <Label item={item} layout={layout} />,
     key: item.id,
     danger: item.danger,
   }))

@@ -11,7 +11,7 @@ exports[`Dropdown Component label layouts render labels 1`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelContainer"
+      class="labelContainer horizontalContainer"
     >
       <span
         class="primaryLabel"
@@ -34,7 +34,7 @@ exports[`Dropdown Component label layouts render labels 2`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelContainer"
+      class="labelContainer horizontalContainer"
     >
       <span
         class="primaryLabel"
@@ -67,7 +67,7 @@ exports[`Dropdown Component label layouts render labels 3`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelContainer"
+      class="labelContainer horizontalContainer"
     >
       <span
         class="primaryLabel danger"

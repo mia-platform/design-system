@@ -24,6 +24,10 @@
   color: var(--palette-action-danger-default, #E50020);
 }
 
+.strong {
+  font-weight: 600;
+}
+
 .secondaryLabel {
   color: var(--palette-text-neutral-subtle, #898989);
 }
@@ -41,7 +45,13 @@
 
 .labelContainer {
   display: flex;
+}
+
+.horizontalContainer {
   flex-direction: row;
   gap: var(--spacing-gap-sm, 8px);
 }
 
+.verticalContainer {
+  flex-direction: column;
+}

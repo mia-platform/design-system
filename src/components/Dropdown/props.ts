@@ -18,6 +18,11 @@
 
 import { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react'
 
+export enum ItemLayout {
+  Horizontal = 'horizontal',
+  Vertical = 'vertical'
+}
+
 export type DropdownItem = {
 
   /**
@@ -91,6 +96,8 @@ export type DropdownProps = {
    * Whether the dropdown menu is disabled.
    */
   isDisabled?: boolean,
+
+  itemLayout?: ItemLayout,
 
   /**
    * @param DropdownClickEvent event contains the reference to the clicked item, specifically it holds
