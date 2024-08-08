@@ -95,7 +95,6 @@ function itemsAdapter(items: DropdownItem[]): AntdMenuItems {
   return items.map<AntdMenuItem>((item: DropdownItem) => ({
     label: <Label {...item} />,
     key: item.id,
-    // type: item.type,
     danger: item.danger,
   }))
 }
