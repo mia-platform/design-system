@@ -57,15 +57,10 @@ export const Dropdown = ({
       : null
   ), [children])
 
-  const onAntdMenuClick = useCallback((antdEvent: AntdMenuClickEvent) => {
-    const event: DropdownClickEvent = {
-      id: antdEvent.key,
-      selectedPath: antdEvent.keyPath,
-      domEvent: antdEvent.domEvent,
-      item: findItem(antdEvent.key),
-    }
-    onClick(event)
-  }, [findItem, onClick])
+  const onAntdMenuClick = useCallback(
+    (antdEvent: AntdMenuClickEvent) => onClick(eventAdapter(antdEvent, findItem)),
+    [findItem, onClick]
+  )
 
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
     return React.cloneElement(menu as ReactElement)
@@ -97,4 +92,16 @@ function itemsAdapter(items: DropdownItem[]): AntdMenuItems {
     key: item.id,
     danger: item.danger,
   }))
+}
+
+function eventAdapter(
+  event: AntdMenuClickEvent,
+  itemFinder: (id: string) => DropdownItem|undefined,
+): DropdownClickEvent {
+  return {
+    id: event.key,
+    selectedPath: event.keyPath,
+    domEvent: event.domEvent,
+    item: itemFinder(event.key),
+  }
 }
