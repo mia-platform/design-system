@@ -22,6 +22,7 @@ import { Button } from './components/Button'
 import { Card } from './components/Card'
 import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
+import { Dropdown } from './components/Dropdown'
 import { Icon } from './components/Icon'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
@@ -40,6 +41,7 @@ export {
   Card,
   Divider,
   Drawer,
+  Dropdown,
   Icon,
   Menu,
   Modal,
