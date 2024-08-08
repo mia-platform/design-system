@@ -17,7 +17,7 @@
  */
 
 import { DropdownItem, ItemLayout } from '../../props'
-import Label, { LabelProps } from './Label'
+import Label, { LabelProps } from '.'
 import { RenderResult, render } from '../../../../test-utils'
 
 describe('Label', () => {

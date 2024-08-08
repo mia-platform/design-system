@@ -20,7 +20,7 @@ import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
 
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
-import Label from './components/Label/Label'
+import Label from './components/Label'
 import styles from './dropdown.module.css'
 
 type ArrayElement<ArrayType extends readonly unknown[] | undefined> =
