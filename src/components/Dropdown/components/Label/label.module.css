@@ -25,6 +25,13 @@
     color: var(--palette-text-neutral-main, #636363);
   }
 
+  & .primaryLabelDanger {
+    color: red;
+  }
+  & .primaryLabelDanger:hover {
+    color: white;
+  }
+
   & .secondaryLabel {
     color: var(--palette-text-neutral-subtle, #898989);
   }

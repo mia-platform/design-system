@@ -31,6 +31,10 @@ const defaults: Partial<DropdownProps> = {
     id: 'id2',
     label: 'value 2',
     secondaryLabel: 'Some additional info 2',
+  }, {
+    id: 'id3',
+    label: 'I am danger!',
+    danger: true,
   }],
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),

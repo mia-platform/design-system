@@ -23,16 +23,21 @@ import styles from './label.module.css'
 
 const LABEL_DIVIDER = '·'
 
-const Label = ({ label, secondaryLabel }: DropdownItem): ReactElement => {
+type LabelProps = DropdownItem
+
+const Label = ({ danger, label, secondaryLabel }: LabelProps): ReactElement => {
+  const primaryLabelClassName = danger ? '' : styles.primaryLabel
+  const secondaryLabelClassName = danger ? '' : styles.secondaryLabel
+
   return (
     <div className={styles.labelContainer}>
-      <span className={styles.primaryLabel}>{label}</span>
+      <span className={primaryLabelClassName}>{label}</span>
       {
         !secondaryLabel
           ? null
           : <>
-            <span className={styles.secondaryLabel}>{LABEL_DIVIDER}</span>
-            <span className={styles.secondaryLabel}>{secondaryLabel}</span>
+            <span className={secondaryLabelClassName}>{LABEL_DIVIDER}</span>
+            <span className={secondaryLabelClassName}>{secondaryLabel}</span>
           </>
       }
     </div>
