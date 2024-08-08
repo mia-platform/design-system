@@ -25,17 +25,13 @@ import styles from '../../dropdown.module.css'
 const LABEL_DIVIDER = '·'
 
 export type LabelProps = {
-  layout?: ItemLayout
+  layout: ItemLayout
   item: DropdownItem
-}
-
-const defaults = {
-  layout: ItemLayout.Horizontal,
 }
 
 const Label = ({
   item: { danger, label, secondaryLabel },
-  layout = defaults.layout,
+  layout,
 }: LabelProps): ReactElement => {
   const primaryLabelClassName = useMemo(() => classNames(
     styles.primaryLabel,
