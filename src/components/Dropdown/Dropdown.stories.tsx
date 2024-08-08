@@ -37,7 +37,6 @@ const defaults: Partial<DropdownProps> = {
     danger: true,
     secondaryLabel: 'Some additional info 3',
   }],
-  triggers: [Dropdown.Trigger.Click],
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),
 }
@@ -63,9 +62,9 @@ export const VerticalLayoutExample: Story = {
   },
 }
 
-export const Disabled: Story = {
+export const HoverTrigger: Story = {
   args: {
-    isDisabled: true,
+    triggers: [Dropdown.Trigger.Hover],
   },
 }
 
@@ -73,5 +72,11 @@ export const ContextMenuTrigger: Story = {
   args: {
     children: <span>{'right-click on me'}</span>,
     triggers: [Dropdown.Trigger.ContextMenu],
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
   },
 }
