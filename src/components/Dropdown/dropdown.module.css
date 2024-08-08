@@ -54,4 +54,5 @@
 
 .verticalContainer {
   flex-direction: column;
+  gap: var(--spacing-gap-xs, 4px);
 }
