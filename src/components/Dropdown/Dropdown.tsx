@@ -83,7 +83,8 @@ export const Dropdown = ({
       trigger={triggers}
     >
       {innerNode}
-    </AntdDropdown>)
+    </AntdDropdown>
+  )
 }
 
 Dropdown.Trigger = DropdownTrigger
