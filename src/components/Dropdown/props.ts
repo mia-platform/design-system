@@ -45,6 +45,9 @@ export type DropdownItem = {
    */
   secondaryLabel?: ReactNode,
 
+  /**
+   * List of sub-menu items.
+   */
   children?: DropdownItem[]
 }
 
