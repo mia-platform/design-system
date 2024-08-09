@@ -118,6 +118,12 @@ export const ContextMenuTrigger: Story = {
   },
 }
 
+export const WithCustomFooter: Story = {
+  args: {
+    footer: (<div>{'This is a custom footer'}</div>),
+  },
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,
