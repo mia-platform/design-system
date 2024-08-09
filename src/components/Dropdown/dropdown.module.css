@@ -60,19 +60,6 @@
   }
 }
 
-/* .subMenuPopup {
-  :global(.mia-platform-dropdown-menu-submenu-title) {
-    display: flex !important;
-  }
-
-  :global(ul.mia-platform-dropdown-menu) {
-    border-bottom-left-radius: var(--shape-border-radius-lg, 8px);
-    border-bottom-right-radius: var(--shape-border-radius-lg, 8px);
-    border-top-left-radius: var(--shape-border-radius-lg, 8px);
-    border-top-right-radius: var(--shape-border-radius-lg, 8px);
-  }
-} */
-
 .labelContainer {
   display: flex;
 }
