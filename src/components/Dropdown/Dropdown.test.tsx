@@ -89,6 +89,114 @@ describe('Dropdown Component', () => {
       expect(invocation.selectedPath).toEqual(['1'])
       expect(invocation.item).toEqual(items[0])
     })
+
+    describe('nesting', () => {
+      it('invokes onClick with correct first-level nested id', async() => {
+        const onClick = jest.fn()
+        const caseItems = [
+          { id: '1', label: 'Label 1' },
+          {
+            id: '2',
+            label: 'Label 2',
+            children: [{
+              id: '2-1',
+              label: 'Label 2-1',
+            }, {
+              id: '2-2',
+              label: 'Label 2-2',
+              children: [{
+                id: '2-2-1',
+                label: 'Label 2-2-1',
+              }],
+            }],
+          },
+        ]
+        const props = {
+          ...defaultProps,
+          items: caseItems,
+          onClick,
+        }
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+
+        const item = await screen.findByRole('menuitem', { name: 'Label 1' })
+        userEvent.click(item)
+
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+        expect(onClick).toHaveBeenCalledTimes(1)
+        const [[invocation]] = onClick.mock.calls
+        expect(invocation.id).toEqual('1')
+        expect(invocation.selectedPath).toEqual(['1'])
+        expect(invocation.item).toEqual(items[0])
+
+        onClick.mockClear()
+
+        userEvent.click(button)
+        const item2 = await screen.findByRole('menuitem', { name: /^Label 2/i })
+        userEvent.hover(item2)
+
+        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-1' }, { timeout: 10000 })
+        expect(sub1).toBeInTheDocument()
+
+        userEvent.click(sub1)
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+        expect(onClick).toHaveBeenCalledTimes(1)
+        const [[invocation2]] = onClick.mock.calls
+        expect(invocation2.id).toEqual('2-1')
+        expect(invocation2.selectedPath).toEqual(['2', '2-1'])
+        expect(invocation2.item).toEqual(caseItems[1].children![0])
+      })
+
+      it('invokes onClick with correct second-level nested id', async() => {
+        const onClick = jest.fn()
+        const caseItems = [
+          { id: '1', label: 'Label 1' },
+          {
+            id: '2',
+            label: 'Label 2',
+            children: [{
+              id: '2-1',
+              label: 'Label 2-1',
+            }, {
+              id: '2-2',
+              label: 'Label 2-2',
+              children: [{
+                id: '2-2-1',
+                label: 'Label 2-2-1',
+              }],
+            }],
+          },
+        ]
+        const props = {
+          ...defaultProps,
+          items: caseItems,
+          onClick,
+        }
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+
+        await screen.findByRole('menuitem', { name: 'Label 1' })
+        userEvent.hover(screen.getByRole('menuitem', { name: /^Label 2/i }))
+        await screen.findByRole('menuitem', { name: 'Label 2-1' }, { timeout: 10000 })
+        userEvent.hover(screen.getByRole('menuitem', { name: 'Label 2-2 right' }))
+
+        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-2-1' }, { timeout: 10000 })
+        expect(sub1).toBeInTheDocument()
+
+        userEvent.click(sub1)
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+        expect(onClick).toHaveBeenCalledTimes(1)
+        const [[invocation]] = onClick.mock.calls
+        expect(invocation.id).toEqual('2-2-1')
+        expect(invocation.selectedPath).toEqual(['2', '2-2', '2-2-1'])
+        expect(invocation.item).toEqual(caseItems[1].children![1].children![0])
+      }, 20000)
+    })
   })
 })
 

@@ -36,6 +36,21 @@ const defaults: Partial<DropdownProps> = {
     label: 'I am danger!',
     danger: true,
     secondaryLabel: 'Some additional info 3',
+  }, {
+    id: 'id4-with-nested-items',
+    label: 'Many Items here',
+    secondaryLabel: 'just hover me',
+    children: [{
+      id: 'id4-c1',
+      label: 'value 4.1',
+    }, {
+      id: 'id4-c2',
+      label: 'value 4.2',
+      children: [{
+        id: 'id4-c2-c1',
+        label: 'value 4.2-1',
+      }],
+    }],
   }],
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),

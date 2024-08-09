@@ -39,7 +39,28 @@
   }
 
   & :global(.mia-platform-dropdown-menu-item-danger):hover .danger {
-    color: var(--palette-common-white, #ffffff);;
+    color: var(--palette-common-white, #ffffff);
+  }
+
+  :global(.mia-platform-dropdown-menu-submenu-title) {
+    display: flex !important;
+  }
+
+  :global(.mia-platform-dropdown-menu-submenu) {
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  :global(div.mia-platform-dropdown-menu-submenu) {
+    max-width: fit-content;
+  }
+
+  :global(ul.mia-platform-dropdown-menu) {
+    /* overwrite default radius defined by our theme */
+    border-bottom-left-radius: var(--shape-border-radius-lg, 8px);
+    border-bottom-right-radius: var(--shape-border-radius-lg, 8px);
+    border-top-left-radius: var(--shape-border-radius-lg, 8px);
+    border-top-right-radius: var(--shape-border-radius-lg, 8px);
   }
 }
 
@@ -50,6 +71,7 @@
 .horizontalContainer {
   flex-direction: row;
   gap: var(--spacing-gap-sm, 8px);
+  align-items: center;
 }
 
 .verticalContainer {

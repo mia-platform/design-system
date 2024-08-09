@@ -17,7 +17,7 @@ module.exports = {
     ".eslintrc.cjs",
     "jest.config.js",
     "src/vite-env.d.ts",
-    // FIXME: This component has a react/boolean-prop naming problem, because boolean props do not have the symbol at the beginning of the name.   
+    // FIXME: This component has a react/boolean-prop naming problem, because boolean props do not have the symbol at the beginning of the name.
     "src/components/Typography/BodyX/BodyX.tsx",
     "src/components/Typography/HX/HX.tsx"
   ],
@@ -57,7 +57,7 @@ module.exports = {
       allowSeparatedGroups: true
     }],
 
-    /** 
+    /**
      * Eslint plugin Typescript
      * @link https://typescript-eslint.io/rules
      */
@@ -75,13 +75,13 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
 
-    /** 
+    /**
      * Eslint plugin React Refresh
      * @link https://github.com/ArnaudBarre/eslint-plugin-react-refresh
      */
     "react-refresh/only-export-components": "off",
 
-    /** 
+    /**
      * Eslint plugin React
      * @link https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules
      */
