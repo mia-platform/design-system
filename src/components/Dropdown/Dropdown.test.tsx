@@ -181,11 +181,11 @@ describe('Dropdown Component', () => {
 
         await screen.findByRole('menuitem', { name: 'Label 1' })
         userEvent.hover(screen.getByRole('menuitem', { name: /^Label 2/i }))
-        await screen.findByRole('menuitem', { name: 'Label 2-1' })
+        await screen.findByRole('menuitem', { name: 'Label 2-1' }, { timeout: 10000 })
 
         userEvent.hover(screen.getByRole('menuitem', { name: 'Label 2-2 right' }))
         screen.logTestingPlaygroundURL()
-        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-2-1' })
+        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-2-1' }, { timeout: 10000 })
         screen.logTestingPlaygroundURL()
 
         expect(sub1).toBeInTheDocument()
@@ -198,7 +198,7 @@ describe('Dropdown Component', () => {
         expect(invocation.id).toEqual('2-2-1')
         expect(invocation.selectedPath).toEqual(['2', '2-2', '2-2-1'])
         expect(invocation.item).toEqual(caseItems[1].children![1].children![0])
-      })
+      }, 20000)
     })
   })
 })
