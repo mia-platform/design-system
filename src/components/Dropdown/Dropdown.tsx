@@ -18,6 +18,7 @@
 
 import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
+import classNames from 'classnames'
 
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
 import Label from './components/Label'
@@ -40,8 +41,6 @@ export const defaults = {
   trigger: [DropdownTrigger.Click],
 }
 
-const itemMatcher = (id: string) => (item: DropdownItem): boolean => item.id === id
-
 export const Dropdown = ({
   autoFocus,
   children,
@@ -51,14 +50,16 @@ export const Dropdown = ({
   onClick,
   triggers = defaults.trigger,
 }: DropdownProps): ReactElement => {
-  const findItem = useCallback((id: string) => items.find(itemMatcher(id)), [items])
+  const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
+
+  const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
 
   const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(items, itemLayout), [itemLayout, items])
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
   const onAntdMenuClick = useCallback(
-    (antdEvent: AntdMenuClickEvent) => onClick(eventAdapter(antdEvent, findItem)),
-    [findItem, onClick]
+    (antdEvent: AntdMenuClickEvent) => onClick(eventAdapter(antdEvent, itemFinderMemo)),
+    [itemFinderMemo, onClick]
   )
 
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
@@ -68,7 +69,10 @@ export const Dropdown = ({
   const menu = useMemo(() => ({
     items: antdItems,
     onClick: onAntdMenuClick,
-  }), [antdItems, onAntdMenuClick])
+    getPopupContainer: (triggerNode: HTMLElement) => (document.querySelector(`.${uniqueClassName}`) || triggerNode) as HTMLElement,
+  }), [antdItems, onAntdMenuClick, uniqueClassName])
+
+  const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
 
   return (
     <AntdDropdown
@@ -76,7 +80,7 @@ export const Dropdown = ({
       disabled={isDisabled}
       dropdownRender={dropdownRender}
       menu={menu}
-      overlayClassName={styles.dropdownWrapper}
+      overlayClassName={classes}
       trigger={triggers}
     >
       {innerNode}
@@ -89,20 +93,36 @@ Dropdown.Trigger = DropdownTrigger
 
 function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems {
   return items.map<AntdMenuItem>((item: DropdownItem) => ({
-    label: <Label item={item} layout={layout} />,
-    key: item.id,
+    children: item.children ? itemsAdapter(item.children, layout) : undefined,
     danger: item.danger,
+    key: item.id,
+    label: <Label item={item} layout={layout} />,
   }))
 }
 
 function eventAdapter(
   event: AntdMenuClickEvent,
-  itemFinder: (id: string) => DropdownItem|undefined,
+  finder: (id: string) => DropdownItem|undefined,
 ): DropdownClickEvent {
   return {
     id: event.key,
-    selectedPath: event.keyPath,
+    selectedPath: event.keyPath?.reverse(),
     domEvent: event.domEvent,
-    item: itemFinder(event.key),
+    item: finder(event.key),
+  }
+}
+
+function itemFinder(items: DropdownItem[], id: string): DropdownItem|undefined {
+  for (const item of items) {
+    if (item.id === id) {
+      return item
+    }
+
+    if (item.children) {
+      const found = itemFinder(item.children, id)
+      if (found) {
+        return found
+      }
+    }
   }
 }

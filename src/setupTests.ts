@@ -35,9 +35,9 @@ import '@testing-library/jest-dom'
  */
 jest.mock('@fontsource/inter', () => ({
   default: () => `
-    @font-face { 
-      font-family: "Inter"; 
-      src: local("Inter"); 
+    @font-face {
+      font-family: "Inter";
+      src: local("Inter");
     };
   `,
 }))
@@ -61,4 +61,10 @@ Object.defineProperty(window, 'matchMedia', {
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
   }),
+})
+
+Object.defineProperty(global.self, 'crypto', {
+  value: {
+    randomUUID: jest.fn().mockReturnValue('some-random-uuid'),
+  },
 })

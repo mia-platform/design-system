@@ -44,6 +44,8 @@ export type DropdownItem = {
    * A secondary label to be displayed for the item.
    */
   secondaryLabel?: ReactNode,
+
+  children?: DropdownItem[]
 }
 
 export enum DropdownTrigger {
