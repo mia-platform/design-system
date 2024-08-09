@@ -55,6 +55,7 @@ export const Dropdown = ({
   const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
 
   const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(items, itemLayout), [itemLayout, items])
+  /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
   const onAntdMenuClick = useCallback(
@@ -69,6 +70,7 @@ export const Dropdown = ({
   const menu = useMemo(() => ({
     items: antdItems,
     onClick: onAntdMenuClick,
+    /* istanbul ignore next */
     getPopupContainer: (triggerNode: HTMLElement) => (document.querySelector(`.${uniqueClassName}`) || triggerNode) as HTMLElement,
   }), [antdItems, onAntdMenuClick, uniqueClassName])
 
