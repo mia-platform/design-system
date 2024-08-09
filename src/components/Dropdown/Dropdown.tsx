@@ -21,6 +21,7 @@ import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
 import classNames from 'classnames'
 
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
+import { Footer } from './components/Footer'
 import Label from './components/Label'
 import styles from './dropdown.module.css'
 
@@ -44,6 +45,7 @@ export const defaults = {
 export const Dropdown = ({
   autoFocus,
   children,
+  footer,
   isDisabled,
   itemLayout = defaults.itemLayout,
   items,
@@ -64,8 +66,12 @@ export const Dropdown = ({
   )
 
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
-    return React.cloneElement(menu as ReactElement)
-  }, [])
+    return (
+      <>
+        {React.cloneElement(menu as ReactElement)}
+        <Footer footer={footer} />
+      </>)
+  }, [footer])
 
   const menu = useMemo(() => ({
     items: antdItems,
@@ -75,7 +81,7 @@ export const Dropdown = ({
   }), [antdItems, onAntdMenuClick, uniqueClassName])
 
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
-
+  console.log('zzzzz')
   return (
     <AntdDropdown
       autoFocus={autoFocus}

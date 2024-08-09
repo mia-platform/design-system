@@ -57,6 +57,8 @@ export enum DropdownTrigger {
   ContextMenu = 'contextMenu'
 }
 
+export type DropdownFooter = ReactElement
+
 export type DropdownClickEvent = {
 
   /**
@@ -91,6 +93,8 @@ export type DropdownProps = {
    * The ReactElement used as anchor to trigger the Dropdown visibility.
    */
   children?: ReactElement,
+
+  footer?: DropdownFooter,
 
   /**
    * list of items to be rendered within the Dropdown.

@@ -198,6 +198,22 @@ describe('Dropdown Component', () => {
       }, 20000)
     })
   })
+
+  describe('with footer', () => {
+    it('renders custom node', async() => {
+      const props = {
+        ...defaultProps,
+        footer: <div data-testid="footer-id">{'some custom footer'}</div>,
+      }
+      renderDropdown({ props })
+
+      const button = screen.getByText('test-trigger-button')
+      userEvent.click(button)
+
+      const footer = await screen.findByTestId('footer-id')
+      expect(footer).toBeInTheDocument()
+    })
+  })
 })
 
 function renderDropdown(
