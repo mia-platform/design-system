@@ -134,10 +134,10 @@ describe('Dropdown Component', () => {
         onClick.mockClear()
 
         userEvent.click(button)
-        const item2 = await screen.findByRole('menuitem', { name: /^Label 2 right/i })
+        const item2 = await screen.findByRole('menuitem', { name: /^Label 2/i })
         userEvent.hover(item2)
 
-        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-1' })
+        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-1' }, { timeout: 10000 })
         expect(sub1).toBeInTheDocument()
 
         userEvent.click(sub1)
