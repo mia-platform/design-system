@@ -49,6 +49,7 @@
   :global(.mia-platform-dropdown-menu-submenu) {
     background: none !important;
     box-shadow: none !important;
+    max-width: fit-content;
   }
 
   :global(ul.mia-platform-dropdown-menu) {
