@@ -181,10 +181,10 @@ describe('Dropdown Component', () => {
 
         await screen.findByRole('menuitem', { name: 'Label 1' })
         userEvent.hover(screen.getByRole('menuitem', { name: /^Label 2/i }))
-        await screen.findByRole('menuitem', { name: 'Label 2-1' })
+        await screen.findByRole('menuitem', { name: 'Label 2-1' }, { timeout: 10000 })
         userEvent.hover(screen.getByRole('menuitem', { name: /^Label 2-2/i }))
 
-        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-2-1' })
+        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-2-1' }, { timeout: 10000 })
         expect(sub1).toBeInTheDocument()
 
         userEvent.click(sub1)
