@@ -48,7 +48,7 @@ export type DropdownItem = {
   /**
    * List of sub-menu items.
    */
-  children?: DropdownItem[]
+  children?: DropdownItem[],
 }
 
 export enum DropdownTrigger {
