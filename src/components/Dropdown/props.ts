@@ -80,6 +80,11 @@ export type DropdownClickEvent = {
   selectedPath: string[],
 }
 
+export enum OpenChangeInfoSource {
+  Trigger = 'trigger',
+  Menu = 'menu'
+}
+
 export type DropdownProps = {
 
   /**
@@ -132,5 +137,5 @@ export type DropdownProps = {
    * - source: the source of the open change, can be 'trigger' or 'menu'
    * @returns
    */
-    onOpenChange?: (open: boolean, info: {source: 'trigger' | 'menu'}) => void
+   onOpenChange?: (open: boolean, info: {source: OpenChangeInfoSource}) => void
 }
