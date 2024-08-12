@@ -80,10 +80,9 @@ export type DropdownClickEvent = {
   selectedPath: string[],
 }
 
-export enum OpenChangeInfoSource {
-  Trigger = 'trigger',
-  Menu = 'menu'
-}
+export type OpenChangeInfoSource = 'trigger' | 'menu'
+
+export type Placement = 'topLeft'| 'topCenter'| 'topRight'| 'bottomLeft'| 'bottomCenter'| 'bottomRight'| 'top'| 'bottom'
 
 export type DropdownProps = {
 
@@ -138,4 +137,10 @@ export type DropdownProps = {
    * @returns
    */
    onOpenChange?: (open: boolean, info: {source: OpenChangeInfoSource}) => void
+
+   /**
+    * The placement of the dropdown menu, it can be one of the following:
+    * `bottom`, `bottomLeft`, `bottomRight`, `top`, `topLeft`, `topRight`
+    */
+   placement?: Placement
 }

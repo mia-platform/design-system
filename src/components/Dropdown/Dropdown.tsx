@@ -20,7 +20,7 @@ import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
 import classNames from 'classnames'
 
-import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
+import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout, OpenChangeInfoSource } from './props'
 import Label from './components/Label'
 import styles from './dropdown.module.css'
 
@@ -51,6 +51,7 @@ export const Dropdown = ({
   triggers = defaults.trigger,
   open,
   onOpenChange,
+  placement,
 }: DropdownProps): ReactElement => {
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
@@ -86,6 +87,7 @@ export const Dropdown = ({
       menu={menu}
       open={open}
       overlayClassName={classes}
+      placement={placement}
       trigger={triggers}
       onOpenChange={onOpenChange}
     >
