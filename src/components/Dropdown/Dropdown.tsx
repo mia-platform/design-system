@@ -49,6 +49,8 @@ export const Dropdown = ({
   items,
   onClick,
   triggers = defaults.trigger,
+  open,
+  onOpenChange,
 }: DropdownProps): ReactElement => {
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
@@ -82,8 +84,10 @@ export const Dropdown = ({
       disabled={isDisabled}
       dropdownRender={dropdownRender}
       menu={menu}
+      open={open}
       overlayClassName={classes}
       trigger={triggers}
+      onOpenChange={onOpenChange}
     >
       {innerNode}
     </AntdDropdown>

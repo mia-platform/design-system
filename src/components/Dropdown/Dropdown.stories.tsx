@@ -54,6 +54,7 @@ const defaults: Partial<DropdownProps> = {
   }],
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),
+  onOpenChange: action('on open change'),
 }
 
 const meta = {

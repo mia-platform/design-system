@@ -118,4 +118,19 @@ export type DropdownProps = {
    * list of triggers that can open the Dropdown (accepts: click, hover, contextMenu).
    */
   triggers?: DropdownTrigger[],
+
+  /**
+   * Whether the dropdown menu is currently open.
+   */
+  open?: boolean,
+
+  /**
+   * Called when the open state changes. Not triggered when hidden by click item.
+   *
+   * @param open the current open state of the Dropdown
+   * @param info an object with the following props:
+   * - source: the source of the open change, can be 'trigger' or 'menu'
+   * @returns
+   */
+    onOpenChange?: (open: boolean, info: {source: 'trigger' | 'menu'}) => void
 }
