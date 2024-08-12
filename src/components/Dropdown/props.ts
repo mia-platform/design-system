@@ -141,6 +141,7 @@ export type DropdownProps = {
    /**
     * The placement of the dropdown menu, it can be one of the following:
     * `bottom`, `bottomLeft`, `bottomRight`, `top`, `topLeft`, `topRight`
+    * (default: `bottomLeft`)
     */
    placement?: Placement
 }
