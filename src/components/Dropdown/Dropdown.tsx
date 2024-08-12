@@ -20,7 +20,7 @@ import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
 import classNames from 'classnames'
 
-import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout, OpenChangeInfoSource } from './props'
+import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
 import Label from './components/Label'
 import styles from './dropdown.module.css'
 
