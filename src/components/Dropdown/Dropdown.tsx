@@ -20,7 +20,7 @@ import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
 import classNames from 'classnames'
 
-import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
+import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout, OpenChangeInfoSource } from './props'
 import Label from './components/Label'
 import styles from './dropdown.module.css'
 
@@ -49,9 +49,8 @@ export const Dropdown = ({
   items,
   onClick,
   triggers = defaults.trigger,
-  open,
   onOpenChange,
-  placement,
+  getPopupContainer,
 }: DropdownProps): ReactElement => {
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
@@ -79,17 +78,35 @@ export const Dropdown = ({
 
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
 
+  const onOpenChangeInternal = useCallback(
+    (open: boolean, info?: {source: 'trigger'| 'menu'}) => {
+      if (!onOpenChange) {
+        return
+      }
+      switch (info?.source) {
+      case 'trigger':
+        onOpenChange(open, { source: OpenChangeInfoSource.Trigger })
+        break
+      case 'menu':
+        onOpenChange(open, { source: OpenChangeInfoSource.Menu })
+        break
+      default:
+        onOpenChange(open)
+      }
+    },
+    [onOpenChange]
+  )
+
   return (
     <AntdDropdown
       autoFocus={autoFocus}
       disabled={isDisabled}
       dropdownRender={dropdownRender}
+      getPopupContainer={getPopupContainer}
       menu={menu}
-      open={open}
       overlayClassName={classes}
-      placement={placement}
       trigger={triggers}
-      onOpenChange={onOpenChange}
+      onOpenChange={onOpenChangeInternal}
     >
       {innerNode}
     </AntdDropdown>
