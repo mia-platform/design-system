@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { DropdownItem, DropdownProps, DropdownTrigger } from './props'
+import { DropdownItem, DropdownProps, DropdownTrigger, OpenChangeInfoSource } from './props'
 import { RenderResult, render, screen, userEvent, waitFor } from '../../test-utils'
 import { Button } from '../Button'
 import { Dropdown } from './Dropdown'
@@ -196,6 +196,40 @@ describe('Dropdown Component', () => {
         expect(invocation.selectedPath).toEqual(['2', '2-2', '2-2-1'])
         expect(invocation.item).toEqual(caseItems[1].children![1].children![0])
       }, 20000)
+    })
+  })
+
+  describe('onOpenChange', () => {
+    it('invokes onOpenChange with trigger source when opening', async() => {
+      const onOpenChange = jest.fn()
+      const props = {
+        ...defaultProps,
+        onOpenChange,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      userEvent.click(button)
+
+      await waitFor(() => expect(onOpenChange).toHaveBeenCalledTimes(1))
+      expect(onOpenChange).toHaveBeenCalledWith(true, { source: OpenChangeInfoSource.Trigger })
+    })
+
+    it('invokes onOpenChange with menu source when closing clicking on a menu item', async() => {
+      const onOpenChange = jest.fn()
+      const props = {
+        ...defaultProps,
+        onOpenChange,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      userEvent.click(button)
+
+      await screen.findByRole('menuitem', { name: 'Label 1' })
+      userEvent.click(screen.getByRole('menuitem', { name: 'Label 1' }))
+      await waitFor(() => expect(onOpenChange).toHaveBeenCalledTimes(2))
+      expect(onOpenChange).toHaveBeenNthCalledWith(2, false, { source: OpenChangeInfoSource.Menu })
     })
   })
 })
