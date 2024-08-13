@@ -20,7 +20,7 @@ import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
 import classNames from 'classnames'
 
-import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
+import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout, OpenChangeInfoSource } from './props'
 import Label from './components/Label'
 import styles from './dropdown.module.css'
 
@@ -36,6 +36,12 @@ type AntdMenuClickEvent = {
   domEvent: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>
 }
 
+type AntdTriggerSource = 'trigger'|'menu'
+const antdSourceMap: Record<AntdTriggerSource, OpenChangeInfoSource> = {
+  'trigger': OpenChangeInfoSource.Trigger,
+  'menu': OpenChangeInfoSource.Menu,
+}
+
 export const defaults = {
   itemLayout: ItemLayout.Horizontal,
   trigger: [DropdownTrigger.Click],
@@ -49,6 +55,8 @@ export const Dropdown = ({
   items,
   onClick,
   triggers = defaults.trigger,
+  onOpenChange,
+  getPopupContainer,
 }: DropdownProps): ReactElement => {
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
@@ -76,14 +84,26 @@ export const Dropdown = ({
 
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
 
+  const onOpenChangeInternal = useCallback(
+    (open: boolean, info: {source: 'trigger'| 'menu'}) => {
+      if (!onOpenChange) {
+        return
+      }
+      onOpenChange(open, { source: antdSourceMap[info.source] })
+    },
+    [onOpenChange]
+  )
+
   return (
     <AntdDropdown
       autoFocus={autoFocus}
       disabled={isDisabled}
       dropdownRender={dropdownRender}
+      getPopupContainer={getPopupContainer}
       menu={menu}
       overlayClassName={classes}
       trigger={triggers}
+      onOpenChange={onOpenChangeInternal}
     >
       {innerNode}
     </AntdDropdown>

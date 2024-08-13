@@ -80,6 +80,15 @@ export type DropdownClickEvent = {
   selectedPath: string[],
 }
 
+export enum OpenChangeInfoSource {
+  Trigger = 'trigger',
+  Menu = 'menu'
+}
+
+export type OpenChangeInfo = {
+  source: OpenChangeInfoSource
+}
+
 export type DropdownProps = {
 
   /**
@@ -118,4 +127,24 @@ export type DropdownProps = {
    * list of triggers that can open the Dropdown (accepts: click, hover, contextMenu).
    */
   triggers?: DropdownTrigger[],
+
+  /**
+   * Called when the open state changes. Not triggered when hidden by click item.
+   *
+   * @param open the current open state of the Dropdown
+   * @param info an object containing the `source` of the open change, that can be:
+   * - trigger: the open state was changed by an external trigger
+   *    (e.g. the dropdown is opening because the children was clicked, or closing because the focus was lost)
+   * - menu: the open state was changed by clicking on a menu item
+   *    (e.g. the dropdown is closing because a menu item was clicked)
+   * @returns
+   */
+   onOpenChange?: (open: boolean, info: OpenChangeInfo) => void
+
+   /**
+    * To set the container of the dropdown menu.
+    * The default behavior is to create a div element and append it at the end of the body,
+    *  but you can reset it to the scrolling area and make a relative reposition.
+    */
+   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement
 }
