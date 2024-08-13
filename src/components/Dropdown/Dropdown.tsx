@@ -89,10 +89,6 @@ export const Dropdown = ({
       if (!onOpenChange) {
         return
       }
-      if (!info?.source) {
-        onOpenChange(open)
-        return
-      }
       onOpenChange(open, info ? { source: antdSourceMap[info.source] } : undefined)
     },
     [onOpenChange]
