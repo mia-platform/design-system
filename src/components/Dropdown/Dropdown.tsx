@@ -103,7 +103,7 @@ export const Dropdown = ({
       menu={menu}
       overlayClassName={classes}
       trigger={triggers}
-      onOpenChange={onOpenChange ? onOpenChangeInternal : undefined}
+      onOpenChange={onOpenChangeInternal}
     >
       {innerNode}
     </AntdDropdown>
