@@ -85,11 +85,11 @@ export const Dropdown = ({
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
 
   const onOpenChangeInternal = useCallback(
-    (open: boolean, info?: {source: 'trigger'| 'menu'}) => {
+    (open: boolean, info: {source: 'trigger'| 'menu'}) => {
       if (!onOpenChange) {
         return
       }
-      onOpenChange(open, info ? { source: antdSourceMap[info.source] } : undefined)
+      onOpenChange(open, { source: antdSourceMap[info.source] })
     },
     [onOpenChange]
   )

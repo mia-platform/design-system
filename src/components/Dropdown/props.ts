@@ -139,7 +139,7 @@ export type DropdownProps = {
    *    (e.g. the dropdown is closing because a menu item was clicked)
    * @returns
    */
-   onOpenChange?: (open: boolean, info?: OpenChangeInfo) => void
+   onOpenChange?: (open: boolean, info: OpenChangeInfo) => void
 
    /**
     * To set the container of the dropdown menu.
