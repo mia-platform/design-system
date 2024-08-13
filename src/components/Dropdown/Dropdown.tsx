@@ -94,11 +94,14 @@ export const Dropdown = ({
   )
 
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
+    if (!footer) {
+      return React.cloneElement(menu as ReactElement)
+    }
     return (
-      <>
+      <div className={styles.dropdownRenderContainer}>
         {React.cloneElement(menu as ReactElement)}
         <Footer footer={footer} />
-      </>)
+      </div>)
   }, [footer])
 
   const menu = useMemo(() => ({

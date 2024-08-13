@@ -74,6 +74,10 @@
   }
 }
 
+.dropdownRenderContainer {
+  background-color: white;
+}
+
 .itemRowContainer {
   display: flex;
   flex-direction: row;
