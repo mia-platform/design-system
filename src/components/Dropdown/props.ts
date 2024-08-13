@@ -81,8 +81,8 @@ export type DropdownClickEvent = {
 }
 
 export enum OpenChangeInfoSource {
-  Trigger='trigger',
-  Menu='menu'
+  Trigger = 'trigger',
+  Menu = 'menu'
 }
 
 export type OpenChangeInfo = {
