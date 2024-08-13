@@ -228,6 +228,7 @@ describe('Dropdown Component', () => {
 
       await screen.findByRole('menuitem', { name: 'Label 1' })
       userEvent.click(screen.getByRole('menuitem', { name: 'Label 1' }))
+
       await waitFor(() => expect(onOpenChange).toHaveBeenCalledTimes(2))
       expect(onOpenChange).toHaveBeenNthCalledWith(2, false, { source: OpenChangeInfoSource.Menu })
     })
