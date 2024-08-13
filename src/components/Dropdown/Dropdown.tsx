@@ -36,6 +36,12 @@ type AntdMenuClickEvent = {
   domEvent: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>
 }
 
+type AntdTriggerSource = 'trigger'|'menu'
+const antdSourceMap: Record<AntdTriggerSource, OpenChangeInfoSource> = {
+  'trigger': OpenChangeInfoSource.Trigger,
+  'menu': OpenChangeInfoSource.Menu,
+}
+
 export const defaults = {
   itemLayout: ItemLayout.Horizontal,
   trigger: [DropdownTrigger.Click],
@@ -83,16 +89,11 @@ export const Dropdown = ({
       if (!onOpenChange) {
         return
       }
-      switch (info?.source) {
-      case 'trigger':
-        onOpenChange(open, { source: OpenChangeInfoSource.Trigger })
-        break
-      case 'menu':
-        onOpenChange(open, { source: OpenChangeInfoSource.Menu })
-        break
-      default:
+      if (!info?.source) {
         onOpenChange(open)
+        return
       }
+      onOpenChange(open, info ? { source: antdSourceMap[info.source] } : undefined)
     },
     [onOpenChange]
   )
@@ -106,7 +107,7 @@ export const Dropdown = ({
       menu={menu}
       overlayClassName={classes}
       trigger={triggers}
-      onOpenChange={onOpenChangeInternal}
+      onOpenChange={onOpenChange ? onOpenChangeInternal : undefined}
     >
       {innerNode}
     </AntdDropdown>
