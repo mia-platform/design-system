@@ -64,7 +64,7 @@ const Label = ({
   validateTagType(tag)
 
   return (
-    <div className={styles.labelOuterContainer}>
+    <div className={styles.itemRowContainer}>
       <div className={labelsContainerClassName}>
         <span className={primaryLabelClassName}>{label}</span>
         {

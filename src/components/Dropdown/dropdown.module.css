@@ -74,7 +74,7 @@
   }
 }
 
-.labelOuterContainer {
+.itemRowContainer {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-gap-sm, 8px);

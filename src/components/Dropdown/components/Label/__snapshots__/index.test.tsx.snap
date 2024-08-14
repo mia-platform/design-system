@@ -4,7 +4,7 @@ exports[`Label horizontal layout render label only 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -24,7 +24,7 @@ exports[`Label horizontal layout render label only and danger 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -44,7 +44,7 @@ exports[`Label horizontal layout render with danger and secondaryLabel 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -74,7 +74,7 @@ exports[`Label horizontal layout render with secondaryLabel 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -104,7 +104,7 @@ exports[`Label horizontal layout render with tag 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -139,7 +139,7 @@ exports[`Label vertical layout render label only 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer verticalContainer"
@@ -159,7 +159,7 @@ exports[`Label vertical layout render label only and danger 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer verticalContainer"
@@ -179,7 +179,7 @@ exports[`Label vertical layout render with danger and secondaryLabel 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer verticalContainer"
@@ -204,7 +204,7 @@ exports[`Label vertical layout render with secondaryLabel 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer verticalContainer"
@@ -229,7 +229,7 @@ exports[`Label vertical layout render with tag 1`] = `
 <body>
   <div>
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer verticalContainer"

@@ -11,7 +11,7 @@ exports[`Dropdown Component highlights selectedItems multiple mode renders prope
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -38,7 +38,7 @@ exports[`Dropdown Component highlights selectedItems multiple mode renders prope
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -75,7 +75,7 @@ exports[`Dropdown Component highlights selectedItems multiple mode renders prope
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -102,7 +102,7 @@ exports[`Dropdown Component highlights selectedItems multiple mode renders prope
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -139,7 +139,7 @@ exports[`Dropdown Component highlights selectedItems multiple mode renders prope
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -166,7 +166,7 @@ exports[`Dropdown Component highlights selectedItems single mode renders proper 
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -193,7 +193,7 @@ exports[`Dropdown Component highlights selectedItems single mode updates highlig
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -220,7 +220,7 @@ exports[`Dropdown Component highlights selectedItems single mode updates highlig
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -257,7 +257,7 @@ exports[`Dropdown Component highlights selectedItems single mode updates highlig
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -284,7 +284,7 @@ exports[`Dropdown Component label layouts render labels 1`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -311,7 +311,7 @@ exports[`Dropdown Component label layouts render labels 2`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
@@ -348,7 +348,7 @@ exports[`Dropdown Component label layouts render labels 3`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelOuterContainer"
+      class="itemRowContainer"
     >
       <div
         class="labelsContainer horizontalContainer"
