@@ -241,13 +241,9 @@ exports[`Label vertical layout render with tag 1`] = `
         </span>
       </div>
       <span
-        class="labelTag"
+        class="mia-platform-tag"
       >
-        <span
-          class="mia-platform-tag"
-        >
-          Tag
-        </span>
+        Tag
       </span>
     </div>
   </div>

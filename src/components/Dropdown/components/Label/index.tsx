@@ -78,11 +78,7 @@ const Label = ({
             </>
         }
       </div>
-      {
-        tag && (
-          <span className={styles.labelTag}>{tag}</span>
-        )
-      }
+      {tag}
     </div>
   )
 }
