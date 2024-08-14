@@ -78,9 +78,30 @@ export default meta
 
 export const BasicExample: Story = {}
 
-export const VerticalLayoutExample: Story = {
+export const VerticalLayout: Story = {
   args: {
     itemLayout: Dropdown.ItemLayout.Vertical,
+  },
+}
+
+export const HighlightSelection: Story = {
+  args: {
+    initialSelectedItems: ['id1'],
+  },
+}
+
+export const MultipleHighlightSelection: Story = {
+  args: {
+    initialSelectedItems: [],
+    multiple: true,
+  },
+}
+
+export const MultipleHighlightSelectionWithVerticalLayout: Story = {
+  args: {
+    initialSelectedItems: [],
+    itemLayout: Dropdown.ItemLayout.Vertical,
+    multiple: true,
   },
 }
 
