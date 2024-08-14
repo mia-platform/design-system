@@ -91,6 +91,14 @@ export const MultipleHighlightSelection: Story = {
   },
 }
 
+export const MultipleHighlightSelectionWithVerticalLayout: Story = {
+  args: {
+    initialSelectedItems: [],
+    itemLayout: Dropdown.ItemLayout.Vertical,
+    multiple: true,
+  },
+}
+
 export const HoverTrigger: Story = {
   args: {
     triggers: [Dropdown.Trigger.Hover],
