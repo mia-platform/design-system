@@ -64,9 +64,17 @@
   }
 }
 
-.labelContainer {
+.labelOuterContainer {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-gap-sm, 8px);
+  overflow: hidden;
+}
+
+.labelLabelsContainer {
   display: flex;
   text-align: left;
+  flex: 1 1 auto;
 }
 
 .horizontalContainer {
@@ -78,4 +86,8 @@
 .verticalContainer {
   flex-direction: column;
   gap: var(--spacing-gap-xs, 4px);
+}
+
+.labelTag {
+  align-self: center;
 }

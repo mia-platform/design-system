@@ -118,7 +118,7 @@ function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems 
     children: item.children ? itemsAdapter(item.children, layout) : undefined,
     danger: item.danger,
     key: item.id,
-    label: <Label item={item} layout={layout} />,
+    label: <Label item={item} layout={layout} tag={item.tag} />,
   }))
 }
 

@@ -32,7 +32,10 @@ export type LabelProps = {
 }
 
 const validateTagType = (tag?: ReactNode): void => {
-  if (tag && (!isValidElement(tag) || tag.type !== Tag)) {
+  if (!tag) {
+    return
+  }
+  if (!isValidElement(tag) || tag.type !== Tag) {
     throw new Error('`tag` must be a Tag component')
   }
 }
@@ -53,8 +56,8 @@ const Label = ({
     danger ? styles.danger : undefined
   ), [danger])
 
-  const containerClassName = useMemo(() => classNames(
-    styles.labelContainer,
+  const labelsContainerClassName = useMemo(() => classNames(
+    styles.labelLabelsContainer,
     layout === ItemLayout.Horizontal
       ? styles.horizontalContainer
       : styles.verticalContainer
@@ -63,15 +66,22 @@ const Label = ({
   validateTagType(tag)
 
   return (
-    <div className={containerClassName}>
-      <span className={primaryLabelClassName}>{label}</span>
+    <div className={styles.labelOuterContainer}>
+      <div className={labelsContainerClassName}>
+        <span className={primaryLabelClassName}>{label}</span>
+        {
+          !secondaryLabel
+            ? null
+            : <>
+              {layout === ItemLayout.Horizontal && <span className={secondaryLabelClassName}>{LABEL_DIVIDER}</span>}
+              <span className={secondaryLabelClassName}>{secondaryLabel}</span>
+            </>
+        }
+      </div>
       {
-        !secondaryLabel
-          ? null
-          : <>
-            {layout === ItemLayout.Horizontal && <span className={secondaryLabelClassName}>{LABEL_DIVIDER}</span>}
-            <span className={secondaryLabelClassName}>{secondaryLabel}</span>
-          </>
+        tag && (
+          <span className={styles.labelTag}>{tag}</span>
+        )
       }
     </div>
   )
