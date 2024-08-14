@@ -45,6 +45,7 @@ const antdSourceMap: Record<AntdTriggerSource, OpenChangeInfoSource> = {
 export const defaults = {
   itemLayout: ItemLayout.Horizontal,
   trigger: [DropdownTrigger.Click],
+  selectedItems: [],
 }
 
 export const Dropdown = ({
@@ -57,6 +58,7 @@ export const Dropdown = ({
   triggers = defaults.trigger,
   onOpenChange,
   getPopupContainer,
+  selectedItems = defaults.selectedItems,
 }: DropdownProps): ReactElement => {
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
@@ -77,10 +79,11 @@ export const Dropdown = ({
 
   const menu = useMemo(() => ({
     items: antdItems,
-    onClick: onAntdMenuClick,
     /* istanbul ignore next */
     getPopupContainer: (triggerNode: HTMLElement) => (document.querySelector(`.${uniqueClassName}`) || triggerNode) as HTMLElement,
-  }), [antdItems, onAntdMenuClick, uniqueClassName])
+    onClick: onAntdMenuClick,
+    selectedKeys: selectedItems,
+  }), [antdItems, onAntdMenuClick, selectedItems, uniqueClassName])
 
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
 

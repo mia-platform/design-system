@@ -123,6 +123,8 @@ export type DropdownProps = {
    */
   onClick: (event: DropdownClickEvent) => void
 
+  selectedItems?: string[],
+
   /**
    * list of triggers that can open the Dropdown (accepts: click, hover, contextMenu).
    */
