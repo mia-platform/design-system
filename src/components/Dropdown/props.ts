@@ -46,6 +46,12 @@ export type DropdownItem = {
   secondaryLabel?: ReactNode,
 
   /**
+   * A Tag, displayed on the right side of the item.
+   * The argument must be a Tag component, otherwise an error will be thrown.
+   */
+  tag?: ReactNode
+
+  /**
    * List of sub-menu items.
    */
   children?: DropdownItem[],

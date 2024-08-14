@@ -68,10 +68,23 @@
     border-top-left-radius: var(--shape-border-radius-lg, 8px);
     border-top-right-radius: var(--shape-border-radius-lg, 8px);
   }
+
+  :global(.mia-platform-tag) {
+    margin-inline-end: unset;
+  }
 }
 
-.labelContainer {
+.itemRowContainer {
   display: flex;
+  flex-direction: row;
+  gap: var(--spacing-gap-sm, 8px);
+  align-items: center;
+}
+
+.labelsContainer {
+  display: flex;
+  text-align: left;
+  flex: 1 1 auto;
 }
 
 .horizontalContainer {

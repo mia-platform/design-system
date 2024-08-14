@@ -19,6 +19,7 @@
 import { DropdownItem, ItemLayout } from '../../props'
 import Label, { LabelProps } from '.'
 import { RenderResult, render } from '../../../../test-utils'
+import { Tag } from '../../../Tag'
 
 describe('Label', () => {
   type TestCase = {
@@ -43,6 +44,10 @@ describe('Label', () => {
       {
         name: 'with danger and secondaryLabel',
         item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', danger: true },
+      },
+      {
+        name: 'with tag',
+        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', tag: <Tag>Tag</Tag> },
       },
     ]
 
@@ -70,11 +75,26 @@ describe('Label', () => {
         name: 'with danger and secondaryLabel',
         item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', danger: true },
       },
+      {
+        name: 'with tag',
+        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', tag: <Tag>Tag</Tag> },
+      },
     ]
 
     it.each(testCases)('render $name', ({ item }) => {
       const { baseElement } = renderLabel({ item, layout: ItemLayout.Vertical })
       expect(baseElement).toMatchSnapshot()
+    })
+  })
+
+  describe('tag', () => {
+    it('throws an error if tag is not a Tag component', () => {
+      const renderFn = (): RenderResult => renderLabel({
+        item: { id: 'some-id', label: 'Some Label', tag: <div id="definitely-not-a-Tag" /> },
+        layout: ItemLayout.Horizontal,
+      })
+
+      expect(renderFn).toThrow('Error in Dropdown item with id `some-id`: `item.tag` must be a Tag component')
     })
   })
 })

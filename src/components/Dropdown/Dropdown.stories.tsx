@@ -22,6 +22,7 @@ import { action } from '@storybook/addon-actions'
 import { Button } from '../Button'
 import { Dropdown } from '.'
 import { DropdownProps } from './props'
+import { Tag } from '../Tag'
 
 const defaults: Partial<DropdownProps> = {
   items: [{
@@ -51,6 +52,11 @@ const defaults: Partial<DropdownProps> = {
         label: 'value 4.2-1',
       }],
     }],
+  }, {
+    id: 'id5-with-tag',
+    label: 'with tag',
+    secondaryLabel: 'Some additional info 2',
+    tag: <Tag>{'Tag'}</Tag>,
   }],
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),

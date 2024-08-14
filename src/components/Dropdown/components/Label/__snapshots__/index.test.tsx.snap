@@ -4,13 +4,17 @@ exports[`Label horizontal layout render label only 1`] = `
 <body>
   <div>
     <div
-      class="labelContainer horizontalContainer"
+      class="itemRowContainer"
     >
-      <span
-        class="primaryLabel"
+      <div
+        class="labelsContainer horizontalContainer"
       >
-        Some Label
-      </span>
+        <span
+          class="primaryLabel"
+        >
+          Some Label
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -20,13 +24,17 @@ exports[`Label horizontal layout render label only and danger 1`] = `
 <body>
   <div>
     <div
-      class="labelContainer horizontalContainer"
+      class="itemRowContainer"
     >
-      <span
-        class="primaryLabel danger"
+      <div
+        class="labelsContainer horizontalContainer"
       >
-        Some Label
-      </span>
+        <span
+          class="primaryLabel danger"
+        >
+          Some Label
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -36,23 +44,27 @@ exports[`Label horizontal layout render with danger and secondaryLabel 1`] = `
 <body>
   <div>
     <div
-      class="labelContainer horizontalContainer"
+      class="itemRowContainer"
     >
-      <span
-        class="primaryLabel danger"
+      <div
+        class="labelsContainer horizontalContainer"
       >
-        Some Label
-      </span>
-      <span
-        class="secondaryLabel danger"
-      >
-        ·
-      </span>
-      <span
-        class="secondaryLabel danger"
-      >
-        Secondary Label
-      </span>
+        <span
+          class="primaryLabel danger"
+        >
+          Some Label
+        </span>
+        <span
+          class="secondaryLabel danger"
+        >
+          ·
+        </span>
+        <span
+          class="secondaryLabel danger"
+        >
+          Secondary Label
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -62,22 +74,61 @@ exports[`Label horizontal layout render with secondaryLabel 1`] = `
 <body>
   <div>
     <div
-      class="labelContainer horizontalContainer"
+      class="itemRowContainer"
     >
-      <span
-        class="primaryLabel"
+      <div
+        class="labelsContainer horizontalContainer"
       >
-        Some Label
-      </span>
-      <span
-        class="secondaryLabel"
+        <span
+          class="primaryLabel"
+        >
+          Some Label
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          ·
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          Secondary Label
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Label horizontal layout render with tag 1`] = `
+<body>
+  <div>
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
       >
-        ·
-      </span>
+        <span
+          class="primaryLabel"
+        >
+          Some Label
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          ·
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          Secondary Label
+        </span>
+      </div>
       <span
-        class="secondaryLabel"
+        class="mia-platform-tag"
       >
-        Secondary Label
+        Tag
       </span>
     </div>
   </div>
@@ -88,13 +139,17 @@ exports[`Label vertical layout render label only 1`] = `
 <body>
   <div>
     <div
-      class="labelContainer verticalContainer"
+      class="itemRowContainer"
     >
-      <span
-        class="primaryLabel strong"
+      <div
+        class="labelsContainer verticalContainer"
       >
-        Some Label
-      </span>
+        <span
+          class="primaryLabel strong"
+        >
+          Some Label
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -104,13 +159,17 @@ exports[`Label vertical layout render label only and danger 1`] = `
 <body>
   <div>
     <div
-      class="labelContainer verticalContainer"
+      class="itemRowContainer"
     >
-      <span
-        class="primaryLabel danger strong"
+      <div
+        class="labelsContainer verticalContainer"
       >
-        Some Label
-      </span>
+        <span
+          class="primaryLabel danger strong"
+        >
+          Some Label
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -120,18 +179,22 @@ exports[`Label vertical layout render with danger and secondaryLabel 1`] = `
 <body>
   <div>
     <div
-      class="labelContainer verticalContainer"
+      class="itemRowContainer"
     >
-      <span
-        class="primaryLabel danger strong"
+      <div
+        class="labelsContainer verticalContainer"
       >
-        Some Label
-      </span>
-      <span
-        class="secondaryLabel danger"
-      >
-        Secondary Label
-      </span>
+        <span
+          class="primaryLabel danger strong"
+        >
+          Some Label
+        </span>
+        <span
+          class="secondaryLabel danger"
+        >
+          Secondary Label
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -141,17 +204,51 @@ exports[`Label vertical layout render with secondaryLabel 1`] = `
 <body>
   <div>
     <div
-      class="labelContainer verticalContainer"
+      class="itemRowContainer"
     >
-      <span
-        class="primaryLabel strong"
+      <div
+        class="labelsContainer verticalContainer"
       >
-        Some Label
-      </span>
-      <span
-        class="secondaryLabel"
+        <span
+          class="primaryLabel strong"
+        >
+          Some Label
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          Secondary Label
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Label vertical layout render with tag 1`] = `
+<body>
+  <div>
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer verticalContainer"
       >
-        Secondary Label
+        <span
+          class="primaryLabel strong"
+        >
+          Some Label
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          Secondary Label
+        </span>
+      </div>
+      <span
+        class="mia-platform-tag"
+      >
+        Tag
       </span>
     </div>
   </div>

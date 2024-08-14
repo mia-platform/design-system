@@ -16,10 +16,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useMemo } from 'react'
+import { ReactElement, ReactNode, isValidElement, useMemo } from 'react'
 import classNames from 'classnames'
 
 import { DropdownItem, ItemLayout } from '../../props'
+import { Tag } from '../../../Tag'
 import styles from '../../dropdown.module.css'
 
 const LABEL_DIVIDER = '·'
@@ -29,8 +30,17 @@ export type LabelProps = {
   item: DropdownItem
 }
 
+const validateTagType = (itemId: string, tag?: ReactNode): void => {
+  if (!tag) {
+    return
+  }
+  if (!isValidElement(tag) || tag.type !== Tag) {
+    throw new Error(`Error in Dropdown item with id \`${itemId}\`: \`item.tag\` must be a Tag component`)
+  }
+}
+
 const Label = ({
-  item: { danger, label, secondaryLabel },
+  item: { id: itemId, danger, label, secondaryLabel, tag },
   layout,
 }: LabelProps): ReactElement => {
   const primaryLabelClassName = useMemo(() => classNames(
@@ -44,24 +54,29 @@ const Label = ({
     danger ? styles.danger : undefined
   ), [danger])
 
-  const containerClassName = useMemo(() => classNames(
-    styles.labelContainer,
+  const labelsContainerClassName = useMemo(() => classNames(
+    styles.labelsContainer,
     layout === ItemLayout.Horizontal
       ? styles.horizontalContainer
       : styles.verticalContainer
   ), [layout])
 
+  validateTagType(itemId, tag)
+
   return (
-    <div className={containerClassName}>
-      <span className={primaryLabelClassName}>{label}</span>
-      {
-        !secondaryLabel
-          ? null
-          : <>
-            {layout === ItemLayout.Horizontal && <span className={secondaryLabelClassName}>{LABEL_DIVIDER}</span>}
-            <span className={secondaryLabelClassName}>{secondaryLabel}</span>
-          </>
-      }
+    <div className={styles.itemRowContainer}>
+      <div className={labelsContainerClassName}>
+        <span className={primaryLabelClassName}>{label}</span>
+        {
+          !secondaryLabel
+            ? null
+            : <>
+              {layout === ItemLayout.Horizontal && <span className={secondaryLabelClassName}>{LABEL_DIVIDER}</span>}
+              <span className={secondaryLabelClassName}>{secondaryLabel}</span>
+            </>
+        }
+      </div>
+      {tag}
     </div>
   )
 }
