@@ -16,10 +16,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useMemo } from 'react'
+import { ReactElement, ReactNode, isValidElement, useMemo } from 'react'
 import classNames from 'classnames'
 
 import { DropdownItem, ItemLayout } from '../../props'
+import { Tag } from '../../../Tag'
 import styles from '../../dropdown.module.css'
 
 const LABEL_DIVIDER = '·'
@@ -27,12 +28,20 @@ const LABEL_DIVIDER = '·'
 export type LabelProps = {
   layout: ItemLayout
   item: DropdownItem
+  tag?: ReactNode
+}
+
+const validateTagType = (tag?: ReactNode): void => {
+  if (tag && (!isValidElement(tag) || tag.type !== Tag)) {
+    throw new Error('`tag` must be a Tag component')
+  }
 }
 
 const Label = ({
   item: { danger, label, secondaryLabel },
   layout,
-}: LabelProps): ReactElement => {
+  tag,
+}: LabelProps): ReactElement<LabelProps> => {
   const primaryLabelClassName = useMemo(() => classNames(
     styles.primaryLabel,
     danger ? styles.danger : undefined,
@@ -50,6 +59,8 @@ const Label = ({
       ? styles.horizontalContainer
       : styles.verticalContainer
   ), [layout])
+
+  validateTagType(tag)
 
   return (
     <div className={containerClassName}>

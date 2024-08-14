@@ -77,6 +77,17 @@ describe('Label', () => {
       expect(baseElement).toMatchSnapshot()
     })
   })
+
+  describe('tag', () => {
+    it('throws an error if tag is not a Tag component', () => {
+      const renderFn = (): RenderResult => renderLabel({
+        item: { id: '1', label: 'Some Label' },
+        layout: ItemLayout.Horizontal,
+        tag: <div id="definitely-not-a-Tag" />,
+      })
+      expect(renderFn).toThrow('`tag` must be a Tag component')
+    })
+  })
 })
 
 function renderLabel(props: LabelProps): RenderResult {
