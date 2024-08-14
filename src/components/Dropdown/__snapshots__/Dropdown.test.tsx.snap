@@ -11,13 +11,17 @@ exports[`Dropdown Component label layouts render labels 1`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelContainer horizontalContainer"
+      class="labelOuterContainer"
     >
-      <span
-        class="primaryLabel"
+      <div
+        class="labelLabelsContainer horizontalContainer"
       >
-        Label 1
-      </span>
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
     </div>
   </span>
 </li>
@@ -34,23 +38,27 @@ exports[`Dropdown Component label layouts render labels 2`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelContainer horizontalContainer"
+      class="labelOuterContainer"
     >
-      <span
-        class="primaryLabel"
+      <div
+        class="labelLabelsContainer horizontalContainer"
       >
-        Label 2
-      </span>
-      <span
-        class="secondaryLabel"
-      >
-        ·
-      </span>
-      <span
-        class="secondaryLabel"
-      >
-        Additional Info 2
-      </span>
+        <span
+          class="primaryLabel"
+        >
+          Label 2
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          ·
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          Additional Info 2
+        </span>
+      </div>
     </div>
   </span>
 </li>
@@ -67,23 +75,27 @@ exports[`Dropdown Component label layouts render labels 3`] = `
     class="mia-platform-dropdown-menu-title-content"
   >
     <div
-      class="labelContainer horizontalContainer"
+      class="labelOuterContainer"
     >
-      <span
-        class="primaryLabel danger"
+      <div
+        class="labelLabelsContainer horizontalContainer"
       >
-        Danger Label
-      </span>
-      <span
-        class="secondaryLabel danger"
-      >
-        ·
-      </span>
-      <span
-        class="secondaryLabel danger"
-      >
-        Additional Info 2
-      </span>
+        <span
+          class="primaryLabel danger"
+        >
+          Danger Label
+        </span>
+        <span
+          class="secondaryLabel danger"
+        >
+          ·
+        </span>
+        <span
+          class="secondaryLabel danger"
+        >
+          Additional Info 2
+        </span>
+      </div>
     </div>
   </span>
 </li>
