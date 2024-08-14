@@ -30,17 +30,17 @@ export type LabelProps = {
   item: DropdownItem
 }
 
-const validateTagType = (tag?: ReactNode): void => {
+const validateTagType = (itemId: string, tag?: ReactNode,): void => {
   if (!tag) {
     return
   }
   if (!isValidElement(tag) || tag.type !== Tag) {
-    throw new Error('`item.tag` must be a Tag component')
+    throw new Error(`Error in Dropdown item with id \`${itemId}\`: \`item.tag\` must be a Tag component`)
   }
 }
 
 const Label = ({
-  item: { danger, label, secondaryLabel, tag },
+  item: { id: itemId, danger, label, secondaryLabel, tag },
   layout,
 }: LabelProps): ReactElement => {
   const primaryLabelClassName = useMemo(() => classNames(
@@ -61,7 +61,7 @@ const Label = ({
       : styles.verticalContainer
   ), [layout])
 
-  validateTagType(tag)
+  validateTagType(itemId, tag)
 
   return (
     <div className={styles.itemRowContainer}>

@@ -94,11 +94,11 @@ describe('Label', () => {
   describe('tag', () => {
     it('throws an error if tag is not a Tag component', () => {
       const renderFn = (): RenderResult => renderLabel({
-        item: { id: '1', label: 'Some Label', tag: <div id="definitely-not-a-Tag" /> },
+        item: { id: 'some-id', label: 'Some Label', tag: <div id="definitely-not-a-Tag" /> },
         layout: ItemLayout.Horizontal,
       })
 
-      expect(renderFn).toThrow('`item.tag` must be a Tag component')
+      expect(renderFn).toThrow('Error in Dropdown item with id `some-id`: `item.tag` must be a Tag component')
     })
   })
 })
