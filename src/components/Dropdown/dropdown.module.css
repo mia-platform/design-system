@@ -44,6 +44,10 @@
     color: var(--palette-common-white, #ffffff);
   }
 
+  & :global(.mia-platform-dropdown-menu-item-selected) .primaryLabel {
+    font-weight: var(--typography-bodyLBold-fontWeight, 600);
+  }
+
   :global(.mia-platform-dropdown-menu-submenu-title) {
     display: flex !important;
   }
