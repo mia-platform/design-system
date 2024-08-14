@@ -19,6 +19,7 @@
 import { DropdownItem, ItemLayout } from '../../props'
 import Label, { LabelProps } from '.'
 import { RenderResult, render } from '../../../../test-utils'
+import { Tag } from '../../../Tag'
 
 describe('Label', () => {
   type TestCase = {
@@ -43,6 +44,10 @@ describe('Label', () => {
       {
         name: 'with danger and secondaryLabel',
         item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', danger: true },
+      },
+      {
+        name: 'with tag',
+        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', tag: <Tag>Tag</Tag> },
       },
     ]
 
@@ -69,6 +74,10 @@ describe('Label', () => {
       {
         name: 'with danger and secondaryLabel',
         item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', danger: true },
+      },
+      {
+        name: 'with tag',
+        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', tag: <Tag>Tag</Tag> },
       },
     ]
 

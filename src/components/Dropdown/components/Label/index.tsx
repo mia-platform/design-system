@@ -57,7 +57,7 @@ const Label = ({
   ), [danger])
 
   const labelsContainerClassName = useMemo(() => classNames(
-    styles.labelLabelsContainer,
+    styles.labelsContainer,
     layout === ItemLayout.Horizontal
       ? styles.horizontalContainer
       : styles.verticalContainer

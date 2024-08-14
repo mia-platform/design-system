@@ -7,7 +7,7 @@ exports[`Label horizontal layout render label only 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer horizontalContainer"
+        class="labelsContainer horizontalContainer"
       >
         <span
           class="primaryLabel"
@@ -27,7 +27,7 @@ exports[`Label horizontal layout render label only and danger 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer horizontalContainer"
+        class="labelsContainer horizontalContainer"
       >
         <span
           class="primaryLabel danger"
@@ -47,7 +47,7 @@ exports[`Label horizontal layout render with danger and secondaryLabel 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer horizontalContainer"
+        class="labelsContainer horizontalContainer"
       >
         <span
           class="primaryLabel danger"
@@ -77,7 +77,37 @@ exports[`Label horizontal layout render with secondaryLabel 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer horizontalContainer"
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Some Label
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          ·
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          Secondary Label
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Label horizontal layout render with tag 1`] = `
+<body>
+  <div>
+    <div
+      class="labelOuterContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
       >
         <span
           class="primaryLabel"
@@ -107,7 +137,7 @@ exports[`Label vertical layout render label only 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer verticalContainer"
+        class="labelsContainer verticalContainer"
       >
         <span
           class="primaryLabel strong"
@@ -127,7 +157,7 @@ exports[`Label vertical layout render label only and danger 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer verticalContainer"
+        class="labelsContainer verticalContainer"
       >
         <span
           class="primaryLabel danger strong"
@@ -147,7 +177,7 @@ exports[`Label vertical layout render with danger and secondaryLabel 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer verticalContainer"
+        class="labelsContainer verticalContainer"
       >
         <span
           class="primaryLabel danger strong"
@@ -172,7 +202,32 @@ exports[`Label vertical layout render with secondaryLabel 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer verticalContainer"
+        class="labelsContainer verticalContainer"
+      >
+        <span
+          class="primaryLabel strong"
+        >
+          Some Label
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          Secondary Label
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Label vertical layout render with tag 1`] = `
+<body>
+  <div>
+    <div
+      class="labelOuterContainer"
+    >
+      <div
+        class="labelsContainer verticalContainer"
       >
         <span
           class="primaryLabel strong"

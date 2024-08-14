@@ -14,7 +14,7 @@ exports[`Dropdown Component label layouts render labels 1`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer horizontalContainer"
+        class="labelsContainer horizontalContainer"
       >
         <span
           class="primaryLabel"
@@ -41,7 +41,7 @@ exports[`Dropdown Component label layouts render labels 2`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer horizontalContainer"
+        class="labelsContainer horizontalContainer"
       >
         <span
           class="primaryLabel"
@@ -78,7 +78,7 @@ exports[`Dropdown Component label layouts render labels 3`] = `
       class="labelOuterContainer"
     >
       <div
-        class="labelLabelsContainer horizontalContainer"
+        class="labelsContainer horizontalContainer"
       >
         <span
           class="primaryLabel danger"
