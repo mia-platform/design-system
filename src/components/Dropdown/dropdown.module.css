@@ -66,6 +66,7 @@
 
 .labelContainer {
   display: flex;
+  text-align: left;
 }
 
 .horizontalContainer {
