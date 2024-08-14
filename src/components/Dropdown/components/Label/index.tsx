@@ -30,7 +30,7 @@ export type LabelProps = {
   item: DropdownItem
 }
 
-const validateTagType = (itemId: string, tag?: ReactNode,): void => {
+const validateTagType = (itemId: string, tag?: ReactNode): void => {
   if (!tag) {
     return
   }
