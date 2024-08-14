@@ -50,8 +50,7 @@ describe('Label', () => {
       },
       {
         name: 'with tag',
-        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label' },
-        tag: <Tag>Tag</Tag>,
+        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', tag: <Tag>Tag</Tag> },
       },
     ]
 
@@ -81,13 +80,13 @@ describe('Label', () => {
       },
       {
         name: 'with tag',
-        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label' },
-        tag: <Tag>Tag</Tag>,
+        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', tag: <Tag>Tag</Tag> },
+
       },
     ]
 
-    it.each(testCases)('render $name', ({ item, tag }) => {
-      const { baseElement } = renderLabel({ item, layout: ItemLayout.Vertical, tag })
+    it.each(testCases)('render $name', ({ item }) => {
+      const { baseElement } = renderLabel({ item, layout: ItemLayout.Vertical })
       expect(baseElement).toMatchSnapshot()
     })
   })
@@ -95,11 +94,11 @@ describe('Label', () => {
   describe('tag', () => {
     it('throws an error if tag is not a Tag component', () => {
       const renderFn = (): RenderResult => renderLabel({
-        item: { id: '1', label: 'Some Label' },
+        item: { id: '1', label: 'Some Label', tag: <div id="definitely-not-a-Tag" /> },
         layout: ItemLayout.Horizontal,
-        tag: <div id="definitely-not-a-Tag" />,
       })
-      expect(renderFn).toThrow('`tag` must be a Tag component')
+
+      expect(renderFn).toThrow('`item.tag` must be a Tag component')
     })
   })
 })

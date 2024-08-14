@@ -125,6 +125,11 @@ exports[`Label horizontal layout render with tag 1`] = `
           Secondary Label
         </span>
       </div>
+      <span
+        class="mia-platform-tag"
+      >
+        Tag
+      </span>
     </div>
   </div>
 </body>

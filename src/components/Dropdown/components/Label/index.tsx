@@ -28,7 +28,6 @@ const LABEL_DIVIDER = '·'
 export type LabelProps = {
   layout: ItemLayout
   item: DropdownItem
-  tag?: ReactNode
 }
 
 const validateTagType = (tag?: ReactNode): void => {
@@ -36,14 +35,13 @@ const validateTagType = (tag?: ReactNode): void => {
     return
   }
   if (!isValidElement(tag) || tag.type !== Tag) {
-    throw new Error('`tag` must be a Tag component')
+    throw new Error('`item.tag` must be a Tag component')
   }
 }
 
 const Label = ({
-  item: { danger, label, secondaryLabel },
+  item: { danger, label, secondaryLabel, tag },
   layout,
-  tag,
 }: LabelProps): ReactElement => {
   const primaryLabelClassName = useMemo(() => classNames(
     styles.primaryLabel,
