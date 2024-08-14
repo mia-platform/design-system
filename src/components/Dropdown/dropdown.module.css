@@ -33,12 +33,14 @@
 }
 
 .dropdownWrapper {
-  & :global(.mia-platform-dropdown-menu-item-danger):hover {
+  & :global(.mia-platform-dropdown-menu-item-danger):hover,
+  & :global(.mia-platform-dropdown-menu-item-selected.mia-platform-dropdown-menu-item-danger) {
     /* overwrite antd default background */
     background-color: var(--palette-action-danger-hover, #FF5453) !important;
   }
 
-  & :global(.mia-platform-dropdown-menu-item-danger):hover .danger {
+  & :global(.mia-platform-dropdown-menu-item-danger):hover .danger,
+  & :global(.mia-platform-dropdown-menu-item-selected) .danger{
     color: var(--palette-common-white, #ffffff);
   }
 
