@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactNode } from 'react'
+
 import { DropdownItem, ItemLayout } from '../../props'
 import Label, { LabelProps } from '.'
 import { RenderResult, render } from '../../../../test-utils'
@@ -25,6 +27,7 @@ describe('Label', () => {
   type TestCase = {
     name: string,
     item: DropdownItem,
+    tag?: ReactNode,
   }
 
   describe('horizontal layout', () => {
@@ -47,7 +50,8 @@ describe('Label', () => {
       },
       {
         name: 'with tag',
-        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', tag: <Tag>Tag</Tag> },
+        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label' },
+        tag: <Tag>Tag</Tag>,
       },
     ]
 
@@ -77,12 +81,13 @@ describe('Label', () => {
       },
       {
         name: 'with tag',
-        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label', tag: <Tag>Tag</Tag> },
+        item: { id: '1', label: 'Some Label', secondaryLabel: 'Secondary Label' },
+        tag: <Tag>Tag</Tag>,
       },
     ]
 
-    it.each(testCases)('render $name', ({ item }) => {
-      const { baseElement } = renderLabel({ item, layout: ItemLayout.Vertical })
+    it.each(testCases)('render $name', ({ item, tag }) => {
+      const { baseElement } = renderLabel({ item, layout: ItemLayout.Vertical, tag })
       expect(baseElement).toMatchSnapshot()
     })
   })
