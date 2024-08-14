@@ -19,7 +19,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { DropdownItem, DropdownProps } from './props'
+import { DropdownProps } from './props'
 import { Button } from '../Button'
 import { Dropdown } from '.'
 import { Tag } from '../Tag'
@@ -52,6 +52,11 @@ const defaults: Partial<DropdownProps> = {
         label: 'value 4.2-1',
       }],
     }],
+  }, {
+    id: 'id5-with-tag',
+    label: 'with tag',
+    secondaryLabel: 'Some additional info 2',
+    tag: <Tag>{'Tag'}</Tag>,
   }],
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),
@@ -97,24 +102,3 @@ export const Disabled: Story = {
     isDisabled: true,
   },
 }
-
-export const HorizontalLayoutWithTag: Story = {
-  args: {
-    itemLayout: Dropdown.ItemLayout.Horizontal,
-    items: defaults?.items?.map<DropdownItem>(item => ({
-      ...item,
-      tag: <Tag isBordered={false}>{'Test'}</Tag>,
-    })),
-  },
-}
-
-export const VerticalLayoutWithTag: Story = {
-  args: {
-    itemLayout: Dropdown.ItemLayout.Vertical,
-    items: defaults?.items?.map<DropdownItem>(item => ({
-      ...item,
-      tag: <Tag isBordered={false}>{'Test'}</Tag>,
-    })),
-  },
-}
-
