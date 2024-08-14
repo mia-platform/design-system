@@ -1,4 +1,3 @@
-/* eslint-disable max-nested-callbacks */
 /**
  * Copyright 2024 Mia srl
  *
@@ -267,12 +266,42 @@ describe('Dropdown Component', () => {
         const second = screen.getByRole('menuitem', { name: /Label 2/ })
         userEvent.click(second)
 
+        // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
 
         userEvent.click(button)
         const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
         const secondUpdated = screen.getByRole('menuitem', { name: /Label 2/ })
         expect(firstUpdated).toMatchSnapshot('after click render Label 1 is not selected')
+        expect(secondUpdated).toMatchSnapshot('after click render Label 2 is selected')
+      })
+    })
+
+    describe('multiple mode', () => {
+      it('renders proper highlight', async() => {
+        const onClick = jest.fn()
+        const props: DropdownProps = {
+          ...defaultProps,
+          onClick,
+          initialSelectedItems: ['1'],
+          multiple: true,
+        }
+
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+        const el = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(el).toMatchSnapshot('first render with pre-selected label 1')
+
+        const second = screen.getByRole('menuitem', { name: /Label 2/ })
+        userEvent.click(second)
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+
+        userEvent.click(button)
+        const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
+        const secondUpdated = screen.getByRole('menuitem', { name: /Label 2/ })
+        expect(firstUpdated).toMatchSnapshot('after click render Label 1 is selected')
         expect(secondUpdated).toMatchSnapshot('after click render Label 2 is selected')
       })
     })
