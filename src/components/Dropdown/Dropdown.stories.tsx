@@ -17,12 +17,11 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
-import { useCallback, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
-import { DropdownClickEvent, DropdownProps } from './props'
 import { Button } from '../Button'
 import { Dropdown } from '.'
+import { DropdownProps } from './props'
 
 const defaults: Partial<DropdownProps> = {
   items: [{
@@ -80,53 +79,16 @@ export const VerticalLayout: Story = {
 }
 
 export const HighlightSelection: Story = {
-  decorators: [
-    (Story, context) => {
-      const [selectedItems, setSelectedItems] = useState(['id1'])
-      const onClick = useCallback(({ id }: DropdownClickEvent) => {
-        setSelectedItems([id])
-      }, [])
-      return (
-        Story({
-          ...context,
-          args: {
-            ...context.allArgs,
-            selectedItems,
-            onClick,
-          },
-        })
-      )
-    },
-  ],
+  args: {
+    initialSelectedItems: ['id1'],
+  },
 }
 
 export const MultipleHighlightSelection: Story = {
-  decorators: [
-    (Story, context) => {
-      const [selectedItems, setSelectedItems] = useState<string[]>([])
-      const onClick = useCallback(({ id }: DropdownClickEvent) => {
-        setSelectedItems((prevItems) => {
-          if (!prevItems.includes(id)) {
-            return [...prevItems, id]
-          }
-          const newItems = [...prevItems]
-          newItems.splice(newItems.indexOf(id), 1)
-          return newItems
-        })
-      }, [])
-
-      return (
-        Story({
-          ...context,
-          args: {
-            ...context.allArgs,
-            selectedItems,
-            onClick,
-          },
-        })
-      )
-    },
-  ],
+  args: {
+    initialSelectedItems: [],
+    multiple: true,
+  },
 }
 
 export const HoverTrigger: Story = {

@@ -102,9 +102,9 @@ export type DropdownProps = {
   children?: ReactElement,
 
   /**
-   * list of items to be rendered within the Dropdown.
+   * List of items to be shown as selected at first render
    */
-  items: DropdownItem[],
+  initialSelectedItems?: string[],
 
   /**
    * Whether the dropdown menu is disabled.
@@ -112,9 +112,19 @@ export type DropdownProps = {
   isDisabled?: boolean,
 
   /**
-   * Allows to control the Dropdown label layout (accepts: horizontal, vertical)
+   * list of items to be rendered within the Dropdown.
+   */
+  items: DropdownItem[],
+
+  /**
+   * Allows to control the Dropdown label layout (accepts: horizontal, vertical).
    */
   itemLayout?: ItemLayout,
+
+  /**
+   * control whether to allow multiple highlight selection.
+   */
+  multiple?: boolean
 
   /**
    * @param DropdownClickEvent event contains the reference to the clicked item, specifically it holds
@@ -122,8 +132,6 @@ export type DropdownProps = {
    * - selectedPath: array of strings representing the selected item json path
    */
   onClick: (event: DropdownClickEvent) => void
-
-  selectedItems?: string[],
 
   /**
    * list of triggers that can open the Dropdown (accepts: click, hover, contextMenu).
