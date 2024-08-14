@@ -44,7 +44,7 @@ const Label = ({
   item: { danger, label, secondaryLabel },
   layout,
   tag,
-}: LabelProps): ReactElement<LabelProps> => {
+}: LabelProps): ReactElement => {
   const primaryLabelClassName = useMemo(() => classNames(
     styles.primaryLabel,
     danger ? styles.danger : undefined,
