@@ -1,5 +1,242 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Dropdown Component highlights selectedItems multiple mode renders proper highlight: after click render Label 1 is selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 1
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems multiple mode renders proper highlight: after click render Label 2 is selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-2"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 2
+      </span>
+      <span
+        class="secondaryLabel"
+      >
+        ·
+      </span>
+      <span
+        class="secondaryLabel"
+      >
+        Additional Info 2
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems multiple mode renders proper highlight: after second click render Label 1 is deselected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 1
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems multiple mode renders proper highlight: after second click render Label 2 is selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-2"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 2
+      </span>
+      <span
+        class="secondaryLabel"
+      >
+        ·
+      </span>
+      <span
+        class="secondaryLabel"
+      >
+        Additional Info 2
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems multiple mode renders proper highlight: first render with pre-selected label 1 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 1
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode renders proper highlight 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 1
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode updates highlight: after click render Label 1 is not selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 1
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode updates highlight: after click render Label 2 is selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-2"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 2
+      </span>
+      <span
+        class="secondaryLabel"
+      >
+        ·
+      </span>
+      <span
+        class="secondaryLabel"
+      >
+        Additional Info 2
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode updates highlight: at first render Label 1 is selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="labelContainer horizontalContainer"
+    >
+      <span
+        class="primaryLabel"
+      >
+        Label 1
+      </span>
+    </div>
+  </span>
+</li>
+`;
+
 exports[`Dropdown Component label layouts render labels 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"

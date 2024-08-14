@@ -17,7 +17,7 @@
  */
 
 import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
-import React, { ReactElement, ReactNode, useCallback, useMemo } from 'react'
+import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
 import classNames from 'classnames'
 
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout, OpenChangeInfoSource } from './props'
@@ -45,6 +45,7 @@ const antdSourceMap: Record<AntdTriggerSource, OpenChangeInfoSource> = {
 export const defaults = {
   itemLayout: ItemLayout.Horizontal,
   trigger: [DropdownTrigger.Click],
+  initialSelectedItems: [],
 }
 
 export const Dropdown = ({
@@ -57,6 +58,8 @@ export const Dropdown = ({
   triggers = defaults.trigger,
   onOpenChange,
   getPopupContainer,
+  initialSelectedItems = defaults.initialSelectedItems,
+  multiple,
 }: DropdownProps): ReactElement => {
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
@@ -66,9 +69,19 @@ export const Dropdown = ({
   /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
+  const [selectedItems, setSelectedItems] = useState<string[]>(initialSelectedItems)
+  const updateSelectedItems = useCallback(
+    (itemId: string) => setSelectedItems(prevItems => (multiple ? pushOrRemove(prevItems, itemId) : [itemId])),
+    [multiple]
+  )
+
   const onAntdMenuClick = useCallback(
-    (antdEvent: AntdMenuClickEvent) => onClick(eventAdapter(antdEvent, itemFinderMemo)),
-    [itemFinderMemo, onClick]
+    (antdEvent: AntdMenuClickEvent) => {
+      const itemClickEvent: DropdownClickEvent = eventAdapter(antdEvent, itemFinderMemo)
+      updateSelectedItems(itemClickEvent.id)
+      onClick(itemClickEvent)
+    },
+    [itemFinderMemo, onClick, updateSelectedItems]
   )
 
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
@@ -77,10 +90,11 @@ export const Dropdown = ({
 
   const menu = useMemo(() => ({
     items: antdItems,
-    onClick: onAntdMenuClick,
     /* istanbul ignore next */
     getPopupContainer: (triggerNode: HTMLElement) => (document.querySelector(`.${uniqueClassName}`) || triggerNode) as HTMLElement,
-  }), [antdItems, onAntdMenuClick, uniqueClassName])
+    onClick: onAntdMenuClick,
+    selectedKeys: selectedItems,
+  }), [antdItems, onAntdMenuClick, selectedItems, uniqueClassName])
 
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
 
@@ -147,4 +161,16 @@ function itemFinder(items: DropdownItem[], id: string): DropdownItem|undefined {
       }
     }
   }
+}
+
+function pushOrRemove(prevItems: string[], itemId: string): string[] {
+  const newItems = [...prevItems]
+  const indexOfItem = newItems.indexOf(itemId)
+  if (indexOfItem < 0) {
+    newItems.push(itemId)
+    return newItems
+  }
+
+  newItems.splice(indexOfItem, 1)
+  return newItems
 }

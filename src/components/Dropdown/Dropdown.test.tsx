@@ -233,10 +233,96 @@ describe('Dropdown Component', () => {
       expect(onOpenChange).toHaveBeenNthCalledWith(2, false, { source: OpenChangeInfoSource.Menu })
     })
   })
+
+  describe('highlights selectedItems', () => {
+    describe('single mode', () => {
+      it('renders proper highlight', async() => {
+        const props: DropdownProps = {
+          ...defaultProps,
+          initialSelectedItems: ['1'],
+        }
+
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+        const el = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(el).toMatchSnapshot()
+      })
+
+      it('updates highlight', async() => {
+        const onClick = jest.fn()
+        const props: DropdownProps = {
+          ...defaultProps,
+          onClick,
+          initialSelectedItems: ['1'],
+        }
+
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+        const first = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(first).toMatchSnapshot('at first render Label 1 is selected')
+
+        const second = screen.getByRole('menuitem', { name: /Label 2/ })
+        userEvent.click(second)
+
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+
+        userEvent.click(button)
+        const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
+        const secondUpdated = screen.getByRole('menuitem', { name: /Label 2/ })
+        expect(firstUpdated).toMatchSnapshot('after click render Label 1 is not selected')
+        expect(secondUpdated).toMatchSnapshot('after click render Label 2 is selected')
+      })
+    })
+
+    describe('multiple mode', () => {
+      it('renders proper highlight', async() => {
+        const onClick = jest.fn()
+        const props: DropdownProps = {
+          ...defaultProps,
+          onClick,
+          initialSelectedItems: ['1'],
+          multiple: true,
+        }
+
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+        const el = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(el).toMatchSnapshot('first render with pre-selected label 1')
+
+        // click second label => selected items: label 1 + label 2
+        const second = screen.getByRole('menuitem', { name: /Label 2/ })
+        userEvent.click(second)
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+
+        userEvent.click(button)
+        const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
+        const secondUpdated = screen.getByRole('menuitem', { name: /Label 2/ })
+        expect(firstUpdated).toMatchSnapshot('after click render Label 1 is selected')
+        expect(secondUpdated).toMatchSnapshot('after click render Label 2 is selected')
+
+        // click first label => selected items: label 2
+        userEvent.click(firstUpdated)
+
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+
+        userEvent.click(button)
+        const firstUpdatedDeSelected = await screen.findByRole('menuitem', { name: 'Label 1' })
+        const secondUpdatedStillSelected = await screen.findByRole('menuitem', { name: /Label 2/ })
+        expect(firstUpdatedDeSelected).toMatchSnapshot('after second click render Label 1 is deselected')
+        expect(secondUpdatedStillSelected).toMatchSnapshot('after second click render Label 2 is selected')
+      })
+    })
+  })
 })
 
 function renderDropdown(
-  { props }: {props: DropdownProps} = { props: defaultProps }
+  { props }: { props: DropdownProps } = { props: defaultProps }
 ): RenderResult {
   return render(<Dropdown {...props} />)
 }
