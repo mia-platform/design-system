@@ -16,31 +16,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  DropdownItem,
-  DropdownProps,
-  DropdownTrigger,
-  OpenChangeInfoSource,
-} from './props'
-import {
-  RenderResult,
-  render,
-  screen,
-  userEvent,
-  waitFor,
-} from '../../test-utils'
+import { DropdownItem, DropdownProps, DropdownTrigger, OpenChangeInfoSource } from './props'
+import { RenderResult, render, screen, userEvent, waitFor } from '../../test-utils'
 import { Button } from '../Button'
 import { Dropdown } from './Dropdown'
 
 const items: DropdownItem[] = [
   { id: '1', label: 'Label 1' },
   { id: '2', label: 'Label 2', secondaryLabel: 'Additional Info 2' },
-  {
-    id: '3',
-    label: 'Danger Label',
-    secondaryLabel: 'Additional Info 2',
-    danger: true,
-  },
+  { id: '3', label: 'Danger Label', secondaryLabel: 'Additional Info 2', danger: true },
 ]
 const defaultProps: DropdownProps = {
   items,
@@ -60,9 +44,7 @@ describe('Dropdown Component', () => {
     })
 
     it('opens dropdown on hover', async() => {
-      renderDropdown({
-        props: { ...defaultProps, triggers: [DropdownTrigger.Hover] },
-      })
+      renderDropdown({ props: { ...defaultProps, triggers: [DropdownTrigger.Hover] } })
       const button = screen.getByText('test-trigger-button')
       userEvent.hover(button)
       await screen.findByRole('menuitem', { name: 'Label 1' })
@@ -116,22 +98,17 @@ describe('Dropdown Component', () => {
           {
             id: '2',
             label: 'Label 2',
-            children: [
-              {
-                id: '2-1',
-                label: 'Label 2-1',
-              },
-              {
-                id: '2-2',
-                label: 'Label 2-2',
-                children: [
-                  {
-                    id: '2-2-1',
-                    label: 'Label 2-2-1',
-                  },
-                ],
-              },
-            ],
+            children: [{
+              id: '2-1',
+              label: 'Label 2-1',
+            }, {
+              id: '2-2',
+              label: 'Label 2-2',
+              children: [{
+                id: '2-2-1',
+                label: 'Label 2-2-1',
+              }],
+            }],
           },
         ]
         const props = {
@@ -157,16 +134,10 @@ describe('Dropdown Component', () => {
         onClick.mockClear()
 
         userEvent.click(button)
-        const item2 = await screen.findByRole('menuitem', {
-          name: /^Label 2/i,
-        })
+        const item2 = await screen.findByRole('menuitem', { name: /^Label 2/i })
         userEvent.hover(item2)
 
-        const sub1 = await screen.findByRole(
-          'menuitem',
-          { name: 'Label 2-1' },
-          { timeout: 10000 }
-        )
+        const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-1' }, { timeout: 10000 })
         expect(sub1).toBeInTheDocument()
 
         userEvent.click(sub1)
@@ -186,22 +157,17 @@ describe('Dropdown Component', () => {
           {
             id: '2',
             label: 'Label 2',
-            children: [
-              {
-                id: '2-1',
-                label: 'Label 2-1',
-              },
-              {
-                id: '2-2',
-                label: 'Label 2-2',
-                children: [
-                  {
-                    id: '2-2-1',
-                    label: 'Label 2-2-1',
-                  },
-                ],
-              },
-            ],
+            children: [{
+              id: '2-1',
+              label: 'Label 2-1',
+            }, {
+              id: '2-2',
+              label: 'Label 2-2',
+              children: [{
+                id: '2-2-1',
+                label: 'Label 2-2-1',
+              }],
+            }],
           },
         ]
         const props = {
@@ -215,14 +181,8 @@ describe('Dropdown Component', () => {
 
         await screen.findByRole('menuitem', { name: 'Label 1' })
         userEvent.hover(screen.getByRole('menuitem', { name: /^Label 2/i }))
-        await screen.findByRole(
-          'menuitem',
-          { name: 'Label 2-1' },
-          { timeout: 10000 }
-        )
-        userEvent.hover(
-          screen.getByRole('menuitem', { name: 'Label 2-2 right' })
-        )
+        await screen.findByRole('menuitem', { name: 'Label 2-1' }, { timeout: 10000 })
+        userEvent.hover(screen.getByRole('menuitem', { name: 'Label 2-2 right' }))
 
         const sub1 = await screen.findByRole(
           'menuitem',
@@ -256,9 +216,7 @@ describe('Dropdown Component', () => {
       userEvent.click(button)
 
       await waitFor(() => expect(onOpenChange).toHaveBeenCalledTimes(1))
-      expect(onOpenChange).toHaveBeenCalledWith(true, {
-        source: OpenChangeInfoSource.Trigger,
-      })
+      expect(onOpenChange).toHaveBeenCalledWith(true, { source: OpenChangeInfoSource.Trigger })
     })
 
     it('invokes onOpenChange with menu source when closing clicking on a menu item', async() => {
@@ -276,9 +234,7 @@ describe('Dropdown Component', () => {
       userEvent.click(screen.getByRole('menuitem', { name: 'Label 1' }))
 
       await waitFor(() => expect(onOpenChange).toHaveBeenCalledTimes(2))
-      expect(onOpenChange).toHaveBeenNthCalledWith(2, false, {
-        source: OpenChangeInfoSource.Menu,
-      })
+      expect(onOpenChange).toHaveBeenNthCalledWith(2, false, { source: OpenChangeInfoSource.Menu })
     })
   })
 
