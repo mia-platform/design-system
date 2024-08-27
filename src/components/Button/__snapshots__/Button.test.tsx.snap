@@ -38,23 +38,27 @@ exports[`Button Component renders button with icon left correctly 1`] = `
     class="mia-platform-btn mia-platform-btn-primary button buttonMd"
     type="button"
   >
-    <svg
-      aria-label="PiCircleHalfTiltLight"
-      color="white"
-      fill="currentColor"
-      height="16"
-      role="img"
-      stroke="currentColor"
-      stroke-width="0"
-      style="color: white;"
-      viewBox="0 0 256 256"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="mia-platform-btn-icon"
     >
-      <path
-        d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
-      />
-    </svg>
+      <svg
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+    </span>
     <div
       class="buttonText"
     >
@@ -75,23 +79,27 @@ exports[`Button Component renders button with icon right correctly 1`] = `
     >
       Button
     </div>
-    <svg
-      aria-label="PiCircleHalfTiltLight"
-      color="white"
-      fill="currentColor"
-      height="16"
-      role="img"
-      stroke="currentColor"
-      stroke-width="0"
-      style="color: white;"
-      viewBox="0 0 256 256"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="mia-platform-btn-icon mia-platform-btn-icon-end"
     >
-      <path
-        d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
-      />
-    </svg>
+      <svg
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -99,26 +107,30 @@ exports[`Button Component renders button with icon right correctly 1`] = `
 exports[`Button Component renders circle button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary button buttonMdIconOnly"
+    class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only button buttonMdIconOnly"
     type="button"
   >
-    <svg
-      aria-label="PiCircleHalfTiltLight"
-      color="white"
-      fill="currentColor"
-      height="16"
-      role="img"
-      stroke="currentColor"
-      stroke-width="0"
-      style="color: white;"
-      viewBox="0 0 256 256"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="mia-platform-btn-icon"
     >
-      <path
-        d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
-      />
-    </svg>
+      <svg
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -432,26 +444,30 @@ exports[`Button Component renders small button correctly 1`] = `
 exports[`Button Component renders small button icon only correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-sm button buttonSmIconOnly"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-sm mia-platform-btn-icon-only button buttonSmIconOnly"
     type="button"
   >
-    <svg
-      aria-label="PiCircleHalfTiltLight"
-      color="white"
-      fill="currentColor"
-      height="16"
-      role="img"
-      stroke="currentColor"
-      stroke-width="0"
-      style="color: white;"
-      viewBox="0 0 256 256"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="mia-platform-btn-icon"
     >
-      <path
-        d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
-      />
-    </svg>
+      <svg
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -459,26 +475,30 @@ exports[`Button Component renders small button icon only correctly 1`] = `
 exports[`Button Component renders square button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary button buttonMdIconOnly"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only button buttonMdIconOnly"
     type="button"
   >
-    <svg
-      aria-label="PiCircleHalfTiltLight"
-      color="white"
-      fill="currentColor"
-      height="16"
-      role="img"
-      stroke="currentColor"
-      stroke-width="0"
-      style="color: white;"
-      viewBox="0 0 256 256"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="mia-platform-btn-icon"
     >
-      <path
-        d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
-      />
-    </svg>
+      <svg
+        aria-label="PiCircleHalfTiltLight"
+        color="white"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: white;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+        />
+      </svg>
+    </span>
   </button>
 </DocumentFragment>
 `;

@@ -53,19 +53,19 @@ exports[`Table Component renders actions correctly 1`] = `
                     >
                       Field 4
                     </th>
-                    <td
+                    <th
                       class="mia-platform-table-cell"
                       style="text-align: right;"
                     />
-                    <td
+                    <th
                       class="mia-platform-table-cell"
                       style="text-align: right;"
                     />
-                    <td
+                    <th
                       class="mia-platform-table-cell"
                       style="text-align: right;"
                     />
-                    <td
+                    <th
                       class="mia-platform-table-cell"
                       style="text-align: right;"
                     />
@@ -211,26 +211,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiArrowRight"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiArrowRight"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -242,26 +246,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiCircleHalfTilt"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiCircleHalfTilt"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -273,26 +281,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiPencilSimpleLine"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiPencilSimpleLine"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -304,26 +316,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiTrash"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiTrash"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -360,26 +376,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiArrowRight"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiArrowRight"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -391,26 +411,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiCircleHalfTilt"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiCircleHalfTilt"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -422,26 +446,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiPencilSimpleLine"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiPencilSimpleLine"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -453,26 +481,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiTrash"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiTrash"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -509,26 +541,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiArrowRight"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiArrowRight"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -540,26 +576,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiCircleHalfTilt"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiCircleHalfTilt"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -571,27 +611,31 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           disabled=""
                           type="button"
                         >
-                          <svg
-                            aria-label="PiPencilSimpleLine"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiPencilSimpleLine"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -603,26 +647,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiTrash"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiTrash"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -659,26 +707,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiArrowRight"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiArrowRight"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -690,26 +742,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiCircleHalfTilt"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiCircleHalfTilt"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -721,26 +777,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiPencilSimpleLine"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiPencilSimpleLine"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -752,26 +812,30 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
-                          <svg
-                            aria-label="PiTrash"
-                            color="currentColor"
-                            fill="currentColor"
-                            height="16"
-                            role="img"
-                            stroke="currentColor"
-                            stroke-width="0"
-                            style="color: currentColor;"
-                            viewBox="0 0 256 256"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="mia-platform-btn-icon"
                           >
-                            <path
-                              d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
-                            />
-                          </svg>
+                            <svg
+                              aria-label="PiTrash"
+                              color="currentColor"
+                              fill="currentColor"
+                              height="16"
+                              role="img"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              style="color: currentColor;"
+                              viewBox="0 0 256 256"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                              />
+                            </svg>
+                          </span>
                         </button>
                       </div>
                     </td>
@@ -1910,7 +1974,7 @@ exports[`Table Component renders expandable rows correctly 1`] = `
                   class="mia-platform-table-thead"
                 >
                   <tr>
-                    <td
+                    <th
                       class="mia-platform-table-cell mia-platform-table-row-expand-icon-cell"
                     />
                     <th

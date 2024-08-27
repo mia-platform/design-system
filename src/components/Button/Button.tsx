@@ -37,10 +37,18 @@ const {
 } = styles
 
 const { Primary, Neutral, Danger } = Hierarchy
-const { Left, Right } = IconPosition
+const { Left } = IconPosition
 const { Square } = Shape
 const { Small, Middle, Large } = Size
 const { Filled, Ghost, Link } = Type
+
+enum AntdIconPosition {
+  Start = 'start',
+  End = 'end'
+}
+const getAntdPosition = (position: IconPosition):AntdIconPosition => {
+  return position === Left ? AntdIconPosition.Start : AntdIconPosition.End
+}
 
 export const defaults = {
   hierarchy: Primary,
@@ -89,6 +97,7 @@ export const Button = ({
     ]
   ), [children, size, type])
 
+  const antdIconPosition = useMemo(() => getAntdPosition(iconPosition), [iconPosition])
   return (
     <AntButton
       block={isBlock}
@@ -98,6 +107,8 @@ export const Button = ({
       form={form}
       ghost={type !== Filled && hierarchy !== Neutral}
       htmlType={form && !htmlType ? HTMLType.Submit : htmlType}
+      icon={icon}
+      iconPosition={antdIconPosition}
       loading={isLoading}
       shape={shape === Square ? 'default' : 'circle'}
       size={size}
@@ -106,9 +117,7 @@ export const Button = ({
       onClick={onClick}
       {...href && { href, rel: 'noopener noreferrer', target }}
     >
-      {iconPosition === Left && icon}
       {children && <div className={type !== Link ? buttonText : undefined}>{children}</div>}
-      {iconPosition === Right && icon}
     </AntButton>
   )
 }

@@ -33,92 +33,97 @@ exports[`Modal Component renders fullscreen modal correctly (with empty header) 
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
-            <button
-              aria-label="Close"
-              class="mia-platform-modal-close"
-              type="button"
+            <div
+              class="mia-platform-modal-content"
             >
-              <span
-                class="mia-platform-modal-close-x"
+              <button
+                aria-label="Close"
+                class="mia-platform-modal-close"
+                type="button"
               >
                 <span
-                  aria-label="close"
-                  class="anticon anticon-close mia-platform-modal-close-icon"
-                  role="img"
+                  class="mia-platform-modal-close-x"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close mia-platform-modal-close-icon"
+                    role="img"
                   >
-                    <path
-                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </button>
-            <div
-              class="mia-platform-modal-header"
-            >
+              </button>
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
-                />
-              </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
-              <div
-                class="body"
-              >
-                <div
-                  class="content"
+                  class="mia-platform-modal-title"
+                  id="test-id"
                 >
-                  Modal Content
+                  <div
+                    class="title"
+                  />
                 </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
               <div
-                class="footer"
+                class="mia-platform-modal-body"
               >
                 <div
-                  class="footerButtons"
+                  class="body"
                 >
-                  <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
-                    type="button"
+                  <div
+                    class="content"
                   >
-                    <div
-                      class="buttonText"
-                    >
-                      OK
-                    </div>
-                  </button>
-                  <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
-                    type="button"
+                    Modal Content
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-footer"
+              >
+                <div
+                  class="footer"
+                >
+                  <div
+                    class="footerButtons"
                   >
-                    <div
-                      class="buttonText"
+                    <button
+                      class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                      type="button"
                     >
-                      Cancel
-                    </div>
-                  </button>
+                      <div
+                        class="buttonText"
+                      >
+                        OK
+                      </div>
+                    </button>
+                    <button
+                      class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                      type="button"
+                    >
+                      <div
+                        class="buttonText"
+                      >
+                        Cancel
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -162,103 +167,112 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
-            <button
-              aria-label="Close"
-              class="mia-platform-modal-close"
-              type="button"
+            <div
+              class="mia-platform-modal-content"
             >
-              <span
-                class="mia-platform-modal-close-x"
+              <button
+                aria-label="Close"
+                class="mia-platform-modal-close"
+                type="button"
               >
                 <span
-                  aria-label="close"
-                  class="anticon anticon-close mia-platform-modal-close-icon"
-                  role="img"
+                  class="mia-platform-modal-close-x"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close mia-platform-modal-close-icon"
+                    role="img"
                   >
-                    <path
-                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </button>
-            <div
-              class="mia-platform-modal-header"
-            >
+              </button>
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
+                  class="mia-platform-modal-title"
+                  id="test-id"
                 >
-                  <h4
-                    aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
-                    role="h4"
-                  >
-                    Modal Title
-                  </h4>
                   <div
-                    class="docLink"
+                    class="title"
                   >
-                    <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
-                      type="button"
+                    <h4
+                      aria-label="Modal Title"
+                      class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                      role="h4"
                     >
-                      <svg
-                        aria-label="PiBookOpen"
-                        color="#004aaa"
-                        fill="currentColor"
-                        height="16"
-                        role="img"
-                        stroke="currentColor"
-                        stroke-width="0"
-                        style="color: rgb(0, 74, 170);"
-                        viewBox="0 0 256 256"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      Modal Title
+                    </h4>
+                    <div
+                      class="docLink"
+                    >
+                      <button
+                        class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                        type="button"
                       >
-                        <path
-                          d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
-                        />
-                      </svg>
-                    </button>
+                        <span
+                          class="mia-platform-btn-icon"
+                        >
+                          <svg
+                            aria-label="PiBookOpen"
+                            color="#004aaa"
+                            fill="currentColor"
+                            height="16"
+                            role="img"
+                            stroke="currentColor"
+                            stroke-width="0"
+                            style="color: rgb(0, 74, 170);"
+                            viewBox="0 0 256 256"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
               <div
-                class="body"
+                class="mia-platform-modal-body"
               >
                 <div
-                  class="content"
+                  class="body"
                 >
-                  Modal Content
+                  <div
+                    class="content"
+                  >
+                    Modal Content
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
               <div
-                class="footer"
-              />
+                class="mia-platform-modal-footer"
+              >
+                <div
+                  class="footer"
+                />
+              </div>
             </div>
           </div>
           <div
@@ -300,139 +314,148 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
-            <button
-              aria-label="Close"
-              class="mia-platform-modal-close"
-              type="button"
+            <div
+              class="mia-platform-modal-content"
             >
-              <span
-                class="mia-platform-modal-close-x"
+              <button
+                aria-label="Close"
+                class="mia-platform-modal-close"
+                type="button"
               >
                 <span
-                  aria-label="close"
-                  class="anticon anticon-close mia-platform-modal-close-icon"
-                  role="img"
+                  class="mia-platform-modal-close-x"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close mia-platform-modal-close-icon"
+                    role="img"
                   >
-                    <path
-                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </button>
-            <div
-              class="mia-platform-modal-header"
-            >
+              </button>
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
+                  class="mia-platform-modal-title"
+                  id="test-id"
                 >
-                  <h4
-                    aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
-                    role="h4"
-                  >
-                    Modal Title
-                  </h4>
                   <div
-                    class="docLink"
+                    class="title"
+                  >
+                    <h4
+                      aria-label="Modal Title"
+                      class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                      role="h4"
+                    >
+                      Modal Title
+                    </h4>
+                    <div
+                      class="docLink"
+                    >
+                      <button
+                        class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                        type="button"
+                      >
+                        <span
+                          class="mia-platform-btn-icon"
+                        >
+                          <svg
+                            aria-label="PiBookOpen"
+                            color="#004aaa"
+                            fill="currentColor"
+                            height="16"
+                            role="img"
+                            stroke="currentColor"
+                            stroke-width="0"
+                            style="color: rgb(0, 74, 170);"
+                            viewBox="0 0 256 256"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-body"
+              >
+                <div
+                  class="body bodyWithAsideOpened"
+                >
+                  <div
+                    class="content"
+                  >
+                    Modal Content
+                  </div>
+                  <aside
+                    class="aside"
+                  >
+                    <div
+                      class="mia-platform-typography bodyM"
+                      role="paragraph"
+                    >
+                      Modal Aside Title
+                    </div>
+                    <div>
+                      Modal Aside Content
+                    </div>
+                  </aside>
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-footer"
+              >
+                <div
+                  class="footer"
+                >
+                  <div
+                    class="footerButtons"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-primary button buttonMd"
                       type="button"
                     >
-                      <svg
-                        aria-label="PiBookOpen"
-                        color="#004aaa"
-                        fill="currentColor"
-                        height="16"
-                        role="img"
-                        stroke="currentColor"
-                        stroke-width="0"
-                        style="color: rgb(0, 74, 170);"
-                        viewBox="0 0 256 256"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        class="buttonText"
                       >
-                        <path
-                          d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
-                        />
-                      </svg>
+                        OK
+                      </div>
+                    </button>
+                    <button
+                      class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                      type="button"
+                    >
+                      <div
+                        class="buttonText"
+                      >
+                        Cancel
+                      </div>
                     </button>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
-              <div
-                class="body bodyWithAsideOpened"
-              >
-                <div
-                  class="content"
-                >
-                  Modal Content
-                </div>
-                <aside
-                  class="aside"
-                >
-                  <div
-                    class="mia-platform-typography bodyM"
-                    role="paragraph"
-                  >
-                    Modal Aside Title
-                  </div>
-                  <div>
-                    Modal Aside Content
-                  </div>
-                </aside>
-              </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
-              <div
-                class="footer"
-              >
-                <div
-                  class="footerButtons"
-                >
-                  <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
-                    >
-                      OK
-                    </div>
-                  </button>
-                  <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
-                    >
-                      Cancel
-                    </div>
-                  </button>
                 </div>
               </div>
             </div>
@@ -476,169 +499,178 @@ exports[`Modal Component renders modal with aside openable 1`] = `
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
-            <button
-              aria-label="Close"
-              class="mia-platform-modal-close"
-              type="button"
+            <div
+              class="mia-platform-modal-content"
             >
-              <span
-                class="mia-platform-modal-close-x"
+              <button
+                aria-label="Close"
+                class="mia-platform-modal-close"
+                type="button"
               >
                 <span
-                  aria-label="close"
-                  class="anticon anticon-close mia-platform-modal-close-icon"
-                  role="img"
+                  class="mia-platform-modal-close-x"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close mia-platform-modal-close-icon"
+                    role="img"
                   >
-                    <path
-                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </button>
-            <div
-              class="mia-platform-modal-header"
-            >
+              </button>
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
+                  class="mia-platform-modal-title"
+                  id="test-id"
                 >
-                  <h4
-                    aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
-                    role="h4"
-                  >
-                    Modal Title
-                  </h4>
                   <div
-                    class="docLink"
+                    class="title"
+                  >
+                    <h4
+                      aria-label="Modal Title"
+                      class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                      role="h4"
+                    >
+                      Modal Title
+                    </h4>
+                    <div
+                      class="docLink"
+                    >
+                      <button
+                        class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                        type="button"
+                      >
+                        <span
+                          class="mia-platform-btn-icon"
+                        >
+                          <svg
+                            aria-label="PiBookOpen"
+                            color="#004aaa"
+                            fill="currentColor"
+                            height="16"
+                            role="img"
+                            stroke="currentColor"
+                            stroke-width="0"
+                            style="color: rgb(0, 74, 170);"
+                            viewBox="0 0 256 256"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-body"
+              >
+                <div
+                  class="body bodyWithAsideClosed"
+                >
+                  <div
+                    class="content contentWrapper"
+                  >
+                    <div
+                      class="content"
+                    >
+                      Modal Content
+                    </div>
+                    <div
+                      class="asideLabelWrapper"
+                    >
+                      <div
+                        class="asideLabel"
+                      >
+                        <svg
+                          aria-label="PiCaretLeft"
+                          color="currentColor"
+                          fill="currentColor"
+                          height="16"
+                          role="img"
+                          stroke="currentColor"
+                          stroke-width="0"
+                          style="color: currentColor;"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"
+                          />
+                        </svg>
+                        Open
+                      </div>
+                    </div>
+                  </div>
+                  <aside
+                    class="aside"
+                  >
+                    <div
+                      class="mia-platform-typography bodyM"
+                      role="paragraph"
+                    >
+                      Modal Aside Title
+                    </div>
+                    <div>
+                      Modal Aside Content
+                    </div>
+                  </aside>
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-footer"
+              >
+                <div
+                  class="footer"
+                >
+                  <div
+                    class="footerButtons"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-primary button buttonMd"
                       type="button"
                     >
-                      <svg
-                        aria-label="PiBookOpen"
-                        color="#004aaa"
-                        fill="currentColor"
-                        height="16"
-                        role="img"
-                        stroke="currentColor"
-                        stroke-width="0"
-                        style="color: rgb(0, 74, 170);"
-                        viewBox="0 0 256 256"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        class="buttonText"
                       >
-                        <path
-                          d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
-                        />
-                      </svg>
+                        OK
+                      </div>
+                    </button>
+                    <button
+                      class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                      type="button"
+                    >
+                      <div
+                        class="buttonText"
+                      >
+                        Cancel
+                      </div>
                     </button>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
-              <div
-                class="body bodyWithAsideClosed"
-              >
-                <div
-                  class="content contentWrapper"
-                >
-                  <div
-                    class="content"
-                  >
-                    Modal Content
-                  </div>
-                  <div
-                    class="asideLabelWrapper"
-                  >
-                    <div
-                      class="asideLabel"
-                    >
-                      <svg
-                        aria-label="PiCaretLeft"
-                        color="currentColor"
-                        fill="currentColor"
-                        height="16"
-                        role="img"
-                        stroke="currentColor"
-                        stroke-width="0"
-                        style="color: currentColor;"
-                        viewBox="0 0 256 256"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"
-                        />
-                      </svg>
-                      Open
-                    </div>
-                  </div>
-                </div>
-                <aside
-                  class="aside"
-                >
-                  <div
-                    class="mia-platform-typography bodyM"
-                    role="paragraph"
-                  >
-                    Modal Aside Title
-                  </div>
-                  <div>
-                    Modal Aside Content
-                  </div>
-                </aside>
-              </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
-              <div
-                class="footer"
-              >
-                <div
-                  class="footerButtons"
-                >
-                  <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
-                    >
-                      OK
-                    </div>
-                  </button>
-                  <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
-                    >
-                      Cancel
-                    </div>
-                  </button>
                 </div>
               </div>
             </div>
@@ -682,169 +714,178 @@ exports[`Modal Component renders modal with aside openable 2`] = `
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
-            <button
-              aria-label="Close"
-              class="mia-platform-modal-close"
-              type="button"
+            <div
+              class="mia-platform-modal-content"
             >
-              <span
-                class="mia-platform-modal-close-x"
+              <button
+                aria-label="Close"
+                class="mia-platform-modal-close"
+                type="button"
               >
                 <span
-                  aria-label="close"
-                  class="anticon anticon-close mia-platform-modal-close-icon"
-                  role="img"
+                  class="mia-platform-modal-close-x"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close mia-platform-modal-close-icon"
+                    role="img"
                   >
-                    <path
-                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </button>
-            <div
-              class="mia-platform-modal-header"
-            >
+              </button>
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
+                  class="mia-platform-modal-title"
+                  id="test-id"
                 >
-                  <h4
-                    aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
-                    role="h4"
-                  >
-                    Modal Title
-                  </h4>
                   <div
-                    class="docLink"
+                    class="title"
+                  >
+                    <h4
+                      aria-label="Modal Title"
+                      class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                      role="h4"
+                    >
+                      Modal Title
+                    </h4>
+                    <div
+                      class="docLink"
+                    >
+                      <button
+                        class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                        type="button"
+                      >
+                        <span
+                          class="mia-platform-btn-icon"
+                        >
+                          <svg
+                            aria-label="PiBookOpen"
+                            color="#004aaa"
+                            fill="currentColor"
+                            height="16"
+                            role="img"
+                            stroke="currentColor"
+                            stroke-width="0"
+                            style="color: rgb(0, 74, 170);"
+                            viewBox="0 0 256 256"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-body"
+              >
+                <div
+                  class="body bodyWithAsideOpened"
+                >
+                  <div
+                    class="content contentWrapper"
+                  >
+                    <div
+                      class="content"
+                    >
+                      Modal Content
+                    </div>
+                    <div
+                      class="asideLabelWrapper"
+                    >
+                      <div
+                        class="asideLabel"
+                      >
+                        Close
+                        <svg
+                          aria-label="PiCaretRight"
+                          color="currentColor"
+                          fill="currentColor"
+                          height="16"
+                          role="img"
+                          stroke="currentColor"
+                          stroke-width="0"
+                          style="color: currentColor;"
+                          viewBox="0 0 256 256"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <aside
+                    class="aside"
+                  >
+                    <div
+                      class="mia-platform-typography bodyM"
+                      role="paragraph"
+                    >
+                      Modal Aside Title
+                    </div>
+                    <div>
+                      Modal Aside Content
+                    </div>
+                  </aside>
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-footer"
+              >
+                <div
+                  class="footer"
+                >
+                  <div
+                    class="footerButtons"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-primary button buttonMd"
                       type="button"
                     >
-                      <svg
-                        aria-label="PiBookOpen"
-                        color="#004aaa"
-                        fill="currentColor"
-                        height="16"
-                        role="img"
-                        stroke="currentColor"
-                        stroke-width="0"
-                        style="color: rgb(0, 74, 170);"
-                        viewBox="0 0 256 256"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        class="buttonText"
                       >
-                        <path
-                          d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
-                        />
-                      </svg>
+                        OK
+                      </div>
+                    </button>
+                    <button
+                      class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                      type="button"
+                    >
+                      <div
+                        class="buttonText"
+                      >
+                        Cancel
+                      </div>
                     </button>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
-              <div
-                class="body bodyWithAsideOpened"
-              >
-                <div
-                  class="content contentWrapper"
-                >
-                  <div
-                    class="content"
-                  >
-                    Modal Content
-                  </div>
-                  <div
-                    class="asideLabelWrapper"
-                  >
-                    <div
-                      class="asideLabel"
-                    >
-                      Close
-                      <svg
-                        aria-label="PiCaretRight"
-                        color="currentColor"
-                        fill="currentColor"
-                        height="16"
-                        role="img"
-                        stroke="currentColor"
-                        stroke-width="0"
-                        style="color: currentColor;"
-                        viewBox="0 0 256 256"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <aside
-                  class="aside"
-                >
-                  <div
-                    class="mia-platform-typography bodyM"
-                    role="paragraph"
-                  >
-                    Modal Aside Title
-                  </div>
-                  <div>
-                    Modal Aside Content
-                  </div>
-                </aside>
-              </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
-              <div
-                class="footer"
-              >
-                <div
-                  class="footerButtons"
-                >
-                  <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
-                    >
-                      OK
-                    </div>
-                  </button>
-                  <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
-                    >
-                      Cancel
-                    </div>
-                  </button>
                 </div>
               </div>
             </div>
@@ -888,67 +929,72 @@ exports[`Modal Component renders modal with body full width 1`] = `
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
-            <button
-              aria-label="Close"
-              class="mia-platform-modal-close"
-              type="button"
+            <div
+              class="mia-platform-modal-content"
             >
-              <span
-                class="mia-platform-modal-close-x"
+              <button
+                aria-label="Close"
+                class="mia-platform-modal-close"
+                type="button"
               >
                 <span
-                  aria-label="close"
-                  class="anticon anticon-close mia-platform-modal-close-icon"
-                  role="img"
+                  class="mia-platform-modal-close-x"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close mia-platform-modal-close-icon"
+                    role="img"
                   >
-                    <path
-                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </button>
-            <div
-              class="mia-platform-modal-header"
-            >
+              </button>
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
-                />
+                  class="mia-platform-modal-title"
+                  id="test-id"
+                >
+                  <div
+                    class="title"
+                  />
+                </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
               <div
-                class="body bodyFullWidth"
+                class="mia-platform-modal-body"
               >
                 <div
-                  class="content"
+                  class="body bodyFullWidth"
+                >
+                  <div
+                    class="content"
+                  />
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-footer"
+              >
+                <div
+                  class="footer"
                 />
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
-              <div
-                class="footer"
-              />
             </div>
           </div>
           <div
@@ -990,148 +1036,157 @@ exports[`Modal Component renders modal with custom footer 1`] = `
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
-            <button
-              aria-label="Close"
-              class="mia-platform-modal-close"
-              type="button"
+            <div
+              class="mia-platform-modal-content"
             >
-              <span
-                class="mia-platform-modal-close-x"
+              <button
+                aria-label="Close"
+                class="mia-platform-modal-close"
+                type="button"
               >
                 <span
-                  aria-label="close"
-                  class="anticon anticon-close mia-platform-modal-close-icon"
-                  role="img"
+                  class="mia-platform-modal-close-x"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close mia-platform-modal-close-icon"
+                    role="img"
                   >
-                    <path
-                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </button>
-            <div
-              class="mia-platform-modal-header"
-            >
+              </button>
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
+                  class="mia-platform-modal-title"
+                  id="test-id"
                 >
-                  <h4
-                    aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
-                    role="h4"
-                  >
-                    Modal Title
-                  </h4>
                   <div
-                    class="docLink"
+                    class="title"
                   >
-                    <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
-                      type="button"
+                    <h4
+                      aria-label="Modal Title"
+                      class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                      role="h4"
                     >
-                      <svg
-                        aria-label="PiBookOpen"
-                        color="#004aaa"
-                        fill="currentColor"
-                        height="16"
-                        role="img"
-                        stroke="currentColor"
-                        stroke-width="0"
-                        style="color: rgb(0, 74, 170);"
-                        viewBox="0 0 256 256"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      Modal Title
+                    </h4>
+                    <div
+                      class="docLink"
+                    >
+                      <button
+                        class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                        type="button"
                       >
-                        <path
-                          d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
-                        />
-                      </svg>
-                    </button>
+                        <span
+                          class="mia-platform-btn-icon"
+                        >
+                          <svg
+                            aria-label="PiBookOpen"
+                            color="#004aaa"
+                            fill="currentColor"
+                            height="16"
+                            role="img"
+                            stroke="currentColor"
+                            stroke-width="0"
+                            style="color: rgb(0, 74, 170);"
+                            viewBox="0 0 256 256"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
               <div
-                class="body"
+                class="mia-platform-modal-body"
               >
                 <div
-                  class="content"
+                  class="body"
                 >
-                  Modal Content
+                  <div
+                    class="content"
+                  >
+                    Modal Content
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
               <div
-                class="footer"
+                class="mia-platform-modal-footer"
               >
                 <div
-                  class="footerButtons"
+                  class="footer"
                 >
-                  <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
-                    type="button"
+                  <div
+                    class="footerButtons"
                   >
-                    <div
-                      class="buttonText"
+                    <button
+                      class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                      type="button"
                     >
-                      Button 1
-                    </div>
-                  </button>
-                  <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
+                      <div
+                        class="buttonText"
+                      >
+                        Button 1
+                      </div>
+                    </button>
+                    <button
+                      class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                      type="button"
                     >
-                      Button 2
-                    </div>
-                  </button>
-                  <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
+                      <div
+                        class="buttonText"
+                      >
+                        Button 2
+                      </div>
+                    </button>
+                    <button
+                      class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                      type="button"
                     >
-                      Button 3
-                    </div>
-                  </button>
-                  <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
+                      <div
+                        class="buttonText"
+                      >
+                        Button 3
+                      </div>
+                    </button>
+                    <button
+                      class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                      type="button"
                     >
-                      Button 4
-                    </div>
-                  </button>
+                      <div
+                        class="buttonText"
+                      >
+                        Button 4
+                      </div>
+                    </button>
+                  </div>
+                  Footer Extra
                 </div>
-                Footer Extra
               </div>
             </div>
           </div>
@@ -1174,37 +1229,42 @@ exports[`Modal Component renders not closable modal 1`] = `
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
             <div
-              class="mia-platform-modal-header"
+              class="mia-platform-modal-content"
             >
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
-                />
+                  class="mia-platform-modal-title"
+                  id="test-id"
+                >
+                  <div
+                    class="title"
+                  />
+                </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
               <div
-                class="body"
+                class="mia-platform-modal-body"
               >
                 <div
-                  class="content"
+                  class="body"
+                >
+                  <div
+                    class="content"
+                  />
+                </div>
+              </div>
+              <div
+                class="mia-platform-modal-footer"
+              >
+                <div
+                  class="footer"
                 />
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
-              <div
-                class="footer"
-              />
             </div>
           </div>
           <div
@@ -1246,126 +1306,135 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
             tabindex="0"
           />
           <div
-            class="mia-platform-modal-content"
+            style="outline: none;"
+            tabindex="-1"
           >
-            <button
-              aria-label="Close"
-              class="mia-platform-modal-close"
-              type="button"
+            <div
+              class="mia-platform-modal-content"
             >
-              <span
-                class="mia-platform-modal-close-x"
+              <button
+                aria-label="Close"
+                class="mia-platform-modal-close"
+                type="button"
               >
                 <span
-                  aria-label="close"
-                  class="anticon anticon-close mia-platform-modal-close-icon"
-                  role="img"
+                  class="mia-platform-modal-close-x"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close mia-platform-modal-close-icon"
+                    role="img"
                   >
-                    <path
-                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                      />
+                    </svg>
+                  </span>
                 </span>
-              </span>
-            </button>
-            <div
-              class="mia-platform-modal-header"
-            >
+              </button>
               <div
-                class="mia-platform-modal-title"
-                id="test-id"
+                class="mia-platform-modal-header"
               >
                 <div
-                  class="title"
+                  class="mia-platform-modal-title"
+                  id="test-id"
                 >
-                  <h4
-                    aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
-                    role="h4"
-                  >
-                    Modal Title
-                  </h4>
                   <div
-                    class="docLink"
+                    class="title"
                   >
-                    <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
-                      type="button"
+                    <h4
+                      aria-label="Modal Title"
+                      class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                      role="h4"
                     >
-                      <svg
-                        aria-label="PiBookOpen"
-                        color="#004aaa"
-                        fill="currentColor"
-                        height="16"
-                        role="img"
-                        stroke="currentColor"
-                        stroke-width="0"
-                        style="color: rgb(0, 74, 170);"
-                        viewBox="0 0 256 256"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      Modal Title
+                    </h4>
+                    <div
+                      class="docLink"
+                    >
+                      <button
+                        class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                        type="button"
                       >
-                        <path
-                          d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
-                        />
-                      </svg>
-                    </button>
+                        <span
+                          class="mia-platform-btn-icon"
+                        >
+                          <svg
+                            aria-label="PiBookOpen"
+                            color="#004aaa"
+                            fill="currentColor"
+                            height="16"
+                            role="img"
+                            stroke="currentColor"
+                            stroke-width="0"
+                            style="color: rgb(0, 74, 170);"
+                            viewBox="0 0 256 256"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-body"
-            >
               <div
-                class="body"
+                class="mia-platform-modal-body"
               >
                 <div
-                  class="content"
+                  class="body"
                 >
-                  Modal Content
+                  <div
+                    class="content"
+                  >
+                    Modal Content
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="mia-platform-modal-footer"
-            >
               <div
-                class="footer"
+                class="mia-platform-modal-footer"
               >
                 <div
-                  class="footerButtons"
+                  class="footer"
                 >
-                  <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
-                    type="button"
+                  <div
+                    class="footerButtons"
                   >
-                    <div
-                      class="buttonText"
+                    <button
+                      class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                      type="button"
                     >
-                      OK
-                    </div>
-                  </button>
-                  <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
-                    type="button"
-                  >
-                    <div
-                      class="buttonText"
+                      <div
+                        class="buttonText"
+                      >
+                        OK
+                      </div>
+                    </button>
+                    <button
+                      class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                      type="button"
                     >
-                      Cancel
-                    </div>
-                  </button>
+                      <div
+                        class="buttonText"
+                      >
+                        Cancel
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
