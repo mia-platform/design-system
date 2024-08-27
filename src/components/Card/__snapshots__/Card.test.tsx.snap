@@ -25,26 +25,30 @@ exports[`Card Component renders card correctly 1`] = `
             class="docLink"
           >
             <button
-              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
               type="button"
             >
-              <svg
-                aria-label="PiBookOpen"
-                color="#004aaa"
-                fill="currentColor"
-                height="16"
-                role="img"
-                stroke="currentColor"
-                stroke-width="0"
-                style="color: rgb(0, 74, 170);"
-                viewBox="0 0 256 256"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                class="mia-platform-btn-icon"
               >
-                <path
-                  d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
-                />
-              </svg>
+                <svg
+                  aria-label="PiBookOpen"
+                  color="#004aaa"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: rgb(0, 74, 170);"
+                  viewBox="0 0 256 256"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
         </div>
@@ -114,26 +118,30 @@ exports[`Card Component renders header only 1`] = `
             class="docLink"
           >
             <button
-              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
               type="button"
             >
-              <svg
-                aria-label="PiBookOpen"
-                color="#004aaa"
-                fill="currentColor"
-                height="16"
-                role="img"
-                stroke="currentColor"
-                stroke-width="0"
-                style="color: rgb(0, 74, 170);"
-                viewBox="0 0 256 256"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                class="mia-platform-btn-icon"
               >
-                <path
-                  d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
-                />
-              </svg>
+                <svg
+                  aria-label="PiBookOpen"
+                  color="#004aaa"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: rgb(0, 74, 170);"
+                  viewBox="0 0 256 256"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
         </div>

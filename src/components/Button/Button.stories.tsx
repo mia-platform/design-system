@@ -212,6 +212,14 @@ export const Loading: Story = {
   },
 }
 
+export const IconOnly: Story = {
+  args: {
+    ...meta.args,
+    children: undefined,
+    icon,
+  },
+}
+
 export const WithIconLeft: Story = {
   args: {
     ...meta.args,

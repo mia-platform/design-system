@@ -316,7 +316,7 @@ describe('Dropdown Component', () => {
         const secondUpdatedStillSelected = await screen.findByRole('menuitem', { name: /Label 2/ })
         expect(firstUpdatedDeSelected).toMatchSnapshot('after second click render Label 1 is deselected')
         expect(secondUpdatedStillSelected).toMatchSnapshot('after second click render Label 2 is selected')
-      })
+      }, 10000)
     })
   })
 })

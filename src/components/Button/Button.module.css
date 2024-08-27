@@ -22,6 +22,11 @@
   justify-content: center;
   gap: var(--spacing-gap-xs, 4px);
   box-shadow: none;
+
+  & :global(.mia-platform-btn-icon) {
+    margin-inline-end: unset;
+    margin-inline-start: unset;
+  }
 }
 
 /* TODO: add 12px padding to theme */
