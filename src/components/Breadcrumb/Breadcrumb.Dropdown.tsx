@@ -16,9 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Input, Menu } from 'antd'
+import { Input, Menu, MenuProps } from 'antd'
 import { ReactElement, useMemo, useState } from 'react'
-import { ItemType } from 'antd/es/menu/hooks/useItems'
 import { debounce } from 'lodash-es'
 
 import { BreadcrumbItemMenu, BreadcrumbItemMenuItem, BreadcrumbItemType, SearchOptions } from './Breadcrumb.types'
@@ -26,6 +25,8 @@ import { BodyS } from '../Typography/BodyX/BodyS'
 import { Icon } from '../Icon'
 import { buildMenuItemKey } from './Breadcrumb.utils'
 import styles from './Breadcrumb.module.css'
+
+type ItemType = Exclude<MenuProps['items'], undefined>[number]
 
 type Props = {
   item: BreadcrumbItemType
