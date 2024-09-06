@@ -24,8 +24,8 @@
   box-shadow: none;
 
   & :global(.mia-platform-btn-icon) {
-    margin-inline-end: unset;
-    margin-inline-start: unset;
+    margin-inline-end: unset!important;
+    margin-inline-start: unset!important;
   }
 }
 
