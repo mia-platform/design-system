@@ -16,9 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Dropdown, Menu, Skeleton } from 'antd'
+import { Dropdown, Menu, MenuProps, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
-import { ItemType } from 'antd/es/menu/hooks/useItems'
 import { PiDotsThree } from 'react-icons/pi'
 import classNames from 'classnames'
 
@@ -28,6 +27,8 @@ import { BreadcrumbSeparator } from './Breadcrumb.Separator'
 import { Icon } from '../Icon'
 import { buildItemKey } from './Breadcrumb.utils'
 import styles from './Breadcrumb.module.css'
+
+type ItemType = Exclude<MenuProps['items'], undefined>[number]
 
 type Props = {
   isLoading?: boolean

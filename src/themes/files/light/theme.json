@@ -112,12 +112,12 @@
       "900": "#181818",
       "black": "#000000",
       "white": "#ffffff",
-      "600A": "#000000a3",
-      "500A": "#0000007a",
-      "400A": "#00000052",
-      "300A": "#0000003d",
-      "200A": "#00000029",
-      "100A": "#00000014"
+      "600A": "#898989a3",
+      "500A": "#8989897a",
+      "400A": "#89898952",
+      "300A": "#8989893d",
+      "200A": "#8989891f",
+      "100A": "#89898914"
     },
     "success": {
       "50": "#effce9",
@@ -144,22 +144,22 @@
       "900": "#001740"
     },
     "error": {
-      "50": "#fff7f6",
-      "100": "#fdece9",
-      "200": "#fdddd8",
-      "300": "#ffb9b2",
-      "400": "#ff8177",
-      "500": "#ff544f",
+      "50": "#fff6f6",
+      "100": "#ffebeb",
+      "200": "#ffdbdb",
+      "300": "#ffb8b8",
+      "400": "#ff807f",
+      "500": "#ff5453",
       "600": "#e50020",
-      "700": "#a80014",
-      "800": "#6f0009",
-      "900": "#430003",
-      "600A": "#ff544fa3",
-      "500A": "#ff544f7a",
-      "400A": "#ff544f52",
-      "300A": "#ff544f3d",
-      "200A": "#ff544f29",
-      "100A": "#ff544f14"
+      "700": "#a80101",
+      "800": "#6f0000",
+      "900": "#430000",
+      "600A": "#ff5453a3",
+      "500A": "#ff54537a",
+      "400A": "#ff545352",
+      "300A": "#ff54533d",
+      "200A": "#ff545329",
+      "100A": "#ff545314"
     },
     "warning": {
       "50": "#FFF8D4",
@@ -198,14 +198,14 @@
       },
       "danger": {
         "default": "#e50020",
-        "hover": "#ff544f",
+        "hover": "#ff5453",
         "focus": "#e50020",
-        "active": "#a80014",
-        "selected": "#a80014",
+        "active": "#a80101",
+        "selected": "#a80101",
         "contrastText": "#ffffff"
       },
       "alternate": {
-        "disabled": "#00000014",
+        "disabled": "#89898914",
         "primary": {
           "default": "#1890ff14",
           "hover": "#1890ff1f",
@@ -215,19 +215,19 @@
           "contrastText": "#1261e4"
         },
         "secondary": {
-          "default": "#00000014",
-          "hover": "#00000029",
-          "focus": "#00000014",
-          "active": "#0000003d",
-          "selected": "#0000003d",
+          "default": "#89898914",
+          "hover": "#8989891f",
+          "focus": "#89898914",
+          "active": "#8989893d",
+          "selected": "#8989893d",
           "contrastText": "#636363"
         },
         "danger": {
-          "default": "#ff544f14",
-          "hover": "#ff544f29",
-          "focus": "#ff544f14",
-          "active": "#ff544f3d",
-          "selected": "#ff544f3d",
+          "default": "#ff545314",
+          "hover": "#ff545329",
+          "focus": "#ff545314",
+          "active": "#ff54533d",
+          "selected": "#ff54533d",
           "contrastText": "#e50020"
         }
       }
@@ -280,86 +280,100 @@
       "fontFamily": "Inter",
       "lineHeight": 32,
       "fontSize": 24,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "h2": {
       "fontFamily": "Inter",
       "lineHeight": 32,
       "fontSize": 20,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "h3": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 18,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "h4": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 16,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "bodyLBold": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 18,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "bodyL": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 18,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     },
     "bodyMBold": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 16,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "bodyM": {
       "fontFamily": "Inter",
       "lineHeight": 24,
       "fontSize": 16,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     },
     "bodySBold": {
       "fontFamily": "Inter",
       "lineHeight": 16,
       "fontSize": 14,
-      "fontWeight": 600
+      "fontWeight": 600,
+      "color": "#636363"
     },
     "bodyS": {
       "fontFamily": "Inter",
       "lineHeight": 16,
       "fontSize": 14,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     },
     "action": {
       "fontFamily": "Inter",
       "lineHeight": 16,
       "fontSize": 14,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#1261e4"
     },
     "link": {
       "fontFamily": "Inter",
       "lineHeight": 16,
       "fontSize": 14,
       "fontWeight": 400,
-      "textDecoration": "underline"
+      "textDecoration": "underline",
+      "color": "#1261e4"
     },
     "caption": {
       "fontFamily": "Inter",
       "lineHeight": 12,
       "fontSize": 12,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     },
     "code": {
-      "fontFamily": "Menlo",
+      "fontFamily": "IBM Plex Mono",
       "lineHeight": 24,
       "fontSize": 14,
-      "fontWeight": 400
+      "fontWeight": 400,
+      "color": "#636363"
     }
   }
 }

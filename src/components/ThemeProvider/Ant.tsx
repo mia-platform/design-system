@@ -27,6 +27,7 @@ import MenuTheme from '../Menu/Menu.theme'
 import TableTheme from '../Table/Table.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from './ThemeProvider.props'
+import TreeTheme from '../Tree/Tree.theme'
 import TypographyTheme from '../Typography/Typography.theme'
 
 const ANT_PREFIX = 'mia-platform'
@@ -58,13 +59,15 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
 
   token: {
     // Palette
+    colorBorder: palette?.text?.neutral?.subtler,
     colorPrimary: palette?.primary?.[600],
     colorSuccess: palette?.success?.[600],
     colorInfo: palette?.info?.[600],
     colorWarning: palette?.warning?.[600],
     colorError: palette?.error?.[600],
-    colorText: palette?.common?.grey?.[700] ?? DEFAULT_COLOR,
+    colorText: palette?.text?.neutral?.main ?? DEFAULT_COLOR,
     colorTextBase: palette?.common?.grey?.[700] ?? DEFAULT_COLOR,
+    colorTextDisabled: palette?.text?.neutral?.subtle,
     colorBgLayout: palette?.background?.primary?.[200],
     colorBgBase: palette?.background?.primary?.[400],
     colorBgElevated: palette?.background?.primary?.[600],
@@ -79,7 +82,10 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
 
     // Spacing
     padding: parse(spacing?.padding?.lg),
+    paddingXS: parse(spacing?.padding?.sm),
+    paddingXXS: parse(spacing?.padding?.xs),
     margin: parse(spacing?.margin?.lg),
+    marginXXS: parse(spacing?.margin?.xs),
 
     // Shape
     borderRadius: parse(shape?.border?.radius.md),
@@ -93,6 +99,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Message: FeedbackMessageTheme({ palette }),
     Menu: MenuTheme({ palette, shape, spacing, typography }),
     Table: TableTheme({ palette, spacing }),
+    Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
   },
 })

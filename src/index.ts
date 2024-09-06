@@ -22,6 +22,7 @@ import { Button } from './components/Button'
 import { Card } from './components/Card'
 import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
+import { Dropdown } from './components/Dropdown'
 import { Icon } from './components/Icon'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
@@ -29,6 +30,7 @@ import { SegmentedControl } from './components/SegmentedControl'
 import { Table } from './components/Table'
 import { Tag } from './components/Tag'
 import { ThemeProvider } from './components/ThemeProvider'
+import { Tree } from './components/Tree'
 import { Typography } from './components/Typography'
 import hooks from './hooks'
 import themes from './themes'
@@ -39,6 +41,7 @@ export {
   Card,
   Divider,
   Drawer,
+  Dropdown,
   Icon,
   Menu,
   Modal,
@@ -46,6 +49,7 @@ export {
   Table,
   Tag,
   ThemeProvider,
+  Tree,
   Typography,
   hooks,
   themes,

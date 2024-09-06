@@ -155,10 +155,6 @@
       display: flex;
       flex-direction: row-reverse;
       gap: var(--spacing-gap-sm, 8px);
-
-      :global(*) {
-        margin: 0 !important;
-      }
     }
   }
 }
@@ -188,6 +184,7 @@
 
   :global(.mia-platform-modal-content) {
     border-radius: 0;
+    height: 100vh;
   }
 }
 

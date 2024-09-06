@@ -94,6 +94,8 @@ export const withMenuProps: BreadcrumbProps = {
           { key: 'shipping', label: 'Shipping', icon: breadcrumbIcon },
           { key: 'refunds', label: 'Refunds', icon: breadcrumbIcon },
           { key: 'packaging', label: 'Packaging', icon: breadcrumbIcon },
+          { key: 'storage', label: 'Storage', icon: breadcrumbIcon },
+          { key: 'office', label: 'Office', icon: breadcrumbIcon },
         ],
         onDropdownVisibleChange: action('dropdown open'),
         onClick: action('click'),

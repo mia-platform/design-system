@@ -41,37 +41,37 @@
         "$type": "color",
         "$value": "#181818"
       },
-      "White": {
-        "$type": "color",
-        "$value": "#ffffff"
-      },
       "Black": {
         "$type": "color",
         "$value": "#000000"
       },
-      "100A": {
+      "White": {
         "$type": "color",
-        "$value": "#00000014"
-      },
-      "200A": {
-        "$type": "color",
-        "$value": "#00000029"
-      },
-      "300A": {
-        "$type": "color",
-        "$value": "#0000003d"
-      },
-      "400A": {
-        "$type": "color",
-        "$value": "#00000052"
-      },
-      "500A": {
-        "$type": "color",
-        "$value": "#0000007a"
+        "$value": "#ffffff"
       },
       "600A": {
         "$type": "color",
-        "$value": "#000000a3"
+        "$value": "#898989a3"
+      },
+      "500A": {
+        "$type": "color",
+        "$value": "#8989897a"
+      },
+      "400A": {
+        "$type": "color",
+        "$value": "#89898952"
+      },
+      "300A": {
+        "$type": "color",
+        "$value": "#8989893d"
+      },
+      "200A": {
+        "$type": "color",
+        "$value": "#8989891f"
+      },
+      "100A": {
+        "$type": "color",
+        "$value": "#89898914"
       }
     },
     "Blue": {
@@ -143,27 +143,27 @@
     "Red": {
       "50": {
         "$type": "color",
-        "$value": "#fff7f6"
+        "$value": "#fff6f6"
       },
       "100": {
         "$type": "color",
-        "$value": "#fdece9"
+        "$value": "#ffebeb"
       },
       "200": {
         "$type": "color",
-        "$value": "#fdddd8"
+        "$value": "#ffdbdb"
       },
       "300": {
         "$type": "color",
-        "$value": "#ffb9b2"
+        "$value": "#ffb8b8"
       },
       "400": {
         "$type": "color",
-        "$value": "#ff8177"
+        "$value": "#ff807f"
       },
       "500": {
         "$type": "color",
-        "$value": "#ff544f"
+        "$value": "#ff5453"
       },
       "600": {
         "$type": "color",
@@ -171,39 +171,39 @@
       },
       "700": {
         "$type": "color",
-        "$value": "#a80014"
+        "$value": "#a80101"
       },
       "800": {
         "$type": "color",
-        "$value": "#6f0009"
+        "$value": "#6f0000"
       },
       "900": {
         "$type": "color",
-        "$value": "#430003"
+        "$value": "#430000"
       },
       "600A": {
         "$type": "color",
-        "$value": "#ff544fa3"
+        "$value": "#ff5453a3"
       },
       "500A": {
         "$type": "color",
-        "$value": "#ff544f7a"
+        "$value": "#ff54537a"
       },
       "400A": {
         "$type": "color",
-        "$value": "#ff544f52"
+        "$value": "#ff545352"
       },
       "300A": {
         "$type": "color",
-        "$value": "#ff544f3d"
+        "$value": "#ff54533d"
       },
       "200A": {
         "$type": "color",
-        "$value": "#ff544f29"
+        "$value": "#ff545329"
       },
       "100A": {
         "$type": "color",
-        "$value": "#ff544f14"
+        "$value": "#ff545314"
       }
     },
     "Green": {
@@ -574,7 +574,7 @@
     },
     "code": {
       "$type": "string",
-      "$value": "Menlo"
+      "$value": "IBM Plex Mono"
     }
   },
   "lineHeights": {

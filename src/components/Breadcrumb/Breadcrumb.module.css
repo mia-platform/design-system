@@ -167,7 +167,7 @@
 .dropdownMenuContainer {
   width: 300px;
   max-height: 224px;
-  overflow: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-gap-xs, 4px);
@@ -210,6 +210,8 @@
   }
 
   & .dropdownMenu {
+    overflow: auto;
+
     & :global(.mia-platform-dropdown-menu) {
       border-radius: 0;
       box-shadow: none;
