@@ -20,6 +20,10 @@
   padding-bottom: 0;
   overflow: hidden;
 
+  :global(div:has(> div.mia-platform-modal-content)) {
+    height: 100%;
+  }
+
   :global(.mia-platform-modal-close) {
     top: unset;
     inset-inline-end: var(--spacing-padding-xl, 24px);
