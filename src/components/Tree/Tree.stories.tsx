@@ -17,6 +17,7 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { PiArrowDown, PiArrowLeft, PiArrowRight, PiArrowUp, PiArrowUpFill, PiCaretDown, PiCaretLeft, PiCaretRight, PiCaretUp, PiCaretUpFill } from 'react-icons/pi'
 import { TreeDataNode } from 'antd'
 
 import { Icon } from '../Icon'
@@ -111,54 +112,54 @@ export const TreeWithIcons: Story = {
       {
         title: 'Arrows',
         key: 'arrow',
-        icon: <Icon name="PiArrowUpFill" size={16} />,
+        icon: <Icon component={PiArrowUpFill} size={16} />,
         children: [
           {
             title: 'Up',
             key: 'arrow-up',
-            icon: <Icon name="PiArrowUp" size={16} />,
+            icon: <Icon component={PiArrowUp} size={16} />,
           },
           {
             title: 'Left',
             key: 'arrow-left',
-            icon: <Icon name="PiArrowLeft" size={16} />,
+            icon: <Icon component={PiArrowLeft} size={16} />,
           },
           {
             title: 'Down',
             key: 'arrow-down',
-            icon: <Icon name="PiArrowDown" size={16} />,
+            icon: <Icon component={PiArrowDown} size={16} />,
           },
           {
             title: 'Right',
             key: 'arrow-right',
-            icon: <Icon name="PiArrowRight" size={16} />,
+            icon: <Icon component={PiArrowRight} size={16} />,
           },
         ],
       },
       {
         title: 'Carets',
         key: 'caret',
-        icon: <Icon name="PiCaretUpFill" size={16} />,
+        icon: <Icon component={PiCaretUpFill} size={16} />,
         children: [
           {
             title: 'Up',
             key: 'caret-up',
-            icon: <Icon name="PiCaretUp" size={16} />,
+            icon: <Icon component={PiCaretUp} size={16} />,
           },
           {
             title: 'Left',
             key: 'caret-left',
-            icon: <Icon name="PiCaretLeft" size={16} />,
+            icon: <Icon component={PiCaretLeft} size={16} />,
           },
           {
             title: 'Down',
             key: 'caret-down',
-            icon: <Icon name="PiCaretDown" size={16} />,
+            icon: <Icon component={PiCaretDown} size={16} />,
           },
           {
             title: 'Right',
             key: 'caret-right',
-            icon: <Icon name="PiCaretRight" size={16} />,
+            icon: <Icon component={PiCaretRight} size={16} />,
           },
         ],
       },

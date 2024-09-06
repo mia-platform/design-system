@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiArrowDown, PiArrowLeft, PiArrowRight, PiArrowUp, PiArrowUpFill } from 'react-icons/pi'
 import { TreeDataNode } from 'antd'
 
 import { fireEvent, render, screen, waitFor } from '../../test-utils'
@@ -175,27 +176,27 @@ describe('Tree Component', () => {
       {
         title: 'Arrows',
         key: 'arrow',
-        icon: <Icon name="PiArrowUpFill" size={16} />,
+        icon: <Icon component={PiArrowUpFill} size={16} />,
         children: [
           {
             title: 'Up',
             key: 'arrow-up',
-            icon: <Icon name="PiArrowUp" size={16} />,
+            icon: <Icon component={PiArrowUp} size={16} />,
           },
           {
             title: 'Left',
             key: 'arrow-left',
-            icon: <Icon name="PiArrowLeft" size={16} />,
+            icon: <Icon component={PiArrowLeft} size={16} />,
           },
           {
             title: 'Down',
             key: 'arrow-down',
-            icon: <Icon name="PiArrowDown" size={16} />,
+            icon: <Icon component={PiArrowDown} size={16} />,
           },
           {
             title: 'Right',
             key: 'arrow-right',
-            icon: <Icon name="PiArrowRight" size={16} />,
+            icon: <Icon component={PiArrowRight} size={16} />,
           },
         ],
       },

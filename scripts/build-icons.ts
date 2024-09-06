@@ -18,8 +18,9 @@
 
 /* eslint-disable no-console */
 
-import { Cheerio, Element, load } from 'cheerio'
+import { Cheerio, load } from 'cheerio'
 import { type TarOptionsWithAliasesAsyncNoFile, extract } from 'tar'
+import { Element } from 'domhandler'
 import { IconTree } from 'react-icons'
 import camelcase from 'camelcase'
 import fs from 'fs/promises'
@@ -109,7 +110,7 @@ async function svgStringToTree(svg: string): Promise<IconTree> {
         .map((_, { tagName, attribs, children }) => ({
           tag: tagName,
           attr: normalizeAttributes(attribs, tagName),
-          child: children?.length ? elementToTree($doc(children) as Cheerio<Element>) : [],
+          child: children?.length ? elementToTree($doc(children) as unknown as Cheerio<Element>) : [],
         }))
         .get()
     )
