@@ -188,7 +188,6 @@
 
   :global(.mia-platform-modal-content) {
     border-radius: 0;
-    height: 100vh;
   }
 }
 
