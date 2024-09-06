@@ -29,7 +29,7 @@ import https from 'https'
 import path from 'path'
 import url from 'url'
 
-const REACT_ICONS_VERSION = '5.2.1'
+const REACT_ICONS_VERSION = '5.3.0'
 const REACT_ICONS_PACKAGES = ['lib', 'ai', 'fi', 'pi']
 
 const dirname = path.dirname(url.fileURLToPath(import.meta.url))
