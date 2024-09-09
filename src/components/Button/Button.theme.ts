@@ -27,8 +27,11 @@ import Theme from '../../themes/schema'
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Button Ant theme configuration.
  */
-export default ({ typography }: Partial<Theme>): ComponentsTheme['Button'] => ({
+export default ({ typography, palette }: Partial<Theme>): ComponentsTheme['Button'] => ({
   contentFontSizeSM: typography?.action?.fontSize,
   contentFontSize: typography?.action?.fontSize,
   contentFontSizeLG: typography?.action?.fontSize,
+  borderColorDisabled: palette?.action?.disabled?.bold,
+  defaultHoverBg: 'transparent',
+  defaultActiveBg: 'transparent',
 })

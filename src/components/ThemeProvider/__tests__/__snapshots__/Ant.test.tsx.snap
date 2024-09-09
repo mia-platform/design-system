@@ -5,9 +5,12 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
   "algorithm": [Function],
   "components": {
     "Button": {
+      "borderColorDisabled": "#e5e5e5",
       "contentFontSize": 14,
       "contentFontSizeLG": 14,
       "contentFontSizeSM": 14,
+      "defaultActiveBg": "transparent",
+      "defaultHoverBg": "transparent",
     },
     "Divider": {
       "colorSplit": "#cdcdcd",
@@ -93,9 +96,12 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
   "algorithm": [Function],
   "components": {
     "Button": {
+      "borderColorDisabled": undefined,
       "contentFontSize": undefined,
       "contentFontSizeLG": undefined,
       "contentFontSizeSM": undefined,
+      "defaultActiveBg": "transparent",
+      "defaultHoverBg": "transparent",
     },
     "Divider": {
       "colorSplit": undefined,
@@ -181,9 +187,12 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
   "algorithm": [Function],
   "components": {
     "Button": {
+      "borderColorDisabled": "#e5e5e5",
       "contentFontSize": 14,
       "contentFontSizeLG": 14,
       "contentFontSizeSM": 14,
+      "defaultActiveBg": "transparent",
+      "defaultHoverBg": "transparent",
     },
     "Divider": {
       "colorSplit": "#cdcdcd",
