@@ -9,6 +9,8 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "contentFontSize": 14,
       "contentFontSizeLG": 14,
       "contentFontSizeSM": 14,
+      "defaultActiveBg": "transparent",
+      "defaultHoverBg": "transparent",
     },
     "Divider": {
       "colorSplit": "#cdcdcd",
@@ -98,6 +100,8 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "contentFontSize": undefined,
       "contentFontSizeLG": undefined,
       "contentFontSizeSM": undefined,
+      "defaultActiveBg": "transparent",
+      "defaultHoverBg": "transparent",
     },
     "Divider": {
       "colorSplit": undefined,
@@ -187,6 +191,8 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "contentFontSize": 14,
       "contentFontSizeLG": 14,
       "contentFontSizeSM": 14,
+      "defaultActiveBg": "transparent",
+      "defaultHoverBg": "transparent",
     },
     "Divider": {
       "colorSplit": "#cdcdcd",
