@@ -1,6 +1,6 @@
 ### Description
 
-<!-- Please provide a brief description of your changes. Summarize the ratiomnale and impact on the codebase. E.g.
+<!-- Please provide a brief description of your changes. Summarize the rationale and impact on the codebase. E.g.
 
 ##### <Changed component name>
     - change 1
