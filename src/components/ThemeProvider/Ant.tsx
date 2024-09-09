@@ -94,7 +94,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     wireframe: false,
   },
   components: {
-    Button: ButtonTheme({ typography }),
+    Button: ButtonTheme({ typography, palette }),
     Divider: DividerTheme({ palette }),
     Message: FeedbackMessageTheme({ palette }),
     Menu: MenuTheme({ palette, shape, spacing, typography }),

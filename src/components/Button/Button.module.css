@@ -27,6 +27,13 @@
     margin-inline-end: unset !important;
     margin-inline-start: unset !important;
   }
+
+  &:disabled,
+  &[disabled] {
+    background: var(--palette-action-disabled-main);
+    color: var(--palette-action-disabled-contrastText);
+  }
+
 }
 
 /* TODO: add 12px padding to theme */
