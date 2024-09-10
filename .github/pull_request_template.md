@@ -14,13 +14,13 @@
     Closes #XYZ
 -->
 
-### [MANDATORY] PR Checklist
+### [IMPORTANT] PR Checklist
 
-<!-- IMPORTANT: Before submitting the PR, please take a look at the CONTRIBUTING.md file for further details regarding standards and conventions adopted in this repository. You can find it here: https://github.com/mia-platform/design-system/blob/main/CONTRIBUTING.md -->
-
-Please make sure your PR complies with the following rules before submitting it.
+- [ ] I am aware of standards and conventions adopted in this repository, defined in the [CONTRIBUTING.md file](https://github.com/mia-platform/design-system/blob/main/CONTRIBUTING.md)
 
 #### PR conventions
+
+Please make sure your PR complies with the following rules before submitting it.
 
 - [ ] PR title follows the `<type>(<scope>): <subject>` structure
 - [ ] The PR has been labeled according to the type of changes (e.g., enhancement, bug).
