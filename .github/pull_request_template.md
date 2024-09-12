@@ -1,8 +1,6 @@
-<!-- Hi, and thank you for your time dedicated to this pull request! -->
-
 ### Description
 
-<!-- Please provide a brief description of the work you have done and the motivations linked to these modifications. E.g.
+<!-- Please provide a brief description of your changes. Summarize the rationale and impact on the codebase. E.g.
 
 ##### <Changed component name>
     - change 1
@@ -12,20 +10,28 @@
 
 ### Addressed issue
 
-<!-- Link to the issue, if present. E.g 
+<!-- Link to the issue, if present. E.g. 
     Closes #XYZ
 -->
 
-### Checklist
+### [IMPORTANT] PR Checklist
 
-<!-- For further details regarding standards and conventions adopted in this repository please take a look at the CONTRIBUTING.md file. -->
+- [ ] I am aware of standards and conventions adopted in this repository, defined in the [CONTRIBUTING.md file](https://github.com/mia-platform/design-system/blob/main/CONTRIBUTING.md)
 
-- [ ] commit message and branch name follow conventions
-- [ ] tests are included
-- [ ] changes are accessible and documented from components stories
-- [ ] typings are updated or integrated accordingly with your changes
-- [ ] all added components are exported from index file (if necessary)
-- [ ] all added files include Apache 2.0 license
-- [ ] you are not committing extraneous files or sensitive data
-- [ ] the browser console does not have any logged errors
-- [ ] necessary labels have been applied to this pull request (enhancement, bug, ecc.)
+#### PR conventions
+
+Please make sure your PR complies with the following rules before submitting it.
+
+- [ ] PR title follows the `<type>(<scope>): <subject>` structure
+- [ ] The PR has been labeled according to the type of changes (e.g., enhancement, bug).
+
+#### Additional code checks
+
+Based on your changes, some of these checks may not apply. Please make sure to check the relevant items in the list.
+
+- [ ] Changes are covered by tests 
+- [ ] Changes to components are accessible and documented in the Storybook
+- [ ] Typings have been updated
+- [ ] New components are exported from the `index` file
+- [ ] New files include the Apache 2.0 License disclaimer
+- [ ] The browser console does not contain errors
