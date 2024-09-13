@@ -21,7 +21,7 @@ import { cloneDeep, set } from 'lodash-es'
 import { useCallback, useMemo, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
-import { collapsedProps, controlledProps, defaultProps, loadingProps, uncontrolledProps, withMenuProps, withoutMenuProps } from './Breadcrumb.mocks'
+import { collapsedProps, controlledProps, defaultProps, loadingProps, uncontrolledProps, withMenuProps, withVirtualScrollMenuProps, withoutMenuProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
 import { BreadcrumbItemMenu } from './Breadcrumb.types'
 
@@ -52,6 +52,20 @@ export const WithoutMenu: Story = {
 
 export const WithMenu: Story = {
   args: withMenuProps,
+  decorators: [
+    (_, { args, id }) => {
+      return (
+        <Breadcrumb
+          {...args}
+          getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}
+        />
+      )
+    },
+  ],
+}
+
+export const WithVirtualScrollMenu: Story = {
+  args: withVirtualScrollMenuProps,
   decorators: [
     (_, { args, id }) => {
       return (

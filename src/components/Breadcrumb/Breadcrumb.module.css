@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.breadcrumb {
+ .breadcrumb {
   /* TODO: these CSS variables are missing in DS */
   --item-bg: var(--palette-background-neutral, #89898914);
   --item-bg-hover: var(--palette-action-alternate-secondary-hover, #8989891F);
@@ -211,6 +211,14 @@
 
   & .dropdownMenu {
     overflow: auto;
+
+    &.virtual {
+      overflow: unset;
+
+      & :global(.mia-platform-dropdown-menu-item) {
+        background-color: var(--palette-common-white, #ffffff);
+      }
+    }
 
     & :global(.mia-platform-dropdown-menu) {
       border-radius: 0;

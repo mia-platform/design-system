@@ -115,6 +115,23 @@ export const withMenuProps: BreadcrumbProps = {
   ],
 }
 
+export const withVirtualScrollMenuProps: BreadcrumbProps = {
+  items: [
+    {
+      label: 'With search',
+      menu: {
+        activeKey: 'key-3',
+        isVirtual: true,
+        items: Array(1000).fill(0)
+          .map((_, index) => ({ key: `key-${index}`, label: `Item-${index}`, icon: breadcrumbIcon })),
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+        search: { allowClear: true },
+      },
+    },
+  ],
+}
+
 export const uncontrolledProps: BreadcrumbProps = {
   items: [
     {

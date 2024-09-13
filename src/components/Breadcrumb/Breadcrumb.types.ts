@@ -79,6 +79,11 @@ export type BreadcrumbItemMenu = {
    */
   isOpen?: boolean;
 
+    /**
+   * Indicates whether the dropdown menu scroll is virtual.
+   */
+  isVirtual?: boolean;
+
   /**
    * Callback function to handle changes in dropdown visibility.
    *

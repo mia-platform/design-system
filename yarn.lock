@@ -2563,6 +2563,7 @@ __metadata:
     jest-transformer-svg: "npm:^2.0.2"
     jest-watch-typeahead: "npm:^2.2.2"
     lodash-es: "npm:^4.17.21"
+    rc-virtual-list: "npm:^3.14.5"
     react: "npm:^18.3.0"
     react-dom: "npm:^18.3.1"
     react-icons: "npm:^4.11.0"
@@ -13518,7 +13519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-virtual-list@npm:^3.14.2":
+"rc-virtual-list@npm:^3.14.2, rc-virtual-list@npm:^3.14.5":
   version: 3.14.5
   resolution: "rc-virtual-list@npm:3.14.5"
   dependencies:

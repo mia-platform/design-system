@@ -16,8 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Input, Menu, MenuProps } from 'antd'
-import { ReactElement, useMemo, useState } from 'react'
+import { Input, Menu } from 'antd'
+import { ReactElement, ReactNode, useMemo, useRef, useState } from 'react'
+import List from 'rc-virtual-list'
 import { debounce } from 'lodash-es'
 
 import { BreadcrumbItemMenu, BreadcrumbItemMenuItem, BreadcrumbItemType, SearchOptions } from './Breadcrumb.types'
@@ -26,7 +27,11 @@ import { Icon } from '../Icon'
 import { buildMenuItemKey } from './Breadcrumb.utils'
 import styles from './Breadcrumb.module.css'
 
-type ItemType = Exclude<MenuProps['items'], undefined>[number]
+type ItemType = {
+  key: string
+  icon?: ReactNode
+  label: string | ReactNode
+}
 
 type Props = {
   item: BreadcrumbItemType
@@ -38,6 +43,9 @@ export const getSearchOption = <K extends keyof SearchOptions, >(search: Breadcr
 }
 
 export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactElement => {
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const searchRef = useRef<HTMLDivElement | null>(null)
+
   const [searchValue, setSearchValue] = useState('')
 
   const filteredItems = useMemo<BreadcrumbItemMenuItem[]>(() => {
@@ -61,10 +69,10 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
   }), [filteredItems])
 
   return (
-    <div className={styles.dropdownMenuContainer}>
+    <div className={styles.dropdownMenuContainer} ref={containerRef} >
       {
         Boolean(item.menu?.search) && (
-          <div className={styles.dropdownMenuSearch}>
+          <div className={styles.dropdownMenuSearch} ref={searchRef} >
             <Input
               allowClear={getSearchOption(item.menu?.search, 'allowClear')}
               autoFocus
@@ -87,18 +95,47 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
       {
         filteredItems.length > 0
           ? (
-            <div className={styles.dropdownMenu}>
-              <Menu
-                items={menuItems}
-                selectedKeys={item.menu?.activeKey ? [item.menu.activeKey] : []}
-                onClick={({ key, domEvent }) => {
-                  item.menu?.onClick?.(key, domEvent)
+            <div className={`${styles.dropdownMenu} ${item.menu?.isVirtual ? styles.virtual : ''}`}>
+              {item.menu?.isVirtual
+                ? (
+                  <Menu>
+                    <List
+                      data={menuItems}
+                      height={Math.min(32 * 6, 32 * menuItems.length)}
+                      itemHeight={32}
+                      itemKey="key"
+                    >
+                      {(listItem) => (
+                        <Menu.Item
+                          className={item.menu?.activeKey === listItem?.key ? 'mia-platform-dropdown-menu-item-selected' : ''}
+                          onClick={({ domEvent }) => {
+                            item.menu?.onClick?.(listItem.key, domEvent)
 
-                  if (item.menu?.isOpen === undefined) {
-                    setOpen(false)
-                  }
-                }}
-              />
+                            if (item.menu?.isOpen === undefined) {
+                              setOpen(false)
+                            }
+                          }}
+                          {...listItem}
+                        >
+                          {listItem?.label}
+                        </Menu.Item>
+                      )}
+                    </List>
+                  </Menu>
+                )
+                : (
+                  <Menu
+                    items={menuItems}
+                    selectedKeys={item.menu?.activeKey ? [item.menu.activeKey] : []}
+                    onClick={({ key, domEvent }) => {
+                      item.menu?.onClick?.(key, domEvent)
+
+                      if (item.menu?.isOpen === undefined) {
+                        setOpen(false)
+                      }
+                    }}
+                  />
+                )}
             </div>
           )
           : (
