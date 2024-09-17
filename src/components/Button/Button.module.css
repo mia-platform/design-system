@@ -30,9 +30,9 @@
 
   &:disabled,
   &[disabled] {
-    background: var(--palette-action-disabled-main) !important;
-    color: var(--palette-action-disabled-contrastText) !important;
-    border: 1px solid var(--palette-action-disabled-bold) !important;
+    background: var(--palette-action-disabled-main, #f2f2f2) !important;
+    color: var(--palette-action-disabled-contrastText, #acacac) !important;
+    border: 1px solid var(--palette-action-disabled-bold, #e5e5e5) !important;
   }
 
 }
