@@ -17,7 +17,7 @@
  */
 
 import { asideFixed, asideOpenable, docLink, footer, footerCustom, title } from './Modal.mocks'
-import { fireEvent, render, screen, waitFor } from '../../test-utils'
+import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
 import { Modal } from '.'
 
 const props = {
@@ -148,5 +148,18 @@ describe('Modal Component', () => {
     expect(screen.getByText(/Modal Aside Content/i)).toBeVisible()
 
     expect(baseElement).toMatchSnapshot()
+  })
+
+  test('renders modal inside specified container node', () => {
+    render(
+      <>
+        <div data-testid="container-div-test-id" id="container-div" />
+        <Modal {...props} getContainer={() => document.getElementById('container-div') || document.body} />
+      </>
+    )
+
+    const container = screen.getByTestId('container-div-test-id')
+    expect(container).toBeInTheDocument()
+    expect(within(container).getByRole('dialog')).toBeInTheDocument()
   })
 })

@@ -24,11 +24,12 @@ import { Body } from './Modal.Body'
 import { Footer } from './Modal.Footer'
 import { ModalProps } from './Modal.props'
 import { Size } from './Modal.types'
-import { THEME_PROVIDER_STYLE_WRAPPER_NODE } from '../ThemeProvider/ThemeProvider'
+import { ThemeProvider } from '../ThemeProvider'
 import { Title } from './Modal.Title'
 import styles from './Modal.module.css'
 
 const { Small, Large, FullScreen } = Size
+const { StyleWrapperId } = ThemeProvider
 const {
   modal,
   modalSm,
@@ -74,7 +75,7 @@ export const Modal = ({
   ]), [size])
 
   const getContainerFallback = useCallback(() => {
-    return document.getElementById(THEME_PROVIDER_STYLE_WRAPPER_NODE) || document.body
+    return document.getElementById(StyleWrapperId) || document.body
   }, [])
 
   return (
