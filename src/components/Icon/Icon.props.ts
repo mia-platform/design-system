@@ -16,35 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import * as AntIcons from 'react-icons/ai'
-import * as FeatherIcons from 'react-icons/fi'
-import * as PhosphorIcons from 'react-icons/pi'
+export type IconComponentProps = {
+  'aria-label'?: string,
+  className?: string,
+  color?: string,
+  height?: string | number,
+  role?: string,
+  size?: string | number,
+  width?: string | number,
+}
 
-import MiaPlatform from './assets/MiaPlatform.svg'
-import MiaPlatformColored from './assets/MiaPlatformColored.svg'
-
-/**
- * Custom icons for brand images.
- *
- * @remarks This object should only be used for brand image-related custom SVGs.
- */
-export const customIcons = {
-  MiaPlatform,
-  MiaPlatformColored,
-} as const
-
-/**
- * Supported icon packs.
- *
- * @see {@link https://github.com/feathericons/feather Feather Icons}
- * @see {@link https://github.com/phosphor-icons/core Phosphor Icons}
- * @see {@link https://github.com/ant-design/ant-design-icons Ant Icons}
- */
-export const reactIcons = {
-  ...FeatherIcons,
-  ...PhosphorIcons,
-  ...AntIcons,
-} as const
+export type IconComponent = React.FunctionComponent<IconComponentProps>
 
 export type IconProps = {
 
@@ -54,9 +36,18 @@ export type IconProps = {
   color?: string,
 
   /**
-   * The name of the icon.
+   * The icon component to render.
+   *
+   * It should be a React function component accepting the following SVG attributes:
+   *   - aria-label: `string`
+   *   - className: `string`
+   *   - color: `string`
+   *   - height: `string | number`
+   *   - role: `string`
+   *   - size: `string | number`
+   *   - width: `string | number`
    */
-  name: keyof typeof customIcons | keyof typeof reactIcons,
+  component: IconComponent,
 
   /**
    * The size of the icon.

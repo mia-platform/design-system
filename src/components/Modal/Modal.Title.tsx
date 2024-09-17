@@ -17,6 +17,7 @@
  */
 
 import { ReactElement, useCallback, useMemo } from 'react'
+import { PiBookOpen } from 'react-icons/pi'
 
 import { Button } from '../Button'
 import { H4 } from '../Typography/HX/H4'
@@ -37,7 +38,7 @@ export const Title = ({
   const { palette } = useTheme()
 
   const docLinkIcon = useMemo(() => (
-    <Icon color={palette?.action?.link?.active} name="PiBookOpen" size={16} />
+    <Icon color={palette?.action?.link?.active} component={PiBookOpen} size={16} />
   ), [palette?.action?.link?.active])
 
   const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])

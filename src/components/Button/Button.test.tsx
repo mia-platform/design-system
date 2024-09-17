@@ -16,11 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiCircleHalfTiltLight } from 'react-icons/pi'
+
 import { fireEvent, render, screen } from '../../test-utils'
 import { Button } from '.'
 import { Icon } from '../Icon'
 
-const icon = <Icon color="white" name="PiCircleHalfTiltLight" size={16} />
+const icon = <Icon color="white" component={PiCircleHalfTiltLight} size={16} />
 
 describe('Button Component', () => {
   beforeEach(() => {

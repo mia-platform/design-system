@@ -17,36 +17,42 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { AiOutlineHome } from 'react-icons/ai'
+import { FiHome } from 'react-icons/fi'
+import { PiHouse } from 'react-icons/pi'
 
 import { Icon } from '.'
-import { defaults } from './Icon'
-
-const iconsUrl = 'https://react-icons.github.io/react-icons/search'
+import MiaPlatform from '../../assets/icons/MiaPlatform.svg'
 
 const meta = {
   component: Icon,
-  parameters: {
-    design: { type: 'iframe', name: 'Search', url: iconsUrl },
-  },
-  args: defaults,
+  args: { size: 24 },
 } satisfies Meta<typeof Icon>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Custom: Story = {
-  args: { ...meta.args, name: 'MiaPlatform' },
+  args: { ...meta.args, component: MiaPlatform },
 }
 
 export const Ant: Story = {
-  args: { ...meta.args, name: 'AiOutlineHome' },
+  parameters: {
+    design: { type: 'iframe', name: 'Search', url: 'https://react-icons.github.io/react-icons/icons/ai/' },
+  },
+  args: { ...meta.args, component: AiOutlineHome },
 }
 
 export const Feather: Story = {
-  args: { ...meta.args, name: 'FiHome' },
+  parameters: {
+    design: { type: 'iframe', name: 'Search', url: 'https://react-icons.github.io/react-icons/icons/fi/' },
+  },
+  args: { ...meta.args, component: FiHome },
 }
 
 export const Phosphor: Story = {
-  args: { ...meta.args, name: 'PiHouse' },
+  parameters: {
+    design: { type: 'iframe', name: 'Search', url: 'https://react-icons.github.io/react-icons/icons/pi/' },
+  },
+  args: { ...meta.args, component: PiHouse },
 }
-

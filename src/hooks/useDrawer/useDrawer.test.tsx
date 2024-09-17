@@ -16,9 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { act } from 'react'
-
-import { renderHook } from '../../test-utils'
+import { act, renderHook } from '../../test-utils'
 import { useDrawer } from './useDrawer'
 
 describe('useDrawer', () => {
