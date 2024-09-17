@@ -25,8 +25,13 @@ import withTheme from "./decorators/theme"
 
 const preview: Preview = {
   parameters: {
-    actions: { 
-      argTypesRegex: "^on[A-Z].*" 
+    options: {
+      storySort: {
+        method: 'alphabetical',
+      }
+    },
+    actions: {
+      argTypesRegex: "^on[A-Z].*"
     },
     backgrounds,
     docs,

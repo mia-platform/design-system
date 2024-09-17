@@ -28,6 +28,8 @@ jobs:
     - run: yarn
     - run: yarn lint
     - run: yarn build
+    - if: ${{ startsWith(github.ref, 'refs/tags/') }}
+      run: yarn build-icons
     - run: yarn test
     - name: Coveralls
       uses: coverallsapp/github-action@v2
@@ -63,6 +65,8 @@ jobs:
           registry-url: ${{ secrets.MIA_NPM_REGISTRY_URL }}
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: yarn build-icons
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.MIA_NPM_REGISTRY_TOKEN }}

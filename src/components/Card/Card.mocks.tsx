@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiTrash } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { Button } from '../Button'
@@ -24,7 +25,7 @@ import { Icon } from '../Icon'
 const actionIcon = (
   <Icon
     color="#b91200"
-    name="PiTrash"
+    component={PiTrash}
     size={16}
   />
 )

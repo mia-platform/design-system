@@ -18,6 +18,7 @@
 
 import { Dropdown, Menu, MenuProps, Skeleton } from 'antd'
 import { ReactElement, useMemo } from 'react'
+import { PiDotsThree } from 'react-icons/pi'
 import classNames from 'classnames'
 
 import { BodyS } from '../Typography/BodyX/BodyS'
@@ -82,7 +83,7 @@ export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer, items }: 
             className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}
             style={{ width: BREADCRUMB_COLLAPSED_WIDTH }}
           >
-            <Icon name="PiDotsThree" size={16} />
+            <Icon component={PiDotsThree} size={16} />
           </div>
         </Dropdown>
         <BreadcrumbSeparator />

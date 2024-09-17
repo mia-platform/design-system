@@ -74,6 +74,8 @@ pids
 build
 dist
 dist-ssr
+icons/**/*
+!icons/package.json
 
 # Eslint
 .eslintcache
