@@ -2507,7 +2507,7 @@ __metadata:
   dependencies:
     "@fontsource/inter": "npm:^5.0.20"
     "@mia-platform/eslint-config-mia": "npm:^3.0.0"
-    "@playwright/test": "npm:^1.45.1"
+    "@playwright/test": "npm:^1.47.1"
     "@storybook/addon-a11y": "npm:^7.6.17"
     "@storybook/addon-designs": "npm:^7.0.9"
     "@storybook/addon-essentials": "npm:^7.6.17"
@@ -2699,14 +2699,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.45.1":
-  version: 1.45.1
-  resolution: "@playwright/test@npm:1.45.1"
+"@playwright/test@npm:^1.47.1":
+  version: 1.47.1
+  resolution: "@playwright/test@npm:1.47.1"
   dependencies:
-    playwright: "npm:1.45.1"
+    playwright: "npm:1.47.1"
   bin:
     playwright: cli.js
-  checksum: 10/718316ae739438f686914350beb3aeded6c96d7adfe1b65509fc50c4e322172fe58b7c9f215c3d5bef52a263839b83162f843027ae8d8e96970b3dd8f87211d2
+  checksum: 10/d26656451cbd4cbb865c6acb25958a25171b3714907e1595301f21655b1be8f521dbd2197eecfa5b34325626c94b8ab535b8571478880633679e63ebfb6775b9
   languageName: node
   linkType: hard
 
@@ -12711,7 +12711,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:1.45.1, playwright@npm:^1.14.0":
+"playwright-core@npm:1.47.1":
+  version: 1.47.1
+  resolution: "playwright-core@npm:1.47.1"
+  bin:
+    playwright-core: cli.js
+  checksum: 10/b5ee08e1a934237fca0f0f52a677e5d49e45578e14b48a886927428bdf453f355a120548ae2f3f97e28a9d5e23a213120f6d8f10e18ee3f9112b10716888dac4
+  languageName: node
+  linkType: hard
+
+"playwright@npm:1.47.1":
+  version: 1.47.1
+  resolution: "playwright@npm:1.47.1"
+  dependencies:
+    fsevents: "npm:2.3.2"
+    playwright-core: "npm:1.47.1"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    playwright: cli.js
+  checksum: 10/f4340f28485bd83a856a365a03af2013b3203c8134a075d05f1a834665e1204b98141c335d5c5c1600720c9e07db702db3dbff5ef138fc1c31d5feec3ac0057f
+  languageName: node
+  linkType: hard
+
+"playwright@npm:^1.14.0":
   version: 1.45.1
   resolution: "playwright@npm:1.45.1"
   dependencies:
