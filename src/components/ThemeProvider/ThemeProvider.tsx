@@ -26,6 +26,7 @@ import themeToVariables from './utils/themeToVariables'
 import themes from '../../themes'
 
 export const { lightTheme: defaultTheme } = themes
+const THEME_PROVIDER_STYLE_WRAPPER_NODE_ID = 'theme-provider-style-wrapper-node'
 
 /**
  * A context to provide the theme throughout the application.
@@ -50,7 +51,7 @@ export const ThemeProvider = ({
     <ThemeContext.Provider value={theme!}>
       <AntThemeProvider theme={theme}>
         <ReactIconsProvider theme={theme}>
-          <div style={style}>
+          <div id={THEME_PROVIDER_STYLE_WRAPPER_NODE_ID} style={style}>
             {children}
           </div>
         </ReactIconsProvider>
@@ -58,3 +59,5 @@ export const ThemeProvider = ({
     </ThemeContext.Provider>
   )
 }
+
+ThemeProvider.StyleWrapperId = THEME_PROVIDER_STYLE_WRAPPER_NODE_ID

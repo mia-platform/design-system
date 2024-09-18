@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useMemo } from 'react'
+import { ReactElement, useCallback, useMemo } from 'react'
 import { Modal as AntModal } from 'antd'
 import classNames from 'classnames'
 
@@ -24,10 +24,12 @@ import { Body } from './Modal.Body'
 import { Footer } from './Modal.Footer'
 import { ModalProps } from './Modal.props'
 import { Size } from './Modal.types'
+import { ThemeProvider } from '../ThemeProvider'
 import { Title } from './Modal.Title'
 import styles from './Modal.module.css'
 
 const { Small, Large, FullScreen } = Size
+const { StyleWrapperId } = ThemeProvider
 const {
   modal,
   modalSm,
@@ -72,6 +74,10 @@ export const Modal = ({
     size === FullScreen && modalFs,
   ]), [size])
 
+  const getContainerFallback = useCallback(() => {
+    return document.getElementById(StyleWrapperId) || document.body
+  }, [])
+
   return (
     <AntModal
       centered
@@ -79,7 +85,7 @@ export const Modal = ({
       closable={isClosable}
       destroyOnClose={destroyOnClose}
       footer={<Modal.Footer footer={footer} />}
-      getContainer={getContainer}
+      getContainer={getContainer || getContainerFallback}
       keyboard={isClosable}
       maskClosable={isClosable && isMaskClosable}
       open={isVisible}
