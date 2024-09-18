@@ -76,4 +76,12 @@ describe('Icon Component', () => {
 
     expect(asFragment()).toMatchSnapshot()
   })
+
+  test('customize aria-label corretly', () => {
+    const customLabel = 'custom-label'
+    render(<Icon aria-label={customLabel} component={PiHouse} />)
+
+    expect(screen.getByRole('img', { name: customLabel })).toBeVisible()
+    expect(screen.getByLabelText(customLabel)).toBeVisible()
+  })
 })
