@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactNode, useContext } from 'react'
+import { ReactElement, useContext } from 'react'
 import { IconContext } from 'react-icons'
 
 import { IconProps } from './Icon.props'
@@ -43,22 +43,25 @@ import { IconProps } from './Icon.props'
  * const App = () => <Icon component={PiAddressBook} />
  * ```
  *
- * @returns {ReactNode} Icon component
+ * @returns {ReactElement} Icon component
  */
 export const Icon = ({
   component,
   size = 24,
   color,
-}: IconProps): ReactNode => {
+}: IconProps): ReactElement => {
   const { size: defaultSize, className } = useContext(IconContext)
+  const IconComponent = component
 
-  return component?.({
-    'aria-label': component.name,
-    className,
-    color: color ?? 'currentColor',
-    height: size ?? defaultSize,
-    role: 'img',
-    size: size ?? defaultSize,
-    width: size ?? defaultSize,
-  })
+  return (
+    <IconComponent
+      aria-label={component.name}
+      className={className}
+      color={color ?? 'currentColor'}
+      height={size ?? defaultSize}
+      role={'img'}
+      size={size ?? defaultSize}
+      width={size ?? defaultSize}
+    />
+  )
 }
