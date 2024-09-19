@@ -118,6 +118,10 @@
       overflow-y: auto;
     }
 
+    .asideBody {
+      overflow-y: auto;
+    }
+
     .asideLabel {
       display: flex;
       align-items: center;

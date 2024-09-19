@@ -415,8 +415,12 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                   >
                     Modal Aside Title
                   </div>
-                  <div>
-                    Modal Aside Content
+                  <div
+                    class="asideBody"
+                  >
+                    <div>
+                      Modal Aside Content
+                    </div>
                   </div>
                 </aside>
               </div>
@@ -628,8 +632,12 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                   >
                     Modal Aside Title
                   </div>
-                  <div>
-                    Modal Aside Content
+                  <div
+                    class="asideBody"
+                  >
+                    <div>
+                      Modal Aside Content
+                    </div>
                   </div>
                 </aside>
               </div>
@@ -841,8 +849,12 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                   >
                     Modal Aside Title
                   </div>
-                  <div>
-                    Modal Aside Content
+                  <div
+                    class="asideBody"
+                  >
+                    <div>
+                      Modal Aside Content
+                    </div>
                   </div>
                 </aside>
               </div>
