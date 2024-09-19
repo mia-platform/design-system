@@ -38,7 +38,7 @@ describe('Card Component', () => {
 
     expect(screen.getByRole('h3', { name: /Card Title/i })).toBeVisible()
 
-    expect(screen.getByRole('button', { name: /PiBookOpen/i })).toBeVisible()
+    expect(screen.getByRole('button', { name: /Doc link/i })).toBeVisible()
     expect(screen.getByRole('button', { name: /Button/i })).toBeVisible()
 
     expect(screen.getAllByRole('paragraph')).toHaveLength(1)
@@ -53,7 +53,7 @@ describe('Card Component', () => {
 
     expect(screen.getByRole('h3', { name: /Card Title/i })).toBeVisible()
 
-    expect(screen.getByRole('button', { name: /PiBookOpen/i })).toBeVisible()
+    expect(screen.getByRole('button', { name: /Doc link/i })).toBeVisible()
     expect(screen.getByRole('button', { name: /Button/i })).toBeVisible()
 
     expect(screen.getAllByRole('paragraph')).toHaveLength(1)

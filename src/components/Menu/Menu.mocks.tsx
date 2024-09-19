@@ -27,14 +27,28 @@ export const item = {
   key: 'item',
   label: 'Item',
   title: 'Item',
-  icon: <Icon color="currentColor" component={PiStar} size={16} />,
+  icon: (
+    <Icon
+      aria-label="PiStar"
+      color="currentColor"
+      component={PiStar}
+      size={16}
+    />
+  ),
 }
 
 export const group = {
   key: 'group',
   label: 'Group',
   type: Group,
-  icon: <Icon color="currentColor" component={PiSnowflake} size={16} />,
+  icon: (
+    <Icon
+      aria-label="PiSnowflake"
+      color="currentColor"
+      component={PiSnowflake}
+      size={16}
+    />
+  ),
   children: [
     {
       key: 'group item 1',
@@ -60,13 +74,27 @@ export const category = {
       key: 'category item 1',
       label: 'Category Item 1',
       title: 'Category Item 1',
-      icon: <Icon color="currentColor" component={PiSun} size={16} />,
+      icon: (
+        <Icon
+          aria-label="PiSun"
+          color="currentColor"
+          component={PiSun}
+          size={16}
+        />
+      ),
     },
     {
       key: 'category item 2',
       label: 'Category Item 2',
       title: 'Category Item 2',
-      icon: <Icon color="currentColor" component={PiMoon} size={16} />,
+      icon: (
+        <Icon
+          aria-label="PiMoon"
+          color="currentColor"
+          component={PiMoon}
+          size={16}
+        />
+      ),
     },
   ],
 }

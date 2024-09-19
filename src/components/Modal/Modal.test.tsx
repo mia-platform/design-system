@@ -38,7 +38,7 @@ describe('Modal Component', () => {
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
     expect(screen.getByRole('h4', { name: title })).toBeVisible()
-    expect(screen.getByRole('button', { name: /PiBookOpen/i })).toBeVisible()
+    expect(screen.getByRole('button', { name: /Doc link/i })).toBeVisible()
     expect(screen.getByText(/Modal Content/i)).toBeVisible()
     expect(screen.getByRole('button', { name: 'OK' })).toBeVisible()
     expect(screen.getByRole('button', { name: /Cancel/i })).toBeVisible()
@@ -51,7 +51,7 @@ describe('Modal Component', () => {
 
     await waitFor(() => expect(screen.getByRole('dialog')).toBeVisible())
     expect(screen.getByRole('h4', { name: title })).toBeVisible()
-    expect(screen.getByRole('button', { name: /PiBookOpen/i })).toBeVisible()
+    expect(screen.getByRole('button', { name: /Doc link/i })).toBeVisible()
     expect(screen.getByText(/Modal Content/i)).toBeVisible()
 
     expect(baseElement).toMatchSnapshot()
@@ -126,7 +126,7 @@ describe('Modal Component', () => {
     expect(baseElement.getElementsByClassName('bodyWithAsideClosed').length).toEqual(1)
     expect(baseElement.getElementsByClassName('bodyWithAsideOpened').length).toEqual(0)
 
-    const openButton = screen.getByRole('img', { name: 'PiCaretLeft' })
+    const openButton = screen.getByRole('img', { name: 'Open aside' })
     expect(openButton).toBeVisible()
     expect(screen.getByText('Open')).toBeVisible()
     expect(screen.queryByText('Close')).toBeNull()
@@ -138,7 +138,7 @@ describe('Modal Component', () => {
     expect(baseElement.getElementsByClassName('bodyWithAsideClosed').length).toEqual(0)
     expect(baseElement.getElementsByClassName('bodyWithAsideOpened').length).toEqual(1)
 
-    const closeButton = screen.getByRole('img', { name: 'PiCaretRight' })
+    const closeButton = screen.getByRole('img', { name: 'Close aside' })
     expect(closeButton).toBeVisible()
     expect(screen.queryByText('Open')).toBeNull()
     expect(screen.getByText('Close')).toBeVisible()

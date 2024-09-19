@@ -12,7 +12,6 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
-        aria-label="AiOutlineHome"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -37,7 +36,6 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
-        aria-label="PiChartPieSlice"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -62,7 +60,6 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption selected disabled"
     >
       <svg
-        aria-label="AiOutlineDesktop"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -87,7 +84,6 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
-        aria-label="AiOutlineFieldTime"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -118,7 +114,6 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
-        aria-label="AiOutlineLock"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -143,7 +138,6 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
-        aria-label="AiOutlineFork"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -168,7 +162,6 @@ exports[`Segmented Control Component labeled options renders disabled segmented 
       class="segmentedOption disabled"
     >
       <svg
-        aria-label="AiOutlineFilter"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -202,7 +195,6 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
-        aria-label="AiOutlineHome"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -227,7 +219,6 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
-        aria-label="PiChartPieSlice"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -252,7 +243,6 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption selected disabled"
     >
       <svg
-        aria-label="AiOutlineDesktop"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -277,7 +267,6 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
-        aria-label="AiOutlineFieldTime"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -308,7 +297,6 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
-        aria-label="AiOutlineLock"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -333,7 +321,6 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
-        aria-label="AiOutlineFork"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -358,7 +345,6 @@ exports[`Segmented Control Component labeled options renders options correctly 1
       class="segmentedOption"
     >
       <svg
-        aria-label="AiOutlineFilter"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -392,7 +378,6 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
-        aria-label="AiOutlineHome"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -417,7 +402,6 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
-        aria-label="PiChartPieSlice"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -442,7 +426,6 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary selected disabled"
     >
       <svg
-        aria-label="AiOutlineDesktop"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -467,7 +450,6 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
-        aria-label="AiOutlineFieldTime"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -498,7 +480,6 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
-        aria-label="AiOutlineLock"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -523,7 +504,6 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
-        aria-label="AiOutlineFork"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -548,7 +528,6 @@ exports[`Segmented Control Component labeled options renders primary options cor
       class="segmentedOption primary"
     >
       <svg
-        aria-label="AiOutlineFilter"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -582,7 +561,6 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
-        aria-label="AiOutlineHome"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -607,7 +585,6 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
-        aria-label="PiChartPieSlice"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -632,7 +609,6 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption selected vertical disabled"
     >
       <svg
-        aria-label="AiOutlineDesktop"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -657,7 +633,6 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
-        aria-label="AiOutlineFieldTime"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -688,7 +663,6 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
-        aria-label="AiOutlineLock"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -713,7 +687,6 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
-        aria-label="AiOutlineFork"
         color="currentColor"
         fill="currentColor"
         height="16"
@@ -738,7 +711,6 @@ exports[`Segmented Control Component labeled options renders vertical options co
       class="segmentedOption vertical"
     >
       <svg
-        aria-label="AiOutlineFilter"
         color="currentColor"
         fill="currentColor"
         height="16"

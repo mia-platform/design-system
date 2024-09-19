@@ -226,7 +226,7 @@ describe('Breadcrumb Component', () => {
 
     expect(screen.getAllByText('Text 2')).toHaveLength(1)
 
-    const collapseButton = screen.getByLabelText('PiDotsThree')
+    const collapseButton = screen.getByLabelText('Open collapsed breadcrumb')
     fireEvent.click(collapseButton)
 
     expect(asFragment()).toMatchSnapshot()

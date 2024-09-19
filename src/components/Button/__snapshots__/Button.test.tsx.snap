@@ -42,7 +42,6 @@ exports[`Button Component renders button with icon left correctly 1`] = `
       class="mia-platform-btn-icon"
     >
       <svg
-        aria-label="PiCircleHalfTiltLight"
         color="white"
         fill="currentColor"
         height="16"
@@ -83,7 +82,6 @@ exports[`Button Component renders button with icon right correctly 1`] = `
       class="mia-platform-btn-icon mia-platform-btn-icon-end"
     >
       <svg
-        aria-label="PiCircleHalfTiltLight"
         color="white"
         fill="currentColor"
         height="16"
@@ -114,7 +112,6 @@ exports[`Button Component renders circle button correctly 1`] = `
       class="mia-platform-btn-icon"
     >
       <svg
-        aria-label="PiCircleHalfTiltLight"
         color="white"
         fill="currentColor"
         height="16"
@@ -451,7 +448,6 @@ exports[`Button Component renders small button icon only correctly 1`] = `
       class="mia-platform-btn-icon"
     >
       <svg
-        aria-label="PiCircleHalfTiltLight"
         color="white"
         fill="currentColor"
         height="16"
@@ -482,7 +478,6 @@ exports[`Button Component renders square button correctly 1`] = `
       class="mia-platform-btn-icon"
     >
       <svg
-        aria-label="PiCircleHalfTiltLight"
         color="white"
         fill="currentColor"
         height="16"

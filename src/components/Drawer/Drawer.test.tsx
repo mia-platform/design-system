@@ -43,7 +43,7 @@ describe('Drawer', () => {
     render(<Drawer {...customProps} ><DrawerLipsum /></Drawer>)
 
     expect(screen.getByText(/drawer lipsum/i)).toBeVisible()
-    expect(screen.getByRole('button', { name: /pibookopen/i })).toBeVisible()
+    expect(screen.getByRole('button', { name: /Doc link/i })).toBeVisible()
   })
 
   it('renders drawer with provided title and footer', () => {

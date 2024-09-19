@@ -67,12 +67,26 @@ export const rowKey = Object.keys(data[0])[0] as keyof TableRecord
 export const customActions = (callbacks: Callbacks = {}): TableAction<TableRecord>[] => ([
   {
     dataIndex: 'detail',
-    icon: <Icon color="currentColor" component={PiArrowRight} size={16} />,
+    icon: (
+      <Icon
+        aria-label="PiArrowRight"
+        color="currentColor"
+        component={PiArrowRight}
+        size={16}
+      />
+    ),
     onClick: callbacks.detail,
   },
   {
     dataIndex: 'overview',
-    icon: <Icon color="currentColor" component={PiCircleHalfTilt} size={16} />,
+    icon: (
+      <Icon
+        aria-label="PiCircleHalfTilt"
+        color="currentColor"
+        component={PiCircleHalfTilt}
+        size={16}
+      />
+    ),
     onClick: callbacks.overview,
   },
   {

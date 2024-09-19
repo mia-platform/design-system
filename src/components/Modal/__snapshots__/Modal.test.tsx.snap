@@ -228,7 +228,7 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
                         class="mia-platform-btn-icon"
                       >
                         <svg
-                          aria-label="PiBookOpen"
+                          aria-label="Doc Link"
                           color="#004aaa"
                           fill="currentColor"
                           height="16"
@@ -373,7 +373,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                         class="mia-platform-btn-icon"
                       >
                         <svg
-                          aria-label="PiBookOpen"
+                          aria-label="Doc Link"
                           color="#004aaa"
                           fill="currentColor"
                           height="16"
@@ -556,7 +556,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                         class="mia-platform-btn-icon"
                       >
                         <svg
-                          aria-label="PiBookOpen"
+                          aria-label="Doc Link"
                           color="#004aaa"
                           fill="currentColor"
                           height="16"
@@ -599,7 +599,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                       class="asideLabel"
                     >
                       <svg
-                        aria-label="PiCaretLeft"
+                        aria-label="Open aside"
                         color="currentColor"
                         fill="currentColor"
                         height="16"
@@ -769,7 +769,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                         class="mia-platform-btn-icon"
                       >
                         <svg
-                          aria-label="PiBookOpen"
+                          aria-label="Doc Link"
                           color="#004aaa"
                           fill="currentColor"
                           height="16"
@@ -813,7 +813,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                     >
                       Close
                       <svg
-                        aria-label="PiCaretRight"
+                        aria-label="Close aside"
                         color="currentColor"
                         fill="currentColor"
                         height="16"
@@ -1087,7 +1087,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                         class="mia-platform-btn-icon"
                       >
                         <svg
-                          aria-label="PiBookOpen"
+                          aria-label="Doc Link"
                           color="#004aaa"
                           fill="currentColor"
                           height="16"
@@ -1353,7 +1353,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                         class="mia-platform-btn-icon"
                       >
                         <svg
-                          aria-label="PiBookOpen"
+                          aria-label="Doc Link"
                           color="#004aaa"
                           fill="currentColor"
                           height="16"
