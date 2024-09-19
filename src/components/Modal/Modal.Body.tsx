@@ -98,7 +98,7 @@ export const Body = ({
           {isAsideOpen && <>
             {labelClose}
             <Icon
-              aria-label={'PiCaretRight'}
+              aria-label={'Close aside'}
               color="currentColor"
               component={PiCaretRight}
               size={16}
@@ -106,7 +106,7 @@ export const Body = ({
           </>}
           {!isAsideOpen && <>
             <Icon
-              aria-label={'PiCaretLeft'}
+              aria-label={'Open aside'}
               color="currentColor"
               component={PiCaretLeft}
               size={16}

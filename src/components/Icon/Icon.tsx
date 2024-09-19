@@ -56,7 +56,7 @@ export const Icon = ({
 
   return (
     <IconComponent
-      aria-label={otherProps['aria-label'] ?? component.name}
+      aria-label={otherProps['aria-label']}
       className={className}
       color={color ?? 'currentColor'}
       height={size ?? defaultSize}

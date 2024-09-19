@@ -30,9 +30,6 @@ export type IconComponent = React.FunctionComponent<IconComponentProps>
 
 export type IconProps = {
 
-  /**
-   * Custom aria-label to apply on the svg icon.
-   */
   'aria-label'?: string,
 
   /**

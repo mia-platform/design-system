@@ -29,7 +29,7 @@ import styles from './Drawer.module.css'
 const DRAWER_WIDTH = 512
 const closeIcon = (
   <Icon
-    aria-label={'PiX'}
+    aria-label={'Close'}
     color="currentColor"
     component={PiX}
     size={16}

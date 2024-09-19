@@ -39,7 +39,7 @@ export const Title = ({
 
   const docLinkIcon = useMemo(() => (
     <Icon
-      aria-label={'PiBookOpen'}
+      aria-label={'Doc Link'}
       color={palette?.action?.link?.active}
       component={PiBookOpen}
       size={16}

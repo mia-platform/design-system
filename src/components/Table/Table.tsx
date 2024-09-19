@@ -104,7 +104,7 @@ export const Table = <RecordType extends GenericRecord>({
       dataIndex: Edit,
       icon: (
         <Icon
-          aria-label={'PiPencilSimpleLine'}
+          aria-label={'Edit row'}
           color="currentColor"
           component={PiPencilSimpleLine}
           size={iconSize}
@@ -117,7 +117,7 @@ export const Table = <RecordType extends GenericRecord>({
       dataIndex: Delete,
       icon: (
         <Icon
-          aria-label={'PiTrash'}
+          aria-label={'Delete row'}
           color="currentColor"
           component={PiTrash}
           size={iconSize}

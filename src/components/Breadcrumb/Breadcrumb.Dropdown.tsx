@@ -71,7 +71,7 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
               autoFocus
               placeholder={getSearchOption(item.menu?.search, 'placeholder') ?? 'Search...'}
               // @ts-expect-error size 12 is not accepted by Icon component but supported by underling SVG
-              suffix={<Icon aria-label={'PiMagnifyingGlass'} component={PiMagnifyingGlass} size={12} />}
+              suffix={<Icon aria-label={'Search'} component={PiMagnifyingGlass} size={12} />}
               onChange={(event) => {
                 const onChange = getSearchOption(item.menu?.search, 'onChange')
 

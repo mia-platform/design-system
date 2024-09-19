@@ -30,7 +30,7 @@ export const Title = ({ docLink, title }: TitleProps): ReactElement => {
 
   const docLinkIcon = useMemo(() => (
     <Icon
-      aria-label={'PiBookOpen'}
+      aria-label={'Doc link'}
       color={palette?.action?.link?.active}
       component={PiBookOpen}
       size={16}
