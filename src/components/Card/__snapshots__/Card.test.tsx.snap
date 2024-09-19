@@ -32,7 +32,7 @@ exports[`Card Component renders card correctly 1`] = `
                 class="mia-platform-btn-icon"
               >
                 <svg
-                  aria-label="PiBookOpen"
+                  aria-label="Doc link"
                   color="#004aaa"
                   fill="currentColor"
                   height="16"
@@ -125,7 +125,7 @@ exports[`Card Component renders header only 1`] = `
                 class="mia-platform-btn-icon"
               >
                 <svg
-                  aria-label="PiBookOpen"
+                  aria-label="Doc link"
                   color="#004aaa"
                   fill="currentColor"
                   height="16"

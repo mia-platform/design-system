@@ -56,7 +56,7 @@ exports[`Breadcrumb Component renders a breadcrumb in loading state 2`] = `
         style="width: 16px; height: 16px;"
       >
         <svg
-          aria-label="PiCaretRight"
+          aria-label="Breadcrumb separator"
           color="#636363"
           fill="currentColor"
           height="16"
@@ -151,7 +151,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
         style="width: 16px; height: 16px;"
       >
         <svg
-          aria-label="PiCaretRight"
+          aria-label="Breadcrumb separator"
           color="#636363"
           fill="currentColor"
           height="16"
@@ -173,7 +173,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
         style="width: 32px;"
       >
         <svg
-          aria-label="PiDotsThree"
+          aria-label="Open collapsed breadcrumb"
           color="currentColor"
           fill="currentColor"
           height="16"
@@ -194,7 +194,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
         style="width: 16px; height: 16px;"
       >
         <svg
-          aria-label="PiCaretRight"
+          aria-label="Breadcrumb separator"
           color="#636363"
           fill="currentColor"
           height="16"
@@ -313,7 +313,6 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
             class="breadcrumbItemLabel"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -371,7 +370,6 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -486,7 +484,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
         style="width: 16px; height: 16px;"
       >
         <svg
-          aria-label="PiCaretRight"
+          aria-label="Breadcrumb separator"
           color="#636363"
           fill="currentColor"
           height="16"
@@ -508,7 +506,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
         style="width: 32px;"
       >
         <svg
-          aria-label="PiDotsThree"
+          aria-label="Open collapsed breadcrumb"
           color="currentColor"
           fill="currentColor"
           height="16"
@@ -529,7 +527,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
         style="width: 16px; height: 16px;"
       >
         <svg
-          aria-label="PiCaretRight"
+          aria-label="Breadcrumb separator"
           color="#636363"
           fill="currentColor"
           height="16"
@@ -648,7 +646,6 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
             class="breadcrumbItemLabel"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -706,7 +703,6 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -843,7 +839,6 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
                 class="mia-platform-dropdown-menu-item-icon"
               >
                 <svg
-                  aria-label="PiCircleHalfTiltLight"
                   color="black"
                   fill="currentColor"
                   height="16"
@@ -898,7 +893,6 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
                 class="mia-platform-dropdown-menu-item-icon"
               >
                 <svg
-                  aria-label="PiCircleHalfTiltLight"
                   color="black"
                   fill="currentColor"
                   height="16"
@@ -1027,7 +1021,6 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
             class="breadcrumbItemLabel"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -1056,7 +1049,6 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
             class="breadcrumbItemLabel"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -1130,7 +1122,6 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -1172,7 +1163,6 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
             class="breadcrumbItemLabel withMenu"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -1244,7 +1234,6 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -1287,7 +1276,6 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -1343,7 +1331,7 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
               class="mia-platform-input-suffix"
             >
               <svg
-                aria-label="PiMagnifyingGlass"
+                aria-label="Search"
                 color="currentColor"
                 fill="currentColor"
                 height="12"
@@ -1395,7 +1383,6 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
               tabindex="-1"
             >
               <svg
-                aria-label="PiCircleHalfTiltLight"
                 color="black"
                 fill="currentColor"
                 height="16"
@@ -1452,7 +1439,6 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
             class="breadcrumbItemLabel withMenu"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -1493,7 +1479,7 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
         style="width: 16px; height: 16px;"
       >
         <svg
-          aria-label="PiCaretRight"
+          aria-label="Breadcrumb separator"
           color="#636363"
           fill="currentColor"
           height="16"
@@ -1517,7 +1503,6 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -1563,7 +1548,6 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
             class="breadcrumbItemLabel withMenu"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -1607,7 +1591,6 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -1662,7 +1645,6 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
             class="breadcrumbItemLabel withMenu"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -1703,7 +1685,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
         style="width: 16px; height: 16px;"
       >
         <svg
-          aria-label="PiCaretRight"
+          aria-label="Breadcrumb separator"
           color="#636363"
           fill="currentColor"
           height="16"
@@ -1727,7 +1709,6 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -1773,7 +1754,6 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
             class="breadcrumbItemLabel withMenu"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -1817,7 +1797,6 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -1873,7 +1852,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
               class="mia-platform-input-suffix"
             >
               <svg
-                aria-label="PiMagnifyingGlass"
+                aria-label="Search"
                 color="currentColor"
                 fill="currentColor"
                 height="12"
@@ -1925,7 +1904,6 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
               tabindex="-1"
             >
               <svg
-                aria-label="PiCircleHalfTiltLight"
                 color="black"
                 fill="currentColor"
                 height="16"
@@ -1982,7 +1960,6 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
             class="breadcrumbItemLabel withMenu"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -2023,7 +2000,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
         style="width: 16px; height: 16px;"
       >
         <svg
-          aria-label="PiCaretRight"
+          aria-label="Breadcrumb separator"
           color="#636363"
           fill="currentColor"
           height="16"
@@ -2047,7 +2024,6 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -2093,7 +2069,6 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
             class="breadcrumbItemLabel withMenu"
           >
             <svg
-              aria-label="PiCircleHalfTiltLight"
               color="black"
               fill="currentColor"
               height="16"
@@ -2137,7 +2112,6 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
           class="breadcrumbItemButton breadcrumbItemButtonConnected"
         >
           <svg
-            aria-label="PiCircleHalfTiltLight"
             color="black"
             fill="currentColor"
             height="16"
@@ -2193,7 +2167,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
               class="mia-platform-input-suffix"
             >
               <svg
-                aria-label="PiMagnifyingGlass"
+                aria-label="Search"
                 color="currentColor"
                 fill="currentColor"
                 height="12"
@@ -2269,7 +2243,6 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
               tabindex="-1"
             >
               <svg
-                aria-label="PiCircleHalfTiltLight"
                 color="black"
                 fill="currentColor"
                 height="16"

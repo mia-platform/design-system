@@ -33,6 +33,7 @@ export const customCopyable = {
   text: 'Custom text to copy',
   icon: [
     <Icon
+      aria-label="FiCopy"
       color="magenta"
       component={FiCopy}
       key="FiCopy"

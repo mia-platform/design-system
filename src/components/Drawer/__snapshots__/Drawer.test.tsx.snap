@@ -38,7 +38,7 @@ exports[`Drawer renders drawer with provided title and footer 1`] = `
                 type="button"
               >
                 <svg
-                  aria-label="PiX"
+                  aria-label="Close"
                   color="currentColor"
                   fill="currentColor"
                   height="16"

@@ -176,27 +176,27 @@ describe('Tree Component', () => {
       {
         title: 'Arrows',
         key: 'arrow',
-        icon: <Icon component={PiArrowUpFill} size={16} />,
+        icon: <Icon aria-label="Main arrow" component={PiArrowUpFill} size={16} />,
         children: [
           {
             title: 'Up',
             key: 'arrow-up',
-            icon: <Icon component={PiArrowUp} size={16} />,
+            icon: <Icon aria-label="Arrow up" component={PiArrowUp} size={16} />,
           },
           {
             title: 'Left',
             key: 'arrow-left',
-            icon: <Icon component={PiArrowLeft} size={16} />,
+            icon: <Icon aria-label="Arrow left" component={PiArrowLeft} size={16} />,
           },
           {
             title: 'Down',
             key: 'arrow-down',
-            icon: <Icon component={PiArrowDown} size={16} />,
+            icon: <Icon aria-label="Arrow down" component={PiArrowDown} size={16} />,
           },
           {
             title: 'Right',
             key: 'arrow-right',
-            icon: <Icon component={PiArrowRight} size={16} />,
+            icon: <Icon aria-label="Arrow right" component={PiArrowRight} size={16} />,
           },
         ],
       },
@@ -204,14 +204,15 @@ describe('Tree Component', () => {
 
     render(<Tree showIcon treeData={treeData} />)
 
-    expect(screen.getByRole('img', { name: 'PiArrowUpFill' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Main arrow' })).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('img', { name: /caret-down/i }))
 
-    await waitFor(() => { expect(screen.getByRole('img', { name: 'PiArrowUp' })).toBeInTheDocument() })
-    expect(screen.getByRole('img', { name: 'PiArrowDown' })).toBeInTheDocument()
-    expect(screen.getByRole('img', { name: 'PiArrowLeft' })).toBeInTheDocument()
-    expect(screen.getByRole('img', { name: 'PiArrowRight' })).toBeInTheDocument()
+    await waitFor(() => { expect(screen.getByRole('img', { name: 'Main arrow' })).toBeInTheDocument() })
+    expect(screen.getByRole('img', { name: 'Arrow up' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Arrow left' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Arrow down' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Arrow right' })).toBeInTheDocument()
   })
 
   test('the nodes are checked correctly in controlled mode', () => {

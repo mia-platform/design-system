@@ -181,8 +181,8 @@ describe('Table Component', () => {
 
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
 
-    const editButtons = screen.getAllByRole('button', { name: 'PiPencilSimpleLine' })
-    const deleteButtons = screen.getAllByRole('button', { name: 'PiTrash' })
+    const editButtons = screen.getAllByRole('button', { name: 'Edit row' })
+    const deleteButtons = screen.getAllByRole('button', { name: 'Delete row' })
     const detailButtons = screen.getAllByRole('button', { name: 'PiArrowRight' })
     const overviewButtons = screen.getAllByRole('button', { name: 'PiCircleHalfTilt' })
 
@@ -233,8 +233,8 @@ describe('Table Component', () => {
       />
     )
 
-    const editButtons = screen.getAllByRole('button', { name: 'PiPencilSimpleLine' })
-    const deleteButtons = screen.getAllByRole('button', { name: 'PiTrash' })
+    const editButtons = screen.getAllByRole('button', { name: 'Edit row' })
+    const deleteButtons = screen.getAllByRole('button', { name: 'Delete row' })
 
     expect(editButtons).toHaveLength(props.data.length)
     expect(deleteButtons).toHaveLength(props.data.length)
