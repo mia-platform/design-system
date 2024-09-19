@@ -60,6 +60,7 @@ export const Dropdown = ({
   getPopupContainer,
   initialSelectedItems = defaults.initialSelectedItems,
   multiple,
+  selectable = true,
 }: DropdownProps): ReactElement => {
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
@@ -93,8 +94,8 @@ export const Dropdown = ({
     /* istanbul ignore next */
     getPopupContainer: (triggerNode: HTMLElement) => (document.querySelector(`.${uniqueClassName}`) || triggerNode) as HTMLElement,
     onClick: onAntdMenuClick,
-    selectedKeys: selectedItems,
-  }), [antdItems, onAntdMenuClick, selectedItems, uniqueClassName])
+    selectedKeys: selectable ? selectedItems : [],
+  }), [antdItems, onAntdMenuClick, selectable, selectedItems, uniqueClassName])
 
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
 

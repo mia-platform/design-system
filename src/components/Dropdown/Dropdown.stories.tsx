@@ -123,3 +123,9 @@ export const Disabled: Story = {
     isDisabled: true,
   },
 }
+
+export const OptionsAreNotSelectable: Story = {
+  args: {
+    selectable: false,
+  },
+}

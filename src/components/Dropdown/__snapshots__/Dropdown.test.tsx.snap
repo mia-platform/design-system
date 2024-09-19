@@ -1,5 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Dropdown Component highlights selectedItems multiple mode is ignored if "selectable" is set to false: after click render Label 1 is still not selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems multiple mode is ignored if "selectable" is set to false: at first render Label 1 is not selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
 exports[`Dropdown Component highlights selectedItems multiple mode renders proper highlight: after click render Label 1 is selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
@@ -129,6 +183,87 @@ exports[`Dropdown Component highlights selectedItems multiple mode renders prope
 `;
 
 exports[`Dropdown Component highlights selectedItems multiple mode renders proper highlight: first render with pre-selected label 1 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if selectable is set to false: after click render Label 1 is still not selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if selectable is set to false: at first render Label 1 is not selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode render and ignores "initialSelectedItems" prop if "selectable" is true: at first render Label 1 is not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"

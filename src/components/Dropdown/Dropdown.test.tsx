@@ -275,6 +275,46 @@ describe('Dropdown Component', () => {
         expect(firstUpdated).toMatchSnapshot('after click render Label 1 is not selected')
         expect(secondUpdated).toMatchSnapshot('after click render Label 2 is selected')
       })
+
+      it('does not highlight elements if selectable is set to false', async() => {
+        const onClick = jest.fn()
+        const props: DropdownProps = {
+          ...defaultProps,
+          onClick,
+          selectable: false,
+        }
+
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+        const el = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(el).toMatchSnapshot('at first render Label 1 is not selected')
+
+        userEvent.click(el)
+
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+
+        userEvent.click(button)
+        const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(firstUpdated).toMatchSnapshot('after click render Label 1 is still not selected')
+      })
+
+      it('render and ignores "initialSelectedItems" prop if "selectable" is true', async() => {
+        const onClick = jest.fn()
+        const props: DropdownProps = {
+          ...defaultProps,
+          initialSelectedItems: ['1'],
+          onClick,
+          selectable: true,
+        }
+
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+        const el = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(el).toMatchSnapshot('at first render Label 1 is not selected')
+      })
     })
 
     describe('multiple mode', () => {
@@ -317,6 +357,31 @@ describe('Dropdown Component', () => {
         expect(firstUpdatedDeSelected).toMatchSnapshot('after second click render Label 1 is deselected')
         expect(secondUpdatedStillSelected).toMatchSnapshot('after second click render Label 2 is selected')
       }, 10000)
+
+      it('is ignored if "selectable" is set to false', async() => {
+        const onClick = jest.fn()
+        const props: DropdownProps = {
+          ...defaultProps,
+          multiple: true,
+          onClick,
+          selectable: false,
+        }
+
+        renderDropdown({ props })
+        const button = screen.getByText('test-trigger-button')
+        userEvent.click(button)
+        const el = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(el).toMatchSnapshot('at first render Label 1 is not selected')
+
+        userEvent.click(el)
+
+        // eslint-disable-next-line max-nested-callbacks
+        await waitFor(() => expect(onClick).toHaveBeenCalled())
+
+        userEvent.click(button)
+        const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
+        expect(firstUpdated).toMatchSnapshot('after click render Label 1 is still not selected')
+      })
     })
   })
 })
