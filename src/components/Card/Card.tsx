@@ -50,7 +50,12 @@ export const Card = ({
   const { palette } = useTheme()
 
   const docLinkIcon = useMemo(() => (
-    <Icon color={palette?.action?.link?.active} component={PiBookOpen} size={16} />
+    <Icon
+      aria-label={'Doc link'}
+      color={palette?.action?.link?.active}
+      component={PiBookOpen}
+      size={16}
+    />
   ), [palette?.action?.link?.active])
 
   const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])

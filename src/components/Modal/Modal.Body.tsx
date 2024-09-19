@@ -97,10 +97,20 @@ export const Body = ({
         <div className={asideLabel} onClick={toggleAside}>
           {isAsideOpen && <>
             {labelClose}
-            <Icon color="currentColor" component={PiCaretRight} size={16} />
+            <Icon
+              aria-label={'Close aside'}
+              color="currentColor"
+              component={PiCaretRight}
+              size={16}
+            />
           </>}
           {!isAsideOpen && <>
-            <Icon color="currentColor" component={PiCaretLeft} size={16} />
+            <Icon
+              aria-label={'Open aside'}
+              color="currentColor"
+              component={PiCaretLeft}
+              size={16}
+            />
             {labelOpen}
           </>}
         </div>

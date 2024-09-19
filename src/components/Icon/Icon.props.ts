@@ -30,6 +30,8 @@ export type IconComponent = React.FunctionComponent<IconComponentProps>
 
 export type IconProps = {
 
+  'aria-label'?: string,
+
   /**
    * The color of the icon.
    */

@@ -27,7 +27,14 @@ import { Title } from './Drawer.Title'
 import styles from './Drawer.module.css'
 
 const DRAWER_WIDTH = 512
-const closeIcon = <Icon color="currentColor" component={PiX} size={16} />
+const closeIcon = (
+  <Icon
+    aria-label={'Close'}
+    color="currentColor"
+    component={PiX}
+    size={16}
+  />
+)
 
 export const Drawer = ({
   children,

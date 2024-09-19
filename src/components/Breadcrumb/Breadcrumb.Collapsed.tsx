@@ -83,7 +83,7 @@ export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer, items }: 
             className={classNames([styles.breadcrumbItemButton, styles.breadcrumbItemButtonConnected])}
             style={{ width: BREADCRUMB_COLLAPSED_WIDTH }}
           >
-            <Icon component={PiDotsThree} size={16} />
+            <Icon aria-label={'Open collapsed breadcrumb'} component={PiDotsThree} size={16} />
           </div>
         </Dropdown>
         <BreadcrumbSeparator />

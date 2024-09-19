@@ -35,7 +35,12 @@ export const BreadcrumbSeparator = (): ReactElement => {
 
   return (
     <div style={separatorStyle}>
-      <Icon color={palette?.common?.grey?.[600]} component={PiCaretRight} size={BREADCRUMB_SEPARATOR_SIZE} />
+      <Icon
+        aria-label={'Breadcrumb separator'}
+        color={palette?.common?.grey?.[600]}
+        component={PiCaretRight}
+        size={BREADCRUMB_SEPARATOR_SIZE}
+      />
     </div>
   )
 }

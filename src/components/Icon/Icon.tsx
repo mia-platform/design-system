@@ -49,13 +49,14 @@ export const Icon = ({
   component,
   size = 24,
   color,
+  ...otherProps
 }: IconProps): ReactElement => {
   const { size: defaultSize, className } = useContext(IconContext)
   const IconComponent = component
 
   return (
     <IconComponent
-      aria-label={component.name}
+      aria-label={otherProps['aria-label']}
       className={className}
       color={color ?? 'currentColor'}
       height={size ?? defaultSize}
