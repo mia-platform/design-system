@@ -129,4 +129,10 @@ export type ButtonProps = {
    * - "link": button link without padding and margin;
    */
   type?: Type,
+
+  /**
+   * Indicates that the linked resource is intended to be downloaded rather than displayed in the browser.
+   * If it is a string, its value specifies the file name for use in labeling the resource in the local file system.
+   */
+  download?: string | boolean
 }
