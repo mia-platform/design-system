@@ -83,6 +83,7 @@ export const Button = ({
   target,
   title,
   type = defaults.type,
+  download,
 }: ButtonProps): ReactElement => {
   const buttonClassNames = useMemo(() => classnames(
     [
@@ -104,6 +105,7 @@ export const Button = ({
       className={buttonClassNames}
       danger={hierarchy === Danger}
       disabled={isDisabled}
+      download={download}
       form={form}
       ghost={type !== Filled && hierarchy !== Neutral}
       htmlType={form && !htmlType ? HTMLType.Submit : htmlType}
