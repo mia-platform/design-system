@@ -213,6 +213,14 @@ export const Loading: Story = {
   },
 }
 
+export const Download: Story = {
+  args: {
+    ...meta.args,
+    download: 'filename.txt',
+    href: 'data:text/plain, test content',
+  },
+}
+
 export const IconOnly: Story = {
   args: {
     ...meta.args,
