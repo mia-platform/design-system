@@ -108,7 +108,16 @@ export type DropdownProps = {
   children?: ReactElement,
 
   /**
-   * List of items to be shown as selected at first render
+   * Set to `true` to keep the selected value highlighted after the selection.
+   * Useful in case you need to keep the selected option after the dropdown is closed.
+   * Defaults to `true`.
+   */
+  persistSelection?: boolean,
+
+  /**
+   * List of items to be shown as selected at first render.
+   *
+   * _NOTE_: this property does not work if _persistSelection_ is set to `false`
    */
   initialSelectedItems?: string[],
 
@@ -129,6 +138,8 @@ export type DropdownProps = {
 
   /**
    * control whether to allow multiple highlight selection.
+   *
+   * _NOTE_: this property does not work if _persistSelection_ is set to `false`
    */
   multiple?: boolean
 

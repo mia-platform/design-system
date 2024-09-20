@@ -60,6 +60,7 @@ export const Dropdown = ({
   getPopupContainer,
   initialSelectedItems = defaults.initialSelectedItems,
   multiple,
+  persistSelection = true,
 }: DropdownProps): ReactElement => {
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
@@ -69,10 +70,16 @@ export const Dropdown = ({
   /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
-  const [selectedItems, setSelectedItems] = useState<string[]>(initialSelectedItems)
+  const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
   const updateSelectedItems = useCallback(
-    (itemId: string) => setSelectedItems(prevItems => (multiple ? pushOrRemove(prevItems, itemId) : [itemId])),
-    [multiple]
+    (itemId: string) => {
+      if (!persistSelection) {
+        return
+      }
+
+      setSelectedItems(prevItems => (multiple ? pushOrRemove(prevItems, itemId) : [itemId]))
+    },
+    [multiple, persistSelection]
   )
 
   const onAntdMenuClick = useCallback(
