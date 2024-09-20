@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip renders correctly with custom placement 1`] = `
+<DocumentFragment>
+  <div
+    id="popup-container"
+  >
+    <span
+      class="mia-platform-tooltip-open"
+    >
+      Tooltip trigger
+    </span>
+    <div
+      class="mia-platform-tooltip mia-platform-zoom-big-fast-appear mia-platform-zoom-big-fast-appear-prepare mia-platform-zoom-big-fast mia-platform-tooltip-placement-rightBottom"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="mia-platform-tooltip-arrow"
+        style="position: absolute;"
+      />
+      <div
+        class="mia-platform-tooltip-content"
+      >
+        <div
+          class="mia-platform-tooltip-inner"
+          role="tooltip"
+        >
+          Tooltip text
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tooltip renders on click 1`] = `
+<DocumentFragment>
+  <div
+    id="popup-container"
+  >
+    <span
+      class="mia-platform-tooltip-open"
+    >
+      Tooltip trigger
+    </span>
+    <div
+      class="mia-platform-tooltip mia-platform-zoom-big-fast-appear mia-platform-zoom-big-fast-appear-prepare mia-platform-zoom-big-fast mia-platform-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="mia-platform-tooltip-arrow"
+        style="position: absolute; bottom: 0px; left: 0px;"
+      />
+      <div
+        class="mia-platform-tooltip-content"
+      >
+        <div
+          class="mia-platform-tooltip-inner"
+          role="tooltip"
+        >
+          Tooltip text
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tooltip renders on hover 1`] = `
+<DocumentFragment>
+  <div
+    id="popup-container"
+  >
+    <span
+      class="mia-platform-tooltip-open"
+    >
+      Tooltip trigger
+    </span>
+    <div
+      class="mia-platform-tooltip mia-platform-zoom-big-fast-appear mia-platform-zoom-big-fast-appear-prepare mia-platform-zoom-big-fast mia-platform-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="mia-platform-tooltip-arrow"
+        style="position: absolute; bottom: 0px; left: 0px;"
+      />
+      <div
+        class="mia-platform-tooltip-content"
+      >
+        <div
+          class="mia-platform-tooltip-inner"
+          role="tooltip"
+        >
+          Tooltip text
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

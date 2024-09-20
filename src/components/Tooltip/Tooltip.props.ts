@@ -68,5 +68,5 @@ export type TooltipProps = {
     /**
      * Callback executed when visibility of the tooltip card is changed.
      */
-    onOpenChange: (open: boolean) => void,
+    onOpenChange?: (open: boolean) => void,
 }

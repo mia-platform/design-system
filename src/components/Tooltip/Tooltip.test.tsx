@@ -16,34 +16,69 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { act } from 'react'
 
-import { Tag } from './Tooltip'
-import { render } from '../../test-utils'
+import { RenderResult, render, screen, userEvent, waitFor } from '../../test-utils'
+import { Tooltip } from './Tooltip'
 
-const props = {
-  color: '#ff0000',
-  closeIcon: true,
-  onClose: jest.fn(),
+const defaultProps = {
+  title: 'Tooltip text',
+  onOpenChange: jest.fn(),
+  getPopupContainer: () => document.getElementById('popup-container') || document.body,
 }
 
-describe('Tag', () => {
+const renderTooltipWithWrapper = (props = defaultProps) : RenderResult => {
+  return render(
+    <div id="popup-container">
+      <Tooltip {...props}>{'Tooltip trigger'}</Tooltip>
+    </div>
+  )
+}
+
+describe('Tooltip', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
-    const { asFragment } = render(<Tag {...props}>{'Tag text'}</Tag>)
+  it('renders on hover', async() => {
+    const { asFragment } = renderTooltipWithWrapper()
+    await act(async() => userEvent.hover(screen.getByText(/tooltip trigger/i)))
+    await waitFor(() => expect(screen.getByText(/tooltip text/i)).toBeInTheDocument())
+
     expect(asFragment()).toMatchSnapshot()
   })
 
-  it('renders correctly with close icon and calls onClose', async() => {
-    render(<Tag {...props}>{'Tag text'}</Tag>)
+  it('renders on click', async() => {
+    const props = {
+      ...defaultProps,
+      trigger: Tooltip.TriggerMode.Click,
+    }
+    const { asFragment } = renderTooltipWithWrapper(props)
 
-    const closeButton = screen.getByRole('img', { name: /close/i })
-    expect(closeButton).toBeInTheDocument()
-    userEvent.click(closeButton)
-    await waitFor(() => expect(props.onClose).toHaveBeenCalled())
+    await act(async() => userEvent.click(screen.getByText(/tooltip trigger/i)))
+    await waitFor(() => expect(screen.getByText(/tooltip text/i)).toBeInTheDocument())
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders correctly with custom placement', async() => {
+    const props = {
+      ...defaultProps,
+      placement: Tooltip.Placement.RightBottom,
+    }
+    const { asFragment } = renderTooltipWithWrapper(props)
+
+    await act(async() => userEvent.hover(screen.getByText(/tooltip trigger/i)))
+    await waitFor(() => expect(screen.getByText(/tooltip text/i)).toBeInTheDocument())
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('calls onOpenChange correctly', async() => {
+    renderTooltipWithWrapper()
+    await act(async() => userEvent.hover(screen.getByText(/tooltip trigger/i)))
+    await waitFor(() => expect(defaultProps.onOpenChange).toHaveBeenCalledTimes(1))
+    await act(async() => userEvent.unhover(screen.getByText(/tooltip trigger/i)))
+    await waitFor(() => expect(defaultProps.onOpenChange).toHaveBeenCalledTimes(2))
   })
 })

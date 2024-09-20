@@ -18,47 +18,46 @@
 
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Tag } from '.'
+import { Button } from '../Button'
+import { Tooltip } from '.'
 import { defaults } from './Tooltip'
 
 const meta = {
-  component: Tag,
+  component: Tooltip,
   args: {
     ...defaults,
-    children: 'Tag text',
+    title: 'Tooltip text',
+    children: 'Hover me',
   },
   argTypes: {
     children: { control: false },
-    closeIcon: { type: 'boolean' },
   },
-} satisfies Meta<typeof Tag>
+} satisfies Meta<typeof Tooltip>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const BasicExample: Story = {}
 
-export const Colored: Story = {
+export const CustomPlacement: Story = {
   args: {
-    color: 'magenta',
+    ...meta.args,
+    placement: Tooltip.Placement.BottomRight,
   },
 }
 
-export const Bordered: Story = {
+export const TriggeredOnClick: Story = {
   args: {
-    isBordered: true,
+    ...meta.args,
+    trigger: Tooltip.TriggerMode.Click,
+    children: <Button>{'Click me'}</Button>,
   },
 }
 
-export const WithDefaultCloseIcon: Story = {
+export const HiddenWithEmptyTitle: Story = {
   args: {
-    closeIcon: true,
+    ...meta.args,
+    title: '',
+    children: 'Hover me, nothing will happen',
   },
 }
-
-export const WithCustomCloseIcon: Story = {
-  args: {
-    closeIcon: <span>X</span>,
-  },
-}
-
