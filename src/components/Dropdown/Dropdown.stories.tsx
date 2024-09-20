@@ -124,8 +124,8 @@ export const Disabled: Story = {
   },
 }
 
-export const OptionsAreNotSelectable: Story = {
+export const SelectionIsNotPersisted: Story = {
   args: {
-    selectable: false,
+    persistSelection: false,
   },
 }

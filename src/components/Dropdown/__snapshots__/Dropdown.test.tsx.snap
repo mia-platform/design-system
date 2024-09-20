@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown Component highlights selectedItems multiple mode is ignored if "selectable" is set to false: after click render Label 1 is still not selected 1`] = `
+exports[`Dropdown Component highlights selectedItems multiple mode is ignored if "persistSelection" is set to false: after click render Label 1 is still not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"
@@ -27,7 +27,7 @@ exports[`Dropdown Component highlights selectedItems multiple mode is ignored if
 </li>
 `;
 
-exports[`Dropdown Component highlights selectedItems multiple mode is ignored if "selectable" is set to false: at first render Label 1 is not selected 1`] = `
+exports[`Dropdown Component highlights selectedItems multiple mode is ignored if "persistSelection" is set to false: at first render Label 1 is not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"
@@ -209,7 +209,7 @@ exports[`Dropdown Component highlights selectedItems multiple mode renders prope
 </li>
 `;
 
-exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if selectable is set to false: after click render Label 1 is still not selected 1`] = `
+exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if persistSelection is set to false: after click render Label 1 is still not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"
@@ -236,7 +236,7 @@ exports[`Dropdown Component highlights selectedItems single mode does not highli
 </li>
 `;
 
-exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if selectable is set to false: at first render Label 1 is not selected 1`] = `
+exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if persistSelection is set to false: at first render Label 1 is not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"
@@ -263,7 +263,7 @@ exports[`Dropdown Component highlights selectedItems single mode does not highli
 </li>
 `;
 
-exports[`Dropdown Component highlights selectedItems single mode render and ignores "initialSelectedItems" prop if "selectable" is false: at first render Label 1 is not selected 1`] = `
+exports[`Dropdown Component highlights selectedItems single mode render and ignores "initialSelectedItems" prop if "persistSelection" is false: at first render Label 1 is not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"

@@ -112,10 +112,12 @@ export type DropdownProps = {
    * Useful in case you need to keep the selected option after the dropdown is closed.
    * Defaults to `true`.
    */
-  selectable?: boolean,
+  persistSelection?: boolean,
 
   /**
-   * List of items to be shown as selected at first render
+   * List of items to be shown as selected at first render.
+   *
+   * _NOTE_: this property does not work if _persistSelection_ is set to `false`
    */
   initialSelectedItems?: string[],
 
@@ -137,7 +139,7 @@ export type DropdownProps = {
   /**
    * control whether to allow multiple highlight selection.
    *
-   * _NOTE_: this property does not work if _selectable_ is set to `true`
+   * _NOTE_: this property does not work if _persistSelection_ is set to `false`
    */
   multiple?: boolean
 

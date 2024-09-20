@@ -276,12 +276,12 @@ describe('Dropdown Component', () => {
         expect(secondUpdated).toMatchSnapshot('after click render Label 2 is selected')
       })
 
-      it('does not highlight elements if selectable is set to false', async() => {
+      it('does not highlight elements if persistSelection is set to false', async() => {
         const onClick = jest.fn()
         const props: DropdownProps = {
           ...defaultProps,
           onClick,
-          selectable: false,
+          persistSelection: false,
         }
 
         renderDropdown({ props })
@@ -300,13 +300,13 @@ describe('Dropdown Component', () => {
         expect(firstUpdated).toMatchSnapshot('after click render Label 1 is still not selected')
       })
 
-      it('render and ignores "initialSelectedItems" prop if "selectable" is false', async() => {
+      it('render and ignores "initialSelectedItems" prop if "persistSelection" is false', async() => {
         const onClick = jest.fn()
         const props: DropdownProps = {
           ...defaultProps,
           initialSelectedItems: ['1'],
           onClick,
-          selectable: false,
+          persistSelection: false,
         }
 
         renderDropdown({ props })
@@ -358,13 +358,13 @@ describe('Dropdown Component', () => {
         expect(secondUpdatedStillSelected).toMatchSnapshot('after second click render Label 2 is selected')
       }, 10000)
 
-      it('is ignored if "selectable" is set to false', async() => {
+      it('is ignored if "persistSelection" is set to false', async() => {
         const onClick = jest.fn()
         const props: DropdownProps = {
           ...defaultProps,
           multiple: true,
           onClick,
-          selectable: false,
+          persistSelection: false,
         }
 
         renderDropdown({ props })
