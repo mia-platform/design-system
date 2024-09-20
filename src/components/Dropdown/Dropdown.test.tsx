@@ -300,13 +300,13 @@ describe('Dropdown Component', () => {
         expect(firstUpdated).toMatchSnapshot('after click render Label 1 is still not selected')
       })
 
-      it('render and ignores "initialSelectedItems" prop if "selectable" is true', async() => {
+      it('render and ignores "initialSelectedItems" prop if "selectable" is false', async() => {
         const onClick = jest.fn()
         const props: DropdownProps = {
           ...defaultProps,
           initialSelectedItems: ['1'],
           onClick,
-          selectable: true,
+          selectable: false,
         }
 
         renderDropdown({ props })

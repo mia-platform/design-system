@@ -263,9 +263,9 @@ exports[`Dropdown Component highlights selectedItems single mode does not highli
 </li>
 `;
 
-exports[`Dropdown Component highlights selectedItems single mode render and ignores "initialSelectedItems" prop if "selectable" is true: at first render Label 1 is not selected 1`] = `
+exports[`Dropdown Component highlights selectedItems single mode render and ignores "initialSelectedItems" prop if "selectable" is false: at first render Label 1 is not selected 1`] = `
 <li
-  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"
   role="menuitem"
   tabindex="-1"
