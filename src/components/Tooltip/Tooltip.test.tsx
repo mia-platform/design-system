@@ -81,4 +81,16 @@ describe('Tooltip', () => {
     await act(async() => userEvent.unhover(screen.getByText(/tooltip trigger/i)))
     await waitFor(() => expect(defaultProps.onOpenChange).toHaveBeenCalledTimes(2))
   })
+
+  it('does not render with empty title', async() => {
+    const props = {
+      ...defaultProps,
+      title: '',
+    }
+
+    renderTooltipWithWrapper(props)
+    await act(async() => userEvent.hover(screen.getByText(/tooltip trigger/i)))
+    expect(screen.queryByText(/tooltip text/i)).not.toBeInTheDocument()
+    expect(defaultProps.onOpenChange).not.toHaveBeenCalled()
+  })
 })
