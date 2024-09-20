@@ -70,10 +70,16 @@ export const Dropdown = ({
   /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
-  const [selectedItems, setSelectedItems] = useState<string[]>(initialSelectedItems)
+  const [selectedItems, setSelectedItems] = useState<string[]>(selectable ? initialSelectedItems : [])
   const updateSelectedItems = useCallback(
-    (itemId: string) => setSelectedItems(prevItems => (multiple ? pushOrRemove(prevItems, itemId) : [itemId])),
-    [multiple]
+    (itemId: string) => {
+      if (!selectable) {
+        return
+      }
+
+      setSelectedItems(prevItems => (multiple ? pushOrRemove(prevItems, itemId) : [itemId]))
+    },
+    [multiple, selectable]
   )
 
   const onAntdMenuClick = useCallback(
@@ -94,8 +100,8 @@ export const Dropdown = ({
     /* istanbul ignore next */
     getPopupContainer: (triggerNode: HTMLElement) => (document.querySelector(`.${uniqueClassName}`) || triggerNode) as HTMLElement,
     onClick: onAntdMenuClick,
-    selectedKeys: selectable ? selectedItems : [],
-  }), [antdItems, onAntdMenuClick, selectable, selectedItems, uniqueClassName])
+    selectedKeys: selectedItems,
+  }), [antdItems, onAntdMenuClick, selectedItems, uniqueClassName])
 
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
 
