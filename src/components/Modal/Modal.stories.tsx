@@ -20,7 +20,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { useEffect } from 'react'
 
-import { WithOpenButton, asideFixed, asideOpenable, children, childrenFullWidth, childrenLong, docLink, footer, footerCustom, footerLoading, title } from './Modal.mocks'
+import { WithOpenButton, asideFixed, asideOpenable, asideWithLongContent, children, childrenFullWidth, childrenLong, docLink, footer, footerCustom, footerLoading, title } from './Modal.mocks'
 import { Button } from '../Button'
 import { Modal } from '.'
 import { defaults } from './Modal'
@@ -145,6 +145,16 @@ export const WithAsideOpenable: Story = {
   args: {
     ...meta.args,
     aside: asideOpenable,
+    children: childrenLong,
+    size: Modal.Size.Large,
+  },
+  decorators: [(_, { args }) => <WithOpenButton {...args} />],
+}
+
+export const WithScrollableAside: Story = {
+  args: {
+    ...meta.args,
+    aside: asideWithLongContent,
     children: childrenLong,
     size: Modal.Size.Large,
   },
