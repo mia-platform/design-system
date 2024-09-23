@@ -68,7 +68,6 @@
     .body {
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr;
       padding: 0 var(--spacing-padding-xl, 24px);
       transition: grid-template-columns 0.2s ease-in-out;
       will-change: transform;
