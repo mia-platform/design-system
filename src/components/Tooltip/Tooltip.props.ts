@@ -28,7 +28,7 @@ export type TooltipProps = {
     children: ReactNode,
 
     /**
-     * The DOM container of the tip, the default behavior is to create a div element in body.
+     * The DOM container of the tooltip, the default behavior is to create a div element in body.
      */
     getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement
 
@@ -66,7 +66,7 @@ export type TooltipProps = {
     trigger?: TriggerMode | TriggerMode[],
 
     /**
-     * Callback executed when visibility of the tooltip card is changed.
+     * Callback executed when the visibility of the tooltip changes.
      */
     onOpenChange?: (open: boolean) => void,
 }
