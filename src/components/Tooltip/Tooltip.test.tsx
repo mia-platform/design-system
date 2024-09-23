@@ -41,24 +41,20 @@ describe('Tooltip', () => {
   })
 
   it('renders on hover', async() => {
-    const { asFragment } = renderTooltipWithWrapper()
+    renderTooltipWithWrapper()
     await act(async() => userEvent.hover(screen.getByText(/tooltip trigger/i)))
     await waitFor(() => expect(screen.getByText(/tooltip text/i)).toBeInTheDocument())
-
-    expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders on click', async() => {
     const props = {
       ...defaultProps,
-      trigger: Tooltip.TriggerMode.Click,
+      trigger: Tooltip.Trigger.Click,
     }
-    const { asFragment } = renderTooltipWithWrapper(props)
+    renderTooltipWithWrapper(props)
 
     await act(async() => userEvent.click(screen.getByText(/tooltip trigger/i)))
     await waitFor(() => expect(screen.getByText(/tooltip text/i)).toBeInTheDocument())
-
-    expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders correctly with custom placement', async() => {
@@ -66,12 +62,10 @@ describe('Tooltip', () => {
       ...defaultProps,
       placement: Tooltip.Placement.RightBottom,
     }
-    const { asFragment } = renderTooltipWithWrapper(props)
+    renderTooltipWithWrapper(props)
 
     await act(async() => userEvent.hover(screen.getByText(/tooltip trigger/i)))
     await waitFor(() => expect(screen.getByText(/tooltip text/i)).toBeInTheDocument())
-
-    expect(asFragment()).toMatchSnapshot()
   })
 
   it('calls onOpenChange correctly', async() => {

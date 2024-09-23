@@ -18,7 +18,7 @@
 
 import { ReactNode } from 'react'
 
-import { Placement, TriggerMode } from './Tooltip.types'
+import { Placement, Trigger } from './Tooltip.types'
 
 export type TooltipProps = {
 
@@ -63,7 +63,7 @@ export type TooltipProps = {
      * - "click"
      * - "contextMenu"
      */
-    trigger?: TriggerMode | TriggerMode[],
+    trigger?: Trigger | Trigger[],
 
     /**
      * Callback executed when the visibility of the tooltip changes.

@@ -13,7 +13,7 @@ export enum Placement {
     RightBottom = 'rightBottom'
 }
 
-export enum TriggerMode {
+export enum Trigger {
     Hover = 'hover',
     Focus = 'focus',
     Click = 'click',

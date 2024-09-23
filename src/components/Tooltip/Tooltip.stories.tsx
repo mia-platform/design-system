@@ -49,7 +49,7 @@ export const CustomPlacement: Story = {
 export const TriggeredOnClick: Story = {
   args: {
     ...meta.args,
-    trigger: Tooltip.TriggerMode.Click,
+    trigger: Tooltip.Trigger.Click,
     children: <Button>{'Click me'}</Button>,
   },
 }

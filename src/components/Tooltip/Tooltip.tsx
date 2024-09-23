@@ -19,14 +19,14 @@
 import { Tooltip as AntTooltip } from 'antd'
 import { ReactElement } from 'react'
 
-import { Placement, TriggerMode } from './Tooltip.types'
+import { Placement, Trigger } from './Tooltip.types'
 import { TooltipProps } from './Tooltip.props'
 
 const arrowProp = { pointAtCenter: true }
 
 export const defaults = {
   placement: Placement.Top,
-  trigger: TriggerMode.Hover,
+  trigger: Trigger.Hover,
 }
 
 export const Tooltip = (
@@ -54,4 +54,4 @@ export const Tooltip = (
 }
 
 Tooltip.Placement = Placement
-Tooltip.TriggerMode = TriggerMode
+Tooltip.Trigger = Trigger
