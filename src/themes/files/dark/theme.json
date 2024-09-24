@@ -189,11 +189,10 @@
         "contrastText": "#ffffff"
       },
       "secondary": {
-        "active": "#636363",
-        "disabled": "#e5e5e5",
-        "focus": "#636363",
-        "hover": "#898989",
-        "selected": "#464646"
+        "main": "#ffffff",
+        "bold": "#cdcdcd",
+        "bolder": "#acacac",
+        "contrastText": "#636363"
       },
       "link": {
         "default": "#1261e4",

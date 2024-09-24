@@ -32,6 +32,9 @@ export default ({ typography, palette }: Partial<Theme>): ComponentsTheme['Butto
   contentFontSize: typography?.action?.fontSize,
   contentFontSizeLG: typography?.action?.fontSize,
   borderColorDisabled: palette?.action?.disabled?.bold,
+  defaultBorderColor: palette?.action?.secondary?.bold,
+  defaultBg: palette?.action?.secondary?.main,
+  defaultColor: palette?.action.secondary?.contrastText,
   defaultHoverBg: 'transparent',
   defaultActiveBg: 'transparent',
 })
