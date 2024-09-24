@@ -68,10 +68,11 @@
     .body {
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr;
       padding: 0 var(--spacing-padding-xl, 24px);
       transition: grid-template-columns 0.2s ease-in-out;
       will-change: transform;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     .bodyFullWidth {
@@ -100,7 +101,6 @@
       display: flex;
       flex-direction: column;
       gap: var(--spacing-gap-xl, 24px);
-      overflow-y: auto;
     }
 
     .contentWrapper {
