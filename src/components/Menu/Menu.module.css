@@ -44,7 +44,7 @@
   }
   &:global(.mia-platform-menu-inline) > li[role*=presentation] > div[role*=presentation] {
     padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) var(--menu-pad-xs) !important;
-  } 
+  }
   &:global(.mia-platform-menu-inline.primary) div[role*=presentation] {
     padding-left: 0 !important;
   }
@@ -59,7 +59,17 @@
   &:global(.mia-platform-menu-vertical) div[role*=presentation] {
     padding: var(--menu-pad) var(--menu-pad) var(--menu-pad-sm) !important;
   }
-  
+
+  :global(.mia-platform-menu-title-content){
+    display: flex;
+    width: 100%;
+
+    :global(.mia-platform-menu-item-extra) {
+      display: flex;
+      color: unset;
+    }
+  }
+
   /*
     The popover is generated on the left when the parent node has a width less than the popover content.
     In the case of the left sidebar attached to the left side of the window causes the node to exit outside the screen.

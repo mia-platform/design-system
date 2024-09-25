@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { MenuItemType } from 'antd/es/menu/hooks/useItems'
+import { Key, ReactNode } from 'react'
 
 export enum ItemType {
   Category = 'category',
@@ -34,12 +34,23 @@ export enum Mode {
   Vertical = 'vertical',
 }
 
+// Remapped from: https://github.com/ant-design/ant-design/blob/master/components/menu/interface.ts#L8
+export type AntdMenuItemType = {
+  danger?: boolean;
+  disabled?: boolean;
+  icon?: ReactNode;
+  label?: ReactNode;
+  key: Key;
+  title?: string;
+  children?: AntdMenuItemType[]
+}
+
 /**
  * Represents a menu item, extending the base type {@link MenuItemType}.
  *
  * @see {@link https://ant.design/components/menu#menuitemtype}
  */
-export type Item = MenuItemType & {
+export type Item = AntdMenuItemType & {
 
   /**
    * The type of the menu item.
@@ -50,4 +61,9 @@ export type Item = MenuItemType & {
    * An array of child items for nested menus.
    */
   children?: Item[];
+
+  /**
+   * optional extra to be appended to the menu item
+   */
+  extra?: ReactNode
 }

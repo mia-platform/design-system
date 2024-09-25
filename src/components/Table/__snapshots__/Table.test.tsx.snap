@@ -211,7 +211,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -246,7 +246,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -281,7 +281,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -316,7 +316,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-dangerous mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -376,7 +376,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -411,7 +411,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -446,7 +446,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -481,7 +481,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-dangerous mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -541,7 +541,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -576,7 +576,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -611,7 +611,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           disabled=""
                           type="button"
                         >
@@ -647,7 +647,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-dangerous mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -707,7 +707,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -742,7 +742,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -777,7 +777,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined mia-platform-btn-icon-only button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -812,7 +812,7 @@ exports[`Table Component renders actions correctly 1`] = `
                         class="action"
                       >
                         <button
-                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost mia-platform-btn-dangerous button buttonMdIconOnly buttonGhost"
+                          class="mia-platform-btn mia-platform-btn-dangerous mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                           type="button"
                         >
                           <span
@@ -2256,7 +2256,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
           class="mia-platform-space-item"
         >
           <button
-            class="mia-platform-btn mia-platform-btn-default button buttonMd"
+            class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
             type="button"
           >
             <div
@@ -2270,7 +2270,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
           class="mia-platform-space-item"
         >
           <button
-            class="mia-platform-btn mia-platform-btn-default button buttonMd"
+            class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
             type="button"
           >
             <div
@@ -2284,7 +2284,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
           class="mia-platform-space-item"
         >
           <button
-            class="mia-platform-btn mia-platform-btn-default button buttonMd"
+            class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
             type="button"
           >
             <div
@@ -2298,7 +2298,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
           class="mia-platform-space-item"
         >
           <button
-            class="mia-platform-btn mia-platform-btn-default button buttonMd"
+            class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
             type="button"
           >
             <div
