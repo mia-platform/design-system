@@ -34,7 +34,6 @@
     color: var(--palette-action-disabled-contrastText, #acacac) !important;
     border: 1px solid var(--palette-action-disabled-bold, #e5e5e5) !important;
   }
-
 }
 
 /* TODO: add 12px padding to theme */

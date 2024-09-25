@@ -3,7 +3,7 @@
 exports[`Button Component renders block button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-block button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-block button buttonMd"
     type="button"
   >
     <div
@@ -18,7 +18,7 @@ exports[`Button Component renders block button correctly 1`] = `
 exports[`Button Component renders button with href correctly 1`] = `
 <DocumentFragment>
   <a
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
     href="https://mia-platform.eu"
     rel="noopener noreferrer"
     tabindex="0"
@@ -35,7 +35,7 @@ exports[`Button Component renders button with href correctly 1`] = `
 exports[`Button Component renders button with icon left correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
     type="button"
   >
     <span
@@ -70,7 +70,7 @@ exports[`Button Component renders button with icon left correctly 1`] = `
 exports[`Button Component renders button with icon right correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-end button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-end button buttonMd"
     type="button"
   >
     <span
@@ -105,7 +105,7 @@ exports[`Button Component renders button with icon right correctly 1`] = `
 exports[`Button Component renders circle button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-only button buttonMdIconOnly"
+    class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only button buttonMdIconOnly"
     type="button"
   >
     <span
@@ -135,7 +135,7 @@ exports[`Button Component renders circle button correctly 1`] = `
 exports[`Button Component renders danger filled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-dangerous mia-platform-btn-solid button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid button buttonMd"
     type="button"
   >
     <div
@@ -150,7 +150,7 @@ exports[`Button Component renders danger filled button correctly 1`] = `
 exports[`Button Component renders danger ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-dangerous mia-platform-btn-solid mia-platform-btn-background-ghost button buttonMd buttonGhost"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd buttonGhost"
     type="button"
   >
     <div
@@ -165,7 +165,7 @@ exports[`Button Component renders danger ghost button correctly 1`] = `
 exports[`Button Component renders danger link button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-dangerous mia-platform-btn-solid mia-platform-btn-background-ghost button buttonGhost buttonLink"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonGhost buttonLink"
     type="button"
   >
     <div>
@@ -178,7 +178,7 @@ exports[`Button Component renders danger link button correctly 1`] = `
 exports[`Button Component renders danger outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-dangerous mia-platform-btn-solid mia-platform-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd"
     type="button"
   >
     <div
@@ -193,7 +193,7 @@ exports[`Button Component renders danger outline button correctly 1`] = `
 exports[`Button Component renders disabled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
     disabled=""
     type="button"
   >
@@ -209,7 +209,7 @@ exports[`Button Component renders disabled button correctly 1`] = `
 exports[`Button Component renders large button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-lg button buttonLg"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-lg button buttonLg"
     type="button"
   >
     <div
@@ -224,7 +224,7 @@ exports[`Button Component renders large button correctly 1`] = `
 exports[`Button Component renders loading button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-loading button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-loading button buttonMd"
     type="button"
   >
     <span
@@ -262,7 +262,7 @@ exports[`Button Component renders loading button correctly 1`] = `
 exports[`Button Component renders middle button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
     type="button"
   >
     <div
@@ -277,7 +277,7 @@ exports[`Button Component renders middle button correctly 1`] = `
 exports[`Button Component renders neutral ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd buttonGhost"
+    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd buttonGhost"
     type="button"
   >
     <div
@@ -292,7 +292,7 @@ exports[`Button Component renders neutral ghost button correctly 1`] = `
 exports[`Button Component renders neutral link button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonGhost buttonLink"
+    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonGhost buttonLink"
     type="button"
   >
     <div>
@@ -305,7 +305,7 @@ exports[`Button Component renders neutral link button correctly 1`] = `
 exports[`Button Component renders neutral outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
     type="button"
   >
     <div
@@ -320,7 +320,7 @@ exports[`Button Component renders neutral outline button correctly 1`] = `
 exports[`Button Component renders primary filled button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
     type="button"
   >
     <div
@@ -335,7 +335,7 @@ exports[`Button Component renders primary filled button correctly 1`] = `
 exports[`Button Component renders primary filled button correctly with form ref and htmlType 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
     form="some-form"
     type="submit"
   >
@@ -351,7 +351,7 @@ exports[`Button Component renders primary filled button correctly with form ref 
 exports[`Button Component renders primary ghost button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-background-ghost button buttonMd buttonGhost"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd buttonGhost"
     type="button"
   >
     <div
@@ -366,7 +366,7 @@ exports[`Button Component renders primary ghost button correctly 1`] = `
 exports[`Button Component renders primary link button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-background-ghost button buttonGhost buttonLink"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonGhost buttonLink"
     type="button"
   >
     <div>
@@ -379,7 +379,7 @@ exports[`Button Component renders primary link button correctly 1`] = `
 exports[`Button Component renders primary outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd"
     type="button"
   >
     <div
@@ -394,7 +394,7 @@ exports[`Button Component renders primary outline button correctly 1`] = `
 exports[`Button Component renders primary outline button correctly with form ref and no htmlType 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd"
     form="some-form"
     type="submit"
   >
@@ -410,7 +410,7 @@ exports[`Button Component renders primary outline button correctly with form ref
 exports[`Button Component renders primary outline button correctly with form ref and reset htmlType 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd"
     form="some-form"
     type="reset"
   >
@@ -426,7 +426,7 @@ exports[`Button Component renders primary outline button correctly with form ref
 exports[`Button Component renders small button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-sm button buttonSm"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-sm button buttonSm"
     type="button"
   >
     <div
@@ -441,7 +441,7 @@ exports[`Button Component renders small button correctly 1`] = `
 exports[`Button Component renders small button icon only correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-sm mia-platform-btn-icon-only button buttonSmIconOnly"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-sm mia-platform-btn-icon-only button buttonSmIconOnly"
     type="button"
   >
     <span
@@ -471,7 +471,7 @@ exports[`Button Component renders small button icon only correctly 1`] = `
 exports[`Button Component renders square button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-only button buttonMdIconOnly"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only button buttonMdIconOnly"
     type="button"
   >
     <span

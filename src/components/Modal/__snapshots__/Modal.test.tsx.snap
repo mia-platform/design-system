@@ -98,7 +98,7 @@ exports[`Modal Component renders fullscreen modal correctly (with empty header) 
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -108,7 +108,7 @@ exports[`Modal Component renders fullscreen modal correctly (with empty header) 
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -210,7 +210,7 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -349,7 +349,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -418,7 +418,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -428,7 +428,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -530,7 +530,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -629,7 +629,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -639,7 +639,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -741,7 +741,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -840,7 +840,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -850,7 +850,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -1051,7 +1051,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -1103,7 +1103,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -1113,7 +1113,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -1123,7 +1123,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -1133,7 +1133,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -1305,7 +1305,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -1357,7 +1357,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -1367,7 +1367,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-outlined button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div

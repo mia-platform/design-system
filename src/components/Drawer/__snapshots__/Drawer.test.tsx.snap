@@ -99,7 +99,7 @@ exports[`Drawer renders drawer with provided title and footer 1`] = `
                 class="footerButtons"
               >
                 <button
-                  class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-solid button buttonMd"
+                  class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                   type="button"
                 >
                   <div
