@@ -60,7 +60,7 @@ exports[`Drawer renders drawer with provided title and footer 1`] = `
               >
                 <h4
                   aria-label=""
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h4"
                   role="h4"
                 >
                   <span>
@@ -99,7 +99,7 @@ exports[`Drawer renders drawer with provided title and footer 1`] = `
                 class="footerButtons"
               >
                 <button
-                  class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                  class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                   type="button"
                 >
                   <div

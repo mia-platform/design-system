@@ -27,13 +27,8 @@ exports[`Modal Component renders fullscreen modal correctly (with empty header) 
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -103,7 +98,7 @@ exports[`Modal Component renders fullscreen modal correctly (with empty header) 
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -113,7 +108,7 @@ exports[`Modal Component renders fullscreen modal correctly (with empty header) 
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -128,7 +123,6 @@ exports[`Modal Component renders fullscreen modal correctly (with empty header) 
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />
@@ -159,13 +153,8 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -212,7 +201,7 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -221,7 +210,7 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -273,7 +262,6 @@ exports[`Modal Component renders large modal correctly (with empty footer) 1`] =
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />
@@ -304,13 +292,8 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -357,7 +340,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -366,7 +349,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -435,7 +418,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -445,7 +428,7 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -460,7 +443,6 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />
@@ -491,13 +473,8 @@ exports[`Modal Component renders modal with aside openable 1`] = `
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -544,7 +521,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -553,7 +530,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -652,7 +629,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -662,7 +639,7 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -677,7 +654,6 @@ exports[`Modal Component renders modal with aside openable 1`] = `
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />
@@ -708,13 +684,8 @@ exports[`Modal Component renders modal with aside openable 2`] = `
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -761,7 +732,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -770,7 +741,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -869,7 +840,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -879,7 +850,7 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -894,7 +865,6 @@ exports[`Modal Component renders modal with aside openable 2`] = `
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />
@@ -925,13 +895,8 @@ exports[`Modal Component renders modal with body full width 1`] = `
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -999,7 +964,6 @@ exports[`Modal Component renders modal with body full width 1`] = `
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />
@@ -1030,13 +994,8 @@ exports[`Modal Component renders modal with custom footer 1`] = `
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -1083,7 +1042,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -1092,7 +1051,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -1144,7 +1103,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -1154,7 +1113,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -1164,7 +1123,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -1174,7 +1133,7 @@ exports[`Modal Component renders modal with custom footer 1`] = `
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -1190,7 +1149,6 @@ exports[`Modal Component renders modal with custom footer 1`] = `
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />
@@ -1221,13 +1179,8 @@ exports[`Modal Component renders not closable modal 1`] = `
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -1265,7 +1218,6 @@ exports[`Modal Component renders not closable modal 1`] = `
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />
@@ -1296,13 +1248,8 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
         style="width: 520px;"
       >
         <div
-          aria-hidden="true"
-          style="width: 0px; height: 0px; overflow: hidden; outline: none;"
-          tabindex="0"
-        />
-        <div
           style="outline: none;"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="mia-platform-modal-content"
@@ -1349,7 +1296,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                 >
                   <h4
                     aria-label="Modal Title"
-                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h4"
+                    class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h4"
                     role="h4"
                   >
                     Modal Title
@@ -1358,7 +1305,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                     class="docLink"
                   >
                     <button
-                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+                      class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
                       type="button"
                     >
                       <span
@@ -1410,7 +1357,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                   class="footerButtons"
                 >
                   <button
-                    class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
                     type="button"
                   >
                     <div
@@ -1420,7 +1367,7 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
                     </div>
                   </button>
                   <button
-                    class="mia-platform-btn mia-platform-btn-default button buttonMd"
+                    class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd"
                     type="button"
                   >
                     <div
@@ -1435,7 +1382,6 @@ exports[`Modal Component renders small modal correctly (with children, docLink, 
           </div>
         </div>
         <div
-          aria-hidden="true"
           style="width: 0px; height: 0px; overflow: hidden; outline: none;"
           tabindex="0"
         />

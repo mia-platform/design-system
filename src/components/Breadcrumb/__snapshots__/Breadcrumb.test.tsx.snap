@@ -138,7 +138,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 1
@@ -221,7 +221,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text 8
@@ -250,7 +250,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 1
@@ -272,7 +272,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 2
@@ -294,7 +294,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 3
@@ -332,7 +332,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 4
@@ -351,7 +351,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text 5
@@ -389,7 +389,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Item 1
@@ -414,7 +414,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 7
@@ -433,7 +433,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text 8
@@ -471,7 +471,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 1
@@ -554,7 +554,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text 8
@@ -583,7 +583,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 1
@@ -605,7 +605,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 2
@@ -627,7 +627,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 3
@@ -665,7 +665,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 4
@@ -684,7 +684,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text 5
@@ -722,7 +722,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Item 1
@@ -747,7 +747,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text 7
@@ -766,7 +766,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text 8
@@ -805,7 +805,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Text 2
@@ -822,7 +822,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Text 3
@@ -859,7 +859,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Text 4
@@ -876,7 +876,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Text 5
@@ -913,7 +913,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Item 1
@@ -930,7 +930,7 @@ exports[`Breadcrumb Component renders a breadcrumb with collapsed items 2`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Text 7
@@ -980,7 +980,7 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -1002,7 +1002,7 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Very long text that should be ellipsed at some point
@@ -1068,7 +1068,7 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -1103,7 +1103,7 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text
@@ -1141,7 +1141,7 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text
@@ -1182,7 +1182,7 @@ exports[`Breadcrumb Component renders a breadcrumb with different button types 1
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -1253,7 +1253,7 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text
@@ -1295,7 +1295,7 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Text
@@ -1369,7 +1369,7 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Item 1
@@ -1402,7 +1402,7 @@ exports[`Breadcrumb Component renders controlled item menu correctly 1`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Item 2
@@ -1458,7 +1458,7 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -1522,7 +1522,7 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Sub item
@@ -1567,7 +1567,7 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -1610,7 +1610,7 @@ exports[`Breadcrumb Component renders item menu correctly 1`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Sub item
@@ -1664,7 +1664,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -1728,7 +1728,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Sub item
@@ -1773,7 +1773,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -1816,7 +1816,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Sub item
@@ -1890,7 +1890,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Item 1
@@ -1923,7 +1923,7 @@ exports[`Breadcrumb Component renders item menu correctly 2`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Item 2
@@ -1979,7 +1979,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -2043,7 +2043,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Sub item
@@ -2088,7 +2088,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
               class="breadcrumbItemLabelText"
             >
               <div
-                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+                class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
                 role="paragraph"
               >
                 Text
@@ -2131,7 +2131,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
             class="breadcrumbItemLabelText"
           >
             <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyL"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyL"
               role="paragraph"
             >
               Sub item
@@ -2205,7 +2205,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Item 1
@@ -2262,7 +2262,7 @@ exports[`Breadcrumb Component renders item menu correctly 3`] = `
                 class="mia-platform-dropdown-menu-title-content"
               >
                 <div
-                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line bodyS"
+                  class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
                   role="paragraph"
                 >
                   Sub item

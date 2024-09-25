@@ -16,9 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ItemType as AntItemType } from 'antd/es/menu/hooks/useItems'
-
-import { Hierarchy, Item, ItemType } from './Menu.types'
+import { AntdMenuItemType, Hierarchy, Item, ItemType } from './Menu.types'
 
 const { Primary } = Hierarchy
 const { Category, Divider, Group } = ItemType
@@ -38,7 +36,7 @@ function formatLabels(
   selectedItem?: string,
   isCollapsed?: boolean,
   hierarchy?: Hierarchy
-): AntItemType[] {
+): AntdMenuItemType[] {
   return items.map(({ title, label, type, key, children, icon, ...item }) => {
     if (type === Category && isCollapsed) {
       return formatLabels(children, selectedItem, isCollapsed, hierarchy)

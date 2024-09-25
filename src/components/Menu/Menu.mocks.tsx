@@ -16,7 +16,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { PiAlien, PiAtom, PiCloud, PiGlobeHemisphereEast, PiGlobeHemisphereWest, PiMoon, PiPlanet, PiShield, PiSkull, PiSnowflake, PiStar, PiSun, PiSword, PiVirus, PiWind } from 'react-icons/pi'
+import {
+  PiAlien,
+  PiAnchor,
+  PiArrowSquareOut,
+  PiAtom,
+  PiCloud,
+  PiGlobeHemisphereEast,
+  PiGlobeHemisphereWest,
+  PiMoon,
+  PiPlanet,
+  PiShield,
+  PiSkull,
+  PiSnowflake,
+  PiStar,
+  PiSun,
+  PiSword,
+  PiVirus,
+  PiWind,
+} from 'react-icons/pi'
 
 import { Icon } from '../Icon'
 import { ItemType } from './Menu.types'
@@ -32,6 +50,26 @@ export const item = {
       aria-label="PiStar"
       color="currentColor"
       component={PiStar}
+      size={16}
+    />
+  ),
+}
+
+export const itemWithExtra = {
+  key: 'item-with-extra',
+  label: 'Item with Extra',
+  title: 'Item with Extra',
+  icon: (
+    <Icon
+      aria-label="PiAnchor"
+      component={PiAnchor}
+      size={16}
+    />
+  ),
+  extra: (
+    <Icon
+      aria-label="PiArrowSquareOut"
+      component={PiArrowSquareOut}
       size={16}
     />
   ),

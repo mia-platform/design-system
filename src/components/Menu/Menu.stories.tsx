@@ -19,7 +19,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { category, divider, group, item, nestedGroup } from './Menu.mocks'
+import { category, divider, group, item, itemWithExtra, nestedGroup } from './Menu.mocks'
 import { Menu } from './'
 import { defaults } from './Menu'
 
@@ -29,6 +29,7 @@ const meta = {
     ...defaults,
     items: [
       item,
+      itemWithExtra,
       divider,
       category,
       divider,

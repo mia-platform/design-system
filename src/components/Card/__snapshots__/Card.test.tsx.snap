@@ -16,7 +16,7 @@ exports[`Card Component renders card correctly 1`] = `
         >
           <h3
             aria-label="Card Title"
-            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h3"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h3"
             role="h3"
           >
             Card Title
@@ -25,7 +25,7 @@ exports[`Card Component renders card correctly 1`] = `
             class="docLink"
           >
             <button
-              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
               type="button"
             >
               <span
@@ -60,7 +60,7 @@ exports[`Card Component renders card correctly 1`] = `
         </div>
       </div>
       <button
-        class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+        class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
         type="button"
       >
         <div
@@ -109,7 +109,7 @@ exports[`Card Component renders header only 1`] = `
         >
           <h3
             aria-label="Card Title"
-            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-single-line mia-platform-typography-ellipsis-single-line h3"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h3"
             role="h3"
           >
             Card Title
@@ -118,7 +118,7 @@ exports[`Card Component renders header only 1`] = `
             class="docLink"
           >
             <button
-              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
+              class="mia-platform-btn mia-platform-btn-circle mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly buttonGhost"
               type="button"
             >
               <span
@@ -153,7 +153,7 @@ exports[`Card Component renders header only 1`] = `
         </div>
       </div>
       <button
-        class="mia-platform-btn mia-platform-btn-primary button buttonMd"
+        class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
         type="button"
       >
         <div
