@@ -16,8 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// import { ItemType as AntItemType } from 'antd/es/menu/hooks/useItems'
-
 import { AntdMenuItemType, Hierarchy, Item, ItemType } from './Menu.types'
 
 const { Primary } = Hierarchy
