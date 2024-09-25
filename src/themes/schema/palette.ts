@@ -87,7 +87,12 @@ type Palette = {
   },
   action: {
     primary: ColorInteractions,
-    secondary: ColorInteractions,
+    secondary: {
+      main: Color,
+      bold: Color
+      bolder: Color
+      contrastText: Color
+    },
     danger: ColorInteractions,
     link: ColorInteractions,
     alternate: {
