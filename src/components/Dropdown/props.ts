@@ -31,6 +31,11 @@ export type DropdownItem = {
   danger?: boolean,
 
   /**
+   * Optional icon for the menu item
+   */
+  icon?: ReactNode
+
+  /**
    * The id for the item.
    */
   id: string,

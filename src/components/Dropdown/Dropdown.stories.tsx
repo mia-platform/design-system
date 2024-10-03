@@ -17,15 +17,18 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { PiAcorn, PiWarning } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { Button } from '../Button'
 import { Dropdown } from '.'
 import { DropdownProps } from './props'
+import { Icon } from '../Icon'
 import { Tag } from '../Tag'
 
 const defaults: Partial<DropdownProps> = {
   items: [{
+    icon: <Icon component={PiAcorn} size={16} />,
     id: 'id1',
     label: 'value 1',
   }, {
@@ -33,6 +36,7 @@ const defaults: Partial<DropdownProps> = {
     label: 'value 2',
     secondaryLabel: 'Some additional info 2',
   }, {
+    icon: <Icon component={PiWarning} size={16} />,
     id: 'id3',
     label: 'I am danger!',
     danger: true,
