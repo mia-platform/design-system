@@ -16,9 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiAcorn } from 'react-icons/pi'
+
 import { DropdownItem, ItemLayout } from '../../props'
 import Label, { LabelProps } from '.'
 import { RenderResult, render } from '../../../../test-utils'
+import { Icon } from '../../../Icon'
 import { Tag } from '../../../Tag'
 
 describe('Label', () => {
@@ -84,6 +87,14 @@ describe('Label', () => {
     it.each(testCases)('render $name', ({ item }) => {
       const { baseElement } = renderLabel({ item, layout: ItemLayout.Vertical })
       expect(baseElement).toMatchSnapshot()
+    })
+  })
+
+  describe('icon', () => {
+    it('renders item with icon', () => {
+      const item = { id: '1', label: 'Some Label', icon: <Icon component={PiAcorn} size={16} /> }
+      const { getByRole } = renderLabel({ item, layout: ItemLayout.Horizontal })
+      expect(getByRole('img')).toBeInTheDocument()
     })
   })
 
