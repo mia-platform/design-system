@@ -51,8 +51,6 @@ export const defaults = {
   initialSelectedItems: [],
 }
 
-const DROPDOWN_CLASS_NAME = 'mia-platform-dropdown'
-
 export const Dropdown = ({
   autoFocus,
   children,
@@ -70,7 +68,8 @@ export const Dropdown = ({
 }: DropdownProps): ReactElement => {
   const { spacing } = useTheme()
 
-  const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
+  const uniqueOverlayClassName = useMemo(() => `dropdown-overlay-${crypto.randomUUID()}`, [])
+  const uniqueDropdownClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
   const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
 
@@ -99,14 +98,12 @@ export const Dropdown = ({
     [itemFinderMemo, onClick, updateSelectedItems]
   )
 
-  const randomClass = useMemo(() => crypto.randomUUID(), [])
-
   /**
    * This function is used to forcibly close the dropdown without controlling
    * the `open` state via prop.
    */
   const footerActionHook = useCallback(() => {
-    const el = document.querySelector(`.${randomClass}`)
+    const el = document.querySelector(`.${uniqueDropdownClassName}`)
     // This branch is not testable since the dropdown always exists when the dropdown is visible
     /* istanbul ignore if */
     if (!el) {
@@ -114,7 +111,7 @@ export const Dropdown = ({
     }
     // FIXME: with hover trigger this does not work and the dropdown will not be closed!
     (el as HTMLElement).click()
-  }, [randomClass])
+  }, [uniqueDropdownClassName])
   const hookedFooter = useFooterWithHookedActions({ footer, hook: footerActionHook })
 
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
@@ -134,12 +131,12 @@ export const Dropdown = ({
   const menu = useMemo(() => ({
     items: antdItems,
     /* istanbul ignore next */
-    getPopupContainer: (triggerNode: HTMLElement) => (document.querySelector(`.${uniqueClassName}`) || triggerNode) as HTMLElement,
+    getPopupContainer: (triggerNode: HTMLElement) => (document.querySelector(`.${uniqueOverlayClassName}`) || triggerNode) as HTMLElement,
     onClick: onAntdMenuClick,
     selectedKeys: selectedItems,
-  }), [antdItems, onAntdMenuClick, selectedItems, uniqueClassName])
+  }), [antdItems, onAntdMenuClick, selectedItems, uniqueOverlayClassName])
 
-  const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueClassName), [uniqueClassName])
+  const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueOverlayClassName), [uniqueOverlayClassName])
 
   const onOpenChangeInternal = useCallback(
     (open: boolean, info: {source: 'trigger'| 'menu'}) => {
@@ -154,7 +151,7 @@ export const Dropdown = ({
   return (
     <AntdDropdown
       autoFocus={autoFocus}
-      className={classNames(randomClass, DROPDOWN_CLASS_NAME)}
+      className={uniqueDropdownClassName}
       disabled={isDisabled}
       dropdownRender={dropdownRender}
       getPopupContainer={getPopupContainer}
