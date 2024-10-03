@@ -123,7 +123,7 @@ export const Dropdown = ({
     }
 
     return (
-      <div className={styles.dropdownRenderContainer}>
+      <div className={styles.dropdownWithFooterRenderWrapper}>
         {React.cloneElement(menu as ReactElement, { style: { boxShadow: 'none' } })}
         <Divider margin={spacing?.margin?.none} />
         <Footer footer={hookedFooter} />
