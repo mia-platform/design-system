@@ -386,18 +386,42 @@ describe('Dropdown Component', () => {
   })
 
   describe('with footer', () => {
-    it('renders custom node', async() => {
-      const props = {
+    it('renders footer', async() => {
+      const props: DropdownProps = {
         ...defaultProps,
-        footer: <div data-testid="footer-id">{'some custom footer'}</div>,
+        footer: {
+          top: <div data-testid="footer-top-id">{'some custom footer top description'}</div>,
+        },
       }
       renderDropdown({ props })
 
       const button = screen.getByText('test-trigger-button')
       userEvent.click(button)
 
-      const footer = await screen.findByTestId('footer-id')
+      const footer = await screen.findByTestId('footer-top-id')
       expect(footer).toBeInTheDocument()
+    })
+
+    it('closes dropdown on footer action click', async() => {
+      const props: DropdownProps = {
+        ...defaultProps,
+        footer: {
+          actions: [
+            { label: 'my-label', onClick: jest.fn() },
+          ],
+        },
+      }
+      renderDropdown({ props })
+
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const footerActionButton = await screen.findByRole('button', { name: 'my-label' })
+      expect(footerActionButton).toBeInTheDocument()
+
+      expect(screen.getByRole('menu')).toBeInTheDocument()
+      await userEvent.click(footerActionButton)
+      await waitFor(() => expect(screen.queryByRole('menu')).toBeNull())
     })
   })
 })

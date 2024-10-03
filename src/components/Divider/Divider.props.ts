@@ -19,8 +19,14 @@
 import { ReactNode } from 'react'
 
 import { Orientation, TextOrientation } from './Divider.types'
+import { Space } from '../../themes/schema/spacing'
 
 export type DividerProps = {
+
+  /**
+   * margin dimension
+   */
+  margin?: Space
 
   /**
    * Defines the divider type. Either:

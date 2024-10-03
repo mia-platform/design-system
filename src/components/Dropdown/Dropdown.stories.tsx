@@ -17,12 +17,15 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { PiAcorn, PiNut } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { Button } from '../Button'
 import { Dropdown } from '.'
 import { DropdownProps } from './props'
+import { Icon } from '../Icon'
 import { Tag } from '../Tag'
+import { Typography } from '../Typography'
 
 const defaults: Partial<DropdownProps> = {
   items: [{
@@ -120,7 +123,19 @@ export const ContextMenuTrigger: Story = {
 
 export const WithCustomFooter: Story = {
   args: {
-    footer: (<div>{'This is a custom footer'}</div>),
+    footer: {
+      top: <Typography.BodyM>{'Top description'}</Typography.BodyM>,
+      bottom: <Typography.BodyM>{'Bottom description'}</Typography.BodyM>,
+      actions: [{
+        icon: <Icon component={PiAcorn} size={16} />,
+        label: 'OK',
+        onClick: action('footer button click'),
+      }, {
+        icon: <Icon component={PiNut} size={16} />,
+        label: 'NOT OK',
+        onClick: action('footer button 2 click'),
+      }],
+    },
   },
 }
 

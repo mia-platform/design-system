@@ -22,12 +22,13 @@
  * @example 2px
  * @example 16
  */
-type Space = string | number
+export type Space = string | number
 
 /**
  * Scale of distances from lower to higher.
  */
 type Spacer = {
+  none: Space,
   xs: Space,
   sm: Space,
   md: Space,
