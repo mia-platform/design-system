@@ -22,7 +22,7 @@
  * @example 2px
  * @example 16
  */
-type Size = string | number
+export type Size = string | number
 
 /**
  * Scale of dimensions from lower to higher.

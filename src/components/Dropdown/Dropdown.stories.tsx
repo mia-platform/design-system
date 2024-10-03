@@ -141,6 +141,31 @@ export const WithCustomFooter: Story = {
   },
 }
 
+export const WithCustomFooterOverAndCustomMaxHeight: Story = {
+  args: {
+    menuItemsMaxHeight: 128,
+    footer: {
+      top: <Typography.BodyM>{'Top description'}</Typography.BodyM>,
+      bottom: <Typography.BodyM>{'Bottom description'}</Typography.BodyM>,
+      actions: [{
+        icon: <Icon component={PiAcorn} size={16} />,
+        label: 'OK',
+        onClick: action('footer button click'),
+      }, {
+        icon: <Icon component={PiNut} size={16} />,
+        label: 'NOT OK',
+        onClick: action('footer button 2 click'),
+      }],
+    },
+  },
+}
+
+export const WithCustomMaxHeight: Story = {
+  args: {
+    menuItemsMaxHeight: 128,
+  },
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,
