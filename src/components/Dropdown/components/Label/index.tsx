@@ -65,7 +65,7 @@ const Label = ({
 
   return (
     <div className={styles.itemRowContainer}>
-      {icon ? icon : null}
+      {icon || null}
       <div className={labelsContainerClassName}>
         <span className={primaryLabelClassName}>{label}</span>
         {
