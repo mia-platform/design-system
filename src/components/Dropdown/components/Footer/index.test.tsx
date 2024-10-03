@@ -31,7 +31,8 @@ describe('useFooterWithHookedActions', () => {
     bottom: 'bottom',
     actions: [
       { onClick: jest.fn() },
-      { onClick: jest.fn() }],
+      { onClick: jest.fn() },
+    ],
   }
 
   it('invokes hook on action clicks', () => {
