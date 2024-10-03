@@ -104,7 +104,7 @@ export const Dropdown = ({
   const footerActionHook = useCallback(() => {
     const el = document.querySelector(`.${randomClass}`)
     // This branch is not testable since the dropdown always exists when the dropdown is
-    /* istanbul ignore next */
+    /* istanbul ignore if */
     if (!el) {
       return
     }
