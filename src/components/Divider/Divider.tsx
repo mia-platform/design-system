@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement, useMemo } from 'react'
 import { Divider as AntDivider } from 'antd'
-import { ReactElement } from 'react'
 
 import { Orientation, TextOrientation } from './Divider.types'
 import { DividerProps } from './Divider.props'
@@ -39,15 +39,21 @@ export const defaults = {
  */
 export const Divider = ({
   orientation = defaults.orientation,
+  margin,
   text,
   textOrientation = defaults.textOrientation,
 }: DividerProps): ReactElement => {
   const { spacing } = useTheme()
 
+  const style = useMemo(() => ({
+    ...margin || margin === 0 ? { margin } : {},
+  }), [margin])
+
   return (
     <AntDivider
       orientation={textOrientation}
       orientationMargin={spacing?.margin?.xl}
+      style={style}
       type={orientation}
     >
       {text}
