@@ -21,8 +21,11 @@ import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from '
 import classNames from 'classnames'
 
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout, OpenChangeInfoSource } from './props'
+import { Footer, useFooterWithHookedActions } from './components/Footer'
+import { Divider } from '../Divider'
 import Label from './components/Label'
 import styles from './dropdown.module.css'
+import { useTheme } from '../../hooks/useTheme'
 
 type ArrayElement<ArrayType extends readonly unknown[] | undefined> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -48,9 +51,12 @@ export const defaults = {
   initialSelectedItems: [],
 }
 
+const DROPDOWN_CLASS_NAME = 'mia-platform-dropdown'
+
 export const Dropdown = ({
   autoFocus,
   children,
+  footer,
   isDisabled,
   itemLayout = defaults.itemLayout,
   items,
@@ -62,6 +68,8 @@ export const Dropdown = ({
   multiple,
   persistSelection = true,
 }: DropdownProps): ReactElement => {
+  const { spacing } = useTheme()
+
   const uniqueClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
   const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
@@ -91,9 +99,37 @@ export const Dropdown = ({
     [itemFinderMemo, onClick, updateSelectedItems]
   )
 
+  const randomClass = useMemo(() => crypto.randomUUID(), [])
+
+  /**
+   * This function is used to forcibly close the dropdown without controlling
+   * the `open` state via prop.
+   */
+  const footerActionHook = useCallback(() => {
+    const el = document.querySelector(`.${randomClass}`)
+    // This branch is not testable since the dropdown always exists when the dropdown is visible
+    /* istanbul ignore if */
+    if (!el) {
+      return
+    }
+    // FIXME: with hover trigger this does not work and the dropdown will not be closed!
+    (el as HTMLElement).click()
+  }, [randomClass])
+  const hookedFooter = useFooterWithHookedActions({ footer, hook: footerActionHook })
+
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
-    return React.cloneElement(menu as ReactElement)
-  }, [])
+    if (!hookedFooter) {
+      return React.cloneElement(menu as ReactElement)
+    }
+
+    return (
+      <div className={styles.dropdownWithFooterRenderWrapper}>
+        {React.cloneElement(menu as ReactElement, { style: { boxShadow: 'none' } })}
+        <Divider margin={spacing?.margin?.none} />
+        <Footer footer={hookedFooter} />
+      </div>
+    )
+  }, [hookedFooter, spacing])
 
   const menu = useMemo(() => ({
     items: antdItems,
@@ -118,6 +154,7 @@ export const Dropdown = ({
   return (
     <AntdDropdown
       autoFocus={autoFocus}
+      className={classNames(randomClass, DROPDOWN_CLASS_NAME)}
       disabled={isDisabled}
       dropdownRender={dropdownRender}
       getPopupContainer={getPopupContainer}

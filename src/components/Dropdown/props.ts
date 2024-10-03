@@ -63,6 +63,45 @@ export enum DropdownTrigger {
   ContextMenu = 'contextMenu'
 }
 
+/**
+ * Each FooterAction is rendered as a button with the provided configuration
+ */
+export type FooterAction = {
+
+  /**
+   * Optional icon
+   * */
+  icon?: ReactNode
+
+  /**
+   * label displayed
+   * */
+  label?: ReactNode
+
+  /**
+   * callback invoked on click.
+   */
+  onClick: () => void
+}
+
+export type DropdownFooter = {
+
+  /**
+   * Optional list of actions, they are rendered between the top and bottom nodes.
+   */
+  actions?: FooterAction[]
+
+  /**
+   * Optional node to be rendered at the bottom of the footer.
+   */
+  bottom?: ReactNode
+
+  /**
+   * Optional node to be rendered at the top of the footer.
+   */
+  top?: ReactNode
+}
+
 export type DropdownClickEvent = {
 
   /**
@@ -106,6 +145,11 @@ export type DropdownProps = {
    * The ReactElement used as anchor to trigger the Dropdown visibility.
    */
   children?: ReactElement,
+
+  /**
+   * Optional footer configuration.
+   */
+  footer?: DropdownFooter,
 
   /**
    * Set to `true` to keep the selected value highlighted after the selection.
