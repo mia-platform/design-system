@@ -102,8 +102,8 @@ export const Dropdown = ({
   const randomClass = useMemo(() => crypto.randomUUID(), [])
 
   /**
-   * This function is used to forcibly close the dropdown without controlling the `open` state via prop.
-   *
+   * This function is used to forcibly close the dropdown without controlling
+   * the `open` state via prop.
    */
   const footerActionHook = useCallback(() => {
     const el = document.querySelector(`.${randomClass}`)
