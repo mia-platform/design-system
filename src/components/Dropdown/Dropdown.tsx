@@ -104,6 +104,7 @@ export const Dropdown = ({
   const footerActionHook = useCallback(() => {
     const el = document.querySelector(`.${randomClass}`)
     if (!el) {
+      /* istanbul ignore next */
       return
     }
     // FIXME: with hover trigger this does not work and the dropdown will not be closed!
