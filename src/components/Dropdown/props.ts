@@ -18,6 +18,8 @@
 
 import { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react'
 
+import { Size } from '../../themes/schema/shape'
+
 export enum ItemLayout {
   Horizontal = 'horizontal',
   Vertical = 'vertical'
@@ -184,6 +186,12 @@ export type DropdownProps = {
    * Allows to control the Dropdown label layout (accepts: horizontal, vertical).
    */
   itemLayout?: ItemLayout,
+
+  /**
+   * Sets the max height for the menu item list, this is useful to prevent creating
+   * a dropdown with many items that may be too big (default: 240px).
+   */
+  menuItemsMaxHeight?: Size,
 
   /**
    * control whether to allow multiple highlight selection.

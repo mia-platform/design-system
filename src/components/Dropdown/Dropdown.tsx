@@ -47,8 +47,9 @@ const antdSourceMap: Record<AntdTriggerSource, OpenChangeInfoSource> = {
 
 export const defaults = {
   itemLayout: ItemLayout.Horizontal,
-  trigger: [DropdownTrigger.Click],
+  triggers: [DropdownTrigger.Click],
   initialSelectedItems: [],
+  menuItemsMaxHeight: 240,
 }
 
 export const Dropdown = ({
@@ -58,8 +59,9 @@ export const Dropdown = ({
   isDisabled,
   itemLayout = defaults.itemLayout,
   items,
+  menuItemsMaxHeight = defaults.menuItemsMaxHeight,
   onClick,
-  triggers = defaults.trigger,
+  triggers = defaults.triggers,
   onOpenChange,
   getPopupContainer,
   initialSelectedItems = defaults.initialSelectedItems,
@@ -115,18 +117,24 @@ export const Dropdown = ({
   const hookedFooter = useFooterWithHookedActions({ footer, hook: footerActionHook })
 
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
+    const clonedMenu = React.cloneElement(menu as ReactElement, { style: { boxShadow: 'none' } })
+    const scrollableStyle = { maxHeight: menuItemsMaxHeight, overflow: 'scroll' }
     if (!hookedFooter) {
-      return React.cloneElement(menu as ReactElement)
+      return (
+        <div className={styles.dropdownRenderWrapper} style={scrollableStyle}>
+          {clonedMenu}
+        </div>
+      )
     }
 
     return (
-      <div className={styles.dropdownWithFooterRenderWrapper}>
-        {React.cloneElement(menu as ReactElement, { style: { boxShadow: 'none' } })}
+      <div className={styles.dropdownRenderWrapper}>
+        <div style={scrollableStyle}>{clonedMenu}</div>
         <Divider margin={spacing?.margin?.none} />
         <Footer footer={hookedFooter} />
       </div>
     )
-  }, [hookedFooter, spacing])
+  }, [hookedFooter, menuItemsMaxHeight, spacing])
 
   const menu = useMemo(() => ({
     items: antdItems,
