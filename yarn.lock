@@ -2587,7 +2587,7 @@ __metadata:
     rollup-plugin-visualizer: "npm:^5.12.0"
     storybook: "npm:^7.6.17"
     tar: "npm:^7.4.0"
-    traverse: "npm:^0.6.8"
+    traverse: "npm:^0.6.10"
     ts-jest: "npm:^29.1.5"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
@@ -15452,14 +15452,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"traverse@npm:^0.6.8":
-  version: 0.6.9
-  resolution: "traverse@npm:0.6.9"
+"traverse@npm:^0.6.10":
+  version: 0.6.10
+  resolution: "traverse@npm:0.6.10"
   dependencies:
     gopd: "npm:^1.0.1"
     typedarray.prototype.slice: "npm:^1.0.3"
     which-typed-array: "npm:^1.1.15"
-  checksum: 10/7f42c2fa3451a8b51e3bfb5b6f884684f4f8142c5eb2ee8a0c413e805d532fcc470cd4700d3bfd00271c0221f8c6132263cf559e60ea35df05aebc9551977a2f
+  checksum: 10/557fed11f180b6de22b8e33bd8e799627776fc8ecbd906849302aecc44f1a60ff1f9621000392ecce847400bef1f3408683a62e77fd66b1c84802be6aab4587e
   languageName: node
   linkType: hard
 
