@@ -189,7 +189,7 @@ export type DropdownProps = {
 
   /**
    * Sets the max height for the menu item list, this is useful to prevent creating
-   * a dropdown with many items that may be too big.
+   * a dropdown with many items that may be too big (default: 240px).
    */
   menuItemsMaxHeight?: Size,
 
