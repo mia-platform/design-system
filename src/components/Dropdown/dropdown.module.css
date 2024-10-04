@@ -16,6 +16,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+:global(.mia-platform-dropdown-trigger) {
+  display: flex;
+  width: fit-content;
+}
+
 .primaryLabel {
   color: var(--palette-text-neutral-main, #636363);
 }
