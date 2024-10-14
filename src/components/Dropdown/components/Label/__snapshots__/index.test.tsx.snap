@@ -126,7 +126,7 @@ exports[`Label horizontal layout render with tag 1`] = `
         </span>
       </div>
       <span
-        class="mia-platform-tag"
+        class="mia-platform-tag tag"
       >
         Tag
       </span>
@@ -246,7 +246,7 @@ exports[`Label vertical layout render with tag 1`] = `
         </span>
       </div>
       <span
-        class="mia-platform-tag"
+        class="mia-platform-tag tag"
       >
         Tag
       </span>
