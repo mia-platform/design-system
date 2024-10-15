@@ -3,7 +3,7 @@
 exports[`Tag renders correctly 1`] = `
 <DocumentFragment>
   <span
-    class="mia-platform-tag mia-platform-tag-has-color"
+    class="mia-platform-tag mia-platform-tag-has-color tag"
     style="background-color: rgb(255, 0, 0);"
   >
     Tag text

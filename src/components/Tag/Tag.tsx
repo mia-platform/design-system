@@ -20,6 +20,9 @@ import { Tag as AntTag } from 'antd'
 import { ReactElement } from 'react'
 
 import { TagProps } from './Tag.props'
+import styles from './Tag.module.css'
+
+const { tag } = styles
 
 export const defaults = {
   isBordered: true,
@@ -37,6 +40,7 @@ export const Tag = (
   return (
     <AntTag
       bordered={isBordered}
+      className={tag}
       closeIcon={closeIcon}
       color={color}
       onClose={onClose}

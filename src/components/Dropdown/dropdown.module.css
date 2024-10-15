@@ -73,10 +73,6 @@
     border-top-left-radius: var(--shape-border-radius-lg, 8px);
     border-top-right-radius: var(--shape-border-radius-lg, 8px);
   }
-
-  :global(.mia-platform-tag) {
-    margin-inline-end: unset;
-  }
 }
 
 .dropdownRenderWrapper {
