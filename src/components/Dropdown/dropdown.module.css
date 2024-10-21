@@ -18,7 +18,6 @@
 
 :global(.mia-platform-dropdown-trigger) {
   display: flex;
-  width: fit-content;
 }
 
 .primaryLabel {
