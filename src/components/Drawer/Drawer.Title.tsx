@@ -31,11 +31,11 @@ export const Title = ({ docLink, title }: TitleProps): ReactElement => {
   const docLinkIcon = useMemo(() => (
     <Icon
       aria-label={'Doc link'}
-      color={palette?.action?.primary?.focus}
+      color={palette?.action?.primary?.default}
       component={PiBookOpen}
       size={16}
     />
-  ), [palette?.action?.primary?.focus])
+  ), [palette?.action?.primary?.default])
 
   const onClickDocLink = useCallback(() => window.open(docLink, '_blank'), [docLink])
 
