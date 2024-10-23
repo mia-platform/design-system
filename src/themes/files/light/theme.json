@@ -1,68 +1,4 @@
 {
-  "shape": {
-    "border": {
-      "radius": {
-        "sharp": "0px",
-        "xs": 1,
-        "sm": 2,
-        "md": 4,
-        "lg": 8,
-        "xl": 16,
-        "fullRounded": 96
-      },
-      "width": {
-        "xs": 1,
-        "sm": 2,
-        "md": 4,
-        "lg": 8,
-        "xl": 8
-      }
-    },
-    "size": {
-      "3xs": 1,
-      "2xs": 2,
-      "xs": 4,
-      "sm": 8,
-      "md": 16,
-      "lg": 24,
-      "xl": 32,
-      "2xl": 48,
-      "3xl": 64
-    }
-  },
-  "spacing": {
-    "margin": {
-      "none": 0,
-      "2xs": 2,
-      "xs": 4,
-      "sm": 8,
-      "md": 12,
-      "lg": 16,
-      "xl": 24,
-      "2xl": 32
-    },
-    "padding": {
-      "none": 0,
-      "2xs": 2,
-      "xs": 4,
-      "sm": 8,
-      "md": 12,
-      "lg": 16,
-      "xl": 24,
-      "2xl": 32
-    },
-    "gap": {
-      "none": 0,
-      "3xs": 1,
-      "2xs": 2,
-      "xs": 4,
-      "sm": 8,
-      "md": 12,
-      "lg": 16,
-      "xl": 24,
-      "2xl": 32
-    }
-  },
   "palette": {
     "common": {
       "grey": {
@@ -278,6 +214,70 @@
       "purple": "#5f36dd",
       "green": "#26a570",
       "logotype": "#414748"
+    }
+  },
+  "shape": {
+    "border": {
+      "radius": {
+        "sharp": "0px",
+        "xs": 1,
+        "sm": 2,
+        "md": 4,
+        "lg": 8,
+        "xl": 16,
+        "fullRounded": 96
+      },
+      "width": {
+        "xs": 1,
+        "sm": 2,
+        "md": 4,
+        "lg": 8,
+        "xl": 8
+      }
+    },
+    "size": {
+      "3xs": 1,
+      "2xs": 2,
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "2xl": 48,
+      "3xl": 64
+    }
+  },
+  "spacing": {
+    "margin": {
+      "none": 0,
+      "2xs": 2,
+      "xs": 4,
+      "sm": 8,
+      "md": 12,
+      "lg": 16,
+      "xl": 24,
+      "2xl": 32
+    },
+    "padding": {
+      "none": 0,
+      "2xs": 2,
+      "xs": 4,
+      "sm": 8,
+      "md": 12,
+      "lg": 16,
+      "xl": 24,
+      "2xl": 32
+    },
+    "gap": {
+      "none": 0,
+      "3xs": 1,
+      "2xs": 2,
+      "xs": 4,
+      "sm": 8,
+      "md": 12,
+      "lg": 16,
+      "xl": 24,
+      "2xl": 32
     }
   },
   "typography": {
