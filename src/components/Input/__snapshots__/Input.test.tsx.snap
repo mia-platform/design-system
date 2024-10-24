@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component renders correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="mia-platform-input mia-platform-input-outlined input fullWidth"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;

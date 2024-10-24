@@ -20,37 +20,72 @@ import { IconComponent } from '../Icon/Icon.props.ts'
 
 export type InputProps = {
 
+  /**
+   * The type of the Input.
+   */
   type?: Type
 
+  /**
+   * The html type of Input.
+   */
   htmlType?: HTMLType
 
   /**
-   * The main content of the Tag.
+   * Whether the input is disabled.
    */
   isDisabled?: boolean,
 
   /**
-   * The main content of the Tag.
+   * Whether the input has error.
    */
   isError?: boolean
 
+  /**
+   * Whether the input is read-only.
+   */
   isReadOnly?: boolean
 
+  /**
+   * Whether the input is full width. Defaults to true.
+   */
   isFullWidth?: boolean
 
+  /**
+   * The left icon for the Input.
+   */
   iconLeft?: IconComponent
 
+  /**
+   * The right icon for the Input.
+   */
   iconRight?: IconComponent
 
+  /**
+   * The placeholder for the Input.
+   */
   placeholder?: string
 
+  /**
+   * The input content value.
+   */
   value?: string
 
+  /**
+   */
   defaultValue?: string
 
+  /**
+   * If allow to remove input content with clear icon.
+   */
   allowClear?: boolean
 
+  /**
+   * The maximum number of characters in Input.
+   */
   maxLength?: number
 
+  /**
+   * The number of rows for the input.
+   */
   rows?: number
 }
