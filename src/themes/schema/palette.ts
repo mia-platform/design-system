@@ -37,7 +37,7 @@ type ColorGrades = Record<Intensity, Color>
 /**
  * Represents the various states of an element.
  */
-type State = 'active' | 'hover' | 'focus' | 'selected'
+type State = 'active' | 'hover' | 'focus' | 'selected' | 'default'
 
 /**
  * Semantic map of colors for dynamic components.
