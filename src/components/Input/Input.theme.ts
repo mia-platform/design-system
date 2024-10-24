@@ -21,19 +21,20 @@ import { ComponentsTheme } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
 /**
- * Generates a Ant theme configuration for Button component based on a theme configuration.
+ * Generates a Ant theme configuration for Input component based on a theme configuration.
  *
- * @link https://ant.design/components/button#design-token
+ * @link https://ant.design/components/input#design-token
  *
  * @param {Partial<Theme>} theme - theme configuration.
- * @returns {Partial<ComponentsTheme>} The generated Button Ant theme configuration.
+ * @returns {Partial<ComponentsTheme>} The generated Input Ant theme configuration.
  */
 export default ({ palette, spacing, shape }: Partial<Theme>): ComponentsTheme['Input'] => ({
   // sizing
   paddingBlock: Number(spacing?.padding.sm),
   paddingInline: Number(spacing?.padding.md),
+  // shape
   borderRadius: Number(shape?.border?.radius?.md),
-  // default
+  // palette
   colorBgContainer: palette?.action?.secondary?.main,
   colorText: palette?.action?.secondary?.contrastText,
   colorTextPlaceholder: palette?.text?.neutral?.subtler,
@@ -50,11 +51,7 @@ export default ({ palette, spacing, shape }: Partial<Theme>): ComponentsTheme['I
   colorErrorBorderHover: palette?.action?.danger?.hover,
   colorErrorActive: palette?.action?.danger?.default,
   // errorActiveShadow: `0 0 2px rgba(185, 18, 0, 0.5)`,
-  // disabled
-
-  // borderless
-
-  // other
+  // icons
   colorTextQuaternary: palette?.text?.neutral?.subtle,
   colorIcon: palette?.text?.neutral?.subtle,
 })

@@ -16,23 +16,27 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Input as AntInput } from 'antd'
+import { Input as AntInput } from "antd";
 // eslint-disable-next-line sort-imports
-import { ReactElement, useMemo } from 'react'
-import classnames from 'classnames'
+import { ElementType, ReactElement, useMemo } from "react";
+import classnames from "classnames";
 
-import { HTMLType, Type } from './Input.types.ts'
-import { Icon } from '../Icon'
-import { InputProps } from './Input.props'
-import styles from './Input.module.css'
+import { HTMLType, Type } from "./Input.types.ts";
+import { Icon } from "../Icon";
+import { InputProps } from "./Input.props";
+import styles from "./Input.module.css";
 
-export const defaults: Partial<InputProps> = {
+export const defaults = {
   type: Type.Outlined,
   htmlType: HTMLType.Text,
   isFullWidth: true,
 }
 
-const ICON_SIZE = 12 as never
+const DEFAULT_ICON_SIZE : any = 12
+
+function getComponentByType(htmlType: HTMLType): ElementType {
+  return htmlType === HTMLType.Textarea ? AntInput.TextArea : AntInput
+}
 
 export const Input = (
   props: InputProps
@@ -51,6 +55,7 @@ export const Input = (
     iconRight,
     allowClear,
     maxLength,
+    rows,
   } = props
 
   const className = useMemo(() => classnames([
@@ -58,10 +63,13 @@ export const Input = (
     isFullWidth && styles.fullWidth,
     isDisabled && styles.disabled,
     isReadOnly && styles.readonly,
+    htmlType === HTMLType.Hidden && styles.hidden,
   ]), [isDisabled, isFullWidth, isReadOnly])
 
+  const Component = useMemo(() => getComponentByType(htmlType), [htmlType])
+
   return (
-    <AntInput
+    <Component
       allowClear={allowClear}
       className={className}
       classNames={{ prefix: styles.inputPrefix, suffix: styles.inputSuffix }}
@@ -69,12 +77,13 @@ export const Input = (
       disabled={isDisabled}
       maxLength={maxLength}
       placeholder={placeholder}
-      prefix={iconLeft && <Icon component={iconLeft} size={ICON_SIZE} />}
+      prefix={iconLeft && <Icon component={iconLeft} size={DEFAULT_ICON_SIZE} />}
       status={isError ? 'error' : undefined}
-      suffix={iconRight && <Icon component={iconRight} size={ICON_SIZE} />}
-      type={htmlType}
+      suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
       value={value}
+      type={htmlType}
       variant={type}
+      rows={rows}
     />
   )
 }
