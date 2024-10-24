@@ -1,0 +1,26 @@
+
+
+.input {
+  width: auto;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.readonly {
+  border: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+.disabled {
+  border-color: var(--palette-action-disabled-bold, #E5E5E5) !important;
+
+  & .inputPrefix {
+    color:  var(--palette-text-neutral-subtler, #ACACAC);
+  }
+  & .inputSuffix {
+    color:  var(--palette-text-neutral-subtler, #ACACAC);
+  }
+}

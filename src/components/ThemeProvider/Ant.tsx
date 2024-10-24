@@ -23,6 +23,7 @@ import { DEFAULT_COLOR, DEFAULT_FONT_FAMILY, DEFAULT_FONT_SIZE } from './utils/t
 import ButtonTheme from '../Button/Button.theme'
 import DividerTheme from '../Divider/Divider.theme'
 import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
+import InputTheme from '../Input/Input.theme.ts'
 import MenuTheme from '../Menu/Menu.theme'
 import TableTheme from '../Table/Table.theme'
 import Theme from '../../themes/schema'
@@ -101,6 +102,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Table: TableTheme({ palette, spacing }),
     Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
+    Input: InputTheme({ palette, shape, typography, spacing }),
   },
 })
 
