@@ -78,3 +78,24 @@ export const AllowClear: Story = {
     allowClear: true,
   },
 }
+
+export const TextArea: Story = {
+  args: {
+    ...defaultProps,
+    htmlType: Input.HTMLType.Textarea,
+  },
+}
+
+export const Search: Story = {
+  args: {
+    ...defaultProps,
+    htmlType: Input.HTMLType.Search,
+  },
+}
+
+export const Password: Story = {
+  args: {
+    ...defaultProps,
+    htmlType: Input.HTMLType.Number,
+  },
+}

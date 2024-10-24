@@ -51,4 +51,6 @@ export type InputProps = {
   allowClear?: boolean
 
   maxLength?: number
+
+  rows?: number
 }

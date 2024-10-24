@@ -14,6 +14,10 @@
   pointer-events: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .disabled {
   border-color: var(--palette-action-disabled-bold, #E5E5E5) !important;
 
