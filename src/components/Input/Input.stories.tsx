@@ -67,7 +67,7 @@ export const WithLeftIcon: Story = {
 
 export const WithRightIcon: Story = {
   args: {
-    iconLeft: FiSearch,
+    iconRight: FiSearch,
   },
 }
 

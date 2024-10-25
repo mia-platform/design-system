@@ -27,7 +27,9 @@ import Theme from '../../themes/schema'
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Input Ant theme configuration.
  */
-export default ({ palette, spacing, shape }: Partial<Theme>): ComponentsTheme['Input'] => ({
+export default ({ typography, palette, spacing, shape }: Partial<Theme>): ComponentsTheme['Input'] => ({
+  fontSize: typography?.bodyS.fontSize,
+  lineHeight: Number(typography?.bodyS.lineHeight) / Number(typography?.bodyS.fontSize),
   // sizing
   paddingBlock: Number(spacing?.padding.sm),
   paddingInline: Number(spacing?.padding.md),
