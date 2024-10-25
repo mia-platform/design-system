@@ -18,6 +18,11 @@ describe('Input Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('Read only renders correctly', () => {
+    const { asFragment } = render(<Input isReadOnly />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('Error renders correctly', () => {
     const { asFragment } = render(<Input isError={true} />)
     expect(asFragment()).toMatchSnapshot()
@@ -28,8 +33,13 @@ describe('Input Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('WithIcon renders correctly', () => {
+  test('With left icon renders correctly', () => {
     const { asFragment } = render(<Input iconLeft={FiSearch} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('With right icon renders correctly', () => {
+    const { asFragment } = render(<Input iconRight={FiSearch} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -50,6 +60,11 @@ describe('Input Component', () => {
 
   test('Password renders correctly', () => {
     const { asFragment } = render(<Input htmlType={Input.HTMLType.Number} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('Hidden renders correctly', () => {
+    const { asFragment } = render(<Input htmlType={Input.HTMLType.Hidden} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
