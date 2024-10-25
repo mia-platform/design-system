@@ -75,11 +75,31 @@ exports[`Input Component Error renders correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Input Component Hidden renders correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="mia-platform-input mia-platform-input-outlined input fullWidth hidden"
+    type="hidden"
+    value=""
+  />
+</DocumentFragment>
+`;
+
 exports[`Input Component Password renders correctly 1`] = `
 <DocumentFragment>
   <input
     class="mia-platform-input mia-platform-input-outlined input fullWidth"
     type="number"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`Input Component Read only renders correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="mia-platform-input mia-platform-input-outlined input fullWidth readonly"
+    type="text"
     value=""
   />
 </DocumentFragment>
@@ -104,7 +124,7 @@ exports[`Input Component TextArea renders correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input Component WithIcon renders correctly 1`] = `
+exports[`Input Component With left icon renders correctly 1`] = `
 <DocumentFragment>
   <span
     class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth"
@@ -144,6 +164,50 @@ exports[`Input Component WithIcon renders correctly 1`] = `
       type="text"
       value=""
     />
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Input Component With right icon renders correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth"
+  >
+    <input
+      class="mia-platform-input"
+      type="text"
+      value=""
+    />
+    <span
+      class="mia-platform-input-suffix inputSuffix"
+    >
+      <svg
+        color="currentColor"
+        fill="none"
+        height="12"
+        role="img"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: currentColor;"
+        viewBox="0 0 24 24"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="8"
+        />
+        <line
+          x1="21"
+          x2="16.65"
+          y1="21"
+          y2="16.65"
+        />
+      </svg>
+    </span>
   </span>
 </DocumentFragment>
 `;

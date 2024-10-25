@@ -41,6 +41,12 @@ export const Borderless: Story = {
   },
 }
 
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+  },
+}
+
 export const Error: Story = {
   args: {
     isError: true,
@@ -53,7 +59,13 @@ export const Disabled: Story = {
   },
 }
 
-export const WithIcon: Story = {
+export const WithLeftIcon: Story = {
+  args: {
+    iconLeft: FiSearch,
+  },
+}
+
+export const WithRightIcon: Story = {
   args: {
     iconLeft: FiSearch,
   },
@@ -81,5 +93,11 @@ export const Search: Story = {
 export const Password: Story = {
   args: {
     htmlType: Input.HTMLType.Number,
+  },
+}
+
+export const Hidden: Story = {
+  args: {
+    htmlType: Input.HTMLType.Hidden,
   },
 }
