@@ -20,21 +20,21 @@ import { ElementType, ReactElement, useMemo } from 'react'
 import { Input as AntInput } from 'antd'
 import classnames from 'classnames'
 
-import { HTMLType, Type } from './types.ts'
+import { Appearance, Type } from './types.ts'
 import { Icon } from '../Icon'
 import { InputProps } from './props.ts'
 import styles from './input.module.css'
 
 export const defaults = {
-  type: Type.Outlined,
-  htmlType: HTMLType.Text,
+  type: Appearance.Outlined,
+  htmlType: Type.Text,
   isFullWidth: true,
 }
 
 const DEFAULT_ICON_SIZE = 12 as never
 
-function getComponentByType(htmlType: HTMLType): ElementType {
-  return htmlType === HTMLType.Textarea ? AntInput.TextArea : AntInput
+function getComponentByType(htmlType: Type): ElementType {
+  return htmlType === Type.Textarea ? AntInput.TextArea : AntInput
 }
 
 /**
@@ -45,8 +45,8 @@ function getComponentByType(htmlType: HTMLType): ElementType {
  */
 export const Input = (
   {
-    type = defaults.type,
-    htmlType = defaults.htmlType,
+    appearance = defaults.type,
+    type = defaults.htmlType,
     value,
     defaultValue,
     isDisabled,
@@ -67,10 +67,10 @@ export const Input = (
     isFullWidth && styles.fullWidth,
     isDisabled && styles.disabled,
     isReadOnly && styles.readonly,
-    htmlType === HTMLType.Hidden && styles.hidden,
-  ]), [htmlType, isDisabled, isFullWidth, isReadOnly])
+    type === Type.Hidden && styles.hidden,
+  ]), [type, isDisabled, isFullWidth, isReadOnly])
 
-  const Component = useMemo(() => getComponentByType(htmlType), [htmlType])
+  const Component = useMemo(() => getComponentByType(type), [type])
 
   return (
     <Component
@@ -85,13 +85,13 @@ export const Input = (
       rows={rows}
       status={isError ? 'error' : undefined}
       suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
-      type={htmlType}
+      type={type}
       value={value}
-      variant={type}
+      variant={appearance}
       onChange={onChange}
     />
   )
 }
 
-Input.Type = Type
-Input.HTMLType = HTMLType
+Input.Type = Appearance
+Input.HTMLType = Type

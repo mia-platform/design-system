@@ -18,7 +18,7 @@
 
 import { ChangeEventHandler } from 'react'
 
-import { HTMLType, Type } from './types.ts'
+import { Appearance, Type } from './types.ts'
 import { IconComponent } from '../Icon/Icon.props.ts'
 
 export type InputProps = {
@@ -26,12 +26,12 @@ export type InputProps = {
   /**
    * The type of the Input.
    */
-  type?: Type
+  appearance?: Appearance
 
   /**
    * The html type of Input.
    */
-  htmlType?: HTMLType
+  type?: Type
 
   /**
    * Whether the input is disabled.

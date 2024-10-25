@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum Type {
+export enum Appearance {
   Outlined = 'outlined',
   Borderless = 'borderless'
 }
 
-export enum HTMLType {
+export enum Type {
   Text = 'text',
   Textarea = 'textarea',
   Number = 'number',

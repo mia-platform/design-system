@@ -37,7 +37,7 @@ export const Default: Story = {}
 
 export const Borderless: Story = {
   args: {
-    type: Input.Type.Borderless,
+    appearance: Input.Type.Borderless,
   },
 }
 
@@ -80,24 +80,24 @@ export const AllowClear: Story = {
 
 export const TextArea: Story = {
   args: {
-    htmlType: Input.HTMLType.Textarea,
+    type: Input.HTMLType.Textarea,
   },
 }
 
 export const Search: Story = {
   args: {
-    htmlType: Input.HTMLType.Search,
+    type: Input.HTMLType.Search,
   },
 }
 
 export const Password: Story = {
   args: {
-    htmlType: Input.HTMLType.Number,
+    type: Input.HTMLType.Number,
   },
 }
 
 export const Hidden: Story = {
   args: {
-    htmlType: Input.HTMLType.Hidden,
+    type: Input.HTMLType.Hidden,
   },
 }

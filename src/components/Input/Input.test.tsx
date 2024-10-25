@@ -32,7 +32,7 @@ describe('Input Component', () => {
   })
 
   test('Borderless renders correctly', () => {
-    const { asFragment } = render(<Input type={Input.Type.Borderless} />)
+    const { asFragment } = render(<Input appearance={Input.Type.Borderless} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -67,22 +67,22 @@ describe('Input Component', () => {
   })
 
   test('TextArea renders correctly', () => {
-    const { asFragment } = render(<Input htmlType={Input.HTMLType.Textarea} />)
+    const { asFragment } = render(<Input type={Input.HTMLType.Textarea} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('Search renders correctly', () => {
-    const { asFragment } = render(<Input htmlType={Input.HTMLType.Search} />)
+    const { asFragment } = render(<Input type={Input.HTMLType.Search} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('Password renders correctly', () => {
-    const { asFragment } = render(<Input htmlType={Input.HTMLType.Number} />)
+    const { asFragment } = render(<Input type={Input.HTMLType.Number} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('Hidden renders correctly', () => {
-    const { asFragment } = render(<Input htmlType={Input.HTMLType.Hidden} />)
+    const { asFragment } = render(<Input type={Input.HTMLType.Hidden} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
