@@ -15,6 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
+
 import { ChangeEventHandler } from 'react'
 
 import { HTMLType, Type } from './Input.types.ts'
