@@ -18,6 +18,9 @@
 
 .input {
   width: auto;
+  font-size: var(--typography-bodyS-fontSize, 14px) !important;
+  line-height: var(--typography-bodyS-lineHeight, 16px) !important;
+
 }
 
 .fullWidth {
