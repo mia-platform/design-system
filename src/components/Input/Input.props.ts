@@ -15,6 +15,8 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
+import { ChangeEventHandler } from 'react'
+
 import { HTMLType, Type } from './Input.types.ts'
 import { IconComponent } from '../Icon/Icon.props.ts'
 
@@ -88,4 +90,9 @@ export type InputProps = {
    * The number of rows for the input.
    */
   rows?: number
+
+  /**
+   * Callback when user input.
+   */
+  onChange?: ChangeEventHandler;
 }
