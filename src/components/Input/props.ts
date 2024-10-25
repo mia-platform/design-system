@@ -18,7 +18,7 @@
 
 import { ChangeEventHandler } from 'react'
 
-import { HTMLType, Type } from './Input.types.ts'
+import { HTMLType, Type } from './types.ts'
 import { IconComponent } from '../Icon/Icon.props.ts'
 
 export type InputProps = {
