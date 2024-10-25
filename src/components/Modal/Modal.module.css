@@ -94,6 +94,7 @@
     }
 
     .content {
+      /* min-width to prevent both this element (.content) and sibling element (.asideWrapper) to overflow their continers */
       min-width: 0;
       height: 100%;
       display: flex;
