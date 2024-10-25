@@ -20,10 +20,10 @@ import { ElementType, ReactElement, useMemo } from 'react'
 import { Input as AntInput } from 'antd'
 import classnames from 'classnames'
 
-import { HTMLType, Type } from './Input.types.ts'
+import { HTMLType, Type } from './types.ts'
 import { Icon } from '../Icon'
-import { InputProps } from './Input.props'
-import styles from './Input.module.css'
+import { InputProps } from './props.ts'
+import styles from './input.module.css'
 
 export const defaults = {
   type: Type.Outlined,
