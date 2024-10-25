@@ -21,12 +21,10 @@ import { FiSearch } from 'react-icons/fi'
 
 import { Input } from '.'
 
-const placeholder = 'Placeholder...'
-
 const meta = {
   component: Input,
   args: {
-    placeholder,
+    placeholder: 'Placeholder...',
   },
   argTypes: {
   },
@@ -35,45 +33,34 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const defaultProps = {
-  placeholder,
-}
-
-export const Default: Story = {
-  args: defaultProps,
-}
+export const Default: Story = {}
 
 export const Borderless: Story = {
   args: {
-    ...defaultProps,
     type: Input.Type.Borderless,
   },
 }
 
 export const Error: Story = {
   args: {
-    ...defaultProps,
     isError: true,
   },
 }
 
 export const Disabled: Story = {
   args: {
-    ...defaultProps,
     isDisabled: true,
   },
 }
 
 export const WithIcon: Story = {
   args: {
-    ...defaultProps,
     iconLeft: FiSearch,
   },
 }
 
 export const AllowClear: Story = {
   args: {
-    ...defaultProps,
     defaultValue: 'text',
     allowClear: true,
   },
@@ -81,21 +68,18 @@ export const AllowClear: Story = {
 
 export const TextArea: Story = {
   args: {
-    ...defaultProps,
     htmlType: Input.HTMLType.Textarea,
   },
 }
 
 export const Search: Story = {
   args: {
-    ...defaultProps,
     htmlType: Input.HTMLType.Search,
   },
 }
 
 export const Password: Story = {
   args: {
-    ...defaultProps,
     htmlType: Input.HTMLType.Number,
   },
 }

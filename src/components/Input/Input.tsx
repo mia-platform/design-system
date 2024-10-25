@@ -16,15 +16,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Input as AntInput } from "antd";
-// eslint-disable-next-line sort-imports
-import { ElementType, ReactElement, useMemo } from "react";
-import classnames from "classnames";
+import { ElementType, ReactElement, useMemo } from 'react'
+import { Input as AntInput } from 'antd'
+import classnames from 'classnames'
 
-import { HTMLType, Type } from "./Input.types.ts";
-import { Icon } from "../Icon";
-import { InputProps } from "./Input.props";
-import styles from "./Input.module.css";
+import { HTMLType, Type } from './Input.types.ts'
+import { Icon } from '../Icon'
+import { InputProps } from './Input.props'
+import styles from './Input.module.css'
 
 export const defaults = {
   type: Type.Outlined,
@@ -32,16 +31,20 @@ export const defaults = {
   isFullWidth: true,
 }
 
-const DEFAULT_ICON_SIZE : any = 12
+const DEFAULT_ICON_SIZE = 12 as never
 
 function getComponentByType(htmlType: HTMLType): ElementType {
   return htmlType === HTMLType.Textarea ? AntInput.TextArea : AntInput
 }
 
+/**
+ * A UI element to insert text content in a form.
+ *
+ * @link https://ant.design/components/input
+ * @returns {Input} Input component
+ */
 export const Input = (
-  props: InputProps
-) : ReactElement => {
-  const {
+  {
     type = defaults.type,
     htmlType = defaults.htmlType,
     value,
@@ -50,21 +53,22 @@ export const Input = (
     isReadOnly,
     isFullWidth = defaults.isFullWidth,
     isError,
+    onChange,
     placeholder,
     iconLeft,
     iconRight,
     allowClear,
     maxLength,
     rows,
-  } = props
-
+  }: InputProps
+) : ReactElement => {
   const className = useMemo(() => classnames([
     styles.input,
     isFullWidth && styles.fullWidth,
     isDisabled && styles.disabled,
     isReadOnly && styles.readonly,
     htmlType === HTMLType.Hidden && styles.hidden,
-  ]), [isDisabled, isFullWidth, isReadOnly])
+  ]), [htmlType, isDisabled, isFullWidth, isReadOnly])
 
   const Component = useMemo(() => getComponentByType(htmlType), [htmlType])
 
@@ -78,12 +82,13 @@ export const Input = (
       maxLength={maxLength}
       placeholder={placeholder}
       prefix={iconLeft && <Icon component={iconLeft} size={DEFAULT_ICON_SIZE} />}
+      rows={rows}
       status={isError ? 'error' : undefined}
       suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
-      value={value}
       type={htmlType}
+      value={value}
       variant={type}
-      rows={rows}
+      onChange={onChange}
     />
   )
 }
