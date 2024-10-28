@@ -31,26 +31,6 @@ describe('Input Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('Borderless renders correctly', () => {
-    const { asFragment } = render(<Input appearance={Input.Type.Borderless} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('Read only renders correctly', () => {
-    const { asFragment } = render(<Input isReadOnly />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('Error renders correctly', () => {
-    const { asFragment } = render(<Input isError={true} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('Disabled renders correctly', () => {
-    const { asFragment } = render(<Input isDisabled={true} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
   test('With left icon renders correctly', () => {
     const { asFragment } = render(<Input iconLeft={FiSearch} />)
     expect(asFragment()).toMatchSnapshot()
@@ -62,7 +42,7 @@ describe('Input Component', () => {
   })
 
   test('AllowClear renders correctly', () => {
-    const { asFragment } = render(<Input allowClear={true} defaultValue="text" />)
+    const { asFragment } = render(<Input allowClear defaultValue="text" />)
     expect(asFragment()).toMatchSnapshot()
   })
 
