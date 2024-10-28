@@ -17,6 +17,7 @@
  */
 
 import { ComponentType, ReactElement, useMemo } from 'react'
+import { InputProps as AntInputProps } from 'antd'
 import classnames from 'classnames'
 
 import { Appearance } from './types.ts'
@@ -28,17 +29,17 @@ export const defaults = {
   isFullWidth: true,
 }
 
-export type CommonProps =
+type CommonAntInputProps =
   {
     disabled?: boolean
     className?: string
     placeholder?: string
-    status?: string
-    variant?: string
+    status?: AntInputProps['status']
+    variant?: AntInputProps['variant']
   }
 
 export const BaseInput = <
-  ComponentProps extends CommonProps = CommonProps,
+  ComponentProps extends CommonAntInputProps = CommonAntInputProps,
 >({
     component: Component,
     className: classNameProp,
@@ -53,7 +54,7 @@ export const BaseInput = <
     placeholder,
     ...other
   }: BaseInputProps
-  & Omit<ComponentProps, keyof CommonProps>
+  & Omit<ComponentProps, keyof CommonAntInputProps>
   & { component: ComponentType<ComponentProps> }
   )
   : ReactElement => {
