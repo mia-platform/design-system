@@ -74,6 +74,7 @@ export type InputProps = {
   value?: string
 
   /**
+   * The input default value
    */
   defaultValue?: string
 
