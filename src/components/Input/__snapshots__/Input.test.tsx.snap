@@ -44,37 +44,6 @@ exports[`Input Component AllowClear renders correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input Component Borderless renders correctly 1`] = `
-<DocumentFragment>
-  <input
-    class="mia-platform-input mia-platform-input-borderless input fullWidth"
-    type="text"
-    value=""
-  />
-</DocumentFragment>
-`;
-
-exports[`Input Component Disabled renders correctly 1`] = `
-<DocumentFragment>
-  <input
-    class="mia-platform-input mia-platform-input-disabled mia-platform-input-outlined input fullWidth"
-    disabled=""
-    type="text"
-    value=""
-  />
-</DocumentFragment>
-`;
-
-exports[`Input Component Error renders correctly 1`] = `
-<DocumentFragment>
-  <input
-    class="mia-platform-input mia-platform-input-outlined mia-platform-input-status-error input fullWidth"
-    type="text"
-    value=""
-  />
-</DocumentFragment>
-`;
-
 exports[`Input Component Hidden renders correctly 1`] = `
 <DocumentFragment>
   <input
@@ -90,16 +59,6 @@ exports[`Input Component Password renders correctly 1`] = `
   <input
     class="mia-platform-input mia-platform-input-outlined input fullWidth"
     type="number"
-    value=""
-  />
-</DocumentFragment>
-`;
-
-exports[`Input Component Read only renders correctly 1`] = `
-<DocumentFragment>
-  <input
-    class="mia-platform-input mia-platform-input-outlined input fullWidth readonly"
-    type="text"
     value=""
   />
 </DocumentFragment>
