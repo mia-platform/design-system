@@ -16,56 +16,42 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeEventHandler } from 'react'
-
 import { BaseInputProps } from '../BaseInput/props.ts'
-import { IconComponent } from '../Icon/Icon.props.ts'
-import { Type } from './types.ts'
 
-export type InputProps = BaseInputProps & {
-
-  /**
-   * The html type of Input.
-   */
-  type?: Type
-
-  /**
-   * The left icon for the Input.
-   */
-  iconLeft?: IconComponent
-
-  /**
-   * The right icon for the Input.
-   */
-  iconRight?: IconComponent
+export type InputNumberProps = BaseInputProps & {
 
   /**
    * The input content value.
    */
-  value?: string
+  value?: number
 
   /**
-   * The input default value
    */
-  defaultValue?: string
+  defaultValue?: number
 
   /**
-   * If allow to remove input content with clear icon.
+   * The min value of the input.
    */
-  allowClear?: boolean
+  min?: number
 
   /**
-   * The minimum number of characters in Input.
+   * The max value of the input.
    */
-  minLength?: number
+  max?: number
 
   /**
-   * The maximum number of characters in Input.
+   * The precision of the input value.
    */
-  maxLength?: number
+  precision?: number
+
+  /**
+   * The number to which the current value is increased or decreased
+   */
+  step?: number
 
   /**
    * Callback when user input.
    */
-  onChange?: ChangeEventHandler
+  onChange?: (value: string | number | null) => void
+  ;
 }

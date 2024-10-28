@@ -16,31 +16,27 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Input as AntInput } from 'antd'
+import { InputNumber as AntInputNumber } from 'antd'
 import { ReactElement } from 'react'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput.tsx'
-import { Icon } from '../Icon'
-import { InputProps } from './props.ts'
-import { Type } from './types.ts'
+import { Appearance } from '../BaseInput/types.ts'
+import { InputNumberProps } from './props.ts'
+import styles from './inputNumber.module.css'
 
 export const defaults = {
   ...baseInputDefaults,
-  htmlType: Type.Text,
 }
 
-const DEFAULT_ICON_SIZE = 12 as never
-
 /**
- * A UI element to insert text content in a form.
+ * A UI element to insert number content in a form.
  *
- * @link https://ant.design/components/input
- * @returns {Input} Input component
+ * @link https://ant.design/components/InputNumber
+ * @returns {InputNumber} InputNumber component
  */
-export const Input = (
+export const InputNumber = (
   {
     appearance = defaults.type,
-    type = defaults.htmlType,
     value,
     defaultValue,
     isDisabled,
@@ -50,35 +46,31 @@ export const Input = (
     inputRef,
     onChange,
     placeholder,
-    iconLeft,
-    iconRight,
-    allowClear,
-    maxLength,
-    minLength,
-  }: InputProps
-) : ReactElement => {
+    min,
+    max,
+    step,
+    precision,
+  }: InputNumberProps) : ReactElement => {
   return (
     <BaseInput
-      allowClear={allowClear}
       appearance={appearance}
-      component={AntInput}
+      className={styles.inputNumber}
+      component={AntInputNumber}
       defaultValue={defaultValue}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}
       isFullWidth={isFullWidth}
       isReadOnly={isReadOnly}
-      maxLength={maxLength}
-      minLength={minLength}
+      max={max}
+      min={min}
       placeholder={placeholder}
-      prefix={iconLeft && <Icon component={iconLeft} size={DEFAULT_ICON_SIZE} />}
-      suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
-      type={type}
+      precision={precision}
+      step={step}
       value={value}
       onChange={onChange}
     />
   )
 }
 
-Input.Type = BaseInput.Appearance
-Input.HTMLType = Type
+InputNumber.Type = Appearance

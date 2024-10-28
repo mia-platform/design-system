@@ -16,34 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.input {
-  width: auto;
-  font-size: var(--typography-bodyS-fontSize, 14px) !important;
-  line-height: var(--typography-bodyS-lineHeight, 16px) !important;
-
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-.readonly {
-  border: none;
-  background: transparent;
-  pointer-events: none;
-}
-
-.hidden {
-  display: none;
-}
-
-.disabled {
-  border-color: var(--palette-action-disabled-bold, #E5E5E5) !important;
-
-  & .inputPrefix {
-    color:  var(--palette-text-neutral-subtler, #ACACAC);
-  }
-  & .inputSuffix {
-    color:  var(--palette-text-neutral-subtler, #ACACAC);
-  }
+export enum Appearance {
+  Outlined = 'outlined',
+  Borderless = 'borderless'
 }
