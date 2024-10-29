@@ -1,5 +1,20 @@
 .switchWrapper {
   display: flex;
-  align-items: center;
-  gap: var(--spacing-gap-md, 12px);
+  flex-direction: column;
+  gap: var(--spacing-gap-xs, 4px);
+
+  .switchTextWrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-gap-md, 12px);
+  }
+
+  .switchDescription {
+    padding-right: var(--spacing-padding-sm, 8px);
+    padding-left: calc(var(--spacing-padding-sm, 8px) + var(--spacing-padding-3xl, 48px));
+
+    &.small {
+      padding-left: calc(var(--spacing-padding-sm, 8px) + var(--spacing-padding-2xl, 32px));
+    }
+  }
 }

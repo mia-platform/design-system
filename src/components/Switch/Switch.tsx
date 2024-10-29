@@ -16,9 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement, useMemo } from 'react'
 import { Switch as AntSwitch } from 'antd'
-import { ReactElement } from 'react'
 import type { SwitchSize } from 'antd/es/switch'
+import classNames from 'classnames'
 
 import { BodyS } from '../Typography/BodyX/BodyS'
 import { Size } from './Switch.types'
@@ -27,6 +28,9 @@ import styles from './Switch.module.css'
 
 const {
   switchWrapper,
+  switchTextWrapper,
+  switchDescription,
+  small: smallSwitch,
 } = styles
 
 export const defaults = {
@@ -41,7 +45,10 @@ const antSizeRemapping = {
   [Size.Small]: 'small' as SwitchSize,
 }
 
+// TODO: adapt tokens for different states (disabled, etc.)
+
 export const Switch = ({
+  description,
   isChecked,
   isInitiallyChecked = defaults.isInitiallyChecked,
   isDisabled = defaults.isDisabled,
@@ -51,19 +58,32 @@ export const Switch = ({
   size = defaults.size,
   text,
 } : SwitchProps) : ReactElement => {
+  const descriptionClassName = useMemo(() => classNames([
+    switchDescription,
+    size === Size.Small && smallSwitch,
+  ]), [size])
+
   return (
     <div className={switchWrapper}>
-      <AntSwitch
-        checked={isChecked}
-        defaultChecked={isInitiallyChecked}
-        disabled={isDisabled}
-        loading={isLoading}
-        size={antSizeRemapping[size]}
-        onChange={onChange}
-        onClick={onClick}
-      />
+      <div className={switchTextWrapper}>
+        <AntSwitch
+          checked={isChecked}
+          defaultChecked={isInitiallyChecked}
+          disabled={isDisabled}
+          loading={isLoading}
+          size={antSizeRemapping[size]}
+          onChange={onChange}
+          onClick={onClick}
+        />
+        {text && <BodyS>{text}</BodyS>}
+      </div>
       {
-        text && <BodyS>{text}</BodyS>
+        text && description && (
+          <div className={descriptionClassName}>
+            <BodyS>{description}</BodyS>
+          </div>
+        )
       }
-    </div>)
+    </div>
+  )
 }

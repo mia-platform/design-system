@@ -25,9 +25,12 @@ const meta = {
   component: Switch,
   args: {
     ...defaults,
+    description: 'Some description',
     text: 'Some text',
   },
   argTypes: {
+    description: { type: 'string' },
+    text: { type: 'string' },
     onClick: { control: false },
     onChange: { control: false },
   },

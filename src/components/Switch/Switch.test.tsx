@@ -73,6 +73,19 @@ describe('Switch', () => {
       expect(screen.getByRole('switch')).toBeInTheDocument()
       expect(screen.getByText('Switch')).toBeInTheDocument()
     })
+
+    it('renders text and description', () => {
+      render(<Switch description="Switch description" text="Switch text" />)
+      expect(screen.getByRole('switch')).toBeInTheDocument()
+      expect(screen.getByText('Switch text')).toBeInTheDocument()
+      expect(screen.getByText('Switch description')).toBeInTheDocument()
+    })
+
+    it('ignores description if text is not set', () => {
+      render(<Switch description="Switch description" />)
+      expect(screen.getByRole('switch')).toBeInTheDocument()
+      expect(screen.queryByText('Switch description')).not.toBeInTheDocument()
+    })
   })
 
   describe('performs interactions correctly', () => {

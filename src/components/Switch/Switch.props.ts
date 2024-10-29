@@ -24,6 +24,12 @@ import { Size } from './Switch.types'
 export type SwitchProps = {
 
     /**
+     * Additional description of the switch, to be rendered below the switch `text`.
+     * Is ignored if the `text` prop is not provided.
+     */
+    description?: ReactNode,
+
+    /**
      * Determines whether the switch is checked.
      */
     isChecked?: boolean,
@@ -34,9 +40,7 @@ export type SwitchProps = {
     isDisabled?: boolean,
 
     /**
-     * Determines whether the switch is checked on its first render.
-     * It is overridden by the isChecked prop, when present.
-     * Defaults to false.
+     * Determines whether the switch is in loading state. Defaults to false.
      */
     isInitiallyChecked?: boolean,
 
