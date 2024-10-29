@@ -13,8 +13,8 @@
 
   :global(.mia-platform-radio-wrapper) {
     align-items: flex-start;
-    &:global(.mia-platform-radio-wrapper-checked):not:global(.mia-platform-radio-wrapper-disabled)
-      {
+    &:global(.mia-platform-radio-wrapper-checked):not(:global(.mia-platform-radio-wrapper-disabled))
+    {
       :global(.mia-platform-radio-inner) {
         border-color: var(--palette-action-primary-default, #1261e4);
         background-color: white;
@@ -24,10 +24,10 @@
       }
     }
 
-    /* disable */
     
   }
   
+  /* disable */
   :global(.mia-platform-radio-wrapper-disabled) {
     :global(.mia-platform-typography) {
       color: var(--palette-text-neutral-subtler, #ACACAC);

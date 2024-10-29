@@ -16,4 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export { Radio } from './Radio'
+export { GroupRadio } from './GroupRadio'

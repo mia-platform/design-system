@@ -25,12 +25,12 @@ import DividerTheme from '../Divider/Divider.theme'
 import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
 import InputTheme from '../Input/Input.theme.ts'
 import MenuTheme from '../Menu/Menu.theme'
+import RadioTheme from '../GroupRadio/Radio.theme.ts'
 import TableTheme from '../Table/Table.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from './ThemeProvider.props'
 import TreeTheme from '../Tree/Tree.theme'
 import TypographyTheme from '../Typography/Typography.theme'
-import RadioTheme from '../Radio/Radio.theme.ts'
 
 const ANT_PREFIX = 'mia-platform'
 

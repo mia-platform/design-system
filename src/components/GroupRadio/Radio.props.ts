@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 
 export type RadioProps = {
 
@@ -7,12 +6,12 @@ export type RadioProps = {
    */
   label: string;
 
+  value: string | number | boolean;
+
   /**
    * The secondary content that goes underneath the Radio
    */
-  description?: ReactNode;
-
-  value: string | number | boolean;
+  description?: string;
 
   /**
    * Specifies whether the radio is selected
