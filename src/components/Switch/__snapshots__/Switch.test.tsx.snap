@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Switch renders checked loading switch 1`] = `
+exports[`Switch renders states correctly renders checked loading state 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
@@ -46,7 +46,7 @@ exports[`Switch renders checked loading switch 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Switch renders disabled checked switch 1`] = `
+exports[`Switch renders states correctly renders disabled checked state 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
@@ -72,7 +72,7 @@ exports[`Switch renders disabled checked switch 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Switch renders unchecked loading switch 1`] = `
+exports[`Switch renders states correctly renders unchecked loading state 1`] = `
 <DocumentFragment>
   <button
     aria-checked="false"
