@@ -6,15 +6,6 @@ import { Appearance } from './types.ts'
 export type BaseInputProps = {
 
   /**
-   * The input content value.
-   */
-  value?: unknown
-
-  /**
-   */
-  defaultValue?: unknown
-
-  /**
    * The placeholder for the input.
    */
   placeholder?: string

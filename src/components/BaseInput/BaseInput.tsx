@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ComponentType, ReactElement, useMemo } from 'react'
+import { ComponentType, ReactElement, ReactNode, useMemo } from 'react'
 import { InputProps as AntInputProps } from 'antd'
 import classnames from 'classnames'
 
@@ -33,7 +33,7 @@ type CommonAntInputProps =
   {
     disabled?: boolean
     className?: string
-    placeholder?: string
+    placeholder?: ReactNode | string
     status?: AntInputProps['status']
     variant?: AntInputProps['variant']
   }
@@ -44,8 +44,6 @@ export const BaseInput = <
     component: Component,
     className: classNameProp,
     appearance,
-    value,
-    defaultValue,
     isDisabled,
     isReadOnly,
     isFullWidth,
@@ -68,12 +66,10 @@ export const BaseInput = <
   return (
     <Component
       className={className}
-      defaultValue={defaultValue}
       disabled={isDisabled}
       placeholder={placeholder}
       ref={inputRef}
       status={isError ? 'error' : undefined}
-      value={value}
       variant={appearance}
       {...other as unknown as ComponentProps}
     />
