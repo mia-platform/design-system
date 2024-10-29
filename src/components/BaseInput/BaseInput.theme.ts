@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ComponentsTheme } from '../ThemeProvider/Ant.tsx'
+import { ComponentsTheme } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
 /**

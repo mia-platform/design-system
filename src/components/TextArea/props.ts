@@ -18,7 +18,7 @@
 
 import { ChangeEventHandler } from 'react'
 
-import { BaseInputProps } from '../BaseInput/props.ts'
+import { BaseInputProps } from '../BaseInput/props'
 
 export type TextAreaProps = BaseInputProps & {
 

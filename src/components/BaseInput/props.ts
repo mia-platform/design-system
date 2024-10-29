@@ -1,7 +1,7 @@
 import { InputRef } from 'antd'
 import { Ref } from 'react'
 
-import { Appearance } from './types.ts'
+import { Appearance } from './types'
 
 export type BaseInputProps = {
 

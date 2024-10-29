@@ -20,8 +20,8 @@ import { ComponentType, ReactElement, ReactNode, useMemo } from 'react'
 import { InputProps as AntInputProps } from 'antd'
 import classnames from 'classnames'
 
-import { Appearance } from './types.ts'
-import { BaseInputProps } from './props.ts'
+import { Appearance } from './types'
+import { BaseInputProps } from './props'
 import styles from './baseInput.module.css'
 
 export const defaults = {

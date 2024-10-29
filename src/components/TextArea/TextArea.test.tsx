@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { TextArea } from './TextArea.tsx'
-import { render } from '../../test-utils.tsx'
+import { TextArea } from './TextArea'
+import { render } from '../../test-utils'
 
 describe('TextArea Component', () => {
   beforeEach(() => {

@@ -18,9 +18,9 @@
 
 import { ChangeEventHandler } from 'react'
 
-import { BaseInputProps } from '../BaseInput/props.ts'
-import { IconComponent } from '../Icon/Icon.props.ts'
-import { Type } from './types.ts'
+import { BaseInputProps } from '../BaseInput/props'
+import { IconComponent } from '../Icon/Icon.props'
+import { Type } from './types'
 
 export type InputProps = BaseInputProps & {
 

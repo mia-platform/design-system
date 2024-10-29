@@ -18,8 +18,8 @@
 
 import { FiSearch } from 'react-icons/fi'
 
-import { fireEvent, render, screen } from '../../test-utils.tsx'
-import { Input } from './Input.tsx'
+import { fireEvent, render, screen } from '../../test-utils'
+import { Input } from './Input'
 
 describe('Input Component', () => {
   beforeEach(() => {

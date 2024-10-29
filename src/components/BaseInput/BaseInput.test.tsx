@@ -18,8 +18,8 @@
 
 import { Input } from 'antd'
 
-import { BaseInput } from './BaseInput.tsx'
-import { render } from '../../test-utils.tsx'
+import { BaseInput } from './BaseInput'
+import { render } from '../../test-utils'
 
 describe('BaseInput  Component', () => {
   beforeEach(() => {

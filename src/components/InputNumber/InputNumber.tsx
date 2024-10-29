@@ -19,9 +19,9 @@
 import { InputNumber as AntInputNumber } from 'antd'
 import { ReactElement } from 'react'
 
-import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput.tsx'
-import { Appearance } from '../BaseInput/types.ts'
-import { InputNumberProps } from './props.ts'
+import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
+import { Appearance } from '../BaseInput/types'
+import { InputNumberProps } from './props'
 import styles from './inputNumber.module.css'
 
 export const defaults = {

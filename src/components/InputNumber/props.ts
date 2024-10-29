@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BaseInputProps } from '../BaseInput/props.ts'
+import { BaseInputProps } from '../BaseInput/props'
 
 export type InputNumberProps = BaseInputProps & {
 

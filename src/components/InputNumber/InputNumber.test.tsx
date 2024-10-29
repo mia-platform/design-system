@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { InputNumber } from './InputNumber.tsx'
-import { render } from '../../test-utils.tsx'
+import { InputNumber } from './InputNumber'
+import { render } from '../../test-utils'
 
 describe('InputNumber Component', () => {
   beforeEach(() => {

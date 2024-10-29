@@ -19,9 +19,9 @@
 import { Input as AntInput } from 'antd'
 import { ReactElement } from 'react'
 
-import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput.tsx'
-import { Appearance } from '../BaseInput/types.ts'
-import { TextAreaProps } from './props.ts'
+import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
+import { Appearance } from '../BaseInput/types'
+import { TextAreaProps } from './props'
 
 export const defaults = {
   ...baseInputDefaults,

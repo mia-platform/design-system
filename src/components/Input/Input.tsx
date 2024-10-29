@@ -19,10 +19,10 @@
 import { Input as AntInput } from 'antd'
 import { ReactElement } from 'react'
 
-import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput.tsx'
+import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
 import { Icon } from '../Icon'
-import { InputProps } from './props.ts'
-import { Type } from './types.ts'
+import { InputProps } from './props'
+import { Type } from './types'
 
 export const defaults = {
   ...baseInputDefaults,
