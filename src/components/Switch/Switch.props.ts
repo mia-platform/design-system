@@ -17,6 +17,7 @@
  */
 
 import { SwitchChangeEventHandler, SwitchClickEventHandler } from 'antd/es/switch'
+import { ReactNode } from 'react'
 
 import { Size } from './Switch.types'
 
@@ -47,15 +48,24 @@ export type SwitchProps = {
     /**
     * Function that is invoked when the switch state is changed.
     */
+
+   // TODO: check this type (weird representation in storybook)
     onChange?: SwitchChangeEventHandler
 
     /**
     * Function that is invoked when the switch is clicked.
     */
+
+   // TODO: check this type (weird representation in storybook)
     onClick?: SwitchClickEventHandler,
 
     /**
      * Determines the switch size. Can be set to `large` or `small`. Defaults to `large`.
      */
     size?: Size,
+
+    /**
+     * Text to be displayed next to the switch.
+     */
+    text?: ReactNode
 }

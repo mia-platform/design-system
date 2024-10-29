@@ -67,6 +67,14 @@ describe('Switch', () => {
     })
   })
 
+  describe('renders text correctly', () => {
+    it('renders simple text', () => {
+      render(<Switch text="Switch" />)
+      expect(screen.getByRole('switch')).toBeInTheDocument()
+      expect(screen.getByText('Switch')).toBeInTheDocument()
+    })
+  })
+
   describe('performs interactions correctly', () => {
     it('calls onClick when the switch is clicked', async() => {
       const onClick = jest.fn()

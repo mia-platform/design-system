@@ -20,8 +20,14 @@ import { Switch as AntSwitch } from 'antd'
 import { ReactElement } from 'react'
 import type { SwitchSize } from 'antd/es/switch'
 
+import { BodyS } from '../Typography/BodyX/BodyS'
 import { Size } from './Switch.types'
 import { SwitchProps } from './Switch.props'
+import styles from './Switch.module.css'
+
+const {
+  switchWrapper,
+} = styles
 
 export const defaults = {
   isDisabled: false,
@@ -43,15 +49,21 @@ export const Switch = ({
   onChange,
   onClick,
   size = defaults.size,
+  text,
 } : SwitchProps) : ReactElement => {
   return (
-    <AntSwitch
-      checked={isChecked}
-      defaultChecked={isInitiallyChecked}
-      disabled={isDisabled}
-      loading={isLoading}
-      size={antSizeRemapping[size]}
-      onChange={onChange}
-      onClick={onClick}
-    />)
+    <div className={switchWrapper}>
+      <AntSwitch
+        checked={isChecked}
+        defaultChecked={isInitiallyChecked}
+        disabled={isDisabled}
+        loading={isLoading}
+        size={antSizeRemapping[size]}
+        onChange={onChange}
+        onClick={onClick}
+      />
+      {
+        text && <BodyS>{text}</BodyS>
+      }
+    </div>)
 }
