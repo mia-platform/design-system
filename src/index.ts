@@ -24,6 +24,7 @@ import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
 import { Dropdown } from './components/Dropdown'
 import { Icon } from './components/Icon'
+import { Input } from './components/Input'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
 import { SegmentedControl } from './components/SegmentedControl'
@@ -44,6 +45,7 @@ export {
   Drawer,
   Dropdown,
   Icon,
+  Input,
   Menu,
   Modal,
   SegmentedControl,
