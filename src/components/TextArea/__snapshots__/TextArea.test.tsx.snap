@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea Component renders correctly 1`] = `
+<DocumentFragment>
+  <textarea
+    class="mia-platform-input mia-platform-input-outlined input fullWidth"
+  />
+</DocumentFragment>
+`;

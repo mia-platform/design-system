@@ -23,7 +23,7 @@ import { DEFAULT_COLOR, DEFAULT_FONT_FAMILY, DEFAULT_FONT_SIZE } from './utils/t
 import ButtonTheme from '../Button/Button.theme'
 import DividerTheme from '../Divider/Divider.theme'
 import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
-import InputTheme from '../Input/Input.theme.ts'
+import InputTheme from '../BaseInput/BaseInput.theme'
 import MenuTheme from '../Menu/Menu.theme'
 import TableTheme from '../Table/Table.theme'
 import Theme from '../../themes/schema'

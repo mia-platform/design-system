@@ -16,11 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum Type {
-  Text = 'text',
-  Textarea = 'textarea',
-  Number = 'number',
-  Password = 'password',
-  Search = 'search',
-  Hidden = 'hidden',
-}
+export { BaseInput } from './BaseInput'

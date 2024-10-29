@@ -16,11 +16,42 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum Type {
-  Text = 'text',
-  Textarea = 'textarea',
-  Number = 'number',
-  Password = 'password',
-  Search = 'search',
-  Hidden = 'hidden',
+import { BaseInputProps } from '../BaseInput/props'
+
+export type InputNumberProps = BaseInputProps & {
+
+  /**
+   * The input content value.
+   */
+  value?: number
+
+  /**
+   */
+  defaultValue?: number
+
+  /**
+   * The min value of the input.
+   */
+  min?: number
+
+  /**
+   * The max value of the input.
+   */
+  max?: number
+
+  /**
+   * The precision of the input value.
+   */
+  precision?: number
+
+  /**
+   * The number to which the current value is increased or decreased
+   */
+  step?: number
+
+  /**
+   * Callback when user input.
+   */
+  onChange?: (value: string | number | null) => void
+  ;
 }

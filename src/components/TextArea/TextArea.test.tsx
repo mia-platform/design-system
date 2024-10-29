@@ -16,11 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum Type {
-  Text = 'text',
-  Textarea = 'textarea',
-  Number = 'number',
-  Password = 'password',
-  Search = 'search',
-  Hidden = 'hidden',
-}
+import { TextArea } from './TextArea'
+import { render } from '../../test-utils'
+
+describe('TextArea Component', () => {
+  beforeEach(() => {
+    jest.resetAllMocks()
+  })
+
+  test('renders correctly', () => {
+    const { asFragment } = render(<TextArea />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+})

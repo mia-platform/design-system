@@ -16,11 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum Type {
-  Text = 'text',
-  Textarea = 'textarea',
-  Number = 'number',
-  Password = 'password',
-  Search = 'search',
-  Hidden = 'hidden',
+
+.inputNumber {
+  & :global(.mia-platform-input-number-handler-wrap){
+    width: 32px!important;
+  }
+  & :global(.mia-platform-input-number-handler){
+    height: 50%!important;
+  }
 }

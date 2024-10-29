@@ -20,27 +20,22 @@ import { Input as AntInput } from 'antd'
 import { ReactElement } from 'react'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
-import { Icon } from '../Icon'
-import { InputProps } from './props'
-import { Type } from './types'
+import { Appearance } from '../BaseInput/types'
+import { TextAreaProps } from './props'
 
 export const defaults = {
   ...baseInputDefaults,
-  htmlType: Type.Text,
 }
 
-const DEFAULT_ICON_SIZE = 12 as never
-
 /**
- * A UI element to insert text content in a form.
+ * A UI element to insert long text content in a form.
  *
- * @link https://ant.design/components/input
- * @returns {Input} Input component
+ * @link https://ant.design/components/TextArea
+ * @returns {TextArea} TextArea component
  */
-export const Input = (
+export const TextArea = (
   {
     appearance = defaults.type,
-    type = defaults.htmlType,
     value,
     defaultValue,
     isDisabled,
@@ -50,18 +45,16 @@ export const Input = (
     inputRef,
     onChange,
     placeholder,
-    iconLeft,
-    iconRight,
     allowClear,
-    maxLength,
     minLength,
-  }: InputProps
-) : ReactElement => {
+    maxLength,
+    rows,
+  }: TextAreaProps) : ReactElement => {
   return (
     <BaseInput
       allowClear={allowClear}
       appearance={appearance}
-      component={AntInput}
+      component={AntInput.TextArea}
       defaultValue={defaultValue}
       inputRef={inputRef}
       isDisabled={isDisabled}
@@ -71,14 +64,11 @@ export const Input = (
       maxLength={maxLength}
       minLength={minLength}
       placeholder={placeholder}
-      prefix={iconLeft && <Icon component={iconLeft} size={DEFAULT_ICON_SIZE} />}
-      suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
-      type={type}
+      rows={rows}
       value={value}
       onChange={onChange}
     />
   )
 }
 
-Input.Type = BaseInput.Appearance
-Input.HTMLType = Type
+TextArea.Type = Appearance

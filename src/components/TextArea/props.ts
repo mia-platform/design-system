@@ -19,25 +19,8 @@
 import { ChangeEventHandler } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
-import { IconComponent } from '../Icon/Icon.props'
-import { Type } from './types'
 
-export type InputProps = BaseInputProps & {
-
-  /**
-   * The html type of Input.
-   */
-  type?: Type
-
-  /**
-   * The left icon for the Input.
-   */
-  iconLeft?: IconComponent
-
-  /**
-   * The right icon for the Input.
-   */
-  iconRight?: IconComponent
+export type TextAreaProps = BaseInputProps & {
 
   /**
    * The input content value.
@@ -45,7 +28,6 @@ export type InputProps = BaseInputProps & {
   value?: string
 
   /**
-   * The input default value
    */
   defaultValue?: string
 
@@ -63,6 +45,16 @@ export type InputProps = BaseInputProps & {
    * The maximum number of characters in Input.
    */
   maxLength?: number
+
+  /**
+   * The number of rows for the input.
+   */
+  rows?: number
+
+  /**
+   * Enables auto size feature.
+   */
+  autoSize?: boolean | {minRows?: number; maxRows?: number}
 
   /**
    * Callback when user input.
