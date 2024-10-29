@@ -30,6 +30,7 @@ import Theme from '../../themes/schema'
 import { ThemeProviderProps } from './ThemeProvider.props'
 import TreeTheme from '../Tree/Tree.theme'
 import TypographyTheme from '../Typography/Typography.theme'
+import RadioTheme from '../Radio/Radio.theme.ts'
 
 const ANT_PREFIX = 'mia-platform'
 
@@ -103,6 +104,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
     Input: InputTheme({ palette, shape, typography, spacing }),
+    Radio: RadioTheme({ palette, shape, typography, spacing }),
   },
 })
 

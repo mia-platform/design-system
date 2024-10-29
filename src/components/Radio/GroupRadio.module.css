@@ -1,0 +1,8 @@
+.groupRadio {
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gap-lg, 16px)
+}
