@@ -51,7 +51,7 @@ export const Default: Story = {
 export const Borderless: Story = {
   args: {
     options,
-    appearance: Search.Type.Borderless,
+    appearance: Search.Appearance.Borderless,
   },
 }
 

@@ -94,4 +94,4 @@ export const Search = <ValueType, >(
   )
 }
 
-Search.Type = Appearance
+Search.Appearance = Appearance
