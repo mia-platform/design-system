@@ -15,8 +15,8 @@ export type GroupRadioChangeEvent = {
 };
 
 export type GroupRadioProps = {
+  options: GroupRadioOption[];
   defaultValue?: string | number | boolean;
   disabled?: boolean;
-  options: GroupRadioOption[];
   onChange?: (changeEvent: GroupRadioChangeEvent) => void;
 };
