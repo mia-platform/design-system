@@ -1,9 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Switch renders states correctly renders checked disabled state 1`] = `
+<DocumentFragment>
+  <div
+    class="switchComponent"
+  >
+    <div
+      class="switchTextWrapper"
+    >
+      <button
+        aria-checked="true"
+        class="mia-platform-switch mia-platform-switch-checked mia-platform-switch-disabled"
+        disabled=""
+        role="switch"
+        type="button"
+      >
+        <div
+          class="mia-platform-switch-handle"
+        />
+        <span
+          class="mia-platform-switch-inner"
+        >
+          <span
+            class="mia-platform-switch-inner-checked"
+          />
+          <span
+            class="mia-platform-switch-inner-unchecked"
+          />
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Switch renders states correctly renders checked loading state 1`] = `
 <DocumentFragment>
   <div
-    class="switchWrapper"
+    class="switchComponent"
   >
     <div
       class="switchTextWrapper"
@@ -54,44 +88,10 @@ exports[`Switch renders states correctly renders checked loading state 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Switch renders states correctly renders disabled checked state 1`] = `
+exports[`Switch renders states correctly renders default loading state 1`] = `
 <DocumentFragment>
   <div
-    class="switchWrapper"
-  >
-    <div
-      class="switchTextWrapper"
-    >
-      <button
-        aria-checked="true"
-        class="mia-platform-switch mia-platform-switch-checked mia-platform-switch-disabled"
-        disabled=""
-        role="switch"
-        type="button"
-      >
-        <div
-          class="mia-platform-switch-handle"
-        />
-        <span
-          class="mia-platform-switch-inner"
-        >
-          <span
-            class="mia-platform-switch-inner-checked"
-          />
-          <span
-            class="mia-platform-switch-inner-unchecked"
-          />
-        </span>
-      </button>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Switch renders states correctly renders unchecked loading state 1`] = `
-<DocumentFragment>
-  <div
-    class="switchWrapper"
+    class="switchComponent"
   >
     <div
       class="switchTextWrapper"

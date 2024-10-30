@@ -27,7 +27,7 @@ import { SwitchProps } from './Switch.props'
 import styles from './Switch.module.css'
 
 const {
-  switchWrapper,
+  switchComponent,
   switchTextWrapper,
   switchDescription,
   small: smallSwitch,
@@ -44,8 +44,6 @@ const antSizeRemapping = {
   [Size.Large]: 'default' as SwitchSize,
   [Size.Small]: 'small' as SwitchSize,
 }
-
-// TODO: adapt tokens for different states (disabled, etc.)
 
 export const Switch = ({
   description,
@@ -64,7 +62,7 @@ export const Switch = ({
   ]), [size])
 
   return (
-    <div className={switchWrapper}>
+    <div className={switchComponent}>
       <div className={switchTextWrapper}>
         <AntSwitch
           checked={isChecked}

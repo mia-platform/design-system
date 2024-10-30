@@ -22,13 +22,13 @@ describe('Switch', () => {
       expect(screen.getByRole('switch')).toBeChecked()
     })
 
-    it('renders disabled state', () => {
+    it('renders default disabled state', () => {
       render(<Switch isDisabled={true} />)
       expect(screen.getByRole('switch')).toBeInTheDocument()
       expect(screen.getByRole('switch')).toBeDisabled()
     })
 
-    it('renders disabled checked state', () => {
+    it('renders checked disabled state', () => {
       const { asFragment } = render(<Switch isChecked={true} isDisabled={true} />)
       expect(screen.getByRole('switch')).toBeInTheDocument()
       expect(screen.getByRole('switch')).toBeDisabled()
@@ -36,7 +36,7 @@ describe('Switch', () => {
       expect(asFragment()).toMatchSnapshot()
     })
 
-    it('renders unchecked loading state', () => {
+    it('renders default loading state', () => {
       const { asFragment } = render(<Switch isChecked={false} isLoading={true} />)
       expect(screen.getByRole('switch')).toBeInTheDocument()
       expect(screen.getByRole('switch')).toBeDisabled()

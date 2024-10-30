@@ -1,4 +1,4 @@
-.switchWrapper {
+.switchComponent {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-gap-xs, 4px);
@@ -7,14 +7,69 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-gap-md, 12px);
+    color: var(--palette-text-neutral-main, #636363);
   }
 
   .switchDescription {
     padding-right: var(--spacing-padding-sm, 8px);
     padding-left: calc(var(--spacing-padding-sm, 8px) + var(--spacing-padding-3xl, 48px));
+    color: var(--palette-text-neutral-main, #636363);
 
     &.small {
       padding-left: calc(var(--spacing-padding-sm, 8px) + var(--spacing-padding-2xl, 32px));
+    }
+  }
+
+  :global(.mia-platform-switch) {
+    background: var(--palette-action-secondary-bold, #cdcdcd);
+
+    &:hover {
+       background: var(--palette-action-secondary-bolder, #acacac);
+    }
+
+    /* Disabled switch */
+    
+    &:global(.mia-platform-switch-disabled) {
+      opacity: 1;
+      background: var(--palette-action-disabled-main, #f2f2f2);
+
+      &:hover {
+        background: var(--palette-action-disabled-main, #f2f2f2);
+      }
+
+      :global(.mia-platform-switch-loading-icon) {
+        color: var(--palette-action-disabled-main, #f2f2f2);
+      }
+    }
+
+    /* Checked switch */
+
+    &:global(.mia-platform-switch-checked) {
+      background: var(--palette-action-primary-default, #1261e4);
+
+      &:hover {
+        background: var(--palette-action-primary-hover, #1890ff);
+      }
+
+      /* Disabled and checked switch */
+
+      &:global(.mia-platform-switch-disabled) {
+        background: var(--palette-background-primary-0, #aad1fb);
+
+        &:hover {
+          background: var(--palette-background-primary-0, #aad1fb);
+        }
+
+        :global(.mia-platform-switch-loading-icon) {
+          color: var(--palette-background-primary-0, #aad1fb);
+        }
+      }
+    }
+
+    /* Switch handle */
+
+    :global(.mia-platform-switch-handle::before) {
+      background: var(--palette-action-secondary-main, #fff);
     }
   }
 }

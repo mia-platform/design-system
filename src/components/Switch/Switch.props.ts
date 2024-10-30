@@ -30,22 +30,22 @@ export type SwitchProps = {
     description?: ReactNode,
 
     /**
-     * Determines whether the switch is checked.
+     * Allows you to control whether the switch is checked.
      */
     isChecked?: boolean,
 
     /**
-     * Determines whether the switch is disabled. Defaults to false.
+     * Allows you to control whether the switch is disabled. Defaults to false.
      */
     isDisabled?: boolean,
 
     /**
-     * Determines whether the switch is in loading state. Defaults to false.
+     * Allows you to control whether the switch is checked on its first render. Defaults to false.
      */
     isInitiallyChecked?: boolean,
 
     /**
-     * Determines whether the switch is in loading state. Defaults to false.
+     * Allows you to control whether the switch is in loading state. Defaults to false.
      */
     isLoading?: boolean,
 
@@ -53,14 +53,12 @@ export type SwitchProps = {
     * Function that is invoked when the switch state is changed.
     */
 
-   // TODO: check this type (weird representation in storybook)
     onChange?: SwitchChangeEventHandler
 
     /**
     * Function that is invoked when the switch is clicked.
     */
 
-   // TODO: check this type (weird representation in storybook)
     onClick?: SwitchClickEventHandler,
 
     /**
