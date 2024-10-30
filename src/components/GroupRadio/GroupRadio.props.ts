@@ -10,13 +10,13 @@ export type GroupRadioOption = {
 };
 
 export type GroupRadioChangeEvent = {
-  value: string | number | boolean | undefined;
-  event?: RadioChangeEvent;
+  value: string | number | boolean;
+  event: RadioChangeEvent;
 };
 
 export type GroupRadioProps = {
   options: GroupRadioOption[];
-  defaultValue?: string | number | boolean;
+  defaultValue: string | number | boolean;
   disabled?: boolean;
   onChange?: (changeEvent: GroupRadioChangeEvent) => void;
 };

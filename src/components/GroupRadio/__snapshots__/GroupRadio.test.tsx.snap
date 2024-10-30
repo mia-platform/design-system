@@ -22,6 +22,7 @@ exports[`GroupRadio renders correctly 1`] = `
                 class="ant-radio ant-wave-target ant-radio-checked"
               >
                 <input
+                  checked=""
                   class="ant-radio-input"
                   type="radio"
                   value="1"
@@ -109,12 +110,13 @@ exports[`GroupRadio renders correctly when disabled 1`] = `
             class="radio"
           >
             <label
-              class="ant-radio-wrapper ant-radio-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+              class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-disabled css-dev-only-do-not-override-5wsri9"
             >
               <span
-                class="ant-radio ant-wave-target ant-radio-disabled"
+                class="ant-radio ant-wave-target ant-radio-checked ant-radio-disabled"
               >
                 <input
+                  checked=""
                   class="ant-radio-input"
                   disabled=""
                   type="radio"
@@ -210,6 +212,7 @@ exports[`GroupRadio renders correctly with default value 1`] = `
                 class="ant-radio ant-wave-target ant-radio-checked"
               >
                 <input
+                  checked=""
                   class="ant-radio-input"
                   type="radio"
                   value="1"
@@ -303,6 +306,7 @@ exports[`GroupRadio renders correctly with descriptions 1`] = `
                 class="ant-radio ant-wave-target ant-radio-checked"
               >
                 <input
+                  checked=""
                   class="ant-radio-input"
                   type="radio"
                   value="1"
@@ -410,12 +414,13 @@ exports[`GroupRadio renders correctly with partially disabled options 1`] = `
             class="radio"
           >
             <label
-              class="ant-radio-wrapper ant-radio-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+              class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-disabled css-dev-only-do-not-override-5wsri9"
             >
               <span
-                class="ant-radio ant-wave-target ant-radio-disabled"
+                class="ant-radio ant-wave-target ant-radio-checked ant-radio-disabled"
               >
                 <input
+                  checked=""
                   class="ant-radio-input"
                   disabled=""
                   type="radio"
@@ -436,7 +441,7 @@ exports[`GroupRadio renders correctly with partially disabled options 1`] = `
                       class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
                       role="paragraph"
                     >
-                      option disabled
+                      disabled option
                     </div>
                   </div>
                 </div>
@@ -449,10 +454,10 @@ exports[`GroupRadio renders correctly with partially disabled options 1`] = `
             class="radio"
           >
             <label
-              class="ant-radio-wrapper ant-radio-wrapper-checked css-dev-only-do-not-override-5wsri9"
+              class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
             >
               <span
-                class="ant-radio ant-wave-target ant-radio-checked"
+                class="ant-radio ant-wave-target"
               >
                 <input
                   class="ant-radio-input"
@@ -474,7 +479,7 @@ exports[`GroupRadio renders correctly with partially disabled options 1`] = `
                       class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
                       role="paragraph"
                     >
-                      option enabled
+                      enabled option
                     </div>
                   </div>
                 </div>
@@ -512,7 +517,7 @@ exports[`GroupRadio renders correctly with partially disabled options 1`] = `
                       class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
                       role="paragraph"
                     >
-                      another option enabled
+                      another enabled option
                     </div>
                   </div>
                 </div>

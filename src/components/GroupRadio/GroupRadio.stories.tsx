@@ -59,7 +59,7 @@ const allOptionsDisabled: GroupRadioOption[] = [
 
 const getArgs = (
   options: GroupRadioOption[],
-  defaultValue?: number,
+  defaultValue: number,
   disabled = false,
 ): GroupRadioProps => ({
   options,
@@ -70,44 +70,32 @@ const getArgs = (
 
 const meta = {
   component: GroupRadio,
-  args: getArgs(baseOptions),
+  args: getArgs(baseOptions, 1),
 } satisfies Meta<typeof GroupRadio>
 
 export default meta
 
 type Story = StoryObj<typeof meta>;
 
-export const WithoutDefaultValue: Story = {}
-
-export const WithDefaultValue: Story = {
-  args: getArgs(baseOptions, 2),
-}
+export const Base: Story = {}
 
 export const WithNonExistentDefaultValue: Story = {
   args: getArgs(baseOptions, 3),
 }
 
 export const WithDescription: Story = {
-  args: getArgs(optionsWithDescription),
+  args: getArgs(optionsWithDescription, 2),
 }
 
 export const Disabled: Story = {
-  args: getArgs(baseOptions, undefined, true),
+  args: getArgs(baseOptions, 1, true),
 }
 
 export const PartiallyDisabled: Story = {
-  args: getArgs(optionsPartiallyDisabled),
-}
-
-export const PartiallyDisabledWithDefault: Story = {
   args: getArgs(optionsPartiallyDisabled, 1),
 }
 
-export const AllOptionsDisabledWithDefault: Story = {
+export const AllOptionsDisabled: Story = {
   args: getArgs(allOptionsDisabled, 1),
-}
-
-export const AllOptionsDisabledWithoutDefault: Story = {
-  args: getArgs(allOptionsDisabled),
 }
 

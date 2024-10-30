@@ -12,11 +12,10 @@ export const Radio = ({
   description,
   disabled,
   value,
-  checked,
 }: RadioProps): ReactElement => {
   return (
     <div className={radio}>
-      <AntRadio checked={checked} disabled={disabled} value={value}>
+      <AntRadio disabled={disabled} value={value}>
         <div className={radioContent}>
           <div className={radioLabel}>
             <BodyS>{label}</BodyS>

@@ -5,12 +5,6 @@
     gap: var(--spacing-gap-sm, 8px);
   }
 
-  .label {
-  }
-
-  .description {
-  }
-
   :global(.mia-platform-radio-wrapper) {
     align-items: flex-start;
     &:global(.mia-platform-radio-wrapper-checked):not(:global(.mia-platform-radio-wrapper-disabled))

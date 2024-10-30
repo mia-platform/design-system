@@ -1,5 +1,5 @@
 import { Radio as AntRadio, RadioChangeEvent } from 'antd'
-import { ReactElement, ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
+import { ReactElement, ReactNode, useMemo, useState } from 'react'
 
 import { GroupRadioProps } from './GroupRadio.props'
 import { Radio } from './components/Radio'
@@ -17,34 +17,12 @@ export const GroupRadio = ({
   options,
   onChange,
 }: GroupRadioProps): ReactElement => {
-  const [value, setValue] = useState<string | number | boolean | undefined>()
-
-  const computeInitialValue = useCallback(() => {
-    let initialValue = options.find(option => option.value === defaultValue)?.value
-    if (defaultValue === undefined && !disabled) {
-      for (const option of options) {
-        if (!option.disabled) {
-          initialValue = option.value
-          break
-        }
-      }
-    }
-    return initialValue
-  }, [defaultValue, disabled, options])
-
-  useEffect(() => {
-    const initialValue = computeInitialValue()
-    setValue(initialValue)
-    if (onChange) {
-      onChange({ value: initialValue })
-    }
-  }, [computeInitialValue, onChange])
+  const [value, setValue] = useState<string | number | boolean >(defaultValue)
 
   const radioOptions = useMemo((): ReactNode => {
     return options.map((option) => (
       <div key={option.value.toString()}>
         <Radio
-          checked={option.value === value}
           description={option.description}
           disabled={option.disabled}
           label={option.label}
@@ -52,7 +30,7 @@ export const GroupRadio = ({
         />
       </div>
     ))
-  }, [options, value])
+  }, [options])
 
   const handleChange = (event: RadioChangeEvent): void => {
     setValue(event.target.value)

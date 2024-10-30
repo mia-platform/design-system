@@ -31,23 +31,20 @@ const optionsWithDescription: GroupRadioOption[] = [
 const partiallyDisabledOptions: GroupRadioOption[] = [
   {
     value: 1,
-    label: 'option disabled',
+    label: 'disabled option',
     disabled: true,
   },
   {
     value: 2,
-    label: 'option enabled',
+    label: 'enabled option',
   },
   {
     value: 3,
-    label: 'another option enabled',
-  }]
+    label: 'another enabled option',
+  },
+]
 
 const baseProps: GroupRadioProps = {
-  options: baseOptions,
-}
-
-const basePropsWithDefault: GroupRadioProps = {
   defaultValue: 1,
   options: baseOptions,
 }
@@ -68,21 +65,27 @@ describe('GroupRadio', () => {
   })
 
   it('renders correctly with descriptions', () => {
-    const { asFragment } = render(<GroupRadio {...{ options: optionsWithDescription }} />)
+    const { asFragment } = render(
+      <GroupRadio {...{ ...baseProps, options: optionsWithDescription }} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders correctly when disabled', () => {
-    const { asFragment } = render(<GroupRadio {...{ ...baseProps, disabled: true }} />)
+    const { asFragment } = render(
+      <GroupRadio {...{ ...baseProps, disabled: true }} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders correctly with partially disabled options', () => {
-    const { asFragment } = render(<GroupRadio {...{ options: partiallyDisabledOptions }} />)
+    const { asFragment } = render(
+      <GroupRadio {...{ ...baseProps, options: partiallyDisabledOptions }} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
-  it('should select first option if no default value is passed as prop and no option is disabled', async() => {
+  it('should invoke onChange with correct value on user selection', async() => {
     const onChange = jest.fn()
     const props: GroupRadioProps = {
       ...baseProps,
@@ -91,76 +94,34 @@ describe('GroupRadio', () => {
 
     render(<GroupRadio {...props} />)
 
-    const radios = screen.getAllByRole('radio')
-    expect(radios).toHaveLength(2)
-    await waitFor(() => expect(onChange).toHaveBeenCalled())
-    expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation]] = onChange.mock.calls
-    expect(invocation.event).toBeUndefined()
-    expect(invocation.value).toEqual(1)
-  })
-
-  it('should select default value if passed as prop', async() => {
-    const onChange = jest.fn()
-    const props: GroupRadioProps = {
-      ...basePropsWithDefault,
-      onChange,
-    }
-
-    render(<GroupRadio {...props} />)
-
-    await waitFor(() => expect(onChange).toHaveBeenCalled())
-    expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation]] = onChange.mock.calls
-    expect(invocation.event).toBeUndefined()
-    expect(invocation.value).toEqual(1)
-  })
-
-  it('should invoke onChange with correct value on user selection', async() => {
-    const onChange = jest.fn()
-    const props: GroupRadioProps = {
-      ...basePropsWithDefault,
-      onChange,
-    }
-
-    render(<GroupRadio {...props} />)
-
-    onChange.mockClear()
-
+    const firstRadio = screen.getByRole('radio', { name: /option 1/ })
     const secondRadio = screen.getByRole('radio', { name: /option 2/ })
+
+    expect(firstRadio).toBeChecked()
+    expect(secondRadio).not.toBeChecked()
+
     userEvent.click(secondRadio)
     await waitFor(() => expect(onChange).toHaveBeenCalled())
+    expect(firstRadio).not.toBeChecked()
+    expect(secondRadio).toBeChecked()
     expect(onChange).toHaveBeenCalledTimes(1)
     const [[invocation1]] = onChange.mock.calls
     expect(invocation1.event.target.value).toEqual(2)
     expect(invocation1.value).toEqual(2)
   })
 
-  it('should select default option and trigger onChange with correct value', async() => {
+  it('should not invoke onChange if an already selected option is clicked', async() => {
     const onChange = jest.fn()
     const props: GroupRadioProps = {
-      ...basePropsWithDefault,
+      ...baseProps,
       onChange,
     }
 
     render(<GroupRadio {...props} />)
 
-    const radios = screen.getAllByRole('radio')
-    expect(radios).toHaveLength(2)
-    await waitFor(() => expect(onChange).toHaveBeenCalled())
-    expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation]] = onChange.mock.calls
-    expect(invocation.event).toBeUndefined()
-    expect(invocation.value).toEqual(1)
-    onChange.mockClear()
-
-    const secondRadio = screen.getByRole('radio', { name: /option 2/ })
-    userEvent.click(secondRadio)
-    await waitFor(() => expect(onChange).toHaveBeenCalled())
-    expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation1]] = onChange.mock.calls
-    expect(invocation1.event.target.value).toEqual(2)
-    expect(invocation1.value).toEqual(2)
+    const radio = screen.getByRole('radio', { name: /option 1/ })
+    userEvent.click(radio)
+    await waitFor(() => expect(onChange).not.toHaveBeenCalled())
   })
 
   it('should prevent selecting any option if the component is disabled', async() => {
@@ -175,90 +136,45 @@ describe('GroupRadio', () => {
 
     const firstRadio = screen.getByRole('radio', { name: /option 1/ })
     const secondRadio = screen.getByRole('radio', { name: /option 2/ })
-    await waitFor(() => expect(onChange).toHaveBeenCalled())
-    expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation]] = onChange.mock.calls
-    expect(invocation.event).toBeUndefined()
-    expect(invocation.value).toEqual(undefined)
 
-    onChange.mockClear()
+    expect(firstRadio).toBeChecked()
+    expect(secondRadio).not.toBeChecked()
 
     userEvent.click(firstRadio)
     await waitFor(() => expect(onChange).not.toHaveBeenCalled())
     userEvent.click(secondRadio)
     await waitFor(() => expect(onChange).not.toHaveBeenCalled())
-  })
-
-  it('should select the first non disabled option and allow selection only of enabled options', async() => {
-    const options: GroupRadioOption[] = [
-      {
-        value: 1,
-        label: 'option disabled',
-        disabled: true,
-      },
-      {
-        value: 2,
-        label: 'option enabled',
-      },
-      {
-        value: 3,
-        label: 'another option enabled',
-      },
-    ]
-    const onChange = jest.fn()
-    const props: GroupRadioProps = {
-      options,
-      onChange,
-    }
-
-    render(<GroupRadio {...props} />)
-
-    // the first enabled option is selected and emit onChange
-    await waitFor(() => expect(onChange).toHaveBeenCalled())
-    expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation]] = onChange.mock.calls
-    expect(invocation.value).toEqual(2)
-    expect(invocation.event).toEqual(undefined)
+    expect(firstRadio).toBeChecked()
+    expect(secondRadio).not.toBeChecked()
   })
 
   it('should allow selection only of enabled options', async() => {
-    const options: GroupRadioOption[] = [
-      {
-        value: 1,
-        label: 'option disabled',
-        disabled: true,
-      },
-      {
-        value: 2,
-        label: 'option enabled',
-      },
-      {
-        value: 3,
-        label: 'another option enabled',
-      },
-    ]
     const onChange = jest.fn()
     const props: GroupRadioProps = {
-      options,
+      options: partiallyDisabledOptions,
+      defaultValue: 2,
       onChange,
     }
+
     render(<GroupRadio {...props} />)
 
-    const secondEnabledOption = screen.getByRole('radio', { name: /another option enabled/ })
-    const disabledRadio = screen.getByRole('radio', { name: /option disabled/ })
+    const enabledOption = screen.getByRole('radio', {
+      name: /another enabled option/,
+    })
+    const disabledOption = screen.getByRole('radio', {
+      name: /disabled option/,
+    })
 
-    onChange.mockClear()
-
-    userEvent.click(secondEnabledOption)
+    userEvent.click(enabledOption)
     await waitFor(() => expect(onChange).toHaveBeenCalled())
     expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation1]] = onChange.mock.calls
-    expect(invocation1.value).toEqual(3)
-    expect(invocation1.event.target.value).toEqual(3)
+    const [[invocation]] = onChange.mock.calls
+    expect(invocation.value).toEqual(3)
+    expect(invocation.event.target.value).toEqual(3)
 
     onChange.mockClear()
 
-    userEvent.click(disabledRadio)
+    userEvent.click(disabledOption)
     await waitFor(() => expect(onChange).not.toHaveBeenCalled())
   })
 })
