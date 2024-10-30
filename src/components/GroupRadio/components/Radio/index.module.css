@@ -23,14 +23,21 @@
         }
       }
     }
-
-    
+    &:hover:not(:global(.mia-platform-radio-wrapper-disabled)) {
+      :global(.mia-platform-radio-inner) {
+        border-color: var(--palette-action-primary-hover, #1890FF);
+      }
+    }
   }
   
   /* disable */
   :global(.mia-platform-radio-wrapper-disabled) {
     :global(.mia-platform-typography) {
       color: var(--palette-text-neutral-subtler, #ACACAC);
+    }
+    :global(.mia-platform-radio-inner) {
+      background-color: var(--palette-action-disabled-main, #F2F2F2);
+      border-color: var(--palette-action-disabled-bolder, #CDCDCD);
     }
   }
 
