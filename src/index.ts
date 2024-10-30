@@ -28,6 +28,7 @@ import { Input } from './components/Input'
 import { InputNumber } from './components/InputNumber'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
+import { RadioGroup } from './components/RadioGroup'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Table } from './components/Table'
 import { Tag } from './components/Tag'
@@ -51,6 +52,7 @@ export {
   InputNumber,
   Menu,
   Modal,
+  RadioGroup,
   SegmentedControl,
   Table,
   Tag,
