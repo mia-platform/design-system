@@ -39,14 +39,13 @@ export const RadioGroup = ({
 
   const radioOptions = useMemo((): ReactNode => {
     return options.map((option) => (
-      <div key={option.value.toString()}>
-        <Radio
-          description={option.description}
-          idDisabled={option.disabled}
-          label={option.label}
-          value={option.value}
-        />
-      </div>
+      <Radio
+        description={option.description}
+        idDisabled={option.disabled}
+        key={option.value.toString()}
+        label={option.label}
+        value={option.value}
+      />
     ))
   }, [options])
 
