@@ -52,13 +52,11 @@ export type SwitchProps = {
     /**
     * Function that is invoked when the switch state is changed.
     */
-
     onChange?: SwitchChangeEventHandler
 
     /**
     * Function that is invoked when the switch is clicked.
     */
-
     onClick?: SwitchClickEventHandler,
 
     /**
