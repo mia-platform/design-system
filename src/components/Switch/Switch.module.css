@@ -27,9 +27,9 @@
        background: var(--palette-action-secondary-bolder, #acacac);
     }
 
-    /* Disabled switch */
+    /* Disabled or loading switch */
     
-    &:global(.mia-platform-switch-disabled) {
+    &:global(.mia-platform-switch-disabled), &:global(.mia-platform-switch-loading) {
       opacity: 1;
       background: var(--palette-action-disabled-main, #f2f2f2);
 
@@ -51,9 +51,9 @@
         background: var(--palette-action-primary-hover, #1890ff);
       }
 
-      /* Disabled and checked switch */
+      /* Disabled or loading checked switch */
 
-      &:global(.mia-platform-switch-disabled) {
+      &:global(.mia-platform-switch-disabled), &:global(.mia-platform-switch-loading){
         background: var(--palette-background-primary-0, #aad1fb);
 
         &:hover {
