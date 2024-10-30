@@ -18,6 +18,7 @@
 
 import { Meta, StoryObj } from '@storybook/react'
 
+import { Size } from './Switch.types'
 import { Switch } from '.'
 import { defaults } from './Switch'
 
@@ -25,8 +26,6 @@ const meta = {
   component: Switch,
   args: {
     ...defaults,
-    description: 'Some description',
-    text: 'Some text',
   },
   argTypes: {
     description: { type: 'string' },
@@ -40,3 +39,87 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const BasicExample: Story = {}
+
+export const CheckedOnFirstRender: Story = {
+  args: {
+    isInitiallyChecked: true,
+  },
+}
+
+export const CheckedState: Story = {
+  args: {
+    isChecked: true,
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
+}
+
+export const CheckedDisabled: Story = {
+  args: {
+    isChecked: true,
+    isDisabled: true,
+  },
+}
+
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+  },
+}
+
+export const CheckedLoading: Story = {
+  args: {
+    isChecked: true,
+    isLoading: true,
+  },
+}
+
+export const WithText: Story = {
+  args: {
+    text: 'Switch with text',
+  },
+}
+
+export const WithTextAndDescription: Story = {
+  args: {
+    text: 'Switch with text',
+    description: 'This is a description of the switch.',
+  },
+}
+
+export const SmallSize: Story = {
+  args: {
+    size: Size.Small,
+  },
+}
+
+export const SmallSizeWithText: Story = {
+  args: {
+    size: Size.Small,
+    text: 'Switch with text',
+  },
+}
+
+export const SmallSizeWithTextAndDescription: Story = {
+  args: {
+    size: Size.Small,
+    text: 'Switch with text',
+    description: 'This is a description of the switch.',
+  },
+}
+
+export const WithOnChange: Story = {
+  args: {
+    onChange: (checked) => alert(`Switch is now ${checked ? 'checked' : 'unchecked'}`),
+  },
+}
+
+export const WithOnClick: Story = {
+  args: {
+    onClick: () => alert('Switch has been clicked'),
+  },
+}
