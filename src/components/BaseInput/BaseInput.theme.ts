@@ -50,6 +50,8 @@ export default ({ palette, spacing, shape }: Partial<Theme>): ComponentsTheme['I
   colorErrorBorderHover: palette?.action?.danger?.hover,
   colorErrorActive: palette?.action?.danger?.default,
   // errorActiveShadow: `0 0 2px rgba(185, 18, 0, 0.5)`,
+  // disabled
+  colorTextDisabled: palette?.action?.disabled?.contrastText,
   // icons
   colorTextQuaternary: palette?.text?.neutral?.subtle,
   colorIcon: palette?.text?.neutral?.subtle,

@@ -16,11 +16,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum Type {
-  Text = 'text',
-  Textarea = 'textarea',
-  Number = 'number',
-  Password = 'password',
-  Search = 'search',
-  Hidden = 'hidden',
+.input {
+  width: auto;
+  font-size: var(--typography-bodyS-fontSize, 14px) !important;
+  line-height: var(--typography-bodyS-lineHeight, 16px) !important;
+  & > input {
+    font-size: var(--typography-bodyS-fontSize, 14px) !important;
+    line-height: var(--typography-bodyS-lineHeight, 16px) !important;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.readonly {
+  border: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
 }

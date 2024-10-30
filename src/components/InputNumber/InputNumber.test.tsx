@@ -16,34 +16,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.input {
-  width: auto;
-  font-size: var(--typography-bodyS-fontSize, 14px) !important;
-  line-height: var(--typography-bodyS-lineHeight, 16px) !important;
+import { InputNumber } from './InputNumber'
+import { render } from '../../test-utils'
 
-}
+describe('InputNumber Component', () => {
+  beforeEach(() => {
+    jest.resetAllMocks()
+  })
 
-.fullWidth {
-  width: 100%;
-}
-
-.readonly {
-  border: none;
-  background: transparent;
-  pointer-events: none;
-}
-
-.hidden {
-  display: none;
-}
-
-.disabled {
-  border-color: var(--palette-action-disabled-bold, #E5E5E5) !important;
-
-  & .inputPrefix {
-    color:  var(--palette-text-neutral-subtler, #ACACAC);
-  }
-  & .inputSuffix {
-    color:  var(--palette-text-neutral-subtler, #ACACAC);
-  }
-}
+  test('renders correctly', () => {
+    const { asFragment } = render(<InputNumber />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+})

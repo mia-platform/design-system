@@ -18,8 +18,8 @@
 
 import { FiSearch } from 'react-icons/fi'
 
-import { fireEvent, render, screen } from '../../test-utils.tsx'
-import { Input } from './Input.tsx'
+import { fireEvent, render, screen } from '../../test-utils'
+import { Input } from './Input'
 
 describe('Input Component', () => {
   beforeEach(() => {
@@ -28,26 +28,6 @@ describe('Input Component', () => {
 
   test('renders correctly', () => {
     const { asFragment } = render(<Input />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('Borderless renders correctly', () => {
-    const { asFragment } = render(<Input appearance={Input.Type.Borderless} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('Read only renders correctly', () => {
-    const { asFragment } = render(<Input isReadOnly />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('Error renders correctly', () => {
-    const { asFragment } = render(<Input isError={true} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('Disabled renders correctly', () => {
-    const { asFragment } = render(<Input isDisabled={true} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
@@ -62,7 +42,7 @@ describe('Input Component', () => {
   })
 
   test('AllowClear renders correctly', () => {
-    const { asFragment } = render(<Input allowClear={true} defaultValue="text" />)
+    const { asFragment } = render(<Input allowClear defaultValue="text" />)
     expect(asFragment()).toMatchSnapshot()
   })
 

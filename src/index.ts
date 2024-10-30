@@ -25,11 +25,13 @@ import { Drawer } from './components/Drawer'
 import { Dropdown } from './components/Dropdown'
 import { Icon } from './components/Icon'
 import { Input } from './components/Input'
+import { InputNumber } from './components/InputNumber'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Table } from './components/Table'
 import { Tag } from './components/Tag'
+import { TextArea } from './components/TextArea/TextArea'
 import { ThemeProvider } from './components/ThemeProvider'
 import { Tooltip } from './components/Tooltip'
 import { Tree } from './components/Tree'
@@ -46,11 +48,13 @@ export {
   Dropdown,
   Icon,
   Input,
+  InputNumber,
   Menu,
   Modal,
   SegmentedControl,
   Table,
   Tag,
+  TextArea,
   ThemeProvider,
   Tooltip,
   Tree,

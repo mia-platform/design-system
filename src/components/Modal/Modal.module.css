@@ -68,11 +68,9 @@
     .body {
       height: 100%;
       display: grid;
-      padding: 0 var(--spacing-padding-xl, 24px);
+      padding: 0;
       transition: grid-template-columns 0.2s ease-in-out;
       will-change: transform;
-      overflow-y: auto;
-      overflow-x: hidden;
     }
 
     .bodyFullWidth {
@@ -89,22 +87,35 @@
 
     .bodyWithAsideOpened {
       grid-template-columns: 65% 35%;
+
+      .content {
+        padding: 0 var(--spacing-padding-sm, 8px) 0 var(--spacing-padding-xl, 24px);
+      }
     }
+
     .bodyWithAsideOpened .aside {
       display: flex;
       animation: 0.2s fadeIn;
     }
 
     .content {
-      width: 100%;
+      /* min-width to prevent both this element (.content) and sibling element (.asideWrapper) to overflow their continers */
+      min-width: 0;
       height: 100%;
       display: flex;
       flex-direction: column;
+      padding: 0 var(--spacing-padding-xl, 24px);
       gap: var(--spacing-gap-xl, 24px);
+      overflow-y: auto;
     }
 
     .contentWrapper {
       gap: var(--spacing-gap-sm, 8px) !important;
+    }
+
+    .asideWrapper {
+      min-height: 0;
+      padding: 0 var(--spacing-padding-xl, 24px) 0 var(--spacing-padding-sm, 8px);
     }
 
     .aside {
@@ -112,14 +123,15 @@
       flex-direction: column;
       background-color: var(--palette-background-neutral-300, #f9f9f9);
       border-radius: var(--shape-border-radius-md, 4px);
-      margin-left: var(--spacing-padding-lg, 16px);
-      padding: var(--spacing-padding-lg, 16px);
+      height: calc(100% - 2 * var(--spacing-padding-lg, 16px));
       gap: var(--spacing-gap-sm, 8px);
       overflow-y: auto;
+      padding: var(--spacing-padding-lg, 16px)
     }
 
     .asideBody {
       overflow-y: auto;
+      padding-right: var(--spacing-padding-sm, 8px)
     }
 
     .asideLabel {

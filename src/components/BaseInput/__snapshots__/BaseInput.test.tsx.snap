@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseInput  Component Borderless renders correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="mia-platform-input mia-platform-input-borderless input"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BaseInput  Component Disabled renders correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="mia-platform-input mia-platform-input-disabled mia-platform-input-outlined input"
+    disabled=""
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BaseInput  Component Error renders correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="mia-platform-input mia-platform-input-outlined mia-platform-input-status-error input"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BaseInput  Component Read only renders correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="mia-platform-input mia-platform-input-outlined input readonly"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BaseInput  Component renders correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="mia-platform-input mia-platform-input-outlined input"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;

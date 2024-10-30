@@ -73,9 +73,11 @@ export const Body = ({
     } = aside || {}
 
     const modalAside = (
-      <aside className={styles.aside}>
-        <BodyM>{extTitle}</BodyM>
-        <div className={styles.asideBody}>{extChildren}</div>
+      <aside className={styles.asideWrapper}>
+        <div className={styles.aside}>
+          <BodyM>{extTitle}</BodyM>
+          <div className={styles.asideBody}>{extChildren}</div>
+        </div>
       </aside>
     )
 

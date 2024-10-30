@@ -11,7 +11,7 @@ exports[`Input Component AllowClear renders correctly 1`] = `
       value="text"
     />
     <span
-      class="mia-platform-input-suffix inputSuffix"
+      class="mia-platform-input-suffix"
     >
       <span
         class="mia-platform-input-clear-icon"
@@ -44,41 +44,10 @@ exports[`Input Component AllowClear renders correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input Component Borderless renders correctly 1`] = `
-<DocumentFragment>
-  <input
-    class="mia-platform-input mia-platform-input-borderless input fullWidth"
-    type="text"
-    value=""
-  />
-</DocumentFragment>
-`;
-
-exports[`Input Component Disabled renders correctly 1`] = `
-<DocumentFragment>
-  <input
-    class="mia-platform-input mia-platform-input-disabled mia-platform-input-outlined input fullWidth disabled"
-    disabled=""
-    type="text"
-    value=""
-  />
-</DocumentFragment>
-`;
-
-exports[`Input Component Error renders correctly 1`] = `
-<DocumentFragment>
-  <input
-    class="mia-platform-input mia-platform-input-outlined mia-platform-input-status-error input fullWidth"
-    type="text"
-    value=""
-  />
-</DocumentFragment>
-`;
-
 exports[`Input Component Hidden renders correctly 1`] = `
 <DocumentFragment>
   <input
-    class="mia-platform-input mia-platform-input-outlined input fullWidth hidden"
+    class="mia-platform-input mia-platform-input-outlined input fullWidth"
     type="hidden"
     value=""
   />
@@ -90,16 +59,6 @@ exports[`Input Component Password renders correctly 1`] = `
   <input
     class="mia-platform-input mia-platform-input-outlined input fullWidth"
     type="number"
-    value=""
-  />
-</DocumentFragment>
-`;
-
-exports[`Input Component Read only renders correctly 1`] = `
-<DocumentFragment>
-  <input
-    class="mia-platform-input mia-platform-input-outlined input fullWidth readonly"
-    type="text"
     value=""
   />
 </DocumentFragment>
@@ -117,9 +76,10 @@ exports[`Input Component Search renders correctly 1`] = `
 
 exports[`Input Component TextArea renders correctly 1`] = `
 <DocumentFragment>
-  <textarea
+  <input
     class="mia-platform-input mia-platform-input-outlined input fullWidth"
     type="textarea"
+    value=""
   />
 </DocumentFragment>
 `;
@@ -130,7 +90,7 @@ exports[`Input Component With left icon renders correctly 1`] = `
     class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth"
   >
     <span
-      class="mia-platform-input-prefix inputPrefix"
+      class="mia-platform-input-prefix"
     >
       <svg
         color="currentColor"
@@ -179,7 +139,7 @@ exports[`Input Component With right icon renders correctly 1`] = `
       value=""
     />
     <span
-      class="mia-platform-input-suffix inputSuffix"
+      class="mia-platform-input-suffix"
     >
       <svg
         color="currentColor"
