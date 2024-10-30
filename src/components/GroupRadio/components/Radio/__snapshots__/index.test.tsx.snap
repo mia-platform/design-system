@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio renders correctly with label and value props 1`] = `
+<DocumentFragment>
+  <div
+    class="radio"
+  >
+    <label
+      class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
+    >
+      <span
+        class="ant-radio ant-wave-target"
+      >
+        <input
+          class="ant-radio-input"
+          type="radio"
+          value="value test"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        <div
+          class="radioContent"
+        >
+          <div
+            class="radioLabel"
+          >
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
+            >
+              label test
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Radio renders correctly with label, value and description props 1`] = `
+<DocumentFragment>
+  <div
+    class="radio"
+  >
+    <label
+      class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
+    >
+      <span
+        class="ant-radio ant-wave-target"
+      >
+        <input
+          class="ant-radio-input"
+          type="radio"
+          value="value test"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        <div
+          class="radioContent"
+        >
+          <div
+            class="radioLabel"
+          >
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
+            >
+              label test
+            </div>
+          </div>
+          <div
+            class="radioDescription"
+          >
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
+            >
+              description test
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;

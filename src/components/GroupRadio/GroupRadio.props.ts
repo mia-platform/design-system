@@ -1,4 +1,6 @@
-export type Option = {
+import { RadioChangeEvent } from 'antd'
+
+export type GroupRadioOption = {
   label: string;
   description?: string;
   value: string | number | boolean;
@@ -7,9 +9,14 @@ export type Option = {
   id?: string;
 };
 
-export type GropupRadioProps = {
-  defaultValue: string | number | boolean;
+export type GroupRadioChangeEvent = {
+  value: string | number | boolean | undefined;
+  event?: RadioChangeEvent;
+};
+
+export type GroupRadioProps = {
+  defaultValue?: string | number | boolean;
   disabled?: boolean;
-  options: Option[];
-  onChange?: (value: string | number | boolean) => void;
+  options: GroupRadioOption[];
+  onChange?: (changeEvent: GroupRadioChangeEvent) => void;
 };

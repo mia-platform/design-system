@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ComponentsTheme } from '../ThemeProvider/Ant'
-import Theme from '../../themes/schema'
+import { ComponentsTheme } from '../../../ThemeProvider/Ant'
+import Theme from '../../../../themes/schema'
 
 /**
  * Generates a Ant theme configuration for Radop component based on a theme configuration.

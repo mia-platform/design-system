@@ -1,9 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 
+import { GroupRadioOption, GroupRadioProps } from './GroupRadio.props'
 import { GroupRadio } from './GroupRadio'
-import { Option } from './GroupRadio.props'
 
-const baseOptions: Option[] = [
+const baseOptions: GroupRadioOption[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -14,7 +15,7 @@ const baseOptions: Option[] = [
   },
 ]
 
-const optionsWithDescription: Option[] = [
+const optionsWithDescription: GroupRadioOption[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -27,11 +28,26 @@ const optionsWithDescription: Option[] = [
   },
 ]
 
-const optionsPartiallyDisabled: Option[] = [
+const optionsPartiallyDisabled: GroupRadioOption[] = [
   {
     label: 'Option 1',
     value: 1,
     description: 'Description 1',
+    disabled: true,
+  },
+  {
+    label: 'Option 2',
+    value: 2,
+    description: 'Description 2',
+  },
+]
+
+const allOptionsDisabled: GroupRadioOption[] = [
+  {
+    label: 'Option 1',
+    value: 1,
+    description: 'Description 1',
+    disabled: true,
   },
   {
     label: 'Option 2',
@@ -42,39 +58,56 @@ const optionsPartiallyDisabled: Option[] = [
 ]
 
 const getArgs = (
-  defaultValue: number,
-  options: Option[],
-  disabled = false
-): { defaultValue: number; options: Option[]; disabled: boolean } => ({
-  defaultValue,
+  options: GroupRadioOption[],
+  defaultValue?: number,
+  disabled = false,
+): GroupRadioProps => ({
   options,
+  defaultValue,
   disabled,
+  onChange: action('onChange'),
 })
 
 const meta = {
   component: GroupRadio,
-  args: getArgs(1, baseOptions),
+  args: getArgs(baseOptions),
 } satisfies Meta<typeof GroupRadio>
 
 export default meta
 
 type Story = StoryObj<typeof meta>;
 
-export const BasicExample: Story = {}
+export const WithoutDefaultValue: Story = {}
+
+export const WithDefaultValue: Story = {
+  args: getArgs(baseOptions, 2),
+}
+
+export const WithNonExistentDefaultValue: Story = {
+  args: getArgs(baseOptions, 3),
+}
 
 export const WithDescription: Story = {
-  args: getArgs(1, optionsWithDescription),
+  args: getArgs(optionsWithDescription),
 }
 
 export const Disabled: Story = {
-  args: getArgs(1, baseOptions, true),
+  args: getArgs(baseOptions, undefined, true),
 }
 
 export const PartiallyDisabled: Story = {
-  args: getArgs(1, optionsPartiallyDisabled),
+  args: getArgs(optionsPartiallyDisabled),
 }
 
-export const SelectedDisabled: Story = {
-  args: getArgs(2, optionsPartiallyDisabled),
+export const PartiallyDisabledWithDefault: Story = {
+  args: getArgs(optionsPartiallyDisabled, 1),
+}
+
+export const AllOptionsDisabledWithDefault: Story = {
+  args: getArgs(allOptionsDisabled, 1),
+}
+
+export const AllOptionsDisabledWithoutDefault: Story = {
+  args: getArgs(allOptionsDisabled),
 }
 
