@@ -56,6 +56,11 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "colorWarning": "#F68F1F",
       "zIndexPopup": 990,
     },
+    "Radio": {
+      "dotColorDisabled": "#acacac",
+      "dotSize": 8,
+      "radioSize": 16,
+    },
     "Table": {
       "borderColor": "#f2f2f2",
       "cellPaddingInline": 16,
@@ -169,6 +174,11 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "colorWarning": undefined,
       "zIndexPopup": 990,
     },
+    "Radio": {
+      "dotColorDisabled": undefined,
+      "dotSize": NaN,
+      "radioSize": NaN,
+    },
     "Table": {
       "borderColor": undefined,
       "cellPaddingInline": undefined,
@@ -281,6 +291,11 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "colorText": "#636363",
       "colorWarning": "#F68F1F",
       "zIndexPopup": 990,
+    },
+    "Radio": {
+      "dotColorDisabled": "#acacac",
+      "dotSize": 8,
+      "radioSize": 16,
     },
     "Table": {
       "borderColor": "#f2f2f2",

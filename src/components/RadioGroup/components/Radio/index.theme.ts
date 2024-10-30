@@ -27,7 +27,7 @@ import Theme from '../../../../themes/schema'
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Input Ant theme configuration.
  */
-export default ({ spacing, palette }: Partial<Theme>): ComponentsTheme['Radio'] => ({
+export default ({ palette, spacing }: Partial<Theme>): ComponentsTheme['Radio'] => ({
   dotSize: Number(spacing?.padding?.sm),
   radioSize: Number(spacing?.padding?.lg),
   dotColorDisabled: palette?.action?.disabled?.contrastText,

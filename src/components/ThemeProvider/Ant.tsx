@@ -104,7 +104,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
     Input: InputTheme({ palette, shape, typography, spacing }),
-    Radio: RadioTheme({ palette, shape, typography, spacing }),
+    Radio: RadioTheme({ palette, spacing }),
   },
 })
 
