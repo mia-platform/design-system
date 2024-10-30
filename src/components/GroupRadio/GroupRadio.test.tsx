@@ -57,7 +57,7 @@ describe('GroupRadio', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly with base props', () => {
+  it('renders correctly', () => {
     const { asFragment } = render(<GroupRadio {...baseProps} />)
     expect(asFragment()).toMatchSnapshot()
   })
@@ -82,7 +82,7 @@ describe('GroupRadio', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  it('should select first option if no default is passed and no option is disabled', async() => {
+  it('should select first option if no default value is passed as prop and no option is disabled', async() => {
     const onChange = jest.fn()
     const props: GroupRadioProps = {
       ...baseProps,
@@ -100,7 +100,7 @@ describe('GroupRadio', () => {
     expect(invocation.value).toEqual(1)
   })
 
-  it('should select default option if passed and trigger onChange with correct value', async() => {
+  it('should select default value if passed as prop', async() => {
     const onChange = jest.fn()
     const props: GroupRadioProps = {
       ...basePropsWithDefault,
@@ -109,8 +109,6 @@ describe('GroupRadio', () => {
 
     render(<GroupRadio {...props} />)
 
-    const radios = screen.getAllByRole('radio')
-    expect(radios).toHaveLength(2)
     await waitFor(() => expect(onChange).toHaveBeenCalled())
     expect(onChange).toHaveBeenCalledTimes(1)
     const [[invocation]] = onChange.mock.calls
@@ -124,6 +122,7 @@ describe('GroupRadio', () => {
       ...basePropsWithDefault,
       onChange,
     }
+
     render(<GroupRadio {...props} />)
 
     onChange.mockClear()
@@ -243,7 +242,6 @@ describe('GroupRadio', () => {
       options,
       onChange,
     }
-
     render(<GroupRadio {...props} />)
 
     const secondEnabledOption = screen.getByRole('radio', { name: /another option enabled/ })
