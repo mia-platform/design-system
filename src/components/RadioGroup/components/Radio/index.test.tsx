@@ -37,9 +37,7 @@ describe('Radio', () => {
   })
 
   it('renders correctly with label, value and description props', () => {
-    const { asFragment } = render(
-      <Radio {...{ ...baseProps, description: 'description test' }} />
-    )
+    const { asFragment } = render(<Radio {...baseProps} description='description test' />)
     expect(asFragment()).toMatchSnapshot()
   })
 })
