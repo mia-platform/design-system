@@ -36,7 +36,7 @@ export const Default: Story = {}
 
 export const Borderless: Story = {
   args: {
-    appearance: InputNumber.Type.Borderless,
+    appearance: InputNumber.Appearance.Borderless,
   },
 }
 
