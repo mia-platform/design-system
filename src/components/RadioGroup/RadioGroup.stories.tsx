@@ -82,7 +82,7 @@ const getArgs = (
 ): RadioGroupProps => ({
   options,
   defaultValue,
-  disabled,
+  isDisabled: disabled,
   onChange: action('onChange'),
 })
 

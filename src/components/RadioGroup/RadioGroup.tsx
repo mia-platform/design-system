@@ -31,7 +31,7 @@ const defaults = {
 
 export const RadioGroup = ({
   defaultValue,
-  disabled = defaults.disabled,
+  isDisabled: disabled = defaults.disabled,
   options,
   onChange,
 }: RadioGroupProps): ReactElement => {
@@ -42,7 +42,7 @@ export const RadioGroup = ({
       <div key={option.value.toString()}>
         <Radio
           description={option.description}
-          disabled={option.disabled}
+          idDisabled={option.disabled}
           label={option.label}
           value={option.value}
         />

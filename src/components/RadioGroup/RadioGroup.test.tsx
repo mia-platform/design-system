@@ -91,7 +91,7 @@ describe('RadioGroup', () => {
 
   it('renders correctly when disabled', () => {
     const { asFragment } = render(
-      <RadioGroup {...{ ...baseProps, disabled: true }} />
+      <RadioGroup {...{ ...baseProps, isDisabled: true }} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
@@ -146,7 +146,7 @@ describe('RadioGroup', () => {
     const onChange = jest.fn()
     const props: RadioGroupProps = {
       ...baseProps,
-      disabled: true,
+      isDisabled: true,
       onChange,
     }
 

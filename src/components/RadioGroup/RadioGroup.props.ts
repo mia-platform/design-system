@@ -35,6 +35,6 @@ export type RadioGroupChangeEvent = {
 export type RadioGroupProps = {
   options: RadioGroupOption[];
   defaultValue: string | number | boolean;
-  disabled?: boolean;
+  isDisabled?: boolean;
   onChange?: (changeEvent: RadioGroupChangeEvent) => void;
 };

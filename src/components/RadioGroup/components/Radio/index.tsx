@@ -28,7 +28,7 @@ const { radio, radioContent } = styles
 export const Radio = ({
   label,
   description,
-  disabled,
+  idDisabled: disabled,
   value,
 }: RadioProps): ReactElement => {
   return (
