@@ -1,0 +1,512 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroup renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper ant-radio-wrapper-checked css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target ant-radio-checked"
+            >
+              <input
+                checked=""
+                class="ant-radio-input"
+                type="radio"
+                value="1"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    option 1
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target"
+            >
+              <input
+                class="ant-radio-input"
+                type="radio"
+                value="2"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    option 2
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RadioGroup renders correctly when disabled 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target ant-radio-checked ant-radio-disabled"
+            >
+              <input
+                checked=""
+                class="ant-radio-input"
+                disabled=""
+                type="radio"
+                value="1"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    option 1
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper ant-radio-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target ant-radio-disabled"
+            >
+              <input
+                class="ant-radio-input"
+                disabled=""
+                type="radio"
+                value="2"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    option 2
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RadioGroup renders correctly with default value 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper ant-radio-wrapper-checked css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target ant-radio-checked"
+            >
+              <input
+                checked=""
+                class="ant-radio-input"
+                type="radio"
+                value="1"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    option 1
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target"
+            >
+              <input
+                class="ant-radio-input"
+                type="radio"
+                value="2"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    option 2
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RadioGroup renders correctly with descriptions 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper ant-radio-wrapper-checked css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target ant-radio-checked"
+            >
+              <input
+                checked=""
+                class="ant-radio-input"
+                type="radio"
+                value="1"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    option 1
+                  </div>
+                </div>
+                <div
+                  class="radioDescription"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    description 1
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target"
+            >
+              <input
+                class="ant-radio-input"
+                type="radio"
+                value="2"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    option 2
+                  </div>
+                </div>
+                <div
+                  class="radioDescription"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    description 2
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RadioGroup renders correctly with partially disabled options 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target ant-radio-checked ant-radio-disabled"
+            >
+              <input
+                checked=""
+                class="ant-radio-input"
+                disabled=""
+                type="radio"
+                value="1"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    disabled option
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target"
+            >
+              <input
+                class="ant-radio-input"
+                type="radio"
+                value="2"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    enabled option
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <div
+          class="radio"
+        >
+          <label
+            class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-radio ant-wave-target"
+            >
+              <input
+                class="ant-radio-input"
+                type="radio"
+                value="3"
+              />
+              <span
+                class="ant-radio-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="radioContent"
+              >
+                <div
+                  class="radioLabel"
+                >
+                  <div
+                    class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+                    role="paragraph"
+                  >
+                    another enabled option
+                  </div>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

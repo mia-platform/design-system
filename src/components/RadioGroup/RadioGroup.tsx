@@ -19,22 +19,22 @@
 import { Radio as AntRadio, RadioChangeEvent } from 'antd'
 import { ReactElement, ReactNode, useMemo, useState } from 'react'
 
-import { GroupRadioProps } from './GroupRadio.props'
 import { Radio } from './components/Radio'
-import styles from './GroupRadio.module.css'
+import { RadioGroupProps } from './RadioGroup.props'
+import styles from './RadioGroup.module.css'
 
-const { options: optionsClass, groupRadio } = styles
+const { options: optionsClass } = styles
 
 const defaults = {
   disabled: false,
 }
 
-export const GroupRadio = ({
+export const RadioGroup = ({
   defaultValue,
   disabled = defaults.disabled,
   options,
   onChange,
-}: GroupRadioProps): ReactElement => {
+}: RadioGroupProps): ReactElement => {
   const [value, setValue] = useState<string | number | boolean >(defaultValue)
 
   const radioOptions = useMemo((): ReactNode => {
@@ -58,15 +58,12 @@ export const GroupRadio = ({
   }
 
   return (
-    <div className={groupRadio}>
-      <AntRadio.Group
-        className={groupRadio}
-        disabled={disabled}
-        value={value}
-        onChange={handleChange}
-      >
-        <div className={optionsClass}>{radioOptions}</div>
-      </AntRadio.Group>
-    </div>
+    <AntRadio.Group
+      disabled={disabled}
+      value={value}
+      onChange={handleChange}
+    >
+      <div className={optionsClass}>{radioOptions}</div>
+    </AntRadio.Group>
   )
 }

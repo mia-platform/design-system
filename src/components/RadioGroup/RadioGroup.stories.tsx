@@ -19,10 +19,10 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { GroupRadioOption, GroupRadioProps } from './GroupRadio.props'
-import { GroupRadio } from './GroupRadio'
+import { RadioGroupOption, RadioGroupProps } from './RadioGroup.props'
+import { RadioGroup } from './RadioGroup'
 
-const baseOptions: GroupRadioOption[] = [
+const baseOptions: RadioGroupOption[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -33,7 +33,7 @@ const baseOptions: GroupRadioOption[] = [
   },
 ]
 
-const optionsWithDescription: GroupRadioOption[] = [
+const optionsWithDescription: RadioGroupOption[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -46,7 +46,7 @@ const optionsWithDescription: GroupRadioOption[] = [
   },
 ]
 
-const optionsPartiallyDisabled: GroupRadioOption[] = [
+const optionsPartiallyDisabled: RadioGroupOption[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -60,7 +60,7 @@ const optionsPartiallyDisabled: GroupRadioOption[] = [
   },
 ]
 
-const allOptionsDisabled: GroupRadioOption[] = [
+const allOptionsDisabled: RadioGroupOption[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -76,10 +76,10 @@ const allOptionsDisabled: GroupRadioOption[] = [
 ]
 
 const getArgs = (
-  options: GroupRadioOption[],
+  options: RadioGroupOption[],
   defaultValue: number,
   disabled = false,
-): GroupRadioProps => ({
+): RadioGroupProps => ({
   options,
   defaultValue,
   disabled,
@@ -87,9 +87,9 @@ const getArgs = (
 })
 
 const meta = {
-  component: GroupRadio,
+  component: RadioGroup,
   args: getArgs(baseOptions, 1),
-} satisfies Meta<typeof GroupRadio>
+} satisfies Meta<typeof RadioGroup>
 
 export default meta
 

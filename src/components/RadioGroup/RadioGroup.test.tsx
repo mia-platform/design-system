@@ -18,11 +18,11 @@
 
 import { render, screen, waitFor } from '@testing-library/react'
 
-import { GroupRadioOption, GroupRadioProps } from './GroupRadio.props'
-import { GroupRadio } from './GroupRadio'
+import { RadioGroupOption, RadioGroupProps } from './RadioGroup.props'
+import { RadioGroup } from './RadioGroup'
 import { userEvent } from '../../test-utils'
 
-const baseOptions: GroupRadioOption[] = [
+const baseOptions: RadioGroupOption[] = [
   {
     value: 1,
     label: 'option 1',
@@ -33,7 +33,7 @@ const baseOptions: GroupRadioOption[] = [
   },
 ]
 
-const optionsWithDescription: GroupRadioOption[] = [
+const optionsWithDescription: RadioGroupOption[] = [
   {
     value: 1,
     label: 'option 1',
@@ -46,7 +46,7 @@ const optionsWithDescription: GroupRadioOption[] = [
   },
 ]
 
-const partiallyDisabledOptions: GroupRadioOption[] = [
+const partiallyDisabledOptions: RadioGroupOption[] = [
   {
     value: 1,
     label: 'disabled option',
@@ -62,55 +62,55 @@ const partiallyDisabledOptions: GroupRadioOption[] = [
   },
 ]
 
-const baseProps: GroupRadioProps = {
+const baseProps: RadioGroupProps = {
   defaultValue: 1,
   options: baseOptions,
 }
 
-describe('GroupRadio', () => {
+describe('RadioGroup', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
 
   it('renders correctly', () => {
-    const { asFragment } = render(<GroupRadio {...baseProps} />)
+    const { asFragment } = render(<RadioGroup {...baseProps} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders correctly with default value', () => {
-    const { asFragment } = render(<GroupRadio {...baseProps} />)
+    const { asFragment } = render(<RadioGroup {...baseProps} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders correctly with descriptions', () => {
     const { asFragment } = render(
-      <GroupRadio {...{ ...baseProps, options: optionsWithDescription }} />
+      <RadioGroup {...{ ...baseProps, options: optionsWithDescription }} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders correctly when disabled', () => {
     const { asFragment } = render(
-      <GroupRadio {...{ ...baseProps, disabled: true }} />
+      <RadioGroup {...{ ...baseProps, disabled: true }} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders correctly with partially disabled options', () => {
     const { asFragment } = render(
-      <GroupRadio {...{ ...baseProps, options: partiallyDisabledOptions }} />
+      <RadioGroup {...{ ...baseProps, options: partiallyDisabledOptions }} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('should invoke onChange with correct value on user selection', async() => {
     const onChange = jest.fn()
-    const props: GroupRadioProps = {
+    const props: RadioGroupProps = {
       ...baseProps,
       onChange,
     }
 
-    render(<GroupRadio {...props} />)
+    render(<RadioGroup {...props} />)
 
     const firstRadio = screen.getByRole('radio', { name: /option 1/ })
     const secondRadio = screen.getByRole('radio', { name: /option 2/ })
@@ -130,12 +130,12 @@ describe('GroupRadio', () => {
 
   it('should not invoke onChange if an already selected option is clicked', async() => {
     const onChange = jest.fn()
-    const props: GroupRadioProps = {
+    const props: RadioGroupProps = {
       ...baseProps,
       onChange,
     }
 
-    render(<GroupRadio {...props} />)
+    render(<RadioGroup {...props} />)
 
     const radio = screen.getByRole('radio', { name: /option 1/ })
     userEvent.click(radio)
@@ -144,13 +144,13 @@ describe('GroupRadio', () => {
 
   it('should prevent selecting any option if the component is disabled', async() => {
     const onChange = jest.fn()
-    const props: GroupRadioProps = {
+    const props: RadioGroupProps = {
       ...baseProps,
       disabled: true,
       onChange,
     }
 
-    render(<GroupRadio {...props} />)
+    render(<RadioGroup {...props} />)
 
     const firstRadio = screen.getByRole('radio', { name: /option 1/ })
     const secondRadio = screen.getByRole('radio', { name: /option 2/ })
@@ -168,13 +168,13 @@ describe('GroupRadio', () => {
 
   it('should allow selection only of enabled options', async() => {
     const onChange = jest.fn()
-    const props: GroupRadioProps = {
+    const props: RadioGroupProps = {
       options: partiallyDisabledOptions,
       defaultValue: 2,
       onChange,
     }
 
-    render(<GroupRadio {...props} />)
+    render(<RadioGroup {...props} />)
 
     const enabledOption = screen.getByRole('radio', {
       name: /another enabled option/,

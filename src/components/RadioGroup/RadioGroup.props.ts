@@ -16,4 +16,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export { GroupRadio } from './GroupRadio'
+import { RadioChangeEvent } from 'antd'
+
+export type RadioGroupOption = {
+  value: string | number | boolean;
+  label: string;
+  description?: string;
+  disabled?: boolean;
+  title?: string;
+  id?: string;
+};
+
+export type RadioGroupChangeEvent = {
+  value: string | number | boolean;
+  event: RadioChangeEvent;
+};
+
+export type RadioGroupProps = {
+  options: RadioGroupOption[];
+  defaultValue: string | number | boolean;
+  disabled?: boolean;
+  onChange?: (changeEvent: RadioGroupChangeEvent) => void;
+};
