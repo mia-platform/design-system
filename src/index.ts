@@ -28,6 +28,7 @@ import { Input } from './components/Input'
 import { InputNumber } from './components/InputNumber'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
+import { Search } from './components/Search'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Switch } from './components/Switch'
 import { Table } from './components/Table'
@@ -53,6 +54,7 @@ export {
   Menu,
   Modal,
   SegmentedControl,
+  Search,
   Switch,
   Table,
   Tag,

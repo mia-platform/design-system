@@ -47,22 +47,22 @@ describe('Input Component', () => {
   })
 
   test('TextArea renders correctly', () => {
-    const { asFragment } = render(<Input type={Input.HTMLType.Textarea} />)
+    const { asFragment } = render(<Input type={Input.Type.Textarea} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('Search renders correctly', () => {
-    const { asFragment } = render(<Input type={Input.HTMLType.Search} />)
+    const { asFragment } = render(<Input type={Input.Type.Search} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('Password renders correctly', () => {
-    const { asFragment } = render(<Input type={Input.HTMLType.Number} />)
+    const { asFragment } = render(<Input type={Input.Type.Number} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('Hidden renders correctly', () => {
-    const { asFragment } = render(<Input type={Input.HTMLType.Hidden} />)
+    const { asFragment } = render(<Input type={Input.Type.Hidden} />)
     expect(asFragment()).toMatchSnapshot()
   })
 

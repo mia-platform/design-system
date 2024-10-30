@@ -80,5 +80,5 @@ export const Input = (
   )
 }
 
-Input.Type = BaseInput.Appearance
-Input.HTMLType = Type
+Input.Appearance = BaseInput.Appearance
+Input.Type = Type
