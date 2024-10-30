@@ -22,7 +22,7 @@ import { action } from '@storybook/addon-actions'
 import { RadioGroupOption, RadioGroupProps } from './props'
 import { RadioGroup } from './RadioGroup'
 
-const baseOptions: RadioGroupOption[] = [
+const baseOptions: RadioGroupOption<number>[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -33,7 +33,7 @@ const baseOptions: RadioGroupOption[] = [
   },
 ]
 
-const optionsWithDescription: RadioGroupOption[] = [
+const optionsWithDescription: RadioGroupOption<number>[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -46,7 +46,7 @@ const optionsWithDescription: RadioGroupOption[] = [
   },
 ]
 
-const optionsPartiallyDisabled: RadioGroupOption[] = [
+const optionsPartiallyDisabled: RadioGroupOption<number>[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -60,7 +60,7 @@ const optionsPartiallyDisabled: RadioGroupOption[] = [
   },
 ]
 
-const allOptionsDisabled: RadioGroupOption[] = [
+const allOptionsDisabled: RadioGroupOption<number>[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -75,21 +75,21 @@ const allOptionsDisabled: RadioGroupOption[] = [
   },
 ]
 
-const getArgs = (
-  options: RadioGroupOption[],
-  defaultValue: number,
-  disabled = false,
-): RadioGroupProps => ({
-  options,
-  defaultValue,
-  isDisabled: disabled,
-  onChange: action('onChange'),
-})
+const getArgs = <T, >(
+  options: RadioGroupOption<T>[],
+  defaultValue: T,
+  disabled = false
+): RadioGroupProps<T> => ({
+    options,
+    defaultValue,
+    isDisabled: disabled,
+    onChange: action('onChange'),
+  })
 
 const meta = {
-  component: RadioGroup,
-  args: getArgs(baseOptions, 1),
-} satisfies Meta<typeof RadioGroup>
+  component: RadioGroup<number>,
+  args: getArgs<number>(baseOptions, 1),
+} satisfies Meta<typeof RadioGroup<number>>
 
 export default meta
 
@@ -98,11 +98,11 @@ type Story = StoryObj<typeof meta>;
 export const Base: Story = {}
 
 export const WithNonExistentDefaultValue: Story = {
-  args: getArgs(baseOptions, 3),
+  args: getArgs<number>(baseOptions, 3),
 }
 
 export const WithDescription: Story = {
-  args: getArgs(optionsWithDescription, 2),
+  args: getArgs<number>(optionsWithDescription, 2),
 }
 
 export const Disabled: Story = {
@@ -117,3 +117,27 @@ export const AllOptionsDisabled: Story = {
   args: getArgs(allOptionsDisabled, 1),
 }
 
+type MoreComplexType = { a: number; b: number };
+
+const objectOption1: MoreComplexType = { a: 1, b: 2 }
+const objectOption2: MoreComplexType = { a: 3, b: 4 }
+
+const props: RadioGroupProps<MoreComplexType> = {
+  options: [
+    { value: objectOption1, label: 'option 1' },
+    { value: objectOption2, label: 'option 2' },
+  ],
+  defaultValue: objectOption2,
+  isDisabled: false,
+}
+
+const metaO = {
+  component: RadioGroup<MoreComplexType>,
+  args: props,
+} satisfies Meta<typeof RadioGroup<MoreComplexType>>
+
+type StoryO = StoryObj<typeof metaO>;
+
+export const WithObjectValueType: StoryO = {
+  args: props,
+}

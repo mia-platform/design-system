@@ -17,7 +17,7 @@
  */
 
 import { Radio as AntRadio, RadioChangeEvent } from 'antd'
-import { ReactElement, ReactNode, useMemo, useState } from 'react'
+import { ReactElement, ReactNode, useMemo } from 'react'
 
 import { Radio } from './components/Radio'
 import { RadioGroupProps } from './props'
@@ -35,13 +35,12 @@ export const RadioGroup = <T, >({
   options,
   onChange,
 }: RadioGroupProps<T>): ReactElement => {
-  const [value, setValue] = useState<T>(defaultValue)
-
   const radioOptions = useMemo((): ReactNode => {
     return options.map((option, index) => (
       <Radio
         description={option.description}
         idDisabled={option.disabled}
+        // eslint-disable-next-line react/no-array-index-key
         key={index}
         label={option.label}
         value={option.value}
@@ -50,7 +49,6 @@ export const RadioGroup = <T, >({
   }, [options])
 
   const handleChange = (event: RadioChangeEvent): void => {
-    setValue(event.target.value)
     if (onChange) {
       onChange({ value: event.target.value, event })
     }
@@ -58,8 +56,8 @@ export const RadioGroup = <T, >({
 
   return (
     <AntRadio.Group
+      defaultValue={defaultValue}
       disabled={disabled}
-      value={value}
       onChange={handleChange}
     >
       <div className={optionsClass}>{radioOptions}</div>
