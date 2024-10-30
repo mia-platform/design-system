@@ -23,7 +23,7 @@ import { BodyS } from '../../../Typography/BodyX/BodyS'
 import { RadioProps } from './index.props'
 import styles from './index.module.css'
 
-const { radio, radioContent, radioLabel, radioDescription } = styles
+const { radio, radioContent } = styles
 
 export const Radio = ({
   label,
@@ -35,13 +35,9 @@ export const Radio = ({
     <div className={radio}>
       <AntRadio disabled={disabled} value={value}>
         <div className={radioContent}>
-          <div className={radioLabel}>
-            <BodyS>{label}</BodyS>
-          </div>
+          <BodyS>{label}</BodyS>
           {description && (
-            <div className={radioDescription}>
-              <BodyS>{description}</BodyS>
-            </div>
+            <BodyS>{description}</BodyS>
           )}
         </div>
       </AntRadio>
