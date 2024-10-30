@@ -22,7 +22,7 @@ import { RadioGroupOption, RadioGroupProps } from './props'
 import { RadioGroup } from './RadioGroup'
 import { userEvent } from '../../test-utils'
 
-const baseOptions: RadioGroupOption[] = [
+const baseOptions: RadioGroupOption<number>[] = [
   {
     value: 1,
     label: 'option 1',
@@ -33,7 +33,7 @@ const baseOptions: RadioGroupOption[] = [
   },
 ]
 
-const optionsWithDescription: RadioGroupOption[] = [
+const optionsWithDescription: RadioGroupOption<number>[] = [
   {
     value: 1,
     label: 'option 1',
@@ -46,7 +46,7 @@ const optionsWithDescription: RadioGroupOption[] = [
   },
 ]
 
-const partiallyDisabledOptions: RadioGroupOption[] = [
+const partiallyDisabledOptions: RadioGroupOption<number>[] = [
   {
     value: 1,
     label: 'disabled option',
@@ -62,7 +62,7 @@ const partiallyDisabledOptions: RadioGroupOption[] = [
   },
 ]
 
-const baseProps: RadioGroupProps = {
+const baseProps: RadioGroupProps<number> = {
   defaultValue: 1,
   options: baseOptions,
 }
@@ -105,7 +105,7 @@ describe('RadioGroup', () => {
 
   it('should invoke onChange with correct value on user selection', async() => {
     const onChange = jest.fn()
-    const props: RadioGroupProps = {
+    const props: RadioGroupProps<number> = {
       ...baseProps,
       onChange,
     }
@@ -130,7 +130,7 @@ describe('RadioGroup', () => {
 
   it('should not invoke onChange if an already selected option is clicked', async() => {
     const onChange = jest.fn()
-    const props: RadioGroupProps = {
+    const props: RadioGroupProps<number> = {
       ...baseProps,
       onChange,
     }
@@ -144,7 +144,7 @@ describe('RadioGroup', () => {
 
   it('should prevent selecting any option if the component is disabled', async() => {
     const onChange = jest.fn()
-    const props: RadioGroupProps = {
+    const props: RadioGroupProps<number> = {
       ...baseProps,
       isDisabled: true,
       onChange,
@@ -168,7 +168,7 @@ describe('RadioGroup', () => {
 
   it('should allow selection only of enabled options', async() => {
     const onChange = jest.fn()
-    const props: RadioGroupProps = {
+    const props: RadioGroupProps<number> = {
       options: partiallyDisabledOptions,
       defaultValue: 2,
       onChange,

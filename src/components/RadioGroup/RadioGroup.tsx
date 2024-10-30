@@ -29,20 +29,20 @@ const defaults = {
   disabled: false,
 }
 
-export const RadioGroup = ({
+export const RadioGroup = <T, >({
   defaultValue,
   isDisabled: disabled = defaults.disabled,
   options,
   onChange,
-}: RadioGroupProps): ReactElement => {
-  const [value, setValue] = useState<string | number | boolean >(defaultValue)
+}: RadioGroupProps<T>): ReactElement => {
+  const [value, setValue] = useState<T>(defaultValue)
 
   const radioOptions = useMemo((): ReactNode => {
-    return options.map((option) => (
+    return options.map((option, index) => (
       <Radio
         description={option.description}
         idDisabled={option.disabled}
-        key={option.value.toString()}
+        key={index}
         label={option.label}
         value={option.value}
       />

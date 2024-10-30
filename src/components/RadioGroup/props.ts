@@ -18,8 +18,8 @@
 
 import { RadioChangeEvent } from 'antd'
 
-export type RadioGroupOption = {
-  value: string | number | boolean;
+export type RadioGroupOption<T> = {
+  value: T;
   label: string;
   description?: string;
   disabled?: boolean;
@@ -27,14 +27,14 @@ export type RadioGroupOption = {
   id?: string;
 };
 
-export type RadioGroupChangeEvent = {
-  value: string | number | boolean;
+export type RadioGroupChangeEvent<T> = {
+  value: T;
   event: RadioChangeEvent;
 };
 
-export type RadioGroupProps = {
-  options: RadioGroupOption[];
-  defaultValue: string | number | boolean;
+export type RadioGroupProps<T> = {
+  options: RadioGroupOption<T>[];
+  defaultValue: T;
   isDisabled?: boolean;
-  onChange?: (changeEvent: RadioGroupChangeEvent) => void;
+  onChange?: (changeEvent: RadioGroupChangeEvent<T>) => void;
 };

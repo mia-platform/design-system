@@ -25,12 +25,12 @@ import styles from './index.module.css'
 
 const { radio, radioContent } = styles
 
-export const Radio = ({
+export const Radio = <T, >({
   label,
   description,
   idDisabled: disabled,
   value,
-}: RadioProps): ReactElement => {
+}: RadioProps<T>): ReactElement => {
   return (
     <div className={radio}>
       <AntRadio disabled={disabled} value={value}>

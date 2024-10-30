@@ -21,7 +21,7 @@ import { render } from '@testing-library/react'
 import { Radio } from './index'
 import { RadioProps } from './index.props'
 
-const baseProps: RadioProps = {
+const baseProps: RadioProps<string> = {
   label: 'label test',
   value: 'value test',
 }

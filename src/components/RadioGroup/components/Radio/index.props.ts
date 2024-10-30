@@ -17,8 +17,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type RadioProps = {
-  value: string | number | boolean;
+export type RadioProps<T> = {
+  value: T;
   label: string;
   description?: string;
   idDisabled?: boolean;
