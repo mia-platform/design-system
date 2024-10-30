@@ -20,7 +20,7 @@ import { Radio as AntRadio, RadioChangeEvent } from 'antd'
 import { ReactElement, ReactNode, useMemo, useState } from 'react'
 
 import { Radio } from './components/Radio'
-import { RadioGroupProps } from './RadioGroup.props'
+import { RadioGroupProps } from './props'
 import styles from './RadioGroup.module.css'
 
 const { options: optionsClass } = styles

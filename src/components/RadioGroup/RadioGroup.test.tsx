@@ -18,7 +18,7 @@
 
 import { render, screen, waitFor } from '@testing-library/react'
 
-import { RadioGroupOption, RadioGroupProps } from './RadioGroup.props'
+import { RadioGroupOption, RadioGroupProps } from './props'
 import { RadioGroup } from './RadioGroup'
 import { userEvent } from '../../test-utils'
 
