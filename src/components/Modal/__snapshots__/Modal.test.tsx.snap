@@ -390,19 +390,23 @@ exports[`Modal Component renders modal with aside fixed 1`] = `
                   Modal Content
                 </div>
                 <aside
-                  class="aside"
+                  class="asideWrapper"
                 >
                   <div
-                    class="mia-platform-typography bodyM"
-                    role="paragraph"
+                    class="aside"
                   >
-                    Modal Aside Title
-                  </div>
-                  <div
-                    class="asideBody"
-                  >
-                    <div>
-                      Modal Aside Content
+                    <div
+                      class="mia-platform-typography bodyM"
+                      role="paragraph"
+                    >
+                      Modal Aside Title
+                    </div>
+                    <div
+                      class="asideBody"
+                    >
+                      <div>
+                        Modal Aside Content
+                      </div>
                     </div>
                   </div>
                 </aside>
@@ -601,19 +605,23 @@ exports[`Modal Component renders modal with aside openable 1`] = `
                   </div>
                 </div>
                 <aside
-                  class="aside"
+                  class="asideWrapper"
                 >
                   <div
-                    class="mia-platform-typography bodyM"
-                    role="paragraph"
+                    class="aside"
                   >
-                    Modal Aside Title
-                  </div>
-                  <div
-                    class="asideBody"
-                  >
-                    <div>
-                      Modal Aside Content
+                    <div
+                      class="mia-platform-typography bodyM"
+                      role="paragraph"
+                    >
+                      Modal Aside Title
+                    </div>
+                    <div
+                      class="asideBody"
+                    >
+                      <div>
+                        Modal Aside Content
+                      </div>
                     </div>
                   </div>
                 </aside>
@@ -812,19 +820,23 @@ exports[`Modal Component renders modal with aside openable 2`] = `
                   </div>
                 </div>
                 <aside
-                  class="aside"
+                  class="asideWrapper"
                 >
                   <div
-                    class="mia-platform-typography bodyM"
-                    role="paragraph"
+                    class="aside"
                   >
-                    Modal Aside Title
-                  </div>
-                  <div
-                    class="asideBody"
-                  >
-                    <div>
-                      Modal Aside Content
+                    <div
+                      class="mia-platform-typography bodyM"
+                      role="paragraph"
+                    >
+                      Modal Aside Title
+                    </div>
+                    <div
+                      class="asideBody"
+                    >
+                      <div>
+                        Modal Aside Content
+                      </div>
                     </div>
                   </div>
                 </aside>
