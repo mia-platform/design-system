@@ -21,7 +21,7 @@ export const GroupRadio = ({
 
   const computeInitialValue = useCallback(() => {
     let initialValue = options.find(option => option.value === defaultValue)?.value
-    if (defaultValue === undefined) {
+    if (defaultValue === undefined && !disabled) {
       for (const option of options) {
         if (!option.disabled) {
           initialValue = option.value
@@ -30,7 +30,7 @@ export const GroupRadio = ({
       }
     }
     return initialValue
-  }, [defaultValue, options])
+  }, [defaultValue, disabled, options])
 
   useEffect(() => {
     const initialValue = computeInitialValue()

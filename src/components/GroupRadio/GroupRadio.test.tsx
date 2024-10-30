@@ -16,6 +16,10 @@ const baseOptions: GroupRadioOption[] = [
 ]
 
 const baseProps: GroupRadioProps = {
+  options: baseOptions,
+}
+
+const basePropsWithDefault: GroupRadioProps = {
   defaultValue: 1,
   options: baseOptions,
 }
@@ -38,7 +42,7 @@ describe('GroupRadio', () => {
   it('renders correctly with base props and change selected radio', async() => {
     const onChange = jest.fn()
     const props: GroupRadioProps = {
-      ...baseProps,
+      ...basePropsWithDefault,
       onChange,
     }
 
@@ -78,7 +82,7 @@ describe('GroupRadio', () => {
     expect(onChange).toHaveBeenCalledTimes(1)
     const [[invocation]] = onChange.mock.calls
     expect(invocation.event).toBeUndefined()
-    expect(invocation.value).toEqual(1)
+    expect(invocation.value).toEqual(undefined)
 
     onChange.mockClear()
 
@@ -99,22 +103,40 @@ describe('GroupRadio', () => {
         value: 2,
         label: 'option enabled',
       },
+      {
+        value: 3,
+        label: 'another option enabled',
+      },
     ]
     const onChange = jest.fn()
     const props: GroupRadioProps = {
-      defaultValue: 1,
       options,
       onChange,
     }
 
     render(<GroupRadio {...props} />)
 
-    const enabeldRadio = screen.getByRole('radio', { name: /option enabled/ })
+    const secondEnabledOption = screen.getByRole('radio', { name: /another option enabled/ })
     const disabledRadio = screen.getByRole('radio', { name: /option disabled/ })
-    userEvent.click(enabeldRadio)
+
+    // the first enabled option is selected and emit onChange
     await waitFor(() => expect(onChange).toHaveBeenCalled())
     expect(onChange).toHaveBeenCalledTimes(1)
+    const [[invocation]] = onChange.mock.calls
+    expect(invocation.value).toEqual(2)
+    expect(invocation.event).toEqual(undefined)
+
     onChange.mockClear()
+
+    userEvent.click(secondEnabledOption)
+    await waitFor(() => expect(onChange).toHaveBeenCalled())
+    expect(onChange).toHaveBeenCalledTimes(1)
+    const [[invocation1]] = onChange.mock.calls
+    expect(invocation1.value).toEqual(3)
+    expect(invocation1.event.target.value).toEqual(3)
+
+    onChange.mockClear()
+
     userEvent.click(disabledRadio)
     await waitFor(() => expect(onChange).not.toHaveBeenCalled())
   })
