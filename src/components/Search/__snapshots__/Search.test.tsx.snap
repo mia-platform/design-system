@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="mia-platform-select mia-platform-select-outlined mia-platform-select-auto-complete input fullWidth mia-platform-select-single mia-platform-select-customize-input mia-platform-select-show-search"
+  >
+    <div
+      class="mia-platform-select-selector"
+    >
+      <span
+        class="mia-platform-select-selection-search"
+      >
+        <span
+          class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth"
+        >
+          <input
+            class="mia-platform-input"
+            type="search"
+            value=""
+          />
+          <span
+            class="mia-platform-input-suffix"
+          >
+            <svg
+              color="currentColor"
+              fill="none"
+              height="12"
+              role="img"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="color: currentColor;"
+              viewBox="0 0 24 24"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="11"
+                cy="11"
+                r="8"
+              />
+              <line
+                x1="21"
+                x2="16.65"
+                y1="21"
+                y2="16.65"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+      <span
+        class="mia-platform-select-selection-placeholder"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

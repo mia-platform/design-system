@@ -16,30 +16,4 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.input {
-  width: auto;
-  font-size: var(--typography-bodyS-fontSize, 14px) !important;
-  line-height: var(--typography-bodyS-lineHeight, 16px) !important;
-  & > input {
-    font-size: var(--typography-bodyS-fontSize, 14px) !important;
-    line-height: var(--typography-bodyS-lineHeight, 16px) !important;
-  }
-}
-
-.disabled {
-  border-color: var(--palette-action-disabled-bold, #E5E5E5) !important;
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-.readonly {
-  border: none;
-  background: transparent;
-  pointer-events: none;
-}
-
-.hidden {
-  display: none;
-}
+export { Search } from './Search'

@@ -13,7 +13,7 @@ exports[`BaseInput  Component Borderless renders correctly 1`] = `
 exports[`BaseInput  Component Disabled renders correctly 1`] = `
 <DocumentFragment>
   <input
-    class="mia-platform-input mia-platform-input-disabled mia-platform-input-outlined input"
+    class="mia-platform-input mia-platform-input-disabled mia-platform-input-outlined input disabled"
     disabled=""
     type="text"
     value=""

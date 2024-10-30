@@ -59,9 +59,10 @@ export const BaseInput = <
   const className = useMemo(() => classnames([
     styles.input,
     isFullWidth && styles.fullWidth,
+    isDisabled && styles.disabled,
     isReadOnly && styles.readonly,
     classNameProp,
-  ]), [classNameProp, isFullWidth, isReadOnly])
+  ]), [classNameProp, isDisabled, isFullWidth, isReadOnly])
 
   return (
     <Component

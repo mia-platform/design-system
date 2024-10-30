@@ -73,4 +73,4 @@ export const InputNumber = (
   )
 }
 
-InputNumber.Type = Appearance
+InputNumber.Appearance = Appearance
