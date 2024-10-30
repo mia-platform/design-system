@@ -25,7 +25,9 @@ import DividerTheme from '../Divider/Divider.theme'
 import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
 import InputTheme from '../BaseInput/BaseInput.theme'
 import MenuTheme from '../Menu/Menu.theme'
+import SelectTheme from '../Select/Select.theme'
 import TableTheme from '../Table/Table.theme'
+import TagTheme from '../Tag/Tag.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from './ThemeProvider.props'
 import TreeTheme from '../Tree/Tree.theme'
@@ -94,6 +96,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     // Others
     wireframe: false,
   },
+  cssVar: true,
   components: {
     Button: ButtonTheme({ typography, palette }),
     Divider: DividerTheme({ palette }),
@@ -103,6 +106,8 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
     Input: InputTheme({ palette, shape, typography, spacing }),
+    Select: SelectTheme({ palette, shape, typography, spacing }),
+    Tag: TagTheme({ palette }),
   },
 })
 
