@@ -83,11 +83,5 @@
         }
       }
     }
-
-    /* Switch handle */
-
-    :global(.mia-platform-switch-handle::before) {
-      background: var(--palette-action-secondary-main, #fff);
-    }
   }
 }
