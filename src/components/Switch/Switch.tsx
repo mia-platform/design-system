@@ -85,3 +85,5 @@ export const Switch = ({
     </div>
   )
 }
+
+Switch.Size = Size
