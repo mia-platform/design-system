@@ -25,14 +25,10 @@ exports[`Radio renders correctly with label and value props 1`] = `
           class="radioContent"
         >
           <div
-            class="radioLabel"
+            class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+            role="paragraph"
           >
-            <div
-              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
-              role="paragraph"
-            >
-              label test
-            </div>
+            label test
           </div>
         </div>
       </span>
@@ -66,24 +62,16 @@ exports[`Radio renders correctly with label, value and description props 1`] = `
           class="radioContent"
         >
           <div
-            class="radioLabel"
+            class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+            role="paragraph"
           >
-            <div
-              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
-              role="paragraph"
-            >
-              label test
-            </div>
+            label test
           </div>
           <div
-            class="radioDescription"
+            class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+            role="paragraph"
           >
-            <div
-              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
-              role="paragraph"
-            >
-              description test
-            </div>
+            description test
           </div>
         </div>
       </span>
