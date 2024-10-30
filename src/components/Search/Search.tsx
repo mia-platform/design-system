@@ -17,7 +17,7 @@
  */
 
 import { AutoComplete as AntAutoComplete, AutoCompleteProps as AntAutoCompleteProps, InputRef } from 'antd'
-import { ReactElement, Ref, forwardRef } from 'react'
+import { ReactElement, Ref, forwardRef as forwardref } from 'react'
 import { FiSearch } from 'react-icons/fi'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
@@ -38,12 +38,12 @@ export const defaults = {
   iconRight: FiSearch,
 }
 
-const InnerInput = forwardRef(
+const InnerInput = forwardref(
   function InnerInput(props: InputProps, ref: Ref<InputRef>): ReactElement {
     return <Input inputRef={ref} type={Input.Type.Search} {...props} />
-  })
+  }
+)
 
-// eslint-disable-next-line react/no-multi-comp
 export const Search = <ValueType, >(
   {
     appearance = defaults.type,
