@@ -32,29 +32,37 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    defaultValue: 0,
+  },
+}
 
 export const Borderless: Story = {
   args: {
     appearance: InputNumber.Appearance.Borderless,
+    defaultValue: 0,
   },
 }
 
 export const ReadOnly: Story = {
   args: {
     isReadOnly: true,
+    defaultValue: 0,
   },
 }
 
 export const Error: Story = {
   args: {
     isError: true,
+    defaultValue: 0,
   },
 }
 
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+    defaultValue: 0,
   },
 }
 
@@ -69,20 +77,6 @@ export const WithMax: Story = {
   args: {
     max: 10,
     defaultValue: 10,
-  },
-}
-
-export const WithPrecision: Story = {
-  args: {
-    precision: 2,
-    defaultValue: 10,
-  },
-}
-
-export const WithStep: Story = {
-  args: {
-    step: 2,
-    defaultValue: 2,
   },
 }
 

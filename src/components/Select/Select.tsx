@@ -18,7 +18,7 @@
 
 import { Select as AntSelect, SelectProps as AntSelectProps } from 'antd'
 import { PiCaretDown, PiCaretUp, PiCheck } from 'react-icons/pi'
-import { ReactElement, useMemo, useState } from 'react'
+import React, { ReactElement, useMemo, useState } from 'react'
 import classnames from 'classnames'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
@@ -79,9 +79,10 @@ export const Select = <ValueType, >(
 
   const className = useMemo(() => classnames([
     styles.select,
+    isMultiple && styles.multiple,
     isDisabled && styles.disabled,
     isReadOnly && styles.readOnly,
-  ]), [isDisabled, isReadOnly])
+  ]), [isDisabled, isMultiple, isReadOnly])
 
   const suffixIcon = useMemo(() => !isReadOnly && (
     <Icon component={open ? PiCaretUp : PiCaretDown} size={DEFAULT_ICON_SIZE} />

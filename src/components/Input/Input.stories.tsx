@@ -17,7 +17,7 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
-import { FiSearch } from 'react-icons/fi'
+import { PiCircleHalfTilt } from 'react-icons/pi'
 
 import { Input } from '.'
 
@@ -33,71 +33,71 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    defaultValue: 'Default',
+  },
+}
 
 export const Borderless: Story = {
   args: {
     appearance: Input.Appearance.Borderless,
+    defaultValue: 'Borderless',
   },
 }
 
 export const ReadOnly: Story = {
   args: {
     isReadOnly: true,
+    defaultValue: 'Read-only',
   },
 }
 
 export const Error: Story = {
   args: {
     isError: true,
+    defaultValue: 'Error',
   },
 }
 
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+    defaultValue: 'Disabled',
   },
 }
 
 export const WithLeftIcon: Story = {
   args: {
-    iconLeft: FiSearch,
+    iconLeft: PiCircleHalfTilt,
+    defaultValue: 'With left icon',
   },
 }
 
 export const WithRightIcon: Story = {
   args: {
-    iconRight: FiSearch,
+    iconRight: PiCircleHalfTilt,
+    defaultValue: 'With right icon',
   },
 }
 
 export const AllowClear: Story = {
   args: {
-    defaultValue: 'text',
+    defaultValue: 'Allow clear',
     allowClear: true,
-  },
-}
-
-export const TextArea: Story = {
-  args: {
-    type: Input.Type.Textarea,
-  },
-}
-
-export const Search: Story = {
-  args: {
-    type: Input.Type.Search,
   },
 }
 
 export const Password: Story = {
   args: {
-    type: Input.Type.Number,
+    type: Input.Type.Password,
+    defaultValue: 'Password',
   },
 }
 
 export const Hidden: Story = {
   args: {
     type: Input.Type.Hidden,
+    defaultValue: 'Hidden',
   },
 }

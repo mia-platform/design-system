@@ -20,9 +20,12 @@
   width: auto;
   font-size: var(--typography-bodyS-fontSize, 14px) !important;
   line-height: var(--typography-bodyS-lineHeight, 16px) !important;
-  & > input {
+  &  input {
     font-size: var(--typography-bodyS-fontSize, 14px) !important;
     line-height: var(--typography-bodyS-lineHeight, 16px) !important;
+  }
+  &:has(input[value=""]) {
+    color: var(--palette-text-neutral-subtler, #ACACAC);
   }
 }
 
@@ -35,9 +38,17 @@
 }
 
 .readonly {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   border: none;
   background: transparent;
   pointer-events: none;
+  & :global(.mia-platform-input-affix) {
+    display: none;
+  }
+  & :global(.mia-platform-input-suffix) {
+    display: none;
+  }
 }
 
 .hidden {
