@@ -58,6 +58,10 @@
       :global(.mia-platform-switch-loading-icon) {
         color: var(--palette-action-disabled-main, #f2f2f2);
       }
+
+      :global(.mia-platform-switch-handle::before) {
+        box-shadow: unset;
+      }
     }
 
     /* Checked switch */

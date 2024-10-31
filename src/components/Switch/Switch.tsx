@@ -61,6 +61,8 @@ export const Switch = ({
     size === Size.Small && smallSwitch,
   ]), [size])
 
+  const switchSize = useMemo(() => antSizeRemapping[size], [size])
+
   return (
     <div className={switchComponent}>
       <div className={switchTextWrapper}>
@@ -69,7 +71,7 @@ export const Switch = ({
           defaultChecked={isInitiallyChecked}
           disabled={isDisabled}
           loading={isLoading}
-          size={antSizeRemapping[size]}
+          size={switchSize}
           onChange={onChange}
           onClick={onClick}
         />

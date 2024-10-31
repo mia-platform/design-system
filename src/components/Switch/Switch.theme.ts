@@ -29,5 +29,4 @@ import Theme from '../../themes/schema'
  */
 export default ({ palette }: Partial<Theme>): ComponentsTheme['Switch'] => ({
   handleBg: palette?.action?.secondary?.main,
-  handleShadow: 'transparent',
 })
