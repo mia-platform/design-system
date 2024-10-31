@@ -18,7 +18,7 @@
 
 import { Select as AntSelect, SelectProps as AntSelectProps } from 'antd'
 import { PiCaretDown, PiCaretUp, PiCheck } from 'react-icons/pi'
-import React, { ReactElement, useMemo, useState } from 'react'
+import { ReactElement, useMemo, useState } from 'react'
 import classnames from 'classnames'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
