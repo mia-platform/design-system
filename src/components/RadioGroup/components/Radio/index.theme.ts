@@ -25,7 +25,7 @@ import Theme from '../../../../themes/schema'
  * @link https://ant.design/components/radio#design-token
  *
  * @param {Partial<Theme>} theme - theme configuration.
- * @returns {Partial<ComponentsTheme>} The generated Input Ant theme configuration.
+ * @returns {Partial<ComponentsTheme>} The generated Radio Ant theme configuration.
  */
 export default ({ palette, shape }: Partial<Theme>): ComponentsTheme['Radio'] => ({
   dotSize: Number(shape?.size?.sm),
