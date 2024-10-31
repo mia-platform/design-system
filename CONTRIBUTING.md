@@ -58,7 +58,6 @@ Always remember to **label your Pull Requests** so they get categorized correctl
   - `security`: indicates that the PR introduces a security fix.
   - `Storybook`: indicates that the PR introduces changes in the Storybook.
 
-
 ## How to tag
 
 In order to tag the repository, use the following command:
