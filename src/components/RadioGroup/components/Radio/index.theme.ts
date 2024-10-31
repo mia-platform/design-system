@@ -20,9 +20,9 @@ import { ComponentsTheme } from '../../../ThemeProvider/Ant'
 import Theme from '../../../../themes/schema'
 
 /**
- * Generates a Ant theme configuration for Radop component based on a theme configuration.
+ * Generates a Ant theme configuration for Radio component based on a theme configuration.
  *
- * @link https://ant.design/components/Radop#design-token
+ * @link https://ant.design/components/radio#design-token
  *
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Input Ant theme configuration.
