@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react'
 
 import { Radio } from './index'
-import { RadioProps } from './index.props'
+import { RadioProps } from '../../props'
 
 const baseProps: RadioProps<string> = {
   label: 'label test',
@@ -37,7 +37,7 @@ describe('Radio', () => {
   })
 
   it('renders correctly with label, value and description props', () => {
-    const { asFragment } = render(<Radio {...baseProps} description='description test' />)
+    const { asFragment } = render(<Radio {...baseProps} description="description test" />)
     expect(asFragment()).toMatchSnapshot()
   })
 })
