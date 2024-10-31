@@ -82,7 +82,6 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
     },
     "Switch": {
       "handleBg": "#ffffff",
-      "handleShadow": "transparent",
     },
     "Table": {
       "borderColor": "#f2f2f2",
@@ -228,7 +227,6 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
     },
     "Switch": {
       "handleBg": undefined,
-      "handleShadow": "transparent",
     },
     "Table": {
       "borderColor": undefined,
@@ -374,7 +372,6 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
     },
     "Switch": {
       "handleBg": "#ffffff",
-      "handleShadow": "transparent",
     },
     "Table": {
       "borderColor": "#f2f2f2",
