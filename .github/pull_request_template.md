@@ -23,7 +23,11 @@
 Please make sure your PR complies with the following rules before submitting it.
 
 - [ ] PR title follows the `<type>(<scope>): <subject>` structure
-- [ ] The PR has been labeled according to the type of changes (e.g., enhancement, bug).
+- [ ] The PR has been labeled according to the type of changes (e.g. enhancement, new component, bug).
+
+    > **NOTE**  
+    > Some labels are used to generate release note entries: you can find the complete mapping between PR labels and release note categories [here](https://github.com/mia-platform/design-system/blob/main/.github/release.yml).  
+    For a more detailed overview of PR labels, please refer to the [dedicated CONTRIBUTING section](https://github.com/mia-platform/design-system/blob/main/CONTRIBUTING.md#pull-request-labels).
 
 #### Additional code checks
 
@@ -32,6 +36,6 @@ Based on your changes, some of these checks may not apply. Please make sure to c
 - [ ] Changes are covered by tests 
 - [ ] Changes to components are accessible and documented in the Storybook
 - [ ] Typings have been updated
-- [ ] New components are exported from the `index` file
+- [ ] New components are exported from the `src/index.ts` file
 - [ ] New files include the Apache 2.0 License disclaimer
 - [ ] The browser console does not contain errors
