@@ -41,6 +41,8 @@ export const defaults = {
   ...baseInputDefaults,
 }
 
+const menuItemSelectedIcon = <Icon component={PiCheck} size={16} />
+
 const tagRender = ({ value, onClose, closable }: {
   label: React.ReactNode;
   value: string;
@@ -71,7 +73,7 @@ export const Select = <ValueType, >(
     onClear,
     onSelect,
     onDeselect,
-    multiple,
+    isMultiple,
   }: SelectProps<ValueType>) : ReactElement => {
   const [open, setOpen] = useState(false)
 
@@ -97,8 +99,8 @@ export const Select = <ValueType, >(
       isError={isError}
       isFullWidth={isFullWidth}
       isReadOnly={isReadOnly}
-      menuItemSelectedIcon={<Icon component={PiCheck} size={16} />}
-      mode={multiple ? 'multiple' : undefined}
+      menuItemSelectedIcon={menuItemSelectedIcon}
+      mode={isMultiple ? 'multiple' : undefined}
       options={options}
       placeholder={placeholder}
       showSearch={false}

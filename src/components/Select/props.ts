@@ -81,6 +81,6 @@ export type SelectProps<ValueType> = BaseInputProps & {
   /**
    * If multiple values are allowed.
    */
-  multiple?: boolean
+  isMultiple?: boolean
 
 }

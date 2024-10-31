@@ -77,7 +77,7 @@ describe('Input Component', () => {
 
     render(
       <Select
-        multiple
+        isMultiple
         options={options}
         onChange={onChange}
         onSelect={onSelect}
@@ -113,7 +113,7 @@ describe('Input Component', () => {
     render(
       <Select
         defaultValue={[options[0].value]}
-        multiple
+        isMultiple
         options={options}
         onChange={onChange}
         onDeselect={onDeselect}

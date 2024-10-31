@@ -96,7 +96,6 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     // Others
     wireframe: false,
   },
-  cssVar: true,
   components: {
     Button: ButtonTheme({ typography, palette }),
     Divider: DividerTheme({ palette }),

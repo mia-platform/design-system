@@ -101,7 +101,7 @@ export const CustomLabels: Story = {
 export const Multiple: Story = {
   args: {
     options,
-    multiple: true,
+    isMultiple: true,
   },
 }
 
@@ -109,7 +109,7 @@ export const MultipleDefaultValue: Story = {
   args: {
     defaultValue: [options[0].value, options[1].value],
     options,
-    multiple: true,
+    isMultiple: true,
   },
 }
 
@@ -117,7 +117,7 @@ export const MultipleDisabled: Story = {
   args: {
     defaultValue: [options[0].value, options[1].value],
     options,
-    multiple: true,
+    isMultiple: true,
     isDisabled: true,
   },
 }
