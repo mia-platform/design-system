@@ -95,9 +95,9 @@ describe('Footer', () => {
     expect(screen.getAllByRole('button')).toHaveLength(2)
 
     const [btn1, btn2] = screen.getAllByRole('button')
-    await userEvent.click(btn1)
+    await await userEvent.click(btn1)
     expect(action1).toHaveBeenCalled()
-    await userEvent.click(btn2)
+    await await userEvent.click(btn2)
     expect(action2).toHaveBeenCalled()
   })
 })

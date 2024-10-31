@@ -112,7 +112,7 @@ describe('Switch', () => {
       render(<Switch onClick={onClick} />)
       expect(screen.getByRole('switch')).toBeInTheDocument()
       expect(screen.getByRole('switch')).not.toBeChecked()
-      userEvent.click(screen.getByRole('switch'))
+      await userEvent.click(screen.getByRole('switch'))
       await waitFor(() => expect(onClick).toHaveBeenCalledTimes(1))
     })
 
@@ -121,7 +121,7 @@ describe('Switch', () => {
       render(<Switch onChange={onChange} />)
       expect(screen.getByRole('switch')).toBeInTheDocument()
       expect(screen.getByRole('switch')).not.toBeChecked()
-      userEvent.click(screen.getByRole('switch'))
+      await userEvent.click(screen.getByRole('switch'))
       await waitFor(() => expect(onChange).toHaveBeenCalledTimes(1))
     })
   })

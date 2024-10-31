@@ -65,7 +65,7 @@ describe('useModal', () => {
 
     render(<ModalWrapper modalChildren={children} modalTitle={title} />)
 
-    userEvent.click(screen.getByRole('button', { name: /open modal/i }))
+    await userEvent.click(screen.getByRole('button', { name: /open modal/i }))
 
     expect(await screen.findByRole('h4', { name: title })).toBeInTheDocument()
     expect(screen.getByText(children)).toBeInTheDocument()
@@ -75,7 +75,7 @@ describe('useModal', () => {
     await waitFor(() => expect(screen.queryByRole('h4', { name: title })).not.toBeInTheDocument())
     expect(screen.queryByText(children)).toBeNull()
 
-    userEvent.click(screen.getByRole('button', { name: /toggle modal visibility/i }))
+    await userEvent.click(screen.getByRole('button', { name: /toggle modal visibility/i }))
 
     expect(await screen.findByRole('h4', { name: /modal title/i })).toBeInTheDocument()
     expect(screen.getByText(children)).toBeInTheDocument()
@@ -87,13 +87,13 @@ describe('useModal', () => {
 
     render(<ModalWrapper modalChildren={children} modalTitle={title} />)
 
-    userEvent.click(screen.getByRole('button', { name: /toggle modal visibility/i }))
+    await userEvent.click(screen.getByRole('button', { name: /toggle modal visibility/i }))
 
     expect(await screen.findByRole('h4', { name: /modal title/i })).toBeInTheDocument()
     expect(screen.getByText(children)).toBeInTheDocument()
 
     const modal = screen.getByRole('dialog')
-    userEvent.click(screen.getByRole('button', { name: /change modal content/i }))
+    await userEvent.click(screen.getByRole('button', { name: /change modal content/i }))
     expect(modal).toBeInTheDocument()
   })
 })
