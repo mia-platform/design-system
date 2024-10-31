@@ -72,98 +72,171 @@ describe('RadioGroup', () => {
     jest.clearAllMocks()
   })
 
-  it('renders correctly', () => {
-    const { asFragment } = render(<RadioGroup {...baseProps} />)
-    expect(asFragment()).toMatchSnapshot()
+  describe('renders correctly', () => {
+    it('with base props', () => {
+      const { asFragment } = render(<RadioGroup {...baseProps} />)
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('with descriptions', () => {
+      const { asFragment } = render(
+        <RadioGroup {...{ ...baseProps, options: optionsWithDescription }} />
+      )
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('when disabled', () => {
+      const { asFragment } = render(
+        <RadioGroup {...{ ...baseProps, isDisabled: true }} />
+      )
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('with partially disabled options', () => {
+      const { asFragment } = render(
+        <RadioGroup {...{ ...baseProps, options: partiallyDisabledOptions }} />
+      )
+      expect(asFragment()).toMatchSnapshot()
+    })
   })
 
-  it('renders correctly with default value', () => {
-    const { asFragment } = render(<RadioGroup {...baseProps} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
+  describe('should invoke onChange with correct value on user selection', () => {
+    it('with a number value type', async() => {
+      const onChange = jest.fn()
+      const props: RadioGroupProps<number> = {
+        ...baseProps,
+        onChange,
+      }
 
-  it('renders correctly with descriptions', () => {
-    const { asFragment } = render(
-      <RadioGroup {...{ ...baseProps, options: optionsWithDescription }} />
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
+      render(<RadioGroup {...props} />)
 
-  it('renders correctly when disabled', () => {
-    const { asFragment } = render(
-      <RadioGroup {...{ ...baseProps, isDisabled: true }} />
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
+      const firstRadio = screen.getByRole('radio', { name: /option 1/ })
+      const secondRadio = screen.getByRole('radio', { name: /option 2/ })
 
-  it('renders correctly with partially disabled options', () => {
-    const { asFragment } = render(
-      <RadioGroup {...{ ...baseProps, options: partiallyDisabledOptions }} />
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
+      expect(firstRadio).toBeChecked()
+      expect(secondRadio).not.toBeChecked()
 
-  it('should invoke onChange with correct value on user selection', async() => {
-    const onChange = jest.fn()
-    const props: RadioGroupProps<number> = {
-      ...baseProps,
-      onChange,
-    }
+      userEvent.click(secondRadio)
+      await waitFor(() => expect(onChange).toHaveBeenCalled())
+      expect(firstRadio).not.toBeChecked()
+      expect(secondRadio).toBeChecked()
+      expect(onChange).toHaveBeenCalledTimes(1)
+      const [[invocation1]] = onChange.mock.calls
+      expect(invocation1.event.target.value).toEqual(2)
+      expect(invocation1.value).toEqual(2)
+    })
 
-    render(<RadioGroup {...props} />)
+    it('with a string value type', async() => {
+      const options: RadioGroupOption<string>[] = [
+        {
+          value: 'one',
+          label: 'option 1',
+        },
+        {
+          value: 'two',
+          label: 'option 2',
+        },
+      ]
 
-    const firstRadio = screen.getByRole('radio', { name: /option 1/ })
-    const secondRadio = screen.getByRole('radio', { name: /option 2/ })
+      const onChange = jest.fn()
+      const props: RadioGroupProps<string> = {
+        defaultValue: 'one',
+        options,
+        onChange,
+      }
 
-    expect(firstRadio).toBeChecked()
-    expect(secondRadio).not.toBeChecked()
+      render(<RadioGroup {...props} />)
 
-    userEvent.click(secondRadio)
-    await waitFor(() => expect(onChange).toHaveBeenCalled())
-    expect(firstRadio).not.toBeChecked()
-    expect(secondRadio).toBeChecked()
-    expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation1]] = onChange.mock.calls
-    expect(invocation1.event.target.value).toEqual(2)
-    expect(invocation1.value).toEqual(2)
-  })
+      const firstRadio = screen.getByRole('radio', { name: /option 1/ })
+      const secondRadio = screen.getByRole('radio', { name: /option 2/ })
 
-  it('should invoke onChange with correct value on user selection with a object value type', async() => {
-    type optionType = {a: number, b: number}
-    const optionValue1 = { a: 1, b: 2 }
-    const optionValue2 = { a: 3, b: 4 }
-    const options = [{
-      value: optionValue1,
-      label: 'option 1',
-    },
-    {
-      value: optionValue2,
-      label: 'option 2',
-    }]
+      expect(firstRadio).toBeChecked()
+      expect(secondRadio).not.toBeChecked()
 
-    const onChange = jest.fn()
-    const props: RadioGroupProps<optionType> = {
-      defaultValue: optionValue1,
-      options,
-      onChange,
-    }
+      userEvent.click(secondRadio)
+      await waitFor(() => expect(onChange).toHaveBeenCalled())
+      expect(firstRadio).not.toBeChecked()
+      expect(secondRadio).toBeChecked()
+      expect(onChange).toHaveBeenCalledTimes(1)
+      const [[invocation1]] = onChange.mock.calls
+      expect(invocation1.event.target.value).toEqual('two')
+      expect(invocation1.value).toEqual('two')
+    })
 
-    render(<RadioGroup {...props} />)
+    it('with a boolean value type', async() => {
+      const options: RadioGroupOption<boolean>[] = [
+        {
+          value: true,
+          label: 'option 1',
+        },
+        {
+          value: false,
+          label: 'option 2',
+        },
+      ]
 
-    const firstRadio = screen.getByRole('radio', { name: /option 1/ })
-    const secondRadio = screen.getByRole('radio', { name: /option 2/ })
+      const onChange = jest.fn()
+      const props: RadioGroupProps<boolean> = {
+        defaultValue: true,
+        options,
+        onChange,
+      }
 
-    expect(firstRadio).toBeChecked()
-    expect(secondRadio).not.toBeChecked()
+      render(<RadioGroup {...props} />)
 
-    userEvent.click(secondRadio)
-    await waitFor(() => expect(onChange).toHaveBeenCalled())
-    expect(firstRadio).not.toBeChecked()
-    expect(secondRadio).toBeChecked()
-    expect(onChange).toHaveBeenCalledTimes(1)
-    const [[invocation1]] = onChange.mock.calls
-    expect(invocation1.event.target.value).toEqual(optionValue2)
-    expect(invocation1.value).toEqual(optionValue2)
+      const firstRadio = screen.getByRole('radio', { name: /option 1/ })
+      const secondRadio = screen.getByRole('radio', { name: /option 2/ })
+
+      expect(firstRadio).toBeChecked()
+      expect(secondRadio).not.toBeChecked()
+
+      userEvent.click(secondRadio)
+      await waitFor(() => expect(onChange).toHaveBeenCalled())
+      expect(firstRadio).not.toBeChecked()
+      expect(secondRadio).toBeChecked()
+      expect(onChange).toHaveBeenCalledTimes(1)
+      const [[invocation1]] = onChange.mock.calls
+      expect(invocation1.event.target.value).toEqual(false)
+      expect(invocation1.value).toEqual(false)
+    })
+
+    it('with a object value type', async() => {
+      type optionType = {a: number, b: number}
+      const optionValue1 = { a: 1, b: 2 }
+      const optionValue2 = { a: 3, b: 4 }
+      const options = [{
+        value: optionValue1,
+        label: 'option 1',
+      },
+      {
+        value: optionValue2,
+        label: 'option 2',
+      }]
+
+      const onChange = jest.fn()
+      const props: RadioGroupProps<optionType> = {
+        defaultValue: optionValue1,
+        options,
+        onChange,
+      }
+
+      render(<RadioGroup {...props} />)
+
+      const firstRadio = screen.getByRole('radio', { name: /option 1/ })
+      const secondRadio = screen.getByRole('radio', { name: /option 2/ })
+
+      expect(firstRadio).toBeChecked()
+      expect(secondRadio).not.toBeChecked()
+
+      userEvent.click(secondRadio)
+      await waitFor(() => expect(onChange).toHaveBeenCalled())
+      expect(firstRadio).not.toBeChecked()
+      expect(secondRadio).toBeChecked()
+      expect(onChange).toHaveBeenCalledTimes(1)
+      const [[invocation1]] = onChange.mock.calls
+      expect(invocation1.event.target.value).toEqual(optionValue2)
+      expect(invocation1.value).toEqual(optionValue2)
+    })
   })
 
   it('should not invoke onChange if an already selected option is clicked', async() => {

@@ -1,83 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioGroup renders correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-5wsri9"
-  >
-    <div
-      class="options"
-    >
-      <div
-        class="radio"
-      >
-        <label
-          class="ant-radio-wrapper ant-radio-wrapper-checked css-dev-only-do-not-override-5wsri9"
-        >
-          <span
-            class="ant-radio ant-wave-target ant-radio-checked"
-          >
-            <input
-              checked=""
-              class="ant-radio-input"
-              type="radio"
-              value="1"
-            />
-            <span
-              class="ant-radio-inner"
-            />
-          </span>
-          <span>
-            <div
-              class="radioContent"
-            >
-              <div
-                class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
-                role="paragraph"
-              >
-                option 1
-              </div>
-            </div>
-          </span>
-        </label>
-      </div>
-      <div
-        class="radio"
-      >
-        <label
-          class="ant-radio-wrapper css-dev-only-do-not-override-5wsri9"
-        >
-          <span
-            class="ant-radio ant-wave-target"
-          >
-            <input
-              class="ant-radio-input"
-              type="radio"
-              value="2"
-            />
-            <span
-              class="ant-radio-inner"
-            />
-          </span>
-          <span>
-            <div
-              class="radioContent"
-            >
-              <div
-                class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
-                role="paragraph"
-              >
-                option 2
-              </div>
-            </div>
-          </span>
-        </label>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`RadioGroup renders correctly when disabled 1`] = `
 <DocumentFragment>
   <div
@@ -158,7 +80,7 @@ exports[`RadioGroup renders correctly when disabled 1`] = `
 </DocumentFragment>
 `;
 
-exports[`RadioGroup renders correctly with default value 1`] = `
+exports[`RadioGroup renders correctly with base props 1`] = `
 <DocumentFragment>
   <div
     class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-5wsri9"
