@@ -35,6 +35,6 @@ Based on your changes, some of these checks may not apply. Please make sure to c
 - [ ] Changes are covered by tests 
 - [ ] Changes to components are accessible and documented in the Storybook
 - [ ] Typings have been updated
-- [ ] New components are exported from the `index` file
+- [ ] New components are exported from the `src/index.ts` file
 - [ ] New files include the Apache 2.0 License disclaimer
 - [ ] The browser console does not contain errors

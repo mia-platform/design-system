@@ -22,10 +22,28 @@ You can see the `npm` scripts available inside the `package.json` file and use t
 * Commits should follow the [Conventional Commit](https://www.conventionalcommits.org/) standard: `<type>(<scope>): <subject>` (e.g. `feat(core): Add new feature`);
 * At commit time, `yarn test` command script is automatically run. To skip this step, commit with `-n` flag.
 
-##### Pull Requests
+##### Pull Request Title
 
-* Pull Request titles should follow the `<type>(<scope/component>): <summary of introduced changes>` structure. Pull Request titles are automatically used as entries in the release note when a new release is published, so they should effectively summarize the introduced change, specifying the type of change and the affected component (if possible).
-* Always remember to label your Pull Requests so they get categorized correctly in the release note. For example, if your PR fixes a bug, you should add the `bug` label, and if it adds a new feature, you should label it as an `enhancement`. You can find the complete mapping between PR tags and RN categories [here](https://github.com/mia-platform/design-system/blob/main/.github/release.yml).
+Pull Request titles should follow the `<type>(<scope/component>): <summary of introduced changes>` structure. Pull Request titles are automatically used as entries in the release note when a new release is published, so they should effectively summarize the introduced change, specifying the type of change and the affected component (if possible).
+
+##### Pull Request Labels
+
+Always remember to **label your Pull Requests** so they get categorized correctly in the release note.
+
+- Some of the available labels are used to categorize entries in the release note. You can find the complete mapping between PR labels and RN categories [here](https://github.com/mia-platform/design-system/blob/main/.github/release.yml).
+- Here is a **non-exhaustive** list of the most common labels:
+
+  - `<Name> component`: indicates the component affected by the PR changes. If a PR modifies N components, it should be labeled with N labels of this type. When creating a new label of this kind, please use the standard color `#08AD40`.
+  - `breaking`: indicates that the PR introduces a breaking change.
+  - `bug`: indicates that the PR introduces a bug fix.
+  - `documentation`: indicates that the PR introduces a documentation change (e.g. README update, CONTRIBUTING update, PR template update, etc.).
+  - `enhancement`: indicates that the PR introduces a new feature.
+  - `hook`: indicates that the PR introduces changes strictly related to custom react hooks.
+  - `new component`: indicates that the PR introduces a new component. This label is more specific than the `new feature` label.
+  - `new feature`: indicates that the PR introduces a new feature.
+  - `refactor`: indicates that the PR introduces refactoring changes.
+  - `security`: indicates that the PR introduces a security-related change.
+  - `Storybook`: indicates that the PR introduces changes in the Storybook.
 
 ##### Documentation
 * Newly introduced component properties should be accessible from the principal component story [controls](https://storybook.js.org/docs/react/essentials/controls) inside Storybook;
