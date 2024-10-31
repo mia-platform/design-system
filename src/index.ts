@@ -28,6 +28,7 @@ import { Input } from './components/Input'
 import { InputNumber } from './components/InputNumber'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
+import { RadioGroup } from './components/RadioGroup'
 import { Search } from './components/Search'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Select } from './components/Select'
@@ -54,6 +55,7 @@ export {
   InputNumber,
   Menu,
   Modal,
+  RadioGroup,
   SegmentedControl,
   Search,
   Select,

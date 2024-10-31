@@ -25,6 +25,7 @@ import DividerTheme from '../Divider/Divider.theme'
 import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
 import InputTheme from '../BaseInput/BaseInput.theme'
 import MenuTheme from '../Menu/Menu.theme'
+import RadioTheme from '../RadioGroup/components/Radio/index.theme.ts'
 import SelectTheme from '../Select/Select.theme'
 import SwitchTheme from '../Switch/Switch.theme'
 import TableTheme from '../Table/Table.theme'
@@ -109,6 +110,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Input: InputTheme({ palette, shape, typography, spacing }),
     Select: SelectTheme({ palette, shape, typography, spacing }),
     Tag: TagTheme({ palette }),
+    Radio: RadioTheme({ palette, shape }),
   },
 })
 
