@@ -20,7 +20,7 @@ import { Radio as AntRadio } from 'antd'
 import { ReactElement } from 'react'
 
 import { BodyS } from '../../../Typography/BodyX/BodyS'
-import { RadioProps } from './index.props'
+import { RadioProps } from '../../props'
 import styles from './index.module.css'
 
 const { radio, radioContent } = styles

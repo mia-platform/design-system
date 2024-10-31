@@ -19,22 +19,74 @@
 import { RadioChangeEvent } from 'antd'
 
 export type RadioGroupOption<T> = {
+
+  /**
+   * The value associated with the Radio option
+   */
   value: T;
+
+  /**
+   * The text used to display the radio option
+   */
   label: string;
+
+  /**
+   * description of the label that is placed underneath thelabel
+   */
   description?: string;
+
+  /**
+   * Specifies whether the Radio option is disabled
+   */
   disabled?: boolean;
+
+  /**
+   * Adds the Title attribute value
+   */
   title?: string;
+
+  /**
+   * Adds the Radio Id attribute value
+   */
   id?: string;
 };
 
 export type RadioGroupChangeEvent<T> = {
+
+  /**
+   * the value of the option selected
+   */
   value: T;
+
   event: RadioChangeEvent;
 };
 
 export type RadioGroupProps<T> = {
+
+  /**
+   * radio inputs of the group
+   */
   options: RadioGroupOption<T>[];
+
+  /**
+   * the default selected value
+   */
   defaultValue: T;
+
+  /**
+   * if true disable all radio buttons
+   */
   isDisabled?: boolean;
+
+  /**
+   * The callback function that is triggered when the state changes
+   */
   onChange?: (changeEvent: RadioGroupChangeEvent<T>) => void;
+};
+
+export type RadioProps<T> = {
+  value: T;
+  label: string;
+  description?: string;
+  idDisabled?: boolean;
 };
