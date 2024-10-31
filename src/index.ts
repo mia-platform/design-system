@@ -29,7 +29,10 @@ import { InputNumber } from './components/InputNumber'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
 import { RadioGroup } from './components/RadioGroup'
+import { Search } from './components/Search'
 import { SegmentedControl } from './components/SegmentedControl'
+import { Select } from './components/Select'
+import { Switch } from './components/Switch'
 import { Table } from './components/Table'
 import { Tag } from './components/Tag'
 import { TextArea } from './components/TextArea/TextArea'
@@ -54,6 +57,9 @@ export {
   Modal,
   RadioGroup,
   SegmentedControl,
+  Search,
+  Select,
+  Switch,
   Table,
   Tag,
   TextArea,

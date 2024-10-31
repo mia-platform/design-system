@@ -26,7 +26,10 @@ import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
 import InputTheme from '../BaseInput/BaseInput.theme'
 import MenuTheme from '../Menu/Menu.theme'
 import RadioTheme from '../RadioGroup/components/Radio/index.theme.ts'
+import SelectTheme from '../Select/Select.theme'
+import SwitchTheme from '../Switch/Switch.theme'
 import TableTheme from '../Table/Table.theme'
+import TagTheme from '../Tag/Tag.theme'
 import Theme from '../../themes/schema'
 import { ThemeProviderProps } from './ThemeProvider.props'
 import TreeTheme from '../Tree/Tree.theme'
@@ -100,10 +103,13 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Divider: DividerTheme({ palette }),
     Message: FeedbackMessageTheme({ palette }),
     Menu: MenuTheme({ palette, shape, spacing, typography }),
+    Switch: SwitchTheme({ palette }),
     Table: TableTheme({ palette, spacing }),
     Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
     Input: InputTheme({ palette, shape, typography, spacing }),
+    Select: SelectTheme({ palette, shape, typography, spacing }),
+    Tag: TagTheme({ palette }),
     Radio: RadioTheme({ palette, shape }),
   },
 })

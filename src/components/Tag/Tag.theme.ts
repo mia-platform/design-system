@@ -1,3 +1,4 @@
+
 /**
  * Copyright 2024 Mia srl
  *
@@ -16,30 +17,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.input {
-  width: auto;
-  font-size: var(--typography-bodyS-fontSize, 14px) !important;
-  line-height: var(--typography-bodyS-lineHeight, 16px) !important;
-  & > input {
-    font-size: var(--typography-bodyS-fontSize, 14px) !important;
-    line-height: var(--typography-bodyS-lineHeight, 16px) !important;
-  }
-}
+import { ComponentsTheme } from '../ThemeProvider/Ant'
+import Theme from '../../themes/schema'
 
-.disabled {
-  border-color: var(--palette-action-disabled-bold, #E5E5E5) !important;
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-.readonly {
-  border: none;
-  background: transparent;
-  pointer-events: none;
-}
-
-.hidden {
-  display: none;
-}
+/**
+ * Generates a Ant theme configuration for Tag component based on a theme configuration.
+ *
+ * @link https://ant.design/components/input#design-token
+ *
+ * @param {Partial<Theme>} theme - theme configuration.
+ * @returns {Partial<ComponentsTheme>} The generated Tag Ant theme configuration.
+ */
+export default ({ palette }: Partial<Theme>): ComponentsTheme['Tag'] => ({
+  defaultBg: palette?.background?.neutral?.['300'],
+  colorBorder: palette?.action?.secondary?.bold,
+  defaultColor: palette?.action?.secondary.contrastText,
+})

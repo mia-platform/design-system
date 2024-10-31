@@ -17,87 +17,107 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
-import { FiSearch } from 'react-icons/fi'
+import { FaDiamond } from 'react-icons/fa6'
+import { Flex } from 'antd'
 
-import { Input } from '.'
+import { Icon } from '../Icon'
+import { Select } from '.'
+import { Typography } from '../Typography'
 
 const meta = {
-  component: Input,
+  component: Select,
   args: {
     placeholder: 'Placeholder...',
   },
   argTypes: {
   },
-} satisfies Meta<typeof Input>
+} satisfies Meta<typeof Select>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {}
+const options = [
+  ...Array(5).keys(),
+].map((id) => ({
+  value: `value ${id + 1}`,
+}))
+
+export const Default: Story = {
+  args: {
+    options,
+  },
+}
 
 export const Borderless: Story = {
   args: {
-    appearance: Input.Appearance.Borderless,
+    options,
+    appearance: Select.Appearance.Borderless,
   },
 }
 
 export const ReadOnly: Story = {
   args: {
+    options,
     isReadOnly: true,
   },
 }
 
 export const Error: Story = {
   args: {
+    options,
     isError: true,
   },
 }
 
 export const Disabled: Story = {
   args: {
+    options,
     isDisabled: true,
-  },
-}
-
-export const WithLeftIcon: Story = {
-  args: {
-    iconLeft: FiSearch,
-  },
-}
-
-export const WithRightIcon: Story = {
-  args: {
-    iconRight: FiSearch,
   },
 }
 
 export const AllowClear: Story = {
   args: {
-    defaultValue: 'text',
+    options,
+    defaultValue: options[0].value,
     allowClear: true,
   },
 }
 
-export const TextArea: Story = {
+export const CustomLabels: Story = {
   args: {
-    type: Input.Type.Textarea,
+    options: options.map(({ value }) => ({
+      value,
+      label: (
+        <Flex align="center" gap={8}>
+          <Icon component={FaDiamond} size={16} />
+          <Typography.BodyM isBold>{value}</Typography.BodyM>
+        </Flex>
+      ),
+    })),
   },
 }
 
-export const Search: Story = {
+export const Multiple: Story = {
   args: {
-    type: Input.Type.Search,
+    options,
+    isMultiple: true,
   },
 }
 
-export const Password: Story = {
+export const MultipleDefaultValue: Story = {
   args: {
-    type: Input.Type.Number,
+    defaultValue: [options[0].value, options[1].value],
+    options,
+    isMultiple: true,
   },
 }
 
-export const Hidden: Story = {
+export const MultipleDisabled: Story = {
   args: {
-    type: Input.Type.Hidden,
+    defaultValue: [options[0].value, options[1].value],
+    options,
+    isMultiple: true,
+    isDisabled: true,
   },
 }
