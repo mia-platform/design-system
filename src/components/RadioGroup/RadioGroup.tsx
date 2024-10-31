@@ -31,6 +31,7 @@ const defaults = {
 
 export const RadioGroup = <T, >({
   defaultValue,
+  value,
   isDisabled: disabled = defaults.disabled,
   options,
   onChange,
@@ -59,6 +60,7 @@ export const RadioGroup = <T, >({
       defaultValue={defaultValue}
       disabled={disabled}
       onChange={handleChange}
+      {...(value !== null && value !== undefined) ? { value } : {}}
     >
       <div className={optionsClass}>{radioOptions}</div>
     </AntRadio.Group>
