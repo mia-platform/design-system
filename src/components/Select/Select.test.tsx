@@ -64,10 +64,10 @@ describe('Input Component', () => {
 
     const input = screen.getByRole<HTMLInputElement>('combobox')
 
-    await userEvent.click(input)
+    await await userEvent.click(input)
 
     const option = screen.getByTitle(options[0].value)
-    await userEvent.click(option)
+    await await userEvent.click(option)
 
     expect(onChange).toHaveBeenCalledWith(options[0].value, options[0])
   })
@@ -86,7 +86,7 @@ describe('Input Component', () => {
 
     const clearIcon = screen.getByRole('img', { name: 'close-circle', hidden: true })
 
-    await userEvent.click(clearIcon)
+    await await userEvent.click(clearIcon)
 
     expect(onClear).toHaveBeenCalled()
   })
@@ -106,18 +106,18 @@ describe('Input Component', () => {
 
     const input = screen.getByRole<HTMLInputElement>('combobox')
 
-    await userEvent.click(input)
+    await await userEvent.click(input)
 
     const option1 = screen.getByTitle(options[0].value)
     const option2 = screen.getByTitle(options[1].value)
-    await userEvent.click(option1)
+    await await userEvent.click(option1)
 
     expect(onSelect).toHaveBeenCalledWith(options[0].value, options[0])
     expect(onChange).toHaveBeenCalledWith(
       [options[0].value],
       [options[0]]
     )
-    await userEvent.click(option2)
+    await await userEvent.click(option2)
 
     expect(onSelect).toHaveBeenCalledWith(options[1].value, options[1])
     expect(onChange).toHaveBeenCalledWith(
@@ -142,7 +142,7 @@ describe('Input Component', () => {
 
     const option = screen.getByText(options[0].value)
     const closeIcon = within(option).getByRole('img', { name: 'close' })
-    await userEvent.click(closeIcon)
+    await await userEvent.click(closeIcon)
 
     screen.logTestingPlaygroundURL()
 

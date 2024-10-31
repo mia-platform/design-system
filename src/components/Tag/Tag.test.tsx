@@ -43,7 +43,7 @@ describe('Tag', () => {
 
     const closeButton = screen.getByRole('img', { name: /close/i })
     expect(closeButton).toBeInTheDocument()
-    userEvent.click(closeButton)
+    await userEvent.click(closeButton)
     await waitFor(() => expect(props.onClose).toHaveBeenCalled())
   })
 })

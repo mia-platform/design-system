@@ -116,7 +116,7 @@ describe('RadioGroup', () => {
       expect(firstRadio).toBeChecked()
       expect(secondRadio).not.toBeChecked()
 
-      userEvent.click(secondRadio)
+      await userEvent.click(secondRadio)
       await waitFor(() => expect(onChange).toHaveBeenCalled())
       expect(firstRadio).not.toBeChecked()
       expect(secondRadio).toBeChecked()
@@ -153,7 +153,7 @@ describe('RadioGroup', () => {
       expect(firstRadio).toBeChecked()
       expect(secondRadio).not.toBeChecked()
 
-      userEvent.click(secondRadio)
+      await userEvent.click(secondRadio)
       await waitFor(() => expect(onChange).toHaveBeenCalled())
       expect(firstRadio).not.toBeChecked()
       expect(secondRadio).toBeChecked()
@@ -190,7 +190,7 @@ describe('RadioGroup', () => {
       expect(firstRadio).toBeChecked()
       expect(secondRadio).not.toBeChecked()
 
-      userEvent.click(secondRadio)
+      await userEvent.click(secondRadio)
       await waitFor(() => expect(onChange).toHaveBeenCalled())
       expect(firstRadio).not.toBeChecked()
       expect(secondRadio).toBeChecked()
@@ -228,7 +228,7 @@ describe('RadioGroup', () => {
       expect(firstRadio).toBeChecked()
       expect(secondRadio).not.toBeChecked()
 
-      userEvent.click(secondRadio)
+      await userEvent.click(secondRadio)
       await waitFor(() => expect(onChange).toHaveBeenCalled())
       expect(firstRadio).not.toBeChecked()
       expect(secondRadio).toBeChecked()
@@ -249,7 +249,7 @@ describe('RadioGroup', () => {
     render(<RadioGroup {...props} />)
 
     const radio = screen.getByRole('radio', { name: /option 1/ })
-    userEvent.click(radio)
+    await userEvent.click(radio)
     await waitFor(() => expect(onChange).not.toHaveBeenCalled())
   })
 
@@ -269,9 +269,9 @@ describe('RadioGroup', () => {
     expect(firstRadio).toBeChecked()
     expect(secondRadio).not.toBeChecked()
 
-    userEvent.click(firstRadio)
+    await userEvent.click(firstRadio)
     await waitFor(() => expect(onChange).not.toHaveBeenCalled())
-    userEvent.click(secondRadio)
+    await userEvent.click(secondRadio)
     await waitFor(() => expect(onChange).not.toHaveBeenCalled())
     expect(firstRadio).toBeChecked()
     expect(secondRadio).not.toBeChecked()
@@ -294,7 +294,7 @@ describe('RadioGroup', () => {
       name: /disabled option/,
     })
 
-    userEvent.click(enabledOption)
+    await userEvent.click(enabledOption)
     await waitFor(() => expect(onChange).toHaveBeenCalled())
     expect(onChange).toHaveBeenCalledTimes(1)
     const [[invocation]] = onChange.mock.calls
@@ -303,7 +303,7 @@ describe('RadioGroup', () => {
 
     onChange.mockClear()
 
-    userEvent.click(disabledOption)
+    await userEvent.click(disabledOption)
     await waitFor(() => expect(onChange).not.toHaveBeenCalled())
   })
 })
