@@ -24,13 +24,13 @@ You can see the `npm` scripts available inside the `package.json` file and use t
 
 ##### Pull Request Title
 
-Pull Request titles should follow the `<type>(<scope/component>): <summary of introduced changes>` structure. Pull Request titles are automatically used as entries in the release note when a new release is published, so they should effectively summarize the introduced change, specifying the type of change and the affected component (if possible).
+Pull Request titles should follow the `<type>(<scope/component>): <summary of introduced changes>` structure. Pull Request titles are automatically used as **entries in the release note** when a new release is published, so they should effectively summarize the introduced change, specifying the type of change and the affected component (if possible).
 
 ##### Pull Request Labels
 
 Always remember to **label your Pull Requests** so they get categorized correctly in the release note.
 
-- Some of the available labels are used to categorize entries in the release note. You can find the complete mapping between PR labels and RN categories [here](https://github.com/mia-platform/design-system/blob/main/.github/release.yml).
+- Some of the available labels are used to categorize entries in the release note. You can find the complete mapping between PR labels and RN categories [here](https://github.com/mia-platform/design-system/blob/main/.github/release.yml). Unlabeled PRs will be automatically assigned the `Other changes` category in the release note.
 - Here is a **non-exhaustive** list of the most common labels:
 
   - `<Name> component`: indicates the component affected by the PR changes. If a PR modifies N components, it should be labeled with N labels of this type. When creating a new label of this kind, please use the standard color `#08AD40`.
@@ -42,7 +42,7 @@ Always remember to **label your Pull Requests** so they get categorized correctl
   - `new component`: indicates that the PR introduces a new component. This label is more specific than the `new feature` label.
   - `new feature`: indicates that the PR introduces a new feature.
   - `refactor`: indicates that the PR introduces refactoring changes.
-  - `security`: indicates that the PR introduces a security-related change.
+  - `security`: indicates that the PR introduces a security fix.
   - `Storybook`: indicates that the PR introduces changes in the Storybook.
 
 ##### Documentation
