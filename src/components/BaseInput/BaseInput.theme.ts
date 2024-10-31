@@ -30,7 +30,7 @@ import Theme from '../../themes/schema'
 export default ({ palette, spacing, shape }: Partial<Theme>): ComponentsTheme['Input'] => ({
   // sizing
   paddingBlock: Number(spacing?.padding.sm),
-  paddingInline: Number(spacing?.padding.md),
+  paddingInline: Number(spacing?.padding.sm),
   // shape
   borderRadius: Number(shape?.border?.radius?.md),
   // palette

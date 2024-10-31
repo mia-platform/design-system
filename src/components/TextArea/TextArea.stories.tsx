@@ -32,40 +32,50 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    defaultValue: 'Default',
+  },
+}
 
 export const Borderless: Story = {
   args: {
     appearance: TextArea.Type.Borderless,
+    defaultValue: 'Borderless',
   },
 }
 
 export const ReadOnly: Story = {
   args: {
     isReadOnly: true,
+    defaultValue: 'Read-only',
   },
 }
 
 export const Error: Story = {
   args: {
     isError: true,
+    defaultValue: 'Error',
   },
 }
 
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+    defaultValue: 'Disabled',
   },
 }
 
 export const WithRows: Story = {
   args: {
     rows: 10,
+    defaultValue: 'With specified rows',
   },
 }
 
 export const WithAutoSize: Story = {
   args: {
     autoSize: { minRows: 3, maxRows: 5 },
+    defaultValue: 'With auto-sizing rows',
   },
 }

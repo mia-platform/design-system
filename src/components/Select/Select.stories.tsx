@@ -45,6 +45,7 @@ const options = [
 export const Default: Story = {
   args: {
     options,
+    defaultValue: 'Default',
   },
 }
 
@@ -52,6 +53,7 @@ export const Borderless: Story = {
   args: {
     options,
     appearance: Select.Appearance.Borderless,
+    defaultValue: 'Borderless',
   },
 }
 
@@ -59,6 +61,7 @@ export const ReadOnly: Story = {
   args: {
     options,
     isReadOnly: true,
+    defaultValue: 'Read-only',
   },
 }
 
@@ -66,6 +69,7 @@ export const Error: Story = {
   args: {
     options,
     isError: true,
+    defaultValue: 'Error',
   },
 }
 
@@ -73,14 +77,15 @@ export const Disabled: Story = {
   args: {
     options,
     isDisabled: true,
+    defaultValue: 'Disabled',
   },
 }
 
 export const AllowClear: Story = {
   args: {
     options,
-    defaultValue: options[0].value,
     allowClear: true,
+    defaultValue: 'Allow clear',
   },
 }
 
@@ -95,6 +100,7 @@ export const CustomLabels: Story = {
         </Flex>
       ),
     })),
+    defaultValue: 'Custom labels',
   },
 }
 
@@ -102,6 +108,7 @@ export const Multiple: Story = {
   args: {
     options,
     isMultiple: true,
+    defaultValue: 'Multiple',
   },
 }
 

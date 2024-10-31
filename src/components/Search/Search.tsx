@@ -18,13 +18,14 @@
 
 import { AutoComplete as AntAutoComplete, AutoCompleteProps as AntAutoCompleteProps, InputRef } from 'antd'
 import { ReactElement, Ref, forwardRef as forwardref } from 'react'
-import { FiSearch } from 'react-icons/fi'
+import { PiMagnifyingGlass } from 'react-icons/pi'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
 import { SearchItem, SearchProps } from './props'
 import { Appearance } from '../BaseInput/types'
 import { Input } from '../Input/index'
 import { InputProps } from '../Input/props'
+import styles from './search.module.css'
 
 /**
  * A UI element to insert long text content in a form.
@@ -35,7 +36,7 @@ import { InputProps } from '../Input/props'
 
 export const defaults = {
   ...baseInputDefaults,
-  iconRight: FiSearch,
+  iconRight: PiMagnifyingGlass,
 }
 
 const InnerInput = forwardref(
@@ -66,6 +67,7 @@ export const Search = <ValueType, >(
   return (
     <BaseInput <AntAutoCompleteProps<ValueType, SearchItem<ValueType>>>
       appearance={appearance}
+      className={styles.search}
       component={AntAutoComplete}
       defaultValue={defaultValue}
       inputRef={inputRef}

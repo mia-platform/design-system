@@ -79,9 +79,10 @@ export const Select = <ValueType, >(
 
   const className = useMemo(() => classnames([
     styles.select,
+    isMultiple && styles.multiple,
     isDisabled && styles.disabled,
     isReadOnly && styles.readOnly,
-  ]), [isDisabled, isReadOnly])
+  ]), [isDisabled, isMultiple, isReadOnly])
 
   const suffixIcon = useMemo(() => !isReadOnly && (
     <Icon component={open ? PiCaretUp : PiCaretDown} size={DEFAULT_ICON_SIZE} />
