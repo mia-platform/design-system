@@ -97,10 +97,6 @@ type Story = StoryObj<typeof meta>;
 
 export const BasicExample: Story = {}
 
-export const WithNonExistentDefaultValue: Story = {
-  args: getArgs<number>(baseOptions, 3),
-}
-
 export const WithDescription: Story = {
   args: getArgs<number>(optionsWithDescription, 2),
 }
