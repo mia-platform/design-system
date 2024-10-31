@@ -31,6 +31,7 @@ import { Modal } from './components/Modal'
 import { Search } from './components/Search'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Select } from './components/Select'
+import { Switch } from './components/Switch'
 import { Table } from './components/Table'
 import { Tag } from './components/Tag'
 import { TextArea } from './components/TextArea/TextArea'
@@ -56,6 +57,7 @@ export {
   SegmentedControl,
   Search,
   Select,
+  Switch,
   Table,
   Tag,
   TextArea,
