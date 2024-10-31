@@ -26,7 +26,7 @@ Please make sure your PR complies with the following rules before submitting it.
 - [ ] The PR has been labeled according to the type of changes (e.g. enhancement, new component, bug).
 
     > **NOTE**  
-    > Labels are used to generate release note entries: you can find the complete mapping between PR labels and release note categories [here](https://github.com/mia-platform/design-system/blob/main/.github/release.yml).
+    > Some labels are used to generate release note entries: you can find the complete mapping between PR labels and release note categories [here](https://github.com/mia-platform/design-system/blob/main/.github/release.yml).
 
 #### Additional code checks
 
