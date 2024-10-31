@@ -156,12 +156,12 @@ export const ControlledByWrapperComponent: Story = {
   },
 }
 
-type MoreComplexType = { a: number; b: number };
+type ObjectType = { a: number; b: number };
 
-const objectOption1: MoreComplexType = { a: 1, b: 2 }
-const objectOption2: MoreComplexType = { a: 3, b: 4 }
+const objectOption1: ObjectType = { a: 1, b: 2 }
+const objectOption2: ObjectType = { a: 3, b: 4 }
 
-const props: RadioGroupProps<MoreComplexType> = {
+const props: RadioGroupProps<ObjectType> = {
   options: [
     { value: objectOption1, label: 'option 1' },
     { value: objectOption2, label: 'option 2' },
@@ -170,13 +170,13 @@ const props: RadioGroupProps<MoreComplexType> = {
   isDisabled: false,
 }
 
-const metaObj = {
-  component: RadioGroup<MoreComplexType>,
+const metaObjecType = {
+  component: RadioGroup<ObjectType>,
   args: props,
-} satisfies Meta<typeof RadioGroup<MoreComplexType>>
+} satisfies Meta<typeof RadioGroup<ObjectType>>
 
-type StoryO = StoryObj<typeof metaObj>;
+type StoryObjectType = StoryObj<typeof metaObjecType>;
 
-export const WithObjectValueType: StoryO = {
+export const WithObjectValueType: StoryObjectType = {
   args: props,
 }
