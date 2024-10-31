@@ -37,6 +37,26 @@ describe('Input Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('Borderless renders correctly', () => {
+    const { asFragment } = render(<Select appearance={Select.Appearance.Borderless} options={options} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('Read only renders correctly', () => {
+    const { asFragment } = render(<Select isReadOnly options={options} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('Error renders correctly', () => {
+    const { asFragment } = render(<Select isError options={options} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('Disabled renders correctly', () => {
+    const { asFragment } = render(<Select isDisabled options={options} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('Should call event handler on Change', async() => {
     const onChange = jest.fn()
 
