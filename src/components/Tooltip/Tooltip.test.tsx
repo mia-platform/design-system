@@ -53,7 +53,7 @@ describe('Tooltip', () => {
     }
     renderTooltipWithWrapper(props)
 
-    await act(async() => await userEvent.click(screen.getByText(/tooltip trigger/i)))
+    await act(async() => userEvent.click(screen.getByText(/tooltip trigger/i)))
     await waitFor(() => expect(screen.getByText(/tooltip text/i)).toBeInTheDocument())
   })
 
