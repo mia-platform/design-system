@@ -69,7 +69,7 @@ export type RadioGroupProps<T> = {
   options: RadioGroupOption<T>[];
 
   /**
-   * The default selected value
+   * The selected value displayed on first render
    */
   defaultValue: T;
 
