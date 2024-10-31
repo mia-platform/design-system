@@ -22,10 +22,18 @@ import { Size } from './Switch.types'
 import { Switch } from '.'
 import { defaults } from './Switch'
 
+// NOTE: we are not using the `actions` addon here to simulate the onClick and onChange props
+// because it is causing glitches in the switch animation.
+// We are reproducing the addon's behaviour by logging the function parameters in the dev console.
+
 const meta = {
   component: Switch,
   args: {
     ...defaults,
+    // eslint-disable-next-line no-console
+    onChange: (...params) => { console.log('onChange params: ', params) },
+    // eslint-disable-next-line no-console
+    onClick: (...params) => { console.log('onClick params: ', params) },
   },
   argTypes: {
     description: { type: 'string' },
@@ -46,7 +54,7 @@ export const CheckedOnFirstRender: Story = {
   },
 }
 
-export const CheckedState: Story = {
+export const ControlledCheckedState: Story = {
   args: {
     isChecked: true,
   },
