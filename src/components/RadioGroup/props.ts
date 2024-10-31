@@ -64,17 +64,17 @@ export type RadioGroupChangeEvent<T> = {
 export type RadioGroupProps<T> = {
 
   /**
-   * radio inputs of the group
+   * Options of the group radio
    */
   options: RadioGroupOption<T>[];
 
   /**
-   * the default selected value
+   * The selected value displayed on first render
    */
   defaultValue: T;
 
   /**
-   * if true disable all radio buttons
+   * If true, disable all radio buttons
    */
   isDisabled?: boolean;
 

@@ -17,9 +17,8 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 
-import { RadioGroupOption, RadioGroupProps } from './props'
+import { RadioGroupChangeEvent, RadioGroupOption, RadioGroupProps } from './props'
 import { RadioGroup } from './RadioGroup'
 
 const baseOptions: RadioGroupOption<number>[] = [
@@ -78,12 +77,13 @@ const allOptionsDisabled: RadioGroupOption<number>[] = [
 const getArgs = <T, >(
   options: RadioGroupOption<T>[],
   defaultValue: T,
-  disabled = false
+  disabled = false,
+  onChange?: (changeEvent: RadioGroupChangeEvent<T>) => void
 ): RadioGroupProps<T> => ({
     options,
     defaultValue,
     isDisabled: disabled,
-    onChange: action('onChange'),
+    onChange,
   })
 
 const meta = {
@@ -95,11 +95,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>;
 
-export const Base: Story = {}
-
-export const WithNonExistentDefaultValue: Story = {
-  args: getArgs<number>(baseOptions, 3),
-}
+export const BasicExample: Story = {}
 
 export const WithDescription: Story = {
   args: getArgs<number>(optionsWithDescription, 2),
@@ -115,6 +111,11 @@ export const PartiallyDisabled: Story = {
 
 export const AllOptionsDisabled: Story = {
   args: getArgs(allOptionsDisabled, 1),
+}
+
+const onChange: (changeEvent: RadioGroupChangeEvent<number>) => void = (event) => alert(`selected value is now ${event.value}`)
+export const WithOnChange: Story = {
+  args: getArgs(baseOptions, 1, false, onChange),
 }
 
 type MoreComplexType = { a: number; b: number };

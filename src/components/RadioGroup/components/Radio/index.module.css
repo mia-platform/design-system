@@ -38,6 +38,9 @@
     &:hover:not(:global(.mia-platform-radio-wrapper-disabled)) {
       :global(.mia-platform-radio-inner) {
         border-color: var(--palette-action-primary-hover, #1890FF);
+        &::after {
+          background-color: var(--palette-action-primary-hover, #1890FF);
+        }
       }
     }
   }
