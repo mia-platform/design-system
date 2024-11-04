@@ -19,6 +19,7 @@
 import { ReactNode } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
+import { DropdownProps } from '../Dropdown/props.ts'
 import { SearchSelectHandler } from '../Search/props'
 
 export type SelectItem<ValueType> = {
@@ -82,5 +83,7 @@ export type SelectProps<ValueType> = BaseInputProps & {
    * If multiple values are allowed.
    */
   isMultiple?: boolean
+
+  dropdownProps?: DropdownProps
 
 }

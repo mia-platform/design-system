@@ -95,7 +95,9 @@ export const Dropdown = ({
     (antdEvent: AntdMenuClickEvent) => {
       const itemClickEvent: DropdownClickEvent = eventAdapter(antdEvent, itemFinderMemo)
       updateSelectedItems(itemClickEvent.id)
-      onClick(itemClickEvent)
+      if (onClick) {
+        onClick(itemClickEvent)
+      }
     },
     [itemFinderMemo, onClick, updateSelectedItems]
   )

@@ -17,12 +17,13 @@
  */
 
 import { AutoComplete as AntAutoComplete, AutoCompleteProps as AntAutoCompleteProps, InputRef } from 'antd'
-import { ReactElement, Ref, forwardRef as forwardref } from 'react'
+import { ReactElement, Ref, forwardRef as forwardref, useCallback } from 'react'
 import { PiMagnifyingGlass } from 'react-icons/pi'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
 import { SearchItem, SearchProps } from './props'
 import { Appearance } from '../BaseInput/types'
+import { Dropdown } from '../Dropdown'
 import { Input } from '../Input/index'
 import { InputProps } from '../Input/props'
 import styles from './search.module.css'
@@ -63,13 +64,20 @@ export const Search = <ValueType, >(
     onChange,
     onSelect,
     onSearch,
+    dropdownProps,
   }: SearchProps<ValueType>) : ReactElement => {
+  const dropdownRender = useCallback((menu: ReactElement) => {
+    const props = { children: menu, items: [], ...dropdownProps }
+    return <Dropdown {...props} />
+  }, [dropdownProps])
+
   return (
     <BaseInput <AntAutoCompleteProps<ValueType, SearchItem<ValueType>>>
       appearance={appearance}
       className={styles.search}
       component={AntAutoComplete}
       defaultValue={defaultValue}
+      dropdownRender={dropdownRender}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}

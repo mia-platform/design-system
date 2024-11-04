@@ -18,12 +18,13 @@
 
 import { Select as AntSelect, SelectProps as AntSelectProps } from 'antd'
 import { PiCaretDown, PiCaretUp, PiCheck } from 'react-icons/pi'
-import { ReactElement, useMemo, useState } from 'react'
+import { ReactElement, useCallback, useMemo, useState } from 'react'
 import classnames from 'classnames'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
 import { SelectItem, SelectProps } from './props'
 import { Appearance } from '../BaseInput/types'
+import { Dropdown } from '../Dropdown'
 import { Icon } from '../Icon'
 import { Tag } from '../Tag/Tag'
 import styles from './select.module.css'
@@ -74,8 +75,14 @@ export const Select = <ValueType, >(
     onSelect,
     onDeselect,
     isMultiple,
+    dropdownProps,
   }: SelectProps<ValueType>) : ReactElement => {
   const [open, setOpen] = useState(false)
+
+  const dropdownRender = useCallback((menu: ReactElement) => {
+    const props = { children: menu, items: [], ...dropdownProps }
+    return <Dropdown {...props} />
+  }, [dropdownProps])
 
   const className = useMemo(() => classnames([
     styles.select,
@@ -95,6 +102,7 @@ export const Select = <ValueType, >(
       className={className}
       component={AntSelect}
       defaultValue={defaultValue}
+      dropdownRender={dropdownRender}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}

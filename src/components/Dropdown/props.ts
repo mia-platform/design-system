@@ -205,7 +205,7 @@ export type DropdownProps = {
    * - id: the id of the item
    * - selectedPath: array of strings representing the selected item json path
    */
-  onClick: (event: DropdownClickEvent) => void
+  onClick?: (event: DropdownClickEvent) => void
 
   /**
    * list of triggers that can open the Dropdown (accepts: click, hover, contextMenu).

@@ -19,6 +19,7 @@
 import { ReactNode } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
+import { DropdownProps } from '../Dropdown/props.ts'
 import { IconComponent } from '../Icon/Icon.props'
 
 export type SearchItem<ValueType> = {
@@ -82,4 +83,6 @@ export type SearchProps<ValueType> = BaseInputProps & {
    * Callback when searching.
    */
   onSearch?: (value: string) => void
+
+  dropdownProps?: Partial<DropdownProps>
 }
