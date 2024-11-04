@@ -33,13 +33,13 @@ exports[`Card Component renders card correctly 1`] = `
               >
                 <svg
                   aria-label="Doc link"
-                  color="#004aaa"
+                  color="#1261e4"
                   fill="currentColor"
                   height="16"
                   role="img"
                   stroke="currentColor"
                   stroke-width="0"
-                  style="color: rgb(0, 74, 170);"
+                  style="color: rgb(18, 97, 228);"
                   viewBox="0 0 256 256"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
@@ -126,13 +126,13 @@ exports[`Card Component renders header only 1`] = `
               >
                 <svg
                   aria-label="Doc link"
-                  color="#004aaa"
+                  color="#1261e4"
                   fill="currentColor"
                   height="16"
                   role="img"
                   stroke="currentColor"
                   stroke-width="0"
-                  style="color: rgb(0, 74, 170);"
+                  style="color: rgb(18, 97, 228);"
                   viewBox="0 0 256 256"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
