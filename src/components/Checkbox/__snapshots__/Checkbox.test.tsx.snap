@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox renders states correctly renders checked disabled state 1`] = `
+<DocumentFragment>
+  <div
+    class="switchComponent disabled"
+  >
+    <div
+      class="switchTextWrapper"
+    >
+      <label
+        class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-checked mia-platform-checkbox-wrapper-disabled"
+      >
+        <span
+          class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-checked mia-platform-checkbox-disabled"
+        >
+          <input
+            checked=""
+            class="mia-platform-checkbox-input"
+            disabled=""
+            type="checkbox"
+          />
+          <span
+            class="mia-platform-checkbox-inner"
+          />
+        </span>
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;
