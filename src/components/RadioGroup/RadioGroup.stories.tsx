@@ -114,7 +114,7 @@ export const WithOnChange: Story = {
   },
 }
 
-const ControlledRadioGroupRender = ({
+const RadioGroupRender = ({
   value,
   options,
   defaultValue,
@@ -152,7 +152,7 @@ export const ControlledByWrapperComponent: Story = {
     defaultValue: undefined,
   },
   render: (args) => {
-    return <ControlledRadioGroupRender {...args} />
+    return <RadioGroupRender {...args} />
   },
 }
 
