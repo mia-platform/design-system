@@ -565,6 +565,10 @@
     "3xl": {
       "$type": "dimension",
       "$value": 48
+    },
+    "4xl": {
+      "$type": "dimension",
+      "$value": 64
     }
   },
   "fontFamilies": {

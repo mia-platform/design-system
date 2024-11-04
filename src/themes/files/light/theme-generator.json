@@ -90,6 +90,10 @@
       "3xl": {
         "$type": "dimension",
         "$value": "{sizing.5xl}"
+      },
+      "4xl": {
+        "$type": "dimension",
+        "$value": "{sizing.6xl}"
       }
     }
   },
@@ -160,6 +164,14 @@
       "2xl": {
         "$type": "dimension",
         "$value": "{spacing.2xl}"
+      },
+      "3xl": {
+        "$type": "dimension",
+        "$value": "{spacing.3xl}"
+      },
+      "4xl": {
+        "$type": "dimension",
+        "$value": "{spacing.4xl}"
       }
     },
     "gap": {
@@ -850,6 +862,10 @@
     },
     "text": {
       "neutral": {
+        "bolder": {
+          "$type": "color",
+          "$value": "{palette.secondary.800}"
+        },
         "bold": {
           "$type": "color",
           "$value": "{palette.secondary.700}"
@@ -883,6 +899,20 @@
         "subtle": {
           "$type": "color",
           "$value": "{palette.primary.500}"
+        }
+      },
+      "danger": {
+        "bold": {
+          "$type": "color",
+          "$value": "{palette.error.700}"
+        },
+        "main": {
+          "$type": "color",
+          "$value": "{palette.error.600}"
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "{palette.error.500}"
         }
       }
     },

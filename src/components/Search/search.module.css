@@ -1,0 +1,9 @@
+
+.search {
+  & :global(.mia-platform-input-suffix) {
+    color: var(--palette-text-neutral-main, #636363) !important;
+  }
+  & input[disabled] ~ :global(.mia-platform-input-suffix) {
+    color: var(--palette-text-neutral-subtler, #ACACAC) !important;
+  }
+}

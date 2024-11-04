@@ -39,7 +39,7 @@ describe('Dropdown Component', () => {
     it('opens dropdown on click', async() => {
       renderDropdown()
       const button = screen.getByText('test-trigger-button')
-      userEvent.click(button)
+      await userEvent.click(button)
       await screen.findByRole('menuitem', { name: 'Label 1' })
     })
 
@@ -55,7 +55,7 @@ describe('Dropdown Component', () => {
     it('render labels', async() => {
       renderDropdown({ props: { ...defaultProps, items } })
       const button = screen.getByText('test-trigger-button')
-      userEvent.click(button)
+      await userEvent.click(button)
 
       await screen.findByRole('menuitem', { name: 'Label 1' })
 
@@ -77,10 +77,10 @@ describe('Dropdown Component', () => {
       }
       renderDropdown({ props })
       const button = screen.getByText('test-trigger-button')
-      userEvent.click(button)
+      await userEvent.click(button)
 
       const item = await screen.findByRole('menuitem', { name: 'Label 1' })
-      userEvent.click(item)
+      await userEvent.click(item)
 
       await waitFor(() => expect(onClick).toHaveBeenCalled())
       expect(onClick).toHaveBeenCalledTimes(1)
@@ -118,10 +118,10 @@ describe('Dropdown Component', () => {
         }
         renderDropdown({ props })
         const button = screen.getByText('test-trigger-button')
-        userEvent.click(button)
+        await userEvent.click(button)
 
         const item = await screen.findByRole('menuitem', { name: 'Label 1' })
-        userEvent.click(item)
+        await userEvent.click(item)
 
         // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
@@ -133,14 +133,14 @@ describe('Dropdown Component', () => {
 
         onClick.mockClear()
 
-        userEvent.click(button)
+        await userEvent.click(button)
         const item2 = await screen.findByRole('menuitem', { name: /^Label 2/i })
         userEvent.hover(item2)
 
         const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-1' }, { timeout: 10000 })
         expect(sub1).toBeInTheDocument()
 
-        userEvent.click(sub1)
+        await userEvent.click(sub1)
         // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
         expect(onClick).toHaveBeenCalledTimes(1)
@@ -177,7 +177,7 @@ describe('Dropdown Component', () => {
         }
         renderDropdown({ props })
         const button = screen.getByText('test-trigger-button')
-        userEvent.click(button)
+        await userEvent.click(button)
 
         await screen.findByRole('menuitem', { name: 'Label 1' })
         userEvent.hover(screen.getByRole('menuitem', { name: /^Label 2/i }))
@@ -187,7 +187,7 @@ describe('Dropdown Component', () => {
         const sub1 = await screen.findByRole('menuitem', { name: 'Label 2-2-1' }, { timeout: 10000 })
         expect(sub1).toBeInTheDocument()
 
-        userEvent.click(sub1)
+        await userEvent.click(sub1)
         // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
         expect(onClick).toHaveBeenCalledTimes(1)
@@ -209,7 +209,7 @@ describe('Dropdown Component', () => {
 
       renderDropdown({ props })
       const button = screen.getByText('test-trigger-button')
-      userEvent.click(button)
+      await userEvent.click(button)
 
       await waitFor(() => expect(onOpenChange).toHaveBeenCalledTimes(1))
       expect(onOpenChange).toHaveBeenCalledWith(true, { source: OpenChangeInfoSource.Trigger })
@@ -224,10 +224,10 @@ describe('Dropdown Component', () => {
 
       renderDropdown({ props })
       const button = screen.getByText('test-trigger-button')
-      userEvent.click(button)
+      await userEvent.click(button)
 
       await screen.findByRole('menuitem', { name: 'Label 1' })
-      userEvent.click(screen.getByRole('menuitem', { name: 'Label 1' }))
+      await userEvent.click(screen.getByRole('menuitem', { name: 'Label 1' }))
 
       await waitFor(() => expect(onOpenChange).toHaveBeenCalledTimes(2))
       expect(onOpenChange).toHaveBeenNthCalledWith(2, false, { source: OpenChangeInfoSource.Menu })
@@ -244,7 +244,7 @@ describe('Dropdown Component', () => {
 
         renderDropdown({ props })
         const button = screen.getByText('test-trigger-button')
-        userEvent.click(button)
+        await userEvent.click(button)
         const el = await screen.findByRole('menuitem', { name: 'Label 1' })
         expect(el).toMatchSnapshot()
       })
@@ -259,17 +259,17 @@ describe('Dropdown Component', () => {
 
         renderDropdown({ props })
         const button = screen.getByText('test-trigger-button')
-        userEvent.click(button)
+        await userEvent.click(button)
         const first = await screen.findByRole('menuitem', { name: 'Label 1' })
         expect(first).toMatchSnapshot('at first render Label 1 is selected')
 
         const second = screen.getByRole('menuitem', { name: /Label 2/ })
-        userEvent.click(second)
+        await userEvent.click(second)
 
         // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
 
-        userEvent.click(button)
+        await userEvent.click(button)
         const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
         const secondUpdated = screen.getByRole('menuitem', { name: /Label 2/ })
         expect(firstUpdated).toMatchSnapshot('after click render Label 1 is not selected')
@@ -286,16 +286,16 @@ describe('Dropdown Component', () => {
 
         renderDropdown({ props })
         const button = screen.getByText('test-trigger-button')
-        userEvent.click(button)
+        await userEvent.click(button)
         const el = await screen.findByRole('menuitem', { name: 'Label 1' })
         expect(el).toMatchSnapshot('at first render Label 1 is not selected')
 
-        userEvent.click(el)
+        await userEvent.click(el)
 
         // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
 
-        userEvent.click(button)
+        await userEvent.click(button)
         const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
         expect(firstUpdated).toMatchSnapshot('after click render Label 1 is still not selected')
       })
@@ -311,7 +311,7 @@ describe('Dropdown Component', () => {
 
         renderDropdown({ props })
         const button = screen.getByText('test-trigger-button')
-        userEvent.click(button)
+        await userEvent.click(button)
         const el = await screen.findByRole('menuitem', { name: 'Label 1' })
         expect(el).toMatchSnapshot('at first render Label 1 is not selected')
       })
@@ -329,29 +329,29 @@ describe('Dropdown Component', () => {
 
         renderDropdown({ props })
         const button = screen.getByText('test-trigger-button')
-        userEvent.click(button)
+        await userEvent.click(button)
         const el = await screen.findByRole('menuitem', { name: 'Label 1' })
         expect(el).toMatchSnapshot('first render with pre-selected label 1')
 
         // click second label => selected items: label 1 + label 2
         const second = screen.getByRole('menuitem', { name: /Label 2/ })
-        userEvent.click(second)
+        await userEvent.click(second)
         // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
 
-        userEvent.click(button)
+        await userEvent.click(button)
         const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
         const secondUpdated = screen.getByRole('menuitem', { name: /Label 2/ })
         expect(firstUpdated).toMatchSnapshot('after click render Label 1 is selected')
         expect(secondUpdated).toMatchSnapshot('after click render Label 2 is selected')
 
         // click first label => selected items: label 2
-        userEvent.click(firstUpdated)
+        await userEvent.click(firstUpdated)
 
         // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
 
-        userEvent.click(button)
+        await userEvent.click(button)
         const firstUpdatedDeSelected = await screen.findByRole('menuitem', { name: 'Label 1' })
         const secondUpdatedStillSelected = await screen.findByRole('menuitem', { name: /Label 2/ })
         expect(firstUpdatedDeSelected).toMatchSnapshot('after second click render Label 1 is deselected')
@@ -369,16 +369,16 @@ describe('Dropdown Component', () => {
 
         renderDropdown({ props })
         const button = screen.getByText('test-trigger-button')
-        userEvent.click(button)
+        await userEvent.click(button)
         const el = await screen.findByRole('menuitem', { name: 'Label 1' })
         expect(el).toMatchSnapshot('at first render Label 1 is not selected')
 
-        userEvent.click(el)
+        await userEvent.click(el)
 
         // eslint-disable-next-line max-nested-callbacks
         await waitFor(() => expect(onClick).toHaveBeenCalled())
 
-        userEvent.click(button)
+        await userEvent.click(button)
         const firstUpdated = await screen.findByRole('menuitem', { name: 'Label 1' })
         expect(firstUpdated).toMatchSnapshot('after click render Label 1 is still not selected')
       })
@@ -396,7 +396,7 @@ describe('Dropdown Component', () => {
       renderDropdown({ props })
 
       const button = screen.getByText('test-trigger-button')
-      userEvent.click(button)
+      await userEvent.click(button)
 
       const footer = await screen.findByTestId('footer-top-id')
       expect(footer).toBeInTheDocument()
@@ -414,13 +414,13 @@ describe('Dropdown Component', () => {
       renderDropdown({ props })
 
       const button = screen.getByText('test-trigger-button')
-      await userEvent.click(button)
+      await await userEvent.click(button)
 
       const footerActionButton = await screen.findByRole('button', { name: 'my-label' })
       expect(footerActionButton).toBeInTheDocument()
 
       expect(screen.getByRole('menu')).toBeInTheDocument()
-      await userEvent.click(footerActionButton)
+      await await userEvent.click(footerActionButton)
       await waitFor(() => expect(screen.queryByRole('menu')).toBeNull())
     })
   })

@@ -24,11 +24,18 @@ import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
 import { Dropdown } from './components/Dropdown'
 import { Icon } from './components/Icon'
+import { Input } from './components/Input'
+import { InputNumber } from './components/InputNumber'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
+import { RadioGroup } from './components/RadioGroup'
+import { Search } from './components/Search'
 import { SegmentedControl } from './components/SegmentedControl'
+import { Select } from './components/Select'
+import { Switch } from './components/Switch'
 import { Table } from './components/Table'
 import { Tag } from './components/Tag'
+import { TextArea } from './components/TextArea/TextArea'
 import { ThemeProvider } from './components/ThemeProvider'
 import { Tooltip } from './components/Tooltip'
 import { Tree } from './components/Tree'
@@ -44,11 +51,18 @@ export {
   Drawer,
   Dropdown,
   Icon,
+  Input,
+  InputNumber,
   Menu,
   Modal,
+  RadioGroup,
   SegmentedControl,
+  Search,
+  Select,
+  Switch,
   Table,
   Tag,
+  TextArea,
   ThemeProvider,
   Tooltip,
   Tree,
