@@ -123,7 +123,8 @@
       flex-direction: column;
       background-color: var(--palette-background-neutral-300, #f9f9f9);
       border-radius: var(--shape-border-radius-md, 4px);
-      height: calc(100% - 2 * var(--spacing-padding-lg, 16px));
+      box-sizing: border-box;
+      height: 100%;
       gap: var(--spacing-gap-sm, 8px);
       overflow-y: auto;
       padding: var(--spacing-padding-lg, 16px)
