@@ -23,6 +23,8 @@ import docs from "./addons/docs"
 import themeSwitcher from "./addons/theme"
 import withTheme from "./decorators/theme"
 
+import './reset.css'
+
 const preview: Preview = {
   parameters: {
     options: {
