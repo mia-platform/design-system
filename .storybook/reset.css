@@ -16,9 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// NOTE:
-// This file serves as a foundational reset stylesheet that normalizes default browser styles.
-// It applies to all Storybook stories and provides a clean, consistent starting point for component development and documentation.
+/* NOTE: This file serves as a foundational reset stylesheet that normalizes default browser styles.
+It applies to all Storybook stories and provides a clean, consistent starting point for component development and documentation. */
 
 *,
 *::before,
