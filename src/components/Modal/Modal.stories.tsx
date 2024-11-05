@@ -28,6 +28,14 @@ import { useModal } from '../../hooks/useModal'
 
 const meta = {
   component: Modal,
+  parameters: {
+    docs: {
+      story: {
+        inline: false,
+        iframeHeight: 700,
+      },
+    },
+  },
   args: {
     ...defaults,
     children,
