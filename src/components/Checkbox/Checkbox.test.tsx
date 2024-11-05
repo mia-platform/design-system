@@ -56,13 +56,13 @@ describe('Checkbox', () => {
 
   describe('renders text correctly', () => {
     it('renders simple text', () => {
-      render(<Checkbox text="Checkbox" />)
+      render(<Checkbox label="Checkbox" />)
       expect(screen.getByRole('checkbox')).toBeInTheDocument()
       expect(screen.getByText('Checkbox')).toBeInTheDocument()
     })
 
     it('renders text and description', () => {
-      render(<Checkbox description="Checkbox description" text="Checkbox text" />)
+      render(<Checkbox description="Checkbox description" label="Checkbox text" />)
       expect(screen.getByRole('checkbox')).toBeInTheDocument()
       expect(screen.getByText('Checkbox text')).toBeInTheDocument()
       expect(screen.getByText('Checkbox description')).toBeInTheDocument()

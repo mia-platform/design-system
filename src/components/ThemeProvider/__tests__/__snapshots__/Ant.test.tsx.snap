@@ -15,6 +15,12 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "defaultColor": "#636363",
       "defaultHoverBg": "transparent",
     },
+    "Checkbox": {
+      "borderRadiusSM": 2,
+      "colorBorder": "#cdcdcd",
+      "colorPrimary": "#1261e4",
+      "colorPrimaryHover": "#1890ff",
+    },
     "Divider": {
       "colorSplit": "#cdcdcd",
     },
@@ -134,6 +140,7 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "titleMarginTop": 0,
     },
   },
+  "cssVar": true,
   "token": {
     "borderRadius": 4,
     "colorBgBase": "#ffffff",
@@ -178,6 +185,12 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "defaultBorderColor": undefined,
       "defaultColor": undefined,
       "defaultHoverBg": "transparent",
+    },
+    "Checkbox": {
+      "borderRadiusSM": NaN,
+      "colorBorder": undefined,
+      "colorPrimary": undefined,
+      "colorPrimaryHover": undefined,
     },
     "Divider": {
       "colorSplit": undefined,
@@ -298,6 +311,7 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "titleMarginTop": 0,
     },
   },
+  "cssVar": true,
   "token": {
     "borderRadius": undefined,
     "colorBgBase": undefined,
@@ -342,6 +356,12 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "defaultBorderColor": "#cdcdcd",
       "defaultColor": "#636363",
       "defaultHoverBg": "transparent",
+    },
+    "Checkbox": {
+      "borderRadiusSM": 2,
+      "colorBorder": "#cdcdcd",
+      "colorPrimary": "#1261e4",
+      "colorPrimaryHover": "#1890ff",
     },
     "Divider": {
       "colorSplit": "#cdcdcd",
@@ -462,6 +482,7 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "titleMarginTop": 0,
     },
   },
+  "cssVar": true,
   "token": {
     "borderRadius": 4,
     "colorBgBase": "#ffffff",

@@ -19,7 +19,12 @@
 import { CheckboxChangeEvent } from 'antd/es/checkbox'
 import { ReactNode } from 'react'
 
-export type CheckboxProps = {
+export type CheckboxProps<T = never, > = {
+
+  /*
+  * An optional value for the checkbox.
+  * */
+  value?: T
 
   /**
    * Additional description of the checkbox, to be rendered below the checkbox `text`.
@@ -55,5 +60,5 @@ export type CheckboxProps = {
   /**
    * Text to be displayed next to the checkbox.
    */
-  text?: ReactNode
+  label?: ReactNode
 }

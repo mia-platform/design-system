@@ -34,7 +34,7 @@ const meta = {
   },
   argTypes: {
     description: { type: 'string' },
-    text: { type: 'string' },
+    label: { type: 'string' },
     onChange: { control: false },
   },
 } satisfies Meta<typeof Checkbox>
@@ -84,13 +84,13 @@ export const CheckedDisabled: Story = {
 
 export const WithText: Story = {
   args: {
-    text: 'Checkbox with text',
+    label: 'Checkbox with text',
   },
 }
 
 export const WithTextAndDescription: Story = {
   args: {
-    text: 'Checkbox with text',
+    label: 'Checkbox with text',
     description: 'This is a description of the switch.',
   },
 }
@@ -98,14 +98,14 @@ export const WithTextAndDescription: Story = {
 export const DisabledWithText: Story = {
   args: {
     isDisabled: true,
-    text: 'Checkbox with text',
+    label: 'Checkbox with text',
   },
 }
 
 export const DisabledWithTextAndDescription: Story = {
   args: {
     isDisabled: true,
-    text: 'Checkbox with text',
+    label: 'Checkbox with text',
     description: 'This is a description of the switch.',
   },
 }

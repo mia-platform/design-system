@@ -29,15 +29,16 @@ export const defaults = {
   isIndeterminate: false,
 }
 
-export const Checkbox = ({
-  text,
+export const Checkbox = <T = never, >({
+  label,
   description,
   isInitiallyChecked = defaults.isInitiallyChecked,
   isIndeterminate = defaults.isIndeterminate,
   isDisabled = defaults.isDisabled,
   onChange,
   isChecked,
-}: CheckboxProps): ReactElement => {
+  value,
+}: CheckboxProps<T>): ReactElement => {
   const className = useMemo(() => classnames([
     styles.switchComponent,
     isDisabled && styles.disabled,
@@ -50,13 +51,14 @@ export const Checkbox = ({
           defaultChecked={isInitiallyChecked}
           disabled={isDisabled}
           indeterminate={isIndeterminate}
+          value={value}
           onChange={onChange}
           {...(isChecked !== undefined && { checked: isChecked })}
         />
-        {text}
+        {label}
       </div>
       {
-        text && description && (
+        label && description && (
           <div className={styles.switchDescription}>
             {description}
           </div>
