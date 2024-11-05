@@ -25,21 +25,28 @@
 
   :global(.mia-platform-radio-wrapper) {
     align-items: flex-start;
-    &:global(.mia-platform-radio-wrapper-checked):not(:global(.mia-platform-radio-wrapper-disabled))
-    {
+    &:not(:global(.mia-platform-radio-wrapper-disabled)) {
       :global(.mia-platform-radio-inner) {
-        border-color: var(--palette-action-primary-default, #1261e4);
-        background-color: white;
-        &::after {
-          background-color: var(--palette-action-primary-default, #1261e4);
+        border-color: var(--palette-action-secondary-bold, #CDCDCD);
+        background-color: var(--palette-action-secondary-main, #FFFFFF);
+      }
+
+      &:global(.mia-platform-radio-wrapper-checked)
+      {
+        :global(.mia-platform-radio-inner) {
+          border-color: var(--palette-action-primary-default, #1261e4);
+          &::after {
+            background-color: var(--palette-action-primary-default, #1261e4);
+          }
         }
       }
-    }
-    &:hover:not(:global(.mia-platform-radio-wrapper-disabled)) {
-      :global(.mia-platform-radio-inner) {
-        border-color: var(--palette-action-primary-hover, #1890FF);
-        &::after {
-          background-color: var(--palette-action-primary-hover, #1890FF);
+
+      &:hover {
+        :global(.mia-platform-radio-inner) {
+          border-color: var(--palette-action-primary-hover, #1890FF);
+          &::after {
+            background-color: var(--palette-action-primary-hover, #1890FF);
+          }
         }
       }
     }

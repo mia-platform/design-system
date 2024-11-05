@@ -17,8 +17,13 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
+import { ReactElement, useEffect, useState } from 'react'
 
-import { RadioGroupChangeEvent, RadioGroupOption, RadioGroupProps } from './props'
+import {
+  RadioGroupChangeEvent,
+  RadioGroupOption,
+  RadioGroupProps,
+} from './props'
 import { RadioGroup } from './RadioGroup'
 
 const baseOptions: RadioGroupOption<number>[] = [
@@ -45,7 +50,7 @@ const optionsWithDescription: RadioGroupOption<number>[] = [
   },
 ]
 
-const optionsPartiallyDisabled: RadioGroupOption<number>[] = [
+const partiallyDisabledOptions: RadioGroupOption<number>[] = [
   {
     label: 'Option 1',
     value: 1,
@@ -74,21 +79,9 @@ const allOptionsDisabled: RadioGroupOption<number>[] = [
   },
 ]
 
-const getArgs = <T, >(
-  options: RadioGroupOption<T>[],
-  defaultValue: T,
-  disabled = false,
-  onChange?: (changeEvent: RadioGroupChangeEvent<T>) => void
-): RadioGroupProps<T> => ({
-    options,
-    defaultValue,
-    isDisabled: disabled,
-    onChange,
-  })
-
 const meta = {
   component: RadioGroup<number>,
-  args: getArgs<number>(baseOptions, 1),
+  args: { options: baseOptions, defaultValue: 1, isDisabled: false },
 } satisfies Meta<typeof RadioGroup<number>>
 
 export default meta
@@ -98,32 +91,77 @@ type Story = StoryObj<typeof meta>;
 export const BasicExample: Story = {}
 
 export const WithDescription: Story = {
-  args: getArgs<number>(optionsWithDescription, 2),
+  args: { options: optionsWithDescription, defaultValue: 2 },
 }
 
 export const Disabled: Story = {
-  args: getArgs(baseOptions, 1, true),
+  args: { options: baseOptions, defaultValue: 1, isDisabled: true },
 }
 
 export const PartiallyDisabled: Story = {
-  args: getArgs(optionsPartiallyDisabled, 1),
+  args: { options: partiallyDisabledOptions, defaultValue: 1 },
 }
 
 export const AllOptionsDisabled: Story = {
-  args: getArgs(allOptionsDisabled, 1),
+  args: { options: allOptionsDisabled, defaultValue: 1 },
 }
 
-const onChange: (changeEvent: RadioGroupChangeEvent<number>) => void = (event) => alert(`selected value is now ${event.value}`)
 export const WithOnChange: Story = {
-  args: getArgs(baseOptions, 1, false, onChange),
+  args: {
+    options: baseOptions,
+    defaultValue: 1,
+    onChange: (event) => alert(`selected value is now ${event.value}`),
+  },
 }
 
-type MoreComplexType = { a: number; b: number };
+const RadioGroupRender = ({
+  value,
+  options,
+  defaultValue,
+  isDisabled,
+  onChange,
+}: RadioGroupProps<number>): ReactElement => {
+  const [internalValue, setInternalValue] = useState<number | undefined>(value)
 
-const objectOption1: MoreComplexType = { a: 1, b: 2 }
-const objectOption2: MoreComplexType = { a: 3, b: 4 }
+  useEffect(() => {
+    setInternalValue(value)
+  }, [value])
 
-const props: RadioGroupProps<MoreComplexType> = {
+  const handleChange = (ev: RadioGroupChangeEvent<number>): void => {
+    setInternalValue(ev.value)
+    if (onChange) {
+      onChange(ev)
+    }
+  }
+
+  return (
+    <RadioGroup
+      defaultValue={defaultValue}
+      isDisabled={isDisabled}
+      options={options}
+      value={internalValue}
+      onChange={handleChange}
+    />
+  )
+}
+
+export const ControlledByWrapperComponent: Story = {
+  args: {
+    options: baseOptions,
+    value: 2,
+    defaultValue: undefined,
+  },
+  render: (args) => {
+    return <RadioGroupRender {...args} />
+  },
+}
+
+type ObjectType = { a: number; b: number };
+
+const objectOption1: ObjectType = { a: 1, b: 2 }
+const objectOption2: ObjectType = { a: 3, b: 4 }
+
+const props: RadioGroupProps<ObjectType> = {
   options: [
     { value: objectOption1, label: 'option 1' },
     { value: objectOption2, label: 'option 2' },
@@ -132,13 +170,13 @@ const props: RadioGroupProps<MoreComplexType> = {
   isDisabled: false,
 }
 
-const metaO = {
-  component: RadioGroup<MoreComplexType>,
+const metaObjecType = {
+  component: RadioGroup<ObjectType>,
   args: props,
-} satisfies Meta<typeof RadioGroup<MoreComplexType>>
+} satisfies Meta<typeof RadioGroup<ObjectType>>
 
-type StoryO = StoryObj<typeof metaO>;
+type StoryObjectType = StoryObj<typeof metaObjecType>;
 
-export const WithObjectValueType: StoryO = {
+export const WithObjectValueType: StoryObjectType = {
   args: props,
 }

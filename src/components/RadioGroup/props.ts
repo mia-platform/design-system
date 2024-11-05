@@ -71,7 +71,12 @@ export type RadioGroupProps<T> = {
   /**
    * The selected value displayed on first render
    */
-  defaultValue: T;
+  defaultValue?: T;
+
+  /**
+   * Used for setting the currently selected value
+   */
+  value?: T;
 
   /**
    * If true, disable all radio buttons
