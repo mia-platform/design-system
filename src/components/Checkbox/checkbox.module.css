@@ -50,6 +50,7 @@
       background-color: var(--palette-action-disabled-main, #F2F2F2) !important;
       border-color: var(--palette-action-disabled-bolder, #CDCDCD) !important;
     }
+
     & :global(.mia-platform-checkbox-inner)::after {
       border-color: var(--palette-action-disabled-contrastText, #ACACAC);
     }
@@ -57,7 +58,5 @@
     &:not(:has( input:checked)) :global(.mia-platform-checkbox-inner)::after {
       background-color: var(--palette-action-disabled-contrastText, #ACACAC);
     }
-
   }
 }
-
