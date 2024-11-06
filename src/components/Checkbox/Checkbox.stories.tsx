@@ -21,21 +21,10 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Checkbox } from '.'
 import { defaults } from './Checkbox'
 
-// NOTE: we are not using the `actions` addon here to simulate the onClick and onChange props
-// because it is causing glitches in the switch animation.
-// We are reproducing the addon's behaviour by logging the function parameters in the dev console.
-
 const meta = {
   component: Checkbox,
   args: {
     ...defaults,
-    // eslint-disable-next-line no-console
-    onChange: (...params) => { console.log('onChange params: ', params) },
-  },
-  argTypes: {
-    description: { type: 'string' },
-    label: { type: 'string' },
-    onChange: { control: false },
   },
 } satisfies Meta<typeof Checkbox>
 
