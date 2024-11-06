@@ -51,9 +51,9 @@ export const Checkbox = <T = never, >({
           defaultChecked={isInitiallyChecked}
           disabled={isDisabled}
           indeterminate={isIndeterminate}
-          value={value}
           onChange={onChange}
           {...(isChecked !== undefined && { checked: isChecked })}
+          {...(value !== undefined && { value })}
         />
         {label}
       </div>
