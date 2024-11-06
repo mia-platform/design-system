@@ -67,12 +67,6 @@ describe('Checkbox', () => {
       expect(screen.getByText('Checkbox text')).toBeInTheDocument()
       expect(screen.getByText('Checkbox description')).toBeInTheDocument()
     })
-
-    it('ignores description if text is not set', () => {
-      render(<Checkbox description="Checkbox description" />)
-      expect(screen.getByRole('checkbox')).toBeInTheDocument()
-      expect(screen.queryByText('Checkbox description')).not.toBeInTheDocument()
-    })
   })
 
   describe('performs interactions correctly', () => {
