@@ -20,12 +20,12 @@ import { ComponentsTheme } from '../ThemeProvider/Ant'
 import Theme from '../../themes/schema'
 
 /**
- * Generates a Ant theme configuration for Switch component based on a theme configuration.
+ * Generates a Ant theme configuration for Checkbox component based on a theme configuration.
  *
- * @link https://ant.design/components/switch#design-token
+ * @link https://ant.design/components/checkbox#design-token
  *
  * @param {Partial<Theme>} theme - theme configuration.
- * @returns {Partial<ComponentsTheme>} The generated Switch Ant theme configuration.
+ * @returns {Partial<ComponentsTheme>} The generated Checkbox Ant theme configuration.
  */
 export default ({ palette, shape }: Partial<Theme>): ComponentsTheme['Checkbox'] => ({
   borderRadiusSM: Number(shape?.border?.radius?.sm),
