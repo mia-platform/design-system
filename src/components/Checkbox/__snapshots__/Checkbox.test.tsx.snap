@@ -19,7 +19,6 @@ exports[`Checkbox renders states correctly renders checked disabled state 1`] = 
             class="mia-platform-checkbox-input"
             disabled=""
             type="checkbox"
-            value=""
           />
           <span
             class="mia-platform-checkbox-inner"
