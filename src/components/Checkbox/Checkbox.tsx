@@ -58,7 +58,7 @@ export const Checkbox = <T = never, >({
         {label}
       </div>
       {
-        label && description && (
+        description && (
           <div className={styles.switchDescription}>
             {description}
           </div>
