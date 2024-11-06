@@ -29,7 +29,8 @@ export const CheckboxGroup = <T, >(
     isDisabled,
     options,
     onChange,
-  }: CheckboxGroupProps<T>): ReactElement => {
+  }: CheckboxGroupProps<T>
+): ReactElement => {
   const [value, setValue] = useState(defaultValue)
 
   const checkboxOptions = useMemo(() => {
