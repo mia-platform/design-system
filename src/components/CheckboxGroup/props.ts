@@ -15,6 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
+import { ReactNode } from 'react'
 
 export type CheckboxGroupOption<T> = {
 
@@ -26,12 +27,12 @@ export type CheckboxGroupOption<T> = {
   /**
    * The text used to display the radio option
    */
-  label: string;
+  label: ReactNode;
 
   /**
    * description of the label that is placed underneath the label
    */
-  description?: string;
+  description?: ReactNode;
 
   /**
    * Specifies whether the Radio option is disabled

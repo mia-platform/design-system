@@ -34,12 +34,13 @@ export const CheckboxGroup = <T, >(
   const [value, setValue] = useState(defaultValue)
 
   const checkboxOptions = useMemo(() => {
-    return options?.map((option) => {
+    return options?.map((option, index) => {
       return (
         <Checkbox
           description={option.description}
           isDisabled={option.disabled || isDisabled}
-          key={`${option.value}_${option.label ? option.label : ''}`}
+          /* eslint-disable-next-line react/no-array-index-key */
+          key={index}
           label={option.label}
           value={option.value}
         />
