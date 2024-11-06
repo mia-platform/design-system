@@ -54,7 +54,7 @@
       border-color: var(--palette-action-disabled-contrastText, #ACACAC);
     }
 
-    &:not(:has( input:checked))  :global(.mia-platform-checkbox-inner)::after {
+    &:not(:has( input:checked)) :global(.mia-platform-checkbox-inner)::after {
       background-color: var(--palette-action-disabled-contrastText, #ACACAC);
     }
 
