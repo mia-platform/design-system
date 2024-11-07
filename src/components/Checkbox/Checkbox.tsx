@@ -40,13 +40,13 @@ export const Checkbox = <T = never, >({
   value,
 }: CheckboxProps<T>): ReactElement => {
   const className = useMemo(() => classnames([
-    styles.switchComponent,
+    styles.checkboxComponent,
     isDisabled && styles.disabled,
   ]), [isDisabled])
 
   return (
     <div className={className}>
-      <div className={styles.switchTextWrapper}>
+      <div className={styles.checkboxTextWrapper}>
         <AntCheckbox
           defaultChecked={isInitiallyChecked}
           disabled={isDisabled}
@@ -59,7 +59,7 @@ export const Checkbox = <T = never, >({
       </div>
       {
         description && (
-          <div className={styles.switchDescription}>
+          <div className={styles.checkboxDescription}>
             {description}
           </div>
         )

@@ -101,6 +101,8 @@ export const DisabledWithTextAndDescription: Story = {
 
 export const WithOnChange: Story = {
   args: {
-    onChange: (checked) => alert(`Checkbox is now ${checked ? 'checked' : 'unchecked'}`),
+    onChange: ({ target }) => {
+      alert(`Checkbox is now ${target.checked ? 'checked' : 'unchecked'}`)
+    },
   },
 }

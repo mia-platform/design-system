@@ -16,33 +16,49 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.switchComponent {
+.checkboxComponent {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-gap-xs, 4px);
+  gap: var(--spacing-gap-sm, 8px);
+
+  & :global(.mia-platform-checkbox):hover :global(.mia-platform-checkbox-inner) {
+    border-color: var(--palette-action-primary-hover, #1890FF) !important;
+  }
+
+  &  :global(.mia-platform-checkbox-indeterminate) :global(.mia-platform-checkbox-inner)::after {
+    border-radius: var(--shape-border-radius-xs, -1px);
+  }
+
+  &:hover :global(.mia-platform-checkbox-indeterminate) :global(.mia-platform-checkbox-inner)::after {
+    background-color: var(--palette-action-primary-hover, #1890FF);
+  }
 
   &.disabled {
     cursor: not-allowed;
 
-    .switchTextWrapper {
+    .checkboxTextWrapper {
       color: var(--palette-text-neutral-subtler, #ACACAC) !important;
     }
-    .switchDescription {
+    .checkboxDescription {
       color: var(--palette-text-neutral-subtler, #ACACAC) !important;
     }
   }
 
-  .switchTextWrapper {
+  .checkboxTextWrapper {
     display: flex;
     align-items: center;
     gap: var(--spacing-gap-sm, 8px);
     color: var(--palette-text-neutral-main, #636363);
+    & :global(.mia-platform-checkbox-wrapper) {
+      line-height: var(--typography-bodyS-lineHeight, 16px);
+    }
   }
 
-  .switchDescription {
+  .checkboxDescription {
     padding-right: var(--spacing-padding-sm, 8px);
     padding-left: calc(var(--spacing-padding-sm, 8px) + var(--spacing-padding-lg, 16px));
     color: var(--palette-text-neutral-main, #636363);
+    line-height: var(--typography-bodyS-lineHeight, 16px);
   }
 
   & :global(.mia-platform-checkbox-disabled) {
@@ -55,7 +71,7 @@
       border-color: var(--palette-action-disabled-contrastText, #ACACAC);
     }
 
-    &:not(:has( input:checked)) :global(.mia-platform-checkbox-inner)::after {
+    & :global(.mia-platform-checkbox-indeterminate) :global(.mia-platform-checkbox-inner)::after {
       background-color: var(--palette-action-disabled-contrastText, #ACACAC);
     }
   }

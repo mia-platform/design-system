@@ -3,10 +3,10 @@
 exports[`Checkbox renders states correctly renders checked disabled state 1`] = `
 <DocumentFragment>
   <div
-    class="switchComponent disabled"
+    class="checkboxComponent disabled"
   >
     <div
-      class="switchTextWrapper"
+      class="checkboxTextWrapper"
     >
       <label
         class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-checked mia-platform-checkbox-wrapper-disabled"
