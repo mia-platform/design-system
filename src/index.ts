@@ -20,6 +20,8 @@ import * as testUtils from './test-utils'
 import { Breadcrumb } from './components/Breadcrumb'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
+import { Checkbox } from './components/Checkbox'
+import { CheckboxGroup } from './components/CheckboxGroup'
 import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
 import { Dropdown } from './components/Dropdown'
@@ -47,6 +49,8 @@ export {
   Breadcrumb,
   Button,
   Card,
+  Checkbox,
+  CheckboxGroup,
   Divider,
   Drawer,
   Dropdown,

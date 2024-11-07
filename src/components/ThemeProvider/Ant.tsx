@@ -21,6 +21,7 @@ import { ReactElement, useMemo } from 'react'
 
 import { DEFAULT_COLOR, DEFAULT_FONT_FAMILY, DEFAULT_FONT_SIZE } from './utils/themeDefaultStyle'
 import ButtonTheme from '../Button/Button.theme'
+import CheckboxTheme from '../Checkbox/Checkbox.theme.ts'
 import DividerTheme from '../Divider/Divider.theme'
 import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
 import InputTheme from '../BaseInput/BaseInput.theme'
@@ -112,6 +113,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Select: SelectTheme({ palette, shape, typography, spacing }),
     Tag: TagTheme({ palette }),
     Radio: RadioTheme({ palette, shape }),
+    Checkbox: CheckboxTheme({ palette, shape }),
   },
 })
 

@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxGroup renders correctly when disabled 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-checkbox-group css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div
+        class="switchComponent disabled"
+      >
+        <div
+          class="switchTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
+            >
+              <input
+                class="ant-checkbox-input"
+                disabled=""
+                type="checkbox"
+                value="1"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 1
+        </div>
+      </div>
+      <div
+        class="switchComponent disabled"
+      >
+        <div
+          class="switchTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
+            >
+              <input
+                class="ant-checkbox-input"
+                disabled=""
+                type="checkbox"
+                value="2"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 2
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CheckboxGroup renders correctly with base props 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-checkbox-group css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div
+        class="switchComponent"
+      >
+        <div
+          class="switchTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            >
+              <input
+                class="ant-checkbox-input"
+                type="checkbox"
+                value="1"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 1
+        </div>
+      </div>
+      <div
+        class="switchComponent"
+      >
+        <div
+          class="switchTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            >
+              <input
+                class="ant-checkbox-input"
+                type="checkbox"
+                value="2"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 2
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CheckboxGroup renders correctly with descriptions 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-checkbox-group css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div
+        class="switchComponent"
+      >
+        <div
+          class="switchTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            >
+              <input
+                class="ant-checkbox-input"
+                type="checkbox"
+                value="1"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 1
+        </div>
+        <div
+          class="switchDescription"
+        >
+          description 1
+        </div>
+      </div>
+      <div
+        class="switchComponent"
+      >
+        <div
+          class="switchTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            >
+              <input
+                class="ant-checkbox-input"
+                type="checkbox"
+                value="1"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 1
+        </div>
+        <div
+          class="switchDescription"
+        >
+          description 2
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CheckboxGroup renders correctly with partially disabled options 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-checkbox-group css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div
+        class="switchComponent disabled"
+      >
+        <div
+          class="switchTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
+            >
+              <input
+                class="ant-checkbox-input"
+                disabled=""
+                type="checkbox"
+                value="1"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 1
+        </div>
+        <div
+          class="switchDescription"
+        >
+          description 1
+        </div>
+      </div>
+      <div
+        class="switchComponent"
+      >
+        <div
+          class="switchTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            >
+              <input
+                class="ant-checkbox-input"
+                type="checkbox"
+                value="1"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 1
+        </div>
+        <div
+          class="switchDescription"
+        >
+          description 2
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
