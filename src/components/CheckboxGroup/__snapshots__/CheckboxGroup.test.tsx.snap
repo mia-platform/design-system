@@ -9,10 +9,10 @@ exports[`CheckboxGroup renders correctly when disabled 1`] = `
       class="options"
     >
       <div
-        class="switchComponent disabled"
+        class="checkboxComponent disabled"
       >
         <div
-          class="switchTextWrapper"
+          class="checkboxTextWrapper"
         >
           <label
             class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
@@ -35,10 +35,10 @@ exports[`CheckboxGroup renders correctly when disabled 1`] = `
         </div>
       </div>
       <div
-        class="switchComponent disabled"
+        class="checkboxComponent disabled"
       >
         <div
-          class="switchTextWrapper"
+          class="checkboxTextWrapper"
         >
           <label
             class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
@@ -74,10 +74,10 @@ exports[`CheckboxGroup renders correctly with base props 1`] = `
       class="options"
     >
       <div
-        class="switchComponent"
+        class="checkboxComponent"
       >
         <div
-          class="switchTextWrapper"
+          class="checkboxTextWrapper"
         >
           <label
             class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
@@ -99,10 +99,10 @@ exports[`CheckboxGroup renders correctly with base props 1`] = `
         </div>
       </div>
       <div
-        class="switchComponent"
+        class="checkboxComponent"
       >
         <div
-          class="switchTextWrapper"
+          class="checkboxTextWrapper"
         >
           <label
             class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
@@ -137,10 +137,10 @@ exports[`CheckboxGroup renders correctly with descriptions 1`] = `
       class="options"
     >
       <div
-        class="switchComponent"
+        class="checkboxComponent"
       >
         <div
-          class="switchTextWrapper"
+          class="checkboxTextWrapper"
         >
           <label
             class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
@@ -161,16 +161,16 @@ exports[`CheckboxGroup renders correctly with descriptions 1`] = `
           checkbox 1
         </div>
         <div
-          class="switchDescription"
+          class="checkboxDescription"
         >
           description 1
         </div>
       </div>
       <div
-        class="switchComponent"
+        class="checkboxComponent"
       >
         <div
-          class="switchTextWrapper"
+          class="checkboxTextWrapper"
         >
           <label
             class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
@@ -191,7 +191,7 @@ exports[`CheckboxGroup renders correctly with descriptions 1`] = `
           checkbox 1
         </div>
         <div
-          class="switchDescription"
+          class="checkboxDescription"
         >
           description 2
         </div>
@@ -210,10 +210,10 @@ exports[`CheckboxGroup renders correctly with partially disabled options 1`] = `
       class="options"
     >
       <div
-        class="switchComponent disabled"
+        class="checkboxComponent disabled"
       >
         <div
-          class="switchTextWrapper"
+          class="checkboxTextWrapper"
         >
           <label
             class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
@@ -235,16 +235,16 @@ exports[`CheckboxGroup renders correctly with partially disabled options 1`] = `
           checkbox 1
         </div>
         <div
-          class="switchDescription"
+          class="checkboxDescription"
         >
           description 1
         </div>
       </div>
       <div
-        class="switchComponent"
+        class="checkboxComponent"
       >
         <div
-          class="switchTextWrapper"
+          class="checkboxTextWrapper"
         >
           <label
             class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
@@ -265,7 +265,7 @@ exports[`CheckboxGroup renders correctly with partially disabled options 1`] = `
           checkbox 1
         </div>
         <div
-          class="switchDescription"
+          class="checkboxDescription"
         >
           description 2
         </div>
