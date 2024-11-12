@@ -1,4 +1,5 @@
 import { ReactNode, useMemo } from 'react'
+import classnames from 'classnames'
 
 import { Checkbox } from '../Checkbox'
 import { CheckboxProps } from '../Checkbox/props.ts'
@@ -13,31 +14,55 @@ type SelectConfig = InputAddonConfig<'select', SelectProps>
 type CheckboxConfig = InputAddonConfig<'checkbox', CheckboxProps>
 
 export type InputAddonProps =
-  | TextConfig
-  | SelectConfig
-  | CheckboxConfig
+  {
+    isReadOnly?: boolean
+    isDisabled?: boolean
+    isError?: boolean
+  } & (
+    | TextConfig
+    | SelectConfig
+    | CheckboxConfig
+  )
 
 const isText = (props: InputAddonProps): props is TextConfig => props.type === 'text'
 const isSelect = (props: InputAddonProps): props is SelectConfig => props.type === 'select'
 const isCheckbox = (props: InputAddonProps): props is CheckboxConfig => props.type === 'checkbox'
 
-export const InputAddon = (props: InputAddonProps) : ReactNode => {
+export const InputAddon = ({ isError, isDisabled, ...config }: InputAddonProps) : ReactNode => {
+  const className = useMemo(() => classnames([
+    styles.inputAddon,
+    isSelect(config) && styles.inputAddonSelect,
+    isCheckbox(config) && styles.inputAddonCheckbox,
+  ]), [config])
+
   const addon = useMemo(() => {
-    if (isText(props)) {
-      return props.value
+    if (isText(config)) {
+      return config.value
     }
-    if (isSelect(props)) {
-      const { type: _, ...config } = props
-      return <Select isFullWidth={false} {...config} />
+    if (isSelect(config)) {
+      const { type: _, ...props } = config
+      return (
+        <Select
+          isDisabled={isDisabled}
+          isError={isError}
+          isFullWidth={false}
+          {...props}
+        />
+      )
     }
-    if (isCheckbox(props)) {
-      const { type: _, ...config } = props
-      return <Checkbox {...config} />
+    if (isCheckbox(config)) {
+      const { type: _, ...props } = config
+      return (
+        <Checkbox
+          isDisabled={isDisabled}
+          {...props}
+        />
+      )
     }
     return undefined
-  }, [props])
+  }, [config, isDisabled, isError])
   return (
-    <div className={styles.inputAddon}>
+    <div className={className}>
       {addon}
     </div>
   )

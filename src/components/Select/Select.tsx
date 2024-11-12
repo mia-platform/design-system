@@ -104,6 +104,7 @@ export const Select = <ValueType, >(
       mode={isMultiple ? 'multiple' : undefined}
       options={options}
       placeholder={placeholder}
+      popupMatchSelectWidth={false}
       showSearch={false}
       suffixIcon={suffixIcon}
       tagRender={tagRender}

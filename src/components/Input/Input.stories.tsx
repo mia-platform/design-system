@@ -135,3 +135,108 @@ export const AddonBeforeCheckbox: Story = {
   },
 }
 
+export const AddonAfterText: Story = {
+  args: {
+    addonAfter: {
+      type: 'text',
+      value: '/',
+    },
+  },
+}
+
+export const AddonAfterSelect: Story = {
+  args: {
+    addonAfter: {
+      type: 'select',
+      placeholder: 'placeholder...',
+      options: [
+        { value: '.com' },
+        { value: '.jp' },
+        { value: '.cn' },
+        { value: '.org' },
+      ],
+    },
+  },
+}
+
+export const AddonAfterCheckbox: Story = {
+  args: {
+    addonAfter: {
+      type: 'checkbox',
+      label: 'Inherited',
+    },
+  },
+}
+
+export const AddonTextDisabled: Story = {
+  args: {
+    isDisabled: true,
+    addonBefore: {
+      type: 'text',
+      value: '/',
+    },
+  },
+}
+
+export const AddonSelectDisabled: Story = {
+  args: {
+    isDisabled: true,
+    addonBefore: {
+      type: 'select',
+      placeholder: 'placeholder...',
+      options: [
+        { value: '.com' },
+        { value: '.jp' },
+        { value: '.cn' },
+        { value: '.org' },
+      ],
+    },
+  },
+}
+
+export const AddonCheckboxDisabled: Story = {
+  args: {
+    isDisabled: true,
+    addonBefore: {
+      type: 'checkbox',
+      label: 'Inherited',
+    },
+  },
+}
+
+export const AddonTextError: Story = {
+  args: {
+    isError: true,
+    addonBefore: {
+      type: 'text',
+      value: '/',
+    },
+  },
+}
+
+export const AddonSelectError: Story = {
+  args: {
+    isError: true,
+    addonBefore: {
+      type: 'select',
+      placeholder: 'placeholder...',
+      options: [
+        { value: '.com' },
+        { value: '.jp' },
+        { value: '.cn' },
+        { value: '.org' },
+      ],
+    },
+  },
+}
+
+export const AddonCheckboxError: Story = {
+  args: {
+    isError: true,
+    addonBefore: {
+      type: 'checkbox',
+      label: 'Inherited',
+    },
+  },
+}
+

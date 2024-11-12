@@ -55,4 +55,6 @@ export default ({ palette, spacing, shape }: Partial<Theme>): ComponentsTheme['I
   // icons
   colorTextQuaternary: palette?.text?.neutral?.subtle,
   colorIcon: palette?.text?.neutral?.subtle,
+  // addons
+  addonBg: palette?.background?.neutral?.['300'],
 })

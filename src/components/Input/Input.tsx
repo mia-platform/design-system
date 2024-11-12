@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement, useMemo } from 'react'
 import { Input as AntInput } from 'antd'
-import { ReactElement } from 'react'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
 import { Icon } from '../Icon'
@@ -57,14 +57,30 @@ export const Input = (
     allowClear,
     maxLength,
     minLength,
-    addonAfter,
-    addonBefore,
+    addonAfter: addonAfterProp,
+    addonBefore: addonBeforeProp,
   }: InputProps
 ) : ReactElement => {
+  const addonAfter = useMemo(() => addonAfterProp && (
+    <InputAddon
+      isDisabled={isDisabled}
+      isError={isError}
+      {...addonAfterProp}
+    />
+  ), [addonAfterProp, isDisabled, isError])
+
+  const addonBefore = useMemo(() => addonBeforeProp && (
+    <InputAddon
+      isDisabled={isDisabled}
+      isError={isError}
+      {...addonBeforeProp}
+    />
+  ), [addonBeforeProp, isDisabled, isError])
+
   return (
     <BaseInput
-      addonAfter={addonAfter && <InputAddon {...addonAfter} />}
-      addonBefore={addonBefore && <InputAddon {...addonBefore} />}
+      addonAfter={addonAfter}
+      addonBefore={addonBefore}
       allowClear={allowClear}
       appearance={appearance}
       className={styles.input}
