@@ -16,15 +16,28 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useMemo } from 'react'
+import {
+  ChangeEvent,
+  ReactElement,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react'
 import { Input as AntInput } from 'antd'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
+import { InputAddon, InputAddonProps } from './InputAddon.tsx'
 import { Icon } from '../Icon'
-import { InputAddon } from './InputAddon.tsx'
 import { InputProps } from './props'
 import { Type } from './types'
 import styles from './input.module.css'
+
+/**
+ * A UI element to insert text content in a form.
+ *
+ * @link https://ant.design/components/input
+ * @returns {Input} Input component
+ */
 
 export const defaults = {
   ...baseInputDefaults,
@@ -33,12 +46,16 @@ export const defaults = {
 
 const DEFAULT_ICON_SIZE = 12 as never
 
-/**
- * A UI element to insert text content in a form.
- *
- * @link https://ant.design/components/input
- * @returns {Input} Input component
- */
+type AddonPosition = 'before' | 'after'
+
+const getAddonDefaultValue = (
+  position: AddonPosition,
+  props?: InputAddonProps
+): Record<string, unknown> => {
+  return props && props.value !== undefined && props.defaultValue !== undefined
+    ? { [position]: props.value || props.defaultValue } : {}
+}
+
 export const Input = (
   {
     appearance = defaults.type,
@@ -61,21 +78,43 @@ export const Input = (
     addonBefore: addonBeforeProp,
   }: InputProps
 ) : ReactElement => {
-  const addonAfter = useMemo(() => addonAfterProp && (
-    <InputAddon
-      isDisabled={isDisabled}
-      isError={isError}
-      {...addonAfterProp}
-    />
-  ), [addonAfterProp, isDisabled, isError])
+  const [val, setVal] = useState({
+    value: value || defaultValue || '',
+    ...getAddonDefaultValue('before', addonBeforeProp),
+    ...getAddonDefaultValue('after', addonAfterProp),
+  })
 
-  const addonBefore = useMemo(() => addonBeforeProp && (
+  const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    const { value: nextValue } = event.target
+    const nextVal = { ...val, value: nextValue }
+    setVal(nextVal)
+    if (onChange) {
+      onChange(event, nextVal)
+    }
+  }, [onChange, val])
+
+  const renderAddon = useCallback((position: AddonPosition, props: InputAddonProps) => (
     <InputAddon
       isDisabled={isDisabled}
       isError={isError}
-      {...addonBeforeProp}
+      onChange={(nextValue: unknown) => {
+        const nextVal = { ...val, [position]: nextValue }
+        setVal(nextVal)
+        if (onChange) {
+          onChange(undefined, nextVal)
+        }
+      }}
+      {...props}
     />
-  ), [addonBeforeProp, isDisabled, isError])
+  ), [isDisabled, isError, onChange, val])
+
+  const addonBefore = useMemo(() => (
+    addonBeforeProp && renderAddon('before', addonBeforeProp)
+  ), [addonBeforeProp, renderAddon])
+
+  const addonAfter = useMemo(() => (
+    addonAfterProp && renderAddon('after', addonAfterProp)
+  ), [addonAfterProp, renderAddon])
 
   return (
     <BaseInput
@@ -98,7 +137,7 @@ export const Input = (
       suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
       type={type}
       value={value}
-      onChange={onChange}
+      onChange={handleChange}
     />
   )
 }
