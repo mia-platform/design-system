@@ -101,3 +101,37 @@ export const Hidden: Story = {
     defaultValue: 'Hidden',
   },
 }
+
+export const AddonBeforeText: Story = {
+  args: {
+    addonBefore: {
+      type: 'text',
+      value: '/',
+    },
+  },
+}
+
+export const AddonBeforeSelect: Story = {
+  args: {
+    addonBefore: {
+      type: 'select',
+      placeholder: 'str',
+      options: [
+        { value: '.com' },
+        { value: '.jp' },
+        { value: '.cn' },
+        { value: '.org' },
+      ],
+    },
+  },
+}
+
+export const AddonBeforeCheckbox: Story = {
+  args: {
+    addonBefore: {
+      type: 'checkbox',
+      label: 'Inherited',
+    },
+  },
+}
+

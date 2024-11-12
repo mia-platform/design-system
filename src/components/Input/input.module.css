@@ -1,0 +1,21 @@
+
+
+.input {
+}
+
+.inputAddon {
+  & :global(.mia-platform-select-selector) {
+    padding-left: 8px !important;
+    padding-right: calc(8px + 12px + 8px) !important;
+  }
+  & :global(.mia-platform-select-selection-placeholder) {
+    padding-inline-end: 0!important;
+  }
+  & :global(.mia-platform-select-selection-item) {
+    padding-inline-end: 0!important;
+  }
+
+  & :global(.mia-platform-select-arrow) {
+    inset-inline-end: calc(8px - 1px);
+  }
+}

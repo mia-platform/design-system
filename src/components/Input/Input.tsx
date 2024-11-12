@@ -21,8 +21,10 @@ import { ReactElement } from 'react'
 
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
 import { Icon } from '../Icon'
+import { InputAddon } from './InputAddon.tsx'
 import { InputProps } from './props'
 import { Type } from './types'
+import styles from './input.module.css'
 
 export const defaults = {
   ...baseInputDefaults,
@@ -55,12 +57,17 @@ export const Input = (
     allowClear,
     maxLength,
     minLength,
+    addonAfter,
+    addonBefore,
   }: InputProps
 ) : ReactElement => {
   return (
     <BaseInput
+      addonAfter={addonAfter && <InputAddon {...addonAfter} />}
+      addonBefore={addonBefore && <InputAddon {...addonBefore} />}
       allowClear={allowClear}
       appearance={appearance}
+      className={styles.input}
       component={AntInput}
       defaultValue={defaultValue}
       inputRef={inputRef}

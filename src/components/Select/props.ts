@@ -36,7 +36,7 @@ export type SelectSelectHandler<ValueType> = (
     option: SelectItem<ValueType>
   ) => void
 
-export type SelectProps<ValueType> = BaseInputProps & {
+export type SelectProps<ValueType = unknown> = BaseInputProps & {
 
   /**
    * The input content value.

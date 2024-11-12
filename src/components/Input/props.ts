@@ -21,6 +21,7 @@ import { ChangeEventHandler } from 'react'
 import { BaseInputProps } from '../BaseInput/props'
 import { IconComponent } from '../Icon/Icon.props'
 import { Type } from './types'
+import { InputAddonProps } from './InputAddon'
 
 export type InputProps = BaseInputProps & {
 
@@ -68,4 +69,9 @@ export type InputProps = BaseInputProps & {
    * Callback when user input.
    */
   onChange?: ChangeEventHandler
+
+  addonBefore?: InputAddonProps
+
+  addonAfter?: InputAddonProps
+
 }
