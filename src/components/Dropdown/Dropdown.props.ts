@@ -18,6 +18,7 @@
 
 import { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react'
 
+import { Placement } from './Dropdown.types'
 import { Size } from '../../themes/schema/shape'
 
 export enum ItemLayout {
@@ -235,5 +236,5 @@ export type DropdownProps = {
     /**
       * The placement of the dropdown menu, can be: `topLeft`, `topRight`, `bottomLeft`, `bottomRight`, `top`, `bottom`.
       */
-   placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight' | 'top' | 'bottom'
+   placement?: Placement
 }

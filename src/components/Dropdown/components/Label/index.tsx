@@ -19,7 +19,7 @@
 import { ReactElement, ReactNode, isValidElement, useMemo } from 'react'
 import classNames from 'classnames'
 
-import { DropdownItem, ItemLayout } from '../../props'
+import { DropdownItem, ItemLayout } from '../../Dropdown.props'
 import { Tag } from '../../../Tag'
 import styles from '../../dropdown.module.css'
 

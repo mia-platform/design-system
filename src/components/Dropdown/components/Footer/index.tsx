@@ -19,7 +19,7 @@
 import { ReactElement } from 'react'
 import { isEmpty } from 'lodash-es'
 
-import { DropdownFooter, FooterAction } from '../../props'
+import { DropdownFooter, FooterAction } from '../../Dropdown.props'
 import { Button } from '../../../Button'
 import styles from './index.module.css'
 

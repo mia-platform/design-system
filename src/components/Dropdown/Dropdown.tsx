@@ -16,34 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Dropdown as AntdDropdown, type MenuProps as AntdMenuProps } from 'antd'
 import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
+import { Dropdown as AntdDropdown } from 'antd'
 import classNames from 'classnames'
 
-import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout, OpenChangeInfoSource } from './props'
+import { AntdMenuClickEvent, AntdMenuItem, AntdMenuItems, Placement, antdSourceMap } from './Dropdown.types'
+import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './Dropdown.props'
 import { Footer, useFooterWithHookedActions } from './components/Footer'
 import { Divider } from '../Divider'
 import Label from './components/Label'
 import styles from './dropdown.module.css'
 import { useTheme } from '../../hooks/useTheme'
-
-type ArrayElement<ArrayType extends readonly unknown[] | undefined> =
-  ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
-
-type AntdMenuItems = AntdMenuProps['items']
-type AntdMenuItem = ArrayElement<AntdMenuItems>
-
-type AntdMenuClickEvent = {
-  key: string,
-  keyPath: string[],
-  domEvent: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>
-}
-
-type AntdTriggerSource = 'trigger'|'menu'
-const antdSourceMap: Record<AntdTriggerSource, OpenChangeInfoSource> = {
-  'trigger': OpenChangeInfoSource.Trigger,
-  'menu': OpenChangeInfoSource.Menu,
-}
 
 export const defaults = {
   itemLayout: ItemLayout.Horizontal,
@@ -67,7 +50,7 @@ export const Dropdown = ({
   initialSelectedItems = defaults.initialSelectedItems,
   multiple,
   persistSelection = true,
-  placement,
+  placement = Placement.BottomLeft,
 }: DropdownProps): ReactElement => {
   const { spacing } = useTheme()
 
@@ -148,7 +131,7 @@ export const Dropdown = ({
   const classes = useMemo(() => classNames(styles.dropdownWrapper, uniqueOverlayClassName), [uniqueOverlayClassName])
 
   const onOpenChangeInternal = useCallback(
-    (open: boolean, info: {source: 'trigger'| 'menu'}) => {
+    (open: boolean, info: { source: 'trigger' | 'menu' }) => {
       if (!onOpenChange) {
         return
       }
@@ -177,6 +160,7 @@ export const Dropdown = ({
 
 Dropdown.ItemLayout = ItemLayout
 Dropdown.Trigger = DropdownTrigger
+Dropdown.Placement = Placement
 
 function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems {
   return items.map<AntdMenuItem>((item: DropdownItem) => ({
@@ -189,7 +173,7 @@ function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems 
 
 function eventAdapter(
   event: AntdMenuClickEvent,
-  finder: (id: string) => DropdownItem|undefined,
+  finder: (id: string) => DropdownItem | undefined,
 ): DropdownClickEvent {
   return {
     id: event.key,
@@ -199,7 +183,7 @@ function eventAdapter(
   }
 }
 
-function itemFinder(items: DropdownItem[], id: string): DropdownItem|undefined {
+function itemFinder(items: DropdownItem[], id: string): DropdownItem | undefined {
   for (const item of items) {
     if (item.id === id) {
       return item
