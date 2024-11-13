@@ -17,8 +17,11 @@
     color: var(--palette-text-neutral-subtler, #ACACAC) !important;
   }
 
-  &:not(:global(.mia-platform-input-group-wrapper-disabled)) :global(.mia-platform-input-group-addon):has(.inputAddonCheckbox) {
+  &:global(.mia-platform-input-group-wrapper) :global(.mia-platform-input-group-addon):has(.inputAddonCheckbox) {
     background-color: var(--palette-action-seconary-main, #FFFFFF) !important;
+  }
+  &:global(.mia-platform-input-group-wrapper-disabled) :global(.mia-platform-input-group-addon):has(.inputAddonCheckbox) {
+    background-color: var(--palette-background-neutral-300, #F9F9F9) !important;
   }
 
   &:not(:global(.mia-platform-input-group-wrapper-disabled)) input:has(+ :global(.mia-platform-input-group-addon):hover .inputAddonCheckbox) {

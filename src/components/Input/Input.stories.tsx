@@ -204,6 +204,17 @@ export const AddonCheckboxDisabled: Story = {
   },
 }
 
+export const AddonCheckboxDisabledChecked: Story = {
+  args: {
+    isDisabled: true,
+    addonBefore: {
+      defaultValue: true,
+      type: 'checkbox',
+      label: 'Inherited',
+    },
+  },
+}
+
 export const AddonTextError: Story = {
   args: {
     isError: true,
