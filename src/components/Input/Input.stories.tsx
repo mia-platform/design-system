@@ -19,6 +19,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { PiCircleHalfTilt } from 'react-icons/pi'
 
+import { AddonType } from './types.ts'
 import { Input } from '.'
 
 const meta = {
@@ -105,7 +106,7 @@ export const Hidden: Story = {
 export const AddonBeforeText: Story = {
   args: {
     addonBefore: {
-      type: 'text',
+      type: AddonType.Text,
       value: '/',
     },
   },
@@ -114,7 +115,7 @@ export const AddonBeforeText: Story = {
 export const AddonBeforeSelect: Story = {
   args: {
     addonBefore: {
-      type: 'select',
+      type: AddonType.Select,
       placeholder: 'Placeholder...',
       options: [
         { value: '.com' },
@@ -129,7 +130,7 @@ export const AddonBeforeSelect: Story = {
 export const AddonBeforeCheckbox: Story = {
   args: {
     addonBefore: {
-      type: 'checkbox',
+      type: AddonType.Checkbox,
       label: 'Inherited',
     },
   },
@@ -138,7 +139,7 @@ export const AddonBeforeCheckbox: Story = {
 export const AddonAfterText: Story = {
   args: {
     addonAfter: {
-      type: 'text',
+      type: AddonType.Text,
       value: '/',
     },
   },
@@ -147,7 +148,7 @@ export const AddonAfterText: Story = {
 export const AddonAfterSelect: Story = {
   args: {
     addonAfter: {
-      type: 'select',
+      type: AddonType.Select,
       placeholder: 'Placeholder...',
       options: [
         { value: '.com' },
@@ -162,7 +163,7 @@ export const AddonAfterSelect: Story = {
 export const AddonAfterCheckbox: Story = {
   args: {
     addonAfter: {
-      type: 'checkbox',
+      type: AddonType.Checkbox,
       label: 'Inherited',
     },
   },
@@ -172,7 +173,7 @@ export const AddonTextDisabled: Story = {
   args: {
     isDisabled: true,
     addonBefore: {
-      type: 'text',
+      type: AddonType.Text,
       value: '/',
     },
   },
@@ -182,7 +183,7 @@ export const AddonSelectDisabled: Story = {
   args: {
     isDisabled: true,
     addonBefore: {
-      type: 'select',
+      type: AddonType.Select,
       placeholder: 'Placeholder...',
       options: [
         { value: '.com' },
@@ -198,7 +199,7 @@ export const AddonCheckboxDisabled: Story = {
   args: {
     isDisabled: true,
     addonBefore: {
-      type: 'checkbox',
+      type: AddonType.Checkbox,
       label: 'Inherited',
     },
   },
@@ -209,7 +210,7 @@ export const AddonCheckboxDisabledChecked: Story = {
     isDisabled: true,
     addonBefore: {
       defaultValue: true,
-      type: 'checkbox',
+      type: AddonType.Checkbox,
       label: 'Inherited',
     },
   },
@@ -219,7 +220,7 @@ export const AddonTextError: Story = {
   args: {
     isError: true,
     addonBefore: {
-      type: 'text',
+      type: AddonType.Text,
       value: '/',
     },
   },
@@ -229,7 +230,7 @@ export const AddonSelectError: Story = {
   args: {
     isError: true,
     addonBefore: {
-      type: 'select',
+      type: AddonType.Select,
       placeholder: 'Placeholder...',
       options: [
         { value: '.com' },
@@ -245,7 +246,7 @@ export const AddonCheckboxError: Story = {
   args: {
     isError: true,
     addonBefore: {
-      type: 'checkbox',
+      type: AddonType.Checkbox,
       label: 'Inherited',
     },
   },
