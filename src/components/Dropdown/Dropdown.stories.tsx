@@ -24,9 +24,9 @@ import { Button } from '../Button'
 import { Dropdown } from '.'
 import { DropdownProps } from './Dropdown.props'
 import { Icon } from '../Icon'
+import { Placement } from './Dropdown.types'
 import { Tag } from '../Tag'
 import { Typography } from '../Typography'
-import { Placement } from './Dropdown.types'
 
 const defaults: Partial<DropdownProps> = {
   items: [{
