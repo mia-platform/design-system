@@ -20,6 +20,7 @@ type InputAddonConfig<
   onChange?: (value: unknown) => void
   value?: unknown;
   defaultValue?: unknown
+  disabled?: boolean
 }
 
 type TextConfig = InputAddonConfig<AddonType.Text>

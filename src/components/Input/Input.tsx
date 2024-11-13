@@ -52,7 +52,7 @@ const getAddonDefaultValue = (
   position: AddonPosition,
   props?: InputAddonProps
 ): Record<string, unknown> => {
-  return props && props.value !== undefined && props.defaultValue !== undefined
+  return props && (props.value !== undefined || props.defaultValue !== undefined)
     ? { [position]: props.value || props.defaultValue } : {}
 }
 
@@ -93,19 +93,33 @@ export const Input = (
     }
   }, [onChange, val])
 
-  const renderAddon = useCallback((position: AddonPosition, props: InputAddonProps) => (
-    <InputAddon
-      isDisabled={isDisabled}
-      onChange={(nextValue: unknown) => {
+  const renderAddon = useCallback((position: AddonPosition, props: InputAddonProps) => {
+    const { onChange: onChangeAddon, disabled: addonDisabled } = props
+
+    const isAddonDisabled = addonDisabled === undefined
+      ? isDisabled
+      : addonDisabled
+
+    const handleChangeAddon
+      = (nextValue: unknown) : void => {
         const nextVal = { ...val, [position]: nextValue }
         setVal(nextVal)
+        if (onChangeAddon) {
+          onChangeAddon(nextVal)
+        }
         if (onChange) {
           onChange(undefined, nextVal)
         }
-      }}
-      {...props}
-    />
-  ), [isDisabled, onChange, val])
+      }
+
+    return (
+      <InputAddon
+        isDisabled={isAddonDisabled}
+        onChange={handleChangeAddon}
+        {...props}
+      />
+    )
+  }, [isDisabled, onChange, val])
 
   const addonBefore = useMemo(() => (
     addonBeforeProp && renderAddon('before', addonBeforeProp)
