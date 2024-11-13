@@ -68,8 +68,8 @@
   }
 
   & :global(.mia-platform-select-selector) {
-    padding-left: 8px !important;
-    padding-right: calc(8px + 12px + 8px) !important;
+    padding-left: var(--spacing-padding-sm, 8px) !important;
+    padding-right: calc(12px + 2 *  var(--spacing-padding-sm, 8px)) !important;
     border: none !important;
     box-shadow: none !important;
   }
@@ -81,6 +81,6 @@
   }
 
   & :global(.mia-platform-select-arrow) {
-    inset-inline-end: calc(8px - 1px);
+    inset-inline-end: calc(var(--spacing-padding-sm, 8px) - 1px);
   }
 }
