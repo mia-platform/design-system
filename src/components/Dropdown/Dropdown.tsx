@@ -33,6 +33,7 @@ export const defaults = {
   triggers: [DropdownTrigger.Click],
   initialSelectedItems: [],
   menuItemsMaxHeight: 240,
+  placement: Placement.BottomLeft,
 }
 
 export const Dropdown = ({
@@ -50,7 +51,7 @@ export const Dropdown = ({
   initialSelectedItems = defaults.initialSelectedItems,
   multiple,
   persistSelection = true,
-  placement = Placement.BottomLeft,
+  placement = defaults.placement,
 }: DropdownProps): ReactElement => {
   const { spacing } = useTheme()
 
