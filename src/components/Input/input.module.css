@@ -16,11 +16,39 @@
     border-color: var(--palette-action-disabled-bold, #E5E5E5) !important;
     color: var(--palette-text-neutral-subtler, #ACACAC) !important;
   }
+
+  &:not(:global(.mia-platform-input-group-wrapper-disabled)) :global(.mia-platform-input-group-addon):has(.inputAddonCheckbox) {
+    background-color: var(--palette-action-seconary-main, #FFFFFF) !important;
+  }
+
+  &:not(:global(.mia-platform-input-group-wrapper-disabled)) input:has(+ :global(.mia-platform-input-group-addon):hover .inputAddonCheckbox) {
+    border-inline-end-width: 1px !important;
+    border-inline-end-style: solid !important;
+    border-inline-end-color: var(--palette-text-primary-subtle, #1890FF) !important;
+  }
+
+  &:not(:global(.mia-platform-input-group-wrapper-disabled)) :global(.mia-platform-input-group-addon):hover:has(.inputAddonCheckbox) {
+
+    & :global(.mia-platform-checkbox-checked) :global(.mia-platform-checkbox-inner) {
+      background-color: var(--palette-text-primary-subtle, #1890FF);
+    }
+
+    & :global(.mia-platform-checkbox-inner) {
+      border-color: var(--palette-text-primary-subtle, #1890FF);
+    }
+
+    border-color: var(--palette-text-primary-subtle, #1890FF) !important;
+    & + input {
+      border-inline-start-width: 1px !important;
+      border-inline-start-style: solid !important;
+      border-inline-start-color: var(--palette-text-primary-subtle, #1890FF) !important;
+    }
+
+    & div:has(label) {
+        color: var(--palette-text-primary-subtle, #1890FF);
+    }
+  }
 }
-
-.inputAddon {}
-
-.innputAddonDisabled {}
 
 .inputAddonCheckbox {}
 

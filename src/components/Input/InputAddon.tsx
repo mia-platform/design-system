@@ -9,6 +9,7 @@ type InputAddonCommonProps =
   {
     isReadOnly?: boolean
     isDisabled?: boolean
+    position?: 'before' | 'after'
   }
 
 type InputAddonConfig<

@@ -115,7 +115,7 @@ export const AddonBeforeSelect: Story = {
   args: {
     addonBefore: {
       type: 'select',
-      placeholder: 'placeholder...',
+      placeholder: 'Placeholder...',
       options: [
         { value: '.com' },
         { value: '.jp' },
@@ -148,7 +148,7 @@ export const AddonAfterSelect: Story = {
   args: {
     addonAfter: {
       type: 'select',
-      placeholder: 'placeholder...',
+      placeholder: 'Placeholder...',
       options: [
         { value: '.com' },
         { value: '.jp' },
@@ -183,7 +183,7 @@ export const AddonSelectDisabled: Story = {
     isDisabled: true,
     addonBefore: {
       type: 'select',
-      placeholder: 'placeholder...',
+      placeholder: 'Placeholder...',
       options: [
         { value: '.com' },
         { value: '.jp' },
@@ -219,7 +219,7 @@ export const AddonSelectError: Story = {
     isError: true,
     addonBefore: {
       type: 'select',
-      placeholder: 'placeholder...',
+      placeholder: 'Placeholder...',
       options: [
         { value: '.com' },
         { value: '.jp' },
