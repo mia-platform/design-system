@@ -26,6 +26,7 @@ import { DropdownProps } from './Dropdown.props'
 import { Icon } from '../Icon'
 import { Tag } from '../Tag'
 import { Typography } from '../Typography'
+import { Placement } from './Dropdown.types'
 
 const defaults: Partial<DropdownProps> = {
   items: [{
@@ -95,7 +96,7 @@ export const BasicExample: Story = {}
 
 export const PlacementTop: Story = {
   args: {
-    placement: 'top',
+    placement: Placement.Top,
   },
 }
 
