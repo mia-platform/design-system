@@ -12,7 +12,7 @@ exports[`Input Component renders correctly 1`] = `
         class="mia-platform-select-selection-search"
       >
         <span
-          class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth"
+          class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth input"
         >
           <input
             class="mia-platform-input"

@@ -41,13 +41,13 @@ exports[`Input Component Borderless renders correctly 1`] = `
       <svg
         color="currentColor"
         fill="currentColor"
-        height="12"
+        height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
         style="color: currentColor;"
         viewBox="0 0 256 256"
-        width="12"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -101,13 +101,13 @@ exports[`Input Component Disabled renders correctly 1`] = `
       <svg
         color="currentColor"
         fill="currentColor"
-        height="12"
+        height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
         style="color: currentColor;"
         viewBox="0 0 256 256"
-        width="12"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -160,13 +160,13 @@ exports[`Input Component Error renders correctly 1`] = `
       <svg
         color="currentColor"
         fill="currentColor"
-        height="12"
+        height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
         style="color: currentColor;"
         viewBox="0 0 256 256"
-        width="12"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -261,13 +261,13 @@ exports[`Input Component renders correctly 1`] = `
       <svg
         color="currentColor"
         fill="currentColor"
-        height="12"
+        height="16"
         role="img"
         stroke="currentColor"
         stroke-width="0"
         style="color: currentColor;"
         viewBox="0 0 256 256"
-        width="12"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

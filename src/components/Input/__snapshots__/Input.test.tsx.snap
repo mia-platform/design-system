@@ -3,7 +3,7 @@
 exports[`Input Component AllowClear renders correctly 1`] = `
 <DocumentFragment>
   <span
-    class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth"
+    class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth input"
   >
     <input
       class="mia-platform-input"
@@ -47,7 +47,7 @@ exports[`Input Component AllowClear renders correctly 1`] = `
 exports[`Input Component Hidden renders correctly 1`] = `
 <DocumentFragment>
   <input
-    class="mia-platform-input mia-platform-input-outlined input fullWidth"
+    class="mia-platform-input mia-platform-input-outlined input fullWidth input"
     type="hidden"
     value=""
   />
@@ -57,7 +57,7 @@ exports[`Input Component Hidden renders correctly 1`] = `
 exports[`Input Component Password renders correctly 1`] = `
 <DocumentFragment>
   <input
-    class="mia-platform-input mia-platform-input-outlined input fullWidth"
+    class="mia-platform-input mia-platform-input-outlined input fullWidth input"
     type="number"
     value=""
   />
@@ -67,7 +67,7 @@ exports[`Input Component Password renders correctly 1`] = `
 exports[`Input Component Search renders correctly 1`] = `
 <DocumentFragment>
   <input
-    class="mia-platform-input mia-platform-input-outlined input fullWidth"
+    class="mia-platform-input mia-platform-input-outlined input fullWidth input"
     type="search"
     value=""
   />
@@ -77,7 +77,7 @@ exports[`Input Component Search renders correctly 1`] = `
 exports[`Input Component TextArea renders correctly 1`] = `
 <DocumentFragment>
   <input
-    class="mia-platform-input mia-platform-input-outlined input fullWidth"
+    class="mia-platform-input mia-platform-input-outlined input fullWidth input"
     type="textarea"
     value=""
   />
@@ -87,7 +87,7 @@ exports[`Input Component TextArea renders correctly 1`] = `
 exports[`Input Component With left icon renders correctly 1`] = `
 <DocumentFragment>
   <span
-    class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth"
+    class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth input"
   >
     <span
       class="mia-platform-input-prefix"
@@ -131,7 +131,7 @@ exports[`Input Component With left icon renders correctly 1`] = `
 exports[`Input Component With right icon renders correctly 1`] = `
 <DocumentFragment>
   <span
-    class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth"
+    class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth input"
   >
     <input
       class="mia-platform-input"
@@ -175,7 +175,7 @@ exports[`Input Component With right icon renders correctly 1`] = `
 exports[`Input Component renders correctly 1`] = `
 <DocumentFragment>
   <input
-    class="mia-platform-input mia-platform-input-outlined input fullWidth"
+    class="mia-platform-input mia-platform-input-outlined input fullWidth input"
     type="text"
     value=""
   />
