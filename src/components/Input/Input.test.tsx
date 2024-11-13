@@ -21,10 +21,12 @@ import { FiSearch } from 'react-icons/fi'
 import { fireEvent, render, screen } from '../../test-utils'
 import { AddonType } from './types.ts'
 import { Input } from './Input'
+import { userEvent } from '../../test-utils.tsx'
 
-const textAddonValue = 'test'
+const exampleText = 'test'
 
-const checkboxAddonLabel = 'test'
+const textAddonValue = exampleText
+const checkboxAddonLabel = exampleText
 
 const selectAddonOptions = [
   ...Array(5).keys(),
@@ -151,22 +153,19 @@ describe('Input Component', () => {
 
   test('Should call event handler on Change', async() => {
     const onChange = jest.fn()
-    const text = AddonType.Text
 
     render(<Input onChange={onChange} />)
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
 
-    fireEvent.change(input, { target: { value: text } })
+    fireEvent.change(input, { target: { value: exampleText } })
 
     expect(onChange).toHaveBeenCalled()
-    expect(input.value).toBe(text)
+    expect(input.value).toBe(exampleText)
   })
 
   test('Allow clear should clear input', () => {
-    const text = AddonType.Text
-
-    render(<Input allowClear defaultValue={text} />)
+    render(<Input allowClear defaultValue={exampleText} />)
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
     const clearIcon = screen.getByRole('img', { name: 'close-circle' })
@@ -174,5 +173,50 @@ describe('Input Component', () => {
     fireEvent.click(clearIcon)
 
     expect(input.value).toBe('')
+  })
+
+  test('Addon select should trigger onChange with correct parameters', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Input addonBefore={{ type: AddonType.Select, options: selectAddonOptions }} onChange={onChange} />
+    )
+
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+
+    fireEvent.change(input, { target: { value: exampleText } })
+
+    expect(onChange).toHaveBeenCalledWith({}, { value: exampleText })
+    expect(input.value).toBe(exampleText)
+
+    const select = screen.getByRole<HTMLInputElement>('combobox')
+
+    await userEvent.click(select)
+
+    const option = screen.getByTitle(selectAddonOptions[0].value)
+    await userEvent.click(option)
+
+    expect(onChange).toHaveBeenCalledWith(undefined, { value: exampleText, before: selectAddonOptions[0].value })
+  })
+
+  test('Addon checkbox should trigger onChange with correct parameters', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Input addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} onChange={onChange} />
+    )
+
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+
+    fireEvent.change(input, { target: { value: exampleText } })
+
+    expect(onChange).toHaveBeenCalledWith({}, { value: exampleText })
+    expect(input.value).toBe(exampleText)
+
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
+
+    await userEvent.click(checkbox)
+
+    expect(onChange).toHaveBeenCalledWith(undefined, { value: exampleText, before: true })
   })
 })
