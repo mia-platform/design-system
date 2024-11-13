@@ -1,28 +1,42 @@
-import { ReactNode, useMemo } from 'react'
-import classnames from 'classnames'
+import { ReactNode } from 'react'
 
 import { Checkbox } from '../Checkbox'
 import { Select } from '../Select'
 import { SelectItem } from '../Select/props.ts'
 import styles from './input.module.css'
 
-type InputAddonConfig<Type extends string, Config extends object = Record<string, unknown>> = {
-  type: Type
-  value?: unknown;
-  defaultValue?: unknown
-  onChange?: (value: unknown) => void
-} & Config
-
-type TextConfig = InputAddonConfig<'text'>
-type SelectConfig = InputAddonConfig<'select', {options: SelectItem<unknown>[]}>
-type CheckboxConfig = InputAddonConfig<'checkbox'>
-
-export type InputAddonProps =
+type InputAddonCommonProps =
   {
     isReadOnly?: boolean
     isDisabled?: boolean
-    isError?: boolean
-  } & (
+  }
+
+type InputAddonConfig<
+  Type extends string,
+  Config extends object = object
+> = Config & {
+  type: Type
+  onChange?: (value: unknown) => void
+  value?: unknown;
+  defaultValue?: unknown
+}
+
+type TextConfig = InputAddonConfig<'text'>
+
+type SelectConfig = InputAddonConfig<
+  'select', {
+  options: SelectItem<unknown>[]
+  placeholder?: string
+}>
+type CheckboxConfig = InputAddonConfig<
+  'checkbox', {
+  value?: boolean
+  defaultValue?: boolean
+  label?: ReactNode
+}>
+
+export type InputAddonProps =
+  InputAddonCommonProps & (
     | TextConfig
     | SelectConfig
     | CheckboxConfig
@@ -32,40 +46,35 @@ const isText = (props: InputAddonProps): props is TextConfig => props.type === '
 const isSelect = (props: InputAddonProps): props is SelectConfig => props.type === 'select'
 const isCheckbox = (props: InputAddonProps): props is CheckboxConfig => props.type === 'checkbox'
 
-export const InputAddon = ({ isError, isDisabled, onChange, ...config }: InputAddonProps) : ReactNode => {
-  const className = useMemo(() => classnames([
-    styles.inputAddon,
-    isSelect(config) && styles.inputAddonSelect,
-    isCheckbox(config) && styles.inputAddonCheckbox,
-  ]), [config])
-
-  const addon = useMemo(() => {
-    if (isText(config)) {
-      return String(config.value)
-    }
-    if (isSelect(config)) {
-      const { type: _, ...props } = config
-      return (
+export const InputAddon = ({
+  onChange,
+  isDisabled,
+  ...config
+}: InputAddonProps) : ReactNode => {
+  if (isText(config)) {
+    return String(config.value)
+  }
+  if (isSelect(config)) {
+    const { type: _, ...props } = config
+    return (
+      <div className={styles.inputAddonSelect}>
         <Select
           isDisabled={isDisabled}
-          isError={isError}
           isFullWidth={false}
-          onSelect={(value) => {
-            if (onChange) {
-              onChange(value)
-            }
-          }}
+          onChange={onChange}
           {...props}
         />
-      )
-    }
-    if (isCheckbox(config)) {
-      const { type: _, defaultValue, value, ...props } = config
-      return (
+      </div>
+    )
+  }
+  if (isCheckbox(config)) {
+    const { type: _, value, defaultValue, ...props } = config
+    return (
+      <div className={styles.inputAddonCheckbox}>
         <Checkbox
+          isChecked={value}
           isDisabled={isDisabled}
-          {...(value !== undefined && { isChecked: Boolean(value) })}
-          isInitiallyChecked={Boolean(defaultValue)}
+          isInitiallyChecked={defaultValue}
           onChange={(event) => {
             if (onChange) {
               onChange(event.target.checked)
@@ -73,13 +82,8 @@ export const InputAddon = ({ isError, isDisabled, onChange, ...config }: InputAd
           }}
           {...props}
         />
-      )
-    }
-    return undefined
-  }, [config, isDisabled, isError, onChange])
-  return (
-    <div className={className}>
-      {addon}
-    </div>
-  )
+      </div>
+    )
+  }
+  return undefined
 }

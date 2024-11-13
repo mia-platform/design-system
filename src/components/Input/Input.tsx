@@ -96,7 +96,6 @@ export const Input = (
   const renderAddon = useCallback((position: AddonPosition, props: InputAddonProps) => (
     <InputAddon
       isDisabled={isDisabled}
-      isError={isError}
       onChange={(nextValue: unknown) => {
         const nextVal = { ...val, [position]: nextValue }
         setVal(nextVal)
@@ -106,7 +105,7 @@ export const Input = (
       }}
       {...props}
     />
-  ), [isDisabled, isError, onChange, val])
+  ), [isDisabled, onChange, val])
 
   const addonBefore = useMemo(() => (
     addonBeforeProp && renderAddon('before', addonBeforeProp)

@@ -115,7 +115,7 @@ export const AddonBeforeSelect: Story = {
   args: {
     addonBefore: {
       type: 'select',
-      placeholder: 'str',
+      placeholder: 'placeholder...',
       options: [
         { value: '.com' },
         { value: '.jp' },
