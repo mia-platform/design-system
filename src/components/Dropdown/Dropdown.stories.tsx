@@ -74,7 +74,17 @@ const meta = {
   argTypes: {
     children: { control: false },
   },
-  render: (_, { args }) => <Dropdown {...args} />,
+  render: (_, { args }) => (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Dropdown {...args} />
+    </div>
+  ),
 } satisfies Meta<typeof Dropdown>
 
 type Story = StoryObj<typeof meta>
@@ -82,6 +92,12 @@ type Story = StoryObj<typeof meta>
 export default meta
 
 export const BasicExample: Story = {}
+
+export const PlacementTop: Story = {
+  args: {
+    placement: 'top',
+  },
+}
 
 export const VerticalLayout: Story = {
   args: {

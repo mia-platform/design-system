@@ -67,6 +67,7 @@ export const Dropdown = ({
   initialSelectedItems = defaults.initialSelectedItems,
   multiple,
   persistSelection = true,
+  placement,
 }: DropdownProps): ReactElement => {
   const { spacing } = useTheme()
 
@@ -165,6 +166,7 @@ export const Dropdown = ({
       getPopupContainer={getPopupContainer}
       menu={menu}
       overlayClassName={classes}
+      placement={placement}
       trigger={triggers}
       onOpenChange={onOpenChangeInternal}
     >

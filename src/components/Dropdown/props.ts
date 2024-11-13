@@ -230,5 +230,10 @@ export type DropdownProps = {
     * The default behavior is to create a div element and append it at the end of the body,
     *  but you can reset it to the scrolling area and make a relative reposition.
     */
-   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement
+   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement,
+
+    /**
+      * The placement of the dropdown menu, can be: `topLeft`, `topRight`, `bottomLeft`, `bottomRight`, `top`, `bottom`.
+      */
+   placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight' | 'top' | 'bottom'
 }
