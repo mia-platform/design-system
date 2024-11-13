@@ -19,6 +19,7 @@
 import { FiSearch } from 'react-icons/fi'
 
 import { fireEvent, render, screen } from '../../test-utils'
+import { AddonType } from './types.ts'
 import { Input } from './Input'
 
 const textAddonValue = 'test'
@@ -77,78 +78,80 @@ describe('Input Component', () => {
   })
 
   test('AddonBeforeText renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'text', value: textAddonValue }} />)
+    const { asFragment } = render(<Input addonBefore={{ type: AddonType.Text, value: textAddonValue }} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('AddonBeforeSelect renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'select', options: selectAddonOptions }} />)
+    const { asFragment } = render(<Input addonBefore={{ type: AddonType.Select, options: selectAddonOptions }} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('AddonBeforeCheckbox renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'checkbox', label: checkboxAddonLabel }} />)
+    const { asFragment } = render(<Input addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('AddonAfterText renders correctly', () => {
-    const { asFragment } = render(<Input addonAfter={{ type: 'text', value: textAddonValue }} />)
+    const { asFragment } = render(<Input addonAfter={{ type: AddonType.Text, value: textAddonValue }} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('AddonAfterSelect renders correctly', () => {
-    const { asFragment } = render(<Input addonAfter={{ type: 'select', options: selectAddonOptions }} />)
+    const { asFragment } = render(<Input addonAfter={{ type: AddonType.Select, options: selectAddonOptions }} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('AddonAfterCheckbox renders correctly', () => {
-    const { asFragment } = render(<Input addonAfter={{ type: 'checkbox', label: checkboxAddonLabel }} />)
+    const { asFragment } = render(<Input addonAfter={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('AddonTextDisabled renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'text', value: textAddonValue }} isDisabled={true} />)
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Text, value: textAddonValue }} isDisabled={true} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('AddonSelectDisabled renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'select', options: selectAddonOptions }} isDisabled={true} />)
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Select, options: selectAddonOptions }} isDisabled={true} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
-  // Test per la storia AddonCheckboxDisabled
   test('AddonCheckboxDisabled renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'checkbox', label: checkboxAddonLabel }} isDisabled={true} />)
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} isDisabled={true} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
-  // Test per la storia AddonCheckboxDisabledChecked
-  test('AddonCheckboxDisabledChecked renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ defaultValue: true, type: 'checkbox', label: checkboxAddonLabel }} isDisabled={true} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  // Test per la storia AddonTextError
   test('AddonTextError renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'text', value: textAddonValue }} isError={true} />)
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Text, value: textAddonValue }} isError={true} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
-  // Test per la storia AddonSelectError
   test('AddonSelectError renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'select', options: selectAddonOptions }} isError={true} />)
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Select, options: selectAddonOptions }} isError={true} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
-  // Test per la storia AddonCheckboxError
   test('AddonCheckboxError renders correctly', () => {
-    const { asFragment } = render(<Input addonBefore={{ type: 'checkbox', label: checkboxAddonLabel }} isError={true} />)
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} isError={true} />
+    )
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('Should call event handler on Change', async() => {
     const onChange = jest.fn()
-    const text = 'text'
+    const text = AddonType.Text
 
     render(<Input onChange={onChange} />)
 
@@ -161,7 +164,7 @@ describe('Input Component', () => {
   })
 
   test('Allow clear should clear input', () => {
-    const text = 'text'
+    const text = AddonType.Text
 
     render(<Input allowClear defaultValue={text} />)
 

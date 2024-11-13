@@ -24,3 +24,9 @@ export enum Type {
   Search = 'search',
   Hidden = 'hidden',
 }
+
+export enum AddonType {
+  Text = 'text',
+  Select = 'select',
+  Checkbox = 'checkbox',
+}

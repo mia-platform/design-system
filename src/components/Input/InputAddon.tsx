@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 
+import { AddonType } from './types.ts'
 import { Checkbox } from '../Checkbox'
 import { Select } from '../Select'
 import { SelectItem } from '../Select/props.ts'
@@ -12,7 +13,7 @@ type InputAddonCommonProps =
   }
 
 type InputAddonConfig<
-  Type extends string,
+  Type extends AddonType,
   Config extends object = object
 > = Config & {
   type: Type
@@ -21,15 +22,15 @@ type InputAddonConfig<
   defaultValue?: unknown
 }
 
-type TextConfig = InputAddonConfig<'text'>
+type TextConfig = InputAddonConfig<AddonType.Text>
 
 type SelectConfig = InputAddonConfig<
-  'select', {
+  AddonType.Select, {
   options: SelectItem<unknown>[]
   placeholder?: string
 }>
 type CheckboxConfig = InputAddonConfig<
-  'checkbox', {
+  AddonType.Checkbox, {
   value?: boolean
   defaultValue?: boolean
   label?: ReactNode
@@ -42,9 +43,9 @@ export type InputAddonProps =
     | CheckboxConfig
   )
 
-const isText = (props: InputAddonProps): props is TextConfig => props.type === 'text'
-const isSelect = (props: InputAddonProps): props is SelectConfig => props.type === 'select'
-const isCheckbox = (props: InputAddonProps): props is CheckboxConfig => props.type === 'checkbox'
+const isText = (props: InputAddonProps): props is TextConfig => props.type === AddonType.Text
+const isSelect = (props: InputAddonProps): props is SelectConfig => props.type === AddonType.Select
+const isCheckbox = (props: InputAddonProps): props is CheckboxConfig => props.type === AddonType.Checkbox
 
 export const InputAddon = ({
   onChange,
@@ -85,5 +86,4 @@ export const InputAddon = ({
       </div>
     )
   }
-  return undefined
 }

@@ -25,11 +25,11 @@ import {
 } from 'react'
 import { Input as AntInput } from 'antd'
 
+import { AddonType, Type } from './types'
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
 import { InputAddon, InputAddonProps } from './InputAddon.tsx'
 import { Icon } from '../Icon'
 import { InputProps } from './props'
-import { Type } from './types'
 import styles from './input.module.css'
 
 /**
@@ -143,3 +143,4 @@ export const Input = (
 
 Input.Appearance = BaseInput.Appearance
 Input.Type = Type
+Input.AddonType = AddonType
