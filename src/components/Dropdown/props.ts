@@ -233,13 +233,13 @@ export type DropdownProps = {
     */
    getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement,
 
-    /**
-      * The placement of the dropdown menu, one of:
-      *
-      *  `Placement.TopLeft`, `Placement.TopRight`, `Placement.BottomLeft`,
-      *  `Placement.BottomRight`, `Placement.Top`, `Placement.Bottom`
-      *
-      * Defaults to `Placement.BottomLeft`
-      */
+  /**
+    * The placement of the dropdown menu, one of:
+    *
+    *  `Placement.TopLeft`, `Placement.TopRight`, `Placement.BottomLeft`,
+    *  `Placement.BottomRight`, `Placement.Top`, `Placement.Bottom`
+    *
+    * Defaults to `Placement.BottomLeft`
+    */
    placement?: Placement
 }
