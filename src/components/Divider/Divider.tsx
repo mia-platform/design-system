@@ -42,12 +42,14 @@ export const Divider = ({
   margin,
   text,
   textOrientation = defaults.textOrientation,
+  additionalStyle,
 }: DividerProps): ReactElement => {
   const { spacing } = useTheme()
 
   const style = useMemo(() => ({
     ...margin || margin === 0 ? { margin } : {},
-  }), [margin])
+    ...additionalStyle,
+  }), [margin, additionalStyle])
 
   return (
     <AntDivider

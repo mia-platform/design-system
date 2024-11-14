@@ -130,7 +130,13 @@ export const Dropdown = ({
     return (
       <div className={styles.dropdownRenderWrapper}>
         <div style={scrollableStyle}>{clonedMenu}</div>
-        <Divider margin={spacing?.margin?.none} />
+        <Divider
+          additionalStyle={{
+            width: 'calc(100% - 8px)',
+            minWidth: 'calc(100% - 8px)',
+          }}
+          margin={spacing?.margin?.xs}
+        />
         <Footer footer={hookedFooter} />
       </div>
     )
@@ -164,6 +170,7 @@ export const Dropdown = ({
       dropdownRender={dropdownRender}
       getPopupContainer={getPopupContainer}
       menu={menu}
+      open={true}
       overlayClassName={classes}
       trigger={triggers}
       onOpenChange={onOpenChangeInternal}

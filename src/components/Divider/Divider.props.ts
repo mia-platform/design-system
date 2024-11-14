@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 import { Orientation, TextOrientation } from './Divider.types'
 import { Space } from '../../themes/schema/spacing'
@@ -49,4 +49,9 @@ export type DividerProps = {
    * - "right"
    */
   textOrientation?: TextOrientation,
+
+  /**
+   * Additional style to apply to the divider
+   */
+  additionalStyle: CSSProperties
 }
