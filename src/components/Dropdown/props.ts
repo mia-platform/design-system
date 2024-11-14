@@ -235,11 +235,11 @@ export type DropdownProps = {
 
   /**
    * The placement of the dropdown menu, one of:
-    *
-    *  `Placement.TopLeft`, `Placement.TopRight`, `Placement.BottomLeft`,
-    *  `Placement.BottomRight`, `Placement.Top`, `Placement.Bottom`
-    *
-    * Defaults to `Placement.BottomLeft`
-    */
+   *
+   *  `Placement.TopLeft`, `Placement.TopRight`, `Placement.BottomLeft`,
+   *  `Placement.BottomRight`, `Placement.Top`, `Placement.Bottom`
+   *
+   * Defaults to `Placement.BottomLeft`
+   */
    placement?: Placement
 }
