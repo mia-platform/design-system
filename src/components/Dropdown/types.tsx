@@ -1,6 +1,6 @@
 import { type MenuProps as AntdMenuProps } from 'antd'
 
-import { OpenChangeInfoSource } from './Dropdown.props'
+import { OpenChangeInfoSource } from './props'
 
 export type ArrayElement<ArrayType extends readonly unknown[] | undefined> =
 ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -28,4 +28,3 @@ export enum Placement {
   Top = 'top',
   Bottom = 'bottom',
 }
-

@@ -21,7 +21,7 @@ import { PiAcorn } from 'react-icons/pi'
 
 import { Footer, FooterProps, useFooterWithHookedActions } from '.'
 import { render, userEvent } from '../../../../test-utils'
-import { DropdownFooter } from '../../Dropdown.props'
+import { DropdownFooter } from '../../props'
 import { Icon } from '../../../Icon'
 
 describe('useFooterWithHookedActions', () => {

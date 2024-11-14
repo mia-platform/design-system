@@ -18,7 +18,7 @@
 
 import { PiAcorn } from 'react-icons/pi'
 
-import { DropdownItem, ItemLayout } from '../../Dropdown.props'
+import { DropdownItem, ItemLayout } from '../../props'
 import Label, { LabelProps } from '.'
 import { RenderResult, render } from '../../../../test-utils'
 import { Icon } from '../../../Icon'

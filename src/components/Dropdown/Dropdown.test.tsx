@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { DropdownItem, DropdownProps, DropdownTrigger, OpenChangeInfoSource } from './Dropdown.props'
+import { DropdownItem, DropdownProps, DropdownTrigger, OpenChangeInfoSource } from './props'
 import { RenderResult, render, screen, userEvent, waitFor } from '../../test-utils'
 import { Button } from '../Button'
 import { Dropdown } from './Dropdown'

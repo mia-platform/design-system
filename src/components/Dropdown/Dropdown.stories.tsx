@@ -22,9 +22,9 @@ import { action } from '@storybook/addon-actions'
 
 import { Button } from '../Button'
 import { Dropdown } from '.'
-import { DropdownProps } from './Dropdown.props'
+import { DropdownProps } from './props'
 import { Icon } from '../Icon'
-import { Placement } from './Dropdown.types'
+import { Placement } from './types'
 import { Tag } from '../Tag'
 import { Typography } from '../Typography'
 

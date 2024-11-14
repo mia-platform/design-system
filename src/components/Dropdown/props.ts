@@ -18,7 +18,7 @@
 
 import { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react'
 
-import { Placement } from './Dropdown.types'
+import { Placement } from './types'
 import { Size } from '../../themes/schema/shape'
 
 export enum ItemLayout {
