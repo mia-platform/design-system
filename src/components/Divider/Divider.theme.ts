@@ -29,5 +29,5 @@ import Theme from '../../themes/schema'
  */
 
 export default ({ palette }: Partial<Theme>): ComponentsTheme['Divider'] => ({
-  colorSplit: palette?.common.grey?.[300],
+  colorSplit: palette?.background?.neutral?.[200],
 })
