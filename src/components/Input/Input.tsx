@@ -94,7 +94,7 @@ export const Input = (
   }, [onChange, val])
 
   const renderAddon = useCallback((position: AddonPosition, props: InputAddonProps) => {
-    const { onChange: onChangeAddon, disabled: addonDisabled } = props
+    const { onChange: onChangeAddon, disabled: addonDisabled, ...rest } = props
 
     const isAddonDisabled = addonDisabled === undefined
       ? isDisabled
@@ -105,7 +105,7 @@ export const Input = (
         const nextVal = { ...val, [position]: nextValue }
         setVal(nextVal)
         if (onChangeAddon) {
-          onChangeAddon(nextVal)
+          onChangeAddon(nextValue)
         }
         if (onChange) {
           onChange(undefined, nextVal)
@@ -116,7 +116,7 @@ export const Input = (
       <InputAddon
         isDisabled={isAddonDisabled}
         onChange={handleChangeAddon}
-        {...props}
+        {...rest}
       />
     )
   }, [isDisabled, onChange, val])

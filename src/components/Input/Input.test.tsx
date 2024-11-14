@@ -175,11 +175,15 @@ describe('Input Component', () => {
     expect(input.value).toBe('')
   })
 
-  test('Addon select should trigger onChange with correct parameters', async() => {
+  test('Addon select should trigger onChange and with correct parameters', async() => {
     const onChange = jest.fn()
+    const onChangeAddon = jest.fn()
 
     render(
-      <Input addonBefore={{ type: AddonType.Select, options: selectAddonOptions }} onChange={onChange} />
+      <Input
+        addonBefore={{ type: AddonType.Select, options: selectAddonOptions, onChange: onChangeAddon }}
+        onChange={onChange}
+      />
     )
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
@@ -197,13 +201,18 @@ describe('Input Component', () => {
     await userEvent.click(option)
 
     expect(onChange).toHaveBeenCalledWith(undefined, { value: exampleText, before: selectAddonOptions[0].value })
+    expect(onChangeAddon).toHaveBeenCalledWith(selectAddonOptions[0].value)
   })
 
   test('Addon checkbox should trigger onChange with correct parameters', async() => {
     const onChange = jest.fn()
+    const onChangeAddon = jest.fn()
 
     render(
-      <Input addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} onChange={onChange} />
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel, onChange: onChangeAddon }}
+        onChange={onChange}
+      />
     )
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
@@ -218,5 +227,6 @@ describe('Input Component', () => {
     await userEvent.click(checkbox)
 
     expect(onChange).toHaveBeenCalledWith(undefined, { value: exampleText, before: true })
+    expect(onChangeAddon).toHaveBeenCalledWith(true)
   })
 })
