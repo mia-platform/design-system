@@ -166,7 +166,6 @@ export const Dropdown = ({
       dropdownRender={dropdownRender}
       getPopupContainer={getPopupContainer}
       menu={menu}
-      open={true}
       overlayClassName={classes}
       trigger={triggers}
       onOpenChange={onOpenChangeInternal}
