@@ -111,5 +111,5 @@
 }
 
 .footerDivider {
-  padding: '8px'
+  padding: var(--spacing-padding-xs, 4px);
 }
