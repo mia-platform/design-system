@@ -358,59 +358,6 @@ exports[`Input Component AddonCheckboxDisabled renders correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input Component AddonCheckboxDisabledChecked renders correctly 1`] = `
-<DocumentFragment>
-  <span
-    class="mia-platform-input-group-wrapper mia-platform-input-group-wrapper-disabled mia-platform-input-group-wrapper-outlined input fullWidth disabled input"
-  >
-    <span
-      class="mia-platform-input-wrapper mia-platform-input-group"
-    >
-      <span
-        class="mia-platform-input-group-addon"
-      >
-        <div
-          class="inputAddonCheckbox"
-        >
-          <div
-            class="checkboxComponent disabled"
-          >
-            <div
-              class="checkboxTextWrapper"
-            >
-              <label
-                class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-disabled"
-              >
-                <span
-                  class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-checked mia-platform-checkbox-disabled"
-                >
-                  <input
-                    checked=""
-                    class="mia-platform-checkbox-input"
-                    disabled=""
-                    type="checkbox"
-                  />
-                  <span
-                    class="mia-platform-checkbox-inner"
-                  />
-                </span>
-              </label>
-              test
-            </div>
-          </div>
-        </div>
-      </span>
-      <input
-        class="mia-platform-input mia-platform-input-disabled mia-platform-input-outlined"
-        disabled=""
-        type="text"
-        value=""
-      />
-    </span>
-  </span>
-</DocumentFragment>
-`;
-
 exports[`Input Component AddonCheckboxError renders correctly 1`] = `
 <DocumentFragment>
   <span
