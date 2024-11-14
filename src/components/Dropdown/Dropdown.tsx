@@ -130,13 +130,15 @@ export const Dropdown = ({
     return (
       <div className={styles.dropdownRenderWrapper}>
         <div style={scrollableStyle}>{clonedMenu}</div>
-        <Divider
-          additionalStyle={{
-            width: 'calc(100% - 8px)',
-            minWidth: 'calc(100% - 8px)',
+        <div
+          style={{
+            padding: '8px',
           }}
-          margin={spacing?.margin?.xs}
-        />
+        >
+          <Divider
+            margin={spacing?.margin?.none}
+          />
+        </div>
         <Footer footer={hookedFooter} />
       </div>
     )
