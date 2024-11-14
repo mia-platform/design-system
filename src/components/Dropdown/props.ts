@@ -18,6 +18,7 @@
 
 import { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react'
 
+import { Placement } from './types'
 import { Size } from '../../themes/schema/shape'
 
 export enum ItemLayout {
@@ -230,5 +231,15 @@ export type DropdownProps = {
     * The default behavior is to create a div element and append it at the end of the body,
     *  but you can reset it to the scrolling area and make a relative reposition.
     */
-   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement
+   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement,
+
+  /**
+   * The placement of the dropdown menu, one of:
+   *
+   *  `Placement.TopLeft`, `Placement.TopRight`, `Placement.BottomLeft`,
+   *  `Placement.BottomRight`, `Placement.Top`, `Placement.Bottom`
+   *
+   * Defaults to `Placement.BottomLeft`
+   */
+   placement?: Placement
 }
