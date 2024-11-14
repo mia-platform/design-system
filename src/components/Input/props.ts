@@ -24,7 +24,7 @@ import { InputAddonProps } from './InputAddon'
 import { Type } from './types'
 
 type InputChangeEventHandler =
-  (event: ChangeEvent | undefined, values: {value: string, after?: unknown, before?: unknown}) => void
+  (event: ChangeEvent<HTMLInputElement> | undefined, values: {value: string, after?: unknown, before?: unknown}) => void
 
 export type InputProps = BaseInputProps & {
 

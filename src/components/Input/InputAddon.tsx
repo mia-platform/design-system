@@ -6,7 +6,7 @@ import { Select } from '../Select'
 import { SelectItem } from '../Select/props.ts'
 import styles from './input.module.css'
 
-type InputAddonCommonProps =
+type InputAddonInternalProps =
   {
     isReadOnly?: boolean
     isDisabled?: boolean
@@ -35,14 +35,13 @@ type CheckboxConfig = InputAddonConfig<
   value?: boolean
   defaultValue?: boolean
   label?: ReactNode
+  onChange?: (value: boolean) => void
 }>
 
 export type InputAddonProps =
-  InputAddonCommonProps & (
     | TextConfig
     | SelectConfig
     | CheckboxConfig
-  )
 
 const isText = (props: InputAddonProps): props is TextConfig => props.type === AddonType.Text
 const isSelect = (props: InputAddonProps): props is SelectConfig => props.type === AddonType.Select
@@ -52,7 +51,7 @@ export const InputAddon = ({
   onChange,
   isDisabled,
   ...config
-}: InputAddonProps) : ReactNode => {
+}: InputAddonProps & InputAddonInternalProps) : ReactNode => {
   if (isText(config)) {
     return String(config.value)
   }

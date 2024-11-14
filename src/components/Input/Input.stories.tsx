@@ -17,9 +17,11 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
+import { ReactElement, useState } from 'react'
 import { PiCircleHalfTilt } from 'react-icons/pi'
 
 import { AddonType } from './types.ts'
+import { BodyS } from '../Typography/BodyX/BodyS'
 import { Input } from '.'
 
 const meta = {
@@ -33,6 +35,12 @@ const meta = {
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+const selectOptions = [
+  ...Array(5).keys(),
+].map((id) => ({
+  value: `value ${id + 1}`,
+}))
 
 export const Default: Story = {
   args: {
@@ -117,12 +125,7 @@ export const AddonBeforeSelect: Story = {
     addonBefore: {
       type: AddonType.Select,
       placeholder: 'Placeholder...',
-      options: [
-        { value: '.com' },
-        { value: '.jp' },
-        { value: '.cn' },
-        { value: '.org' },
-      ],
+      options: selectOptions,
     },
   },
 }
@@ -150,12 +153,7 @@ export const AddonAfterSelect: Story = {
     addonAfter: {
       type: AddonType.Select,
       placeholder: 'Placeholder...',
-      options: [
-        { value: '.com' },
-        { value: '.jp' },
-        { value: '.cn' },
-        { value: '.org' },
-      ],
+      options: selectOptions,
     },
   },
 }
@@ -185,12 +183,7 @@ export const AddonSelectDisabled: Story = {
     addonBefore: {
       type: AddonType.Select,
       placeholder: 'Placeholder...',
-      options: [
-        { value: '.com' },
-        { value: '.jp' },
-        { value: '.cn' },
-        { value: '.org' },
-      ],
+      options: selectOptions,
     },
   },
 }
@@ -232,12 +225,7 @@ export const AddonSelectError: Story = {
     addonBefore: {
       type: AddonType.Select,
       placeholder: 'Placeholder...',
-      options: [
-        { value: '.com' },
-        { value: '.jp' },
-        { value: '.cn' },
-        { value: '.org' },
-      ],
+      options: selectOptions,
     },
   },
 }
@@ -250,5 +238,56 @@ export const AddonCheckboxError: Story = {
       label: 'Inherited',
     },
   },
+}
+
+export const WithBothBeforeAndAfterAddons: Story = {
+  args: {
+    addonBefore: {
+      placeholder: 'protocol://',
+      type: AddonType.Select,
+      options: [
+        { value: 'http://' },
+        { value: 'https://' },
+      ],
+    },
+    addonAfter: {
+      type: AddonType.Select,
+      placeholder: '.domain',
+      options: [
+        { value: '.com' },
+        { value: '.jp' },
+        { value: '.cn' },
+        { value: '.org' },
+      ],
+    },
+  },
+}
+
+export const WithCustomLogic = (): ReactElement => {
+  const [value, setValue] = useState('')
+  const [inherited, setInherited] = useState(true)
+  return (
+    <div>
+      <BodyS>Input disabled if inherited is checked:</BodyS>
+      <br />
+      <Input
+        addonBefore={{
+          disabled: false,
+          type: AddonType.Checkbox,
+          label: 'inherited',
+          value: inherited,
+          onChange: (val) => {
+            setValue('')
+            setInherited(Boolean(val))
+          },
+        }}
+        isDisabled={inherited}
+        value={value}
+        onChange={(_, { value: val }) => {
+          setValue(val)
+        }}
+      />
+    </div>
+  )
 }
 
