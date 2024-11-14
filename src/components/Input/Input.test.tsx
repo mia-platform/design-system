@@ -229,4 +229,35 @@ describe('Input Component', () => {
     expect(onChange).toHaveBeenCalledWith(undefined, { value: exampleText, before: true })
     expect(onChangeAddon).toHaveBeenCalledWith(true)
   })
+
+  test('defaultValue should be properly set for addons', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel, defaultValue: true }}
+        onChange={onChange}
+      />
+    )
+
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
+
+    expect(checkbox).toBeChecked()
+  })
+
+  test('should be able to set disabled for the addon', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel, disabled: true }}
+        onChange={onChange}
+      />
+    )
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
+
+    expect(input).not.toBeDisabled()
+    expect(checkbox).toBeDisabled()
+  })
 })
