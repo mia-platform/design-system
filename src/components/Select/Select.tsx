@@ -35,7 +35,7 @@ import styles from './select.module.css'
  * @returns {Select} Select component
  */
 
-const DEFAULT_ICON_SIZE = 12 as never
+const DEFAULT_ICON_SIZE = 16 as never
 
 export const defaults = {
   ...baseInputDefaults,
@@ -104,6 +104,7 @@ export const Select = <ValueType, >(
       mode={isMultiple ? 'multiple' : undefined}
       options={options}
       placeholder={placeholder}
+      popupMatchSelectWidth={false}
       showSearch={false}
       suffixIcon={suffixIcon}
       tagRender={tagRender}

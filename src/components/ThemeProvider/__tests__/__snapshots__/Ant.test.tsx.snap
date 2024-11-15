@@ -26,6 +26,7 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
     },
     "Input": {
       "activeBorderColor": "#1261e4",
+      "addonBg": "#f9f9f9",
       "borderRadius": 4,
       "colorBgContainer": "#ffffff",
       "colorBorder": "#cdcdcd",
@@ -45,6 +46,7 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
     },
     "InputNumber": {
       "activeBorderColor": "#1261e4",
+      "addonBg": "#f9f9f9",
       "borderRadius": 4,
       "colorBgContainer": "#ffffff",
       "colorBorder": "#cdcdcd",
@@ -88,6 +90,7 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
     },
     "Select": {
       "activeBorderColor": "#1261e4",
+      "addonBg": "#f9f9f9",
       "borderRadius": 4,
       "colorBgContainer": "#ffffff",
       "colorBorder": "#cdcdcd",
@@ -196,6 +199,7 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
     },
     "Input": {
       "activeBorderColor": undefined,
+      "addonBg": undefined,
       "borderRadius": NaN,
       "colorBgContainer": undefined,
       "colorBorder": undefined,
@@ -215,6 +219,7 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
     },
     "InputNumber": {
       "activeBorderColor": undefined,
+      "addonBg": undefined,
       "borderRadius": NaN,
       "colorBgContainer": undefined,
       "colorBorder": undefined,
@@ -258,6 +263,7 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
     },
     "Select": {
       "activeBorderColor": undefined,
+      "addonBg": undefined,
       "borderRadius": NaN,
       "colorBgContainer": undefined,
       "colorBorder": undefined,
@@ -366,6 +372,7 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
     },
     "Input": {
       "activeBorderColor": "#1261e4",
+      "addonBg": "#f9f9f9",
       "borderRadius": 4,
       "colorBgContainer": "#ffffff",
       "colorBorder": "#cdcdcd",
@@ -385,6 +392,7 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
     },
     "InputNumber": {
       "activeBorderColor": "#1261e4",
+      "addonBg": "#f9f9f9",
       "borderRadius": 4,
       "colorBgContainer": "#ffffff",
       "colorBorder": "#cdcdcd",
@@ -428,6 +436,7 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
     },
     "Select": {
       "activeBorderColor": "#1261e4",
+      "addonBg": "#f9f9f9",
       "borderRadius": 4,
       "colorBgContainer": "#ffffff",
       "colorBorder": "#cdcdcd",

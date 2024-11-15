@@ -68,6 +68,14 @@ module.exports = {
     }],
     "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/prefer-nullish-coalescing": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error", {
+        "argsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+      }
+    ],
 
     /**
      * Eslint plugin React Hooks

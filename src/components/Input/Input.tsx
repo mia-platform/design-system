@@ -16,13 +16,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import {
+  ChangeEvent,
+  ReactElement,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react'
 import { Input as AntInput } from 'antd'
-import { ReactElement } from 'react'
 
+import { AddonType, Type } from './types'
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
+import { InputAddon, InputAddonProps } from './InputAddon.tsx'
 import { Icon } from '../Icon'
 import { InputProps } from './props'
-import { Type } from './types'
+import styles from './input.module.css'
 
 export const defaults = {
   ...baseInputDefaults,
@@ -30,6 +38,16 @@ export const defaults = {
 }
 
 const DEFAULT_ICON_SIZE = 12 as never
+
+type AddonPosition = 'before' | 'after'
+
+const getAddonDefaultValue = (
+  position: AddonPosition,
+  props?: InputAddonProps
+): Record<string, unknown> => {
+  return props && (props.value !== undefined || props.defaultValue !== undefined)
+    ? { [position]: props.value || props.defaultValue } : {}
+}
 
 /**
  * A UI element to insert text content in a form.
@@ -55,12 +73,67 @@ export const Input = (
     allowClear,
     maxLength,
     minLength,
+    addonAfter: addonAfterProp,
+    addonBefore: addonBeforeProp,
   }: InputProps
 ) : ReactElement => {
+  const [val, setVal] = useState({
+    value: value || defaultValue || '',
+    ...getAddonDefaultValue('before', addonBeforeProp),
+    ...getAddonDefaultValue('after', addonAfterProp),
+  })
+
+  const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    const { value: nextValue } = event.target
+    const nextVal = { ...val, value: nextValue }
+    setVal(nextVal)
+    if (onChange) {
+      onChange(event, nextVal)
+    }
+  }, [onChange, val])
+
+  const renderAddon = useCallback((position: AddonPosition, props: InputAddonProps) => {
+    const { onChange: onChangeAddon, disabled: addonDisabled, ...rest } = props
+
+    const isAddonDisabled = addonDisabled === undefined
+      ? isDisabled
+      : addonDisabled
+
+    const handleChangeAddon = (nextValue: unknown) : void => {
+      const nextVal = { ...val, [position]: nextValue }
+      setVal(nextVal)
+      if (onChangeAddon) {
+        onChangeAddon(nextValue)
+      }
+      if (onChange) {
+        onChange(undefined, nextVal)
+      }
+    }
+
+    return (
+      <InputAddon
+        isDisabled={isAddonDisabled}
+        onChange={handleChangeAddon}
+        {...rest}
+      />
+    )
+  }, [isDisabled, onChange, val])
+
+  const addonBefore = useMemo(() => (
+    addonBeforeProp && renderAddon('before', addonBeforeProp)
+  ), [addonBeforeProp, renderAddon])
+
+  const addonAfter = useMemo(() => (
+    addonAfterProp && renderAddon('after', addonAfterProp)
+  ), [addonAfterProp, renderAddon])
+
   return (
     <BaseInput
+      addonAfter={addonAfter}
+      addonBefore={addonBefore}
       allowClear={allowClear}
       appearance={appearance}
+      className={styles.input}
       component={AntInput}
       defaultValue={defaultValue}
       inputRef={inputRef}
@@ -75,10 +148,11 @@ export const Input = (
       suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
       type={type}
       value={value}
-      onChange={onChange}
+      onChange={handleChange}
     />
   )
 }
 
 Input.Appearance = BaseInput.Appearance
 Input.Type = Type
+Input.AddonType = AddonType

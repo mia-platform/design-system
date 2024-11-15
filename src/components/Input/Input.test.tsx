@@ -19,7 +19,20 @@
 import { FiSearch } from 'react-icons/fi'
 
 import { fireEvent, render, screen } from '../../test-utils'
+import { AddonType } from './types.ts'
 import { Input } from './Input'
+import { userEvent } from '../../test-utils.tsx'
+
+const exampleText = 'test'
+
+const textAddonValue = exampleText
+const checkboxAddonLabel = exampleText
+
+const selectAddonOptions = [
+  ...Array(5).keys(),
+].map((id) => ({
+  value: `value ${id + 1}`,
+}))
 
 describe('Input Component', () => {
   beforeEach(() => {
@@ -66,24 +79,93 @@ describe('Input Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('AddonBeforeText renders correctly', () => {
+    const { asFragment } = render(<Input addonBefore={{ type: AddonType.Text, value: textAddonValue }} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonBeforeSelect renders correctly', () => {
+    const { asFragment } = render(<Input addonBefore={{ type: AddonType.Select, options: selectAddonOptions }} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonBeforeCheckbox renders correctly', () => {
+    const { asFragment } = render(<Input addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonAfterText renders correctly', () => {
+    const { asFragment } = render(<Input addonAfter={{ type: AddonType.Text, value: textAddonValue }} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonAfterSelect renders correctly', () => {
+    const { asFragment } = render(<Input addonAfter={{ type: AddonType.Select, options: selectAddonOptions }} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonAfterCheckbox renders correctly', () => {
+    const { asFragment } = render(<Input addonAfter={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonTextDisabled renders correctly', () => {
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Text, value: textAddonValue }} isDisabled={true} />
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonSelectDisabled renders correctly', () => {
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Select, options: selectAddonOptions }} isDisabled={true} />
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonCheckboxDisabled renders correctly', () => {
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} isDisabled={true} />
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonTextError renders correctly', () => {
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Text, value: textAddonValue }} isError={true} />
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonSelectError renders correctly', () => {
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Select, options: selectAddonOptions }} isError={true} />
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('AddonCheckboxError renders correctly', () => {
+    const { asFragment } = render(
+      <Input addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }} isError={true} />
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('Should call event handler on Change', async() => {
     const onChange = jest.fn()
-    const text = 'text'
 
     render(<Input onChange={onChange} />)
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
 
-    fireEvent.change(input, { target: { value: text } })
+    fireEvent.change(input, { target: { value: exampleText } })
 
     expect(onChange).toHaveBeenCalled()
-    expect(input.value).toBe(text)
+    expect(input.value).toBe(exampleText)
   })
 
   test('Allow clear should clear input', () => {
-    const text = 'text'
-
-    render(<Input allowClear defaultValue={text} />)
+    render(<Input allowClear defaultValue={exampleText} />)
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
     const clearIcon = screen.getByRole('img', { name: 'close-circle' })
@@ -91,5 +173,91 @@ describe('Input Component', () => {
     fireEvent.click(clearIcon)
 
     expect(input.value).toBe('')
+  })
+
+  test('Addon select should trigger onChange and with correct parameters', async() => {
+    const onChange = jest.fn()
+    const onChangeAddon = jest.fn()
+
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Select, options: selectAddonOptions, onChange: onChangeAddon }}
+        onChange={onChange}
+      />
+    )
+
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+
+    fireEvent.change(input, { target: { value: exampleText } })
+
+    expect(onChange).toHaveBeenCalledWith({}, { value: exampleText })
+    expect(input.value).toBe(exampleText)
+
+    const select = screen.getByRole<HTMLInputElement>('combobox')
+
+    await userEvent.click(select)
+
+    const option = screen.getByTitle(selectAddonOptions[0].value)
+    await userEvent.click(option)
+
+    expect(onChange).toHaveBeenCalledWith(undefined, { value: exampleText, before: selectAddonOptions[0].value })
+    expect(onChangeAddon).toHaveBeenCalledWith(selectAddonOptions[0].value)
+  })
+
+  test('Addon checkbox should trigger onChange with correct parameters', async() => {
+    const onChange = jest.fn()
+    const onChangeAddon = jest.fn()
+
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel, onChange: onChangeAddon }}
+        onChange={onChange}
+      />
+    )
+
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+
+    fireEvent.change(input, { target: { value: exampleText } })
+
+    expect(onChange).toHaveBeenCalledWith({}, { value: exampleText })
+    expect(input.value).toBe(exampleText)
+
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
+
+    await userEvent.click(checkbox)
+
+    expect(onChange).toHaveBeenCalledWith(undefined, { value: exampleText, before: true })
+    expect(onChangeAddon).toHaveBeenCalledWith(true)
+  })
+
+  test('defaultValue should be properly set for addons', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel, defaultValue: true }}
+        onChange={onChange}
+      />
+    )
+
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
+
+    expect(checkbox).toBeChecked()
+  })
+
+  test('should be able to set disabled for the addon', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel, disabled: true }}
+        onChange={onChange}
+      />
+    )
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
+
+    expect(input).not.toBeDisabled()
+    expect(checkbox).toBeDisabled()
   })
 })

@@ -16,11 +16,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeEventHandler } from 'react'
+import { ChangeEvent } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
 import { IconComponent } from '../Icon/Icon.props'
+import { InputAddonProps } from './InputAddon'
 import { Type } from './types'
+
+type InputChangeEventHandler =
+  (event: ChangeEvent<HTMLInputElement> | undefined, values: {value: string, after?: unknown, before?: unknown}) => void
 
 export type InputProps = BaseInputProps & {
 
@@ -67,5 +71,10 @@ export type InputProps = BaseInputProps & {
   /**
    * Callback when user input.
    */
-  onChange?: ChangeEventHandler
+  onChange?: InputChangeEventHandler
+
+  addonBefore?: InputAddonProps
+
+  addonAfter?: InputAddonProps
+
 }

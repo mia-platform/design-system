@@ -17,8 +17,11 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
+import { ReactElement, useState } from 'react'
 import { PiCircleHalfTilt } from 'react-icons/pi'
 
+import { AddonType } from './types.ts'
+import { BodyS } from '../Typography/BodyX/BodyS'
 import { Input } from '.'
 
 const meta = {
@@ -32,6 +35,12 @@ const meta = {
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+const selectOptions = [
+  ...Array(5).keys(),
+].map((id) => ({
+  value: `value ${id + 1}`,
+}))
 
 export const Default: Story = {
   args: {
@@ -101,3 +110,184 @@ export const Hidden: Story = {
     defaultValue: 'Hidden',
   },
 }
+
+export const AddonBeforeText: Story = {
+  args: {
+    addonBefore: {
+      type: AddonType.Text,
+      value: '/',
+    },
+  },
+}
+
+export const AddonBeforeSelect: Story = {
+  args: {
+    addonBefore: {
+      type: AddonType.Select,
+      placeholder: 'Placeholder...',
+      options: selectOptions,
+    },
+  },
+}
+
+export const AddonBeforeCheckbox: Story = {
+  args: {
+    addonBefore: {
+      type: AddonType.Checkbox,
+      label: 'Inherited',
+    },
+  },
+}
+
+export const AddonAfterText: Story = {
+  args: {
+    addonAfter: {
+      type: AddonType.Text,
+      value: '/',
+    },
+  },
+}
+
+export const AddonAfterSelect: Story = {
+  args: {
+    addonAfter: {
+      type: AddonType.Select,
+      placeholder: 'Placeholder...',
+      options: selectOptions,
+    },
+  },
+}
+
+export const AddonAfterCheckbox: Story = {
+  args: {
+    addonAfter: {
+      type: AddonType.Checkbox,
+      label: 'Inherited',
+    },
+  },
+}
+
+export const AddonTextDisabled: Story = {
+  args: {
+    isDisabled: true,
+    addonBefore: {
+      type: AddonType.Text,
+      value: '/',
+    },
+  },
+}
+
+export const AddonSelectDisabled: Story = {
+  args: {
+    isDisabled: true,
+    addonBefore: {
+      type: AddonType.Select,
+      placeholder: 'Placeholder...',
+      options: selectOptions,
+    },
+  },
+}
+
+export const AddonCheckboxDisabled: Story = {
+  args: {
+    isDisabled: true,
+    addonBefore: {
+      type: AddonType.Checkbox,
+      label: 'Inherited',
+    },
+  },
+}
+
+export const AddonCheckboxDisabledChecked: Story = {
+  args: {
+    isDisabled: true,
+    addonBefore: {
+      defaultValue: true,
+      type: AddonType.Checkbox,
+      label: 'Inherited',
+    },
+  },
+}
+
+export const AddonTextError: Story = {
+  args: {
+    isError: true,
+    addonBefore: {
+      type: AddonType.Text,
+      value: '/',
+    },
+  },
+}
+
+export const AddonSelectError: Story = {
+  args: {
+    isError: true,
+    addonBefore: {
+      type: AddonType.Select,
+      placeholder: 'Placeholder...',
+      options: selectOptions,
+    },
+  },
+}
+
+export const AddonCheckboxError: Story = {
+  args: {
+    isError: true,
+    addonBefore: {
+      type: AddonType.Checkbox,
+      label: 'Inherited',
+    },
+  },
+}
+
+export const WithBothBeforeAndAfterAddons: Story = {
+  args: {
+    addonBefore: {
+      placeholder: 'protocol://',
+      type: AddonType.Select,
+      options: [
+        { value: 'http://' },
+        { value: 'https://' },
+      ],
+    },
+    addonAfter: {
+      type: AddonType.Select,
+      placeholder: '.domain',
+      options: [
+        { value: '.com' },
+        { value: '.jp' },
+        { value: '.cn' },
+        { value: '.org' },
+      ],
+    },
+  },
+}
+
+export const WithCustomLogic = (): ReactElement => {
+  const [value, setValue] = useState('')
+  const [inherited, setInherited] = useState(true)
+  return (
+    <div>
+      <BodyS>Input disabled if inherited is checked:</BodyS>
+      <br />
+      <Input
+        addonBefore={{
+          disabled: false,
+          type: AddonType.Checkbox,
+          label: 'inherited',
+          value: inherited,
+          onChange: (val) => {
+            setValue('')
+            setInherited(Boolean(val))
+          },
+        }}
+        isDisabled={inherited}
+        value={value}
+        onChange={(_, { value: val }) => {
+          setValue(val)
+        }}
+      />
+    </div>
+  )
+}
+
