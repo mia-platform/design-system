@@ -99,17 +99,16 @@ export const Input = (
       ? isDisabled
       : addonDisabled
 
-    const handleChangeAddon
-      = (nextValue: unknown) : void => {
-        const nextVal = { ...val, [position]: nextValue }
-        setVal(nextVal)
-        if (onChangeAddon) {
-          onChangeAddon(nextValue)
-        }
-        if (onChange) {
-          onChange(undefined, nextVal)
-        }
+    const handleChangeAddon = (nextValue: unknown) : void => {
+      const nextVal = { ...val, [position]: nextValue }
+      setVal(nextVal)
+      if (onChangeAddon) {
+        onChangeAddon(nextValue)
       }
+      if (onChange) {
+        onChange(undefined, nextVal)
+      }
+    }
 
     return (
       <InputAddon
