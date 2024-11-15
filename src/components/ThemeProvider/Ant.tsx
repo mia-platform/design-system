@@ -63,7 +63,6 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     ? darkAlgorithm
     : defaultAlgorithm,
 
-  cssVar: true,
   token: {
     // Palette
     colorBorder: palette?.text?.neutral?.subtler,

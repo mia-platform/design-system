@@ -16,6 +16,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/**
+ * A UI element to insert text content in a form.
+ *
+ * @link https://ant.design/components/input
+ * @returns {Input} Input component
+ */
+
 import {
   ChangeEvent,
   ReactElement,
@@ -31,13 +38,6 @@ import { InputAddon, InputAddonProps } from './InputAddon.tsx'
 import { Icon } from '../Icon'
 import { InputProps } from './props'
 import styles from './input.module.css'
-
-/**
- * A UI element to insert text content in a form.
- *
- * @link https://ant.design/components/input
- * @returns {Input} Input component
- */
 
 export const defaults = {
   ...baseInputDefaults,

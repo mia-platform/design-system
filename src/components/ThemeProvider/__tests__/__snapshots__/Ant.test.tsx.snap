@@ -143,7 +143,6 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "titleMarginTop": 0,
     },
   },
-  "cssVar": true,
   "token": {
     "borderRadius": 4,
     "colorBgBase": "#ffffff",
@@ -317,7 +316,6 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "titleMarginTop": 0,
     },
   },
-  "cssVar": true,
   "token": {
     "borderRadius": undefined,
     "colorBgBase": undefined,
@@ -491,7 +489,6 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "titleMarginTop": 0,
     },
   },
-  "cssVar": true,
   "token": {
     "borderRadius": 4,
     "colorBgBase": "#ffffff",
