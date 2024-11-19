@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useCallback, useMemo, useState } from 'react'
+import { ReactElement, useCallback, useMemo } from 'react'
 import { Checkbox as AntCheckbox } from 'antd'
 
 import { Checkbox } from '../Checkbox'
@@ -25,31 +25,31 @@ import styles from './CheckboxGroup.module.css'
 
 export const CheckboxGroup = <T, >(
   {
-    defaultValue,
     isDisabled,
     options,
     onChange,
+    value,
+    defaultValue,
   }: CheckboxGroupProps<T>
 ): ReactElement => {
-  const [value, setValue] = useState(defaultValue)
-
   const checkboxOptions = useMemo(() => {
     return options?.map((option, index) => {
       return (
         <Checkbox
           description={option.description}
+          isChecked={true}
           isDisabled={option.disabled || isDisabled}
           /* eslint-disable-next-line react/no-array-index-key */
           key={index}
           label={option.label}
           value={option.value}
+
         />
       )
     })
   }, [isDisabled, options])
 
   const handleChange = useCallback((val: T[]) => {
-    setValue(val)
     if (onChange) {
       onChange(val)
     }
@@ -57,7 +57,8 @@ export const CheckboxGroup = <T, >(
 
   return (
     <AntCheckbox.Group
-      value={value}
+      defaultValue={defaultValue}
+      {...(value !== null && value !== undefined) ? { value } : {}}
       onChange={handleChange}
     >
       <div className={styles.options}>
