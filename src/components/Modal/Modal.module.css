@@ -74,7 +74,19 @@
     }
 
     .bodyFullWidth {
-      padding: 0 !important;
+      .content {
+        padding: 0;
+      }
+
+      &.bodyWithAsideOpened {
+        .content {
+          padding-left: 0;
+        }
+
+        .asideWrapper {
+          padding-right: 0;
+        }
+      }
     }
 
     .bodyWithAsideClosed {
