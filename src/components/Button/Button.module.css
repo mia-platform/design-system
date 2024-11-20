@@ -81,3 +81,11 @@
 .buttonText {
   padding: 0 var(--spacing-padding-xs, 4px);
 }
+
+.primaryOutlined {
+  background-color: var(--palette-action-secondary-main, #ffffff) !important;
+}
+
+.dangerOutlined {
+  background-color: var(--palette-action-secondary-main, #ffffff) !important;
+}

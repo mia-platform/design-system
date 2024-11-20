@@ -34,13 +34,15 @@ const {
   buttonGhost,
   buttonLink,
   buttonText,
+  primaryOutlined,
+  dangerOutlined,
 } = styles
 
 const { Primary, Neutral, Danger } = Hierarchy
 const { Left } = IconPosition
 const { Square } = Shape
 const { Small, Middle, Large } = Size
-const { Filled, Ghost, Link } = Type
+const { Filled, Ghost, Link, Outlined } = Type
 
 enum AntdIconPosition {
   Start = 'start',
@@ -94,9 +96,11 @@ export const Button = ({
       !children && size === Middle && type !== Link && buttonMdIconOnly,
       size === Large && type !== Link && buttonLg,
       (type === Ghost || type === Link) && buttonGhost,
+      (hierarchy === Primary && type === Outlined) && primaryOutlined,
+      (hierarchy === Danger && type === Outlined) && dangerOutlined,
       type === Link && buttonLink,
     ]
-  ), [children, size, type])
+  ), [children, hierarchy, size, type])
 
   const antdIconPosition = useMemo(() => getAntdPosition(iconPosition), [iconPosition])
   return (

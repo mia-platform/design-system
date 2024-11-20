@@ -178,7 +178,7 @@ exports[`Button Component renders danger link button correctly 1`] = `
 exports[`Button Component renders danger outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd dangerOutlined"
     type="button"
   >
     <div
@@ -379,7 +379,7 @@ exports[`Button Component renders primary link button correctly 1`] = `
 exports[`Button Component renders primary outline button correctly 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd primaryOutlined"
     type="button"
   >
     <div
@@ -394,7 +394,7 @@ exports[`Button Component renders primary outline button correctly 1`] = `
 exports[`Button Component renders primary outline button correctly with form ref and no htmlType 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd primaryOutlined"
     form="some-form"
     type="submit"
   >
@@ -410,7 +410,7 @@ exports[`Button Component renders primary outline button correctly with form ref
 exports[`Button Component renders primary outline button correctly with form ref and reset htmlType 1`] = `
 <DocumentFragment>
   <button
-    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd"
+    class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd primaryOutlined"
     form="some-form"
     type="reset"
   >
