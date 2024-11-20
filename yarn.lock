@@ -2626,6 +2626,7 @@ __metadata:
     jest-watch-typeahead: "npm:^2.2.2"
     lodash-es: "npm:^4.17.21"
     react: "npm:^18.3.0"
+    react-autocomplete-input: "npm:^1.0.31"
     react-dom: "npm:^18.3.1"
     react-icons: "npm:^5.3.0"
     rollup-plugin-visualizer: "npm:^5.12.0"
@@ -7477,6 +7478,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:3":
+  version: 3.39.0
+  resolution: "core-js@npm:3.39.0"
+  checksum: 10/a3d34e669783dfc878e545f1983f60d9ff48a3867cd1d7ff8839b849e053002a208c7c14a5ca354b8e0b54982901e2f83dc87c3d9b95de0a94b4071d1c74e5f6
+  languageName: node
+  linkType: hard
+
 "core-util-is@npm:~1.0.0":
   version: 1.0.3
   resolution: "core-util-is@npm:1.0.3"
@@ -9520,6 +9528,13 @@ __metadata:
   version: 2.0.5
   resolution: "get-caller-file@npm:2.0.5"
   checksum: 10/b9769a836d2a98c3ee734a88ba712e62703f1df31b94b784762c433c27a386dd6029ff55c2a920c392e33657d80191edbf18c61487e198844844516f843496b9
+  languageName: node
+  linkType: hard
+
+"get-input-selection@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "get-input-selection@npm:1.1.4"
+  checksum: 10/9247c4232b43e7b040f49247fe8c389796e603f182ce9280eb74540e04f8f9489ff87aeaa305baae1d3f423e35f3080e93e44738eed8127a0cadedcaa4c4d75f
   languageName: node
   linkType: hard
 
@@ -11850,6 +11865,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.isequal@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.isequal@npm:4.5.0"
+  checksum: 10/82fc58a83a1555f8df34ca9a2cd300995ff94018ac12cc47c349655f0ae1d4d92ba346db4c19bbfc90510764e0c00ddcc985a358bdcd4b3b965abf8f2a48a214
+  languageName: node
+  linkType: hard
+
 "lodash.memoize@npm:4.x":
   version: 4.1.2
   resolution: "lodash.memoize@npm:4.1.2"
@@ -14152,6 +14174,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-autocomplete-input@npm:^1.0.31":
+  version: 1.0.31
+  resolution: "react-autocomplete-input@npm:1.0.31"
+  dependencies:
+    core-js: "npm:3"
+    get-input-selection: "npm:^1.1.4"
+    lodash.isequal: "npm:^4.5.0"
+    prop-types: "npm:^15.7.2"
+    scroll-into-view-if-needed: "npm:^3.1.0"
+    textarea-caret: "npm:^3.0.2"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 10/e4c4246b6fa5230aa7da211a11597fe5931769c5ca83a0f2f8e6dbd9785cb1e6fb70977fc75cf30c34ec2d0959e291f50327da1b7b2345f56ee9cc44399446c7
+  languageName: node
+  linkType: hard
+
 "react-colorful@npm:^5.1.2":
   version: 5.6.1
   resolution: "react-colorful@npm:5.6.1"
@@ -15752,6 +15791,13 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: 10/4383b5baaeffa9bb4cda2ac33a4aa2e6d1f8aaf811848bf73513a9b88fd76372dc461f6fd6d2e9cb5100f48b473be32c6f95bd983509b7d92bb4d92c10747452
+  languageName: node
+  linkType: hard
+
+"textarea-caret@npm:^3.0.2":
+  version: 3.1.0
+  resolution: "textarea-caret@npm:3.1.0"
+  checksum: 10/6ea556064a571fd047c71be0b7bd9f85f1e4f224302a95b5c6bc850a2e4a20587279eecb9db81eba5120e5553d6bc480038eeacd1a7ceb693394fde17309fe1c
   languageName: node
   linkType: hard
 

@@ -13,6 +13,7 @@ import { Search } from '../Search'
 import { Select } from '../Select'
 import { Switch } from '../Switch'
 import { TextArea } from '../TextArea'
+import { TextCompletion } from '../TextCompletion/TextCompletion.tsx'
 
 const meta = {
   component: Form,
@@ -40,6 +41,7 @@ export const ComplexForm = () : ReactElement => {
     select: options[0].value,
     checkboxGroup: [options[0].value],
     inputAddon: { after: options[0].value },
+    textCompletion: '',
   })
 
   return (
@@ -52,6 +54,9 @@ export const ComplexForm = () : ReactElement => {
         layout="vertical"
         onValuesChange={(_, formValues) => setValues(formValues)}
       >
+        <FormItem name="textCompletion">
+          <TextCompletion />
+        </FormItem>
         <FormItem
           getValueFromEvent={(_, value) => value}
           getValueProps={(value) => value?.value}

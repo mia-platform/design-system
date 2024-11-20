@@ -73,6 +73,7 @@ export const Input = (
     allowClear,
     maxLength,
     minLength,
+    onKeyDown,
     addonAfter: addonAfterProp,
     addonBefore: addonBeforeProp,
   }: InputProps
@@ -149,6 +150,7 @@ export const Input = (
       type={type}
       value={value}
       onChange={handleChange}
+      onKeyDown={onKeyDown}
     />
   )
 }
