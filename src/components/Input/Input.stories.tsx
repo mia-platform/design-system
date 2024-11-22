@@ -283,8 +283,10 @@ export const WithCustomLogic = (): ReactElement => {
         }}
         isDisabled={inherited}
         value={value}
-        onChange={(_, {value}: any) => {
-            setValue(value)
+        onChange={(_, val: string | Record<string, unknown>) => {
+          if (typeof val === 'object') {
+            setValue(String(val.value))
+          }
         }}
       />
     </div>
