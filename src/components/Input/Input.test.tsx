@@ -264,7 +264,7 @@ describe('Input Component', () => {
   test('if no addon is provided the second argument of onChange should be the string value', async() => {
     const onChange = jest.fn()
 
-    render(<Input onChange={onChange}/>)
+    render(<Input onChange={onChange} />)
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
 
@@ -276,11 +276,13 @@ describe('Input Component', () => {
   test('should accept an object value prop if addons are set', async() => {
     const onChange = jest.fn()
 
-    render(<Input
-      onChange={onChange}
-      defaultValue={{value: exampleText, before: true}}
-      addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }}
-    />)
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }}
+        defaultValue={{ value: exampleText, before: true }}
+        onChange={onChange}
+      />
+    )
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
     const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
@@ -294,16 +296,14 @@ describe('Input Component', () => {
   test('should work with custom names for input and addons values', async() => {
     const onChange = jest.fn()
 
-    render(<Input
-      onChange={onChange}
-      valuePropName='inputValue'
-      defaultValue={{inputValue: exampleText, addonBeforeValue: true}}
-      addonBefore={{
-        type: AddonType.Checkbox,
-        label: checkboxAddonLabel,
-        name: 'addonBeforeValue'
-    }}
-    />)
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel, name: 'addonBeforeValue' }}
+        defaultValue={{ inputValue: exampleText, addonBeforeValue: true }}
+        valuePropName="inputValue"
+        onChange={onChange}
+      />
+    )
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
     const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
@@ -314,15 +314,13 @@ describe('Input Component', () => {
     fireEvent.change(input, { target: { value: 'changedValue' } })
     expect(onChange).toHaveBeenCalledWith({}, {
       inputValue: 'changedValue',
-      addonBeforeValue: true
+      addonBeforeValue: true,
     })
 
     fireEvent.click(checkbox)
     expect(onChange).toHaveBeenCalledWith(undefined, {
       inputValue: 'changedValue',
-      addonBeforeValue: false
+      addonBeforeValue: false,
     })
-
   })
-
 })

@@ -35,7 +35,7 @@ import styles from './input.module.css'
 export const defaults = {
   ...baseInputDefaults,
   htmlType: Type.Text,
-  valuePropName: "value",
+  valuePropName: 'value',
 }
 
 const DEFAULT_ICON_SIZE = 12 as never
@@ -106,7 +106,7 @@ export const Input = (
     if (onChange) {
       onChange(event, addonBeforeProp || addonAfterProp ? nextVal : nextValue)
     }
-  }, [addonAfterProp, addonBeforeProp, onChange, setVal, val])
+  }, [addonAfterProp, addonBeforeProp, onChange, valuePropName, setVal, val])
 
   const renderAddon = useCallback((
     position: AddonPosition,
@@ -147,7 +147,7 @@ export const Input = (
 
   const getValue = useCallback((strOrObj?: string | Record<string, unknown>) => {
     return typeof strOrObj === 'object' ? String(strOrObj[valuePropName]) : strOrObj
-  }, [])
+  }, [valuePropName])
 
   const inputValue = useMemo(() => {
     return getValue(value)
