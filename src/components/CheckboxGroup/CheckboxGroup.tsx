@@ -16,22 +16,32 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useCallback, useMemo, useState } from 'react'
+import { ReactElement, useCallback, useMemo } from 'react'
 import { Checkbox as AntCheckbox } from 'antd'
+import classnames from 'classnames'
 
 import { Checkbox } from '../Checkbox'
 import { CheckboxGroupProps } from './props.ts'
+import { Direction } from './types.ts'
 import styles from './CheckboxGroup.module.css'
+
+const defaults = {
+  direction: Direction.Vertical,
+}
 
 export const CheckboxGroup = <T, >(
   {
-    defaultValue,
     isDisabled,
     options,
     onChange,
+    value,
+    defaultValue,
+    direction = defaults.direction,
   }: CheckboxGroupProps<T>
 ): ReactElement => {
-  const [value, setValue] = useState(defaultValue)
+  const className = useMemo(() => classnames([
+    direction === Direction.Horizontal && styles.horizontal,
+  ]), [direction])
 
   const checkboxOptions = useMemo(() => {
     return options?.map((option, index) => {
@@ -49,7 +59,6 @@ export const CheckboxGroup = <T, >(
   }, [isDisabled, options])
 
   const handleChange = useCallback((val: T[]) => {
-    setValue(val)
     if (onChange) {
       onChange(val)
     }
@@ -57,7 +66,9 @@ export const CheckboxGroup = <T, >(
 
   return (
     <AntCheckbox.Group
-      value={value}
+      className={className}
+      defaultValue={defaultValue}
+      {...(value !== null && value !== undefined) ? { value } : {}}
       onChange={handleChange}
     >
       <div className={styles.options}>
@@ -66,3 +77,5 @@ export const CheckboxGroup = <T, >(
     </AntCheckbox.Group>
   )
 }
+
+CheckboxGroup.Direction = Direction

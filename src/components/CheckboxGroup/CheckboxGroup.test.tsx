@@ -91,6 +91,13 @@ describe('CheckboxGroup', () => {
       )
       expect(asFragment()).toMatchSnapshot()
     })
+
+    it('horizontal', () => {
+      const { asFragment } = render(
+        <CheckboxGroup {...{ ...baseProps, direction: CheckboxGroup.Direction.Horizontal }} />
+      )
+      expect(asFragment()).toMatchSnapshot()
+    })
   })
 
   it('should invoke onChange with correct value on user selection', async() => {

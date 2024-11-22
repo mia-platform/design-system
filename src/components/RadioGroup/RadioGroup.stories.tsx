@@ -106,6 +106,13 @@ export const AllOptionsDisabled: Story = {
   args: { options: allOptionsDisabled, defaultValue: 1 },
 }
 
+export const Horizontal: Story = {
+  args: {
+    options: baseOptions,
+    direction: RadioGroup.Direction.Horizontal,
+  },
+}
+
 export const WithOnChange: Story = {
   args: {
     options: baseOptions,
