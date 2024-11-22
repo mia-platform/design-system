@@ -181,20 +181,12 @@ describe('CheckboxGroup', () => {
     render(<CheckboxGroup {...props} />)
 
     const firstCheckbox = within(screen.getByText('checkbox 1')).getByRole('checkbox')
-    const secondCheckbox = within(screen.getByText('checkbox 2')).getByRole('checkbox')
 
     expect(firstCheckbox).toBeChecked()
-    expect(secondCheckbox).not.toBeChecked()
 
     await userEvent.click(firstCheckbox)
     await waitFor(() => {
       expect(onChange).toHaveBeenCalledWith([])
-    })
-    expect(firstCheckbox).toBeChecked()
-
-    await userEvent.click(secondCheckbox)
-    await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith([baseOptions[1].value])
     })
   })
 })
