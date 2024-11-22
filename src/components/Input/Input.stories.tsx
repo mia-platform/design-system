@@ -283,8 +283,8 @@ export const WithCustomLogic = (): ReactElement => {
         }}
         isDisabled={inherited}
         value={value}
-        onChange={(_, {value}) => {
-            setValue(String(value))
+        onChange={(_, {value}: any) => {
+            setValue(value)
         }}
       />
     </div>
