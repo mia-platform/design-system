@@ -34,6 +34,7 @@ type InputAddonConfig<
   Type extends AddonType,
   Config extends object = object
 > = Config & {
+  name?: string
   type: Type
   onChange?: (value: unknown) => void
   value?: unknown;
@@ -50,8 +51,6 @@ type SelectConfig = InputAddonConfig<
 }>
 type CheckboxConfig = InputAddonConfig<
   AddonType.Checkbox, {
-  value?: boolean
-  defaultValue?: boolean
   label?: ReactNode
   onChange?: (value: boolean) => void
 }>
@@ -91,9 +90,9 @@ export const InputAddon = ({
     return (
       <div className={styles.inputAddonCheckbox}>
         <Checkbox
-          isChecked={value}
+          isChecked={Boolean(value)}
           isDisabled={isDisabled}
-          isInitiallyChecked={defaultValue}
+          isInitiallyChecked={Boolean(defaultValue)}
           onChange={(event) => {
             if (onChange) {
               onChange(event.target.checked)

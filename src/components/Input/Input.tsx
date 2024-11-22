@@ -35,18 +35,34 @@ import styles from './input.module.css'
 export const defaults = {
   ...baseInputDefaults,
   htmlType: Type.Text,
+  valuePropName: "value",
 }
 
 const DEFAULT_ICON_SIZE = 12 as never
 
 type AddonPosition = 'before' | 'after'
 
-const getAddonDefaultValue = (
-  position: AddonPosition,
-  props?: InputAddonProps
-): Record<string, unknown> => {
-  return props && (props.value !== undefined || props.defaultValue !== undefined)
-    ? { [position]: props.value || props.defaultValue } : {}
+const getAddonDefaultValue = (position: AddonPosition) =>
+  (props?: InputAddonProps) : Record<string, unknown> => {
+    return props && (props.value !== undefined || props.defaultValue !== undefined)
+      ? { [props.name || position]: props.value || props.defaultValue }
+      : {}
+  }
+
+const useInputValue = (
+  value: Record<string, unknown> | string | undefined,
+  valuePropName: string,
+  { before, after }: Record<AddonPosition, InputAddonProps | undefined>
+):
+  [
+    Record<string, unknown>,
+    React.Dispatch<React.SetStateAction<Record<string, unknown>>>
+  ] => {
+  return useState({
+    ...(typeof value === 'object' ? value : { [valuePropName]: value || '' }),
+    ...getAddonDefaultValue('before')(before),
+    ...getAddonDefaultValue('after')(after),
+  })
 }
 
 /**
@@ -61,6 +77,7 @@ export const Input = (
     type = defaults.htmlType,
     value,
     defaultValue,
+    valuePropName = defaults.valuePropName,
     isDisabled,
     isReadOnly,
     isFullWidth = defaults.isFullWidth,
@@ -77,47 +94,48 @@ export const Input = (
     addonBefore: addonBeforeProp,
   }: InputProps
 ) : ReactElement => {
-  const [val, setVal] = useState({
-    value: value || defaultValue || '',
-    ...getAddonDefaultValue('before', addonBeforeProp),
-    ...getAddonDefaultValue('after', addonAfterProp),
+  const [val, setVal] = useInputValue(value || defaultValue, valuePropName, {
+    before: addonBeforeProp,
+    after: addonAfterProp,
   })
 
   const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     const { value: nextValue } = event.target
-    const nextVal = { ...val, value: nextValue }
+    const nextVal = { ...val, [valuePropName]: nextValue }
     setVal(nextVal)
     if (onChange) {
-      onChange(event, nextVal)
+      onChange(event, addonBeforeProp || addonAfterProp ? nextVal : nextValue)
     }
-  }, [onChange, val])
+  }, [addonAfterProp, addonBeforeProp, onChange, setVal, val])
 
-  const renderAddon = useCallback((position: AddonPosition, props: InputAddonProps) => {
-    const { onChange: onChangeAddon, disabled: addonDisabled, ...rest } = props
-
-    const isAddonDisabled = addonDisabled === undefined
-      ? isDisabled
-      : addonDisabled
-
-    const handleChangeAddon = (nextValue: unknown) : void => {
-      const nextVal = { ...val, [position]: nextValue }
-      setVal(nextVal)
-      if (onChangeAddon) {
-        onChangeAddon(nextValue)
-      }
-      if (onChange) {
-        onChange(undefined, nextVal)
-      }
-    }
-
+  const renderAddon = useCallback((
+    position: AddonPosition,
+    {
+      value: addonValue,
+      onChange: onChangeAddon,
+      disabled: addonDisabled,
+      name: addonName,
+      ...rest
+    }: InputAddonProps
+  ) => {
     return (
       <InputAddon
-        isDisabled={isAddonDisabled}
-        onChange={handleChangeAddon}
         {...rest}
+        isDisabled={addonDisabled === undefined ? isDisabled : addonDisabled}
+        value={addonValue !== undefined ? addonValue : val[addonName || position]}
+        onChange={(nextValue) => {
+          const nextVal = { ...val, [addonName || position]: nextValue }
+          setVal(nextVal)
+          if (onChange) {
+            onChange(undefined, nextVal)
+          }
+          if (onChangeAddon) {
+            onChangeAddon(nextValue)
+          }
+        }}
       />
     )
-  }, [isDisabled, onChange, val])
+  }, [isDisabled, onChange, setVal, val])
 
   const addonBefore = useMemo(() => (
     addonBeforeProp && renderAddon('before', addonBeforeProp)
@@ -127,6 +145,18 @@ export const Input = (
     addonAfterProp && renderAddon('after', addonAfterProp)
   ), [addonAfterProp, renderAddon])
 
+  const getValue = useCallback((strOrObj?: string | Record<string, unknown>) => {
+    return typeof strOrObj === 'object' ? String(strOrObj[valuePropName]) : strOrObj
+  }, [])
+
+  const inputValue = useMemo(() => {
+    return getValue(value)
+  }, [getValue, value])
+
+  const inputDefaultValue = useMemo(() => {
+    return getValue(defaultValue)
+  }, [getValue, defaultValue])
+
   return (
     <BaseInput
       addonAfter={addonAfter}
@@ -135,7 +165,7 @@ export const Input = (
       appearance={appearance}
       className={styles.input}
       component={AntInput}
-      defaultValue={defaultValue}
+      defaultValue={inputDefaultValue}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}
@@ -147,7 +177,7 @@ export const Input = (
       prefix={iconLeft && <Icon component={iconLeft} size={DEFAULT_ICON_SIZE} />}
       suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
       type={type}
-      value={value}
+      value={inputValue}
       onChange={handleChange}
     />
   )
