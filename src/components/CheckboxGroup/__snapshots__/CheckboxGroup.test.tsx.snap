@@ -1,5 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CheckboxGroup renders correctly horizontal 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-checkbox-group horizontal css-dev-only-do-not-override-5wsri9"
+  >
+    <div
+      class="options"
+    >
+      <div
+        class="checkboxComponent"
+      >
+        <div
+          class="checkboxTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            >
+              <input
+                class="ant-checkbox-input"
+                type="checkbox"
+                value="1"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 1
+        </div>
+      </div>
+      <div
+        class="checkboxComponent"
+      >
+        <div
+          class="checkboxTextWrapper"
+        >
+          <label
+            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          >
+            <span
+              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            >
+              <input
+                class="ant-checkbox-input"
+                type="checkbox"
+                value="2"
+              />
+              <span
+                class="ant-checkbox-inner"
+              />
+            </span>
+          </label>
+          checkbox 2
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`CheckboxGroup renders correctly when disabled 1`] = `
 <DocumentFragment>
   <div

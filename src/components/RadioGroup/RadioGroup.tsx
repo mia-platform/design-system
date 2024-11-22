@@ -18,7 +18,9 @@
 
 import { Radio as AntRadio, RadioChangeEvent } from 'antd'
 import { ReactElement, ReactNode, useMemo } from 'react'
+import classnames from 'classnames'
 
+import { Direction } from './types.ts'
 import { Radio } from './components/Radio'
 import { RadioGroupProps } from './props'
 import styles from './RadioGroup.module.css'
@@ -26,6 +28,7 @@ import styles from './RadioGroup.module.css'
 const { options: optionsClass } = styles
 
 const defaults = {
+  direction: Direction.Vertical,
   disabled: false,
 }
 
@@ -35,7 +38,12 @@ export const RadioGroup = <T, >({
   isDisabled: disabled = defaults.disabled,
   options,
   onChange,
+  direction = defaults.direction,
 }: RadioGroupProps<T>): ReactElement => {
+  const className = useMemo(() => classnames([
+    direction === Direction.Horizontal && styles.horizontal,
+  ]), [direction])
+
   const radioOptions = useMemo((): ReactNode => {
     return options.map((option, index) => (
       <Radio
@@ -57,6 +65,7 @@ export const RadioGroup = <T, >({
 
   return (
     <AntRadio.Group
+      className={className}
       defaultValue={defaultValue}
       disabled={disabled}
       onChange={handleChange}
@@ -66,3 +75,5 @@ export const RadioGroup = <T, >({
     </AntRadio.Group>
   )
 }
+
+RadioGroup.Direction = Direction

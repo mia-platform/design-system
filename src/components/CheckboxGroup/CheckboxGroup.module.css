@@ -21,3 +21,9 @@
   flex-direction: column;
   gap: var(--spacing-gap-lg, 16px)
 }
+
+.horizontal {
+  .options {
+    flex-direction: row;
+  }
+}

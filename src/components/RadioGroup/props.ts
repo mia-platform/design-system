@@ -18,6 +18,8 @@
 
 import { RadioChangeEvent } from 'antd'
 
+import { Direction } from './types.ts'
+
 export type RadioGroupOption<T> = {
 
   /**
@@ -87,6 +89,11 @@ export type RadioGroupProps<T> = {
    * The callback function that is triggered when the state changes
    */
   onChange?: (changeEvent: RadioGroupChangeEvent<T>) => void;
+
+  /**
+   * The direction of the radio group. Defaults to 'vertical'
+   */
+  direction?: Direction
 };
 
 export type RadioProps<T> = {

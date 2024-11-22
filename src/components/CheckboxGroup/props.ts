@@ -17,6 +17,8 @@
  */
 import { ReactNode } from 'react'
 
+import { Direction } from './types.ts'
+
 export type CheckboxGroupOption<T> = {
 
   /**
@@ -42,9 +44,34 @@ export type CheckboxGroupOption<T> = {
 }
 
 export type CheckboxGroupProps<T> = {
+
+  /**
+   * The selected value displayed on first render
+   */
   defaultValue?: T[];
+
+  /**
+   * Used for setting the currently selected value
+   */
   value?: T[];
+
+  /**
+   * Options of the checkbox group
+   */
   options: CheckboxGroupOption<T>[];
+
+  /**
+   * The callback function that is triggered when the state changes
+   */
   onChange?: (checkedValue: T[]) => void;
+
+  /**
+   * If true, disable all checkboxes
+   */
   isDisabled?: boolean;
+
+  /**
+   * The direction of the radio group. Defaults to 'vertical'
+   */
+  direction?: Direction
 }

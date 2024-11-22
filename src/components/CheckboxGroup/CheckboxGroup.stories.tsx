@@ -113,6 +113,13 @@ export const AllOptionsDisabled: Story = {
   args: getArgs(allOptionsDisabled, [1]),
 }
 
+export const Horizontal: Story = {
+  args: {
+    ...getArgs(baseOptions, [1]),
+    direction: CheckboxGroup.Direction.Horizontal,
+  },
+}
+
 const onChange: (changeEvent: number[]) => void = (event) => alert(`selected value is now ${event}`)
 export const WithOnChange: Story = {
   args: getArgs(baseOptions, [1], false, onChange),

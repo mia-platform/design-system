@@ -91,6 +91,13 @@ describe('CheckboxGroup', () => {
       )
       expect(asFragment()).toMatchSnapshot()
     })
+
+    it('horizontal', () => {
+      const { asFragment } = render(
+        <CheckboxGroup {...{ ...baseProps, direction: CheckboxGroup.Direction.Horizontal }} />
+      )
+      expect(asFragment()).toMatchSnapshot()
+    })
   })
 
   it('should invoke onChange with correct value on user selection', async() => {
@@ -160,6 +167,26 @@ describe('CheckboxGroup', () => {
 
     await waitFor(() => {
       expect(userEvent.click(checkbox)).rejects.toBeTruthy()
+    })
+  })
+
+  it('should work fine with controlled values', async() => {
+    const onChange = jest.fn()
+    const props: CheckboxGroupProps<number> = {
+      ...baseProps,
+      value: [baseOptions[0].value],
+      onChange,
+    }
+
+    render(<CheckboxGroup {...props} />)
+
+    const firstCheckbox = within(screen.getByText('checkbox 1')).getByRole('checkbox')
+
+    expect(firstCheckbox).toBeChecked()
+
+    await userEvent.click(firstCheckbox)
+    await waitFor(() => {
+      expect(onChange).toHaveBeenCalledWith([])
     })
   })
 })

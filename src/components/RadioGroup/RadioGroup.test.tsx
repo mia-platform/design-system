@@ -98,6 +98,13 @@ describe('RadioGroup', () => {
       )
       expect(asFragment()).toMatchSnapshot()
     })
+
+    it('horizontal', () => {
+      const { asFragment } = render(
+        <RadioGroup {...{ ...baseProps, direction: RadioGroup.Direction.Horizontal }} />
+      )
+      expect(asFragment()).toMatchSnapshot()
+    })
   })
 
   describe('should invoke onChange with correct value on user selection', () => {
