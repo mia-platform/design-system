@@ -196,7 +196,5 @@ describe('CheckboxGroup', () => {
     await waitFor(() => {
       expect(onChange).toHaveBeenCalledWith([baseOptions[1].value])
     })
-
   })
-
 })
