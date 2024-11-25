@@ -34,6 +34,7 @@ import { RadioGroup } from './components/RadioGroup'
 import { Search } from './components/Search'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Select } from './components/Select'
+import { SplitButton } from './components/SplitButton'
 import { Switch } from './components/Switch'
 import { Table } from './components/Table'
 import { Tag } from './components/Tag'
@@ -63,6 +64,7 @@ export {
   SegmentedControl,
   Search,
   Select,
+  SplitButton,
   Switch,
   Table,
   Tag,
