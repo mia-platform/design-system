@@ -42,7 +42,7 @@ export const defaults = {
   isClosable: true,
 }
 
-const getIcon = (type?: Type): IconComponent | undefined => {
+const getIcon = (type?: Type): IconComponent => {
   switch (type) {
   case Type.Info:
     return PiInfoFill
@@ -57,7 +57,7 @@ const getIcon = (type?: Type): IconComponent | undefined => {
   }
 }
 
-const getIconCompressed = (type?: Type): IconComponent | undefined => {
+const getIconCompressed = (type?: Type): IconComponent => {
   switch (type) {
   case Type.Info:
     return ICircle
@@ -93,7 +93,7 @@ export const Alert = ({
     return isCompressed
       ? (
         <div className={styles.titleContainer}>
-          <Icon component={icon || getIconCompressed(type)!} size={16} />
+          <Icon component={icon || getIconCompressed(type)} size={16} />
           <span className={styles.title}>{titleProp}</span>
         </div>
       )
@@ -125,7 +125,7 @@ export const Alert = ({
       className={className}
       closable={closable}
       description={content}
-      icon={<Icon component={icon || getIcon(type)!} />}
+      icon={<Icon component={icon || getIcon(type)} />}
       message={title}
       showIcon={!isCompressed}
       type={type}
