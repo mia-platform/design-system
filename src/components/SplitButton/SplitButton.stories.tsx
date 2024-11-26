@@ -21,11 +21,11 @@ import { PiAcorn, PiWarning } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { Button } from '../Button'
+import { Dropdown } from '../Dropdown'
 import { Icon } from '../Icon'
 import { SplitButton } from './SplitButton'
 import { SplitButtonProps } from './props'
 import { Tag } from '../Tag'
-import { Dropdown } from '../Dropdown'
 
 const defaults: Partial<SplitButtonProps> = {
   children: 'click me',

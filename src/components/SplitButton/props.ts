@@ -18,8 +18,8 @@
 
 import { MouseEvent, ReactNode } from 'react'
 
-import { HTMLType, Hierarchy, Type } from '../Button/Button.types'
 import { DropdownClickEvent, ItemLayout } from '../Dropdown/props'
+import { HTMLType, Hierarchy, Type } from '../Button/Button.types'
 import { SplitButtonItem } from './types'
 
 export type SplitButtonProps = {
