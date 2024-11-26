@@ -23,6 +23,12 @@ import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.t
 export type ButtonProps = {
 
   /**
+   * Use this to focus the button element.
+   */
+
+  autoFocus?: boolean,
+
+  /**
    * Fits button width to its parent width
    */
   isBlock?: boolean,

@@ -62,6 +62,7 @@ export const SplitButton = ({
   return (
     <div className={splitButton}>
       <Button
+        autoFocus={autoFocus}
         className={classNames(
           mainActionButton,
           type === Button.Type.Outlined || hierarchy === Button.Hierarchy.Neutral ? outlined : undefined
@@ -78,7 +79,6 @@ export const SplitButton = ({
         {children}
       </Button>
       <Dropdown
-        autoFocus={autoFocus}
         itemLayout={itemLayout}
         items={items}
         placement={Dropdown.Placement.BottomRight}

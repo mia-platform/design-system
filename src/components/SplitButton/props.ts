@@ -25,7 +25,7 @@ import { SplitButtonItem } from './types'
 export type SplitButtonProps = {
 
   /**
-   * Use this to focus the dropdown element.
+   * Use this to focus the main button element.
    */
   autoFocus?: boolean
 
