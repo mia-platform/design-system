@@ -52,7 +52,7 @@
     transition: none
   }
 
-  &:not(.outlined).pressed {
+  &:not(.outlined):not(:danger).pressed {
     background-color: var(--palette-action-primary-selected, #004aaa);
   }
 }
