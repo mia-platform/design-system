@@ -17,6 +17,7 @@
  */
 
 import { RenderResult, render as renderComponent, screen, userEvent } from '../../test-utils'
+import { Button } from '../Button'
 import { SplitButton } from './SplitButton'
 import { SplitButtonItem } from './types'
 import { SplitButtonProps } from './props'
@@ -34,6 +35,57 @@ const defaultProps: SplitButtonProps = {
 
 describe('SplitButton Component', () => {
   beforeEach(jest.clearAllMocks)
+
+  describe('ui variants', () => {
+    it('renders primary filled', () => {
+      const { baseElement } = render({ props: { ...defaultProps, hierarchy: Button.Hierarchy.Primary } })
+      expect(baseElement).toMatchSnapshot()
+    })
+
+    it('renders primary outlined', () => {
+      const { baseElement } = render({ props: {
+        ...defaultProps,
+        hierarchy: Button.Hierarchy.Primary,
+        type: Button.Type.Outlined,
+      } })
+      expect(baseElement).toMatchSnapshot()
+    })
+
+    it('renders neutral (outlined)', () => {
+      const { baseElement } = render({ props: {
+        ...defaultProps,
+        hierarchy: Button.Hierarchy.Neutral,
+      } })
+      expect(baseElement).toMatchSnapshot()
+    })
+
+    it('renders danger (filled)', () => {
+      const { baseElement } = render({ props: {
+        ...defaultProps,
+        hierarchy: Button.Hierarchy.Danger,
+      } })
+      expect(baseElement).toMatchSnapshot()
+    })
+
+    it('renders danger (outlined)', () => {
+      const { baseElement } = render({ props: {
+        ...defaultProps,
+        hierarchy: Button.Hierarchy.Danger,
+        type: Button.Type.Outlined,
+      } })
+      expect(baseElement).toMatchSnapshot()
+    })
+  })
+
+  describe('href button', () => {
+    it('correctly sets rel attributes', () => {
+      render({ props: { ...defaultProps, href: 'some-url.com' } })
+
+      const link = screen.getByRole('link')
+      expect(link).toBeInTheDocument()
+      expect(link.getAttribute('rel')).toEqual('noopener noreferrer')
+    })
+  })
 
   describe('main button', () => {
     it('renders child node', () => {

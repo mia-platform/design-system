@@ -85,6 +85,12 @@ export const Danger: Story = {
     hierarchy: Button.Hierarchy.Danger,
   },
 }
+export const DangerOutlined: Story = {
+  args: {
+    hierarchy: Button.Hierarchy.Danger,
+    type: Button.Type.Outlined,
+  },
+}
 
 export const Disabled: Story = {
   args: {
