@@ -263,33 +263,6 @@ exports[`Dropdown Component highlights selectedItems single mode does not highli
 </li>
 `;
 
-exports[`Dropdown Component highlights selectedItems single mode render and ignores "initialSelectedItems" prop if "persistSelection" is false: after click render Label 1 is still not selected 1`] = `
-<li
-  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-only-child"
-  data-menu-id="rc-menu-uuid-test-1"
-  role="menuitem"
-  tabindex="-1"
->
-  <span
-    class="mia-platform-dropdown-menu-title-content"
-  >
-    <div
-      class="itemRowContainer"
-    >
-      <div
-        class="labelsContainer horizontalContainer"
-      >
-        <span
-          class="primaryLabel"
-        >
-          Label 1
-        </span>
-      </div>
-    </div>
-  </span>
-</li>
-`;
-
 exports[`Dropdown Component highlights selectedItems single mode render and ignores "initialSelectedItems" prop if "persistSelection" is false: at first render Label 1 is not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
