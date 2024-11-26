@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import classNames from 'classnames'
-import { PiCaretDown } from 'react-icons/pi'
 import { ReactElement, useCallback, useState } from 'react'
+import { PiCaretDown } from 'react-icons/pi'
+import classNames from 'classnames'
 
 import { Button } from '../Button/Button'
 import { Dropdown } from '../Dropdown/Dropdown'
