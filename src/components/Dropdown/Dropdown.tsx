@@ -165,7 +165,7 @@ Dropdown.ItemLayout = ItemLayout
 Dropdown.Trigger = DropdownTrigger
 Dropdown.Placement = Placement
 
-export function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems {
+function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems {
   return items.map<AntdMenuItem>((item: DropdownItem) => ({
     children: item.children ? itemsAdapter(item.children, layout) : undefined,
     danger: item.danger,
@@ -174,7 +174,7 @@ export function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMen
   }))
 }
 
-export function eventAdapter(
+function eventAdapter(
   event: AntdMenuClickEvent,
   finder: (id: string) => DropdownItem | undefined,
 ): DropdownClickEvent {
@@ -186,7 +186,7 @@ export function eventAdapter(
   }
 }
 
-export function itemFinder(items: DropdownItem[], id: string): DropdownItem | undefined {
+function itemFinder(items: DropdownItem[], id: string): DropdownItem | undefined {
   for (const item of items) {
     if (item.id === id) {
       return item
