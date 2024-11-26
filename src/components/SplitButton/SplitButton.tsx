@@ -70,7 +70,6 @@ export const SplitButton = ({
         htmlType={htmlType}
         isDisabled={isDisabled}
         isLoading={isLoading}
-        key="main-action-button"
         title={title}
         type={type}
         onClick={onClick}
@@ -95,7 +94,6 @@ export const SplitButton = ({
           hierarchy={hierarchy}
           icon={dropdownIcon}
           isDisabled={isDisabled}
-          key="dropdown-trigger-button"
           type={type}
         />
       </Dropdown>
