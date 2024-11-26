@@ -1,0 +1,831 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Snapshot Tests renders Error correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-error ant-alert-with-description alert error css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <svg
+      color="currentColor"
+      fill="currentColor"
+      height="24"
+      role="img"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: currentColor;"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm37.66,130.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+      />
+    </svg>
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <span
+          class="title"
+        >
+          Title
+        </span>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="ant-alert-close-icon"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: currentColor;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders ErrorCompressed correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-error ant-alert-with-description ant-alert-no-icon alert error compressed css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <div
+          class="titleContainer"
+        >
+          <svg
+            color="currentColor"
+            data-file-name="SvgXCircle"
+            height="16"
+            role="img"
+            size="16"
+            width="16"
+          />
+          <span
+            class="title"
+          >
+            Title
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders Info correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-info ant-alert-with-description alert info css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <svg
+      color="currentColor"
+      fill="currentColor"
+      height="24"
+      role="img"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: currentColor;"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-4,48a12,12,0,1,1-12,12A12,12,0,0,1,124,72Zm12,112a16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40a8,8,0,0,1,0,16Z"
+      />
+    </svg>
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <span
+          class="title"
+        >
+          Title
+        </span>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="ant-alert-close-icon"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: currentColor;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders InfoCompressed correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-info ant-alert-with-description ant-alert-no-icon alert info compressed css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <div
+          class="titleContainer"
+        >
+          <svg
+            color="currentColor"
+            data-file-name="SvgICircle"
+            height="16"
+            role="img"
+            size="16"
+            width="16"
+          />
+          <span
+            class="title"
+          >
+            Title
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders Special correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-info ant-alert-with-description alert css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <svg
+      color="currentColor"
+      fill="currentColor"
+      height="24"
+      role="img"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: currentColor;"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM40,128A88,88,0,0,1,190.2,65.8L65.8,190.2A87.76,87.76,0,0,1,40,128Z"
+      />
+    </svg>
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <span
+          class="title"
+        >
+          Title
+        </span>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="ant-alert-close-icon"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: currentColor;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders SpecialCompressed correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-info ant-alert-with-description ant-alert-no-icon alert compressed css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <div
+          class="titleContainer"
+        >
+          <svg
+            color="currentColor"
+            fill="currentColor"
+            height="16"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM40,128A88,88,0,0,1,190.2,65.8L65.8,190.2A87.76,87.76,0,0,1,40,128Z"
+            />
+          </svg>
+          <span
+            class="title"
+          >
+            Title
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders Success correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-success ant-alert-with-description alert success css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <svg
+      color="currentColor"
+      fill="currentColor"
+      height="24"
+      role="img"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: currentColor;"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"
+      />
+    </svg>
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <span
+          class="title"
+        >
+          Title
+        </span>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="ant-alert-close-icon"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: currentColor;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders SuccessCompressed correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-success ant-alert-with-description ant-alert-no-icon alert success compressed css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <div
+          class="titleContainer"
+        >
+          <svg
+            color="currentColor"
+            data-file-name="SvgCheckCircle"
+            height="16"
+            role="img"
+            size="16"
+            width="16"
+          />
+          <span
+            class="title"
+          >
+            Title
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders Warning correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-warning ant-alert-with-description alert warning css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <svg
+      color="currentColor"
+      fill="currentColor"
+      height="24"
+      role="img"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: currentColor;"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,88a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"
+      />
+    </svg>
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <span
+          class="title"
+        >
+          Title
+        </span>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="ant-alert-close-icon"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: currentColor;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders WarningCompressed correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-warning ant-alert-with-description ant-alert-no-icon alert warning compressed css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <div
+          class="titleContainer"
+        >
+          <svg
+            color="currentColor"
+            data-file-name="SvgExclamationCircle"
+            height="16"
+            role="img"
+            size="16"
+            width="16"
+          />
+          <span
+            class="title"
+          >
+            Title
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders WithAction correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-info ant-alert-with-description alert css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <svg
+      color="currentColor"
+      fill="currentColor"
+      height="24"
+      role="img"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: currentColor;"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM40,128A88,88,0,0,1,190.2,65.8L65.8,190.2A87.76,87.76,0,0,1,40,128Z"
+      />
+    </svg>
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <span
+          class="title"
+        >
+          Title
+        </span>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-alert-action"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-5wsri9 ant-btn-primary ant-btn-color-primary ant-btn-variant-solid button buttonMd"
+        type="button"
+      >
+        <div
+          class="buttonText"
+        >
+          Action
+        </div>
+      </button>
+    </div>
+    <button
+      class="ant-alert-close-icon"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: currentColor;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders WithCustomContent correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-info ant-alert-with-description ant-alert-no-icon alert compressed css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <div
+          class="titleContainer"
+        >
+          <svg
+            color="currentColor"
+            fill="currentColor"
+            height="16"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM40,128A88,88,0,0,1,190.2,65.8L65.8,190.2A87.76,87.76,0,0,1,40,128Z"
+            />
+          </svg>
+          <span
+            class="title"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <div
+            class="content"
+          >
+            <ul
+              style="margin: 8px 24px;"
+            >
+              <li>
+                Custom content
+              </li>
+              <li>
+                Custom content
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert Snapshot Tests renders WithCustomIcon correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-alert ant-alert-info ant-alert-with-description alert css-dev-only-do-not-override-5wsri9"
+    data-show="true"
+    role="alert"
+  >
+    <svg
+      color="currentColor"
+      fill="currentColor"
+      height="24"
+      role="img"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: currentColor;"
+      viewBox="0 0 256 256"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"
+      />
+    </svg>
+    <div
+      class="ant-alert-content"
+    >
+      <div
+        class="ant-alert-message"
+      >
+        <span
+          class="title"
+        >
+          Title
+        </span>
+      </div>
+      <div
+        class="ant-alert-description"
+      >
+        <div>
+          <span
+            class="description"
+          >
+            Description
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      class="ant-alert-close-icon"
+      tabindex="0"
+      type="button"
+    >
+      <svg
+        color="currentColor"
+        fill="currentColor"
+        height="16"
+        role="img"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: currentColor;"
+        viewBox="0 0 256 256"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;

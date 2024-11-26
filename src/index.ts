@@ -17,6 +17,7 @@
  */
 
 import * as testUtils from './test-utils'
+import { Alert } from './components/Alert'
 import { Breadcrumb } from './components/Breadcrumb'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
@@ -46,6 +47,7 @@ import hooks from './hooks'
 import themes from './themes'
 
 export {
+  Alert,
   Breadcrumb,
   Button,
   Card,
