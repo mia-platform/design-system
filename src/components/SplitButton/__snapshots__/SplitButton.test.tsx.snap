@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SplitButton Component ui variants renders danger (filled) 1`] = `
+<body>
+  <div>
+    <div
+      class="splitButton"
+    >
+      <button
+        class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid button buttonMd mainActionButton"
+        type="button"
+      >
+        <div
+          class="buttonText"
+        >
+          <span>
+            test-trigger-button
+          </span>
+        </div>
+      </button>
+      <span
+        class="mia-platform-dropdown-trigger dropdown-some-random-uuid"
+      >
+        <button
+          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid mia-platform-btn-icon-only button buttonMdIconOnly dropdownActionButton"
+          type="button"
+        >
+          <span
+            class="mia-platform-btn-icon"
+          >
+            <svg
+              aria-label="Open dropdown"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SplitButton Component ui variants renders danger (outlined) 1`] = `
+<body>
+  <div>
+    <div
+      class="splitButton"
+    >
+      <button
+        class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd mainActionButton outlined"
+        type="button"
+      >
+        <div
+          class="buttonText"
+        >
+          <span>
+            test-trigger-button
+          </span>
+        </div>
+      </button>
+      <span
+        class="mia-platform-dropdown-trigger dropdown-some-random-uuid"
+      >
+        <button
+          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-dangerous mia-platform-btn-color-dangerous mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly dropdownActionButton outlined"
+          type="button"
+        >
+          <span
+            class="mia-platform-btn-icon"
+          >
+            <svg
+              aria-label="Open dropdown"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SplitButton Component ui variants renders neutral (outlined) 1`] = `
+<body>
+  <div>
+    <div
+      class="splitButton"
+    >
+      <button
+        class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined button buttonMd mainActionButton outlined"
+        type="button"
+      >
+        <div
+          class="buttonText"
+        >
+          <span>
+            test-trigger-button
+          </span>
+        </div>
+      </button>
+      <span
+        class="mia-platform-dropdown-trigger dropdown-some-random-uuid"
+      >
+        <button
+          class="mia-platform-btn mia-platform-btn-default mia-platform-btn-color-default mia-platform-btn-variant-outlined mia-platform-btn-icon-only button buttonMdIconOnly dropdownActionButton outlined"
+          type="button"
+        >
+          <span
+            class="mia-platform-btn-icon"
+          >
+            <svg
+              aria-label="Open dropdown"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SplitButton Component ui variants renders primary filled 1`] = `
+<body>
+  <div>
+    <div
+      class="splitButton"
+    >
+      <button
+        class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd mainActionButton"
+        type="button"
+      >
+        <div
+          class="buttonText"
+        >
+          <span>
+            test-trigger-button
+          </span>
+        </div>
+      </button>
+      <span
+        class="mia-platform-dropdown-trigger dropdown-some-random-uuid"
+      >
+        <button
+          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only button buttonMdIconOnly dropdownActionButton"
+          type="button"
+        >
+          <span
+            class="mia-platform-btn-icon"
+          >
+            <svg
+              aria-label="Open dropdown"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SplitButton Component ui variants renders primary outlined 1`] = `
+<body>
+  <div>
+    <div
+      class="splitButton"
+    >
+      <button
+        class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonMd mainActionButton outlined"
+        type="button"
+      >
+        <div
+          class="buttonText"
+        >
+          <span>
+            test-trigger-button
+          </span>
+        </div>
+      </button>
+      <span
+        class="mia-platform-dropdown-trigger dropdown-some-random-uuid"
+      >
+        <button
+          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-icon-only mia-platform-btn-background-ghost button buttonMdIconOnly dropdownActionButton outlined"
+          type="button"
+        >
+          <span
+            class="mia-platform-btn-icon"
+          >
+            <svg
+              aria-label="Open dropdown"
+              color="currentColor"
+              fill="currentColor"
+              height="16"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
+  </div>
+</body>
+`;

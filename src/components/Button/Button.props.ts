@@ -23,6 +23,12 @@ import { HTMLType, Hierarchy, IconPosition, Shape, Size, Type } from './Button.t
 export type ButtonProps = {
 
   /**
+   * Use this to focus the button element.
+   */
+
+  autoFocus?: boolean,
+
+  /**
    * Fits button width to its parent width
    */
   isBlock?: boolean,
@@ -31,6 +37,13 @@ export type ButtonProps = {
    * The children nodes to be rendered within the button context.
    */
   children?: ReactNode,
+
+  /**
+   * Gives support to custom classes for further stylization.
+   *
+   * WARNING: Providing custom styles to button is discouraged as it may lead to UI incoherence.
+   */
+  className?: string,
 
   /**
    * The form id the button should take care of submit or reset.

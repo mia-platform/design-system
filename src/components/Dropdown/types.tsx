@@ -3,15 +3,17 @@ import { type MenuProps as AntdMenuProps } from 'antd'
 import { OpenChangeInfoSource } from './props'
 
 export type ArrayElement<ArrayType extends readonly unknown[] | undefined> =
-ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
+  ArrayType extends readonly (infer ElementType)[] ?
+    ElementType :
+    never;
 
 export type AntdMenuItems = AntdMenuProps['items']
 export type AntdMenuItem = ArrayElement<AntdMenuItems>
 
 export type AntdMenuClickEvent = {
-   key: string,
-   keyPath: string[],
-   domEvent: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>
+  key: string,
+  keyPath: string[],
+  domEvent: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>
 }
 
 export type AntdTriggerSource = 'trigger' | 'menu'

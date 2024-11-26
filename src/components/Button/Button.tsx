@@ -67,8 +67,10 @@ export const defaults = {
  * @returns {Button} Button component
  */
 export const Button = ({
+  autoFocus,
   isBlock,
   children,
+  className,
   form,
   hierarchy = defaults.hierarchy,
   href,
@@ -101,8 +103,9 @@ export const Button = ({
   const antdIconPosition = useMemo(() => getAntdPosition(iconPosition), [iconPosition])
   return (
     <AntButton
+      autoFocus={autoFocus}
       block={isBlock}
-      className={buttonClassNames}
+      className={classnames(buttonClassNames, className)}
       danger={hierarchy === Danger}
       disabled={isDisabled}
       download={download}
