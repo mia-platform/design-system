@@ -18,7 +18,7 @@
 
 import classNames from 'classnames'
 import { PiCaretDown } from 'react-icons/pi'
-import { ReactElement } from 'react'
+import { ReactElement, useCallback, useState } from 'react'
 
 import { Button } from '../Button/Button'
 import { Dropdown } from '../Dropdown/Dropdown'
@@ -27,10 +27,11 @@ import { SplitButtonProps } from './props'
 import styles from './SplitButton.module.css'
 
 const {
-  splitButton,
-  mainActionButton,
   dropdownActionButton,
+  mainActionButton,
   outlined,
+  pressed,
+  splitButton,
 } = styles
 
 const dropdownIcon = <Icon aria-label="Open dropdown" component={PiCaretDown} size={16} />
@@ -55,6 +56,9 @@ export const SplitButton = ({
   title,
   type,
 }: SplitButtonProps): ReactElement => {
+  const [opened, setOpened] = useState(false)
+  const onOpenChange = useCallback(() => setOpened((prev) => !prev), [])
+
   return (
     <div className={splitButton}>
       <Button
@@ -80,11 +84,13 @@ export const SplitButton = ({
         items={items}
         placement={Dropdown.Placement.BottomRight}
         onClick={onItemClick}
+        onOpenChange={onOpenChange}
       >
         <Button
           className={classNames(
             dropdownActionButton,
-            type === Button.Type.Outlined || hierarchy === Button.Hierarchy.Neutral ? outlined : undefined
+            type === Button.Type.Outlined || hierarchy === Button.Hierarchy.Neutral ? outlined : undefined,
+            opened ? pressed : undefined
           )}
           hierarchy={hierarchy}
           icon={dropdownIcon}

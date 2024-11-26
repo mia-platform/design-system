@@ -51,4 +51,8 @@
      */
     transition: none
   }
+
+  &.pressed {
+    background-color: var(--palette-action-primary-selected, #004aaa);
+  }
 }
