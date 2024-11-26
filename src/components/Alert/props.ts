@@ -39,7 +39,7 @@ export type AlertProps = {
   children?: ReactNode
 
   /**
-   * Indicates if the alert is closable.
+   * Indicates if the alert is closable. True by default, false if the alert is compressed.
    */
   isClosable?: boolean
 
