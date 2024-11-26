@@ -33,6 +33,13 @@ export type ButtonProps = {
   children?: ReactNode,
 
   /**
+   * Gives support to custom classes for further stylization.
+   *
+   * WARNING: Providing custom styles to button is discouraged as it may lead to UI incoherence.
+   */
+  className?: string,
+
+  /**
    * The form id the button should take care of submit or reset.
    */
   form?: string,

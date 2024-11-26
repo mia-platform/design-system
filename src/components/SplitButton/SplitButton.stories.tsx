@@ -17,13 +17,15 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
-import { PiAcorn } from 'react-icons/pi'
+import { PiAcorn, PiWarning } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { SplitButton } from './SplitButton'
 import { SplitButtonProps } from './props'
+import { Tag } from '../Tag'
+import { Dropdown } from '../Dropdown'
 
 const defaults: Partial<SplitButtonProps> = {
   children: 'click me',
@@ -49,7 +51,6 @@ const meta = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '100%',
       }}
     >
       <SplitButton {...args} />
@@ -66,6 +67,12 @@ export const BasicExample: Story = {}
 export const PrimaryFilled: Story = {
   args: {
     hierarchy: Button.Hierarchy.Primary,
+  },
+}
+export const PrimaryOutlined: Story = {
+  args: {
+    hierarchy: Button.Hierarchy.Primary,
+    type: Button.Type.Outlined,
   },
 }
 export const Neutral: Story = {
@@ -88,5 +95,86 @@ export const Disabled: Story = {
 export const Loading: Story = {
   args: {
     isLoading: true,
+  },
+}
+
+export const WithComplexMenu: Story = {
+  args: {
+    items: [{
+      icon: <Icon component={PiAcorn} size={16} />,
+      id: 'id1',
+      label: 'value 1',
+    }, {
+      id: 'id2',
+      label: 'value 2',
+      secondaryLabel: 'Some additional info 2',
+    }, {
+      icon: <Icon component={PiWarning} size={16} />,
+      id: 'id3',
+      label: 'I am danger!',
+      danger: true,
+      secondaryLabel: 'Some additional info 3',
+    }, {
+      id: 'id4-with-nested-items',
+      label: 'Many Items here',
+      secondaryLabel: 'just hover me',
+      children: [{
+        id: 'id4-c1',
+        label: 'value 4.1',
+      }, {
+        id: 'id4-c2',
+        label: 'value 4.2',
+        children: [{
+          id: 'id4-c2-c1',
+          label: 'value 4.2-1',
+        }],
+      }],
+    }, {
+      id: 'id5-with-tag',
+      label: 'with tag',
+      secondaryLabel: 'Some additional info 2',
+      tag: <Tag>{'Tag'}</Tag>,
+    }],
+  },
+}
+
+export const WithComplexMenuAndVerticalLayout: Story = {
+  args: {
+    itemLayout: Dropdown.ItemLayout.Vertical,
+    items: [{
+      icon: <Icon component={PiAcorn} size={16} />,
+      id: 'id1',
+      label: 'value 1',
+    }, {
+      id: 'id2',
+      label: 'value 2',
+      secondaryLabel: 'Some additional info 2',
+    }, {
+      icon: <Icon component={PiWarning} size={16} />,
+      id: 'id3',
+      label: 'I am danger!',
+      danger: true,
+      secondaryLabel: 'Some additional info 3',
+    }, {
+      id: 'id4-with-nested-items',
+      label: 'Many Items here',
+      secondaryLabel: 'just hover me',
+      children: [{
+        id: 'id4-c1',
+        label: 'value 4.1',
+      }, {
+        id: 'id4-c2',
+        label: 'value 4.2',
+        children: [{
+          id: 'id4-c2-c1',
+          label: 'value 4.2-1',
+        }],
+      }],
+    }, {
+      id: 'id5-with-tag',
+      label: 'with tag',
+      secondaryLabel: 'Some additional info 2',
+      tag: <Tag>{'Tag'}</Tag>,
+    }],
   },
 }

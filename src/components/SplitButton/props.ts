@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactNode } from 'react'
+import { MouseEvent, ReactNode } from 'react'
 
-import { HTMLType, Hierarchy } from '../Button/Button.types'
-import { DropdownClickEvent } from '../Dropdown/props'
+import { HTMLType, Hierarchy, Type } from '../Button/Button.types'
+import { DropdownClickEvent, ItemLayout } from '../Dropdown/props'
 import { SplitButtonItem } from './types'
 
 export type SplitButtonProps = {
@@ -69,6 +69,11 @@ export type SplitButtonProps = {
   isLoading?: boolean,
 
   /**
+   * Allows to control the Dropdown label layout (accepts: horizontal, vertical).
+   */
+  itemLayout?: ItemLayout,
+
+  /**
    * List of items to be rendered within the Dropdown.
    *
    * Note: This component currently supports items with vertical layout
@@ -78,7 +83,7 @@ export type SplitButtonProps = {
   /**
    * callback used to notify a click on the main button.
    */
-  onClick: React.MouseEventHandler<HTMLElement>
+  onClick: (event: MouseEvent) => void,
 
   /**
    * callback used to notify a click on a dropdown item, see
@@ -93,6 +98,8 @@ export type SplitButtonProps = {
    * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
    */
   target?: string,
+
+  type?: Type,
 
   /**
    * HTML `title` global attribute.

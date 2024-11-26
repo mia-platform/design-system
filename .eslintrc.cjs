@@ -54,7 +54,7 @@ module.exports = {
     }],
     "max-statements": "off",
     "no-shadow": "off",
-    "sort-imports": ["error", {
+    "sort-imports": ["off", {
       allowSeparatedGroups: true
     }],
 

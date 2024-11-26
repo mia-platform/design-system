@@ -17,7 +17,38 @@
  */
 
 .splitButton {
-  :global(.mia-platform-btn-compact-item.mia-platform-dropdown-trigger.mia-platform-btn-primary:not([disabled])::before) {
-    background-color: white !important;
+  display: flex;
+}
+
+.mainActionButton {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  &:hover {
+    z-index: 999;
+  }
+
+  &.outlined {
+    /*
+     * Transition does not affect the border in the middle of the two buttons
+     * because its visibility is controlled by the z-index attribute.
+     * This means that only three out of four borders would be properly animated.
+     * Since the issue is only visible in outlined buttons we keep other variants animated.
+     */
+    transition: none
+  }
+}
+
+.dropdownActionButton {
+  margin-left: 1px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+
+  &.outlined, &:disabled {
+    margin-left: -1px;
+    /*
+     * Transition is removed for coherence with the main button.
+     */
+    transition: none
   }
 }
