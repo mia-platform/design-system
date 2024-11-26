@@ -30,6 +30,7 @@ import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput
 import { InputAddon, InputAddonProps } from './InputAddon.tsx'
 import { Icon } from '../Icon'
 import { InputProps } from './props'
+import { isObject } from '../../utils/object.ts'
 import styles from './input.module.css'
 
 export const defaults = {
@@ -58,7 +59,7 @@ const useInputValue = (
     React.Dispatch<React.SetStateAction<Record<string, unknown>>>
   ] => {
   return useState({
-    ...(typeof value === 'object' ? value : { [valuePropName]: value || '' }),
+    ...(isObject(value) ? value : { [valuePropName]: value || '' }),
     ...getAddonDefaultValue('before', before),
     ...getAddonDefaultValue('after', after),
   })
@@ -145,7 +146,7 @@ export const Input = (
   ), [addonAfterProp, renderAddon])
 
   const getValue = useCallback((strOrObj?: string | Record<string, unknown>) => {
-    return typeof strOrObj === 'object' ? String(strOrObj[valuePropName]) : strOrObj
+    return isObject(strOrObj) ? String(strOrObj[valuePropName]) : strOrObj
   }, [valuePropName])
 
   const inputValue = useMemo(() => {
