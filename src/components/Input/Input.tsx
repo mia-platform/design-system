@@ -42,12 +42,11 @@ const DEFAULT_ICON_SIZE = 12 as never
 
 type AddonPosition = 'before' | 'after'
 
-const getAddonDefaultValue = (position: AddonPosition) =>
-  (props?: InputAddonProps) : Record<string, unknown> => {
-    return props && (props.value !== undefined || props.defaultValue !== undefined)
-      ? { [props.name || position]: props.value || props.defaultValue }
-      : {}
-  }
+const getAddonDefaultValue = (position: AddonPosition, props?: InputAddonProps) : Record<string, unknown> => {
+  return props && (props.value !== undefined || props.defaultValue !== undefined)
+    ? { [props.name || position]: props.value || props.defaultValue }
+    : {}
+}
 
 const useInputValue = (
   value: Record<string, unknown> | string | undefined,
@@ -60,8 +59,8 @@ const useInputValue = (
   ] => {
   return useState({
     ...(typeof value === 'object' ? value : { [valuePropName]: value || '' }),
-    ...getAddonDefaultValue('before')(before),
-    ...getAddonDefaultValue('after')(after),
+    ...getAddonDefaultValue('before', before),
+    ...getAddonDefaultValue('after', after),
   })
 }
 
