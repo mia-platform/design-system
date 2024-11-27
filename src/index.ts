@@ -21,6 +21,7 @@ import { Alert } from './components/Alert'
 import { Breadcrumb } from './components/Breadcrumb'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
+import { CardSelection } from './components/CardSelection'
 import { Checkbox } from './components/Checkbox'
 import { CheckboxGroup } from './components/CheckboxGroup'
 import { Divider } from './components/Divider'
@@ -52,6 +53,7 @@ export {
   Breadcrumb,
   Button,
   Card,
+  CardSelection,
   Checkbox,
   CheckboxGroup,
   Divider,
