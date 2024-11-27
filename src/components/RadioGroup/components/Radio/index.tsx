@@ -28,18 +28,27 @@ const { radio, radioContent } = styles
 export const Radio = <T, >({
   label,
   description,
-  idDisabled: disabled,
+  isDisabled: disabled,
+  isChecked: checked,
   value,
 }: RadioProps<T>): ReactElement => {
   return (
     <div className={radio}>
-      <AntRadio disabled={disabled} value={value}>
-        <div className={radioContent}>
-          <BodyS>{label}</BodyS>
-          {description && (
-            <BodyS>{description}</BodyS>
-          )}
-        </div>
+      <AntRadio
+        checked={checked}
+        disabled={disabled}
+        value={value}
+      >
+        {(label || description) && (
+          <div className={radioContent}>
+            {label && (
+              <BodyS>{label}</BodyS>
+            )}
+            {description && (
+              <BodyS>{description}</BodyS>
+            )}
+          </div>
+        )}
       </AntRadio>
     </div>
   )

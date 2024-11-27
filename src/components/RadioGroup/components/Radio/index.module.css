@@ -25,6 +25,10 @@
 
   :global(.mia-platform-radio-wrapper) {
     align-items: flex-start;
+    &:only-child {
+      margin-inline-end: 0;
+    }
+
     &:not(:global(.mia-platform-radio-wrapper-disabled)) {
       :global(.mia-platform-radio-inner) {
         border-color: var(--palette-action-secondary-bold, #CDCDCD);
@@ -51,7 +55,7 @@
       }
     }
   }
-  
+
   /* disable */
   :global(.mia-platform-radio-wrapper-disabled) {
     :global(.mia-platform-typography) {

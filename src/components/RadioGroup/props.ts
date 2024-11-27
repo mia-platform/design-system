@@ -98,7 +98,8 @@ export type RadioGroupProps<T> = {
 
 export type RadioProps<T> = {
   value: T;
-  label: string;
+  label?: string;
   description?: string;
-  idDisabled?: boolean;
+  isDisabled?: boolean;
+  isChecked?: boolean;
 };

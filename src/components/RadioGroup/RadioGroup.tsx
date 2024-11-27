@@ -48,7 +48,7 @@ export const RadioGroup = <T, >({
     return options.map((option, index) => (
       <Radio
         description={option.description}
-        idDisabled={option.disabled}
+        isDisabled={option.disabled}
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         label={option.label}

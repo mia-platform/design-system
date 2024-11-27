@@ -1,0 +1,93 @@
+
+.card {
+  position: relative;
+
+  border-radius: var(--shape-border-radius-lg, 8px);
+  background-color: var(--palette-action-alternate-secondary-default, #89898914);
+  color: var(--palette-text-neutral-main, #636363);
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+
+  padding: var(--spacing-padding-lg, 8px);
+  gap: var(--spacing-gap-sm, 8px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: pointer;
+
+  &:hover:not(.disabled) {
+    color: var(--palette-text-neutral-bold, #464646);
+  }
+}
+
+.selected:not(.disabled) {
+  background-color: var(--palette-action-alternate-primary-selected, #1890FF29);
+  color: var(--palette-text-primary-bold, #004AAA) !important;
+
+  &:hover {
+    color: var(--palette-text-primary-subtle, #1890FF) !important;
+    & :global(.mia-platform-checkbox) :global(.mia-platform-checkbox-inner) {
+      border-color: var(--palette-action-primary-hover, #1890FF) !important;
+      background-color: var(--palette-action-primary-hover, #1890FF) !important;
+    }
+    & :global(.mia-platform-radio-inner) {
+      border-color: var(--palette-action-primary-hover, #1890FF) !important;
+    }
+    & :global(.mia-platform-radio-inner:after) {
+      background-color: var(--palette-action-primary-hover, #1890FF) !important;
+    }
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: var(--palette-text-neutral-subtler, #ACACAC);
+
+  & .subtitle {
+    color: var(--palette-text-neutral-subtler, #ACACAC);
+  }
+}
+
+
+.horizontal {
+  align-items: flex-start;
+  .header {
+    flex-direction: row;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-gap-sm, 8px);
+}
+
+.title {
+  font-size: var(--typography-bodyMBold-fontSize, 16px);
+  line-height: var(--typography-bodyMBold-lineHeight, 24px);
+  font-weight: var(--typography-bodyMBold-fontWeight, 600);
+}
+
+.subtitle {
+  font-size: var(--typography-bodyS-fontSize, 14px);
+  line-height: var(--typography-bodyS-lineHeight, 16px);
+  font-weight: var(--typography-bodyS-fontWeight, 400);
+  color: var(--palette-text-neutral-main, #636363);
+
+  text-align: center;
+}
+
+.actionContainer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.content {
+  margin: var(--spacing-margin-sm, 8px);
+}
