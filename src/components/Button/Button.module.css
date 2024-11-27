@@ -68,6 +68,10 @@
 .buttonGhost {
   border-color: transparent !important;
   background-color: transparent;
+  div:first-child {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 .buttonLink {
@@ -76,6 +80,10 @@
   height: auto;
   width: fit-content;
   text-decoration: none;
+  div:first-child {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 .buttonText {
