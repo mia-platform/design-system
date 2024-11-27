@@ -23,6 +23,11 @@ import { Direction } from './types.ts'
 export type RadioGroupOption<T> = {
 
   /**
+   * Optional key associated to the option
+   */
+  key?: string
+
+  /**
    * The value associated with the Radio option
    */
   value: T;
