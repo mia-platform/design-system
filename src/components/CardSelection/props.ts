@@ -12,5 +12,6 @@ export type CardSelectionProps<T> = {
   value?: T
   isChecked?: boolean
   isDisabled?: boolean
-  onClick?: (checked?: boolean) => void
+  onClick?: (checked: boolean, value?: T) => void
+  isInitiallyChecked?: boolean
 }

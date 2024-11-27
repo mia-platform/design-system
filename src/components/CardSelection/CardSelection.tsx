@@ -1,4 +1,4 @@
-import { ReactElement, useCallback, useMemo, useState } from 'react'
+import { ReactElement, useCallback, useMemo, useRef, useState } from 'react'
 import classnames from 'classnames'
 
 import { CardSelectionProps } from './props.ts'
@@ -20,9 +20,13 @@ export const CardSelection = <T, >({
   value,
   isDisabled,
   isChecked: isCheckedProp,
+  isInitiallyChecked,
   onClick,
 }: CardSelectionProps<T>): ReactElement => {
-  const [isChecked, setIsChecked] = useState(isCheckedProp)
+  const [isCheckedState, setIsCheckedState] = useState(isInitiallyChecked)
+  const isControlled = useRef(isCheckedProp !== undefined).current
+
+  const isChecked = isControlled ? isCheckedProp : isCheckedState
 
   const className = useMemo(() => classnames([
     styles.card,
@@ -34,21 +38,23 @@ export const CardSelection = <T, >({
   const action = useMemo(() => {
     switch (type) {
     case Type.Radio:
-      return <Radio isChecked={isChecked} isDisabled={isDisabled} value={value} />
+      return <Radio isChecked={isChecked} isDisabled={isDisabled} />
     case Type.Checkbox:
-      return <Checkbox isChecked={isChecked} isDisabled={isDisabled} value={value} />
+      return <Checkbox isChecked={isChecked} isDisabled={isDisabled} />
     default:
       return undefined
     }
-  }, [isChecked, isDisabled, type, value])
+  }, [isChecked, isDisabled, type])
 
   const handleClick = useCallback(() => {
     const nextChecked = !isChecked
-    setIsChecked(nextChecked)
-    if (onClick) {
-      onClick(nextChecked)
+    if (!isControlled) {
+      setIsCheckedState(nextChecked)
     }
-  }, [isChecked, onClick])
+    if (onClick) {
+      onClick(nextChecked, value)
+    }
+  }, [isChecked, isControlled, onClick, value])
 
   return (
     <div className={className} onClick={!isDisabled ? handleClick : undefined}>

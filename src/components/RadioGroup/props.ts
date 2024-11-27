@@ -97,7 +97,7 @@ export type RadioGroupProps<T> = {
 };
 
 export type RadioProps<T> = {
-  value: T;
+  value?: T;
   label?: string;
   description?: string;
   isDisabled?: boolean;
