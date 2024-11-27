@@ -34,6 +34,7 @@
   cursor: pointer;
 
   &:hover:not(.disabled) {
+    background-color: var(--palette-action-alternate-secondary-hover, #89898914);
     color: var(--palette-text-neutral-bold, #464646);
   }
 }
@@ -43,6 +44,7 @@
   color: var(--palette-text-primary-bold, #004AAA) !important;
 
   &:hover {
+    background-color: var(--palette-action-alternate-primary-selected, #1890FF29);
     color: var(--palette-text-primary-subtle, #1890FF) !important;
     & :global(.mia-platform-checkbox) :global(.mia-platform-checkbox-inner) {
       border-color: var(--palette-action-primary-hover, #1890FF) !important;
