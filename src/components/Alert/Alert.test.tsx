@@ -143,8 +143,7 @@ describe('Alert Snapshot Tests', () => {
       />
     )
 
-    screen.logTestingPlaygroundURL()
-    const closeButton = screen.getByRole('img')
+    const closeButton = screen.getByRole('button')
     fireEvent.click(closeButton)
 
     await waitFor(() => {
