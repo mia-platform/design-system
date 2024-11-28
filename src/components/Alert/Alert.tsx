@@ -28,7 +28,6 @@ import { ReactElement, useMemo } from 'react'
 import { Alert as AntAlert } from 'antd'
 import classnames from 'classnames'
 
-import { Button } from '../Button/Button.tsx'
 import { AlertProps } from './props.ts'
 import { Icon } from '../Icon'
 import { IconComponent } from '../Icon/Icon.props.ts'
@@ -98,15 +97,7 @@ export const Alert = ({
   }, [children, description])
 
   const closable = useMemo(() => {
-    return !isCompressed && isClosable && {
-      closeIcon: (
-        <Button
-          hierarchy={Button.Hierarchy.Neutral}
-          icon={<Icon component={PiX} size={16} />}
-          type={Button.Type.Ghost}
-        />
-      ),
-    }
+    return !isCompressed && isClosable && { closeIcon: <Icon component={PiX} size={16} /> }
   }, [isCompressed, isClosable])
 
   return (

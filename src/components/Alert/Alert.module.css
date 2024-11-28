@@ -40,7 +40,13 @@
   }
 
   & :global(.mia-platform-alert-close-icon) {
+    width: 32px;
+    height: 32px;
     color: var(--palette-action-secondary-contrastText, #636363);
+    cursor: pointer;
+    &:hover {
+      color: var(--palette-action-primary-hover, #1890ff);
+    }
   }
 
   & .titleContainer svg {
