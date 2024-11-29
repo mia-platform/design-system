@@ -20,22 +20,18 @@ import {
   PiCheckCircleFill,
   PiCircleHalfTiltFill,
   PiInfoFill,
-  PiWarningFill,
+  PiWarningDiamondFill,
   PiX,
-  PiXCircleFill,
+  PiXSquareFill,
 } from 'react-icons/pi'
 import { ReactElement, useMemo } from 'react'
 import { Alert as AntAlert } from 'antd'
 import classnames from 'classnames'
 
 import { AlertProps } from './props.ts'
-import CheckCircle from '../../assets/icons/CheckCircle.svg'
-import ICircle from '../../assets/icons/ICircle.svg'
 import { Icon } from '../Icon'
 import { IconComponent } from '../Icon/Icon.props.ts'
-import MiExclamationCircle from '../../assets/icons/ExclamationCircle.svg'
 import { Type } from './types.ts'
-import XCircle from '../../assets/icons/XCircle.svg'
 import styles from './Alert.module.css'
 
 export const defaults = {
@@ -47,26 +43,11 @@ const getIcon = (type?: Type): IconComponent => {
   case Type.Info:
     return PiInfoFill
   case Type.Warning:
-    return PiWarningFill
+    return PiWarningDiamondFill
   case Type.Error:
-    return PiXCircleFill
+    return PiXSquareFill
   case Type.Success:
     return PiCheckCircleFill
-  default:
-    return PiCircleHalfTiltFill
-  }
-}
-
-const getIconCompressed = (type?: Type): IconComponent => {
-  switch (type) {
-  case Type.Info:
-    return ICircle
-  case Type.Warning:
-    return MiExclamationCircle
-  case Type.Error:
-    return XCircle
-  case Type.Success:
-    return CheckCircle
   default:
     return PiCircleHalfTiltFill
   }
@@ -93,7 +74,7 @@ export const Alert = ({
     return isCompressed
       ? (
         <div className={styles.titleContainer}>
-          <Icon component={icon || getIconCompressed(type)} size={16} />
+          <Icon component={icon || getIcon(type)} size={16} />
           <span className={styles.title}>{titleProp}</span>
         </div>
       )
