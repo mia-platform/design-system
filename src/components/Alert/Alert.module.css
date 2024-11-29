@@ -40,8 +40,8 @@
   }
 
   & :global(.mia-platform-alert-close-icon) {
-    width: 32px;
-    height: 32px;
+    width: var(--shape-size-xl, 32px);
+    height: var(--shape-size-xl, 32px);
     color: var(--palette-action-secondary-contrastText, #636363);
     cursor: pointer;
     &:hover {
@@ -57,7 +57,7 @@
 
 .compressed {
   border-left-width: 0;
-  padding: 0 16px;
+  padding: 0 var(--spacing-padding-lg, 16px);
 }
 
 .titleContainer {
