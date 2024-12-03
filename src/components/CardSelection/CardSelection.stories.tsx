@@ -52,40 +52,40 @@ export const Vertical: Story = {
 
 export const Horizontal: Story = {
   args: {
-    horizontal: true,
+    layout: CardSelection.Layout.Horizontal,
   },
 }
 
 export const VerticalCheckbox: Story = {
   args: {
-    type: CardSelection.Type.Checkbox,
+    inputType: CardSelection.InputType.Checkbox,
   },
 }
 
 export const HorizontalCheckbox: Story = {
   args: {
-    type: CardSelection.Type.Checkbox,
-    horizontal: true,
+    inputType: CardSelection.InputType.Checkbox,
+    layout: CardSelection.Layout.Horizontal,
   },
 }
 
 export const VerticalRadio: Story = {
   args: {
-    type: CardSelection.Type.Radio,
+    inputType: CardSelection.InputType.Radio,
   },
 }
 
 export const HorizontalRadio: Story = {
   args: {
-    type: CardSelection.Type.Radio,
-    horizontal: true,
+    inputType: CardSelection.InputType.Radio,
+    layout: CardSelection.Layout.Horizontal,
   },
 }
 
 export const CheckboxDisabled: Story = {
   args: {
-    type: CardSelection.Type.Checkbox,
-    horizontal: true,
+    inputType: CardSelection.InputType.Checkbox,
+    layout: CardSelection.Layout.Horizontal,
     isDisabled: true,
     isChecked: true,
   },
@@ -93,8 +93,8 @@ export const CheckboxDisabled: Story = {
 
 export const RadioDisabled: Story = {
   args: {
-    type: CardSelection.Type.Radio,
-    horizontal: true,
+    inputType: CardSelection.InputType.Radio,
+    layout: CardSelection.Layout.Horizontal,
     isDisabled: true,
     isChecked: true,
   },

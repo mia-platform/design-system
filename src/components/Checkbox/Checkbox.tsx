@@ -20,6 +20,7 @@ import { ReactElement, useMemo } from 'react'
 import { Checkbox as AntCheckbox } from 'antd'
 import classnames from 'classnames'
 
+import { BodyS } from '../Typography/BodyX/BodyS'
 import { CheckboxProps } from './props'
 import styles from './checkbox.module.css'
 
@@ -36,34 +37,36 @@ export const Checkbox = <T = never, >({
   isIndeterminate = defaults.isIndeterminate,
   isDisabled = defaults.isDisabled,
   onChange,
+  onClick,
   isChecked,
   value,
+  children = label,
+  className: classNameProp,
 }: CheckboxProps<T>): ReactElement => {
   const className = useMemo(() => classnames([
-    styles.checkboxComponent,
-    isDisabled && styles.disabled,
-  ]), [isDisabled])
+    styles.checkbox,
+    classNameProp,
+  ]), [classNameProp])
 
   return (
-    <div className={className}>
-      <div className={styles.checkboxTextWrapper}>
-        <AntCheckbox
-          defaultChecked={isInitiallyChecked}
-          disabled={isDisabled}
-          indeterminate={isIndeterminate}
-          onChange={onChange}
-          {...(isChecked !== undefined && { checked: isChecked })}
-          {...(value !== undefined && { value })}
-        />
-        {label}
+    <AntCheckbox
+      className={className}
+      defaultChecked={isInitiallyChecked}
+      disabled={isDisabled}
+      indeterminate={isIndeterminate}
+      onChange={onChange}
+      onClick={onClick}
+      {...(isChecked !== undefined && { checked: isChecked })}
+      {...(value !== undefined && { value })}
+    >
+      <div className={styles.checkboxContent}>
+        {children && (
+          <BodyS>{children}</BodyS>
+        )}
+        {description && (
+          <BodyS>{description}</BodyS>
+        )}
       </div>
-      {
-        description && (
-          <div className={styles.checkboxDescription}>
-            {description}
-          </div>
-        )
-      }
-    </div>
+    </AntCheckbox>
   )
 }

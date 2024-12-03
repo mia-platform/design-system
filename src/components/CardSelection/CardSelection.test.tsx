@@ -46,14 +46,14 @@ describe('CardSelection Snapshot Tests', () => {
 
   it('renders Horizontal correctly', () => {
     const { asFragment } = render(
-      <CardSelection {...defaultProps} horizontal={true} />
+      <CardSelection {...defaultProps} layout={CardSelection.Layout.Horizontal} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders VerticalCheckbox correctly', () => {
     const { asFragment } = render(
-      <CardSelection {...defaultProps} type={CardSelection.Type.Checkbox} />
+      <CardSelection {...defaultProps} inputType={CardSelection.InputType.Checkbox} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
@@ -62,8 +62,8 @@ describe('CardSelection Snapshot Tests', () => {
     const { asFragment } = render(
       <CardSelection
         {...defaultProps}
-        horizontal={true}
-        type={CardSelection.Type.Checkbox}
+        inputType={CardSelection.InputType.Checkbox}
+        layout={CardSelection.Layout.Horizontal}
       />
     )
     expect(asFragment()).toMatchSnapshot()
@@ -71,7 +71,7 @@ describe('CardSelection Snapshot Tests', () => {
 
   it('renders VerticalRadio correctly', () => {
     const { asFragment } = render(
-      <CardSelection {...defaultProps} type={CardSelection.Type.Radio} />
+      <CardSelection {...defaultProps} inputType={CardSelection.InputType.Radio} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
@@ -80,8 +80,8 @@ describe('CardSelection Snapshot Tests', () => {
     const { asFragment } = render(
       <CardSelection
         {...defaultProps}
-        horizontal={true}
-        type={CardSelection.Type.Radio}
+        inputType={CardSelection.InputType.Radio}
+        layout={CardSelection.Layout.Horizontal}
       />
     )
     expect(asFragment()).toMatchSnapshot()
@@ -91,10 +91,10 @@ describe('CardSelection Snapshot Tests', () => {
     const { asFragment } = render(
       <CardSelection
         {...defaultProps}
-        horizontal={true}
+        inputType={CardSelection.InputType.Checkbox}
         isChecked={true}
         isDisabled={true}
-        type={CardSelection.Type.Checkbox}
+        layout={CardSelection.Layout.Horizontal}
       />
     )
     expect(asFragment()).toMatchSnapshot()
@@ -104,10 +104,10 @@ describe('CardSelection Snapshot Tests', () => {
     const { asFragment } = render(
       <CardSelection
         {...defaultProps}
-        horizontal={true}
+        inputType={CardSelection.InputType.Radio}
         isChecked={true}
         isDisabled={true}
-        type={CardSelection.Type.Radio}
+        layout={CardSelection.Layout.Horizontal}
       />
     )
     expect(asFragment()).toMatchSnapshot()
@@ -119,7 +119,7 @@ describe('CardSelection Snapshot Tests', () => {
     render(
       <CardSelection
         {...defaultProps}
-        type={CardSelection.Type.Radio}
+        inputType={CardSelection.InputType.Radio}
         value={value}
         onClick={onClick}
       />
@@ -134,8 +134,8 @@ describe('CardSelection Snapshot Tests', () => {
     render(
       <CardSelection
         {...defaultProps}
+        inputType={CardSelection.InputType.Radio}
         isDisabled
-        type={CardSelection.Type.Radio}
         onClick={onClick}
       />
     )
@@ -149,9 +149,9 @@ describe('CardSelection Snapshot Tests', () => {
     render(
       <CardSelection
         {...defaultProps}
+        inputType={CardSelection.InputType.Radio}
         isChecked
         isDisabled
-        type={CardSelection.Type.Radio}
         onClick={onClick}
       />
     )

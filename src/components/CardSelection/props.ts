@@ -18,8 +18,8 @@
 
 import { ReactNode } from 'react'
 
+import { InputType, Layout } from './types.ts'
 import { IconComponent } from '../Icon/Icon.props.ts'
-import { Type } from './types.ts'
 
 export type CardSelectionProps<T> = {
 
@@ -46,12 +46,12 @@ export type CardSelectionProps<T> = {
   /**
    * Determines if the card should be displayed in a horizontal layout.
    */
-  horizontal?: boolean
+  layout?: Layout
 
   /**
    * The type of selection for the card.
    */
-  type?: Type
+  inputType?: InputType
 
   /**
    * The value associated with the card.
@@ -71,10 +71,32 @@ export type CardSelectionProps<T> = {
   /**
    * Callback triggered when the card is clicked.
    */
-  onClick?: (checked: boolean, value?: T) => void
+  onClick?: (value?: T) => void
+
+  /**
+   * Callback triggered when the card is clicked.
+   */
+  onChange?: (isChecked?: boolean, value?: T) => void
 
   /**
    * Indicates if the card should be checked initially.
    */
   isInitiallyChecked?: boolean
+}
+type Option<T> = {
+  id?: string
+  value?: T
+  title: ReactNode
+  icon?: IconComponent
+  subtitle?: ReactNode
+  children?: ReactNode
+  disabled?: boolean
+}
+export type Props<T> = {
+  options: Option<T>[],
+  type?: InputType
+  layout?: Layout
+  gap?: number
+  isDisabled?: boolean
+  onChange?: (value: T[]) => void
 }

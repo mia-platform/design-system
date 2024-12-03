@@ -16,8 +16,33 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  & > .card {
+    flex-grow: 1;
+  }
+}
+
 .card {
   position: relative;
+  display: flex;
+  & > span, .content {
+    flex-grow: 1;
+  }
+  &:after {
+    display: none;
+  }
+
+  & :global(.mia-platform-checkbox),
+  & :global(.mia-platform-radio) {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  cursor: pointer;
 
   border-radius: var(--shape-border-radius-lg, 8px);
   background-color: var(--palette-action-alternate-secondary-default, #89898914);
@@ -27,37 +52,35 @@
   padding: var(--spacing-padding-lg, 8px);
   gap: var(--spacing-gap-sm, 8px);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  cursor: pointer;
 
   &:hover:not(.disabled) {
     background-color: var(--palette-action-alternate-secondary-hover, #89898914);
     color: var(--palette-text-neutral-bold, #464646);
   }
-}
 
-.selected:not(.disabled) {
-  background-color: var(--palette-action-alternate-primary-selected, #1890FF29);
-  color: var(--palette-text-primary-bold, #004AAA) !important;
-
-  &:hover {
+  &:global(.mia-platform-checkbox-wrapper-checked):not(.disabled),
+  &:global(.mia-platform-radio-wrapper-checked):not(.disabled) {
     background-color: var(--palette-action-alternate-primary-selected, #1890FF29);
-    color: var(--palette-text-primary-subtle, #1890FF) !important;
-    & :global(.mia-platform-checkbox) :global(.mia-platform-checkbox-inner) {
-      border-color: var(--palette-action-primary-hover, #1890FF) !important;
-      background-color: var(--palette-action-primary-hover, #1890FF) !important;
-    }
-    & :global(.mia-platform-radio-inner) {
-      border-color: var(--palette-action-primary-hover, #1890FF) !important;
-    }
-    & :global(.mia-platform-radio-inner:after) {
-      background-color: var(--palette-action-primary-hover, #1890FF) !important;
+    color: var(--palette-text-primary-bold, #004AAA) !important;
+
+    &:hover {
+      background-color: var(--palette-action-alternate-primary-selected, #1890FF29);
+      color: var(--palette-text-primary-subtle, #1890FF) !important;
+      & :global(.mia-platform-checkbox) :global(.mia-platform-checkbox-inner) {
+        border-color: var(--palette-action-primary-hover, #1890FF) !important;
+        background-color: var(--palette-action-primary-hover, #1890FF) !important;
+      }
+      & :global(.mia-platform-radio-inner) {
+        border-color: var(--palette-action-primary-hover, #1890FF) !important;
+      }
+      & :global(.mia-platform-radio-inner:after) {
+        background-color: var(--palette-action-primary-hover, #1890FF) !important;
+      }
     }
   }
+
 }
+
 
 .disabled {
   cursor: not-allowed;
@@ -68,6 +91,12 @@
   }
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
 
 .horizontal {
   align-items: flex-start;
@@ -105,8 +134,4 @@
   position: absolute;
   top: 20px;
   right: 20px;
-}
-
-.content {
-  margin: var(--spacing-margin-sm, 8px);
 }

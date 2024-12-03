@@ -16,22 +16,24 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useCallback, useMemo, useRef, useState } from 'react'
+import { ComponentType, ReactElement, useCallback, useMemo, useRef, useState } from 'react'
+import { CheckboxChangeEvent } from 'antd/es/checkbox'
+import { RadioChangeEvent } from 'antd'
 import classnames from 'classnames'
 
+import { InputType, Layout } from './types.ts'
 import { CardSelectionProps } from './props.ts'
 import { Checkbox } from '../Checkbox'
 import { Icon } from '../Icon'
 import { Radio } from '../RadioGroup/components/Radio'
-import { Type } from './types.ts'
 import styles from './CardSelection.module.css'
 
 export const defaults = {}
 
 export const CardSelection = <T, >({
   children,
-  horizontal,
-  type,
+  layout,
+  inputType,
   icon,
   title,
   subtitle,
@@ -40,59 +42,75 @@ export const CardSelection = <T, >({
   isChecked: isCheckedProp,
   isInitiallyChecked,
   onClick,
+  onChange,
 }: CardSelectionProps<T>): ReactElement => {
   const [isCheckedState, setIsCheckedState] = useState(isInitiallyChecked)
   const isControlled = useRef(isCheckedProp !== undefined).current
 
   const isChecked = isControlled ? isCheckedProp : isCheckedState
 
+  const isInput = inputType === InputType.Radio || inputType === InputType.Checkbox
+
+  const isHorizontal = layout === Layout.Horizontal
+
   const className = useMemo(() => classnames([
     styles.card,
-    horizontal && styles.horizontal,
-    isChecked && styles.selected,
     isDisabled && styles.disabled,
-  ]), [horizontal, isChecked, isDisabled])
+  ]), [isDisabled])
 
-  const action = useMemo(() => {
-    switch (type) {
-    case Type.Radio:
-      return <Radio isChecked={isChecked} isDisabled={isDisabled} />
-    case Type.Checkbox:
-      return <Checkbox isChecked={isChecked} isDisabled={isDisabled} />
+  const ItemComponent = useMemo(() => {
+    switch (inputType) {
+    case InputType.Radio:
+      return Radio
+    case InputType.Checkbox:
+      return Checkbox
     default:
-      return undefined
+      return 'div' as unknown as ComponentType
     }
-  }, [isChecked, isDisabled, type])
+  }, [inputType])
 
   const handleClick = useCallback(() => {
-    const nextChecked = !isChecked
+    if (onClick) {
+      onClick(value)
+    }
+  }, [onClick, value])
+
+  const handleChange = useCallback(({ target }: CheckboxChangeEvent | RadioChangeEvent) => {
+    const nextChecked = target.checked
     if (!isControlled) {
       setIsCheckedState(nextChecked)
     }
-    if (onClick) {
-      onClick(nextChecked, value)
+    if (onChange) {
+      onChange(nextChecked, value)
     }
-  }, [isChecked, isControlled, onClick, value])
+  }, [isControlled, onChange, value])
 
   return (
-    <div className={className} onClick={!isDisabled ? handleClick : undefined}>
-      <div className={styles.header}>
-        {
-          icon && <Icon component={icon} size={horizontal ? 24 : 32} />
-        }
-        <span className={styles.title}>{title}</span>
+    <ItemComponent
+      className={className}
+      onClick={!isDisabled ? handleClick : undefined}
+      {...isInput && {
+        isChecked,
+        isDisabled,
+        value,
+        onChange: !isDisabled ? handleChange : undefined,
+      }}
+    >
+      <div className={classnames(styles.content, isHorizontal && styles.horizontal)}>
+        <div className={styles.header}>
+          {
+            icon && <Icon component={icon} size={isHorizontal ? 24 : 32} />
+          }
+          <span className={styles.title}>{title}</span>
+        </div>
+        {subtitle && (
+          <span className={styles.subtitle}>{subtitle}</span>
+        )}
+        {children}
       </div>
-      {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
-      {
-        action && (
-          <div className={styles.actionContainer}>
-            {action}
-          </div>
-        )
-      }
-      {children}
-    </div>
+    </ItemComponent>
   )
 }
 
-CardSelection.Type = Type
+CardSelection.Layout = Layout
+CardSelection.InputType = InputType

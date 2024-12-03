@@ -16,7 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export enum Type {
+export enum InputType {
   Radio = 'radio',
   Checkbox = 'checkbox'
+}
+
+export enum Layout {
+  Horizontal = 'horizontal',
+  Vertical = 'vertical'
 }

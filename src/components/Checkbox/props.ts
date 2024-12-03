@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { MouseEventHandler, ReactNode } from 'react'
 import { CheckboxChangeEvent } from 'antd/es/checkbox'
-import { ReactNode } from 'react'
 
 export type CheckboxProps<T = never, > = {
 
@@ -57,8 +57,14 @@ export type CheckboxProps<T = never, > = {
    */
   onChange?: (event: CheckboxChangeEvent) => void
 
+  onClick?: MouseEventHandler<HTMLElement>;
+
   /**
    * Text to be displayed next to the checkbox.
    */
   label?: ReactNode
+
+  children?: ReactNode
+
+  className?: string
 }

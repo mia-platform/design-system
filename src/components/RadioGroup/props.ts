@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { MouseEventHandler, ReactNode } from 'react'
 import { RadioChangeEvent } from 'antd'
 
 import { Direction } from './types.ts'
@@ -103,8 +104,12 @@ export type RadioGroupProps<T> = {
 
 export type RadioProps<T> = {
   value?: T;
+  children?: ReactNode
+  className?: string
   label?: string;
   description?: string;
   isDisabled?: boolean;
   isChecked?: boolean;
+  onClick?: MouseEventHandler<HTMLElement>;
+  onChange?: (event: RadioChangeEvent) => void;
 };

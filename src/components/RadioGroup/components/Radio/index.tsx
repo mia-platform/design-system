@@ -18,6 +18,7 @@
 
 import { Radio as AntRadio } from 'antd'
 import { ReactElement } from 'react'
+import classNames from 'classnames'
 
 import { BodyS } from '../../../Typography/BodyX/BodyS'
 import { RadioProps } from '../../props'
@@ -28,28 +29,36 @@ const { radio, radioContent } = styles
 export const Radio = <T, >({
   label,
   description,
-  isDisabled: disabled,
-  isChecked: checked,
+  isDisabled,
+  isChecked,
   value,
+  children = label,
+  className: classNameProp,
+  onClick,
+  onChange,
 }: RadioProps<T>): ReactElement => {
+  const className = classNames([
+    radio,
+    classNameProp,
+  ])
+
   return (
-    <div className={radio}>
-      <AntRadio
-        checked={checked}
-        disabled={disabled}
-        value={value}
-      >
-        {(label || description) && (
-          <div className={radioContent}>
-            {label && (
-              <BodyS>{label}</BodyS>
-            )}
-            {description && (
-              <BodyS>{description}</BodyS>
-            )}
-          </div>
+    <AntRadio
+      checked={isChecked}
+      className={className}
+      disabled={isDisabled}
+      value={value}
+      onChange={onChange}
+      onClick={onClick}
+    >
+      <div className={radioContent}>
+        {children && (
+          <BodyS>{children}</BodyS>
         )}
-      </AntRadio>
-    </div>
+        {description && (
+          <BodyS>{description}</BodyS>
+        )}
+      </div>
+    </AntRadio>
   )
 }
