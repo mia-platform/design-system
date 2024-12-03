@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { render, screen, waitFor, within } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 
 import { CheckboxGroupOption, CheckboxGroupProps } from './props'
 import { CheckboxGroup } from './CheckboxGroup'
@@ -109,8 +109,8 @@ describe('CheckboxGroup', () => {
 
     render(<CheckboxGroup {...props} />)
 
-    const firstCheckbox = within(screen.getByText('checkbox 1')).getByRole('checkbox')
-    const secondCheckbox = within(screen.getByText('checkbox 2')).getByRole('checkbox')
+    const firstCheckbox = screen.getByRole('checkbox', { name: 'checkbox 1' })
+    const secondCheckbox = screen.getByRole('checkbox', { name: 'checkbox 2' })
 
     expect(firstCheckbox).not.toBeChecked()
     expect(secondCheckbox).not.toBeChecked()
@@ -142,7 +142,7 @@ describe('CheckboxGroup', () => {
 
     render(<CheckboxGroup {...props} />)
 
-    const checkbox = within(screen.getByText('checkbox 1')).getByRole('checkbox')
+    const checkbox = screen.getByRole('checkbox', { name: 'checkbox 1' })
 
     expect(checkbox).toBeChecked()
 
@@ -163,7 +163,7 @@ describe('CheckboxGroup', () => {
 
     render(<CheckboxGroup {...props} />)
 
-    const checkbox = within(screen.getByText('checkbox 1')).getByRole('checkbox')
+    const checkbox = screen.getByRole('checkbox', { name: 'checkbox 1' })
 
     await waitFor(() => {
       expect(userEvent.click(checkbox)).rejects.toBeTruthy()
@@ -180,11 +180,11 @@ describe('CheckboxGroup', () => {
 
     render(<CheckboxGroup {...props} />)
 
-    const firstCheckbox = within(screen.getByText('checkbox 1')).getByRole('checkbox')
+    const checkbox = screen.getByRole('checkbox', { name: 'checkbox 1' })
 
-    expect(firstCheckbox).toBeChecked()
+    expect(checkbox).toBeChecked()
 
-    await userEvent.click(firstCheckbox)
+    await userEvent.click(checkbox)
     await waitFor(() => {
       expect(onChange).toHaveBeenCalledWith([])
     })

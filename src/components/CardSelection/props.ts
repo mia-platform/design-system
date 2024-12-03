@@ -21,7 +21,7 @@ import { ReactNode } from 'react'
 import { InputType, Layout } from './types.ts'
 import { IconComponent } from '../Icon/Icon.props.ts'
 
-export type CardSelectionProps<T> = {
+export type X<T> = {
 
   /**
    * The main title displayed prominently on the card.
@@ -83,20 +83,22 @@ export type CardSelectionProps<T> = {
    */
   isInitiallyChecked?: boolean
 }
-type Option<T> = {
+export type Option<T> = {
   id?: string
   value?: T
   title: ReactNode
   icon?: IconComponent
   subtitle?: ReactNode
-  children?: ReactNode
+  content?: ReactNode
   disabled?: boolean
 }
-export type Props<T> = {
+export type CardSelectionProps<T> = {
+  value?: T
+  defaultValue?: T
   options: Option<T>[],
-  type?: InputType
+  inputType?: InputType
   layout?: Layout
   gap?: number
   isDisabled?: boolean
-  onChange?: (value: T[]) => void
+  onChange?: (value: T) => void
 }

@@ -3,82 +3,240 @@
 exports[`CardSelection Snapshot Tests renders CheckboxDisabled correctly 1`] = `
 <DocumentFragment>
   <div
-    class="card horizontal selected disabled"
+    class="mia-platform-checkbox-group list"
+    style="gap: 24px;"
   >
-    <div
-      class="header"
+    <label
+      class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-disabled checkbox card disabled"
     >
-      <svg
-        color="currentColor"
-        fill="currentColor"
-        height="24"
-        role="img"
-        stroke="currentColor"
-        stroke-width="0"
-        style="color: currentColor;"
-        viewBox="0 0 256 256"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-disabled"
       >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+        <input
+          class="mia-platform-checkbox-input"
+          disabled=""
+          type="checkbox"
+          value="1"
         />
-      </svg>
-      <span
-        class="title"
-      >
-        Title
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
-    </div>
-    <span
-      class="subtitle"
-    >
-      Subtitle
-    </span>
-    <div
-      class="actionContainer"
-    >
-      <div
-        class="checkboxComponent disabled"
-      >
+      <span>
         <div
-          class="checkboxTextWrapper"
+          class="checkboxContent"
         >
-          <label
-            class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-checked mia-platform-checkbox-wrapper-disabled"
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
           >
-            <span
-              class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-checked mia-platform-checkbox-disabled"
+            <div
+              class="content horizontal"
             >
-              <input
-                checked=""
-                class="mia-platform-checkbox-input"
-                disabled=""
-                type="checkbox"
-              />
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 1
+                </span>
+              </div>
               <span
-                class="mia-platform-checkbox-inner"
-              />
-            </span>
-          </label>
+                class="subtitle"
+              >
+                title 1
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="mia-platform-flex"
-      style="gap: 8px;"
+      </span>
+    </label>
+    <label
+      class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-disabled checkbox card disabled"
     >
       <span
-        class="mia-platform-tag mia-platform-tag-blue tag"
+        class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-disabled"
       >
-        Tag name
+        <input
+          class="mia-platform-checkbox-input"
+          disabled=""
+          type="checkbox"
+          value="2"
+        />
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
+      <span>
+        <div
+          class="checkboxContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 2
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 2
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-disabled checkbox card disabled"
+    >
       <span
-        class="mia-platform-tag mia-platform-tag-red tag"
+        class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-disabled"
       >
-        Tag name
+        <input
+          class="mia-platform-checkbox-input"
+          disabled=""
+          type="checkbox"
+          value="3"
+        />
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
-    </div>
+      <span>
+        <div
+          class="checkboxContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 3
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 3
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
   </div>
 </DocumentFragment>
 `;
@@ -86,52 +244,167 @@ exports[`CardSelection Snapshot Tests renders CheckboxDisabled correctly 1`] = `
 exports[`CardSelection Snapshot Tests renders Horizontal correctly 1`] = `
 <DocumentFragment>
   <div
-    class="card horizontal"
+    class="list"
+    style="gap: 24px;"
   >
     <div
-      class="header"
+      class="card"
     >
-      <svg
-        color="currentColor"
-        fill="currentColor"
-        height="24"
-        role="img"
-        stroke="currentColor"
-        stroke-width="0"
-        style="color: currentColor;"
-        viewBox="0 0 256 256"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="content horizontal"
       >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-        />
-      </svg>
-      <span
-        class="title"
-      >
-        Title
-      </span>
+        <div
+          class="header"
+        >
+          <svg
+            color="currentColor"
+            fill="currentColor"
+            height="24"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+            />
+          </svg>
+          <span
+            class="title"
+          >
+            title 1
+          </span>
+        </div>
+        <span
+          class="subtitle"
+        >
+          title 1
+        </span>
+        <div
+          class="mia-platform-flex"
+          style="gap: 8px;"
+        >
+          <span
+            class="mia-platform-tag mia-platform-tag-blue tag"
+          >
+            Tag name
+          </span>
+          <span
+            class="mia-platform-tag mia-platform-tag-red tag"
+          >
+            Tag name
+          </span>
+        </div>
+      </div>
     </div>
-    <span
-      class="subtitle"
-    >
-      Subtitle
-    </span>
     <div
-      class="mia-platform-flex"
-      style="gap: 8px;"
+      class="card"
     >
-      <span
-        class="mia-platform-tag mia-platform-tag-blue tag"
+      <div
+        class="content horizontal"
       >
-        Tag name
-      </span>
-      <span
-        class="mia-platform-tag mia-platform-tag-red tag"
+        <div
+          class="header"
+        >
+          <svg
+            color="currentColor"
+            fill="currentColor"
+            height="24"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+            />
+          </svg>
+          <span
+            class="title"
+          >
+            title 2
+          </span>
+        </div>
+        <span
+          class="subtitle"
+        >
+          title 2
+        </span>
+        <div
+          class="mia-platform-flex"
+          style="gap: 8px;"
+        >
+          <span
+            class="mia-platform-tag mia-platform-tag-blue tag"
+          >
+            Tag name
+          </span>
+          <span
+            class="mia-platform-tag mia-platform-tag-red tag"
+          >
+            Tag name
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card"
+    >
+      <div
+        class="content horizontal"
       >
-        Tag name
-      </span>
+        <div
+          class="header"
+        >
+          <svg
+            color="currentColor"
+            fill="currentColor"
+            height="24"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+            />
+          </svg>
+          <span
+            class="title"
+          >
+            title 3
+          </span>
+        </div>
+        <span
+          class="subtitle"
+        >
+          title 3
+        </span>
+        <div
+          class="mia-platform-flex"
+          style="gap: 8px;"
+        >
+          <span
+            class="mia-platform-tag mia-platform-tag-blue tag"
+          >
+            Tag name
+          </span>
+          <span
+            class="mia-platform-tag mia-platform-tag-red tag"
+          >
+            Tag name
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -140,80 +413,237 @@ exports[`CardSelection Snapshot Tests renders Horizontal correctly 1`] = `
 exports[`CardSelection Snapshot Tests renders HorizontalCheckbox correctly 1`] = `
 <DocumentFragment>
   <div
-    class="card horizontal"
+    class="mia-platform-checkbox-group list"
+    style="gap: 24px;"
   >
-    <div
-      class="header"
+    <label
+      class="mia-platform-checkbox-wrapper checkbox card"
     >
-      <svg
-        color="currentColor"
-        fill="currentColor"
-        height="24"
-        role="img"
-        stroke="currentColor"
-        stroke-width="0"
-        style="color: currentColor;"
-        viewBox="0 0 256 256"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="mia-platform-checkbox ant-wave-target"
       >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+        <input
+          class="mia-platform-checkbox-input"
+          type="checkbox"
+          value="1"
         />
-      </svg>
-      <span
-        class="title"
-      >
-        Title
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
-    </div>
-    <span
-      class="subtitle"
-    >
-      Subtitle
-    </span>
-    <div
-      class="actionContainer"
-    >
-      <div
-        class="checkboxComponent"
-      >
+      <span>
         <div
-          class="checkboxTextWrapper"
+          class="checkboxContent"
         >
-          <label
-            class="mia-platform-checkbox-wrapper"
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
           >
-            <span
-              class="mia-platform-checkbox ant-wave-target"
+            <div
+              class="content horizontal"
             >
-              <input
-                class="mia-platform-checkbox-input"
-                type="checkbox"
-              />
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 1
+                </span>
+              </div>
               <span
-                class="mia-platform-checkbox-inner"
-              />
-            </span>
-          </label>
+                class="subtitle"
+              >
+                title 1
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="mia-platform-flex"
-      style="gap: 8px;"
+      </span>
+    </label>
+    <label
+      class="mia-platform-checkbox-wrapper checkbox card"
     >
       <span
-        class="mia-platform-tag mia-platform-tag-blue tag"
+        class="mia-platform-checkbox ant-wave-target"
       >
-        Tag name
+        <input
+          class="mia-platform-checkbox-input"
+          type="checkbox"
+          value="2"
+        />
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
+      <span>
+        <div
+          class="checkboxContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 2
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 2
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-checkbox-wrapper checkbox card"
+    >
       <span
-        class="mia-platform-tag mia-platform-tag-red tag"
+        class="mia-platform-checkbox ant-wave-target"
       >
-        Tag name
+        <input
+          class="mia-platform-checkbox-input"
+          type="checkbox"
+          value="3"
+        />
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
-    </div>
+      <span>
+        <div
+          class="checkboxContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 3
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 3
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
   </div>
 </DocumentFragment>
 `;
@@ -221,77 +651,237 @@ exports[`CardSelection Snapshot Tests renders HorizontalCheckbox correctly 1`] =
 exports[`CardSelection Snapshot Tests renders HorizontalRadio correctly 1`] = `
 <DocumentFragment>
   <div
-    class="card horizontal"
+    class="mia-platform-radio-group mia-platform-radio-group-outline list"
+    style="gap: 24px;"
   >
-    <div
-      class="header"
+    <label
+      class="mia-platform-radio-wrapper radio card"
     >
-      <svg
-        color="currentColor"
-        fill="currentColor"
-        height="24"
-        role="img"
-        stroke="currentColor"
-        stroke-width="0"
-        style="color: currentColor;"
-        viewBox="0 0 256 256"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="mia-platform-radio ant-wave-target"
       >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+        <input
+          class="mia-platform-radio-input"
+          type="radio"
+          value="1"
         />
-      </svg>
-      <span
-        class="title"
-      >
-        Title
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
-    </div>
-    <span
-      class="subtitle"
-    >
-      Subtitle
-    </span>
-    <div
-      class="actionContainer"
-    >
-      <div
-        class="radio"
-      >
-        <label
-          class="mia-platform-radio-wrapper"
+      <span>
+        <div
+          class="radioContent"
         >
-          <span
-            class="mia-platform-radio ant-wave-target"
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
           >
-            <input
-              class="mia-platform-radio-input"
-              type="radio"
-              value=""
-            />
-            <span
-              class="mia-platform-radio-inner"
-            />
-          </span>
-        </label>
-      </div>
-    </div>
-    <div
-      class="mia-platform-flex"
-      style="gap: 8px;"
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 1
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 1
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-radio-wrapper radio card"
     >
       <span
-        class="mia-platform-tag mia-platform-tag-blue tag"
+        class="mia-platform-radio ant-wave-target"
       >
-        Tag name
+        <input
+          class="mia-platform-radio-input"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
+      <span>
+        <div
+          class="radioContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 2
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 2
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-radio-wrapper radio card"
+    >
       <span
-        class="mia-platform-tag mia-platform-tag-red tag"
+        class="mia-platform-radio ant-wave-target"
       >
-        Tag name
+        <input
+          class="mia-platform-radio-input"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
-    </div>
+      <span>
+        <div
+          class="radioContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 3
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 3
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
   </div>
 </DocumentFragment>
 `;
@@ -299,79 +889,240 @@ exports[`CardSelection Snapshot Tests renders HorizontalRadio correctly 1`] = `
 exports[`CardSelection Snapshot Tests renders RadioDisabled correctly 1`] = `
 <DocumentFragment>
   <div
-    class="card horizontal selected disabled"
+    class="mia-platform-radio-group mia-platform-radio-group-outline list"
+    style="gap: 24px;"
   >
-    <div
-      class="header"
+    <label
+      class="mia-platform-radio-wrapper mia-platform-radio-wrapper-disabled radio card disabled"
     >
-      <svg
-        color="currentColor"
-        fill="currentColor"
-        height="24"
-        role="img"
-        stroke="currentColor"
-        stroke-width="0"
-        style="color: currentColor;"
-        viewBox="0 0 256 256"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="mia-platform-radio ant-wave-target mia-platform-radio-disabled"
       >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+        <input
+          class="mia-platform-radio-input"
+          disabled=""
+          type="radio"
+          value="1"
         />
-      </svg>
-      <span
-        class="title"
-      >
-        Title
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
-    </div>
-    <span
-      class="subtitle"
-    >
-      Subtitle
-    </span>
-    <div
-      class="actionContainer"
-    >
-      <div
-        class="radio"
-      >
-        <label
-          class="mia-platform-radio-wrapper mia-platform-radio-wrapper-checked mia-platform-radio-wrapper-disabled"
+      <span>
+        <div
+          class="radioContent"
         >
-          <span
-            class="mia-platform-radio ant-wave-target mia-platform-radio-checked mia-platform-radio-disabled"
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
           >
-            <input
-              checked=""
-              class="mia-platform-radio-input"
-              disabled=""
-              type="radio"
-              value=""
-            />
-            <span
-              class="mia-platform-radio-inner"
-            />
-          </span>
-        </label>
-      </div>
-    </div>
-    <div
-      class="mia-platform-flex"
-      style="gap: 8px;"
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 1
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 1
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-radio-wrapper mia-platform-radio-wrapper-disabled radio card disabled"
     >
       <span
-        class="mia-platform-tag mia-platform-tag-blue tag"
+        class="mia-platform-radio ant-wave-target mia-platform-radio-disabled"
       >
-        Tag name
+        <input
+          class="mia-platform-radio-input"
+          disabled=""
+          type="radio"
+          value="2"
+        />
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
+      <span>
+        <div
+          class="radioContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 2
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 2
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-radio-wrapper mia-platform-radio-wrapper-disabled radio card disabled"
+    >
       <span
-        class="mia-platform-tag mia-platform-tag-red tag"
+        class="mia-platform-radio ant-wave-target mia-platform-radio-disabled"
       >
-        Tag name
+        <input
+          class="mia-platform-radio-input"
+          disabled=""
+          type="radio"
+          value="3"
+        />
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
-    </div>
+      <span>
+        <div
+          class="radioContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content horizontal"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="24"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 3
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 3
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
   </div>
 </DocumentFragment>
 `;
@@ -379,52 +1130,167 @@ exports[`CardSelection Snapshot Tests renders RadioDisabled correctly 1`] = `
 exports[`CardSelection Snapshot Tests renders Vertical correctly 1`] = `
 <DocumentFragment>
   <div
-    class="card"
+    class="list"
+    style="gap: 24px;"
   >
     <div
-      class="header"
+      class="card"
     >
-      <svg
-        color="currentColor"
-        fill="currentColor"
-        height="32"
-        role="img"
-        stroke="currentColor"
-        stroke-width="0"
-        style="color: currentColor;"
-        viewBox="0 0 256 256"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="content"
       >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-        />
-      </svg>
-      <span
-        class="title"
-      >
-        Title
-      </span>
+        <div
+          class="header"
+        >
+          <svg
+            color="currentColor"
+            fill="currentColor"
+            height="32"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+            />
+          </svg>
+          <span
+            class="title"
+          >
+            title 1
+          </span>
+        </div>
+        <span
+          class="subtitle"
+        >
+          title 1
+        </span>
+        <div
+          class="mia-platform-flex"
+          style="gap: 8px;"
+        >
+          <span
+            class="mia-platform-tag mia-platform-tag-blue tag"
+          >
+            Tag name
+          </span>
+          <span
+            class="mia-platform-tag mia-platform-tag-red tag"
+          >
+            Tag name
+          </span>
+        </div>
+      </div>
     </div>
-    <span
-      class="subtitle"
-    >
-      Subtitle
-    </span>
     <div
-      class="mia-platform-flex"
-      style="gap: 8px;"
+      class="card"
     >
-      <span
-        class="mia-platform-tag mia-platform-tag-blue tag"
+      <div
+        class="content"
       >
-        Tag name
-      </span>
-      <span
-        class="mia-platform-tag mia-platform-tag-red tag"
+        <div
+          class="header"
+        >
+          <svg
+            color="currentColor"
+            fill="currentColor"
+            height="32"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+            />
+          </svg>
+          <span
+            class="title"
+          >
+            title 2
+          </span>
+        </div>
+        <span
+          class="subtitle"
+        >
+          title 2
+        </span>
+        <div
+          class="mia-platform-flex"
+          style="gap: 8px;"
+        >
+          <span
+            class="mia-platform-tag mia-platform-tag-blue tag"
+          >
+            Tag name
+          </span>
+          <span
+            class="mia-platform-tag mia-platform-tag-red tag"
+          >
+            Tag name
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card"
+    >
+      <div
+        class="content"
       >
-        Tag name
-      </span>
+        <div
+          class="header"
+        >
+          <svg
+            color="currentColor"
+            fill="currentColor"
+            height="32"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: currentColor;"
+            viewBox="0 0 256 256"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+            />
+          </svg>
+          <span
+            class="title"
+          >
+            title 3
+          </span>
+        </div>
+        <span
+          class="subtitle"
+        >
+          title 3
+        </span>
+        <div
+          class="mia-platform-flex"
+          style="gap: 8px;"
+        >
+          <span
+            class="mia-platform-tag mia-platform-tag-blue tag"
+          >
+            Tag name
+          </span>
+          <span
+            class="mia-platform-tag mia-platform-tag-red tag"
+          >
+            Tag name
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -433,80 +1299,237 @@ exports[`CardSelection Snapshot Tests renders Vertical correctly 1`] = `
 exports[`CardSelection Snapshot Tests renders VerticalCheckbox correctly 1`] = `
 <DocumentFragment>
   <div
-    class="card"
+    class="mia-platform-checkbox-group list"
+    style="gap: 24px;"
   >
-    <div
-      class="header"
+    <label
+      class="mia-platform-checkbox-wrapper checkbox card"
     >
-      <svg
-        color="currentColor"
-        fill="currentColor"
-        height="32"
-        role="img"
-        stroke="currentColor"
-        stroke-width="0"
-        style="color: currentColor;"
-        viewBox="0 0 256 256"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="mia-platform-checkbox ant-wave-target"
       >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+        <input
+          class="mia-platform-checkbox-input"
+          type="checkbox"
+          value="1"
         />
-      </svg>
-      <span
-        class="title"
-      >
-        Title
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
-    </div>
-    <span
-      class="subtitle"
-    >
-      Subtitle
-    </span>
-    <div
-      class="actionContainer"
-    >
-      <div
-        class="checkboxComponent"
-      >
+      <span>
         <div
-          class="checkboxTextWrapper"
+          class="checkboxContent"
         >
-          <label
-            class="mia-platform-checkbox-wrapper"
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
           >
-            <span
-              class="mia-platform-checkbox ant-wave-target"
+            <div
+              class="content"
             >
-              <input
-                class="mia-platform-checkbox-input"
-                type="checkbox"
-              />
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="32"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 1
+                </span>
+              </div>
               <span
-                class="mia-platform-checkbox-inner"
-              />
-            </span>
-          </label>
+                class="subtitle"
+              >
+                title 1
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="mia-platform-flex"
-      style="gap: 8px;"
+      </span>
+    </label>
+    <label
+      class="mia-platform-checkbox-wrapper checkbox card"
     >
       <span
-        class="mia-platform-tag mia-platform-tag-blue tag"
+        class="mia-platform-checkbox ant-wave-target"
       >
-        Tag name
+        <input
+          class="mia-platform-checkbox-input"
+          type="checkbox"
+          value="2"
+        />
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
+      <span>
+        <div
+          class="checkboxContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="32"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 2
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 2
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-checkbox-wrapper checkbox card"
+    >
       <span
-        class="mia-platform-tag mia-platform-tag-red tag"
+        class="mia-platform-checkbox ant-wave-target"
       >
-        Tag name
+        <input
+          class="mia-platform-checkbox-input"
+          type="checkbox"
+          value="3"
+        />
+        <span
+          class="mia-platform-checkbox-inner"
+        />
       </span>
-    </div>
+      <span>
+        <div
+          class="checkboxContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="32"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 3
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 3
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
   </div>
 </DocumentFragment>
 `;
@@ -514,77 +1537,237 @@ exports[`CardSelection Snapshot Tests renders VerticalCheckbox correctly 1`] = `
 exports[`CardSelection Snapshot Tests renders VerticalRadio correctly 1`] = `
 <DocumentFragment>
   <div
-    class="card"
+    class="mia-platform-radio-group mia-platform-radio-group-outline list"
+    style="gap: 24px;"
   >
-    <div
-      class="header"
+    <label
+      class="mia-platform-radio-wrapper radio card"
     >
-      <svg
-        color="currentColor"
-        fill="currentColor"
-        height="32"
-        role="img"
-        stroke="currentColor"
-        stroke-width="0"
-        style="color: currentColor;"
-        viewBox="0 0 256 256"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="mia-platform-radio ant-wave-target"
       >
-        <path
-          d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+        <input
+          class="mia-platform-radio-input"
+          type="radio"
+          value="1"
         />
-      </svg>
-      <span
-        class="title"
-      >
-        Title
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
-    </div>
-    <span
-      class="subtitle"
-    >
-      Subtitle
-    </span>
-    <div
-      class="actionContainer"
-    >
-      <div
-        class="radio"
-      >
-        <label
-          class="mia-platform-radio-wrapper"
+      <span>
+        <div
+          class="radioContent"
         >
-          <span
-            class="mia-platform-radio ant-wave-target"
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
           >
-            <input
-              class="mia-platform-radio-input"
-              type="radio"
-              value=""
-            />
-            <span
-              class="mia-platform-radio-inner"
-            />
-          </span>
-        </label>
-      </div>
-    </div>
-    <div
-      class="mia-platform-flex"
-      style="gap: 8px;"
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="32"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 1
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 1
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-radio-wrapper radio card"
     >
       <span
-        class="mia-platform-tag mia-platform-tag-blue tag"
+        class="mia-platform-radio ant-wave-target"
       >
-        Tag name
+        <input
+          class="mia-platform-radio-input"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
+      <span>
+        <div
+          class="radioContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="32"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 2
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 2
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
+    <label
+      class="mia-platform-radio-wrapper radio card"
+    >
       <span
-        class="mia-platform-tag mia-platform-tag-red tag"
+        class="mia-platform-radio ant-wave-target"
       >
-        Tag name
+        <input
+          class="mia-platform-radio-input"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="mia-platform-radio-inner"
+        />
       </span>
-    </div>
+      <span>
+        <div
+          class="radioContent"
+        >
+          <div
+            class="mia-platform-typography bodyS"
+            role="paragraph"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="header"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="32"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  title 3
+                </span>
+              </div>
+              <span
+                class="subtitle"
+              >
+                title 3
+              </span>
+              <div
+                class="mia-platform-flex"
+                style="gap: 8px;"
+              >
+                <span
+                  class="mia-platform-tag mia-platform-tag-blue tag"
+                >
+                  Tag name
+                </span>
+                <span
+                  class="mia-platform-tag mia-platform-tag-red tag"
+                >
+                  Tag name
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </label>
   </div>
 </DocumentFragment>
 `;

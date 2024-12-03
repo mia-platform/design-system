@@ -23,16 +23,23 @@ import { PiPlaceholder } from 'react-icons/pi'
 import { CardSelection, defaults } from './CardSelection'
 import { Tag } from '../Tag'
 
-const defaultProps = {
-  title: 'Title',
-  subtitle: 'Subtitle',
+const options = [
+  ...Array(3).keys(),
+].map((id) => ({
+  title: `title ${id + 1}`,
+  subtitle: `title ${id + 1}`,
+  value: id + 1,
   icon: PiPlaceholder,
-  children: (
+  content: (
     <Flex gap={8}>
       <Tag color="blue">Tag name</Tag>
       <Tag color="red">Tag name</Tag>
     </Flex>
   ),
+}))
+
+const defaultProps = {
+  options,
 }
 
 const meta = {
@@ -87,7 +94,7 @@ export const CheckboxDisabled: Story = {
     inputType: CardSelection.InputType.Checkbox,
     layout: CardSelection.Layout.Horizontal,
     isDisabled: true,
-    isChecked: true,
+    defaultValue: [1, 3],
   },
 }
 
@@ -96,6 +103,6 @@ export const RadioDisabled: Story = {
     inputType: CardSelection.InputType.Radio,
     layout: CardSelection.Layout.Horizontal,
     isDisabled: true,
-    isChecked: true,
+    defaultValue: 2,
   },
 }

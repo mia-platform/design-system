@@ -1,100 +1,46 @@
-/**
- * Copyright 2024 Mia srl
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { ComponentType, ReactElement, useCallback, useMemo, useRef, useState } from 'react'
-import { CheckboxChangeEvent } from 'antd/es/checkbox'
-import { RadioChangeEvent } from 'antd'
+import { Checkbox as AntCheckbox, Radio as AntRadio, RadioChangeEvent } from 'antd'
+import { ComponentType, ReactElement, ReactNode, useCallback, useMemo } from 'react'
 import classnames from 'classnames'
 
 import { InputType, Layout } from './types.ts'
 import { CardSelectionProps } from './props.ts'
 import { Checkbox } from '../Checkbox'
 import { Icon } from '../Icon'
+import { IconComponent } from '../Icon/Icon.props.ts'
 import { Radio } from '../RadioGroup/components/Radio'
 import styles from './CardSelection.module.css'
 
-export const defaults = {}
+const DIV = 'div' as unknown as ComponentType
 
-export const CardSelection = <T, >({
-  children,
-  layout,
-  inputType,
-  icon,
+export const defaults = {
+  gap: 24,
+  layout: Layout.Vertical,
+}
+
+const CardSelectionItem = <T, >({
+  component: Component,
   title,
   subtitle,
-  value,
+  icon,
   isDisabled,
-  isChecked: isCheckedProp,
-  isInitiallyChecked,
-  onClick,
-  onChange,
-}: CardSelectionProps<T>): ReactElement => {
-  const [isCheckedState, setIsCheckedState] = useState(isInitiallyChecked)
-  const isControlled = useRef(isCheckedProp !== undefined).current
-
-  const isChecked = isControlled ? isCheckedProp : isCheckedState
-
-  const isInput = inputType === InputType.Radio || inputType === InputType.Checkbox
-
-  const isHorizontal = layout === Layout.Horizontal
-
-  const className = useMemo(() => classnames([
-    styles.card,
-    isDisabled && styles.disabled,
-  ]), [isDisabled])
-
-  const ItemComponent = useMemo(() => {
-    switch (inputType) {
-    case InputType.Radio:
-      return Radio
-    case InputType.Checkbox:
-      return Checkbox
-    default:
-      return 'div' as unknown as ComponentType
-    }
-  }, [inputType])
-
-  const handleClick = useCallback(() => {
-    if (onClick) {
-      onClick(value)
-    }
-  }, [onClick, value])
-
-  const handleChange = useCallback(({ target }: CheckboxChangeEvent | RadioChangeEvent) => {
-    const nextChecked = target.checked
-    if (!isControlled) {
-      setIsCheckedState(nextChecked)
-    }
-    if (onChange) {
-      onChange(nextChecked, value)
-    }
-  }, [isControlled, onChange, value])
-
+  isHorizontal,
+  children,
+  value,
+}: {
+  component: ComponentType<Record<string, unknown>>
+  title: ReactNode,
+  subtitle?: ReactNode,
+  icon?: IconComponent,
+  children?: ReactNode,
+  isDisabled?: boolean,
+  isHorizontal?: boolean,
+  value?: T
+  }
+): ReactElement => {
   return (
-    <ItemComponent
-      className={className}
-      onClick={!isDisabled ? handleClick : undefined}
-      {...isInput && {
-        isChecked,
-        isDisabled,
-        value,
-        onChange: !isDisabled ? handleChange : undefined,
-      }}
+    <Component
+      className={classnames(styles.card, isDisabled && styles.disabled)}
+      {...Component !== DIV && { isDisabled, value }}
     >
       <div className={classnames(styles.content, isHorizontal && styles.horizontal)}>
         <div className={styles.header}>
@@ -108,9 +54,89 @@ export const CardSelection = <T, >({
         )}
         {children}
       </div>
-    </ItemComponent>
+    </Component>
   )
 }
 
-CardSelection.Layout = Layout
+// eslint-disable-next-line react/no-multi-comp
+export const CardSelection = <T, >({
+  value,
+  defaultValue,
+  inputType,
+  layout = defaults.layout,
+  gap = defaults.gap,
+  options,
+  isDisabled,
+  onChange,
+}: CardSelectionProps<T>): ReactElement => {
+  const { Container, Item }: {
+    Container: ComponentType<Record<string, unknown>>
+    Item: ComponentType<Record<string, unknown>>
+  } = useMemo(() => {
+    switch (inputType) {
+    case InputType.Checkbox:
+      return { Container: AntCheckbox.Group, Item: Checkbox }
+    case InputType.Radio:
+      return { Container: AntRadio.Group, Item: Radio }
+    default:
+      return {
+        Container: DIV,
+        Item: DIV,
+      }
+    }
+  }, [inputType])
+
+  const handleChange = useCallback((val: T[] | RadioChangeEvent) : void => {
+    if (onChange) {
+      onChange(Array.isArray(val) ? val : val.target.value)
+    }
+  }, [onChange])
+
+  const children = useMemo(() => (
+    options.map(({
+      id,
+      value: optionValue,
+      title,
+      subtitle,
+      icon,
+      content,
+      disabled,
+    }, index) => {
+      return (
+        <CardSelectionItem
+          component={Item}
+          icon={icon}
+          isDisabled={isDisabled || disabled}
+          isHorizontal={layout === Layout.Horizontal}
+          key={id || index}
+          subtitle={subtitle}
+          title={title}
+          value={optionValue}
+        >
+          {content}
+        </CardSelectionItem>
+      )
+    })), [Item, isDisabled, layout, options])
+
+  return (
+    <Container
+      className={styles.list}
+      style={{ gap }}
+      {...(
+        inputType && {
+          defaultValue,
+          ...value && { value },
+          disabled: isDisabled,
+          onChange: !isDisabled
+            ? handleChange
+            : undefined,
+        })}
+    >
+      {children}
+    </Container>
+  )
+}
+
 CardSelection.InputType = InputType
+CardSelection.Layout = Layout
+
