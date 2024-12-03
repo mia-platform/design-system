@@ -26,6 +26,7 @@ const CardSelectionItem = <T, >({
   isHorizontal,
   children,
   value,
+  onClick,
 }: {
   component: ComponentType<Record<string, unknown>>
   title: ReactNode,
@@ -35,12 +36,19 @@ const CardSelectionItem = <T, >({
   isDisabled?: boolean,
   isHorizontal?: boolean,
   value?: T
+  onClick?: (value?: T) => void
   }
 ): ReactElement => {
+  const handleClick = useCallback(() => {
+    if (onClick) {
+      onClick(value)
+    }
+  }, [onClick, value])
   return (
     <Component
-      className={classnames(styles.card, isDisabled && styles.disabled)}
       {...Component !== DIV && { isDisabled, value }}
+      className={classnames(styles.card, isDisabled && styles.disabled)}
+      onClick={handleClick}
     >
       <div className={classnames(styles.content, isHorizontal && styles.horizontal)}>
         <div className={styles.header}>
@@ -68,6 +76,7 @@ export const CardSelection = <T, >({
   options,
   isDisabled,
   onChange,
+  onClick,
 }: CardSelectionProps<T>): ReactElement => {
   const { Container, Item }: {
     Container: ComponentType<Record<string, unknown>>
@@ -85,6 +94,12 @@ export const CardSelection = <T, >({
       }
     }
   }, [inputType])
+
+  const handleClick = useCallback((val?: T) => {
+    if (onClick) {
+      onClick(val)
+    }
+  }, [onClick])
 
   const handleChange = useCallback((val: T[] | RadioChangeEvent) : void => {
     if (onChange) {
@@ -112,11 +127,12 @@ export const CardSelection = <T, >({
           subtitle={subtitle}
           title={title}
           value={optionValue}
+          onClick={handleClick}
         >
           {content}
         </CardSelectionItem>
       )
-    })), [Item, isDisabled, layout, options])
+    })), [Item, handleClick, isDisabled, layout, options])
 
   return (
     <Container

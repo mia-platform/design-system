@@ -93,12 +93,13 @@ export type Option<T> = {
   disabled?: boolean
 }
 export type CardSelectionProps<T> = {
-  value?: T
-  defaultValue?: T
+  value?: T | T[]
+  defaultValue?: T | T[]
   options: Option<T>[],
   inputType?: InputType
   layout?: Layout
   gap?: number
   isDisabled?: boolean
-  onChange?: (value: T) => void
+  onChange?: (value: T | T[]) => void
+  onClick?: (value?: T) => void
 }

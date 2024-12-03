@@ -63,6 +63,13 @@ export const Horizontal: Story = {
   },
 }
 
+export const WithCustomGap: Story = {
+  args: {
+    gap: 64,
+    layout: CardSelection.Layout.Horizontal,
+  },
+}
+
 export const VerticalCheckbox: Story = {
   args: {
     inputType: CardSelection.InputType.Checkbox,
@@ -86,6 +93,20 @@ export const HorizontalRadio: Story = {
   args: {
     inputType: CardSelection.InputType.Radio,
     layout: CardSelection.Layout.Horizontal,
+  },
+}
+
+export const RadioWithDefaultValue: Story = {
+  args: {
+    defaultValue: 2,
+    inputType: CardSelection.InputType.Radio,
+  },
+}
+
+export const CheckboxWithDefaultValue: Story = {
+  args: {
+    defaultValue: [1, 3],
+    inputType: CardSelection.InputType.Checkbox,
   },
 }
 

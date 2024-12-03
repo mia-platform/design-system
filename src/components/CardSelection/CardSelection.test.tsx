@@ -20,15 +20,15 @@ import { Flex } from 'antd'
 import { PiPlaceholder } from 'react-icons/pi'
 import { fireEvent } from '@testing-library/dom'
 
-import { CardSelection, defaults } from './CardSelection'
 import { render, screen } from '../../test-utils.tsx'
+import { CardSelection } from './CardSelection'
 import { Tag } from '../Tag'
 
 const options = [
   ...Array(3).keys(),
 ].map((id) => ({
   title: `title ${id + 1}`,
-  subtitle: `title ${id + 1}`,
+  subtitle: `subtitle ${id + 1}`,
   value: id + 1,
   icon: PiPlaceholder,
   content: (
@@ -41,11 +41,10 @@ const options = [
 
 // Default props for the CardSelection component
 const defaultProps = {
-  ...defaults,
   options,
 }
 
-describe('CardSelection Snapshot Tests', () => {
+describe('CardSelection Tests', () => {
   it('renders Vertical correctly', () => {
     const { asFragment } = render(<CardSelection {...defaultProps} />)
     expect(asFragment()).toMatchSnapshot()
@@ -54,6 +53,13 @@ describe('CardSelection Snapshot Tests', () => {
   it('renders Horizontal correctly', () => {
     const { asFragment } = render(
       <CardSelection {...defaultProps} layout={CardSelection.Layout.Horizontal} />
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders WitCustomGap correctly', () => {
+    const { asFragment } = render(
+      <CardSelection {...defaultProps} gap={64} layout={CardSelection.Layout.Horizontal} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
@@ -118,48 +124,66 @@ describe('CardSelection Snapshot Tests', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test.skip('should call on click and change input value', () => {
-    // const onClick = jest.fn()
-    // const value = jest.fn()
+  test('should call on onChange and change input value when checkbox', () => {
+    const onChange = jest.fn()
     render(
       <CardSelection
         {...defaultProps}
-        inputType={CardSelection.InputType.Radio}
-        // value={value}
-        // onClick={onClick}
+        defaultValue={[1]}
+        inputType={CardSelection.InputType.Checkbox}
+        onChange={onChange}
       />
     )
-    fireEvent.click(screen.getByRole('img'))
-    // expect(onClick).toHaveBeenCalledWith(true, value)
-    expect(screen.getByRole('radio')).toBeChecked()
+    const checkbox = screen.getByRole('checkbox', { name: /title 2/i })
+    fireEvent.click(checkbox)
+    expect(onChange).toHaveBeenCalledWith([1, 2])
+    expect(checkbox).toBeChecked()
   })
 
-  test.skip('should not call on click and change input value if disabled', () => {
-    // const onClick = jest.fn()
+  test('should call on onChange and change input value when radio', () => {
+    const onChange = jest.fn()
     render(
       <CardSelection
         {...defaultProps}
+        defaultValue={1}
         inputType={CardSelection.InputType.Radio}
-        isDisabled
-        // onClick={onClick}
+        onChange={onChange}
       />
     )
-    fireEvent.click(screen.getByRole('img'))
-    // expect(onClick).not.toHaveBeenCalled()
-    expect(screen.getByRole('radio')).not.toBeChecked()
+    const checkbox = screen.getByRole('radio', { name: /title 2/i })
+    fireEvent.click(checkbox)
+    expect(onChange).toHaveBeenCalledWith(2)
+    expect(checkbox).toBeChecked()
   })
 
-  test.skip('should accept a controlled value and render correctly', () => {
-    // const onClick = jest.fn()
+  test('should not call on click and change input value if disabled', () => {
+    const onClick = jest.fn()
+    render(
+      <CardSelection
+        {...defaultProps}
+        inputType={CardSelection.InputType.Checkbox}
+        isDisabled
+        onClick={onClick}
+      />
+    )
+    const checkbox = screen.getByRole('checkbox', { name: /title 1/i })
+    fireEvent.click(checkbox)
+    expect(checkbox).not.toBeChecked()
+  })
+
+  test('should trigger on click when a card is pressed', () => {
+    const onClick = jest.fn()
     render(
       <CardSelection
         {...defaultProps}
         inputType={CardSelection.InputType.Radio}
-        isDisabled
-        // onClick={onClick}
+        value={1}
+        onClick={onClick}
       />
     )
 
-    expect(screen.getByRole('radio')).toBeChecked()
+    screen.logTestingPlaygroundURL()
+    fireEvent.click(screen.getByText(/subtitle 1/))
+    expect(onClick).toHaveBeenCalledWith(1)
   })
 })
