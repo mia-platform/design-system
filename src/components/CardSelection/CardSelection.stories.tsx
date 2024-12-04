@@ -40,6 +40,7 @@ const options = [
 
 const defaultProps = {
   options,
+  layout: CardSelection.Layout.Vertical,
 }
 
 const meta = {

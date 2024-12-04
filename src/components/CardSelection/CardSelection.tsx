@@ -14,7 +14,6 @@ const DIV = 'div' as unknown as ComponentType
 
 export const defaults = {
   gap: 24,
-  layout: Layout.Vertical,
 }
 
 const CardSelectionItem = <T, >({
@@ -73,7 +72,7 @@ export const CardSelection = <T, >({
   value,
   defaultValue,
   inputType,
-  layout = defaults.layout,
+  layout,
   gap = defaults.gap,
   options,
   isDisabled,

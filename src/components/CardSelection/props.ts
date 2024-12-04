@@ -49,24 +49,9 @@ export type CardSelectionOption<T> = {
   content?: ReactNode
 
   /**
-   * Determines if the card should be displayed in a horizontal layout.
-   */
-  layout?: Layout
-
-  /**
-   * The type of selection for the card.
-   */
-  inputType?: InputType
-
-  /**
    * The value associated with the card.
    */
   value?: T
-
-  /**
-   * Indicates if the card is currently checked.
-   */
-  isChecked?: boolean
 
   /**
    * Determines if the card is disabled.
@@ -94,7 +79,7 @@ export type CardSelectionProps<T> = {
   /**
    * The layout of the cards. Can be "horizontal" or "vertical". Default: "vertical".
    */
-  layout?: Layout
+  layout: Layout
 
   /*
   * Handler triggered when the value of the selection changes (only triggered if inputType is "checkbox" or "radio")

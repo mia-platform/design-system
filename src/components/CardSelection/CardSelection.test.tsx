@@ -42,6 +42,8 @@ const options = [
 // Default props for the CardSelection component
 const defaultProps = {
   options,
+  layout: CardSelection.Layout.Vertical,
+
 }
 
 describe('CardSelection Tests', () => {
