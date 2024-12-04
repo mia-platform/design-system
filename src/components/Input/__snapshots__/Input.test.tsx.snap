@@ -19,30 +19,33 @@ exports[`Input Component AddonAfterCheckbox renders correctly 1`] = `
         <div
           class="inputAddonCheckbox"
         >
-          <div
-            class="checkboxComponent"
+          <label
+            class="mia-platform-checkbox-wrapper checkbox"
           >
-            <div
-              class="checkboxTextWrapper"
+            <span
+              class="mia-platform-checkbox ant-wave-target"
             >
-              <label
-                class="mia-platform-checkbox-wrapper"
+              <input
+                class="mia-platform-checkbox-input"
+                type="checkbox"
+              />
+              <span
+                class="mia-platform-checkbox-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="checkboxContent"
               >
-                <span
-                  class="mia-platform-checkbox ant-wave-target"
+                <div
+                  class="mia-platform-typography bodyS"
+                  role="paragraph"
                 >
-                  <input
-                    class="mia-platform-checkbox-input"
-                    type="checkbox"
-                  />
-                  <span
-                    class="mia-platform-checkbox-inner"
-                  />
-                </span>
-              </label>
-              test
-            </div>
-          </div>
+                  test
+                </div>
+              </div>
+            </span>
+          </label>
         </div>
       </span>
     </span>
@@ -167,30 +170,33 @@ exports[`Input Component AddonBeforeCheckbox renders correctly 1`] = `
         <div
           class="inputAddonCheckbox"
         >
-          <div
-            class="checkboxComponent"
+          <label
+            class="mia-platform-checkbox-wrapper checkbox"
           >
-            <div
-              class="checkboxTextWrapper"
+            <span
+              class="mia-platform-checkbox ant-wave-target"
             >
-              <label
-                class="mia-platform-checkbox-wrapper"
+              <input
+                class="mia-platform-checkbox-input"
+                type="checkbox"
+              />
+              <span
+                class="mia-platform-checkbox-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="checkboxContent"
               >
-                <span
-                  class="mia-platform-checkbox ant-wave-target"
+                <div
+                  class="mia-platform-typography bodyS"
+                  role="paragraph"
                 >
-                  <input
-                    class="mia-platform-checkbox-input"
-                    type="checkbox"
-                  />
-                  <span
-                    class="mia-platform-checkbox-inner"
-                  />
-                </span>
-              </label>
-              test
-            </div>
-          </div>
+                  test
+                </div>
+              </div>
+            </span>
+          </label>
         </div>
       </span>
       <input
@@ -320,31 +326,34 @@ exports[`Input Component AddonCheckboxDisabled renders correctly 1`] = `
         <div
           class="inputAddonCheckbox"
         >
-          <div
-            class="checkboxComponent disabled"
+          <label
+            class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-disabled checkbox"
           >
-            <div
-              class="checkboxTextWrapper"
+            <span
+              class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-disabled"
             >
-              <label
-                class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-disabled"
+              <input
+                class="mia-platform-checkbox-input"
+                disabled=""
+                type="checkbox"
+              />
+              <span
+                class="mia-platform-checkbox-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="checkboxContent"
               >
-                <span
-                  class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-disabled"
+                <div
+                  class="mia-platform-typography bodyS"
+                  role="paragraph"
                 >
-                  <input
-                    class="mia-platform-checkbox-input"
-                    disabled=""
-                    type="checkbox"
-                  />
-                  <span
-                    class="mia-platform-checkbox-inner"
-                  />
-                </span>
-              </label>
-              test
-            </div>
-          </div>
+                  test
+                </div>
+              </div>
+            </span>
+          </label>
         </div>
       </span>
       <input
@@ -372,30 +381,33 @@ exports[`Input Component AddonCheckboxError renders correctly 1`] = `
         <div
           class="inputAddonCheckbox"
         >
-          <div
-            class="checkboxComponent"
+          <label
+            class="mia-platform-checkbox-wrapper checkbox"
           >
-            <div
-              class="checkboxTextWrapper"
+            <span
+              class="mia-platform-checkbox ant-wave-target"
             >
-              <label
-                class="mia-platform-checkbox-wrapper"
+              <input
+                class="mia-platform-checkbox-input"
+                type="checkbox"
+              />
+              <span
+                class="mia-platform-checkbox-inner"
+              />
+            </span>
+            <span>
+              <div
+                class="checkboxContent"
               >
-                <span
-                  class="mia-platform-checkbox ant-wave-target"
+                <div
+                  class="mia-platform-typography bodyS"
+                  role="paragraph"
                 >
-                  <input
-                    class="mia-platform-checkbox-input"
-                    type="checkbox"
-                  />
-                  <span
-                    class="mia-platform-checkbox-inner"
-                  />
-                </span>
-              </label>
-              test
-            </div>
-          </div>
+                  test
+                </div>
+              </div>
+            </span>
+          </label>
         </div>
       </span>
       <input

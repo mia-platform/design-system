@@ -8,56 +8,62 @@ exports[`CheckboxGroup renders correctly horizontal 1`] = `
     <div
       class="options"
     >
-      <div
-        class="checkboxComponent"
+      <label
+        class="ant-checkbox-wrapper checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
         >
-          <label
-            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            type="checkbox"
+            value="1"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                type="checkbox"
-                value="1"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 1
-        </div>
-      </div>
-      <div
-        class="checkboxComponent"
+              checkbox 1
+            </div>
+          </div>
+        </span>
+      </label>
+      <label
+        class="ant-checkbox-wrapper checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
         >
-          <label
-            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            type="checkbox"
+            value="2"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                type="checkbox"
-                value="2"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 2
-        </div>
-      </div>
+              checkbox 2
+            </div>
+          </div>
+        </span>
+      </label>
     </div>
   </div>
 </DocumentFragment>
@@ -71,58 +77,64 @@ exports[`CheckboxGroup renders correctly when disabled 1`] = `
     <div
       class="options"
     >
-      <div
-        class="checkboxComponent disabled"
+      <label
+        class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
         >
-          <label
-            class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            disabled=""
+            type="checkbox"
+            value="1"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                disabled=""
-                type="checkbox"
-                value="1"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 1
-        </div>
-      </div>
-      <div
-        class="checkboxComponent disabled"
+              checkbox 1
+            </div>
+          </div>
+        </span>
+      </label>
+      <label
+        class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
         >
-          <label
-            class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            disabled=""
+            type="checkbox"
+            value="2"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                disabled=""
-                type="checkbox"
-                value="2"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 2
-        </div>
-      </div>
+              checkbox 2
+            </div>
+          </div>
+        </span>
+      </label>
     </div>
   </div>
 </DocumentFragment>
@@ -136,56 +148,62 @@ exports[`CheckboxGroup renders correctly with base props 1`] = `
     <div
       class="options"
     >
-      <div
-        class="checkboxComponent"
+      <label
+        class="ant-checkbox-wrapper checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
         >
-          <label
-            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            type="checkbox"
+            value="1"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                type="checkbox"
-                value="1"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 1
-        </div>
-      </div>
-      <div
-        class="checkboxComponent"
+              checkbox 1
+            </div>
+          </div>
+        </span>
+      </label>
+      <label
+        class="ant-checkbox-wrapper checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
         >
-          <label
-            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            type="checkbox"
+            value="2"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                type="checkbox"
-                value="2"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 2
-        </div>
-      </div>
+              checkbox 2
+            </div>
+          </div>
+        </span>
+      </label>
     </div>
   </div>
 </DocumentFragment>
@@ -199,66 +217,74 @@ exports[`CheckboxGroup renders correctly with descriptions 1`] = `
     <div
       class="options"
     >
-      <div
-        class="checkboxComponent"
+      <label
+        class="ant-checkbox-wrapper checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
         >
-          <label
-            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            type="checkbox"
+            value="1"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                type="checkbox"
-                value="1"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 1
-        </div>
-        <div
-          class="checkboxDescription"
-        >
-          description 1
-        </div>
-      </div>
-      <div
-        class="checkboxComponent"
+              checkbox 1
+            </div>
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
+            >
+              description 1
+            </div>
+          </div>
+        </span>
+      </label>
+      <label
+        class="ant-checkbox-wrapper checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
         >
-          <label
-            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            type="checkbox"
+            value="1"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                type="checkbox"
-                value="1"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 1
-        </div>
-        <div
-          class="checkboxDescription"
-        >
-          description 2
-        </div>
-      </div>
+              checkbox 1
+            </div>
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
+            >
+              description 2
+            </div>
+          </div>
+        </span>
+      </label>
     </div>
   </div>
 </DocumentFragment>
@@ -272,67 +298,75 @@ exports[`CheckboxGroup renders correctly with partially disabled options 1`] = `
     <div
       class="options"
     >
-      <div
-        class="checkboxComponent disabled"
+      <label
+        class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
         >
-          <label
-            class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            disabled=""
+            type="checkbox"
+            value="1"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9 ant-checkbox-disabled"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                disabled=""
-                type="checkbox"
-                value="1"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 1
-        </div>
-        <div
-          class="checkboxDescription"
-        >
-          description 1
-        </div>
-      </div>
-      <div
-        class="checkboxComponent"
+              checkbox 1
+            </div>
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
+            >
+              description 1
+            </div>
+          </div>
+        </span>
+      </label>
+      <label
+        class="ant-checkbox-wrapper checkbox css-dev-only-do-not-override-5wsri9"
       >
-        <div
-          class="checkboxTextWrapper"
+        <span
+          class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
         >
-          <label
-            class="ant-checkbox-wrapper css-dev-only-do-not-override-5wsri9"
+          <input
+            class="ant-checkbox-input"
+            type="checkbox"
+            value="1"
+          />
+          <span
+            class="ant-checkbox-inner"
+          />
+        </span>
+        <span>
+          <div
+            class="checkboxContent"
           >
-            <span
-              class="ant-checkbox ant-wave-target css-dev-only-do-not-override-5wsri9"
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
             >
-              <input
-                class="ant-checkbox-input"
-                type="checkbox"
-                value="1"
-              />
-              <span
-                class="ant-checkbox-inner"
-              />
-            </span>
-          </label>
-          checkbox 1
-        </div>
-        <div
-          class="checkboxDescription"
-        >
-          description 2
-        </div>
-      </div>
+              checkbox 1
+            </div>
+            <div
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              role="paragraph"
+            >
+              description 2
+            </div>
+          </div>
+        </span>
+      </label>
     </div>
   </div>
 </DocumentFragment>

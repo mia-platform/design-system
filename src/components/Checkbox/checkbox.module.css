@@ -16,63 +16,53 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.checkboxComponent {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-gap-sm, 8px);
+.checkbox {
+  margin-inline: 0;
+  align-items: flex-start;
 
-  & :global(.mia-platform-checkbox):hover :global(.mia-platform-checkbox-inner) {
-    border-color: var(--palette-action-primary-hover, #1890FF) !important;
-  }
-
-  &  :global(.mia-platform-checkbox-indeterminate) :global(.mia-platform-checkbox-inner)::after {
-    border-radius: var(--shape-border-radius-xs, -1px);
-  }
-
-  &:hover :global(.mia-platform-checkbox-indeterminate) :global(.mia-platform-checkbox-inner)::after {
-    background-color: var(--palette-action-primary-hover, #1890FF);
-  }
-
-  &.disabled {
-    cursor: not-allowed;
-
-    .checkboxTextWrapper {
-      color: var(--palette-text-neutral-subtler, #ACACAC) !important;
-    }
-    .checkboxDescription {
-      color: var(--palette-text-neutral-subtler, #ACACAC) !important;
-    }
-  }
-
-  .checkboxTextWrapper {
+  & .checkboxContent {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: var(--spacing-gap-sm, 8px);
-    color: var(--palette-text-neutral-main, #636363);
-    & :global(.mia-platform-checkbox-wrapper) {
-      line-height: var(--typography-bodyS-lineHeight, 16px);
+  }
+
+  &:not(:global(.mia-platform-checkbox-wrapper-disabled)) {
+    &:hover :global(.mia-platform-checkbox-inner) {
+      border-color: var(--palette-action-primary-hover, #1890FF) !important;
+    }
+
+    &  :global(.mia-platform-checkbox-indeterminate) :global(.mia-platform-checkbox-inner)::after {
+      border-radius: var(--shape-border-radius-xs, -1px);
+    }
+
+    &:hover :global(.mia-platform-checkbox-indeterminate) :global(.mia-platform-checkbox-inner)::after {
+      background-color: var(--palette-action-primary-hover, #1890FF);
     }
   }
 
-  .checkboxDescription {
-    padding-right: var(--spacing-padding-sm, 8px);
-    padding-left: calc(var(--spacing-padding-sm, 8px) + var(--spacing-padding-lg, 16px));
-    color: var(--palette-text-neutral-main, #636363);
-    line-height: var(--typography-bodyS-lineHeight, 16px);
-  }
-
-  & :global(.mia-platform-checkbox-disabled) {
+  /* disable */
+  &:global(.mia-platform-checkbox-wrapper-disabled) {
+    :global(.mia-platform-typography) {
+      color: var(--palette-text-neutral-subtler, #ACACAC);
+    }
     & :global(.mia-platform-checkbox-inner) {
       background-color: var(--palette-action-disabled-main, #F2F2F2) !important;
       border-color: var(--palette-action-disabled-bolder, #CDCDCD) !important;
-    }
-
-    & :global(.mia-platform-checkbox-inner)::after {
-      border-color: var(--palette-action-disabled-contrastText, #ACACAC);
+      &:after {
+        border-color: var(--palette-action-disabled-contrastText, #ACACAC);
+      }
     }
 
     & :global(.mia-platform-checkbox-indeterminate) :global(.mia-platform-checkbox-inner)::after {
       background-color: var(--palette-action-disabled-contrastText, #ACACAC);
+    }
+  }
+
+  & :global(span.mia-platform-checkbox) {
+    align-self: unset !important;
+    & + * {
+      padding-inline-start: var(--spacing-gap-sm, 8px);
+      padding-inline-end: var(--spacing-gap-sm, 8px);
     }
   }
 }
