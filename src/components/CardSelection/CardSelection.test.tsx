@@ -184,7 +184,6 @@ describe('CardSelection Tests', () => {
       />
     )
 
-    screen.logTestingPlaygroundURL()
     fireEvent.click(screen.getByText(/subtitle 1/))
     expect(onClick).toHaveBeenCalledWith(1)
   })
