@@ -94,7 +94,7 @@ export const CardSelection = <T, >({
     }
   }, [inputType])
 
-  const handleClick = useCallback((val?: T) => {
+  const handleClick = useCallback((val?: T): void => {
     if (onClick) {
       onClick(val)
     }
