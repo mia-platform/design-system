@@ -90,10 +90,7 @@ export const CardSelection = <T, >({
     case InputType.Radio:
       return { Container: AntRadio.Group, Item: Radio }
     default:
-      return {
-        Container: DIV,
-        Item: DIV,
-      }
+      return { Container: DIV, Item: DIV }
     }
   }, [inputType])
 
