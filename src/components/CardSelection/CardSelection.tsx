@@ -46,6 +46,8 @@ const CardSelectionItem = <T, >({
   }, [onClick, value])
   return (
     <Component
+      // If the component is a 'div', we won't pass the prop 'isDisabled' and 'value'
+      // as are unsupported by the component, and would React complains in the browser console.
       {...Component !== DIV && { isDisabled, value }}
       className={classnames(styles.card, isDisabled && styles.disabled)}
       onClick={handleClick}
