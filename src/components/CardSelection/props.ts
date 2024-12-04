@@ -21,7 +21,12 @@ import { ReactNode } from 'react'
 import { InputType, Layout } from './types.ts'
 import { IconComponent } from '../Icon/Icon.props.ts'
 
-export type X<T> = {
+export type CardSelectionOption<T> = {
+
+  /**
+   * Optional id value for the card.
+   */
+  id?: string
 
   /**
    * The main title displayed prominently on the card.
@@ -39,9 +44,9 @@ export type X<T> = {
   subtitle?: ReactNode
 
   /**
-   * Custom children content to be rendered inside the card.
+   * Custom content to be rendered inside the card.
    */
-  children?: ReactNode
+  content?: ReactNode
 
   /**
    * Determines if the card should be displayed in a horizontal layout.
@@ -66,40 +71,49 @@ export type X<T> = {
   /**
    * Determines if the card is disabled.
    */
-  isDisabled?: boolean
-
-  /**
-   * Callback triggered when the card is clicked.
-   */
-  onClick?: (value?: T) => void
-
-  /**
-   * Callback triggered when the card is clicked.
-   */
-  onChange?: (isChecked?: boolean, value?: T) => void
-
-  /**
-   * Indicates if the card should be checked initially.
-   */
-  isInitiallyChecked?: boolean
-}
-export type Option<T> = {
-  id?: string
-  value?: T
-  title: ReactNode
-  icon?: IconComponent
-  subtitle?: ReactNode
-  content?: ReactNode
   disabled?: boolean
 }
+
 export type CardSelectionProps<T> = {
-  value?: T | T[]
+
+  /**
+   * The default value for the card selection.
+   * Must be an array if inputType is "checkbox", a value if inputType is "radio".
+   */
   defaultValue?: T | T[]
-  options: Option<T>[],
-  inputType?: InputType
-  layout?: Layout
+
   gap?: number
+
+  /**
+   * The inputType of the card selection. Defaults: undefined (no input will be displayed).
+   */
+  inputType?: InputType,
+
   isDisabled?: boolean
+
+  /**
+   * The layout of the cards. Can be "horizontal" or "vertical". Default: "vertical".
+   */
+  layout?: Layout
+
+  /*
+  * Handler triggered when the value of the selection changes (only triggered if inputType is "checkbox" or "radio")
+  * */
   onChange?: (value: T | T[]) => void
+
+  /*
+  * Handler triggered when a card is clicked
+  * */
   onClick?: (value?: T) => void
+
+  /**
+   * The options array for the card selection.
+   */
+  options: CardSelectionOption<T>[]
+
+  /**
+   * The controlled value for the card selection.
+   * Must be an array if inputType is "checkbox", a value if inputType is "radio".
+   */
+  value?: T | T[]
 }

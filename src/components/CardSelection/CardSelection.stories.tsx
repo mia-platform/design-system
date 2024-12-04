@@ -54,11 +54,14 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Vertical: Story = {
-  args: {},
+  args: {
+    inputType: undefined,
+  },
 }
 
 export const Horizontal: Story = {
   args: {
+    inputType: undefined,
     layout: CardSelection.Layout.Horizontal,
   },
 }
@@ -66,6 +69,7 @@ export const Horizontal: Story = {
 export const WithCustomGap: Story = {
   args: {
     gap: 64,
+    inputType: undefined,
     layout: CardSelection.Layout.Horizontal,
   },
 }
