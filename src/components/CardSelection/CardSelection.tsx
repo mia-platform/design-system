@@ -140,15 +140,12 @@ export const CardSelection = <T, >({
     <Container
       className={styles.list}
       style={{ gap }}
-      {...(
-        inputType && {
-          defaultValue,
-          ...value && { value },
-          disabled: isDisabled,
-          onChange: !isDisabled
-            ? handleChange
-            : undefined,
-        })}
+      {...inputType && {
+        defaultValue,
+        ...value && { value },
+        disabled: isDisabled,
+        onChange: !isDisabled ? handleChange : undefined,
+      }}
     >
       {children}
     </Container>
