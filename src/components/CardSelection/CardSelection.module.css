@@ -124,7 +124,6 @@
   line-height: var(--typography-bodyS-lineHeight, 16px);
   font-weight: var(--typography-bodyS-fontWeight, 400);
   color: var(--palette-text-neutral-main, #636363);
-
   text-align: center;
 }
 
