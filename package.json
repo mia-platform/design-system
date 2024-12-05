@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
-    "@playwright/test": "^1.48.2",
+    "@playwright/test": "^1.49.0",
     "@storybook/addon-a11y": "^7.6.17",
     "@storybook/addon-designs": "^7.0.9",
     "@storybook/addon-essentials": "^7.6.17",
