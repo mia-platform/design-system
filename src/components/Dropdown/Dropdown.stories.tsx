@@ -64,7 +64,7 @@ const defaults: Partial<DropdownProps> = {
     secondaryLabel: 'Some additional info 2',
     tag: <Tag>{'Tag'}</Tag>,
   }],
-  children: <Button >{'click me'}</Button>,
+  children: <Button>{'click me'}</Button>,
   onClick: action('on click'),
   onOpenChange: action('on open change'),
 }
@@ -203,6 +203,7 @@ export const DropdownOverClickableItem: Story = {
           {...args}
           onClick={(event: DropdownClickEvent) => {
             event.domEvent.stopPropagation()
+            action('item clicked', event)
           }}
         />
       </div>
