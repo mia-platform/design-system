@@ -17,6 +17,7 @@
  */
 
 import * as testUtils from './test-utils'
+import { Form, FormItem } from './components/Form'
 import { Alert } from './components/Alert'
 import { Breadcrumb } from './components/Breadcrumb'
 import { Button } from './components/Button'
@@ -59,6 +60,8 @@ export {
   Divider,
   Drawer,
   Dropdown,
+  Form,
+  FormItem,
   Icon,
   Input,
   InputNumber,

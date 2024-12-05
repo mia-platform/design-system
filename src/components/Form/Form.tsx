@@ -1,66 +1,62 @@
-import { Form as AntForm, FormProps as AntFormProps, FormInstance } from 'antd'
-import { PropsWithChildren, ReactElement, ReactNode, useMemo } from 'react'
+import { ReactElement, useMemo } from 'react'
+import { Form as AntForm } from 'antd'
 
-import { Button } from '../Button'
+import * as Validators from './utils/validators.ts'
+import { FormProps } from './props.ts'
+import { Layout } from './types.ts'
+import { SubmitButton } from './SubmitButton.tsx'
 
-type FormProps<Values> =
-  PropsWithChildren<AntFormProps<Values>>
-  & {
-  columns?: number
-  gap?: number
-  submitButton?: boolean | string | ((form: FormInstance) => ReactNode)
+const defaults = {
+  columns: 2,
+  gap: 24,
+  layout: Layout.Vertical,
+  submitButton: true,
 }
 
-const defaultSubmitButton = (label: ReactNode = 'Submit'): ReactNode => {
-  return (
-    <Button htmlType={Button.HTMLType.Submit}>
-      {label}
-    </Button>
-  )
-}
-
-const renderSubmitButton = (
-  form: FormInstance,
-  submitButtonProp: boolean | string | ((form: FormInstance) => ReactNode)
-): ReactNode => {
-  switch (typeof submitButtonProp) {
-  case 'boolean':
-    return submitButtonProp && defaultSubmitButton()
-  case 'string':
-    return defaultSubmitButton(submitButtonProp)
-  case 'function':
-    return submitButtonProp(form)
-  default:
-  }
-}
-
-export const Form = <Values, >({
+export const Form = <Values extends Record<string, unknown>, >({
   children,
   style: styleProp,
-  submitButton: submitButtonProp = true,
-  columns = 2,
-  gap = 24,
-  ...props
+  submitButton: submitButtonProp = defaults.submitButton,
+  layout = defaults.layout,
+  columns = defaults.columns,
+  gap = defaults.gap,
+  id,
+  initialValues,
+  preserve,
+  onValuesChange,
+  onFinish,
+  onFinishFailed,
 }: FormProps<Values>): ReactElement => {
-  const [form] = AntForm.useForm()
-
   const style = useMemo(() => ({
     display: 'grid',
-    gridTemplateColumns: `repeat(${columns}, 1fr)`,
-    columnGap: `${gap}px`,
+    gridTemplate: `auto / repeat(${columns}, 1fr)`,
+    gap: `${gap}px`,
     ...styleProp,
   }), [columns, gap, styleProp])
 
   return (
-    <AntForm<Values> form={form} style={style} {...props}>
+    <AntForm<Values>
+      id={id}
+      initialValues={initialValues}
+      layout={layout}
+      preserve={preserve}
+      style={style}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+      onValuesChange={onValuesChange}
+    >
       {children}
       {
         submitButtonProp && (
-          <div style={{ margin: `${gap}px 0`, gridColumn: `-1 / 1`, justifySelf: 'end' }}>
-            {renderSubmitButton(form, submitButtonProp)}
-          </div>
+          <SubmitButton>
+            {submitButtonProp}
+          </SubmitButton>
         )
       }
     </AntForm>
   )
 }
+
+Form.Layout = Layout
+Form.SubmitButton = SubmitButton
+Form.Validators = Validators

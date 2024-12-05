@@ -63,7 +63,6 @@ export const ComplexForm = (): ReactElement => {
       columns={3}
       gap={32}
       initialValues={values}
-      layout="vertical"
       onValuesChange={(_, formValues) => setValues(formValues)}
     >
       {formValuesDebugger(values)}
