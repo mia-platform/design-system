@@ -203,7 +203,7 @@ export const DropdownOverClickableItem: Story = {
           {...args}
           onClick={(event: DropdownClickEvent) => {
             event.domEvent.stopPropagation()
-            action(`item clicked: ${event.id}`)(event)
+            action(`item clicked`)(event)
           }}
         />
       </div>
