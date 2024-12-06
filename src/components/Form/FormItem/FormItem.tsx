@@ -65,8 +65,12 @@ export const FormItem = (
     if (isValidElement(children)) {
       return getDefaultFormItemProps(children)
     }
+    if (typeof children === 'function' && !name) {
+      // See https://ant.design/components/form#shouldupdate
+      return { shouldUpdate: true }
+    }
     return {}
-  }, [children])
+  }, [children, name])
 
   const inputElement = useMemo(() => {
     if (isValidElement(children)) {
@@ -86,19 +90,12 @@ export const FormItem = (
   return (
     <AntForm.Item
       {...defaultFormItemProps}
+      {...shouldUpdate && { shouldUpdate }}
       {...getValueFromEvent && { getValueFromEvent }}
       {...valuePropName && { valuePropName }}
       label={label}
       name={name}
       rules={rules}
-      shouldUpdate={
-        // NOTE: if no name is specified and the children is a render function,
-        // antd will complain in the browser console and will not show any element.
-        // This sets the default value to t`true` in the case
-        shouldUpdate !== undefined
-          ? shouldUpdate
-          : (typeof children === 'function' && !name) || undefined
-      }
       style={style}
     >
       {inputElement}
