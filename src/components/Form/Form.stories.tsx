@@ -1,6 +1,6 @@
-import { Flex, FormInstance } from 'antd'
 import { Fragment, ReactElement } from 'react'
 import { Meta, type StoryObj } from '@storybook/react'
+import { Flex } from 'antd'
 
 import { BodyM } from '../Typography/BodyX/BodyM'
 import { Button } from '../Button'
@@ -44,17 +44,17 @@ const options = [
   label: `label ${id + 1}`,
 }))
 
-export const Default = {
+export const Default: Story = {
   args: {},
 }
 
-export const Horizontal = {
+export const Horizontal: Story = {
   args: {
     layout: Form.Layout.Horizontal,
   },
 }
 
-export const WithInitialValues = {
+export const WithInitialValues: Story = {
   args: {
     initialValues: {
       firstName: 'John',
@@ -69,20 +69,20 @@ export const WithCustomColumns = {
   },
 }
 
-export const WithCustomGap = {
+export const WithCustomGap: Story = {
   args: {
     columns: 1,
     gap: 160,
   },
 }
 
-export const WithCustomSubmit = {
+export const WithCustomSubmit: Story = {
   args: {
-    submitButton: (form: FormInstance) => (
+    submitButton: ({ form }) => (
       <Flex gap={8}>
         <Button
           hierarchy={Button.Hierarchy.Danger}
-          onClick={() => form.resetFields()}
+          onClick={() => form?.resetFields()}
         >
           Clear fields
         </Button>
@@ -115,21 +115,17 @@ export const WithDetachedSubmit = (): ReactElement => {
   )
 }
 
-export const WithValidation = {
+export const WithValidation: Story = {
   args: {
     onFinishFailed: (reason: unknown) => {
       alert(`OnFinishFailed:\n${JSON.stringify(reason)}`)
-    },
-    submitButton: (form: FormInstance) => {
-      setTimeout(() => form.validateFields())
-      return <Form.SubmitButton />
     },
     children: (
       <FormItem
         name="firstName"
         rules={[{ validator: () => Promise.reject(new Error('Validation error')) }]}
       >
-        <Input />
+        {() => <Input />}
       </FormItem>
     ),
   },
@@ -198,7 +194,9 @@ export const ComplexForm: Story = {
         <FormItem name="custom">
           {({ value, onChange }) => {
             const handleClick = (): void => {
-              onChange(Number(value) + 1)
+              if (onChange) {
+                onChange(Number(value) + 1)
+              }
             }
             return (
               <Button onClick={handleClick}>{`clicked ${value} times`}</Button>
@@ -220,11 +218,11 @@ export const ComplexForm: Story = {
         >
           <Input type={Input.Type.Password} />
         </FormItem>
-        <FormItem isFullWidth label={<BodyM isBold>Values:</BodyM>}>
+        <FormItem isFullWidth label={<BodyM isBold>Form values:</BodyM>} shouldUpdate>
           {
             ({ form }) => (
               <Card>
-                <pre>{JSON.stringify(form.getFieldsValue(true), null, '\t')}</pre>
+                <pre>{JSON.stringify(form?.getFieldsValue(true), null, '\t')}</pre>
               </Card>
             )
           }

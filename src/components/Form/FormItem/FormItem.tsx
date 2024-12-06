@@ -48,6 +48,7 @@ export const FormItem = (
     rules,
     valuePropName,
     getValueFromEvent,
+    shouldUpdate,
   }: FormItemProps
 ): ReactElement => {
   const form = AntForm.useFormInstance()
@@ -72,6 +73,9 @@ export const FormItem = (
       return children
     }
     if (typeof children === 'function') {
+      if (!name) {
+        return () => children({ form })
+      }
       const CustomInput = children
       return (
         <CustomInput
@@ -83,7 +87,7 @@ export const FormItem = (
         />
       )
     }
-    return undefined
+    return children
   }, [form, name, children])
 
   return (
@@ -94,6 +98,7 @@ export const FormItem = (
       label={label}
       name={name}
       rules={rules}
+      shouldUpdate={shouldUpdate}
       style={style}
     >
       {inputElement}

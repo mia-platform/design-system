@@ -3,6 +3,12 @@ import { CSSProperties, ReactElement, ReactNode } from 'react'
 
 import { Layout } from './types.ts'
 
+export type RenderProps = {
+  form?: FormInstance,
+  value?: unknown;
+  onChange?: (value: unknown) => void
+}
+
 export type FormProps<Values extends Record<string, unknown>> = {
 
   /**
@@ -49,7 +55,7 @@ export type FormProps<Values extends Record<string, unknown>> = {
    * Renders a submit button. Can be a boolean (to toggle default button), a string (button text),
    * or a function that receives the form instance and returns a custom ReactNode.
    */
-  submitButton?: boolean | string | ((form: FormInstance<Values>) => ReactNode);
+  submitButton?: boolean | string | ((props: RenderProps) => ReactNode);
 
   /**
    * Callback triggered when the form values change.
@@ -67,12 +73,6 @@ export type FormProps<Values extends Record<string, unknown>> = {
   onFinishFailed?: AntFormProps<Values>['onFinishFailed'];
 }
 
-type RenderProps = {
-  form: FormInstance,
-  value: unknown;
-  onChange: (value: unknown) => void
-}
-
 export type FormItemProps = {
   name?: string
   label?: ReactNode
@@ -84,4 +84,5 @@ export type FormItemProps = {
   valuePropName?: AntFormItemProps['valuePropName']
   getValueFromEvent?: AntFormItemProps['getValueFromEvent']
   children: ReactElement | ((props: RenderProps) => ReactNode)
+  shouldUpdate?: boolean
 }

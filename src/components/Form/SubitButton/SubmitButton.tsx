@@ -4,9 +4,10 @@ import { FormInstance } from 'antd'
 import { Button } from '../../Button'
 import { ButtonProps } from '../../Button/Button.props.ts'
 import { FormItem } from '../FormItem/FormItem.tsx'
+import { RenderProps } from '../props.ts'
 
 export type SubmitButtonProps = Omit<ButtonProps, 'children'> & {
-  children?: ReactNode | ((form: FormInstance) => ReactNode)
+  children?: ReactNode | ((props: RenderProps) => ReactNode)
 }
 
 const defaultSubmitButton = (
@@ -26,9 +27,9 @@ export const SubmitButton = (
     ...props
   }: SubmitButtonProps
 ): ReactElement => {
-  const renderSubmitButton = useCallback(({ form }: { form: FormInstance }) => {
+  const renderSubmitButton = useCallback(({ form }: { form?: FormInstance }) => {
     if (typeof children === 'function') {
-      return children(form)
+      return children({ form })
     }
     if (typeof children === 'boolean') {
       return children && defaultSubmitButton()
@@ -37,7 +38,7 @@ export const SubmitButton = (
   }, [children, props])
 
   return (
-    <FormItem isFullWidth justify="end">
+    <FormItem isFullWidth justify="end" shouldUpdate>
       {renderSubmitButton}
     </FormItem>
   )
