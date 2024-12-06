@@ -1,28 +1,11 @@
-import { Form as AntForm, FormItemProps as AntFormItemProps, FormInstance } from 'antd'
-import { CSSProperties, ReactElement, ReactNode, isValidElement, useMemo } from 'react'
+import { ReactElement, isValidElement, useMemo } from 'react'
+import { Form as AntForm } from 'antd'
 
-import { Checkbox } from '../Checkbox'
-import { Input } from '../Input'
-import { RadioGroup } from '../RadioGroup'
-import { Switch } from '../Switch'
-
-type RenderProps = {
-  form: FormInstance,
-  value: unknown;
-  onChange: (value: unknown) => void
-}
-export type FormItemProps = {
-  name?: string
-  label?: string
-  style?: CSSProperties
-  span?: number
-  justify?: 'start' | 'center' | 'end'
-  isFullWidth?: boolean,
-  rules?: AntFormItemProps['rules']
-  valuePropName?: AntFormItemProps['valuePropName']
-  getValueFromEvent?: AntFormItemProps['getValueFromEvent']
-  children: ReactElement | ((props: RenderProps) => ReactNode)
-}
+import { Checkbox } from '../../Checkbox'
+import { FormItemProps } from '../props.ts'
+import { Input } from '../../Input'
+import { RadioGroup } from '../../RadioGroup'
+import { Switch } from '../../Switch'
 
 const defaults = {
   span: 1,
@@ -93,9 +76,9 @@ export const FormItem = (
       return (
         <CustomInput
           form={form}
-          value={form.getFieldValue(name)}
+          value={form?.getFieldValue(name)}
           onChange={(value) => {
-            form.setFieldValue(name, value)
+            form?.setFieldValue(name, value)
           }}
         />
       )

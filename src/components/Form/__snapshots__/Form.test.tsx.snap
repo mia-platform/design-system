@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormItem Component renders input FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

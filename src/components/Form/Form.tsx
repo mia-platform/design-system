@@ -1,10 +1,10 @@
 import { ReactElement, useMemo } from 'react'
 import { Form as AntForm } from 'antd'
 
-import * as Validators from './utils/validators.ts'
+import * as Validators from './Validators'
 import { FormProps } from './props.ts'
 import { Layout } from './types.ts'
-import { SubmitButton } from './SubmitButton.tsx'
+import { SubmitButton } from './SubitButton/SubmitButton.tsx'
 
 const defaults = {
   columns: 2,

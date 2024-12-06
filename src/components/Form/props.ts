@@ -1,5 +1,5 @@
-import { FormProps as AntFormProps, FormInstance } from 'antd'
-import { CSSProperties, ReactNode } from 'react'
+import { FormItemProps as AntFormItemProps, FormProps as AntFormProps, FormInstance } from 'antd'
+import { CSSProperties, ReactElement, ReactNode } from 'react'
 
 import { Layout } from './types.ts'
 
@@ -65,4 +65,23 @@ export type FormProps<Values extends Record<string, unknown>> = {
    * Callback triggered when form submission fails validation.
    */
   onFinishFailed?: AntFormProps<Values>['onFinishFailed'];
+}
+
+type RenderProps = {
+  form: FormInstance,
+  value: unknown;
+  onChange: (value: unknown) => void
+}
+
+export type FormItemProps = {
+  name?: string
+  label?: ReactNode
+  style?: CSSProperties
+  span?: number
+  justify?: 'start' | 'center' | 'end'
+  isFullWidth?: boolean,
+  rules?: AntFormItemProps['rules']
+  valuePropName?: AntFormItemProps['valuePropName']
+  getValueFromEvent?: AntFormItemProps['getValueFromEvent']
+  children: ReactElement | ((props: RenderProps) => ReactNode)
 }

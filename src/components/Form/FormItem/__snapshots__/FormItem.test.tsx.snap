@@ -1,0 +1,1313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormItem Component renders checkbox FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="checkbox"
+            title="checkbox"
+          >
+            checkbox
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <label
+                class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-checked mia-platform-checkbox-wrapper-in-form-item checkbox"
+              >
+                <span
+                  class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-checked"
+                >
+                  <input
+                    checked=""
+                    class="mia-platform-checkbox-input"
+                    type="checkbox"
+                  />
+                  <span
+                    class="mia-platform-checkbox-inner"
+                  />
+                </span>
+                <span>
+                  <div
+                    class="checkboxContent"
+                  >
+                    <div
+                      class="mia-platform-typography bodyS"
+                      role="paragraph"
+                    >
+                      label
+                    </div>
+                  </div>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders checkboxGroup FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="checkboxGroup"
+            title="checkboxGroup"
+          >
+            checkboxGroup
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <div
+                class="mia-platform-checkbox-group horizontal"
+              >
+                <div
+                  class="options"
+                >
+                  <label
+                    class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-checked mia-platform-checkbox-wrapper-in-form-item checkbox"
+                  >
+                    <span
+                      class="mia-platform-checkbox ant-wave-target mia-platform-checkbox-checked"
+                    >
+                      <input
+                        checked=""
+                        class="mia-platform-checkbox-input"
+                        type="checkbox"
+                        value="value 1"
+                      />
+                      <span
+                        class="mia-platform-checkbox-inner"
+                      />
+                    </span>
+                    <span>
+                      <div
+                        class="checkboxContent"
+                      >
+                        <div
+                          class="mia-platform-typography bodyS"
+                          role="paragraph"
+                        >
+                          label 1
+                        </div>
+                      </div>
+                    </span>
+                  </label>
+                  <label
+                    class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-in-form-item checkbox"
+                  >
+                    <span
+                      class="mia-platform-checkbox ant-wave-target"
+                    >
+                      <input
+                        class="mia-platform-checkbox-input"
+                        type="checkbox"
+                        value="value 2"
+                      />
+                      <span
+                        class="mia-platform-checkbox-inner"
+                      />
+                    </span>
+                    <span>
+                      <div
+                        class="checkboxContent"
+                      >
+                        <div
+                          class="mia-platform-typography bodyS"
+                          role="paragraph"
+                        >
+                          label 2
+                        </div>
+                      </div>
+                    </span>
+                  </label>
+                  <label
+                    class="mia-platform-checkbox-wrapper mia-platform-checkbox-wrapper-in-form-item checkbox"
+                  >
+                    <span
+                      class="mia-platform-checkbox ant-wave-target"
+                    >
+                      <input
+                        class="mia-platform-checkbox-input"
+                        type="checkbox"
+                        value="value 3"
+                      />
+                      <span
+                        class="mia-platform-checkbox-inner"
+                      />
+                    </span>
+                    <span>
+                      <div
+                        class="checkboxContent"
+                      >
+                        <div
+                          class="mia-platform-typography bodyS"
+                          role="paragraph"
+                        >
+                          label 3
+                        </div>
+                      </div>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders input FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="input"
+            title="input"
+          >
+            input
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                type="text"
+                value="input"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders inputAddon FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="inputAddon"
+            title="inputAddon"
+          >
+            inputAddon
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <span
+                class="mia-platform-input-group-wrapper mia-platform-input-group-wrapper-outlined input fullWidth input"
+              >
+                <span
+                  class="mia-platform-input-wrapper mia-platform-input-group"
+                >
+                  <span
+                    class="mia-platform-input-group-addon"
+                  >
+                    <div
+                      class="inputAddonSelect"
+                    >
+                      <div
+                        class="mia-platform-select mia-platform-select-outlined input select mia-platform-select-single mia-platform-select-show-arrow"
+                      >
+                        <div
+                          class="mia-platform-select-selector"
+                        >
+                          <span
+                            class="mia-platform-select-selection-search"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="rc_select_TEST_OR_SSR_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="rc_select_TEST_OR_SSR_list"
+                              autocomplete="off"
+                              class="mia-platform-select-selection-search-input"
+                              id="rc_select_TEST_OR_SSR"
+                              readonly=""
+                              role="combobox"
+                              style="opacity: 0;"
+                              type="search"
+                              unselectable="on"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="mia-platform-select-selection-placeholder"
+                          />
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="mia-platform-select-arrow"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <svg
+                            color="currentColor"
+                            fill="currentColor"
+                            height="16"
+                            role="img"
+                            stroke="currentColor"
+                            stroke-width="0"
+                            style="color: currentColor;"
+                            viewBox="0 0 256 256"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </span>
+                  <input
+                    class="mia-platform-input mia-platform-input-outlined"
+                    type="text"
+                    value="[object Object]"
+                  />
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders inputNumber FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="number"
+            title="number"
+          >
+            number
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <div
+                class="mia-platform-input-number mia-platform-input-number-in-form-item mia-platform-input-number-outlined input fullWidth inputNumber"
+              >
+                <div
+                  class="mia-platform-input-number-handler-wrap"
+                >
+                  <span
+                    aria-disabled="false"
+                    aria-label="Increase Value"
+                    class="mia-platform-input-number-handler mia-platform-input-number-handler-up"
+                    role="button"
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="up"
+                      class="anticon anticon-up mia-platform-input-number-handler-up-inner"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="up"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    aria-disabled="false"
+                    aria-label="Decrease Value"
+                    class="mia-platform-input-number-handler mia-platform-input-number-handler-down"
+                    role="button"
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="down"
+                      class="anticon anticon-down mia-platform-input-number-handler-down-inner"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="down"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="mia-platform-input-number-input-wrap"
+                >
+                  <input
+                    aria-valuenow="1"
+                    autocomplete="off"
+                    class="mia-platform-input-number-input"
+                    role="spinbutton"
+                    step="1"
+                    value="1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders radioGroup FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="radioGroup"
+            title="radioGroup"
+          >
+            radioGroup
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <div
+                class="mia-platform-radio-group mia-platform-radio-group-outline horizontal"
+              >
+                <div
+                  class="options"
+                >
+                  <label
+                    class="mia-platform-radio-wrapper mia-platform-radio-wrapper-checked mia-platform-radio-wrapper-in-form-item radio"
+                  >
+                    <span
+                      class="mia-platform-radio ant-wave-target mia-platform-radio-checked"
+                    >
+                      <input
+                        checked=""
+                        class="mia-platform-radio-input"
+                        type="radio"
+                        value="value 1"
+                      />
+                      <span
+                        class="mia-platform-radio-inner"
+                      />
+                    </span>
+                    <span>
+                      <div
+                        class="radioContent"
+                      >
+                        <div
+                          class="mia-platform-typography bodyS"
+                          role="paragraph"
+                        >
+                          label 1
+                        </div>
+                      </div>
+                    </span>
+                  </label>
+                  <label
+                    class="mia-platform-radio-wrapper mia-platform-radio-wrapper-in-form-item radio"
+                  >
+                    <span
+                      class="mia-platform-radio ant-wave-target"
+                    >
+                      <input
+                        class="mia-platform-radio-input"
+                        type="radio"
+                        value="value 2"
+                      />
+                      <span
+                        class="mia-platform-radio-inner"
+                      />
+                    </span>
+                    <span>
+                      <div
+                        class="radioContent"
+                      >
+                        <div
+                          class="mia-platform-typography bodyS"
+                          role="paragraph"
+                        >
+                          label 2
+                        </div>
+                      </div>
+                    </span>
+                  </label>
+                  <label
+                    class="mia-platform-radio-wrapper mia-platform-radio-wrapper-in-form-item radio"
+                  >
+                    <span
+                      class="mia-platform-radio ant-wave-target"
+                    >
+                      <input
+                        class="mia-platform-radio-input"
+                        type="radio"
+                        value="value 3"
+                      />
+                      <span
+                        class="mia-platform-radio-inner"
+                      />
+                    </span>
+                    <span>
+                      <div
+                        class="radioContent"
+                      >
+                        <div
+                          class="mia-platform-typography bodyS"
+                          role="paragraph"
+                        >
+                          label 3
+                        </div>
+                      </div>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders radioGroup FormItem correctly 2`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="custom"
+            title="custom"
+          >
+            custom
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="button"
+              >
+                <div
+                  class="buttonText"
+                >
+                  clicked 0 times
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders search FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="search"
+            title="search"
+          >
+            search
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <div
+                class="mia-platform-select mia-platform-select-outlined mia-platform-select-in-form-item mia-platform-select-auto-complete input fullWidth search mia-platform-select-single mia-platform-select-customize-input mia-platform-select-show-search"
+              >
+                <div
+                  class="mia-platform-select-selector"
+                >
+                  <span
+                    class="mia-platform-select-selection-search"
+                  >
+                    <span
+                      class="mia-platform-input-affix-wrapper mia-platform-input-outlined input fullWidth input"
+                    >
+                      <input
+                        class="mia-platform-input"
+                        type="search"
+                        value="value 1"
+                      />
+                      <span
+                        class="mia-platform-input-suffix"
+                      >
+                        <svg
+                          color="currentColor"
+                          fill="currentColor"
+                          height="12"
+                          role="img"
+                          stroke="currentColor"
+                          stroke-width="0"
+                          style="color: currentColor;"
+                          viewBox="0 0 256 256"
+                          width="12"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders select FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="select"
+            title="select"
+          >
+            select
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <div
+                class="mia-platform-select mia-platform-select-outlined mia-platform-select-in-form-item input fullWidth select mia-platform-select-single mia-platform-select-show-arrow"
+              >
+                <div
+                  class="mia-platform-select-selector"
+                >
+                  <span
+                    class="mia-platform-select-selection-search"
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="mia-platform-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="mia-platform-select-selection-item"
+                    title="label 1"
+                  >
+                    label 1
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="mia-platform-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                >
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="16"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders switch FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="switch"
+            title="switch"
+          >
+            switch
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <div
+                class="switchComponent"
+              >
+                <div
+                  class="switchTextWrapper"
+                >
+                  <button
+                    aria-checked="true"
+                    class="mia-platform-switch mia-platform-switch-checked"
+                    role="switch"
+                    type="button"
+                  >
+                    <div
+                      class="mia-platform-switch-handle"
+                    />
+                    <span
+                      class="mia-platform-switch-inner"
+                    >
+                      <span
+                        class="mia-platform-switch-inner-checked"
+                      />
+                      <span
+                        class="mia-platform-switch-inner-unchecked"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component renders textarea FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="textarea"
+            title="textarea"
+          >
+            textarea
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <textarea
+                class="mia-platform-input mia-platform-input-outlined input fullWidth"
+              >
+                textarea
+              </textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

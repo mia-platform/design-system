@@ -1,16 +1,20 @@
 import { ReactElement, ReactNode, useCallback } from 'react'
 import { FormInstance } from 'antd'
 
-import { Button } from '../Button'
-import { FormItem } from './FormItem.tsx'
+import { Button } from '../../Button'
+import { ButtonProps } from '../../Button/Button.props.ts'
+import { FormItem } from '../FormItem/FormItem.tsx'
 
-export type SubmitButtonProps = {
+export type SubmitButtonProps = Omit<ButtonProps, 'children'> & {
   children?: ReactNode | ((form: FormInstance) => ReactNode)
 }
 
-const defaultSubmitButton = (label: ReactNode = 'Submit'): ReactNode => {
+const defaultSubmitButton = (
+  label: ReactNode = 'Submit',
+  props: ButtonProps = {}
+): ReactNode => {
   return (
-    <Button htmlType={Button.HTMLType.Submit}>
+    <Button htmlType={Button.HTMLType.Submit} {...props}>
       {label}
     </Button>
   )
@@ -19,6 +23,7 @@ const defaultSubmitButton = (label: ReactNode = 'Submit'): ReactNode => {
 export const SubmitButton = (
   {
     children,
+    ...props
   }: SubmitButtonProps
 ): ReactElement => {
   const renderSubmitButton = useCallback(({ form }: { form: FormInstance }) => {
@@ -28,8 +33,8 @@ export const SubmitButton = (
     if (typeof children === 'boolean') {
       return children && defaultSubmitButton()
     }
-    return defaultSubmitButton(children)
-  }, [children])
+    return defaultSubmitButton(children, props)
+  }, [children, props])
 
   return (
     <FormItem isFullWidth justify="end">
