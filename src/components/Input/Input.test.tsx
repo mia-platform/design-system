@@ -260,4 +260,67 @@ describe('Input Component', () => {
     expect(input).not.toBeDisabled()
     expect(checkbox).toBeDisabled()
   })
+
+  test('if no addon is provided the second argument of onChange should be the string value', async() => {
+    const onChange = jest.fn()
+
+    render(<Input onChange={onChange} />)
+
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+
+    fireEvent.change(input, { target: { value: exampleText } })
+
+    expect(onChange).toHaveBeenCalledWith({}, exampleText)
+  })
+
+  test('should accept an object value prop if addons are set', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel }}
+        defaultValue={{ value: exampleText, before: true }}
+        onChange={onChange}
+      />
+    )
+
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
+
+    fireEvent.change(input, { target: { value: exampleText } })
+
+    expect(input.value).toBe(exampleText)
+    expect(checkbox).toBeChecked()
+  })
+
+  test('should work with custom names for input and addons values', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Input
+        addonBefore={{ type: AddonType.Checkbox, label: checkboxAddonLabel, name: 'addonBeforeValue' }}
+        defaultValue={{ inputValue: exampleText, addonBeforeValue: true }}
+        valuePropName="inputValue"
+        onChange={onChange}
+      />
+    )
+
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox')
+
+    expect(input.value).toBe(exampleText)
+    expect(checkbox).toBeChecked()
+
+    fireEvent.change(input, { target: { value: 'changedValue' } })
+    expect(onChange).toHaveBeenCalledWith({}, {
+      inputValue: 'changedValue',
+      addonBeforeValue: true,
+    })
+
+    fireEvent.click(checkbox)
+    expect(onChange).toHaveBeenCalledWith(undefined, {
+      inputValue: 'changedValue',
+      addonBeforeValue: false,
+    })
+  })
 })

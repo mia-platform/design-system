@@ -24,7 +24,7 @@ import { InputAddonProps } from './InputAddon'
 import { Type } from './types'
 
 type InputChangeEventHandler =
-  (event: ChangeEvent<HTMLInputElement> | undefined, values: {value: string, after?: unknown, before?: unknown}) => void
+  (event: ChangeEvent<HTMLInputElement> | undefined, values: string | Record<string, unknown>) => void
 
 export type InputProps = BaseInputProps & {
 
@@ -46,12 +46,17 @@ export type InputProps = BaseInputProps & {
   /**
    * The input content value.
    */
-  value?: string
+  value?: string | Record<string, unknown>
 
   /**
    * The input default value
    */
-  defaultValue?: string
+  defaultValue?: string | Record<string, unknown>
+
+  /**
+   * The value prop name of the input value if the value provided is an object. Defaults is 'value'
+   */
+  valuePropName?: string
 
   /**
    * If allow to remove input content with clear icon.
