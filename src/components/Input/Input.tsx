@@ -106,7 +106,7 @@ export const Input = (
     if (onChange) {
       onChange(event, addonBeforeProp || addonAfterProp ? nextVal : nextValue)
     }
-  }, [addonAfterProp, addonBeforeProp, onChange, valuePropName, setVal, val])
+  }, [addonAfterProp, addonBeforeProp, onChange, valuePropName])
 
   const renderAddon = useCallback((
     position: AddonPosition,
