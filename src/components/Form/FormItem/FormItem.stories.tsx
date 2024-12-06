@@ -127,7 +127,9 @@ export const Custom: Story = {
     name: 'custom',
     children: ({ value, onChange }) => {
       const handleClick = (): void => {
-        onChange(Number(value) + 1)
+        if (onChange) {
+          onChange(Number(value) + 1)
+        }
       }
       return (
         <Button onClick={handleClick}>{`clicked ${value} times`}</Button>

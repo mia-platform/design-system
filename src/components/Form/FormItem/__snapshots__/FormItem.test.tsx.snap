@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormItem Component renders checkbox FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders checkbox FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -101,7 +101,7 @@ exports[`FormItem Component renders checkbox FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders checkboxGroup FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders checkboxGroup FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -267,7 +267,7 @@ exports[`FormItem Component renders checkboxGroup FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders input FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders input FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -345,7 +345,7 @@ exports[`FormItem Component renders input FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders inputAddon FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders inputAddon FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -417,8 +417,11 @@ exports[`FormItem Component renders inputAddon FormItem correctly 1`] = `
                             />
                           </span>
                           <span
-                            class="mia-platform-select-selection-placeholder"
-                          />
+                            class="mia-platform-select-selection-item"
+                            title="label 1"
+                          >
+                            label 1
+                          </span>
                         </div>
                         <span
                           aria-hidden="true"
@@ -449,7 +452,7 @@ exports[`FormItem Component renders inputAddon FormItem correctly 1`] = `
                   <input
                     class="mia-platform-input mia-platform-input-outlined"
                     type="text"
-                    value="[object Object]"
+                    value="text"
                   />
                 </span>
               </span>
@@ -493,7 +496,7 @@ exports[`FormItem Component renders inputAddon FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders inputNumber FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders inputNumber FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -640,7 +643,7 @@ exports[`FormItem Component renders inputNumber FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders radioGroup FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders radioGroup FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -806,7 +809,7 @@ exports[`FormItem Component renders radioGroup FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders radioGroup FormItem correctly 2`] = `
+exports[`FormItem Component snapshots renders radioGroup FormItem correctly 2`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -889,7 +892,7 @@ exports[`FormItem Component renders radioGroup FormItem correctly 2`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders search FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders search FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -1003,7 +1006,7 @@ exports[`FormItem Component renders search FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders select FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders select FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -1133,7 +1136,7 @@ exports[`FormItem Component renders select FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders switch FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders switch FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"
@@ -1234,7 +1237,7 @@ exports[`FormItem Component renders switch FormItem correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FormItem Component renders textarea FormItem correctly 1`] = `
+exports[`FormItem Component snapshots renders textarea FormItem correctly 1`] = `
 <DocumentFragment>
   <form
     class="mia-platform-form mia-platform-form-vertical"

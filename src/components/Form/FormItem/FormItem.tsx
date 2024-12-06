@@ -78,16 +78,9 @@ export const FormItem = (
       }
       const CustomInput = children
       return (
-        <CustomInput
-          form={form}
-          value={form?.getFieldValue(name)}
-          onChange={(value) => {
-            form?.setFieldValue(name, value)
-          }}
-        />
+        <CustomInput form={form} />
       )
     }
-    return children
   }, [form, name, children])
 
   return (
@@ -98,7 +91,14 @@ export const FormItem = (
       label={label}
       name={name}
       rules={rules}
-      shouldUpdate={shouldUpdate}
+      shouldUpdate={
+        // NOTE: if no name is specified and the children is a render function,
+        // antd will complain in the browser console and will not show any element.
+        // This sets the default value to t`true` in the case
+        shouldUpdate !== undefined
+          ? shouldUpdate
+          : (typeof children === 'function' && !name) || undefined
+      }
       style={style}
     >
       {inputElement}
