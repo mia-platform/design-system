@@ -6,6 +6,7 @@ import { FormItemProps } from '../props.ts'
 import { Input } from '../../Input'
 import { RadioGroup } from '../../RadioGroup'
 import { Switch } from '../../Switch'
+import log from '../../../utils/log.ts'
 
 const defaults = {
   span: 1,
@@ -85,6 +86,7 @@ export const FormItem = (
         <CustomInput form={form} />
       )
     }
+    log.error('inputElement must be a valid element or a function')
   }, [form, name, children])
 
   return (
