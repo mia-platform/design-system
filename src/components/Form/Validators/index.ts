@@ -1,4 +1,4 @@
-import { FormRule as AntFormRule, FormInstance } from 'antd'
+import { FormRule as AntFormRule } from 'antd'
 
 export type FormRule = AntFormRule
 
@@ -77,7 +77,7 @@ export const pattern = (value: RegExp, message?: string): FormRule => {
  * @param {string} [message] - Custom error message to display if the values do not match.
  * @returns {FormRule} A rule object function.
  */
-export const checkEquals = (fieldName: string, message?: string): (form: FormInstance) => FormRule => {
+export const checkEquals = (fieldName: string, message?: string): FormRule => {
   return ({ getFieldValue }) => ({
     validator: (_, value) => {
       if (!value || getFieldValue(fieldName) === value) {

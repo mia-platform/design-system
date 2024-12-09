@@ -90,12 +90,11 @@ describe('Validators', () => {
 
   test('checkEquals validator', async() => {
     const getFieldValue = jest.fn().mockReturnValue('expectedValue')
-    const { validator } = checkEquals('fieldName')({ getFieldValue } as unknown as FormInstance)as
-    unknown as {validator: (form: FormInstance | null, value: unknown) => Promise<void>}
-    // Value matches
+    const { validator } = checkEquals('fieldName') as unknown as
+      {validator: (form: Partial<FormInstance> | null, value?: unknown) => Promise<void>}
+    validator({ getFieldValue })
     await expect(validator(null, 'expectedValue')).resolves.toBeUndefined()
 
-    // Value does not match
     await expect(validator(null, 'wrongValue')).rejects.toThrow(
       'The entered value do not match the value of "fieldName"'
     )
