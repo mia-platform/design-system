@@ -1,11 +1,11 @@
 import { FormInstance } from 'antd'
 
 import {
+  RuleObject,
   checkEquals,
   max,
   min,
-  pattern,
-  required,
+  pattern, required,
   whitespace,
 } from '.'
 
@@ -89,13 +89,14 @@ describe('Validators', () => {
   })
 
   test('checkEquals validator', async() => {
-    const getFieldValue = jest.fn().mockReturnValue('expectedValue')
-    const { validator } = checkEquals('fieldName') as unknown as
-      {validator: (form: Partial<FormInstance> | null, value?: unknown) => Promise<void>}
-    validator({ getFieldValue })
-    await expect(validator(null, 'expectedValue')).resolves.toBeUndefined()
+    const form = {
+      getFieldValue: jest.fn().mockReturnValue('expectedValue'),
+    } as unknown as FormInstance
+    const { validator } = checkEquals('fieldName')(form)
 
-    await expect(validator(null, 'wrongValue')).rejects.toThrow(
+    await expect(validator!(null as unknown as RuleObject, 'expectedValue')).resolves.toBeUndefined()
+
+    await expect(validator!(null as unknown as RuleObject, 'wrongValue')).rejects.toThrow(
       'The entered value do not match the value of "fieldName"'
     )
   })

@@ -1,14 +1,28 @@
-import { FormRule as AntFormRule } from 'antd'
+import { FormInstance } from 'antd'
+import type { ReactElement } from 'react'
 
-export type FormRule = AntFormRule
+export type RuleObject = {
+  message?: string | ReactElement;
+  len?: number;
+  min?: number;
+  max?: number;
+  pattern?: RegExp;
+  required?: boolean;
+  whitespace?: boolean;
+  validator?: (rule: RuleObject, value: unknown) => Promise<Error| void>;
+}
+
+export type RuleFunction = ((form: FormInstance) => RuleObject)
+
+export type Rule = RuleObject | RuleFunction
 
 /**
  * Creates a validation rule that ensures a field is required.
  *
  * @param {string} [message] - Custom error message to display if the field is empty.
- * @returns {FormRule} A rule object.
+ * @returns {RuleObject} A rule object.
  */
-export const required = (message?: string): FormRule => {
+export const required = (message?: string): RuleObject => {
   return {
     message: message || 'The field is required',
     required: true,
@@ -19,9 +33,9 @@ export const required = (message?: string): FormRule => {
  * Creates a validation rule that ensures a field does not contain whitespace.
  *
  * @param {string} [message] - Custom error message to display if the field contains whitespace.
- * @returns {FormRule} A rule object.
+ * @returns {RuleObject} A rule object.
  */
-export const whitespace = (message?: string): FormRule => {
+export const whitespace = (message?: string): RuleObject => {
   return {
     message: message || 'The field should not contain white spaces',
     whitespace: true,
@@ -33,9 +47,9 @@ export const whitespace = (message?: string): FormRule => {
  *
  * @param {number} value - The minimum value allowed.
  * @param {string} [message] - Custom error message to display if the value is below the minimum.
- * @returns {FormRule} A rule object.
+ * @returns {RuleObject} A rule object.
  */
-export const min = (value: number, message?: string): FormRule => {
+export const min = (value: number, message?: string): RuleObject => {
   return {
     message: message || `The field must be greater than ${value}`,
     min: value,
@@ -47,9 +61,9 @@ export const min = (value: number, message?: string): FormRule => {
  *
  * @param {number} value - The maximum value allowed.
  * @param {string} [message] - Custom error message to display if the value exceeds the maximum.
- * @returns {FormRule} A rule object.
+ * @returns {RuleObject} A rule object.
  */
-export const max = (value: number, message?: string): FormRule => {
+export const max = (value: number, message?: string): RuleObject => {
   return {
     message: message || `The field must be greater than ${value}`,
     max: value,
@@ -61,9 +75,9 @@ export const max = (value: number, message?: string): FormRule => {
  *
  * @param {RegExp} value - The regular expression to validate against.
  * @param {string} [message] - Custom error message to display if the value does not match the pattern.
- * @returns {FormRule} A rule object .
+ * @returns {RuleObject} A rule object .
  */
-export const pattern = (value: RegExp, message?: string): FormRule => {
+export const pattern = (value: RegExp, message?: string): RuleObject => {
   return {
     message: message || `The must match the pattern ${value.toString()}`,
     pattern: value,
@@ -75,9 +89,9 @@ export const pattern = (value: RegExp, message?: string): FormRule => {
  *
  * @param {string} fieldName - The name of the other field to compare against.
  * @param {string} [message] - Custom error message to display if the values do not match.
- * @returns {FormRule} A rule object function.
+ * @returns {RuleObject} A rule object function.
  */
-export const checkEquals = (fieldName: string, message?: string): FormRule => {
+export const checkEquals = (fieldName: string, message?: string): RuleFunction => {
   return ({ getFieldValue }) => ({
     validator: (_, value) => {
       if (!value || getFieldValue(fieldName) === value) {

@@ -107,6 +107,7 @@ export const Input = (
     if (onChange) {
       onChange(event, addonBeforeProp || addonAfterProp ? nextVal : nextValue)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addonAfterProp, addonBeforeProp, onChange, valuePropName])
 
   const renderAddon = useCallback((
