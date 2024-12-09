@@ -28,6 +28,8 @@ type InputChangeEventHandler =
 
 export type InputProps = BaseInputProps & {
 
+  id?: string
+
   /**
    * The html type of Input.
    */

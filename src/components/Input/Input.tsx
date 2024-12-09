@@ -73,6 +73,7 @@ const useInputValue = (
  */
 export const Input = (
   {
+    id,
     appearance = defaults.type,
     type = defaults.htmlType,
     value,
@@ -166,6 +167,7 @@ export const Input = (
       className={styles.input}
       component={AntInput}
       defaultValue={inputDefaultValue}
+      id={id}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}

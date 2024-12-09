@@ -16,18 +16,117 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { waitFor } from '@testing-library/react'
+import { Fragment, ReactElement } from 'react'
+import { screen, waitFor } from '@testing-library/react'
+import { fireEvent } from '@testing-library/dom'
 
 import { Form } from './Form.tsx'
+import { FormItem } from './FormItem/FormItem.tsx'
+import { Input } from '../Input'
 import { render } from '../../test-utils.tsx'
 
-describe('FormItem Component', () => {
+const exampleText = 'text'
+
+const props = {
+  children: (
+    <Fragment>
+      <FormItem name="firstName" rules={[Form.Validators.required()]}>
+        <Input />
+      </FormItem>
+      <FormItem name="lastName" rules={[Form.Validators.required()]}>
+        <Input />
+      </FormItem>
+    </Fragment>
+  ),
+}
+
+describe('Form Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
 
-  test('renders input FormItem correctly', async() => {
-    const { asFragment } = render(<Form />)
+  test('renders correctly', async() => {
+    const { asFragment } = render(<Form {...props} />)
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders horizontal correctly', async() => {
+    const { asFragment } = render(<Form layout={Form.Layout.Horizontal} {...props} />)
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders custom gap correctly', async() => {
+    const { asFragment } = render(<Form gap={64} {...props} />)
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders custom columns count correctly', async() => {
+    const { asFragment } = render(<Form columns={3} {...props} />)
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders initialValues correctly', async() => {
+    const { asFragment } = render(<Form initialValues={{ firstName: 'foo', lastName: 'bar' }} {...props} />)
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
+
+  test('renders with custom submit button label', async() => {
+    const { asFragment } = render(<Form submitButton={exampleText} {...props} />
+    )
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+    expect(screen.getByText(exampleText)).toBeInTheDocument()
+  })
+
+  test('renders with custom submit button function', async() => {
+    const submitButton = () : ReactElement => {
+      return <Form.SubmitButton>{exampleText}</Form.SubmitButton>
+    }
+    const { asFragment } = render(<Form submitButton={submitButton} {...props} />
+    )
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+    expect(screen.getByText(exampleText)).toBeInTheDocument()
+  })
+
+  test('renders with custom submit button function', async() => {
+    const submitButton = () : ReactElement => {
+      return <Form.SubmitButton>{exampleText}</Form.SubmitButton>
+    }
+    const { asFragment } = render(<Form submitButton={submitButton} {...props} />
+    )
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+    expect(screen.getByText(exampleText)).toBeInTheDocument()
+  })
+
+  test('should call onFinishFailed if the form is not valid', async() => {
+    const onFinishFailed = jest.fn()
+    render(<Form onFinishFailed={onFinishFailed} {...props} />
+    )
+    const button = screen.getByRole('button', { name: 'Submit' })
+    fireEvent.click(button)
+
+    await waitFor(async() => {
+      expect(onFinishFailed).toHaveBeenCalled()
+    })
+
+    expect(await screen.findAllByText('The field is required')).toHaveLength(2)
+  })
+
+  test('should call onFinish if the form is valid', async() => {
+    const onFinish = jest.fn()
+    render(<Form onFinish={onFinish} {...props} />
+    )
+    const button = screen.getByRole('button', { name: 'Submit' })
+
+    const firstNameInput = screen.getByRole('textbox', { name: /firstname/i })
+    const lastNameInput = screen.getByRole('textbox', { name: /lastname/i })
+
+    fireEvent.change(firstNameInput, { target: { value: exampleText } })
+    fireEvent.change(lastNameInput, { target: { value: exampleText } })
+
+    fireEvent.click(button)
+
+    await waitFor(async() => {
+      expect(onFinish).toHaveBeenCalledWith({ firstName: exampleText, lastName: exampleText })
+    })
   })
 })

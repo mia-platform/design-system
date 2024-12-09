@@ -305,20 +305,28 @@ describe('FormItem Component', () => {
 
   describe('customInput', () => {
     test('custom input from component should work properly', () => {
-      const CustomInput = ({ value, onChange }: RenderProps): ReactElement => {
+      const CustomInput = (
+        { test: value, onChange }: { test?: unknown; onChange?: (_: unknown, value: unknown) => void}
+      ): ReactElement => {
         const handleClick = (): void => {
           if (onChange) {
-            onChange(Number(value) + 1)
+            onChange(undefined, Number(value) + 1)
           }
         }
         return (
-          <Button onClick={handleClick}>{String(value)}</Button>
+          <Button
+            onClick={handleClick}
+          >
+            {String(value)}
+          </Button>
         )
       }
 
       renderItem({
         name: 'custom',
         children: <CustomInput />,
+        getValueFromEvent: (...args: unknown[]) => args[1],
+        valuePropName: 'test',
       })
 
       const button = screen.getByRole('button', { name: String(initalValues.custom) })
