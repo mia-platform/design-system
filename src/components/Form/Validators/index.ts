@@ -1,20 +1,8 @@
-import { FormInstance } from 'antd'
-import type { ReactElement } from 'react'
+import { FormRule as AntRule, FormInstance } from 'antd'
+import { ReactElement } from 'react'
 
-export type RuleObject = {
-  message?: string | ReactElement;
-  len?: number;
-  min?: number;
-  max?: number;
-  pattern?: RegExp;
-  required?: boolean;
-  whitespace?: boolean;
-  validator?: (rule: RuleObject, value: unknown) => Promise<Error| void>;
-}
-
-export type RuleFunction = ((form: FormInstance) => RuleObject)
-
-export type Rule = RuleObject | RuleFunction
+export type RuleObject = Extract<AntRule, {message?: string | ReactElement}>
+export type RuleFunction = Extract<AntRule, (form: FormInstance) => RuleObject>
 
 /**
  * Creates a validation rule that ensures a field is required.
@@ -89,11 +77,11 @@ export const pattern = (value: RegExp, message?: string): RuleObject => {
  *
  * @param {string} fieldName - The name of the other field to compare against.
  * @param {string} [message] - Custom error message to display if the values do not match.
- * @returns {RuleObject} A rule object function.
+ * @returns {RuleObject} A rule function.
  */
 export const checkEquals = (fieldName: string, message?: string): RuleFunction => {
   return ({ getFieldValue }) => ({
-    validator: (_, value) => {
+    validator: (_: RuleObject, value: unknown) => {
       if (!value || getFieldValue(fieldName) === value) {
         return Promise.resolve()
       }
