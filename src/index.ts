@@ -27,6 +27,7 @@ import { CheckboxGroup } from './components/CheckboxGroup'
 import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
 import { Dropdown } from './components/Dropdown'
+import { Form } from './components/Form'
 import { Icon } from './components/Icon'
 import { Input } from './components/Input'
 import { InputNumber } from './components/InputNumber'
@@ -59,6 +60,7 @@ export {
   Divider,
   Drawer,
   Dropdown,
+  Form,
   Icon,
   Input,
   InputNumber,

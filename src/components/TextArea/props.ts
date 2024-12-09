@@ -23,6 +23,11 @@ import { BaseInputProps } from '../BaseInput/props'
 export type TextAreaProps = BaseInputProps & {
 
   /**
+   * The id of the input.
+   */
+  id?: string
+
+  /**
    * The input content value.
    */
   value?: string

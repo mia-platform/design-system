@@ -21,6 +21,11 @@ import { CheckboxChangeEvent } from 'antd/es/checkbox'
 
 export type CheckboxProps<T = never, > = {
 
+  /**
+   * The id of the input.
+   */
+  id?: string
+
   /*
   * An optional value for the checkbox.
   * */

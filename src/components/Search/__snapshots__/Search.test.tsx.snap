@@ -16,6 +16,7 @@ exports[`Input Component renders correctly 1`] = `
         >
           <input
             class="mia-platform-input"
+            id="rc_select_TEST_OR_SSR"
             type="search"
             value=""
           />

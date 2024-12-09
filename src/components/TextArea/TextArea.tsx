@@ -35,6 +35,7 @@ export const defaults = {
  */
 export const TextArea = (
   {
+    id,
     appearance = defaults.type,
     value,
     defaultValue,
@@ -56,6 +57,7 @@ export const TextArea = (
       appearance={appearance}
       component={AntInput.TextArea}
       defaultValue={defaultValue}
+      id={id}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}

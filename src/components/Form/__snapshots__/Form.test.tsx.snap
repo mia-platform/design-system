@@ -1,0 +1,979 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Component renders correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="firstName"
+            title="firstName"
+          >
+            firstName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="firstName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="lastName"
+            title="lastName"
+          >
+            lastName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="lastName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Form Component renders custom columns count correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(3, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="firstName"
+            title="firstName"
+          >
+            firstName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="firstName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="lastName"
+            title="lastName"
+          >
+            lastName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="lastName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Form Component renders custom gap correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 64px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="firstName"
+            title="firstName"
+          >
+            firstName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="firstName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="lastName"
+            title="lastName"
+          >
+            lastName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="lastName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Form Component renders horizontal correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-horizontal"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="firstName"
+            title="firstName"
+          >
+            firstName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="firstName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="lastName"
+            title="lastName"
+          >
+            lastName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="lastName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Form Component renders initialValues correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="firstName"
+            title="firstName"
+          >
+            firstName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="firstName"
+                type="text"
+                value="foo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="lastName"
+            title="lastName"
+          >
+            lastName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="lastName"
+                type="text"
+                value="bar"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Form Component renders with custom submit button function 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="firstName"
+            title="firstName"
+          >
+            firstName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="firstName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="lastName"
+            title="lastName"
+          >
+            lastName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="lastName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <div
+                class="mia-platform-form-item"
+                style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+              >
+                <div
+                  class="mia-platform-row mia-platform-form-item-row"
+                >
+                  <div
+                    class="mia-platform-col mia-platform-form-item-control"
+                  >
+                    <div
+                      class="mia-platform-form-item-control-input"
+                    >
+                      <div
+                        class="mia-platform-form-item-control-input-content"
+                      >
+                        <button
+                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                          type="submit"
+                        >
+                          <div
+                            class="buttonText"
+                          >
+                            text
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Form Component renders with custom submit button function 2`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="firstName"
+            title="firstName"
+          >
+            firstName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="firstName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="lastName"
+            title="lastName"
+          >
+            lastName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="lastName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <div
+                class="mia-platform-form-item"
+                style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+              >
+                <div
+                  class="mia-platform-row mia-platform-form-item-row"
+                >
+                  <div
+                    class="mia-platform-col mia-platform-form-item-control"
+                  >
+                    <div
+                      class="mia-platform-form-item-control-input"
+                    >
+                      <div
+                        class="mia-platform-form-item-control-input-content"
+                      >
+                        <button
+                          class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                          type="submit"
+                        >
+                          <div
+                            class="buttonText"
+                          >
+                            text
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Form Component renders with custom submit button label 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="firstName"
+            title="firstName"
+          >
+            firstName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="firstName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="lastName"
+            title="lastName"
+          >
+            lastName
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="lastName"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  text
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
