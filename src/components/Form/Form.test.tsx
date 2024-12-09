@@ -21,7 +21,6 @@ import { screen, waitFor } from '@testing-library/react'
 import { fireEvent } from '@testing-library/dom'
 
 import { Form } from './Form.tsx'
-import { FormItem } from './FormItem/FormItem.tsx'
 import { Input } from '../Input'
 import { render } from '../../test-utils.tsx'
 
@@ -30,12 +29,12 @@ const exampleText = 'text'
 const props = {
   children: (
     <Fragment>
-      <FormItem name="firstName" rules={[Form.Validators.required()]}>
+      <Form.Item name="firstName" rules={[Form.Validators.required()]}>
         <Input />
-      </FormItem>
-      <FormItem name="lastName" rules={[Form.Validators.required()]}>
+      </Form.Item>
+      <Form.Item name="lastName" rules={[Form.Validators.required()]}>
         <Input />
-      </FormItem>
+      </Form.Item>
     </Fragment>
   ),
 }

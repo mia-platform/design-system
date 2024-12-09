@@ -2,6 +2,7 @@ import { ReactElement, useMemo } from 'react'
 import { Form as AntForm } from 'antd'
 
 import * as Validators from './Validators'
+import { FormItem } from './FormItem/FormItem.tsx'
 import { FormProps } from './props.ts'
 import { Layout } from './types.ts'
 import { SubmitButton } from './SubitButton/SubmitButton.tsx'
@@ -58,5 +59,6 @@ export const Form = <Values extends Record<string, unknown>, >({
 }
 
 Form.Layout = Layout
+Form.Item = FormItem
 Form.SubmitButton = SubmitButton
 Form.Validators = Validators

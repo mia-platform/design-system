@@ -8,7 +8,6 @@ import { Card } from '../Card'
 import { Checkbox } from '../Checkbox'
 import { CheckboxGroup } from '../CheckboxGroup'
 import { Form } from './Form.tsx'
-import { FormItem } from './FormItem/FormItem.tsx'
 import { Input } from '../Input'
 import { InputNumber } from '../InputNumber'
 import { RadioGroup } from '../RadioGroup'
@@ -22,12 +21,12 @@ const meta = {
   args: {
     children: (
       <Fragment>
-        <FormItem name="firstName">
+        <Form.Item name="firstName">
           <Input />
-        </FormItem>
-        <FormItem name="lastName">
+        </Form.Item>
+        <Form.Item name="lastName">
           <Input />
-        </FormItem>
+        </Form.Item>
       </Fragment>
     ),
   },
@@ -100,12 +99,12 @@ export const WithDetachedSubmit = (): ReactElement => {
     <Flex align="center" justify="space-between">
       <Card>
         <Form id="my-form" submitButton={false} onFinish={handleSubmit}>
-          <FormItem name="firstName">
+          <Form.Item name="firstName">
             <Input />
-          </FormItem>
-          <FormItem name="lastName">
+          </Form.Item>
+          <Form.Item name="lastName">
             <Input />
-          </FormItem>
+          </Form.Item>
         </Form>
       </Card>
       <Card>
@@ -121,12 +120,12 @@ export const WithValidation: Story = {
       alert(`OnFinishFailed:\n${JSON.stringify(reason)}`)
     },
     children: (
-      <FormItem
+      <Form.Item
         name="firstName"
         rules={[{ validator: () => Promise.reject(new Error('Validation error')) }]}
       >
         {() => <Input />}
-      </FormItem>
+      </Form.Item>
     ),
   },
 }
@@ -149,49 +148,49 @@ export const ComplexForm: Story = {
     },
     children: (
       <Fragment>
-        <FormItem isFullWidth name="inputAddon" rules={[{ required: true }]}>
+        <Form.Item isFullWidth name="inputAddon" rules={[{ required: true }]}>
           <Input addonBefore={{ type: Input.AddonType.Select, options }} />
-        </FormItem>
-        <FormItem name="textfield" rules={[{ required: true }]}>
+        </Form.Item>
+        <Form.Item name="textfield" rules={[{ required: true }]}>
           <Input />
-        </FormItem>
-        <FormItem name="textarea" rules={[{ required: true }]}>
+        </Form.Item>
+        <Form.Item name="textarea" rules={[{ required: true }]}>
           <TextArea />
-        </FormItem>
-        <FormItem name="number" rules={[{ required: true }]} >
+        </Form.Item>
+        <Form.Item name="number" rules={[{ required: true }]} >
           <InputNumber />
-        </FormItem>
-        <FormItem name="search" rules={[{ required: true }]} span={2}>
+        </Form.Item>
+        <Form.Item name="search" rules={[{ required: true }]} span={2}>
           <Search options={options} />
-        </FormItem>
-        <FormItem name="select" rules={[{ required: true }]}>
+        </Form.Item>
+        <Form.Item name="select" rules={[{ required: true }]}>
           <Select options={options} />
-        </FormItem>
+        </Form.Item>
         <Flex
           gap={16}
           justify="space-between"
           style={{ gridColumn: '-1 / 1' }}
         >
-          <FormItem name="checkbox" rules={[{ required: true }]} >
+          <Form.Item name="checkbox" rules={[{ required: true }]} >
             <Checkbox />
-          </FormItem>
-          <FormItem name="switch" rules={[{ required: true }]} >
+          </Form.Item>
+          <Form.Item name="switch" rules={[{ required: true }]} >
             <Switch />
-          </FormItem>
-          <FormItem name="checkboxGroup" rules={[{ required: true }]}>
+          </Form.Item>
+          <Form.Item name="checkboxGroup" rules={[{ required: true }]}>
             <CheckboxGroup
               direction={CheckboxGroup.Direction.Horizontal}
               options={options}
             />
-          </FormItem>
-          <FormItem name="radioGroup" rules={[{ required: true }]}>
+          </Form.Item>
+          <Form.Item name="radioGroup" rules={[{ required: true }]}>
             <RadioGroup
               direction={RadioGroup.Direction.Horizontal}
               options={options}
             />
-          </FormItem>
+          </Form.Item>
         </Flex>
-        <FormItem name="custom">
+        <Form.Item name="custom">
           {({ value, onChange }) => {
             const handleClick = (): void => {
               if (onChange) {
@@ -202,14 +201,14 @@ export const ComplexForm: Story = {
               <Button onClick={handleClick}>{`clicked ${value} times`}</Button>
             )
           }}
-        </FormItem>
-        <FormItem
+        </Form.Item>
+        <Form.Item
           name="password"
           rules={[Form.Validators.required('password is required')]}
         >
           <Input type={Input.Type.Password} />
-        </FormItem>
-        <FormItem
+        </Form.Item>
+        <Form.Item
           name="confirmPassword"
           rules={[
             Form.Validators.required('confirm password is required'),
@@ -217,8 +216,8 @@ export const ComplexForm: Story = {
           ]}
         >
           <Input type={Input.Type.Password} />
-        </FormItem>
-        <FormItem isFullWidth label={<BodyM isBold>Form values:</BodyM>} shouldUpdate>
+        </Form.Item>
+        <Form.Item isFullWidth label={<BodyM isBold>Form values:</BodyM>} shouldUpdate>
           {
             ({ form }) => (
               <Card>
@@ -226,7 +225,7 @@ export const ComplexForm: Story = {
               </Card>
             )
           }
-        </FormItem>
+        </Form.Item>
       </Fragment>
     ),
   },

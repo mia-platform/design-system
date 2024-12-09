@@ -17,7 +17,6 @@
  */
 
 import * as testUtils from './test-utils'
-import { Form, FormItem } from './components/Form'
 import { Alert } from './components/Alert'
 import { Breadcrumb } from './components/Breadcrumb'
 import { Button } from './components/Button'
@@ -28,6 +27,7 @@ import { CheckboxGroup } from './components/CheckboxGroup'
 import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
 import { Dropdown } from './components/Dropdown'
+import { Form } from './components/Form'
 import { Icon } from './components/Icon'
 import { Input } from './components/Input'
 import { InputNumber } from './components/InputNumber'
@@ -61,7 +61,6 @@ export {
   Drawer,
   Dropdown,
   Form,
-  FormItem,
   Icon,
   Input,
   InputNumber,
