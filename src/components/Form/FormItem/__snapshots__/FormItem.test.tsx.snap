@@ -302,6 +302,7 @@ exports[`FormItem Component snapshots renders input FormItem correctly 1`] = `
             >
               <input
                 class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="input"
                 type="text"
                 value="input"
               />
@@ -451,6 +452,7 @@ exports[`FormItem Component snapshots renders inputAddon FormItem correctly 1`] 
                   </span>
                   <input
                     class="mia-platform-input mia-platform-input-outlined"
+                    id="inputAddon"
                     type="text"
                     value="text"
                   />
@@ -939,6 +941,7 @@ exports[`FormItem Component snapshots renders search FormItem correctly 1`] = `
                     >
                       <input
                         class="mia-platform-input"
+                        id="rc_select_TEST_OR_SSR"
                         type="search"
                         value="value 1"
                       />
