@@ -39,6 +39,11 @@ export type SearchSelectHandler<ValueType> = (
 export type SearchProps<ValueType> = BaseInputProps & {
 
   /**
+   * The id of the input.
+   */
+  id?: string
+
+  /**
    * The input content value.
    */
   value?: ValueType

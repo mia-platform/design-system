@@ -181,7 +181,7 @@ describe('FormItem Component', () => {
         children: <Input />,
       })
 
-      const input = screen.getByRole<HTMLInputElement>('textbox')
+      const input = screen.getByRole<HTMLInputElement>('textbox', { name: 'input' })
       expect(input.value).toEqual(initalValues.input)
       fireEvent.change(input, { target: { value: exampleText } })
       expect(input.value).toEqual(exampleText)
@@ -194,7 +194,7 @@ describe('FormItem Component', () => {
         children: <TextArea />,
       })
 
-      const input = screen.getByRole<HTMLInputElement>('textbox')
+      const input = screen.getByRole<HTMLInputElement>('textbox', { name: 'textarea' })
       expect(input.value).toEqual(initalValues.textarea)
       fireEvent.change(input, { target: { value: exampleText } })
       expect(input.value).toEqual(exampleText)
@@ -207,7 +207,7 @@ describe('FormItem Component', () => {
         children: <InputNumber />,
       })
 
-      const input = screen.getByRole<HTMLInputElement>('spinbutton')
+      const input = screen.getByRole<HTMLInputElement>('spinbutton', { name: 'number' })
       expect(input.value).toEqual(String(initalValues.number))
       fireEvent.change(input, { target: { value: 123456 } })
       expect(input.value).toEqual(String(123456))
@@ -219,7 +219,7 @@ describe('FormItem Component', () => {
         name: 'search',
         children: <Search options={options} />,
       })
-      const input = screen.getByRole<HTMLInputElement>('searchbox')
+      const input = screen.getByRole<HTMLInputElement>('searchbox', { name: 'search' })
 
       expect(input.value).toEqual(options[0].value)
 
@@ -238,7 +238,7 @@ describe('FormItem Component', () => {
         name: 'select',
         children: <Select options={options} />,
       })
-      const input = screen.getByRole<HTMLInputElement>('combobox')
+      const input = screen.getByRole<HTMLInputElement>('combobox', { name: 'select' })
 
       await userEvent.click(input)
 
@@ -253,7 +253,7 @@ describe('FormItem Component', () => {
         name: 'checkbox',
         children: <Checkbox />,
       })
-      const input = screen.getByRole('checkbox')
+      const input = screen.getByRole('checkbox', { name: 'checkbox' })
       expect(input).toBeChecked()
       await userEvent.click(input)
       expect(input).not.toBeChecked()
@@ -265,7 +265,7 @@ describe('FormItem Component', () => {
         name: 'switch',
         children: <Switch />,
       })
-      const input = screen.getByRole('switch')
+      const input = screen.getByRole('switch', { name: 'switch' })
       expect(input).toBeChecked()
       await userEvent.click(input)
       expect(input).not.toBeChecked()

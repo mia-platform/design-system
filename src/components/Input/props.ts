@@ -28,6 +28,9 @@ type InputChangeEventHandler =
 
 export type InputProps = BaseInputProps & {
 
+  /**
+   * The id of the input.
+   */
   id?: string
 
   /**

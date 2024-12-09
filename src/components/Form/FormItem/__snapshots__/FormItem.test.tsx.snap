@@ -42,6 +42,7 @@ exports[`FormItem Component snapshots renders checkbox FormItem correctly 1`] = 
                   <input
                     checked=""
                     class="mia-platform-checkbox-input"
+                    id="checkbox"
                     type="checkbox"
                   />
                   <span
@@ -599,6 +600,7 @@ exports[`FormItem Component snapshots renders inputNumber FormItem correctly 1`]
                     aria-valuenow="1"
                     autocomplete="off"
                     class="mia-platform-input-number-input"
+                    id="number"
                     role="spinbutton"
                     step="1"
                     value="1"
@@ -941,7 +943,7 @@ exports[`FormItem Component snapshots renders search FormItem correctly 1`] = `
                     >
                       <input
                         class="mia-platform-input"
-                        id="rc_select_TEST_OR_SSR"
+                        id="search"
                         type="search"
                         value="value 1"
                       />
@@ -1053,13 +1055,13 @@ exports[`FormItem Component snapshots renders select FormItem correctly 1`] = `
                   >
                     <input
                       aria-autocomplete="list"
-                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-controls="select_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      aria-owns="select_list"
                       autocomplete="off"
                       class="mia-platform-select-selection-search-input"
-                      id="rc_select_TEST_OR_SSR"
+                      id="select"
                       readonly=""
                       role="combobox"
                       style="opacity: 0;"
@@ -1181,6 +1183,7 @@ exports[`FormItem Component snapshots renders switch FormItem correctly 1`] = `
                   <button
                     aria-checked="true"
                     class="mia-platform-switch mia-platform-switch-checked"
+                    id="switch"
                     role="switch"
                     type="button"
                   >
@@ -1275,6 +1278,7 @@ exports[`FormItem Component snapshots renders textarea FormItem correctly 1`] = 
             >
               <textarea
                 class="mia-platform-input mia-platform-input-outlined input fullWidth"
+                id="textarea"
               >
                 textarea
               </textarea>
