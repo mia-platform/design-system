@@ -1,4 +1,3 @@
-/* eslint-disable react/no-multi-comp */
 /**
  * Copyright 2023 Mia srl
  *
