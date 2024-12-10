@@ -36,6 +36,7 @@ export const defaults = {
  */
 export const InputNumber = (
   {
+    id,
     appearance = defaults.type,
     value,
     defaultValue,
@@ -57,6 +58,7 @@ export const InputNumber = (
       className={styles.inputNumber}
       component={AntInputNumber}
       defaultValue={defaultValue}
+      id={id}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}

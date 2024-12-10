@@ -58,6 +58,7 @@ const tagRender = ({ value, onClose, closable }: {
 
 export const Select = <ValueType, >(
   {
+    id,
     appearance = defaults.type,
     value,
     defaultValue,
@@ -95,6 +96,7 @@ export const Select = <ValueType, >(
       className={className}
       component={AntSelect}
       defaultValue={defaultValue}
+      id={id}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}

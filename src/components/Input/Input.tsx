@@ -73,6 +73,7 @@ const useInputValue = (
  */
 export const Input = (
   {
+    id,
     appearance = defaults.type,
     type = defaults.htmlType,
     value,
@@ -106,6 +107,7 @@ export const Input = (
     if (onChange) {
       onChange(event, addonBeforeProp || addonAfterProp ? nextVal : nextValue)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addonAfterProp, addonBeforeProp, onChange, valuePropName])
 
   const renderAddon = useCallback((
@@ -166,6 +168,7 @@ export const Input = (
       className={styles.input}
       component={AntInput}
       defaultValue={inputDefaultValue}
+      id={id}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}

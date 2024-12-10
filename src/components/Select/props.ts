@@ -39,6 +39,11 @@ export type SelectSelectHandler<ValueType> = (
 export type SelectProps<ValueType = unknown> = BaseInputProps & {
 
   /**
+   * The id of the input.
+   */
+  id?: string
+
+  /**
    * The input content value.
    */
   value?: ValueType

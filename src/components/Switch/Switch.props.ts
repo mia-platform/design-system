@@ -24,6 +24,11 @@ import { Size } from './Switch.types'
 export type SwitchProps = {
 
     /**
+    * The id of the input.
+    */
+    id?: string
+
+    /**
      * Additional description of the switch, to be rendered below the switch `text`.
      * Is ignored if the `text` prop is not provided.
      */

@@ -46,6 +46,7 @@ const antSizeRemapping = {
 }
 
 export const Switch = ({
+  id,
   description,
   isChecked,
   isInitiallyChecked = defaults.isInitiallyChecked,
@@ -70,6 +71,7 @@ export const Switch = ({
           checked={isChecked}
           defaultChecked={isInitiallyChecked}
           disabled={isDisabled}
+          id={id}
           loading={isLoading}
           size={switchSize}
           onChange={onChange}

@@ -31,6 +31,7 @@ export const defaults = {
 }
 
 export const Checkbox = <T = never, >({
+  id,
   label,
   description,
   isInitiallyChecked = defaults.isInitiallyChecked,
@@ -53,6 +54,7 @@ export const Checkbox = <T = never, >({
       className={className}
       defaultChecked={isInitiallyChecked}
       disabled={isDisabled}
+      id={id}
       indeterminate={isIndeterminate}
       onChange={onChange}
       onClick={onClick}

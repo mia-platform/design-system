@@ -47,6 +47,7 @@ const InnerInput = forwardref(
 
 export const Search = <ValueType, >(
   {
+    id,
     appearance = defaults.type,
     value,
     defaultValue,
@@ -70,6 +71,7 @@ export const Search = <ValueType, >(
       className={styles.search}
       component={AntAutoComplete}
       defaultValue={defaultValue}
+      id={id}
       inputRef={inputRef}
       isDisabled={isDisabled}
       isError={isError}
