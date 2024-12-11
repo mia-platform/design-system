@@ -96,7 +96,12 @@ const getTextColor = (type: Type, palette: Palette): string => {
  * @link https://ant.design/components/message
  * @returns {ReactElement} Feedback component
  */
-export const Feedback = ({ icon: customIcon, title, type }: FeedbackProps): ReactElement => {
+export const Feedback = ({
+  icon: customIcon,
+  description,
+  title,
+  type,
+}: FeedbackProps): ReactElement => {
   const { palette } = useTheme()
 
   const icon: ReactNode = useMemo(() => {
@@ -117,9 +122,8 @@ export const Feedback = ({ icon: customIcon, title, type }: FeedbackProps): Reac
     <div className={styles.feedback}>
       {icon}
       <div className={styles.titleWrapper}>
-        <Typography.H2 color={getTextColor(type, palette)}>
-          {title}
-        </Typography.H2>
+        <Typography.H2 color={getTextColor(type, palette)}>{title}</Typography.H2>
+        {description && <Typography.BodyS>{description}</Typography.BodyS>}
       </div>
     </div>
   )

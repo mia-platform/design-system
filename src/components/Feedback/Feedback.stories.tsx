@@ -29,6 +29,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
+    description: 'Things have been successfully done.',
     title: 'Success',
     type: Feedback.Type.Success,
   },

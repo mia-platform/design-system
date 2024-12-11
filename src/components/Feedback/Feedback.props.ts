@@ -21,6 +21,7 @@ import { Type } from './Feedback.types'
 
 export type FeedbackProps = {
   icon?: IconComponent
+  description?: string
   title: string
   type: Type
 }
