@@ -1,7 +1,7 @@
 {
   "name": "@mia-platform-internal/console-design-system-react",
   "packageManager": "yarn@4.2.2",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "type": "module",
   "main": "dist/cjs/console-design-system-react.cjs",
   "module": "dist/es/console-design-system-react.js",
@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
-    "@playwright/test": "^1.49.0",
+    "@playwright/test": "^1.49.1",
     "@storybook/addon-a11y": "^7.6.17",
     "@storybook/addon-designs": "^7.0.9",
     "@storybook/addon-essentials": "^7.6.17",
@@ -71,7 +71,7 @@
     "@storybook/manager-api": "^7.6.17",
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
-    "@storybook/test-runner": "^0.16.0",
+    "@storybook/test-runner": "^0.20.1",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.6.17",
     "@testing-library/dom": "^10.4.0",

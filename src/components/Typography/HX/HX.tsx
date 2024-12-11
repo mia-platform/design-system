@@ -45,6 +45,7 @@ export const HX = ({
   ellipsis = defaults.ellipsis,
   level,
   role,
+  color,
 }: HXProps & HXLevel): ReactElement => {
   const classNames = useMemo(() => classnames([
     level === 1 && h1,
@@ -57,6 +58,7 @@ export const HX = ({
     <AntTitle
       aria-label={typeof children === 'string' ? children : ''}
       className={classNames}
+      style={color ? {color} : undefined}
       copyable={copyable}
       ellipsis={ellipsis}
       level={level}

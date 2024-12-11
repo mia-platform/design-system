@@ -147,3 +147,17 @@ export const CopyableCustom = {
     </div>
   ),
 }
+export const WithCustomColor = {
+  args: { ...meta.args, color: 'purple' },
+  argTypes: {
+    children: { table: { disable: true } },
+  },
+  render: (args: object) => (
+    <div style={displayAll}>
+      <Typography.H1 {...args}>{'H1'}</Typography.H1>
+      <Typography.H2 {...args}>{'H2'}</Typography.H2>
+      <Typography.H3 {...args}>{'H3'}</Typography.H3>
+      <Typography.H4 {...args}>{'H4'}</Typography.H4>
+    </div>
+  ),
+}

@@ -63,6 +63,15 @@ describe('HX Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('renders custom color correctly', () => {
+    const { asFragment } = render(<H1 color="purple">{'Text'}</H1>)
+
+    const heading = screen.getByRole('h1', { name: 'Text' })
+    expect(heading).toBeVisible()
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('renders copyable correctly', () => {
     const { asFragment } = render(<H1 copyable>{loremIpsum}</H1>)
 
