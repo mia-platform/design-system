@@ -16,20 +16,92 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement } from 'react'
+import {
+  PiCheckCircleFill,
+  PiPlaceholderDuotone,
+  PiSelection,
+  PiTrashDuotone,
+  PiWarningDiamondFill,
+  PiXSquareFill,
+} from 'react-icons/pi'
+import { ReactElement, ReactNode, useMemo } from 'react'
+import { LoadingOutlined } from '@ant-design/icons'
+import { Spin } from 'antd'
 
 import { FeedbackProps } from './Feedback.props'
+import { Icon } from '../Icon'
+import { IconComponent } from '../Icon/Icon.props'
+import Palette from '../../themes/schema/palette'
 import { Type } from './Feedback.types'
 import styles from './Feedback.module.css'
+import { useTheme } from '../../hooks/useTheme'
+
+const getColor = (type: Type, palette: Palette): string => {
+  switch (type) {
+  case Type.Delete:
+    return palette.error[500]
+  case Type.EmptyState:
+    return palette.secondary[500]
+  case Type.Error:
+    return palette.error[500]
+  case Type.Generic:
+    return '#000000'
+  case Type.Special:
+    return '#986DF1'
+  case Type.Success:
+    return palette.success[500]
+  case Type.Warning:
+    return palette.warning[400]
+  default:
+    return '#000000'
+  }
+}
+
+const getIcon = (type: Type): IconComponent => {
+  switch (type) {
+  case Type.Delete:
+    return PiTrashDuotone
+  case Type.EmptyState:
+    return PiSelection
+  case Type.Error:
+    return PiXSquareFill
+  case Type.Generic:
+    return PiPlaceholderDuotone
+  case Type.Special:
+    return PiPlaceholderDuotone
+  case Type.Success:
+    return PiCheckCircleFill
+  case Type.Warning:
+    return PiWarningDiamondFill
+  default:
+    return PiPlaceholderDuotone
+  }
+}
 
 /**
  * @link https://ant.design/components/message
  * @returns {ReactElement} Feedback component
  */
-export const Feedback = ({ type }: FeedbackProps): ReactElement => {
+export const Feedback = ({ icon: customIcon, type }: FeedbackProps): ReactElement => {
+  const { palette } = useTheme()
+
+  const icon: ReactNode = useMemo(() => {
+    if (type === Type.Loading) {
+      return <Spin indicator={<LoadingOutlined />} size="large" />
+    }
+
+    return (
+      <Icon
+        color={getColor(type, palette)}
+        component={customIcon ?? getIcon(type)}
+        size={64}
+      />
+    )
+  }, [customIcon, palette, type])
+
   return (
     <div className={styles.feedback}>
-      {type}
+      {icon}
     </div>
   )
 }

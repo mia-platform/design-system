@@ -16,8 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { IconComponent } from '../Icon/Icon.props'
 import { Type } from './Feedback.types'
 
 export type FeedbackProps = {
+  icon?: IconComponent
   type: Type
 }
