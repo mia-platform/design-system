@@ -71,7 +71,7 @@
     "@storybook/manager-api": "^7.6.17",
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
-    "@storybook/test-runner": "^0.16.0",
+    "@storybook/test-runner": "^0.20.1",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.6.17",
     "@testing-library/dom": "^10.4.0",
