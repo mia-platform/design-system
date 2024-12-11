@@ -62,4 +62,9 @@ export type HXProps = {
    *   The attribute is further customizable. <br>`ReactNode`
    */
   ellipsis?: boolean | EllipsisConfig,
+
+  /**
+   * The color of the text.
+   */
+  color?: string
 }

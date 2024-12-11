@@ -63,9 +63,18 @@
     background-color: var(--palette-action-alternate-primary-selected, #1890FF29);
     color: var(--palette-text-primary-bold, #004AAA) !important;
 
+    & .header {
+      color: var(--palette-text-primary-bold, #004AAA) !important;
+    }
+
     &:hover {
       background-color: var(--palette-action-alternate-primary-selected, #1890FF29);
       color: var(--palette-text-primary-subtle, #1890FF) !important;
+
+      & .header {
+        color: var(--palette-text-primary-subtle, #1890FF) !important;
+      }
+
       & :global(.mia-platform-checkbox) :global(.mia-platform-checkbox-inner) {
         border-color: var(--palette-action-primary-hover, #1890FF) !important;
         background-color: var(--palette-action-primary-hover, #1890FF) !important;
