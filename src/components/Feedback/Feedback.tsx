@@ -45,7 +45,7 @@ const getColor = (type: Type, palette: Palette): string => {
   case Type.Error:
     return palette.error[500]
   case Type.Generic:
-    return '#000000'
+    return palette.common.black
   case Type.Special:
     return '#986DF1'
   case Type.Success:
@@ -53,7 +53,7 @@ const getColor = (type: Type, palette: Palette): string => {
   case Type.Warning:
     return palette.warning[400]
   default:
-    return '#000000'
+    return palette.common.black
   }
 }
 
@@ -78,11 +78,24 @@ const getIcon = (type: Type): IconComponent => {
   }
 }
 
+const getTextColor = (type: Type, palette: Palette): string => {
+  switch (type) {
+  case Type.Error:
+    return palette.error[600]
+  case Type.Special:
+    return '#7133CD'
+  case Type.Success:
+    return palette.success[600]
+  default:
+    return palette.text.neutral.main
+  }
+}
+
 /**
  * @link https://ant.design/components/message
  * @returns {ReactElement} Feedback component
  */
-export const Feedback = ({ icon: customIcon, type }: FeedbackProps): ReactElement => {
+export const Feedback = ({ icon: customIcon, title, type }: FeedbackProps): ReactElement => {
   const { palette } = useTheme()
 
   const icon: ReactNode = useMemo(() => {
@@ -102,6 +115,11 @@ export const Feedback = ({ icon: customIcon, type }: FeedbackProps): ReactElemen
   return (
     <div className={styles.feedback}>
       {icon}
+      <div className={styles.titleWrapper}>
+        <div className={styles.title} style={{ color: getTextColor(type, palette) }}>
+          {title}
+        </div>
+      </div>
     </div>
   )
 }
