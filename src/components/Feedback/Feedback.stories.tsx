@@ -19,6 +19,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { PiAddressBook } from 'react-icons/pi'
 
+import { Alert } from '../Alert'
 import { Feedback } from './Feedback'
 
 const meta = {
@@ -30,6 +31,11 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
+    alert: {
+      title: 'Alert title',
+      description: 'This is an alert description',
+      type: Alert.Type.Info,
+    },
     badge: {
       icon: PiAddressBook,
       title: 'Badge title',

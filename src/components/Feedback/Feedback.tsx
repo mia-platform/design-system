@@ -28,6 +28,7 @@ import { ReactElement, ReactNode, useMemo } from 'react'
 import { LoadingOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
 
+import { Alert } from '../Alert'
 import { FeedbackProps } from './Feedback.props'
 import { Icon } from '../Icon'
 import { IconComponent } from '../Icon/Icon.props'
@@ -97,6 +98,7 @@ const getTextColor = (type: Type, palette: Palette): string => {
  * @returns {ReactElement} Feedback component
  */
 export const Feedback = ({
+  alert: customAlert,
   badge: customBadge,
   icon: customIcon,
   description,
@@ -136,11 +138,22 @@ export const Feedback = ({
     )
   }, [customBadge, palette.text.neutral.subtle])
 
+  const alert = useMemo(() => {
+    if (!customAlert) { return }
+
+    return (
+      <div className={styles.alert}>
+        <Alert isCompressed {...customAlert} />
+      </div>
+    )
+  }, [customAlert])
+
   return (
     <div className={styles.feedback}>
       {icon}
       {title}
       {badge}
+      {alert}
     </div>
   )
 }

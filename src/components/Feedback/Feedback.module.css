@@ -48,4 +48,8 @@
       gap: var(--spacing-gap-xs);
     }
   }
+
+  & .alert {
+    width: 100%;
+  }
  }

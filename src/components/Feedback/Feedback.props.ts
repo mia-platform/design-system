@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { AlertProps } from '../Alert/props'
 import { IconComponent } from '../Icon/Icon.props'
 import { Type } from './Feedback.types'
 
@@ -26,6 +27,7 @@ type FeedbackBadgeProps = {
 }
 
 export type FeedbackProps = {
+  alert?: Pick<AlertProps, 'description' | 'icon' | 'title' | 'type'>
   badge?: FeedbackBadgeProps
   icon?: IconComponent
   description?: string
