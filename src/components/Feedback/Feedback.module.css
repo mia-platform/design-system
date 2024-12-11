@@ -31,15 +31,21 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing-gap-sm);
+  }
 
-    & .title {
-      text-align: center;
-      font-feature-settings: 'liga' off, 'clig' off;
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 32px;
+  & .badge {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    padding: var(--spacing-padding-lg, 16px);
+    gap: var(--spacing-gap-lg, 16px);
+    border-radius: var(--shape-border-radius-lg, 8px);
+    background: var(--Grey-200, #F2F2F2);
+
+    & .badgeTitleWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-gap-xs);
     }
   }
  }

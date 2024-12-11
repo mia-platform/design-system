@@ -19,7 +19,14 @@
 import { IconComponent } from '../Icon/Icon.props'
 import { Type } from './Feedback.types'
 
+type FeedbackBadgeProps = {
+  title: string
+  icon: IconComponent
+  subtitle?: string
+}
+
 export type FeedbackProps = {
+  badge?: FeedbackBadgeProps
   icon?: IconComponent
   description?: string
   title: string

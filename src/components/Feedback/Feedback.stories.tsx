@@ -17,6 +17,7 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { PiAddressBook } from 'react-icons/pi'
 
 import { Feedback } from './Feedback'
 
@@ -29,8 +30,13 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    description: 'Things have been successfully done.',
-    title: 'Success',
+    badge: {
+      icon: PiAddressBook,
+      title: 'Badge title',
+      subtitle: 'This is a badge subtitle',
+    },
+    description: 'This is a description',
+    title: 'Title',
     type: Feedback.Type.Success,
   },
   decorators: [

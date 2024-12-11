@@ -97,9 +97,10 @@ const getTextColor = (type: Type, palette: Palette): string => {
  * @returns {ReactElement} Feedback component
  */
 export const Feedback = ({
+  badge: customBadge,
   icon: customIcon,
   description,
-  title,
+  title: customTitle,
   type,
 }: FeedbackProps): ReactElement => {
   const { palette } = useTheme()
@@ -110,21 +111,36 @@ export const Feedback = ({
     }
 
     return (
-      <Icon
-        color={getColor(type, palette)}
-        component={customIcon ?? getIcon(type)}
-        size={64}
-      />
+      <Icon color={getColor(type, palette)} component={customIcon ?? getIcon(type)} size={64} />
     )
   }, [customIcon, palette, type])
+
+  const title = useMemo(() => (
+    <div className={styles.titleWrapper}>
+      <Typography.H2 color={getTextColor(type, palette)}>{customTitle}</Typography.H2>
+      {description && <Typography.BodyS>{description}</Typography.BodyS>}
+    </div>
+  ), [description, palette, customTitle, type])
+
+  const badge = useMemo(() => {
+    if (!customBadge) { return }
+
+    return (
+      <div className={styles.badge}>
+        <Icon color={palette.text.neutral.subtle} component={customBadge.icon} size={48} />
+        <div className={styles.badgeTitleWrapper}>
+          <Typography.H3>{customBadge.title}</Typography.H3>
+          {customBadge.subtitle && <Typography.BodyS>{customBadge.subtitle}</Typography.BodyS>}
+        </div>
+      </div>
+    )
+  }, [customBadge, palette.text.neutral.subtle])
 
   return (
     <div className={styles.feedback}>
       {icon}
-      <div className={styles.titleWrapper}>
-        <Typography.H2 color={getTextColor(type, palette)}>{title}</Typography.H2>
-        {description && <Typography.BodyS>{description}</Typography.BodyS>}
-      </div>
+      {title}
+      {badge}
     </div>
   )
 }
