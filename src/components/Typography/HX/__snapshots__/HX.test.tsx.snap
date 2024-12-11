@@ -103,6 +103,19 @@ Ut in feugiat nunc, in eleifend ex.
 </DocumentFragment>
 `;
 
+exports[`HX Component renders custom color correctly 1`] = `
+<DocumentFragment>
+  <h1
+    aria-label="Text"
+    class="mia-platform-typography h1"
+    role="h1"
+    style="color: purple;"
+  >
+    Text
+  </h1>
+</DocumentFragment>
+`;
+
 exports[`HX Component renders custom copyable correctly 1`] = `
 <DocumentFragment>
   <h1
