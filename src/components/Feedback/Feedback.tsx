@@ -33,6 +33,7 @@ import { Icon } from '../Icon'
 import { IconComponent } from '../Icon/Icon.props'
 import Palette from '../../themes/schema/palette'
 import { Type } from './Feedback.types'
+import { Typography } from '../Typography'
 import styles from './Feedback.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
@@ -116,9 +117,9 @@ export const Feedback = ({ icon: customIcon, title, type }: FeedbackProps): Reac
     <div className={styles.feedback}>
       {icon}
       <div className={styles.titleWrapper}>
-        <div className={styles.title} style={{ color: getTextColor(type, palette) }}>
+        <Typography.H2 color={getTextColor(type, palette)}>
           {title}
-        </div>
+        </Typography.H2>
       </div>
     </div>
   )
