@@ -143,7 +143,9 @@ export const Feedback = ({
 
     return (
       <div className={styles.badge}>
-        <Icon color={palette.text.neutral.subtle} component={customBadge.icon} size={48} />
+        <div className={styles.badgeIcon}>
+          <Icon color={palette.text.neutral.subtle} component={customBadge.icon} size={48} />
+        </div>
         <div className={styles.badgeTitleWrapper}>
           <div className={styles.badgeTitle}>
             <Typography.H3 ellipsis={{ rows: 1, tooltip: customBadge.title }}>

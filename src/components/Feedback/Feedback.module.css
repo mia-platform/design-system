@@ -54,18 +54,22 @@
     background: var(--Grey-200, #F2F2F2);
     border-radius: var(--shape-border-radius-lg, 8px);
 
+    & .badgeIcon {
+      flex-shrink: 0;
+    }
+
     & .badgeTitleWrapper {
       display: flex;
       flex-direction: column;
       gap: var(--spacing-gap-xs, 4px);
-      max-width: 94%;
+      max-width: calc(100% - 48px - var(--spacing-gap-lg, 16px));
 
       & .badgeTitle {
-        max-width: inherit;
+        max-width: 100%;
       }
 
       & .badgeSubtitle {
-        max-width: inherit;
+        max-width: 100%;
       }
     }
   }
