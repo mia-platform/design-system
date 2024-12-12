@@ -162,6 +162,31 @@ async function buildMiaIcons(): Promise<void> {
   await Promise.all(promises)
 }
 
+async function buildIconDictionary(): Promise<void> {
+  const files = await glob(path.resolve(outDir, '*/*.mjs'))
+
+  const parsePath = (fullPath: string): {name: string, pkg: string} => {
+    const tokens = fullPath.split('/')
+    const file = tokens[tokens.length - 1]
+    const pkg = tokens[tokens.length - 2]
+    return { name: file.replace('.mjs', ''), pkg }
+  }
+
+  const dictionary = files.reduce((acc, filePath) => {
+    const { name, pkg } = parsePath(filePath)
+    if (pkg === 'lib') {
+      return acc
+    }
+
+    return {
+      ...acc,
+      [pkg]: (acc[pkg] || []).concat(name),
+    }
+  }, {} as Record<string, string[]>)
+
+  await fs.writeFile(`${outDir}/icons-dictionary.json`, JSON.stringify(dictionary))
+}
+
 async function main(): Promise<void> {
   console.info(`» Start icons building process`)
 
@@ -173,6 +198,9 @@ async function main(): Promise<void> {
 
   await buildMiaIcons()
   console.debug('» Mia-Platform icons built')
+
+  await buildIconDictionary()
+  console.debug('» Icon dictionary built')
 }
 
 main()
