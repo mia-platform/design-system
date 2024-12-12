@@ -102,7 +102,7 @@ const getTextColor = (type: Type, palette: Palette): string => {
 }
 
 /**
- * @link https://ant.design/components/message
+ * UI component for displaying messages to the user.
  * @returns {ReactElement} Feedback component
  */
 export const Feedback = ({
