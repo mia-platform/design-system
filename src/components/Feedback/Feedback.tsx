@@ -120,8 +120,21 @@ export const Feedback = ({
 
   const title = useMemo(() => (
     <div className={styles.titleWrapper}>
-      <Typography.H2 color={getTextColor(type, palette)}>{customTitle}</Typography.H2>
-      {description && <Typography.BodyS>{description}</Typography.BodyS>}
+      <div className={styles.title}>
+        <Typography.H2
+          color={getTextColor(type, palette)}
+          ellipsis={{ rows: 1, tooltip: customTitle }}
+        >
+          {customTitle}
+        </Typography.H2>
+      </div>
+      {description && (
+        <div className={styles.subtitle}>
+          <Typography.BodyS ellipsis={{ rows: 2, tooltip: description }}>
+            {description}
+          </Typography.BodyS>
+        </div>
+      )}
     </div>
   ), [description, palette, customTitle, type])
 
@@ -132,8 +145,18 @@ export const Feedback = ({
       <div className={styles.badge}>
         <Icon color={palette.text.neutral.subtle} component={customBadge.icon} size={48} />
         <div className={styles.badgeTitleWrapper}>
-          <Typography.H3>{customBadge.title}</Typography.H3>
-          {customBadge.subtitle && <Typography.BodyS>{customBadge.subtitle}</Typography.BodyS>}
+          <div className={styles.badgeTitle}>
+            <Typography.H3 ellipsis={{ rows: 1, tooltip: customBadge.title }}>
+              {customBadge.title}
+            </Typography.H3>
+          </div>
+          {customBadge.subtitle && (
+            <div className={styles.badgeSubtitle}>
+              <Typography.BodyS ellipsis={{ rows: 1, tooltip: customBadge.subtitle }}>
+                {customBadge.subtitle}
+              </Typography.BodyS>
+            </div>
+          )}
         </div>
       </div>
     )
