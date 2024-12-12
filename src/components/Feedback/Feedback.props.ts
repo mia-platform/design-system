@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactNode } from 'react'
+
 import { AlertProps } from '../Alert/props'
 import { IconComponent } from '../Icon/Icon.props'
 import { Type } from './Feedback.types'
@@ -30,6 +32,7 @@ export type FeedbackProps = {
   alert?: Pick<AlertProps, 'description' | 'icon' | 'title' | 'type'>
   badge?: FeedbackBadgeProps
   icon?: IconComponent
+  children?: ReactNode
   description?: string
   title: string
   type: Type

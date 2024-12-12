@@ -20,7 +20,9 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { PiAddressBook } from 'react-icons/pi'
 
 import { Alert } from '../Alert'
+import { Button } from '../Button'
 import { Feedback } from './Feedback'
+import { Input } from '../Input'
 
 const meta = {
   component: Feedback,
@@ -41,6 +43,17 @@ export const Default: Story = {
       title: 'Badge title',
       subtitle: 'This is a badge subtitle',
     },
+    children: (
+      <>
+        <Input placeholder="This is an input" />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button>Action</Button>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button type={Button.Type.Link}>Secondary action</Button>
+        </div>
+      </>
+    ),
     description: 'This is a description',
     title: 'Title',
     type: Feedback.Type.Success,

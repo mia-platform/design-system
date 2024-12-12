@@ -52,4 +52,11 @@
   & .alert {
     width: 100%;
   }
+
+  & .children {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-gap-xl);
+    width: 100%;
+  }
  }

@@ -101,6 +101,7 @@ export const Feedback = ({
   alert: customAlert,
   badge: customBadge,
   icon: customIcon,
+  children: customChildren,
   description,
   title: customTitle,
   type,
@@ -148,12 +149,23 @@ export const Feedback = ({
     )
   }, [customAlert])
 
+  const children = useMemo(() => {
+    if (!customChildren) { return }
+
+    return (
+      <div className={styles.children}>
+        {customChildren}
+      </div>
+    )
+  }, [customChildren])
+
   return (
     <div className={styles.feedback}>
       {icon}
       {title}
       {badge}
       {alert}
+      {children}
     </div>
   )
 }
