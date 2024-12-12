@@ -184,7 +184,7 @@ async function buildIconDictionary(): Promise<void> {
     }
   }, {} as Record<string, string[]>)
 
-  await fs.writeFile(`${outDir}/icons-dictionary.json`, JSON.stringify(dictionary))
+  await fs.writeFile(`${outDir}/dictionary.json`, JSON.stringify(dictionary))
 }
 
 async function main(): Promise<void> {
