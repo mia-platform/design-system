@@ -23,17 +23,18 @@ import { IconComponent } from '../Icon/Icon.props'
 import { Type } from './Feedback.types'
 
 type FeedbackBadgeProps = {
-  title: string
+  extra?: ReactNode
   icon: IconComponent
   subtitle?: string
+  title: string
 }
 
 export type FeedbackProps = {
   alert?: Pick<AlertProps, 'description' | 'icon' | 'title' | 'type'>
   badge?: FeedbackBadgeProps
-  icon?: IconComponent
   children?: ReactNode
   description?: string
+  icon?: IconComponent
   title: string
   type: Type
 }

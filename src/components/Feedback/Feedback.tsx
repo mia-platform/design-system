@@ -151,6 +151,7 @@ export const Feedback = ({
             <Typography.H3 ellipsis={{ rows: 1, tooltip: customBadge.title }}>
               {customBadge.title}
             </Typography.H3>
+            {customBadge.extra}
           </div>
           {customBadge.subtitle && (
             <div className={styles.badgeSubtitle}>

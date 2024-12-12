@@ -65,6 +65,9 @@
       max-width: calc(100% - 48px - var(--spacing-gap-lg, 16px));
 
       & .badgeTitle {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-gap-xs, 4px);
         max-width: 100%;
       }
 

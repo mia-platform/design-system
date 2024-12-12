@@ -23,6 +23,7 @@ import { Alert } from '../Alert'
 import { Button } from '../Button'
 import { Feedback } from './Feedback'
 import { Input } from '../Input'
+import { Tag } from '../Tag'
 
 const meta = {
   component: Feedback,
@@ -39,6 +40,7 @@ export const Default: Story = {
       type: Alert.Type.Info,
     },
     badge: {
+      extra: <Tag>Tag</Tag>,
       icon: PiAddressBook,
       title: 'Badge title',
       subtitle: 'This is a badge subtitle',
