@@ -23,18 +23,71 @@ import { IconComponent } from '../Icon/Icon.props'
 import { Type } from './Feedback.types'
 
 type FeedbackBadgeProps = {
-  extra?: ReactNode
-  icon: IconComponent
-  subtitle?: string
-  title: string
-}
+
+  /**
+   * Additional content to be displayed alongside the badge title (e.g., a tag or an icon).
+   */
+  extra?: ReactNode;
+
+  /**
+   * The icon component to render within the badge.
+   */
+  icon: IconComponent;
+
+  /**
+   * Optional subtitle text to display below the badge title.
+   */
+  subtitle?: string;
+
+  /**
+   * The main title text to display within the badge.
+   */
+  title: string;
+};
 
 export type FeedbackProps = {
-  alert?: Pick<AlertProps, 'description' | 'icon' | 'title' | 'type'>
-  badge?: FeedbackBadgeProps
-  children?: ReactNode
-  description?: string
-  icon?: IconComponent
-  title: string
-  type: Type
-}
+
+  /**
+   * Props to configure an optional alert element displayed within the feedback.
+   * Includes optional title, description, icon, and type.
+   */
+  alert?: Pick<AlertProps, 'description' | 'icon' | 'title' | 'type'>;
+
+  /**
+   * Props to customize the appearance and content of an optional badge displayed within the feedback.
+   *
+   * `object`:
+   *  - extra: Additional content to be displayed alongside the badge title (e.g., a tag or an icon). <br> `ReactNode`
+   *  - icon: The icon component to render within the badge. <br> `IconComponent`
+   *  - subtitle: Optional subtitle text to display below the badge title. <br> `string`
+   *  - title: The main title text to display within the badge. <br> `string`
+   */
+  badge?: FeedbackBadgeProps;
+
+  /**
+   * Child elements to render within the feedback component.
+   * This can be any ReactNode, such as a confirm input or some action buttons.
+   */
+  children?: ReactNode;
+
+  /**
+   * A brief description to display in the feedback component.
+   */
+  description?: string;
+
+  /**
+   * A custom icon component to display on top of the feedback.
+   * If not specified, the icon will be defaulted depending on the feedback type.
+   */
+  icon?: IconComponent;
+
+  /**
+   * The main title of the feedback message.
+   */
+  title: string;
+
+  /**
+   * The type of feedback to display, typically used to indicate the purpose or style (e.g., success, error).
+   */
+  type: Type;
+};
