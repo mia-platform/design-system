@@ -50,6 +50,11 @@
     justify-content: center;
     width: 64px;
     height: 64px;
+
+    & .loading {
+      animation-duration: 2.5s;
+      font-size: 48px;
+    }
   }
 
   & .badge {

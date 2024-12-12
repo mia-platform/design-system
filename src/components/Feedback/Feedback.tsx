@@ -120,7 +120,7 @@ export const Feedback = ({
     if (type === Type.Loading) {
       return (
         <div className={styles.spinner}>
-          <Spin indicator={<LoadingOutlined style={{ animationDuration: '2.5s', fontSize: '48px' }} />} size="large" />
+          <Spin indicator={<LoadingOutlined className={styles.loading} />} size="large" />
         </div>
       )
     }
