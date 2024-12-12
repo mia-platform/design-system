@@ -44,6 +44,14 @@
     }
   }
 
+  & .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+  }
+
   & .badge {
     display: flex;
     gap: var(--spacing-gap-lg, 16px);

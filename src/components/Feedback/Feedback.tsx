@@ -118,7 +118,11 @@ export const Feedback = ({
 
   const icon: ReactNode = useMemo(() => {
     if (type === Type.Loading) {
-      return <Spin indicator={<LoadingOutlined />} size="large" />
+      return (
+        <div className={styles.spinner}>
+          <Spin indicator={<LoadingOutlined style={{ animationDuration: '2.5s', fontSize: '48px' }} />} size="large" />
+        </div>
+      )
     }
 
     return (
