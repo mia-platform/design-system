@@ -17,13 +17,15 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
-import { PiAddressBook } from 'react-icons/pi'
+import { PiAddressBook, PiCar } from 'react-icons/pi'
+import { action } from '@storybook/addon-actions'
 
-import { Alert } from '../Alert'
+import { Alert as AlertComponent } from '../Alert'
 import { Button } from '../Button'
 import { Feedback } from './Feedback'
 import { Input } from '../Input'
 import { Tag } from '../Tag'
+import { loremIpsum } from '../Typography/Typography.mocks'
 
 const meta = {
   component: Feedback,
@@ -32,33 +34,122 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+const defaults = {
+  title: 'Title',
+  type: Feedback.Type.Success,
+}
+
 export const Default: Story = {
   args: {
-    alert: {
-      title: 'Alert title',
-      description: 'This is an alert description',
-      type: Alert.Type.Info,
+    ...defaults,
+  },
+  decorators: [
+    (_, { args }) => {
+      return (
+        <Feedback {...args} />
+      )
     },
+  ],
+}
+
+export const CustomIcon: Story = {
+  args: {
+    ...defaults,
+    icon: PiCar,
+    type: Feedback.Type.Special,
+  },
+  decorators: [
+    (_, { args }) => {
+      return (
+        <Feedback {...args} />
+      )
+    },
+  ],
+}
+
+export const Loading: Story = {
+  args: {
+    ...defaults,
+    type: Feedback.Type.Loading,
+  },
+  decorators: [
+    (_, { args }) => {
+      return (
+        <Feedback {...args} />
+      )
+    },
+  ],
+}
+
+export const Description: Story = {
+  args: {
+    ...defaults,
+    description: loremIpsum,
+    type: Feedback.Type.Error,
+  },
+  decorators: [
+    (_, { args }) => {
+      return (
+        <Feedback {...args} />
+      )
+    },
+  ],
+}
+
+export const Badge: Story = {
+  args: {
+    ...defaults,
     badge: {
       extra: <Tag>Tag</Tag>,
       icon: PiAddressBook,
       title: 'Badge title',
-      subtitle: 'This is a badge subtitle',
+      subtitle: loremIpsum,
     },
+    type: Feedback.Type.Delete,
+  },
+  decorators: [
+    (_, { args }) => {
+      return (
+        <Feedback {...args} />
+      )
+    },
+  ],
+}
+
+export const Alert: Story = {
+  args: {
+    ...defaults,
+    alert: {
+      title: 'Alert title',
+      description: 'This is an alert description',
+      type: AlertComponent.Type.Warning,
+    },
+    type: Feedback.Type.EmptyState,
+  },
+  decorators: [
+    (_, { args }) => {
+      return (
+        <Feedback {...args} />
+      )
+    },
+  ],
+}
+
+export const Children: Story = {
+  args: {
+    ...defaults,
     children: (
       <>
         <Input placeholder="This is an input" />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Button>Action</Button>
+          <Button onClick={action('click')}>Action</Button>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Button type={Button.Type.Link}>Secondary action</Button>
+          <Button type={Button.Type.Link} onClick={action('click')}>Secondary action</Button>
         </div>
       </>
     ),
-    description: 'This is a description',
-    title: 'Title',
-    type: Feedback.Type.Success,
+    type: Feedback.Type.Generic,
   },
   decorators: [
     (_, { args }) => {
