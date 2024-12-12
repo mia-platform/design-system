@@ -25,8 +25,8 @@ import {
   PiXSquareFill,
 } from 'react-icons/pi'
 import { ReactElement, ReactNode, useMemo } from 'react'
+import { Spin, TooltipProps } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
-import { Spin } from 'antd'
 
 import { Alert } from '../Alert'
 import { FeedbackProps } from './Feedback.props'
@@ -37,6 +37,14 @@ import { Type } from './Feedback.types'
 import { Typography } from '../Typography'
 import styles from './Feedback.module.css'
 import { useTheme } from '../../hooks/useTheme'
+
+const tooltipProps: TooltipProps = {
+  getPopupContainer: (triggerNode) => triggerNode.parentElement!,
+  getTooltipContainer: (triggerNode) => triggerNode.parentElement!,
+  destroyTooltipOnHide: true,
+  overlayClassName: styles.tooltip,
+  placement: 'bottom',
+}
 
 const getColor = (type: Type, palette: Palette): string => {
   switch (type) {
@@ -123,14 +131,14 @@ export const Feedback = ({
       <div className={styles.title}>
         <Typography.H2
           color={getTextColor(type, palette)}
-          ellipsis={{ rows: 1, tooltip: customTitle }}
+          ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customTitle } }}
         >
           {customTitle}
         </Typography.H2>
       </div>
       {description && (
-        <div className={styles.subtitle}>
-          <Typography.BodyS ellipsis={{ rows: 2, tooltip: description }}>
+        <div className={styles.description}>
+          <Typography.BodyS ellipsis={{ rows: 2, tooltip: { ...tooltipProps, title: description } }}>
             {description}
           </Typography.BodyS>
         </div>
@@ -148,14 +156,14 @@ export const Feedback = ({
         </div>
         <div className={styles.badgeTitleWrapper}>
           <div className={styles.badgeTitle}>
-            <Typography.H3 ellipsis={{ rows: 1, tooltip: customBadge.title }}>
+            <Typography.H3 ellipsis={{ rows: 2, tooltip: { ...tooltipProps, title: customBadge.title } }}>
               {customBadge.title}
             </Typography.H3>
             {customBadge.extra}
           </div>
           {customBadge.subtitle && (
             <div className={styles.badgeSubtitle}>
-              <Typography.BodyS ellipsis={{ rows: 1, tooltip: customBadge.subtitle }}>
+              <Typography.BodyS ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customBadge.subtitle } }}>
                 {customBadge.subtitle}
               </Typography.BodyS>
             </div>
