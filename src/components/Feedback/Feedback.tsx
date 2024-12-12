@@ -201,11 +201,13 @@ export const Feedback = ({
 
   return (
     <div className={styles.feedback}>
-      {icon}
-      {title}
-      {badge}
-      {alert}
-      {children}
+      <div className={styles.content}>
+        {icon}
+        {title}
+        {badge}
+        {alert}
+        {children}
+      </div>
     </div>
   )
 }
