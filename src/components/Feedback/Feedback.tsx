@@ -126,7 +126,9 @@ export const Feedback = ({
     }
 
     return (
-      <Icon color={getColor(type, palette)} component={customIcon ?? getIcon(type)} size={64} />
+      <div data-testid="custom-icon">
+        <Icon color={getColor(type, palette)} component={customIcon ?? getIcon(type)} size={64} />
+      </div>
     )
   }, [customIcon, palette, type])
 
@@ -155,7 +157,7 @@ export const Feedback = ({
 
     return (
       <div className={styles.badge}>
-        <div className={styles.badgeIcon}>
+        <div className={styles.badgeIcon} data-testid="badge-icon">
           <Icon color={palette.text.neutral.subtle} component={customBadge.icon} size={48} />
         </div>
         <div className={styles.badgeTitleWrapper}>
