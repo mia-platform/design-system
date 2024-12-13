@@ -134,7 +134,7 @@ export const Feedback = ({
     }
 
     return (
-      <div data-testid="custom-icon">
+      <div className={styles.icon} data-testid="custom-icon">
         <Icon color={getColor(type, palette)} component={customIcon || getIcon(type)} size={64} />
       </div>
     )

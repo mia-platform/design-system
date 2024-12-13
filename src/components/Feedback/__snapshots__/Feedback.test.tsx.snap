@@ -9,6 +9,7 @@ exports[`Feedback Component renders a feedback with a badge 1`] = `
       class="content"
     >
       <div
+        class="icon"
         data-testid="custom-icon"
       >
         <svg
@@ -117,6 +118,7 @@ exports[`Feedback Component renders a feedback with a custom icon 1`] = `
       class="content"
     >
       <div
+        class="icon"
         data-testid="custom-icon"
       >
         <svg
@@ -164,6 +166,7 @@ exports[`Feedback Component renders a feedback with a description 1`] = `
       class="content"
     >
       <div
+        class="icon"
         data-testid="custom-icon"
       >
         <svg
@@ -281,6 +284,7 @@ exports[`Feedback Component renders a feedback with an alert 1`] = `
       class="content"
     >
       <div
+        class="icon"
         data-testid="custom-icon"
       >
         <svg
@@ -384,6 +388,7 @@ exports[`Feedback Component renders a feedback with children 1`] = `
       class="content"
     >
       <div
+        class="icon"
         data-testid="custom-icon"
       >
         <svg
@@ -473,6 +478,7 @@ exports[`Feedback Component renders a feedback with icon and title 1`] = `
       class="content"
     >
       <div
+        class="icon"
         data-testid="custom-icon"
       >
         <svg

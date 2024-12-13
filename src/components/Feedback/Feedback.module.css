@@ -51,6 +51,11 @@
       }
     }
 
+    & .icon {
+      width: 64px;
+      height: 64px;
+    }
+
     & .spinner {
       display: flex;
       align-items: center;
