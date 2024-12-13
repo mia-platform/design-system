@@ -127,7 +127,7 @@ export const Feedback = ({
 
     return (
       <div data-testid="custom-icon">
-        <Icon color={getColor(type, palette)} component={customIcon ?? getIcon(type)} size={64} />
+        <Icon color={getColor(type, palette)} component={customIcon || getIcon(type)} size={64} />
       </div>
     )
   }, [customIcon, palette, type])
@@ -184,7 +184,7 @@ export const Feedback = ({
 
     return (
       <div className={styles.alert}>
-        <Alert isCompressed {...customAlert} />
+        <Alert {...customAlert} isCompressed />
       </div>
     )
   }, [customAlert])
