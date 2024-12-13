@@ -30,7 +30,17 @@ import path from 'path'
 import url from 'url'
 
 const REACT_ICONS_VERSION = '5.3.0'
-const REACT_ICONS_PACKAGES = ['lib', 'ai', 'fi', 'pi']
+
+const MIA_IP_PREFIX = 'mi'
+const FEATHER_IP_PREFIX = 'fi'
+const PHOSPSHOR_IP_PREFIX = 'pi'
+
+const REACT_ICONS_PACKAGES = ['lib', MIA_IP_PREFIX, FEATHER_IP_PREFIX, PHOSPSHOR_IP_PREFIX]
+const ICON_PACK_LABELS: Record<string, string> = {
+  [MIA_IP_PREFIX]: 'Mia-Platform Icons',
+  [FEATHER_IP_PREFIX]: 'Feather Icons',
+  [PHOSPSHOR_IP_PREFIX]: 'Phosphor Icons',
+}
 
 const dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const rootDir = path.resolve(dirname, '..')
@@ -162,6 +172,11 @@ async function buildMiaIcons(): Promise<void> {
   await Promise.all(promises)
 }
 
+type DictionaryPack ={
+  label: string,
+  list: string[],
+}
+
 async function buildIconDictionary(): Promise<void> {
   const files = await glob(path.resolve(outDir, '*/*.mjs'))
 
@@ -178,11 +193,22 @@ async function buildIconDictionary(): Promise<void> {
       return acc
     }
 
+    let pack = acc[pkg]
+    if (!pack) {
+      pack = {
+        label: ICON_PACK_LABELS[pkg],
+        list: [],
+      }
+    }
+
     return {
       ...acc,
-      [pkg]: (acc[pkg] || []).concat(name),
+      [pkg]: {
+        ...pack,
+        list: pack.list.concat(name),
+      },
     }
-  }, {} as Record<string, string[]>)
+  }, {} as Record<string, DictionaryPack>)
 
   await fs.writeFile(`${outDir}/dictionary.json`, JSON.stringify(dictionary))
 }
