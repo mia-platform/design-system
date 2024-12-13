@@ -120,13 +120,12 @@ exports[`Feedback Component renders a feedback with a custom icon 1`] = `
         data-testid="custom-icon"
       >
         <svg
-          color="#986DF1"
+          color="986DF1"
           fill="currentColor"
           height="64"
           role="img"
           stroke="currentColor"
           stroke-width="0"
-          style="color: rgb(152, 109, 241);"
           viewBox="0 0 256 256"
           width="64"
           xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +145,6 @@ exports[`Feedback Component renders a feedback with a custom icon 1`] = `
             aria-label="Title"
             class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
             role="h2"
-            style="color: rgb(113, 51, 205);"
           >
             Title
           </h2>
