@@ -38,6 +38,14 @@ import { Typography } from '../Typography'
 import styles from './Feedback.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
+// TODO: replace this with DS colors from useTheme hook when possible
+const colors = {
+  purple: {
+    500: '986DF1',
+    600: '7133CD',
+  },
+}
+
 const tooltipProps: TooltipProps = {
   getPopupContainer: (triggerNode) => triggerNode.parentElement!,
   getTooltipContainer: (triggerNode) => triggerNode.parentElement!,
@@ -57,7 +65,7 @@ const getColor = (type: Type, palette: Palette): string => {
   case Type.Generic:
     return palette.common.black
   case Type.Special:
-    return '#986DF1'
+    return colors.purple[500]
   case Type.Success:
     return palette.success[500]
   case Type.Warning:
@@ -93,7 +101,7 @@ const getTextColor = (type: Type, palette: Palette): string => {
   case Type.Error:
     return palette.error[600]
   case Type.Special:
-    return '#7133CD'
+    return colors.purple[600]
   case Type.Success:
     return palette.success[600]
   default:
