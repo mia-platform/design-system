@@ -1,0 +1,514 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feedback Component renders a feedback with a badge 1`] = `
+<DocumentFragment>
+  <div
+    class="feedback"
+  >
+    <div
+      class="content"
+    >
+      <div
+        data-testid="custom-icon"
+      >
+        <svg
+          color="#ff5453"
+          fill="currentColor"
+          height="64"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(255, 84, 83);"
+          viewBox="0 0 256 256"
+          width="64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M200,56V208a8,8,0,0,1-8,8H64a8,8,0,0,1-8-8V56Z"
+            opacity="0.2"
+          />
+          <path
+            d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="titleWrapper"
+      >
+        <div
+          class="title"
+        >
+          <h2
+            aria-label="Title"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+            style="color: rgb(99, 99, 99);"
+          >
+            Title
+          </h2>
+        </div>
+      </div>
+      <div
+        class="badge"
+      >
+        <div
+          class="badgeIcon"
+          data-testid="badge-icon"
+        >
+          <svg
+            color="#898989"
+            fill="currentColor"
+            height="48"
+            role="img"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(137, 137, 137);"
+            viewBox="0 0 256 256"
+            width="48"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M83.19,174.4a8,8,0,0,0,11.21-1.6,52,52,0,0,1,83.2,0,8,8,0,1,0,12.8-9.6A67.88,67.88,0,0,0,163,141.51a40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,81.6,163.2,8,8,0,0,0,83.19,174.4ZM112,112a24,24,0,1,1,24,24A24,24,0,0,1,112,112Zm96-88H64A16,16,0,0,0,48,40V64H32a8,8,0,0,0,0,16H48v40H32a8,8,0,0,0,0,16H48v40H32a8,8,0,0,0,0,16H48v24a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V40A16,16,0,0,0,208,24Zm0,192H64V40H208Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="badgeTitleWrapper"
+        >
+          <div
+            class="badgeTitle"
+          >
+            <h3
+              aria-label="Badge title"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-multiple-line h3"
+              role="h3"
+            >
+              Badge title
+            </h3>
+            <span
+              class="mia-platform-tag tag"
+            >
+              Tag
+            </span>
+          </div>
+          <div
+            class="badgeSubtitle"
+          >
+            <div
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
+              role="paragraph"
+            >
+              Badge subtitle
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Feedback Component renders a feedback with a custom icon 1`] = `
+<DocumentFragment>
+  <div
+    class="feedback"
+  >
+    <div
+      class="content"
+    >
+      <div
+        data-testid="custom-icon"
+      >
+        <svg
+          color="986DF1"
+          fill="currentColor"
+          height="64"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 256 256"
+          width="64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V184h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM69.2,48H186.8l24.89,56H44.31ZM64,200H40V184H64Zm128,0V184h24v16Zm24-32H40V120H216ZM56,144a8,8,0,0,1,8-8H80a8,8,0,0,1,0,16H64A8,8,0,0,1,56,144Zm112,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,144Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="titleWrapper"
+      >
+        <div
+          class="title"
+        >
+          <h2
+            aria-label="Title"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+          >
+            Title
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Feedback Component renders a feedback with a description 1`] = `
+<DocumentFragment>
+  <div
+    class="feedback"
+  >
+    <div
+      class="content"
+    >
+      <div
+        data-testid="custom-icon"
+      >
+        <svg
+          color="#ff5453"
+          fill="currentColor"
+          height="64"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(255, 84, 83);"
+          viewBox="0 0 256 256"
+          width="64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM165.66,154.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="titleWrapper"
+      >
+        <div
+          class="title"
+        >
+          <h2
+            aria-label="Title"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+            style="color: rgb(229, 0, 32);"
+          >
+            Title
+          </h2>
+        </div>
+        <div
+          class="description"
+        >
+          <div
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-multiple-line bodyS"
+            role="paragraph"
+          >
+            Description
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Feedback Component renders a feedback with a loading icon 1`] = `
+<DocumentFragment>
+  <div
+    class="feedback"
+  >
+    <div
+      class="content"
+    >
+      <div
+        class="spinner"
+      >
+        <div
+          aria-busy="true"
+          aria-live="polite"
+          class="mia-platform-spin mia-platform-spin-lg mia-platform-spin-spinning"
+        >
+          <span
+            aria-label="loading"
+            class="anticon anticon-loading anticon-spin loading mia-platform-spin-dot"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="loading"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 1024 1024"
+              width="1em"
+            >
+              <path
+                d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="titleWrapper"
+      >
+        <div
+          class="title"
+        >
+          <h2
+            aria-label="Title"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+            style="color: rgb(99, 99, 99);"
+          >
+            Title
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Feedback Component renders a feedback with an alert 1`] = `
+<DocumentFragment>
+  <div
+    class="feedback"
+  >
+    <div
+      class="content"
+    >
+      <div
+        data-testid="custom-icon"
+      >
+        <svg
+          color="#898989"
+          fill="currentColor"
+          height="64"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(137, 137, 137);"
+          viewBox="0 0 256 256"
+          width="64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M152,40a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,40Zm-8,168H112a8,8,0,0,0,0,16h32a8,8,0,0,0,0-16ZM208,32H184a8,8,0,0,0,0,16h24V72a8,8,0,0,0,16,0V48A16,16,0,0,0,208,32Zm8,72a8,8,0,0,0-8,8v32a8,8,0,0,0,16,0V112A8,8,0,0,0,216,104Zm0,72a8,8,0,0,0-8,8v24H184a8,8,0,0,0,0,16h24a16,16,0,0,0,16-16V184A8,8,0,0,0,216,176ZM40,152a8,8,0,0,0,8-8V112a8,8,0,0,0-16,0v32A8,8,0,0,0,40,152Zm32,56H48V184a8,8,0,0,0-16,0v24a16,16,0,0,0,16,16H72a8,8,0,0,0,0-16ZM72,32H48A16,16,0,0,0,32,48V72a8,8,0,0,0,16,0V48H72a8,8,0,0,0,0-16Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="titleWrapper"
+      >
+        <div
+          class="title"
+        >
+          <h2
+            aria-label="Title"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+            style="color: rgb(99, 99, 99);"
+          >
+            Title
+          </h2>
+        </div>
+      </div>
+      <div
+        class="alert"
+      >
+        <div
+          class="mia-platform-alert mia-platform-alert-warning mia-platform-alert-with-description mia-platform-alert-no-icon alert warning compressed"
+          data-show="true"
+          role="alert"
+        >
+          <div
+            class="mia-platform-alert-content"
+          >
+            <div
+              class="mia-platform-alert-message"
+            >
+              <div
+                class="titleContainer"
+              >
+                <svg
+                  color="currentColor"
+                  fill="currentColor"
+                  height="16"
+                  role="img"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  style="color: currentColor;"
+                  viewBox="0 0 256 256"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM120,80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm8,104a12,12,0,1,1,12-12A12,12,0,0,1,128,184Z"
+                  />
+                </svg>
+                <span
+                  class="title"
+                >
+                  Alert title
+                </span>
+              </div>
+            </div>
+            <div
+              class="mia-platform-alert-description"
+            >
+              <div>
+                <span
+                  class="description"
+                >
+                  Alert description
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Feedback Component renders a feedback with children 1`] = `
+<DocumentFragment>
+  <div
+    class="feedback"
+  >
+    <div
+      class="content"
+    >
+      <div
+        data-testid="custom-icon"
+      >
+        <svg
+          color="#000000"
+          fill="currentColor"
+          height="64"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(0, 0, 0);"
+          viewBox="0 0 256 256"
+          width="64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216,48V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z"
+            opacity="0.2"
+          />
+          <path
+            d="M224,48a16,16,0,0,0-16-16H48a15.91,15.91,0,0,0-10.66,4.1,9.08,9.08,0,0,0-1.24,1.24A15.91,15.91,0,0,0,32,48V208a16,16,0,0,0,16,16H208a15.91,15.91,0,0,0,10.66-4.1,7.35,7.35,0,0,0,.65-.59,6,6,0,0,0,.58-.65A15.87,15.87,0,0,0,224,208ZM208,196.7,59.31,48H208ZM48,59.31,196.69,208H48Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="titleWrapper"
+      >
+        <div
+          class="title"
+        >
+          <h2
+            aria-label="Title"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+            style="color: rgb(99, 99, 99);"
+          >
+            Title
+          </h2>
+        </div>
+      </div>
+      <div
+        class="children"
+      >
+        <input
+          class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+          placeholder="This is an input"
+          type="text"
+          value=""
+        />
+        <div
+          style="display: flex; justify-content: center;"
+        >
+          <button
+            class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+            type="button"
+          >
+            <div
+              class="buttonText"
+            >
+              Primary action
+            </div>
+          </button>
+        </div>
+        <div
+          style="display: flex; justify-content: center;"
+        >
+          <button
+            class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid mia-platform-btn-background-ghost button buttonGhost buttonLink"
+            type="button"
+          >
+            <div>
+              Secondary action
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Feedback Component renders a feedback with icon and title 1`] = `
+<DocumentFragment>
+  <div
+    class="feedback"
+  >
+    <div
+      class="content"
+    >
+      <div
+        data-testid="custom-icon"
+      >
+        <svg
+          color="#4cb61b"
+          fill="currentColor"
+          height="64"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(76, 182, 27);"
+          viewBox="0 0 256 256"
+          width="64"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="titleWrapper"
+      >
+        <div
+          class="title"
+        >
+          <h2
+            aria-label="Title"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+            style="color: rgb(37, 145, 0);"
+          >
+            Title
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
