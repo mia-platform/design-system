@@ -30,7 +30,17 @@ import path from 'path'
 import url from 'url'
 
 const REACT_ICONS_VERSION = '5.3.0'
-const REACT_ICONS_PACKAGES = ['lib', 'ai', 'fi', 'pi']
+
+const MIA_IP_PREFIX = 'mi'
+const FEATHER_IP_PREFIX = 'fi'
+const PHOSPSHOR_IP_PREFIX = 'pi'
+
+const REACT_ICONS_PACKAGES = ['lib', MIA_IP_PREFIX, FEATHER_IP_PREFIX, PHOSPSHOR_IP_PREFIX]
+const ICON_PACK_LABELS: Record<string, string> = {
+  [MIA_IP_PREFIX]: 'Mia-Platform Icons',
+  [FEATHER_IP_PREFIX]: 'Feather Icons',
+  [PHOSPSHOR_IP_PREFIX]: 'Phosphor Icons',
+}
 
 const dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const rootDir = path.resolve(dirname, '..')
@@ -162,6 +172,47 @@ async function buildMiaIcons(): Promise<void> {
   await Promise.all(promises)
 }
 
+type DictionaryPack ={
+  label: string,
+  list: string[],
+}
+
+async function buildIconDictionary(): Promise<void> {
+  const files = await glob(path.resolve(outDir, '*/*.mjs'))
+
+  const parsePath = (fullPath: string): {name: string, pkg: string} => {
+    const tokens = fullPath.split('/')
+    const file = tokens[tokens.length - 1]
+    const pkg = tokens[tokens.length - 2]
+    return { name: file.replace('.mjs', ''), pkg }
+  }
+
+  const dictionary = files.reduce((acc, filePath) => {
+    const { name, pkg } = parsePath(filePath)
+    if (pkg === 'lib') {
+      return acc
+    }
+
+    let pack = acc[pkg]
+    if (!pack) {
+      pack = {
+        label: ICON_PACK_LABELS[pkg],
+        list: [],
+      }
+    }
+
+    return {
+      ...acc,
+      [pkg]: {
+        ...pack,
+        list: pack.list.concat(name),
+      },
+    }
+  }, {} as Record<string, DictionaryPack>)
+
+  await fs.writeFile(`${outDir}/dictionary.json`, JSON.stringify(dictionary))
+}
+
 async function main(): Promise<void> {
   console.info(`» Start icons building process`)
 
@@ -173,6 +224,9 @@ async function main(): Promise<void> {
 
   await buildMiaIcons()
   console.debug('» Mia-Platform icons built')
+
+  await buildIconDictionary()
+  console.debug('» Icon dictionary built')
 }
 
 main()
