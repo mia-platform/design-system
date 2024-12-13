@@ -81,6 +81,7 @@ export const SplitButton = ({
       <Dropdown
         itemLayout={itemLayout}
         items={items}
+        persistSelection={false}
         placement={Dropdown.Placement.BottomRight}
         onClick={onItemClick}
         onOpenChange={onOpenChange}
