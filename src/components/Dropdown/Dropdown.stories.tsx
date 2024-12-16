@@ -22,7 +22,7 @@ import { action } from '@storybook/addon-actions'
 
 import { Button } from '../Button'
 import { Dropdown } from '.'
-import { DropdownProps } from './props'
+import { DropdownClickEvent, DropdownProps } from './props'
 import { Icon } from '../Icon'
 import { Placement } from './types'
 import { Tag } from '../Tag'
@@ -64,7 +64,7 @@ const defaults: Partial<DropdownProps> = {
     secondaryLabel: 'Some additional info 2',
     tag: <Tag>{'Tag'}</Tag>,
   }],
-  children: <Button >{'click me'}</Button>,
+  children: <Button>{'click me'}</Button>,
   onClick: action('on click'),
   onOpenChange: action('on open change'),
 }
@@ -193,4 +193,20 @@ export const SelectionIsNotPersisted: Story = {
   args: {
     persistSelection: false,
   },
+}
+
+export const DropdownOverClickableItem: Story = {
+  decorators: [(_, { args }) => {
+    return (
+      <div style={{ 'background': 'red', height: 500 }} onClick={action('div below clicked!!')}>
+        <Dropdown
+          {...args}
+          onClick={(event: DropdownClickEvent) => {
+            event.domEvent.stopPropagation()
+            action(`item clicked`)(event)
+          }}
+        />
+      </div>
+    )
+  }],
 }
