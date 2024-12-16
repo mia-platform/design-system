@@ -9,8 +9,8 @@
   border-radius: var(--shape-border-radius-lg, 8px);
 
   & .icon {
-    width: 48px;
-    height: 48px;
+    width: var(--shape-size-2xl, 48px);
+    height: var(--shape-size-2xl, 48px);
     flex-shrink: 0;
   }
 
@@ -24,7 +24,7 @@
     & .title {
       display: flex;
       align-items: center;
-      gap: var(--spacing-gap-xs, 4px);
+      gap: var(--spacing-gap-sm, 8px);
     }
   }
 
