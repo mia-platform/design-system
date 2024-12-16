@@ -53,7 +53,7 @@ exports[`Feedback Component renders a feedback with a badge 1`] = `
         class="badge"
       >
         <div
-          class="badgeIcon"
+          class="icon"
           data-testid="badge-icon"
         >
           <svg
@@ -74,34 +74,34 @@ exports[`Feedback Component renders a feedback with a badge 1`] = `
           </svg>
         </div>
         <div
-          class="badgeTitleWrapper"
+          class="content"
         >
           <div
-            class="badgeTitle"
+            class="title"
           >
             <h3
               aria-label="Badge title"
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-multiple-line h3"
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h3"
               role="h3"
             >
               Badge title
             </h3>
-            <span
-              class="mia-platform-tag tag"
-            >
-              Tag
-            </span>
           </div>
           <div
-            class="badgeSubtitle"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
+            role="paragraph"
           >
-            <div
-              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
-              role="paragraph"
-            >
-              Badge subtitle
-            </div>
+            Badge subtitle
           </div>
+        </div>
+        <div
+          class="extra"
+        >
+          <span
+            class="mia-platform-tag tag"
+          >
+            Tag
+          </span>
         </div>
       </div>
     </div>

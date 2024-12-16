@@ -19,31 +19,9 @@
 import { ReactNode } from 'react'
 
 import { AlertProps } from '../Alert/props'
+import { BadgeProps } from '../Badge/Badge.props'
 import { IconComponent } from '../Icon/Icon.props'
 import { Type } from './Feedback.types'
-
-type FeedbackBadgeProps = {
-
-  /**
-   * Additional content to be displayed alongside the badge title (e.g., a tag or an icon).
-   */
-  extra?: ReactNode;
-
-  /**
-   * The icon component to render within the badge.
-   */
-  icon: IconComponent;
-
-  /**
-   * Optional subtitle text to display below the badge title.
-   */
-  subtitle?: string;
-
-  /**
-   * The main title text to display within the badge.
-   */
-  title: string;
-};
 
 export type FeedbackProps = {
 
@@ -62,7 +40,7 @@ export type FeedbackProps = {
    *  - subtitle: Optional subtitle text to display below the badge title. <br> `string`
    *  - title: The main title text to display within the badge. <br> `string`
    */
-  badge?: FeedbackBadgeProps;
+  badge?: BadgeProps;
 
   /**
    * Child elements to render within the feedback component.

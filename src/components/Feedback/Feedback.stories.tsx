@@ -100,10 +100,10 @@ export const Badge: Story = {
   args: {
     ...defaults,
     badge: {
+      description: loremIpsum,
       extra: <Tag>Tag</Tag>,
       icon: PiAddressBook,
       title: 'Badge title',
-      subtitle: loremIpsum,
     },
     type: Feedback.Type.Delete,
   },

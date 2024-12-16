@@ -29,6 +29,7 @@ import { Spin, TooltipProps } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 
 import { Alert } from '../Alert'
+import { Badge } from '../Badge'
 import { FeedbackProps } from './Feedback.props'
 import { Icon } from '../Icon'
 import { IconComponent } from '../Icon/Icon.props'
@@ -164,28 +165,9 @@ export const Feedback = ({
     if (!customBadge) { return }
 
     return (
-      <div className={styles.badge}>
-        <div className={styles.badgeIcon} data-testid="badge-icon">
-          <Icon color={palette.text.neutral.subtle} component={customBadge.icon} size={48} />
-        </div>
-        <div className={styles.badgeTitleWrapper}>
-          <div className={styles.badgeTitle}>
-            <Typography.H3 ellipsis={{ rows: 2, tooltip: { ...tooltipProps, title: customBadge.title } }}>
-              {customBadge.title}
-            </Typography.H3>
-            {customBadge.extra}
-          </div>
-          {customBadge.subtitle && (
-            <div className={styles.badgeSubtitle}>
-              <Typography.BodyS ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customBadge.subtitle } }}>
-                {customBadge.subtitle}
-              </Typography.BodyS>
-            </div>
-          )}
-        </div>
-      </div>
+      <Badge {...customBadge} />
     )
-  }, [customBadge, palette.text.neutral.subtle])
+  }, [customBadge])
 
   const alert = useMemo(() => {
     if (!customAlert) { return }
