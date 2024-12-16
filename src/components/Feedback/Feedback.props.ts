@@ -33,12 +33,7 @@ export type FeedbackProps = {
 
   /**
    * Props to customize the appearance and content of an optional badge displayed within the feedback.
-   *
-   * `object`:
-   *  - extra: Additional content to be displayed alongside the badge title (e.g., a tag or an icon). <br> `ReactNode`
-   *  - icon: The icon component to render within the badge. <br> `IconComponent`
-   *  - subtitle: Optional subtitle text to display below the badge title. <br> `string`
-   *  - title: The main title text to display within the badge. <br> `string`
+   * Includes optional title, description, icon, and extra content.
    */
   badge?: BadgeProps;
 
