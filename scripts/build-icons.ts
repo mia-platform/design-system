@@ -231,6 +231,10 @@ async function main(): Promise<void> {
   console.debug('» Icon dictionary built')
 }
 
-main()
-  .then(() => console.log('✔️ Icons built correctly'))
-  .catch((error) => console.error('Error building icons', error))
+try {
+  await main()
+  console.log('✔️ Icons built correctly')
+} catch (error) {
+  console.error('Error building icons', error)
+  throw error
+}
