@@ -1,0 +1,48 @@
+.badge {
+  display: flex;
+  gap: var(--spacing-gap-lg, 16px);
+  align-items: center;
+  width: 100%;
+  max-width: inherit;
+  padding: var(--spacing-padding-lg, 16px);
+  background: var(--Grey-200, #F2F2F2);
+  border-radius: var(--shape-border-radius-lg, 8px);
+
+  & .icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+
+  & .titleWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-gap-xs, 4px);
+    max-width: calc(100% - 48px - var(--spacing-gap-lg, 16px));
+    flex-grow: 1;
+
+    & .title {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-gap-xs, 4px);
+      max-width: 100%;
+    }
+
+    & .subtitle {
+      max-width: 100%;
+    }
+  }
+
+  & .extra {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+}
+
+.tooltip {
+  min-height: 100px;
+  max-height: 300px;
+  overflow: auto;
+}
