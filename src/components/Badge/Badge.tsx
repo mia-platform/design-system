@@ -38,12 +38,10 @@ const tooltipProps: TooltipProps = {
  * @returns {ReactElement} Badge component
  */
 export const Badge = ({
-  customSubtitle,
-  customTitle,
   extra: customExtra,
   icon: customIcon,
-  subtitle: formattedSubtitle,
-  title: formattedTitle,
+  subtitle: customSubtitle,
+  title: customTitle,
   titleExtra,
 }: BadgeProps): ReactElement => {
   const { palette } = useTheme()
@@ -55,45 +53,27 @@ export const Badge = ({
   ), [customIcon, palette.text.neutral.subtle])
 
   const title = useMemo(() => {
-    if (!formattedTitle && !customTitle) { return }
-
-    if (customTitle) {
-      return (
-        <div className={styles.title}>
-          {customTitle}
-        </div>
-      )
-    }
+    if (!customTitle) { return }
 
     return (
       <div className={styles.title}>
-        <Typography.H3 ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: formattedTitle } }}>
-          {formattedTitle}
+        <Typography.H3 ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customTitle } }}>
+          {customTitle}
         </Typography.H3>
         {titleExtra}
       </div>
     )
-  }, [customTitle, titleExtra, formattedTitle])
+  }, [customTitle, titleExtra])
 
   const subtitle = useMemo(() => {
-    if (!formattedSubtitle && !customSubtitle) { return }
-
-    if (customSubtitle) {
-      return (
-        <div className={styles.subtitle}>
-          {customSubtitle}
-        </div>
-      )
-    }
+    if (!customSubtitle) { return }
 
     return (
-      <div className={styles.subtitle}>
-        <Typography.BodyS ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: formattedSubtitle } }}>
-          {formattedSubtitle}
-        </Typography.BodyS>
-      </div>
+      <Typography.BodyS ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customSubtitle } }}>
+        {customSubtitle}
+      </Typography.BodyS>
     )
-  }, [customSubtitle, formattedSubtitle])
+  }, [customSubtitle])
 
   const extra = useMemo(() => {
     if (!customExtra) { return }

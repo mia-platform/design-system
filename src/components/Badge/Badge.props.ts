@@ -23,18 +23,6 @@ import { IconComponent } from '../Icon/Icon.props'
 export type BadgeProps = {
 
   /**
-   * A customizable element to display in the subtitle position.
-   * If present, it overrides the `subtitle` content.
-   */
-  customSubtitle?: ReactNode
-
-  /**
-   * A customizable element to display in the title position.
-   * If present, it overrides the `title` and `titleExtra` content.
-   */
-  customTitle?: ReactNode
-
-  /**
    * Additional content to be displayed on the right side of the badge.
    */
   extra?: ReactNode;
@@ -45,14 +33,14 @@ export type BadgeProps = {
   icon: IconComponent;
 
   /**
-   * Optional subtitle, it displays formatted text below the badge title.
+   * Optional subtitle, it displays formatted text customized content below the badge title.
    */
-  subtitle?: string;
+  subtitle?: string | ReactNode;
 
   /**
-   * The main title, it displays formatted text within the badge.
+   * The main title text, it displays formatted text or customized content within the badge.
    */
-  title?: string;
+  title: string | ReactNode;
 
   /**
    * Additional content to be displayed alongside the badge title (e.g., a tag or an icon).

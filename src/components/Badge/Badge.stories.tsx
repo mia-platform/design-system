@@ -21,6 +21,7 @@ import { PiCircleHalfTilt } from 'react-icons/pi'
 
 import { Badge } from './Badge'
 import { Button } from '../Button'
+import { H1 } from '../Typography/HX/H1'
 import { Tag } from '../Tag'
 import { loremIpsum } from '../Typography/Typography.mocks'
 
@@ -50,7 +51,7 @@ export const Default: Story = {
   ],
 }
 
-export const FormattedTitleExtra: Story = {
+export const TitleExtra: Story = {
   args: {
     ...defaults,
     titleExtra: <Tag>Tag</Tag>,
@@ -67,8 +68,7 @@ export const FormattedTitleExtra: Story = {
 export const CustomTitle: Story = {
   args: {
     ...defaults,
-    customTitle: <span style={{ color: 'red', fontWeight: '600', textDecoration: 'underline' }}>Custom title</span>,
-    titleExtra: <Tag>Tag</Tag>,
+    title: <H1><span style={{ color: 'red', fontWeight: '600' }}>Custom title</span></H1>,
   },
   decorators: [
     (_, { args }) => {
@@ -82,7 +82,7 @@ export const CustomTitle: Story = {
 export const CustomSubtitle: Story = {
   args: {
     ...defaults,
-    customSubtitle: <span style={{ color: 'blue', textDecoration: 'underline' }}>Custom subtitle</span>,
+    subtitle: <span style={{ color: 'blue', textDecoration: 'underline' }}>Custom subtitle</span>,
   },
   decorators: [
     (_, { args }) => {
@@ -93,7 +93,7 @@ export const CustomSubtitle: Story = {
   ],
 }
 
-export const WithExtra: Story = {
+export const Extra: Story = {
   args: {
     ...defaults,
     extra: <Button>Button</Button>,
