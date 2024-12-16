@@ -21,7 +21,6 @@ import { PiCircleHalfTilt } from 'react-icons/pi'
 
 import { Badge } from './Badge'
 import { Button } from '../Button'
-import { H1 } from '../Typography/HX/H1'
 import { Tag } from '../Tag'
 import { loremIpsum } from '../Typography/Typography.mocks'
 
@@ -68,7 +67,7 @@ export const TitleExtra: Story = {
 export const CustomTitle: Story = {
   args: {
     ...defaults,
-    title: <H1><span style={{ color: 'red', fontWeight: '600' }}>Custom title</span></H1>,
+    title: <span style={{ color: 'red', fontWeight: '600' }}>Custom title</span>,
   },
   decorators: [
     (_, { args }) => {
