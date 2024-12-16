@@ -9,30 +9,30 @@
   border-radius: var(--shape-border-radius-lg, 8px);
 
   & .icon {
+    flex-shrink: 0;
     width: var(--shape-size-2xl, 48px);
     height: var(--shape-size-2xl, 48px);
-    flex-shrink: 0;
   }
 
   & .content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-xs, 4px);
     flex-shrink: 1;
+    gap: var(--spacing-gap-xs, 4px);
     overflow: hidden;
 
     & .title {
       display: flex;
-      align-items: center;
       gap: var(--spacing-gap-sm, 8px);
+      align-items: center;
     }
   }
 
   & .extra {
     display: flex;
+    flex-grow: 1;
     align-items: center;
     justify-content: flex-end;
-    flex-grow: 1;
   }
 }
 
