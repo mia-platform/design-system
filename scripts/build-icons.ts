@@ -34,9 +34,11 @@ const REACT_ICONS_VERSION = '5.3.0'
 const MIA_IP_PREFIX = 'mi'
 const FEATHER_IP_PREFIX = 'fi'
 const PHOSPSHOR_IP_PREFIX = 'pi'
+const ANTD_IP_PREFIX = 'ai'
 
-const REACT_ICONS_PACKAGES = ['lib', MIA_IP_PREFIX, FEATHER_IP_PREFIX, PHOSPSHOR_IP_PREFIX]
+const REACT_ICONS_PACKAGES = ['lib', MIA_IP_PREFIX, FEATHER_IP_PREFIX, PHOSPSHOR_IP_PREFIX, ANTD_IP_PREFIX]
 const ICON_PACK_LABELS: Record<string, string> = {
+  [ANTD_IP_PREFIX]: 'Antd Icons',
   [MIA_IP_PREFIX]: 'Mia-Platform Icons',
   [FEATHER_IP_PREFIX]: 'Feather Icons',
   [PHOSPSHOR_IP_PREFIX]: 'Phosphor Icons',
