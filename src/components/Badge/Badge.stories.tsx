@@ -34,7 +34,7 @@ type Story = StoryObj<typeof meta>
 
 const defaults = {
   icon: PiCircleHalfTilt,
-  subtitle: loremIpsum,
+  description: loremIpsum,
   title: 'Title',
 }
 
@@ -82,7 +82,7 @@ export const CustomTitle: Story = {
 export const CustomSubtitle: Story = {
   args: {
     ...defaults,
-    subtitle: <span style={{ color: 'blue', textDecoration: 'underline' }}>Custom subtitle</span>,
+    description: <span style={{ color: 'blue', textDecoration: 'underline' }}>Custom description</span>,
   },
   decorators: [
     (_, { args }) => {

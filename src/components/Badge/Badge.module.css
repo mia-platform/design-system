@@ -14,7 +14,7 @@
     flex-shrink: 0;
   }
 
-  & .titleWrapper {
+  & .content {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-gap-xs, 4px);

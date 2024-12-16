@@ -38,9 +38,9 @@ const tooltipProps: TooltipProps = {
  * @returns {ReactElement} Badge component
  */
 export const Badge = ({
+  description: customDescription,
   extra: customExtra,
   icon: customIcon,
-  subtitle: customSubtitle,
   title: customTitle,
   titleExtra,
 }: BadgeProps): ReactElement => {
@@ -65,15 +65,15 @@ export const Badge = ({
     )
   }, [customTitle, titleExtra])
 
-  const subtitle = useMemo(() => {
-    if (!customSubtitle) { return }
+  const description = useMemo(() => {
+    if (!customDescription) { return }
 
     return (
-      <Typography.BodyS ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customSubtitle } }}>
-        {customSubtitle}
+      <Typography.BodyS ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customDescription } }}>
+        {customDescription}
       </Typography.BodyS>
     )
-  }, [customSubtitle])
+  }, [customDescription])
 
   const extra = useMemo(() => {
     if (!customExtra) { return }
@@ -88,9 +88,9 @@ export const Badge = ({
   return (
     <div className={styles.badge}>
       {icon}
-      <div className={styles.titleWrapper}>
+      <div className={styles.content}>
         {title}
-        {subtitle}
+        {description}
       </div>
       {extra}
     </div>

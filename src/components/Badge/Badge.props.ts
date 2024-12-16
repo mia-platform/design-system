@@ -23,6 +23,11 @@ import { IconComponent } from '../Icon/Icon.props'
 export type BadgeProps = {
 
   /**
+   * Optional description, it displays formatted text customized content below the badge title.
+   */
+  description?: string | ReactNode;
+
+  /**
    * Additional content to be displayed on the right side of the badge.
    */
   extra?: ReactNode;
@@ -31,11 +36,6 @@ export type BadgeProps = {
    * The icon component to render within the badge.
    */
   icon: IconComponent;
-
-  /**
-   * Optional subtitle, it displays formatted text customized content below the badge title.
-   */
-  subtitle?: string | ReactNode;
 
   /**
    * The main title text, it displays formatted text or customized content within the badge.
