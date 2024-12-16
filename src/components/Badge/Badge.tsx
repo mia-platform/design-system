@@ -52,18 +52,14 @@ export const Badge = ({
     </div>
   ), [customIcon, palette.text.neutral.subtle])
 
-  const title = useMemo(() => {
-    if (!customTitle) { return }
-
-    return (
-      <div className={styles.title}>
-        <Typography.H3 ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customTitle } }}>
-          {customTitle}
-        </Typography.H3>
-        {titleExtra}
-      </div>
-    )
-  }, [customTitle, titleExtra])
+  const title = useMemo(() => (
+    <div className={styles.title}>
+      <Typography.H3 ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customTitle } }}>
+        {customTitle}
+      </Typography.H3>
+      {titleExtra}
+    </div>
+  ), [customTitle, titleExtra])
 
   const description = useMemo(() => {
     if (!customDescription) { return }
