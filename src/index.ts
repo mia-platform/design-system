@@ -18,6 +18,7 @@
 
 import * as testUtils from './test-utils'
 import { Alert } from './components/Alert'
+import { Badge } from './components/Badge'
 import { Breadcrumb } from './components/Breadcrumb'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
@@ -52,6 +53,7 @@ import themes from './themes'
 
 export {
   Alert,
+  Badge,
   Breadcrumb,
   Button,
   Card,
