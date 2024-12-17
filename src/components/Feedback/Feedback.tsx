@@ -24,7 +24,7 @@ import {
   PiWarningDiamondFill,
   PiXSquareFill,
 } from 'react-icons/pi'
-import { ReactElement, ReactNode, useMemo } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { Spin, TooltipProps } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 
@@ -125,23 +125,19 @@ export const Feedback = ({
 }: FeedbackProps): ReactElement => {
   const { palette } = useTheme()
 
-  const icon: ReactNode = useMemo(() => {
-    if (type === Type.Loading) {
-      return (
-        <div className={styles.spinner}>
-          <Spin indicator={<LoadingOutlined className={styles.loading} />} size="large" />
-        </div>
-      )
-    }
-
-    return (
+  const icon: ReactNode = (type === Type.Loading)
+    ? (
+      <div className={styles.spinner}>
+        <Spin indicator={<LoadingOutlined className={styles.loading} />} size="large" />
+      </div>
+    )
+    : (
       <div className={styles.icon} data-testid="custom-icon">
         <Icon color={getColor(type, palette)} component={customIcon || getIcon(type)} size={64} />
       </div>
     )
-  }, [customIcon, palette, type])
 
-  const title = useMemo(() => (
+  const title = (
     <div className={styles.titleWrapper}>
       <div className={styles.title}>
         <Typography.H2
@@ -159,35 +155,25 @@ export const Feedback = ({
         </div>
       )}
     </div>
-  ), [description, palette, customTitle, type])
+  )
 
-  const badge = useMemo(() => {
-    if (!customBadge) { return }
+  const badge = customBadge ? <Badge {...customBadge} /> : null
 
-    return (
-      <Badge {...customBadge} />
-    )
-  }, [customBadge])
-
-  const alert = useMemo(() => {
-    if (!customAlert) { return }
-
-    return (
+  const alert = customAlert
+    ? (
       <div className={styles.alert}>
         <Alert {...customAlert} isCompressed />
       </div>
     )
-  }, [customAlert])
+    : null
 
-  const children = useMemo(() => {
-    if (!customChildren) { return }
-
-    return (
+  const children = customChildren
+    ? (
       <div className={styles.children}>
         {customChildren}
       </div>
     )
-  }, [customChildren])
+    : null
 
   return (
     <div className={styles.feedback}>
