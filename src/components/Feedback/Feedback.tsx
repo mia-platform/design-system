@@ -24,11 +24,12 @@ import {
   PiWarningDiamondFill,
   PiXSquareFill,
 } from 'react-icons/pi'
-import { ReactElement, ReactNode, useMemo } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { Spin, TooltipProps } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 
 import { Alert } from '../Alert'
+import { Badge } from '../Badge'
 import { FeedbackProps } from './Feedback.props'
 import { Icon } from '../Icon'
 import { IconComponent } from '../Icon/Icon.props'
@@ -124,23 +125,19 @@ export const Feedback = ({
 }: FeedbackProps): ReactElement => {
   const { palette } = useTheme()
 
-  const icon: ReactNode = useMemo(() => {
-    if (type === Type.Loading) {
-      return (
-        <div className={styles.spinner}>
-          <Spin indicator={<LoadingOutlined className={styles.loading} />} size="large" />
-        </div>
-      )
-    }
-
-    return (
+  const icon: ReactNode = (type === Type.Loading)
+    ? (
+      <div className={styles.spinner}>
+        <Spin indicator={<LoadingOutlined className={styles.loading} />} size="large" />
+      </div>
+    )
+    : (
       <div className={styles.icon} data-testid="custom-icon">
         <Icon color={getColor(type, palette)} component={customIcon || getIcon(type)} size={64} />
       </div>
     )
-  }, [customIcon, palette, type])
 
-  const title = useMemo(() => (
+  const title = (
     <div className={styles.titleWrapper}>
       <div className={styles.title}>
         <Typography.H2
@@ -158,54 +155,25 @@ export const Feedback = ({
         </div>
       )}
     </div>
-  ), [description, palette, customTitle, type])
+  )
 
-  const badge = useMemo(() => {
-    if (!customBadge) { return }
+  const badge = customBadge ? <Badge {...customBadge} /> : null
 
-    return (
-      <div className={styles.badge}>
-        <div className={styles.badgeIcon} data-testid="badge-icon">
-          <Icon color={palette.text.neutral.subtle} component={customBadge.icon} size={48} />
-        </div>
-        <div className={styles.badgeTitleWrapper}>
-          <div className={styles.badgeTitle}>
-            <Typography.H3 ellipsis={{ rows: 2, tooltip: { ...tooltipProps, title: customBadge.title } }}>
-              {customBadge.title}
-            </Typography.H3>
-            {customBadge.extra}
-          </div>
-          {customBadge.subtitle && (
-            <div className={styles.badgeSubtitle}>
-              <Typography.BodyS ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customBadge.subtitle } }}>
-                {customBadge.subtitle}
-              </Typography.BodyS>
-            </div>
-          )}
-        </div>
-      </div>
-    )
-  }, [customBadge, palette.text.neutral.subtle])
-
-  const alert = useMemo(() => {
-    if (!customAlert) { return }
-
-    return (
+  const alert = customAlert
+    ? (
       <div className={styles.alert}>
         <Alert {...customAlert} isCompressed />
       </div>
     )
-  }, [customAlert])
+    : null
 
-  const children = useMemo(() => {
-    if (!customChildren) { return }
-
-    return (
+  const children = customChildren
+    ? (
       <div className={styles.children}>
         {customChildren}
       </div>
     )
-  }, [customChildren])
+    : null
 
   return (
     <div className={styles.feedback}>

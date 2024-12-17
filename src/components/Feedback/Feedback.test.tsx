@@ -63,9 +63,9 @@ describe('Feedback Component', () => {
     const { asFragment } = render(
       <Feedback
         badge={{
+          description: 'Badge subtitle',
           extra: <Tag>Tag</Tag>,
           icon: PiAddressBook,
-          subtitle: 'Badge subtitle',
           title: 'Badge title',
         }}
         title="Title"
