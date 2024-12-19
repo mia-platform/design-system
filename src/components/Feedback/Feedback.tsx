@@ -30,13 +30,13 @@ import { LoadingOutlined } from '@ant-design/icons'
 
 import { Alert } from '../Alert'
 import { Badge } from '../Badge'
-import { FeedbackProps } from './Feedback.props'
+import { FeedbackProps } from './props'
 import { Icon } from '../Icon'
 import { IconComponent } from '../Icon/Icon.props'
 import Palette from '../../themes/schema/palette'
-import { Type } from './Feedback.types'
+import { Type } from './types'
 import { Typography } from '../Typography'
-import styles from './Feedback.module.css'
+import styles from './feedback.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
 // TODO: replace this with DS colors from useTheme hook when possible

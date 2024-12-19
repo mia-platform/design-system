@@ -330,7 +330,6 @@ describe('FormItem Component', () => {
       })
 
       const button = screen.getByRole('button', { name: String(initalValues.custom) })
-      screen.logTestingPlaygroundURL()
       expect(within(button).getByText(initalValues.custom)).toBeInTheDocument()
       fireEvent.click(button)
       expect(within(button).getByText(initalValues.custom + 1)).toBeInTheDocument()
@@ -357,7 +356,6 @@ describe('FormItem Component', () => {
       })
 
       const button = screen.getByRole('button', { name: String(initalValues.custom) })
-      screen.logTestingPlaygroundURL()
       expect(within(button).getByText(initalValues.custom)).toBeInTheDocument()
       fireEvent.click(button)
       expect(within(button).getByText(initalValues.custom + 1)).toBeInTheDocument()
