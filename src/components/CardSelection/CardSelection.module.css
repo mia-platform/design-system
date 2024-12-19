@@ -122,6 +122,17 @@
   gap: var(--spacing-gap-sm, 8px);
 }
 
+.icon {
+  width: var(--shape-size-xl, 32px);
+  height: var(--shape-size-xl, 32px);
+}
+
+.horizontalIcon {
+  flex-shrink: 0;
+  width: var(--shape-size-lg, 24px);
+  height: var(--shape-size-lg, 24px);
+}
+
 .title {
   font-size: var(--typography-bodyMBold-fontSize, 16px);
   line-height: var(--typography-bodyMBold-lineHeight, 24px);
