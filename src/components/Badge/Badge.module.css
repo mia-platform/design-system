@@ -53,9 +53,3 @@
     justify-content: flex-end;
   }
 }
-
-.tooltip {
-  min-height: 100px;
-  max-height: 300px;
-  overflow: auto;
-}
