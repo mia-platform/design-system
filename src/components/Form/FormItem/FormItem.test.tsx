@@ -17,6 +17,7 @@
  */
 
 import { RenderResult, waitFor, within } from '@testing-library/react'
+import { PiCircleHalfTilt } from 'react-icons/pi'
 import { ReactElement } from 'react'
 import { fireEvent } from '@testing-library/dom'
 
@@ -29,7 +30,6 @@ import { Form } from '../Form.tsx'
 import { FormItem } from './FormItem.tsx'
 import { Input } from '../../Input'
 import { InputNumber } from '../../InputNumber'
-import { PiCircleHalfTilt } from '../../../../icons/pi/PiCircleHalfTilt'
 import { RadioGroup } from '../../RadioGroup'
 import { Search } from '../../Search'
 import { Select } from '../../Select'
