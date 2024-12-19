@@ -40,14 +40,21 @@
       gap: var(--spacing-gap-sm, 8px);
       align-items: center;
       justify-content: center;
-      max-width: inherit;
+      max-width: 100%;
 
       & .title {
-        max-width: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
       }
 
       & .description {
-        max-width: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        max-width: 100%;
       }
     }
 
