@@ -21,7 +21,7 @@ import { ReactNode } from 'react'
 import { AlertProps } from '../Alert/props'
 import { BadgeProps } from '../Badge/Badge.props'
 import { IconComponent } from '../Icon/Icon.props'
-import { Type } from './Feedback.types'
+import { Type } from './types'
 
 export type FeedbackProps = {
 
@@ -46,7 +46,7 @@ export type FeedbackProps = {
   /**
    * A brief description to display in the feedback component.
    */
-  description?: string;
+  description?: ReactNode;
 
   /**
    * A custom icon component to display on top of the feedback.
@@ -57,7 +57,7 @@ export type FeedbackProps = {
   /**
    * The main title of the feedback message.
    */
-  title: string;
+  title: ReactNode;
 
   /**
    * The type of feedback to display, typically used to indicate the purpose or style (e.g., success, error).
