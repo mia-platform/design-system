@@ -41,8 +41,6 @@ exports[`Generate Ant Theme generate ant theme from darkTheme 1`] = `
       "colorTextPlaceholder": "#acacac",
       "colorTextQuaternary": "#898989",
       "hoverBorderColor": "#1890ff",
-      "paddingBlock": 8,
-      "paddingInline": 8,
     },
     "InputNumber": {
       "activeBorderColor": "#1261e4",
@@ -214,8 +212,6 @@ exports[`Generate Ant Theme generate ant theme from empty theme 1`] = `
       "colorTextPlaceholder": undefined,
       "colorTextQuaternary": undefined,
       "hoverBorderColor": undefined,
-      "paddingBlock": NaN,
-      "paddingInline": NaN,
     },
     "InputNumber": {
       "activeBorderColor": undefined,
@@ -387,8 +383,6 @@ exports[`Generate Ant Theme generate ant theme from lightTheme 1`] = `
       "colorTextPlaceholder": "#acacac",
       "colorTextQuaternary": "#898989",
       "hoverBorderColor": "#1890ff",
-      "paddingBlock": 8,
-      "paddingInline": 8,
     },
     "InputNumber": {
       "activeBorderColor": "#1261e4",
