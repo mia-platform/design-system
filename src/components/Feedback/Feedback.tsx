@@ -25,8 +25,8 @@ import {
   PiXSquareFill,
 } from 'react-icons/pi'
 import { ReactElement, ReactNode } from 'react'
-import { Spin, TooltipProps } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
+import { Spin } from 'antd'
 
 import { Alert } from '../Alert'
 import { Badge } from '../Badge'
@@ -45,14 +45,6 @@ const colors = {
     500: '986DF1',
     600: '7133CD',
   },
-}
-
-const tooltipProps: TooltipProps = {
-  getPopupContainer: (triggerNode) => triggerNode.parentElement!,
-  getTooltipContainer: (triggerNode) => triggerNode.parentElement!,
-  destroyTooltipOnHide: true,
-  overlayClassName: styles.tooltip,
-  placement: 'bottom',
 }
 
 const getColor = (type: Type, palette: Palette): string => {
@@ -142,14 +134,14 @@ export const Feedback = ({
       <div className={styles.title}>
         <Typography.H2
           color={getTextColor(type, palette)}
-          ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customTitle } }}
+          ellipsis={{ rows: 1, tooltip: { title: customTitle } }}
         >
           {customTitle}
         </Typography.H2>
       </div>
       {description && (
         <div className={styles.description}>
-          <Typography.BodyS ellipsis={{ rows: 2, tooltip: { ...tooltipProps, title: description } }}>
+          <Typography.BodyS ellipsis={{ rows: 2, tooltip: { title: description } }}>
             {description}
           </Typography.BodyS>
         </div>
