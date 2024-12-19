@@ -19,9 +19,16 @@ exports[`Form Component renders correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="firstName"
-            title="firstName"
+            title=""
           >
-            firstName
+            <div
+              class="labelContainer"
+            >
+              firstName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -57,9 +64,16 @@ exports[`Form Component renders correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="lastName"
-            title="lastName"
+            title=""
           >
-            lastName
+            <div
+              class="labelContainer"
+            >
+              lastName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -136,9 +150,16 @@ exports[`Form Component renders custom columns count correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="firstName"
-            title="firstName"
+            title=""
           >
-            firstName
+            <div
+              class="labelContainer"
+            >
+              firstName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -174,9 +195,16 @@ exports[`Form Component renders custom columns count correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="lastName"
-            title="lastName"
+            title=""
           >
-            lastName
+            <div
+              class="labelContainer"
+            >
+              lastName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -253,9 +281,16 @@ exports[`Form Component renders custom gap correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="firstName"
-            title="firstName"
+            title=""
           >
-            firstName
+            <div
+              class="labelContainer"
+            >
+              firstName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -291,9 +326,16 @@ exports[`Form Component renders custom gap correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="lastName"
-            title="lastName"
+            title=""
           >
-            lastName
+            <div
+              class="labelContainer"
+            >
+              lastName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -370,9 +412,16 @@ exports[`Form Component renders horizontal correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="firstName"
-            title="firstName"
+            title=""
           >
-            firstName
+            <div
+              class="labelContainer"
+            >
+              firstName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -408,9 +457,16 @@ exports[`Form Component renders horizontal correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="lastName"
-            title="lastName"
+            title=""
           >
-            lastName
+            <div
+              class="labelContainer"
+            >
+              lastName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -487,9 +543,16 @@ exports[`Form Component renders initialValues correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="firstName"
-            title="firstName"
+            title=""
           >
-            firstName
+            <div
+              class="labelContainer"
+            >
+              firstName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -525,9 +588,16 @@ exports[`Form Component renders initialValues correctly 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="lastName"
-            title="lastName"
+            title=""
           >
-            lastName
+            <div
+              class="labelContainer"
+            >
+              lastName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -604,9 +674,16 @@ exports[`Form Component renders with custom submit button function 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="firstName"
-            title="firstName"
+            title=""
           >
-            firstName
+            <div
+              class="labelContainer"
+            >
+              firstName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -642,9 +719,16 @@ exports[`Form Component renders with custom submit button function 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="lastName"
-            title="lastName"
+            title=""
           >
-            lastName
+            <div
+              class="labelContainer"
+            >
+              lastName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -742,9 +826,16 @@ exports[`Form Component renders with custom submit button function 2`] = `
           <label
             class="mia-platform-form-item-required"
             for="firstName"
-            title="firstName"
+            title=""
           >
-            firstName
+            <div
+              class="labelContainer"
+            >
+              firstName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -780,9 +871,16 @@ exports[`Form Component renders with custom submit button function 2`] = `
           <label
             class="mia-platform-form-item-required"
             for="lastName"
-            title="lastName"
+            title=""
           >
-            lastName
+            <div
+              class="labelContainer"
+            >
+              lastName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -880,9 +978,16 @@ exports[`Form Component renders with custom submit button label 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="firstName"
-            title="firstName"
+            title=""
           >
-            firstName
+            <div
+              class="labelContainer"
+            >
+              firstName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -918,9 +1023,16 @@ exports[`Form Component renders with custom submit button label 1`] = `
           <label
             class="mia-platform-form-item-required"
             for="lastName"
-            title="lastName"
+            title=""
           >
-            lastName
+            <div
+              class="labelContainer"
+            >
+              lastName
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div

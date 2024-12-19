@@ -34,6 +34,7 @@ import { Search } from '../../Search'
 import { Select } from '../../Select'
 import { Switch } from '../../Switch'
 import { TextArea } from '../../TextArea'
+import { PiCircleHalfTilt } from '../../../../icons/pi/PiCircleHalfTilt'
 
 const options = [
   ...Array(3).keys(),
@@ -79,6 +80,43 @@ describe('FormItem Component', () => {
     test('renders input FormItem correctly', async() => {
       const { asFragment } = renderItem({
         name: 'input',
+        children: <Input />,
+      })
+      await waitFor(() => expect(asFragment()).toMatchSnapshot())
+    })
+
+    test('renders input required FormItem correctly', async() => {
+      const { asFragment } = renderItem({
+        name: 'input',
+        isRequired: true,
+        children: <Input />,
+      })
+      await waitFor(() => expect(asFragment()).toMatchSnapshot())
+    })
+
+    test('renders input with tooltip FormItem correctly', async() => {
+      const { asFragment } = renderItem({
+        name: 'input',
+        tooltip: { title: 'tooltip' },
+        children: <Input />,
+      })
+      await waitFor(() => expect(asFragment()).toMatchSnapshot())
+    })
+
+    test('renders input with docLink FormItem correctly', async() => {
+      const { asFragment } = renderItem({
+        name: 'input',
+        tooltip: { title: 'tooltip' },
+        children: <Input />,
+      })
+      await waitFor(() => expect(asFragment()).toMatchSnapshot())
+    })
+
+    test('renders input with extra FormItem correctly', async() => {
+      const { asFragment } = renderItem({
+        name: 'input',
+        extra: 'Extra',
+        extraIcon: PiCircleHalfTilt,
         children: <Input />,
       })
       await waitFor(() => expect(asFragment()).toMatchSnapshot())
@@ -172,6 +210,21 @@ describe('FormItem Component', () => {
       })
       await waitFor(() => expect(asFragment()).toMatchSnapshot())
     })
+  })
+
+  test('click on docLink button should open a new window', async() => {
+    const openLink = jest.fn()
+    jest.spyOn(window, 'open').mockImplementationOnce(openLink)
+
+    renderItem({
+      name: 'input',
+      docLink: '#',
+      children: <Input />,
+    })
+
+    const button = screen.getByRole('button', { name: 'doc-link' })
+    await userEvent.click(button)
+    expect(openLink).toHaveBeenCalledWith('#', '_blank')
   })
 
   describe('onChange', () => {
