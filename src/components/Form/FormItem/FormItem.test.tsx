@@ -29,12 +29,12 @@ import { Form } from '../Form.tsx'
 import { FormItem } from './FormItem.tsx'
 import { Input } from '../../Input'
 import { InputNumber } from '../../InputNumber'
+import { PiCircleHalfTilt } from '../../../../icons/pi/PiCircleHalfTilt'
 import { RadioGroup } from '../../RadioGroup'
 import { Search } from '../../Search'
 import { Select } from '../../Select'
 import { Switch } from '../../Switch'
 import { TextArea } from '../../TextArea'
-import { PiCircleHalfTilt } from '../../../../icons/pi/PiCircleHalfTilt'
 
 const options = [
   ...Array(3).keys(),
