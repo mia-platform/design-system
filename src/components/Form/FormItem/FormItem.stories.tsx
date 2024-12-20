@@ -17,6 +17,7 @@
  */
 
 import { Meta, type StoryObj } from '@storybook/react'
+import { PiCircleHalfTilt } from 'react-icons/pi'
 
 import { Button } from '../../Button'
 import { Checkbox as CheckboxComponent } from '../../Checkbox'
@@ -73,6 +74,48 @@ type Story = StoryObj<typeof meta>
 export const Input: Story = {
   args: {
     name: 'input',
+    children: <InputComponent />,
+  },
+}
+
+export const Required: Story = {
+  args: {
+    name: 'input',
+    isRequired: true,
+    children: <InputComponent />,
+  },
+}
+
+export const InputWithTooltip: Story = {
+  args: {
+    name: 'input',
+    tooltip: { title: 'title' },
+    children: <InputComponent />,
+  },
+}
+
+export const InputWithDoclink: Story = {
+  args: {
+    name: 'input',
+    docLink: '#',
+    children: <InputComponent />,
+  },
+}
+
+export const InputWithDoclinkAndTooltip: Story = {
+  args: {
+    name: 'input',
+    docLink: '#',
+    tooltip: { title: 'title' },
+    children: <InputComponent />,
+  },
+}
+
+export const InputWithExtra: Story = {
+  args: {
+    name: 'input',
+    extra: 'Extra',
+    extraIcon: PiCircleHalfTilt,
     children: <InputComponent />,
   },
 }

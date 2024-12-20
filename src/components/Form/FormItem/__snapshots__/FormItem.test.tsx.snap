@@ -19,9 +19,16 @@ exports[`FormItem Component snapshots renders checkbox FormItem correctly 1`] = 
           <label
             class=""
             for="checkbox"
-            title="checkbox"
+            title=""
           >
-            checkbox
+            <div
+              class="labelContainer"
+            >
+              checkbox
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -121,9 +128,16 @@ exports[`FormItem Component snapshots renders checkboxGroup FormItem correctly 1
           <label
             class=""
             for="checkboxGroup"
-            title="checkboxGroup"
+            title=""
           >
-            checkboxGroup
+            <div
+              class="labelContainer"
+            >
+              checkboxGroup
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -287,9 +301,410 @@ exports[`FormItem Component snapshots renders input FormItem correctly 1`] = `
           <label
             class=""
             for="input"
-            title="input"
+            title=""
           >
-            input
+            <div
+              class="labelContainer"
+            >
+              input
+              <div
+                class="docLinkContainer"
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="input"
+                type="text"
+                value="input"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component snapshots renders input required FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class="mia-platform-form-item-required"
+            for="input"
+            title=""
+          >
+            <div
+              class="labelContainer"
+            >
+              input
+              <div
+                class="docLinkContainer"
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="input"
+                type="text"
+                value="input"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component snapshots renders input with docLink FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="input"
+            title=""
+          >
+            <div
+              class="labelContainer"
+            >
+              input
+              <div
+                class="tooltipContainer"
+              >
+                <svg
+                  color="currentColor"
+                  data-file-name="SvgICircleFilled"
+                  height="16"
+                  role="img"
+                  size="16"
+                  width="16"
+                />
+              </div>
+              <div
+                class="docLinkContainer"
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="input"
+                type="text"
+                value="input"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component snapshots renders input with extra FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="input"
+            title=""
+          >
+            <div
+              class="labelContainer"
+            >
+              input
+              <div
+                class="docLinkContainer"
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <input
+                class="mia-platform-input mia-platform-input-outlined input fullWidth input"
+                id="input"
+                type="text"
+                value="input"
+              />
+            </div>
+          </div>
+          <div
+            class="mia-platform-form-item-extra"
+            id="input_extra"
+          >
+            <div
+              class="extraContainer"
+            >
+              <svg
+                color="currentColor"
+                fill="currentColor"
+                height="16"
+                role="img"
+                stroke="currentColor"
+                stroke-width="0"
+                style="color: currentColor;"
+                viewBox="0 0 256 256"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M201.54,54.46A104,104,0,0,0,54.46,201.54,104,104,0,0,0,201.54,54.46ZM184,195.87a87.16,87.16,0,0,1-16,10.5V99.31l16-16Zm-80-32.56,16-16v68.28a88.37,88.37,0,0,1-16-3ZM88,206.37a87,87,0,0,1-16.3-10.76L88,179.31Zm48-75.06,16-16v97.32a88.37,88.37,0,0,1-16,3ZM40,128A88,88,0,0,1,184.3,60.39L60.38,184.31A87.34,87.34,0,0,1,40,128Zm160,50.59V77.41a88,88,0,0,1,0,101.18Z"
+                />
+              </svg>
+              Extra
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; justify-self: end; grid-column: -1 / 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-control"
+        >
+          <div
+            class="mia-platform-form-item-control-input"
+          >
+            <div
+              class="mia-platform-form-item-control-input-content"
+            >
+              <button
+                class="mia-platform-btn mia-platform-btn-primary mia-platform-btn-color-primary mia-platform-btn-variant-solid button buttonMd"
+                type="submit"
+              >
+                <div
+                  class="buttonText"
+                >
+                  Submit
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`FormItem Component snapshots renders input with tooltip FormItem correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="mia-platform-form mia-platform-form-vertical"
+    style="display: grid; grid-template: auto / repeat(2, 1fr); gap: 24px;"
+  >
+    <div
+      class="mia-platform-form-item"
+      style="margin: 0px; grid-column: span 1;"
+    >
+      <div
+        class="mia-platform-row mia-platform-form-item-row"
+      >
+        <div
+          class="mia-platform-col mia-platform-form-item-label"
+        >
+          <label
+            class=""
+            for="input"
+            title=""
+          >
+            <div
+              class="labelContainer"
+            >
+              input
+              <div
+                class="tooltipContainer"
+              >
+                <svg
+                  color="currentColor"
+                  data-file-name="SvgICircleFilled"
+                  height="16"
+                  role="img"
+                  size="16"
+                  width="16"
+                />
+              </div>
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -366,9 +781,16 @@ exports[`FormItem Component snapshots renders inputAddon FormItem correctly 1`] 
           <label
             class=""
             for="inputAddon"
-            title="inputAddon"
+            title=""
           >
-            inputAddon
+            <div
+              class="labelContainer"
+            >
+              inputAddon
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -518,9 +940,16 @@ exports[`FormItem Component snapshots renders inputNumber FormItem correctly 1`]
           <label
             class=""
             for="number"
-            title="number"
+            title=""
           >
-            number
+            <div
+              class="labelContainer"
+            >
+              number
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -666,9 +1095,16 @@ exports[`FormItem Component snapshots renders radioGroup FormItem correctly 1`] 
           <label
             class=""
             for="radioGroup"
-            title="radioGroup"
+            title=""
           >
-            radioGroup
+            <div
+              class="labelContainer"
+            >
+              radioGroup
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -832,9 +1268,16 @@ exports[`FormItem Component snapshots renders radioGroup FormItem correctly 2`] 
           <label
             class=""
             for="custom"
-            title="custom"
+            title=""
           >
-            custom
+            <div
+              class="labelContainer"
+            >
+              custom
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -915,9 +1358,16 @@ exports[`FormItem Component snapshots renders search FormItem correctly 1`] = `
           <label
             class=""
             for="search"
-            title="search"
+            title=""
           >
-            search
+            <div
+              class="labelContainer"
+            >
+              search
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -1030,9 +1480,16 @@ exports[`FormItem Component snapshots renders select FormItem correctly 1`] = `
           <label
             class=""
             for="select"
-            title="select"
+            title=""
           >
-            select
+            <div
+              class="labelContainer"
+            >
+              select
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -1160,9 +1617,16 @@ exports[`FormItem Component snapshots renders switch FormItem correctly 1`] = `
           <label
             class=""
             for="switch"
-            title="switch"
+            title=""
           >
-            switch
+            <div
+              class="labelContainer"
+            >
+              switch
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
@@ -1262,9 +1726,16 @@ exports[`FormItem Component snapshots renders textarea FormItem correctly 1`] = 
           <label
             class=""
             for="textarea"
-            title="textarea"
+            title=""
           >
-            textarea
+            <div
+              class="labelContainer"
+            >
+              textarea
+              <div
+                class="docLinkContainer"
+              />
+            </div>
           </label>
         </div>
         <div
