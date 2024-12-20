@@ -17,21 +17,12 @@
  */
 
 import { ReactElement, useMemo } from 'react'
-import { TooltipProps } from 'antd'
 
 import { BadgeProps } from './Badge.props'
 import { Icon } from '../Icon'
 import { Typography } from '../Typography'
 import styles from './Badge.module.css'
 import { useTheme } from '../../hooks/useTheme'
-
-const tooltipProps: TooltipProps = {
-  getPopupContainer: (triggerNode) => triggerNode.parentElement!,
-  getTooltipContainer: (triggerNode) => triggerNode.parentElement!,
-  destroyTooltipOnHide: true,
-  overlayClassName: styles.tooltip,
-  placement: 'bottom',
-}
 
 /**
  * UI component for displaying information about a resource, emphasizing some of its main features.
@@ -54,7 +45,7 @@ export const Badge = ({
 
   const title = useMemo(() => (
     <div className={styles.title}>
-      <Typography.H3 ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customTitle } }}>
+      <Typography.H3 ellipsis={{ rows: 1, tooltip: { title: customTitle } }}>
         {customTitle}
       </Typography.H3>
       {titleExtra}
@@ -65,7 +56,7 @@ export const Badge = ({
     if (!customDescription) { return }
 
     return (
-      <Typography.BodyS ellipsis={{ rows: 1, tooltip: { ...tooltipProps, title: customDescription } }}>
+      <Typography.BodyS ellipsis={{ rows: 1, tooltip: { title: customDescription } }}>
         {customDescription}
       </Typography.BodyS>
     )
