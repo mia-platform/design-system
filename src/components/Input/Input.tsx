@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Input as AntInput, ConfigProvider, ThemeConfig } from 'antd'
 import {
   ChangeEvent,
   ReactElement,
@@ -23,7 +24,6 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { Input as AntInput } from 'antd'
 
 import { AddonType, Type } from './types'
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
@@ -32,6 +32,7 @@ import { Icon } from '../Icon'
 import { InputProps } from './props'
 import { isObject } from '../../utils/object.ts'
 import styles from './input.module.css'
+import { useTheme } from '../../hooks/useTheme/useTheme.ts'
 
 export const defaults = {
   ...baseInputDefaults,
@@ -95,6 +96,17 @@ export const Input = (
     addonBefore: addonBeforeProp,
   }: InputProps
 ) : ReactElement => {
+  const { spacing } = useTheme()
+
+  const scopedAntTheme: ThemeConfig = {
+    components: {
+      Input: {
+        paddingBlock: Number(spacing.padding.sm),
+        paddingInline: Number(spacing.padding.sm),
+      },
+    },
+  }
+
   const [val, setVal] = useInputValue(value || defaultValue, valuePropName, {
     before: addonBeforeProp,
     after: addonAfterProp,
@@ -160,29 +172,31 @@ export const Input = (
   }, [getValue, defaultValue])
 
   return (
-    <BaseInput
-      addonAfter={addonAfter}
-      addonBefore={addonBefore}
-      allowClear={allowClear}
-      appearance={appearance}
-      className={styles.input}
-      component={AntInput}
-      defaultValue={inputDefaultValue}
-      id={id}
-      inputRef={inputRef}
-      isDisabled={isDisabled}
-      isError={isError}
-      isFullWidth={isFullWidth}
-      isReadOnly={isReadOnly}
-      maxLength={maxLength}
-      minLength={minLength}
-      placeholder={placeholder}
-      prefix={iconLeft && <Icon component={iconLeft} size={DEFAULT_ICON_SIZE} />}
-      suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
-      type={type}
-      value={inputValue}
-      onChange={handleChange}
-    />
+    <ConfigProvider theme={scopedAntTheme}>
+      <BaseInput
+        addonAfter={addonAfter}
+        addonBefore={addonBefore}
+        allowClear={allowClear}
+        appearance={appearance}
+        className={styles.input}
+        component={AntInput}
+        defaultValue={inputDefaultValue}
+        id={id}
+        inputRef={inputRef}
+        isDisabled={isDisabled}
+        isError={isError}
+        isFullWidth={isFullWidth}
+        isReadOnly={isReadOnly}
+        maxLength={maxLength}
+        minLength={minLength}
+        placeholder={placeholder}
+        prefix={iconLeft && <Icon component={iconLeft} size={DEFAULT_ICON_SIZE} />}
+        suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
+        type={type}
+        value={inputValue}
+        onChange={handleChange}
+      />
+    </ConfigProvider>
   )
 }
 

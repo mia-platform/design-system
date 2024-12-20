@@ -18,7 +18,6 @@
 
 import { ConfigProvider, ThemeConfig, theme as baseAntTheme } from 'antd'
 import { ReactElement, useMemo } from 'react'
-import { omit } from 'lodash-es'
 
 import { DEFAULT_COLOR, DEFAULT_FONT_FAMILY, DEFAULT_FONT_SIZE } from './utils/themeDefaultStyle'
 import ButtonTheme from '../Button/Button.theme'
@@ -109,8 +108,8 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Table: TableTheme({ palette, spacing }),
     Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
-    Input: omit(InputTheme({ palette, shape, typography, spacing }), ['paddingBlock', 'paddingInline']),
-    InputNumber: InputTheme({ palette, shape, typography, spacing }),
+    Input: InputTheme({ palette, shape, typography }),
+    InputNumber: InputTheme({ palette, shape, typography }),
     Select: SelectTheme({ palette, shape, typography, spacing }),
     Tag: TagTheme({ palette }),
     Radio: RadioTheme({ palette, shape }),
