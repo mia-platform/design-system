@@ -18,6 +18,9 @@
 
 import { ReactNode } from 'react'
 
+import { Color, Type } from './types.ts'
+import { IconComponent } from '../Icon/Icon.props.ts'
+
 export type TagProps = {
 
     /**
@@ -26,9 +29,19 @@ export type TagProps = {
     children?: ReactNode,
 
     /**
+    * The color of the Tag. Default 'Grey'.
+    */
+    type?: Type,
+
+    /**
+    * Optional icon of the Tag.
+    */
+    icon?: IconComponent,
+
+    /**
      * The color of the Tag.
      */
-    color?: string,
+    color?: Color | string,
 
     /**
      * Displays the default close icon when set to true. It can also be used to render a custom icon.

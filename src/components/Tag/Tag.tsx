@@ -16,36 +16,63 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement, useMemo } from 'react'
 import { Tag as AntTag } from 'antd'
-import { ReactElement } from 'react'
+import classnames from 'classnames'
 
+import { Color, Type } from './types.ts'
+import { Icon } from '../Icon'
 import { TagProps } from './Tag.props'
 import styles from './Tag.module.css'
 
-const { tag } = styles
-
 export const defaults = {
   isBordered: true,
+  color: Color.Grey,
 }
 
 export const Tag = (
   {
     children,
-    color,
+    type,
+    color = Color.Grey,
     closeIcon,
     onClose,
+    icon,
     isBordered = defaults.isBordered,
   } : TagProps
 ) : ReactElement => {
+  const className = useMemo(() => classnames([
+    styles.tag,
+    type === Type.Chip && styles.chip,
+    color === Color.Grey && styles.tagColorGrey,
+    color === Color.Blue && styles.tagColorBlue,
+    color === Color.Teal && styles.tagColorTeal,
+    color === Color.Green && styles.tagColorGreen,
+    color === Color.Yellow && styles.tagColorYellow,
+    color === Color.Magenta && styles.tagColorMagenta,
+    color === Color.Purple && styles.tagColorPurple,
+    color === Color.Red && styles.tagColorRed,
+  ]), [color, type])
+
+  const customColor = useMemo(() => {
+    return color && !(color in Color) ? color : undefined
+  }, [color])
+
   return (
     <AntTag
       bordered={isBordered}
-      className={tag}
+      className={className}
       closeIcon={closeIcon}
-      color={color}
+      color={customColor}
+      icon={icon && (
+        <Icon component={icon} size={16} />
+      )}
       onClose={onClose}
     >
       {children}
     </AntTag>
   )
 }
+
+Tag.Type = Type
+Tag.Color = Color
