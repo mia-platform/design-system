@@ -53,9 +53,11 @@ const CardSelectionItem = <T, >({
     >
       <div className={classnames(styles.content, isHorizontal && styles.horizontal)}>
         <div className={styles.header}>
-          {
-            icon && <Icon component={icon} size={isHorizontal ? 24 : 32} />
-          }
+          {icon && (
+            <div className={classnames(styles.icon, isHorizontal && styles.horizontalIcon)}>
+              <Icon component={icon} size={isHorizontal ? 24 : 32} />
+            </div>
+          )}
           <span className={styles.title}>{title}</span>
         </div>
         {subtitle && (

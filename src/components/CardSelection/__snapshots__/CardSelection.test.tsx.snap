@@ -36,22 +36,26 @@ exports[`CardSelection Tests renders CheckboxDisabled correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -113,22 +117,26 @@ exports[`CardSelection Tests renders CheckboxDisabled correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -190,22 +198,26 @@ exports[`CardSelection Tests renders CheckboxDisabled correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -256,22 +268,26 @@ exports[`CardSelection Tests renders Horizontal correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="24"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon horizontalIcon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="24"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
@@ -309,22 +325,26 @@ exports[`CardSelection Tests renders Horizontal correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="24"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon horizontalIcon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="24"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
@@ -362,22 +382,26 @@ exports[`CardSelection Tests renders Horizontal correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="24"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon horizontalIcon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="24"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
@@ -445,22 +469,26 @@ exports[`CardSelection Tests renders HorizontalCheckbox correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -521,22 +549,26 @@ exports[`CardSelection Tests renders HorizontalCheckbox correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -597,22 +629,26 @@ exports[`CardSelection Tests renders HorizontalCheckbox correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -683,22 +719,26 @@ exports[`CardSelection Tests renders HorizontalRadio correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -759,22 +799,26 @@ exports[`CardSelection Tests renders HorizontalRadio correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -835,22 +879,26 @@ exports[`CardSelection Tests renders HorizontalRadio correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -922,22 +970,26 @@ exports[`CardSelection Tests renders RadioDisabled correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -999,22 +1051,26 @@ exports[`CardSelection Tests renders RadioDisabled correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -1076,22 +1132,26 @@ exports[`CardSelection Tests renders RadioDisabled correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="24"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon horizontalIcon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="24"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -1142,22 +1202,26 @@ exports[`CardSelection Tests renders Vertical correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="32"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="32"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
@@ -1195,22 +1259,26 @@ exports[`CardSelection Tests renders Vertical correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="32"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="32"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
@@ -1248,22 +1316,26 @@ exports[`CardSelection Tests renders Vertical correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="32"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="32"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
@@ -1331,22 +1403,26 @@ exports[`CardSelection Tests renders VerticalCheckbox correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="32"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="32"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -1407,22 +1483,26 @@ exports[`CardSelection Tests renders VerticalCheckbox correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="32"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="32"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -1483,22 +1563,26 @@ exports[`CardSelection Tests renders VerticalCheckbox correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="32"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="32"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -1569,22 +1653,26 @@ exports[`CardSelection Tests renders VerticalRadio correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="32"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="32"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -1645,22 +1733,26 @@ exports[`CardSelection Tests renders VerticalRadio correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="32"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="32"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -1721,22 +1813,26 @@ exports[`CardSelection Tests renders VerticalRadio correctly 1`] = `
               <div
                 class="header"
               >
-                <svg
-                  color="currentColor"
-                  fill="currentColor"
-                  height="32"
-                  role="img"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  style="color: currentColor;"
-                  viewBox="0 0 256 256"
-                  width="32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="icon"
                 >
-                  <path
-                    d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-                  />
-                </svg>
+                  <svg
+                    color="currentColor"
+                    fill="currentColor"
+                    height="32"
+                    role="img"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    style="color: currentColor;"
+                    viewBox="0 0 256 256"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+                    />
+                  </svg>
+                </div>
                 <span
                   class="title"
                 >
@@ -1787,22 +1883,26 @@ exports[`CardSelection Tests renders WitCustomGap correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="24"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon horizontalIcon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="24"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
@@ -1840,22 +1940,26 @@ exports[`CardSelection Tests renders WitCustomGap correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="24"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon horizontalIcon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="24"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
@@ -1893,22 +1997,26 @@ exports[`CardSelection Tests renders WitCustomGap correctly 1`] = `
         <div
           class="header"
         >
-          <svg
-            color="currentColor"
-            fill="currentColor"
-            height="24"
-            role="img"
-            stroke="currentColor"
-            stroke-width="0"
-            style="color: currentColor;"
-            viewBox="0 0 256 256"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="icon horizontalIcon"
           >
-            <path
-              d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
-            />
-          </svg>
+            <svg
+              color="currentColor"
+              fill="currentColor"
+              height="24"
+              role="img"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: currentColor;"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM48,208V59.31L196.69,208ZM59.31,48H208V196.7Z"
+              />
+            </svg>
+          </div>
           <span
             class="title"
           >
