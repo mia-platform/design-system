@@ -1,3 +1,55 @@
 .tag {
+  display: inline-flex;
+  align-items: center;
   margin-inline-end: 0px;
+  line-height: calc(var(--shape-size-lg, 24px) - 2 * var(--shape-border-width-xs, 1px));
+  gap: var(--spacing-gap-xs, 4px);
+
+  &.chip {
+    border: none;
+    line-height: var(--shape-size-lg, 24px);
+    border-radius: var(--shape-border-radius-fullRounded, 96px);
+  }
+
+  &.tagColorGrey {
+    background-color: var(--palette-purple-100, #F2F2F2);
+    border-color: var(--palette-common-grey-400, #ACACAC);
+    color: var(--palette-common-grey-600, #636363);
+  }
+  &.tagColorBlue {
+    background-color: var(---palette-primary-100, #E5F0FC);
+    border-color: var(---palette-primary-400, #6DB2FC);
+    color: var(---palette-primary-100, #1261E4);
+  }
+  &.tagColorTeal {
+    background-color: var(--palette-other-teal-100, #CEF8F2);
+    border-color: var(--palette-other-teal-400, #67BEB3);
+    color: var(--palette-other-teal-600, #217679);
+  }
+  &.tagColorGreen {
+    background-color: var(--palette-success-100, #DEF8D8);
+    border-color: var(--palette-success-400, #76CF60);
+    color: var(--palette-success-600, #259100);
+  }
+  &.tagColorYellow {
+    background-color: var(--palette-warning-100, #FFF0B3);
+    border-color: var(--palette-warning-400, #F68F1F);
+    color: var(--palette-warning-600, #A44C00);
+  }
+  &.tagColorMagenta {
+    background-color: var(--palette-other-magenta-100, #FCE9F8);
+    border-color: var(--palette-other-magenta-400, #E482D4);
+    color: var(--palette-other-magenta-600, #AF00A0);
+  }
+  &.tagColorPurple {
+    background-color: var(--palette-special-100, #EDE7FF);
+    border-color: var(--palette-special-400, #B495FF);
+    color: var(--palette-special-600, #7133CD);
+  }
+  &.tagColorRed {
+    background-color: var(--palette-error-100, #FFEBEB);
+    border-color: var(--palette-error-400, #FF807F);
+    color: var(--palette-error-500, #E50020);
+  }
+
 }

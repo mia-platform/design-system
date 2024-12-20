@@ -15,6 +15,12 @@
     border-radius:  var(--shape-border-radius-sm, 2px);
   }
 
+  &:not(.disabled) :global(.mia-platform-tag) {
+    color: var(--palette-text-neutral-main, #636363);
+    background-color: var(--palette-background-neutral-300, #F9F9F9);
+    border-color: var(--palette-action-secondary-bold, #CDCDCD);
+  }
+
 }
 
 .readOnly {

@@ -17,8 +17,10 @@
  */
 
 import { screen, waitFor } from '@testing-library/react'
+import { PiCircleHalfTilt } from 'react-icons/pi'
 import userEvent from '@testing-library/user-event'
 
+import { Color, Type } from './types.ts'
 import { Tag } from './Tag'
 import { render } from '../../test-utils'
 
@@ -35,6 +37,56 @@ describe('Tag', () => {
 
   it('renders correctly', () => {
     const { asFragment } = render(<Tag {...props}>{'Tag text'}</Tag>)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders Chip type correctly', () => {
+    const { asFragment } = render(<Tag type={Type.Chip} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders WithIcon correctly', () => {
+    const { asFragment } = render(<Tag icon={PiCircleHalfTilt} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders ColorBlue correctly', () => {
+    const { asFragment } = render(<Tag color={Color.Blue} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders ColorTeal correctly', () => {
+    const { asFragment } = render(<Tag color={Color.Teal} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders ColorGreen correctly', () => {
+    const { asFragment } = render(<Tag color={Color.Green} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders ColorYellow correctly', () => {
+    const { asFragment } = render(<Tag color={Color.Yellow} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders ColorMagenta correctly', () => {
+    const { asFragment } = render(<Tag color={Color.Magenta} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders ColorPurple correctly', () => {
+    const { asFragment } = render(<Tag color={Color.Purple} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders ColorRed correctly', () => {
+    const { asFragment } = render(<Tag color={Color.Red} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  it('renders CustomColor correctly', () => {
+    const { asFragment } = render(<Tag color="brown" />)
     expect(asFragment()).toMatchSnapshot()
   })
 

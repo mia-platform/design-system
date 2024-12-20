@@ -17,7 +17,9 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
+import { PiCircleHalfTilt } from 'react-icons/pi'
 
+import { Color, Type } from './types.ts'
 import { Tag } from '.'
 import { defaults } from './Tag'
 
@@ -38,9 +40,60 @@ type Story = StoryObj<typeof meta>
 
 export const BasicExample: Story = {}
 
-export const Colored: Story = {
+export const Chip: Story = {
   args: {
-    color: 'magenta',
+    type: Type.Chip,
+    color: Color.Blue,
+  },
+}
+
+export const WithIcon: Story = {
+  args: {
+    icon: PiCircleHalfTilt,
+  },
+}
+
+export const ColorBlue: Story = {
+  args: {
+    color: Color.Blue,
+  },
+}
+export const ColorTeal: Story = {
+  args: {
+    color: Color.Teal,
+  },
+}
+export const ColorGreen: Story = {
+  args: {
+    color: Color.Green,
+  },
+}
+export const ColorYellow: Story = {
+  args: {
+    color: Color.Yellow,
+  },
+}
+export const ColorMagenta: Story = {
+  args: {
+    color: Color.Magenta,
+  },
+}
+
+export const ColorPurple: Story = {
+  args: {
+    color: Color.Purple,
+  },
+}
+
+export const ColorRed: Story = {
+  args: {
+    color: Color.Red,
+  },
+}
+
+export const CustomColor: Story = {
+  args: {
+    color: 'brown',
   },
 }
 

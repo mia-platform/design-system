@@ -98,7 +98,7 @@ exports[`Feedback Component renders a feedback with a badge 1`] = `
           class="extra"
         >
           <span
-            class="mia-platform-tag tag"
+            class="mia-platform-tag tag tagColorGrey"
           >
             Tag
           </span>
