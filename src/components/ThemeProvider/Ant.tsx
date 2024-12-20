@@ -108,7 +108,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Table: TableTheme({ palette, spacing }),
     Tree: TreeTheme({ palette, shape }),
     Typography: TypographyTheme({ typography }),
-    Input: InputTheme({ palette, shape, typography, spacing }),
+    Input: InputTheme({ palette, shape, typography }),
     InputNumber: InputTheme({ palette, shape, typography, spacing }),
     Select: SelectTheme({ palette, shape, typography, spacing }),
     Tag: TagTheme({ palette }),
