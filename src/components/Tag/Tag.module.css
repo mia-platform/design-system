@@ -7,6 +7,7 @@
 
   &.chip {
     border: none;
+    line-height: var(--shape-size-lg, 24px);
     border-radius: var(--shape-border-radius-fullRounded, 96px);
   }
 
