@@ -26,6 +26,11 @@
     gap: var(--spacing-gap-sm, 8px);
   }
 
+  &:global(.mia-platform-checkbox-wrapper) {
+    display: flex;
+    align-items: center;
+  }
+
   &:not(:global(.mia-platform-checkbox-wrapper-disabled)) {
     &:hover :global(.mia-platform-checkbox-inner) {
       border-color: var(--palette-action-primary-hover, #1890FF) !important;
