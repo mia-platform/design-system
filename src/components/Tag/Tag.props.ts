@@ -29,20 +29,20 @@ export type TagProps = {
     children?: ReactNode,
 
     /**
-    * The color of the Tag. Default 'Grey'.
+    * The type of the Tag. Default 'Tag'.
     */
     type?: Type,
+
+    /**
+    * The type of the Tag. Default 'Tag'.
+     */
+    color?: Color | string,
 
     /**
     * Optional icon of the Tag.
     */
     icon?: IconComponent,
-
-    /**
-     * The color of the Tag.
-     */
-    color?: Color | string,
-
+  
     /**
      * Displays the default close icon when set to true. It can also be used to render a custom icon.
      */
