@@ -42,6 +42,7 @@ export type TagProps = {
     * Optional icon of the Tag.
     */
     icon?: IconComponent,
+
     /**
      * Displays the default close icon when set to true. It can also be used to render a custom icon.
      */
