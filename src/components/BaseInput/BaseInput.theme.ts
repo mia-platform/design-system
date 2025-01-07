@@ -27,10 +27,7 @@ import Theme from '../../themes/schema'
  * @param {Partial<Theme>} theme - theme configuration.
  * @returns {Partial<ComponentsTheme>} The generated Input Ant theme configuration.
  */
-export default ({ palette, spacing, shape }: Partial<Theme>): ComponentsTheme['Input'] => ({
-  // sizing
-  paddingBlock: Number(spacing?.padding.sm),
-  paddingInline: Number(spacing?.padding.sm),
+export default ({ palette, shape }: Partial<Theme>): ComponentsTheme['Input'] => ({
   // shape
   borderRadius: Number(shape?.border?.radius?.md),
   // palette
