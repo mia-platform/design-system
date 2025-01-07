@@ -70,6 +70,7 @@ export const Select = <ValueType, >(
     allowClear,
     options,
     inputRef,
+    autoFocus,
     onChange,
     onClear,
     onSelect,
@@ -93,6 +94,7 @@ export const Select = <ValueType, >(
     <BaseInput <AntSelectProps<ValueType, SelectItem<ValueType>>>
       allowClear={allowClear}
       appearance={appearance}
+      autoFocus={autoFocus}
       className={className}
       component={AntSelect}
       defaultValue={defaultValue}

@@ -51,10 +51,12 @@ export const InputNumber = (
     max,
     step,
     precision,
+    autoFocus,
   }: InputNumberProps) : ReactElement => {
   return (
     <BaseInput
       appearance={appearance}
+      autoFocus={autoFocus}
       className={styles.inputNumber}
       component={AntInputNumber}
       defaultValue={defaultValue}

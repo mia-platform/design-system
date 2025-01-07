@@ -61,6 +61,7 @@ export const Search = <ValueType, >(
     inputRef,
     iconLeft,
     iconRight = defaults.iconRight,
+    autoFocus,
     onChange,
     onSelect,
     onSearch,
@@ -68,6 +69,7 @@ export const Search = <ValueType, >(
   return (
     <BaseInput <AntAutoCompleteProps<ValueType, SearchItem<ValueType>>>
       appearance={appearance}
+      autoFocus={autoFocus}
       className={styles.search}
       component={AntAutoComplete}
       defaultValue={defaultValue}

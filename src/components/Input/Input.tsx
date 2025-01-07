@@ -87,6 +87,7 @@ export const Input = (
     onChange,
     placeholder,
     iconLeft,
+    autoFocus,
     iconRight,
     allowClear,
     maxLength,
@@ -165,6 +166,7 @@ export const Input = (
       addonBefore={addonBefore}
       allowClear={allowClear}
       appearance={appearance}
+      autoFocus={autoFocus}
       className={styles.input}
       component={AntInput}
       defaultValue={inputDefaultValue}

@@ -45,4 +45,9 @@ export type BaseInputProps = {
    */
   className?: string
 
+  /**
+   * autofocus property of the HTMLElement
+   */
+  autoFocus?: boolean
+
 }

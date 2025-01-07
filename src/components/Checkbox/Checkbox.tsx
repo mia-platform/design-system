@@ -43,6 +43,7 @@ export const Checkbox = <T = never, >({
   value,
   children = label,
   className: classNameProp,
+  autoFocus,
 }: CheckboxProps<T>): ReactElement => {
   const className = useMemo(() => classnames([
     styles.checkbox,
@@ -51,6 +52,7 @@ export const Checkbox = <T = never, >({
 
   return (
     <AntCheckbox
+      autoFocus={autoFocus}
       className={className}
       defaultChecked={isInitiallyChecked}
       disabled={isDisabled}
