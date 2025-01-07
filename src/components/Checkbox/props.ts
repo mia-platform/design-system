@@ -72,4 +72,9 @@ export type CheckboxProps<T = never, > = {
   children?: ReactNode
 
   className?: string
+
+  /**
+   * autofocus property of the HTMLElement
+   */
+  autoFocus?: boolean
 }

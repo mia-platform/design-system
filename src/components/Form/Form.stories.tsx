@@ -181,7 +181,7 @@ export const ComplexForm: Story = {
         <Form.Item name="search" rules={[{ required: true }]} span={2}>
           <Search options={options} />
         </Form.Item>
-        <Form.Item name="select" rules={[{ required: true }]}>
+        <Form.Item name="select" rules={[{ required: true }]} >
           <Select options={options} />
         </Form.Item>
         <Flex
