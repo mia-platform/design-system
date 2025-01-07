@@ -19,7 +19,9 @@
 import { FormItemProps as AntFormItemProps, FormProps as AntFormProps, FormInstance } from 'antd'
 import { CSSProperties, ReactElement, ReactNode } from 'react'
 
+import { IconComponent } from '../Icon/Icon.props.ts'
 import { Layout } from './types.ts'
+import { TooltipProps } from '../Tooltip/Tooltip.props.ts'
 
 export type RenderProps = {
   form?: FormInstance,
@@ -144,6 +146,26 @@ export type FormItemProps = {
   children: ReactElement | ((props: RenderProps) => ReactNode);
 
   /**
+   * Additional content displayed below the FormItem, similar to `help` but for more general purposes.
+   */
+  tooltip?: Omit<TooltipProps, 'children'>
+
+  /**
+   * Additional content displayed below the FormItem, similar to `help` but for more general purposes.
+   */
+  docLink?: string
+
+  /**
+   * Additional content displayed below the FormItem, similar to `help` but for more general purposes.
+   */
+  extra?: ReactNode;
+
+  /**
+   * Additional content displayed below the FormItem, similar to `help` but for more general purposes.
+   */
+  extraIcon?: IconComponent,
+
+  /**
    * Whether the FormItem should update when the state of other fields changes.
    */
   shouldUpdate?: boolean;
@@ -154,18 +176,8 @@ export type FormItemProps = {
   dependencies?: string[];
 
   /**
-   * Help text displayed below the form field.
-   */
-  help?: ReactNode;
-
-  /**
-   * Additional content displayed below the FormItem, similar to `help` but for more general purposes.
-   */
-  extra?: ReactNode;
-
-  /**
    * Whether the field is required, showing an asterisk and applying validation.
    */
-  required?: boolean;
+  isRequired?: boolean;
 };
 

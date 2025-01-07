@@ -16,15 +16,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, isValidElement, useMemo } from 'react'
+import { ReactElement, isValidElement, useCallback, useMemo } from 'react'
 import { Form as AntForm } from 'antd'
+import { PiBookOpen } from 'react-icons/pi'
 
+import { Button } from '../../Button'
 import { Checkbox } from '../../Checkbox'
 import { FormItemProps } from '../props.ts'
+import ICircleFilled from '../../../assets/icons/ICircleFilled.svg'
+import { Icon } from '../../Icon'
 import { Input } from '../../Input'
 import { RadioGroup } from '../../RadioGroup'
 import { Switch } from '../../Switch'
+import { Tooltip } from '../../Tooltip'
 import log from '../../../utils/log.ts'
+import styles from './FormItem.module.css'
 
 const defaults = {
   span: 1,
@@ -63,11 +69,17 @@ export const FormItem = (
     span = defaults.span,
     justify,
     isFullWidth = defaults.isFullWidth,
-    label = name,
+    label: labelProp = name,
     rules,
     valuePropName,
     getValueFromEvent,
     shouldUpdate,
+    dependencies,
+    isRequired,
+    docLink,
+    tooltip,
+    extra: extraProp,
+    extraIcon: extraIconProp,
   }: FormItemProps
 ): ReactElement => {
   const form = AntForm.useFormInstance()
@@ -107,14 +119,61 @@ export const FormItem = (
     log.error('inputElement must be a valid element or a function')
   }, [form, name, children])
 
+  const onClickDocLink = useCallback(() => {
+    window.open(docLink, '_blank')
+  }, [docLink])
+
+  const label = useMemo(() => {
+    if (labelProp || tooltip || docLink) {
+      return (
+        <div className={styles.labelContainer}>
+          {labelProp}
+          {tooltip && (
+            <Tooltip {...tooltip}>
+              <div className={styles.tooltipContainer}>
+                <Icon component={ICircleFilled} size={16} />
+              </div>
+            </Tooltip>
+          )}
+          {docLink && (
+            <div className={styles.docLinkContainer}>
+              <Button
+                icon={<Icon aria-label="doc-link" component={PiBookOpen} size={16} />}
+                shape={Button.Shape.Circle}
+                type={Button.Type.Ghost}
+                onClick={onClickDocLink}
+              />
+            </div>
+          )}
+        </div>
+      )
+    }
+  }, [docLink, labelProp, onClickDocLink, tooltip])
+
+  const extra = useMemo(() => {
+    if (extraIconProp || extraProp) {
+      return (
+        <div className={styles.extraContainer}>
+          {extraIconProp && (
+            <Icon component={extraIconProp} size={16} />
+          )}
+          {extraProp}
+        </div>
+      )
+    }
+  }, [extraIconProp, extraProp])
+
   return (
     <AntForm.Item
       {...defaultFormItemProps}
       {...shouldUpdate && { shouldUpdate }}
       {...getValueFromEvent && { getValueFromEvent }}
       {...valuePropName && { valuePropName }}
+      dependencies={dependencies}
+      extra={extra}
       label={label}
       name={name}
+      required={isRequired}
       rules={rules}
       style={style}
     >
