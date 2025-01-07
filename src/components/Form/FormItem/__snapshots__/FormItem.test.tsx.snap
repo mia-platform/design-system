@@ -25,9 +25,6 @@ exports[`FormItem Component snapshots renders checkbox FormItem correctly 1`] = 
               class="labelContainer"
             >
               checkbox
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -134,9 +131,6 @@ exports[`FormItem Component snapshots renders checkboxGroup FormItem correctly 1
               class="labelContainer"
             >
               checkboxGroup
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -307,9 +301,6 @@ exports[`FormItem Component snapshots renders input FormItem correctly 1`] = `
               class="labelContainer"
             >
               input
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -393,9 +384,6 @@ exports[`FormItem Component snapshots renders input required FormItem correctly 
               class="labelContainer"
             >
               input
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -491,9 +479,6 @@ exports[`FormItem Component snapshots renders input with docLink FormItem correc
                   width="16"
                 />
               </div>
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -577,9 +562,6 @@ exports[`FormItem Component snapshots renders input with extra FormItem correctl
               class="labelContainer"
             >
               input
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -701,9 +683,6 @@ exports[`FormItem Component snapshots renders input with tooltip FormItem correc
                   width="16"
                 />
               </div>
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -787,9 +766,6 @@ exports[`FormItem Component snapshots renders inputAddon FormItem correctly 1`] 
               class="labelContainer"
             >
               inputAddon
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -946,9 +922,6 @@ exports[`FormItem Component snapshots renders inputNumber FormItem correctly 1`]
               class="labelContainer"
             >
               number
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -1101,9 +1074,6 @@ exports[`FormItem Component snapshots renders radioGroup FormItem correctly 1`] 
               class="labelContainer"
             >
               radioGroup
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -1274,9 +1244,6 @@ exports[`FormItem Component snapshots renders radioGroup FormItem correctly 2`] 
               class="labelContainer"
             >
               custom
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -1364,9 +1331,6 @@ exports[`FormItem Component snapshots renders search FormItem correctly 1`] = `
               class="labelContainer"
             >
               search
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -1486,9 +1450,6 @@ exports[`FormItem Component snapshots renders select FormItem correctly 1`] = `
               class="labelContainer"
             >
               select
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -1623,9 +1584,6 @@ exports[`FormItem Component snapshots renders switch FormItem correctly 1`] = `
               class="labelContainer"
             >
               switch
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
@@ -1732,9 +1690,6 @@ exports[`FormItem Component snapshots renders textarea FormItem correctly 1`] = 
               class="labelContainer"
             >
               textarea
-              <div
-                class="docLinkContainer"
-              />
             </div>
           </label>
         </div>
