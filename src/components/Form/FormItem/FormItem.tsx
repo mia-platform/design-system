@@ -135,16 +135,16 @@ export const FormItem = (
               </div>
             </Tooltip>
           )}
-          <div className={styles.docLinkContainer}>
-            {docLink && (
+        {docLink && (
+           <div className={styles.docLinkContainer}>
               <Button
                 icon={<Icon aria-label="doc-link" component={PiBookOpen} size={16} />}
                 shape={Button.Shape.Circle}
                 type={Button.Type.Ghost}
                 onClick={onClickDocLink}
               />
-            )}
-          </div>
+            </div>
+        )}
         </div>
       )
     }
