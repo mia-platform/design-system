@@ -17,6 +17,7 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { ReactElement } from 'react'
 import { action } from '@storybook/addon-actions'
 
 import { Action, RowState as RowStateEnum } from './Table.types'
@@ -44,7 +45,6 @@ import {
 } from './Table.mocks'
 import { Table } from '.'
 import { defaults } from './Table'
-import {ReactElement} from "react";
 
 const meta = {
   component: Table<TableRecord>,
