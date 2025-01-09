@@ -2762,6 +2762,227 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Table Component renders fitParentHEight correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="mia-platform-table-wrapper table fitParentHeight"
+  >
+    <div
+      class="mia-platform-spin-nested-loading"
+    >
+      <div
+        class="mia-platform-spin-container"
+      >
+        <div
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
+        >
+          <div
+            class="mia-platform-table-container"
+          >
+            <div
+              class="mia-platform-table-header mia-platform-table-sticky-holder"
+              style="overflow: hidden; top: 0px;"
+            >
+              <table
+                style="table-layout: fixed; visibility: hidden;"
+              >
+                <colgroup />
+                <thead
+                  class="mia-platform-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="mia-platform-table-cell"
+                      scope="col"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="mia-platform-table-cell"
+                      scope="col"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="mia-platform-table-cell"
+                      scope="col"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="mia-platform-table-cell"
+                      scope="col"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div
+              class="mia-platform-table-body"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup />
+                <tbody
+                  class="mia-platform-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="mia-platform-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="mia-platform-table-cell"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Table Component renders footer correctly 1`] = `
 <DocumentFragment>
   <div

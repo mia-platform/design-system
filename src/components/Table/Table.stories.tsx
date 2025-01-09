@@ -44,6 +44,7 @@ import {
 } from './Table.mocks'
 import { Table } from '.'
 import { defaults } from './Table'
+import {ReactElement} from "react";
 
 const meta = {
   component: Table<TableRecord>,
@@ -166,4 +167,18 @@ export const RowState: Story = {
     data: dataState,
     rowState: (record: TableRecordState) => (record.state?.toLowerCase() as RowStateEnum),
   },
+}
+
+export const Empty = () : ReactElement => {
+  return (
+    <div style={{ height: 'calc(100vh - 2em)' }}>
+      <Table
+        {...meta.args}
+        data={[...Array(30).keys()].reduce((acc) => [...acc, ...data], data)}
+        fitParentHeight={true}
+        pagination={false}
+        scroll={{ x: true, y: '100%' }}
+      />
+    </div>
+  )
 }
