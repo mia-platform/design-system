@@ -169,7 +169,7 @@ export const RowState: Story = {
   },
 }
 
-export const Empty = () : ReactElement => {
+export const FitParentHeight = () : ReactElement => {
   return (
     <div style={{ height: 'calc(100vh - 2em)' }}>
       <Table
