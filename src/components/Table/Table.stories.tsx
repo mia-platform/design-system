@@ -17,6 +17,7 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react'
+import { ReactElement } from 'react'
 import { action } from '@storybook/addon-actions'
 
 import { Action, RowState as RowStateEnum } from './Table.types'
@@ -166,4 +167,18 @@ export const RowState: Story = {
     data: dataState,
     rowState: (record: TableRecordState) => (record.state?.toLowerCase() as RowStateEnum),
   },
+}
+
+export const FitParentHeight = () : ReactElement => {
+  return (
+    <div style={{ height: 'calc(100vh - 2em)' }}>
+      <Table
+        {...meta.args}
+        data={[...Array(30).keys()].reduce((acc) => [...acc, ...data], data)}
+        hasParentHeight={true}
+        pagination={false}
+        scroll={{ x: true, y: '100%' }}
+      />
+    </div>
+  )
 }

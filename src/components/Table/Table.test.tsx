@@ -440,4 +440,9 @@ describe('Table Component', () => {
 
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
   })
+
+  test('renders fitParentHEight correctly', async() => {
+    const { asFragment } = render(<Table hasParentHeight={true} {...props} />)
+    await waitFor(() => expect(asFragment()).toMatchSnapshot())
+  })
 })

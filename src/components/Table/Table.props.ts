@@ -290,6 +290,12 @@ export type TableProps<RecordType extends GenericRecord> = {
   scroll?: Scroll,
 
   /**
+   * Makes the table fitting the height of his parent. Useful in combination with scroll={{x: true, y: '100%'}} to implement
+   * full screen scrollable tables.
+   **/
+  hasParentHeight?: boolean
+
+  /**
    * Configuration for row state in table.
    *
    * @param record - The data record for the row.

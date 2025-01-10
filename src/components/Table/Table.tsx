@@ -19,6 +19,7 @@
 import { Table as AntTable, Skeleton } from 'antd'
 import { PiPencilSimpleLine, PiTrash } from 'react-icons/pi'
 import { ReactElement, useCallback, useMemo } from 'react'
+import classnames from 'classnames'
 
 import { Action, ColumnAlignment, ColumnFilterMode, GenericRecord, Layout, RowState, Size, SortOrder } from './Table.types'
 import { Icon } from '../Icon'
@@ -31,7 +32,7 @@ import { useTheme } from '../../hooks/useTheme'
 const { Auto } = Layout
 const { Middle } = Size
 const { Edit, Delete } = Action
-const { table } = styles
+const { table, fitParentHeight } = styles
 
 export const defaults = {
   actions: [],
@@ -87,8 +88,14 @@ export const Table = <RecordType extends GenericRecord>({
   size = defaults.size,
   scroll = defaults.scroll,
   rowState,
+  hasParentHeight,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
+  const className = useMemo(() => classnames([
+    table,
+    hasParentHeight && fitParentHeight,
+  ]), [hasParentHeight])
+
   const iconSize = theme?.shape?.size?.md as IconProps['size'] || 16
 
   const editAction = useMemo(() => actions?.find(({ dataIndex }) => dataIndex === Edit), [actions])
@@ -147,7 +154,7 @@ export const Table = <RecordType extends GenericRecord>({
     >
       <AntTable<RecordType>
         bordered={isBordered}
-        className={table}
+        className={className}
         columns={tableColumns}
         dataSource={data}
         expandable={expandable}
