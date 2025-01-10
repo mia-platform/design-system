@@ -88,13 +88,13 @@ export const Table = <RecordType extends GenericRecord>({
   size = defaults.size,
   scroll = defaults.scroll,
   rowState,
-  fitParentHeight: fitParentHeightProp,
+  hasParentHeight,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
   const className = useMemo(() => classnames([
     table,
-    fitParentHeightProp && fitParentHeight,
-  ]), [fitParentHeightProp])
+    hasParentHeight && fitParentHeight,
+  ]), [hasParentHeight])
 
   const iconSize = theme?.shape?.size?.md as IconProps['size'] || 16
 

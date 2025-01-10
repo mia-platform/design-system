@@ -175,7 +175,7 @@ export const FitParentHeight = () : ReactElement => {
       <Table
         {...meta.args}
         data={[...Array(30).keys()].reduce((acc) => [...acc, ...data], data)}
-        fitParentHeight={true}
+        hasParentHeight={true}
         pagination={false}
         scroll={{ x: true, y: '100%' }}
       />
