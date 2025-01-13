@@ -93,6 +93,7 @@
   }
   :global(.mia-platform-table-container) {
     border: none;
+    margin: 0 -1px;
   }
   :global(.mia-platform-table-container)::before,
   :global(.mia-platform-table-container)::after {
@@ -106,7 +107,6 @@
     border: 1px solid  var(--table-border-color);
     border-bottom-left-radius: var(--shape-border-radius-md, 4px);
     border-bottom-right-radius: var(--shape-border-radius-md, 4px);
-    margin: 0 -1px;
     background: white;
   }
 }
