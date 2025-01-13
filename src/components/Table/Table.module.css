@@ -91,15 +91,26 @@
   :global(.mia-platform-table-container) {
     height: 100% !important;
   }
-
+  :global(.mia-platform-table) {
+    background: none;
+  }
   :global(.mia-platform-table-container) {
     border: none;
   }
+  :global(.mia-platform-table-container)::before,
+  :global(.mia-platform-table-container)::after {
+    display: none;
+  }
+
   :global(.mia-platform-table-body) {
-    height: calc(100% - var(--table-header-height))!important;
-    border: 1px solid var(--table-border-color);
+    border: 1px solid  var(--table-border-color);
     border-bottom-left-radius: var(--shape-border-radius-md, 4px);
     border-bottom-right-radius: var(--shape-border-radius-md, 4px);
+    background: white;
+  }
+
+  :global(.mia-platform-table-expanded-row-fixed) {
+    width: 100%!important;
   }
 }
 
