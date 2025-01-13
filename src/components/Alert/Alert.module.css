@@ -104,13 +104,13 @@
 }
 
 .info {
-  background-color:  var(--palette-parimary-100, #E5F0FC);
+  background-color:  var(--palette-primary-100, #E5F0FC);
   border-color: var(--palette-primary-500, #1890FF);
   & .titleContainer > svg {
     color: var(--palette-primary-500, #1890FF) !important;
   }
   & > svg {
-    color: var(--palette-parimary-100, #E5F0FC) !important;
+    color: var(--palette-primary-100, #E5F0FC) !important;
   }
 }
 
