@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/* eslint-disable  react/no-multi-comp */
 import type { Meta, StoryObj } from '@storybook/react'
 import { ReactElement } from 'react'
 import { action } from '@storybook/addon-actions'
@@ -59,6 +60,7 @@ const meta = {
 
 export default meta
 type Story = StoryObj<typeof meta>
+type StoryFn = () => ReactElement
 
 export const Default: Story = {
   args: meta.args,
@@ -169,12 +171,39 @@ export const RowState: Story = {
   },
 }
 
-export const FitParentHeight = () : ReactElement => {
+export const FitParentHeight: StoryFn = () => {
   return (
-    <div style={{ height: 'calc(100vh - 2em)' }}>
+    <div style={{ height: 'calc(100vh - 2em - 40px)' }}>
       <Table
         {...meta.args}
         data={[...Array(30).keys()].reduce((acc) => [...acc, ...data], data)}
+        hasParentHeight={true}
+        pagination={false}
+        scroll={{ x: true, y: '100%' }}
+      />
+    </div>
+  )
+}
+
+export const FitParentHeightEmpty: StoryFn = () => {
+  return (
+    <div style={{ height: 'calc(100vh - 2em - 40px)' }}>
+      <Table
+        {...meta.args}
+        data={[]}
+        hasParentHeight={true}
+        pagination={false}
+        scroll={{ x: true, y: '100%' }}
+      />
+    </div>
+  )
+}
+
+export const FitParentHeightHalfEmpty: StoryFn = () => {
+  return (
+    <div style={{ height: 'calc(100vh - 2em - 40px)' }}>
+      <Table
+        {...meta.args}
         hasParentHeight={true}
         pagination={false}
         scroll={{ x: true, y: '100%' }}
