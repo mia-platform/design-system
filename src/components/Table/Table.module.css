@@ -127,7 +127,8 @@
 
 .hasPagination {
   --table-pagination-height: 55px;
-  :global(.mia-platform-table) {
+
+  :global(.mia-platform-table:has(+ .mia-platform-pagination)) {
     height: calc(100% - var(--table-pagination-height)) !important;
   }
 }
