@@ -23,6 +23,9 @@
   --table-border-color: var(--palette-common-grey-100, #f2f2f2);
   --column-padding: var(--spacing-padding-sm, 8px);
 
+  /* used when parent have a display flex or grid to handle correctly the scroll */
+  min-height: 0;
+
   :global(.mia-platform-table-container) {
     border-left: var(--table-border);
     border-right: var(--table-border);
@@ -91,6 +94,7 @@
   :global(.mia-platform-table-container) {
     height: 100% !important;
   }
+
   :global(.mia-platform-table-container) {
     border: none;
     margin: 0 -1px;
@@ -102,12 +106,29 @@
   :global(.mia-platform-table) {
     background: none;
   }
+  /* Remove double border bottom */
+  :global(.mia-platform-table-tbody > tr:last-child > td) {
+    border-bottom: none;
+  }
   :global(.mia-platform-table-body) {
     overflow: auto!important;
     border: 1px solid  var(--table-border-color);
     border-bottom-left-radius: var(--shape-border-radius-md, 4px);
     border-bottom-right-radius: var(--shape-border-radius-md, 4px);
     background: white;
+
+    /* Atnd use a double bottom border. removing this border in "mia-platform-table-tbody >tr:last-child >td" rule 
+     * creates a scrolling problem even when scrolling is not necessary
+     */
+    --table-last-tr-border: -1px;
+    height: calc(100% - var(--table-last-tr-border) - var(--table-header-height));
+  }
+}
+
+.hasPagination {
+  --table-pagination-height: 55px;
+  :global(.mia-platform-table) {
+    height: calc(100% - var(--table-pagination-height)) !important;
   }
 }
 

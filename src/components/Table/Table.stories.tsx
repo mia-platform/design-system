@@ -44,6 +44,7 @@ import {
   sizedColumns,
   spannedColumns,
 } from './Table.mocks'
+import { Card } from '../Card'
 import { Table } from '.'
 import { defaults } from './Table'
 
@@ -204,10 +205,47 @@ export const FitParentHeightHalfEmpty: StoryFn = () => {
     <div style={{ height: 'calc(100vh - 2em - 40px)' }}>
       <Table
         {...meta.args}
-        hasParentHeight={true}
+        hasParentHeight
         pagination={false}
         scroll={{ x: true, y: '100%' }}
       />
+    </div>
+  )
+}
+
+export const UseTableInACardWithHeightResizable: StoryFn = () => {
+  return (
+    <div style={{ maxHeight: '100%', display: 'grid', gridTemplateRows: '1fr' }}>
+      <Card
+        subtitle={'Try to resize the viewport height'}
+        title={'Use Table In A Card With Height Resizable'}
+      >
+        <Table
+          {...meta.args}
+          hasParentHeight
+          pagination={false}
+          scroll={{ x: true, y: '100%' }}
+        />
+      </Card>
+    </div>
+  )
+}
+
+export const UseMultipleCardsWithTables: StoryFn = () => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <Card title={'Use Table In multiple cards'}>
+        <Table
+          {...meta.args}
+          pagination={false}
+        />
+      </Card>
+      <Card title={'Use Table In multiple cards'}>
+        <Table
+          {...meta.args}
+          pagination={false}
+        />
+      </Card>
     </div>
   )
 }

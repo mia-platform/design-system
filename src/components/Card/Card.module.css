@@ -23,11 +23,18 @@
   border-radius: var(--shape-border-radius-lg, 8px);
   border-width: var(--shape-border-width-xs, 1px);
   padding: var(--spacing-padding-sm, 8px) var(--spacing-padding-xl, 24px);
+
+  /* used when parent have a display flex or grid */
+  min-height: 0;
+  min-width: 0;
 }
 
 .content {
   padding: var(--spacing-padding-lg, 16px) 0;
   gap: var(--spacing-gap-xl, 24px);
+  
+  /* used to inherit from card class the relative height correctly */
+  min-height: 0;
 }
 
 .docLink {
@@ -57,4 +64,8 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-gap-sm, 8px);
+}
+
+.skeleton {
+  padding: 12px 0;
 }
