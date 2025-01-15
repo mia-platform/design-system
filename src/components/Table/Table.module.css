@@ -94,7 +94,8 @@
   :global(.mia-platform-table-container) {
     height: 100% !important;
   }
-
+    /* Ensure the horizontal border of the table is not clipped if the container has the property overflow: hidden */
+    padding: 0 1px;
   :global(.mia-platform-table-container) {
     border: none;
     margin: 0 -1px;

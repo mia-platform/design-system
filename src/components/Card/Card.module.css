@@ -33,8 +33,9 @@
   padding: var(--spacing-padding-lg, 16px) 0;
   gap: var(--spacing-gap-xl, 24px);
   
-  /* used to inherit from card class the relative height correctly */
+  /* used to inherit from card class the relative width and height correctly */
   min-height: 0;
+  min-width: 0;
 }
 
 .docLink {
