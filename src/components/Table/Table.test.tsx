@@ -86,9 +86,8 @@ describe('Table Component', () => {
     await waitFor(() => expect(asFragment()).toMatchSnapshot())
 
     const selectAll = screen.getByLabelText('Select all')
-    const checkboxes = screen.getAllByRole('checkbox')
-
-    expect(selectAll).toBeInTheDocument()
+    // screen.getAllByRole('checkbox') match the select all checkbox so we exclude it
+    const checkboxes = screen.getAllByRole('checkbox', { name: /^((?!Select all).)*$/i })
     expect(checkboxes).toHaveLength(data.length)
 
     const [, checkbox] = checkboxes

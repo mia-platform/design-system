@@ -173,7 +173,7 @@ exports[`Card Component renders skeleton correctly 1`] = `
     class="card"
   >
     <div
-      class="mia-platform-skeleton mia-platform-skeleton-active"
+      class="mia-platform-skeleton mia-platform-skeleton-active skeleton"
     >
       <div
         class="mia-platform-skeleton-content"

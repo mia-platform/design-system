@@ -32,7 +32,7 @@ import { useTheme } from '../../hooks/useTheme'
 const { Auto } = Layout
 const { Middle } = Size
 const { Edit, Delete } = Action
-const { table, fitParentHeight } = styles
+const { table, fitParentHeight, hasPagination } = styles
 
 export const defaults = {
   actions: [],
@@ -94,7 +94,8 @@ export const Table = <RecordType extends GenericRecord>({
   const className = useMemo(() => classnames([
     table,
     hasParentHeight && fitParentHeight,
-  ]), [hasParentHeight])
+    pagination && hasPagination,
+  ]), [hasParentHeight, pagination])
 
   const iconSize = theme?.shape?.size?.md as IconProps['size'] || 16
 
@@ -105,7 +106,7 @@ export const Table = <RecordType extends GenericRecord>({
   )), [actions])
 
   const tableColumns = useMemo(() => [
-    ...columns,
+    ...columns.map((column) => ({ ellipsis: true, ...column })),
     ...customActions?.map(getAction) || [],
     ...editAction?.onClick || onEditRow ? [getAction({
       dataIndex: Edit,
@@ -148,10 +149,7 @@ export const Table = <RecordType extends GenericRecord>({
   }, [rowState])
 
   return (
-    <Skeleton
-      active
-      loading={isLoading}
-    >
+    <Skeleton active loading={isLoading}>
       <AntTable<RecordType>
         bordered={isBordered}
         className={className}
@@ -169,7 +167,7 @@ export const Table = <RecordType extends GenericRecord>({
         showHeader
         showSorterTooltip={false}
         size={size}
-        sticky={true}
+        sticky={false}
         tableLayout={layout}
         virtual={false}
         onChange={onChange}

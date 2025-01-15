@@ -28,7 +28,7 @@ import { Icon } from '../Icon'
 import styles from './Card.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
-const { card, content, header, heading } = styles
+const { card, content, header, heading, skeleton } = styles
 
 export const defaults = {
   isLoading: false,
@@ -66,6 +66,7 @@ export const Card = ({
         active
         loading={isLoading}
         paragraph={Card.skeletonParagraph}
+        rootClassName={skeleton}
       >
         {(title || subtitle) && <div className={header}>
           <div className={heading}>

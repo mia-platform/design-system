@@ -23,6 +23,9 @@
   --table-border-color: var(--palette-common-grey-100, #f2f2f2);
   --column-padding: var(--spacing-padding-sm, 8px);
 
+  /* used when parent have a display flex or grid to handle correctly the scroll */
+  min-height: 0;
+
   :global(.mia-platform-table-container) {
     border-left: var(--table-border);
     border-right: var(--table-border);
@@ -91,9 +94,13 @@
   :global(.mia-platform-table-container) {
     height: 100% !important;
   }
+    /* Ensure the horizontal border of the table is not clipped if the container has the property overflow: hidden */
+    padding: 0 1px;
   :global(.mia-platform-table-container) {
     border: none;
     margin: 0 -1px;
+    display: flex;
+    flex-direction: column;
   }
   :global(.mia-platform-table-container)::before,
   :global(.mia-platform-table-container)::after {
@@ -102,12 +109,33 @@
   :global(.mia-platform-table) {
     background: none;
   }
+
+  :global(.mia-platform-table-header) {
+    flex-shrink: 0;
+  }
+  /* Remove double border bottom */
+  :global(.mia-platform-table-tbody > tr:last-child > td) {
+    border-bottom: none;
+  }
   :global(.mia-platform-table-body) {
     overflow: auto!important;
     border: 1px solid  var(--table-border-color);
     border-bottom-left-radius: var(--shape-border-radius-md, 4px);
     border-bottom-right-radius: var(--shape-border-radius-md, 4px);
     background: white;
+
+    /* Antd use a double bottom border. removing this border in "mia-platform-table-tbody >tr:last-child >td" rule
+     * creates a scrolling problem even when scrolling is not necessary
+     */
+    --table-last-tr-border: -1px;
+  }
+}
+
+.hasPagination {
+  --table-pagination-height: 55px;
+
+  :global(.mia-platform-table:has(+ .mia-platform-pagination)) {
+    height: calc(100% - var(--table-pagination-height)) !important;
   }
 }
 

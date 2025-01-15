@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryFn, StoryObj } from '@storybook/react'
 
 import { actionButton, children, docLink, extra, subtitle, title } from './Card.mocks'
 import { hugeData, rowKey, scroll, scrollableColumns } from '../Table/Table.mocks'
@@ -78,17 +78,23 @@ export const ActionContent: Story = {
   },
 }
 
-export const TableContent: Story = {
-  args: {
-    children: (
-      <Table
-        columns={scrollableColumns}
-        data={hugeData}
-        rowKey={rowKey}
-        scroll={scroll}
-      />
-    ),
-  },
+export const TableContent: StoryFn = () => {
+  return (
+    <div style={{ maxHeight: '100%', display: 'grid', gridTemplateRows: '1fr' }}>
+      <Card
+        subtitle={'Try to resize the viewport height'}
+        title={'Use Table In A Card With Height Resizable'}
+      >
+        <Table
+          columns={scrollableColumns}
+          data={hugeData}
+          hasParentHeight
+          rowKey={rowKey}
+          scroll={scroll}
+        />
+      </Card>
+    </div>
+  )
 }
 
 export const Loading: Story = {
