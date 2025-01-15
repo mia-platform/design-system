@@ -99,6 +99,8 @@
   :global(.mia-platform-table-container) {
     border: none;
     margin: 0 -1px;
+    display: flex;
+    flex-direction: column;
   }
   :global(.mia-platform-table-container)::before,
   :global(.mia-platform-table-container)::after {
@@ -106,6 +108,10 @@
   }
   :global(.mia-platform-table) {
     background: none;
+  }
+
+  :global(.mia-platform-table-header) {
+    flex-shrink: 0;
   }
   /* Remove double border bottom */
   :global(.mia-platform-table-tbody > tr:last-child > td) {
@@ -118,20 +124,15 @@
     border-bottom-right-radius: var(--shape-border-radius-md, 4px);
     background: white;
 
-    /* Atnd use a double bottom border. removing this border in "mia-platform-table-tbody >tr:last-child >td" rule 
+    /* Atnd use a double bottom border. removing this border in "mia-platform-table-tbody >tr:last-child >td" rule
      * creates a scrolling problem even when scrolling is not necessary
      */
     --table-last-tr-border: -1px;
-    height: calc(100% - var(--table-last-tr-border) - var(--table-header-height));
   }
 }
 
 .hasPagination {
   --table-pagination-height: 55px;
-
-  :global(.mia-platform-table:has(+ .mia-platform-pagination)) {
-    height: calc(100% - var(--table-pagination-height)) !important;
-  }
 }
 
 .action {
