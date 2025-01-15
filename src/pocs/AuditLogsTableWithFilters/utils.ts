@@ -30,8 +30,12 @@ export class FiltersManager {
     this.fieldsFilter = new Map()
   }
 
-  addFieldFilter(fieldName: string, filterType: FilterType, value: FilterValue | FilterValue[]): void {
+  addFieldFilter(fieldName: string, value: FilterValue | FilterValue[], filterType?: FilterType): void {
     try {
+      if (!filterType) {
+        // eslint-disable-next-line no-param-reassign
+        filterType = FilterType.equals
+      }
       let arrayValue: FilterValue[]
       if (Array.isArray(value)) {
         arrayValue = value
@@ -95,9 +99,5 @@ export type FilterElement = {
   field: string,
   filterType: FilterType
   value: FilterValue
-}
-
-export type FilterBlock = {
-  elements: FilterElement[]
 }
 
