@@ -304,35 +304,35 @@ export const WithExternalFiltersAndSorters = (props: TableProps<TableRecord>): R
 /* ********* Code for the Audit log Table POC ***************** */
 
 /* ******** utils for filter, sort, and pagination ******** */
- enum FilterType {
+enum FilterType {
   equals = 'equals',
   contains = 'contains',
   before = 'before',
   after = 'after'
 }
 
- type FilterValue = string | number | dayjs.Dayjs
+type FilterValue = string | number | dayjs.Dayjs
 
- type Filter = {
+type Filter = {
   filterType: FilterType,
   value: FilterValue[]
 }
 
- type FieldsFilter = Map<string, Filter[]>
+type FieldsFilter = Map<string, Filter[]>
 
- type GlobalFilter = {
+type GlobalFilter = {
   value: string,
   filterType: FilterType,
   fields: string[]
 }
 
- type FilterElement = {
+type FilterElement = {
   field: string,
   filterType: FilterType
   value: FilterValue
 }
 
- type sortDirection = 'ascend' | 'descend'
+type sortDirection = 'ascend' | 'descend'
 
 class FiltersManager {
   private fieldsFilter: FieldsFilter
@@ -528,12 +528,12 @@ class FiltersManager {
 /** *****  end utils for filter, sort, and pagination ******** */
 
 /** *****  DatePicker component ******** */
- type DisabledTime = {
+type DisabledTime = {
   disabledHours?: () => number[];
   disabledMinutes?: (hour: number) => number[];
 }
 
- type DatePickerProps = {
+type DatePickerProps = {
   onChange?: (value: dayjs.Dayjs, dateString: string | string[]) => void
   disabledDate?: (current: dayjs.Dayjs) => boolean
   disabledTime?: (current: dayjs.Dayjs) => DisabledTime
@@ -562,11 +562,11 @@ const DatePicker = ({
 
 /** ***** Dropdown Filter component ******** */
 
- type FilterConfirmProps = {
+type FilterConfirmProps = {
   closeDropdown: boolean;
 }
 
- type SearchDropdownProps = {
+type SearchDropdownProps = {
   setSelectedKeys: (selectedKeys: React.Key[]) => void;
   selectedKeys: React.Key[];
   confirm: (param?: FilterConfirmProps) => void;
@@ -623,7 +623,7 @@ enum Fields {
   method = 'method',
 }
 
- type AuditLogRecord = {
+type AuditLogRecord = {
   logId: string;
   time: string;
   author: string;
