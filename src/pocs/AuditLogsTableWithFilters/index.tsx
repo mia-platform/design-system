@@ -4,10 +4,11 @@ import { Space } from 'antd'
 import dayjs from 'dayjs'
 
 import { DatePicker, DisabledTime } from './DatePicker'
-import { FilterElement, FilterType, FilterValue, FiltersManager } from './utils'
-import { Button } from '../../components/Button'
+import { FilterElement, FilterType, FilterValue, FiltersManager, buildFilterFn, buildSortFn, sortDirection } from './utils'
+import { SearchDropdown, SearchDropdownProps } from './DropdownSearch'
 import { Icon } from '../../components/Icon'
 import { Input } from '../../components/Input'
+import { Pagination } from '../../components/Table/Table.types'
 import { Table } from '../../components/Table'
 
 enum FieldNames {
@@ -17,7 +18,7 @@ enum FieldNames {
   method = 'method',
 }
 
-export type TableRecord = {
+export type AuditLogRecord = {
   logId: string;
   time: string;
   author: string;
@@ -25,75 +26,23 @@ export type TableRecord = {
   method: string;
 };
 
-const filterFiledType: Partial<Record<keyof TableRecord, FilterType>> = {
+const filterFiledType: Partial<Record<keyof AuditLogRecord, FilterType>> = {
   author: FilterType.contains,
-}
-
-type FilterConfirmProps = {
-  closeDropdown: boolean;
 }
 
 const columns = [
   {
     dataIndex: FieldNames.time,
     title: 'Time',
-    render: (_value: unknown, record: TableRecord) =>
+    render: (_value: unknown, record: AuditLogRecord) =>
       dayjs(record.time).format('YYYY-MM-DD HH:mm'),
   },
   {
     dataIndex: FieldNames.author,
     title: 'Author',
     sorter: true,
-    filterDropdown: ({
-      setSelectedKeys,
-      selectedKeys,
-      confirm,
-      clearFilters,
-      close,
-    }: {
-      setSelectedKeys: (selectedKeys: React.Key[]) => void;
-      selectedKeys: React.Key[];
-      confirm: (param?: FilterConfirmProps) => void;
-      clearFilters?: () => void;
-      close: () => void;
-    }) => (
-      <div style={{ padding: 8 }}>
-        <Input
-          placeholder={'Search'}
-          value={selectedKeys[0] as string}
-          onChange={(event) =>
-            setSelectedKeys(event?.target.value ? [event.target.value] : [])}
-          // onPressEnter={() => handleSearch(selectedKeys as string[], confirm, dataIndex)}
-        />
-        <Space>
-          <Button
-            // onClick={() => handleSearch(selectedKeys as string[], confirm, dataIndex)}
-            onClick={() => {
-              confirm({ closeDropdown: true })
-            }}
-          >
-            Search
-          </Button>
-          <Button
-            hierarchy={Button.Hierarchy.Neutral}
-            onClick={() => {
-              if (clearFilters) {
-                clearFilters()
-              }
-            }}
-          >
-            Reset
-          </Button>
-          <Button
-            type={Button.Type.Link}
-            onClick={() => {
-              close()
-            }}
-          >
-            close
-          </Button>
-        </Space>
-      </div>
+    filterDropdown: (props: SearchDropdownProps) => (
+      SearchDropdown(props)
     ),
   },
   {
@@ -145,7 +94,7 @@ const columns = [
   },
 ]
 
-export const data: TableRecord[] = [
+export const data: AuditLogRecord[] = [
   {
     logId: 'log_id_1',
     time: '2025-01-01T00:00:00.000Z',
@@ -195,96 +144,14 @@ export const data: TableRecord[] = [
   },
 ]
 
-export const buildFilterFn = (filterGroups: FilterElement[][]): (record: TableRecord) => boolean => {
-  return (record: TableRecord) => {
-    for (const filterGroup of filterGroups) {
-      let blockOk = false
-      for (const filterElement of filterGroup) {
-        // sono in or, basta che una condizione sia vera e tutto è vero
-        const { filterType } = filterElement
-        const value = record[filterElement.field as keyof TableRecord]
-        const filterValue = filterElement.value
-        switch (filterType) {
-        case FilterType.equals:
-          if (value === filterValue) {
-            blockOk = true
-          }
-          break
-        case FilterType.contains:
-          if (value?.trim().toLowerCase()
-            .includes((filterValue as string).toLowerCase())) {
-            blockOk = true
-          }
-          break
-        case FilterType.after:
-          if (!(dayjs(value).isBefore(filterValue))) {
-            blockOk = true
-          }
-          break
-        case FilterType.before:
-          if (!(dayjs(value).isAfter(filterValue))) {
-            blockOk = true
-          }
-          break
-        default:
-        }
-        if (blockOk) {
-          break
-        }
-      }
-      if (!blockOk) {
-        return false
-      }
-    }
-    return true
-  }
-}
-
-type sortDirection = 'ascend' | 'descend'
-
-export const buildSortFn = (sort: Record<string, sortDirection>): ((
-  valueA: TableRecord,
-  recordB: TableRecord
-) => number) => {
-  const [[field, direction]] = Object.entries(sort)
-  return (recordA: TableRecord, recordB: TableRecord) => {
-    if (!field || !direction) {
-      return 0
-    }
-    const valueA = recordA[field as keyof TableRecord]
-    const valueB = recordB[field as keyof TableRecord]
-
-    if (!valueA && !valueB) {
-      return 0
-    }
-    if (!valueA) {
-      return direction === 'ascend' ? 1 : -1
-    }
-    if (!valueB) {
-      return direction === 'ascend' ? -1 : 1
-    }
-
-    return direction === 'ascend' ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA)
-  }
-}
-
-type Pagination = {
-  current: number,
-  pageSize: number,
-  total: number,
-  defaultPageSize: number,
-  pageSizeOptions: number[],
-}
-
 export const AuditLogTableWithFilters = (): ReactElement => {
   const [dataSource, setDataSource] = useState(data)
   const [startDate, setStartDate] = useState<dayjs.Dayjs>()
   const [endDate, setEndDate] = useState<dayjs.Dayjs>()
-  const [searchText, setSearchText] = useState('')
+  const [globalSearch, setGlobalSearch] = useState('')
   const [appliedFilters, setAppliedFilters] = useState<Record<string, unknown[]>>()
   const [appliedSort, setAppliedSort] = useState<Record<string, sortDirection>>()
-
-  const [pagination, setPagination] = useState<Pagination>({
+  const [appliedPagination, setAppliedPagination] = useState<Pagination>({
     current: 1,
     pageSize: 4,
     total: data.length,
@@ -292,12 +159,13 @@ export const AuditLogTableWithFilters = (): ReactElement => {
     pageSizeOptions: [4, 6],
   })
 
-  const applyFilterAndPagination = useCallback(() => {
+  const applyFiltersAndSortAndPagination = useCallback(() => {
     const filtersManager = new FiltersManager()
 
-    if (searchText) { // devo sapere questo filtro quali campi coinvolge
+    // devo sapere questo filtro quali campi coinvolge
+    if (globalSearch) {
       const globalFilterFields = [FieldNames.author, FieldNames.role]
-      filtersManager.addGlobalFilter(searchText, FilterType.contains, globalFilterFields)
+      filtersManager.addGlobalFilter(globalSearch, FilterType.contains, globalFilterFields)
     }
 
     if (startDate) {
@@ -310,70 +178,38 @@ export const AuditLogTableWithFilters = (): ReactElement => {
 
     if (appliedFilters) {
       for (const [field, filterValues] of Object.entries(appliedFilters)) {
-        filtersManager.addFieldFilter(field, filterValues as FilterValue[], filterFiledType[field as keyof TableRecord])
+        filtersManager.addFieldFilter(
+          field,
+          filterValues as FilterValue[],
+          filterFiledType[field as keyof AuditLogRecord]
+        )
       }
     }
 
-    const exractedFilters = filtersManager.getFilters()
-    const extractedGlobalFilter = exractedFilters.globalFilters
-
-    const filterGroups: FilterElement[][] = []
-
-    if (extractedGlobalFilter) {
-      filterGroups.push(extractedGlobalFilter.fields.map(field => ({
-        field,
-        filterType: extractedGlobalFilter.filterType,
-        value: extractedGlobalFilter.value,
-      })))
-    }
-
-    for (const [key, filters] of exractedFilters.fieldsFilters) {
-      let filterGroup: FilterElement[]
-      for (const filter of filters) {
-        if (Array.isArray(filter.value)) {
-          filterGroup = filter.value.map(val => ({
-            field: key,
-            filterType: filter.filterType,
-            value: val,
-          }))
-        } else {
-          filterGroup = [{
-            field: key,
-            filterType: filter.filterType,
-            value: filter.value,
-          }]
-        }
-        filterGroups.push(filterGroup)
-      }
-    }
-
-    const filterFn = buildFilterFn(filterGroups)
+    // console.log('appliedFilters', filterGroups)
+    const filterFn = filtersManager.buildFilterFn()
 
     const filteredData = data.filter(record => filterFn(record))
 
-    console.log('appliedSort', appliedSort)
+    // console.log('appliedSort', appliedSort)
 
     if (appliedSort) {
       const sortFn = buildSortFn(appliedSort)
-
-      console.log('filteredData', filteredData)
-      console.log('insideappliedSort')
       filteredData.sort(sortFn)
-      console.log('filteredData-sort', filteredData)
     }
 
-    const recordToSkip = (pagination.current - 1) * pagination.pageSize
+    const recordToSkip = (appliedPagination.current! - 1) * appliedPagination.pageSize!
 
     setDataSource(filteredData.slice(recordToSkip))
 
-    if (pagination.total !== filteredData.length) {
-      setPagination(prev => ({ ...prev, total: filteredData.length }))
+    if (appliedPagination.total !== filteredData.length) {
+      setAppliedPagination(prev => ({ ...prev, total: filteredData.length }))
     }
-  }, [appliedFilters, appliedSort, endDate, pagination, searchText, startDate])
+  }, [appliedFilters, appliedSort, endDate, appliedPagination, globalSearch, startDate])
 
   useEffect(() => {
-    applyFilterAndPagination()
-  }, [applyFilterAndPagination])
+    applyFiltersAndSortAndPagination()
+  }, [applyFiltersAndSortAndPagination])
 
   const handleChangeGlobalFilter = useCallback((
     _: unknown,
@@ -386,7 +222,7 @@ export const AuditLogTableWithFilters = (): ReactElement => {
       searchVal = val
     }
 
-    setSearchText(searchVal)
+    setGlobalSearch(searchVal)
   }, [])
 
   const handleStartDateChange = useCallback((value: dayjs.Dayjs, _dateString: string | string[]): void => {
@@ -470,13 +306,13 @@ export const AuditLogTableWithFilters = (): ReactElement => {
 
     // Remove keys with null values
     const cleanedRecord = Object.fromEntries(
-      Object.entries(filters as Record<keyof TableRecord, unknown[]>).filter(([_key, value]) => value !== null)
+      Object.entries(filters as Record<keyof AuditLogRecord, unknown[]>).filter(([_key, value]) => value !== null)
     )
-    setAppliedFilters(cleanedRecord as Record<keyof TableRecord, unknown[]>)
-    const sort = sorting as { field: keyof TableRecord; order: sortDirection }
+    setAppliedFilters(cleanedRecord as Record<keyof AuditLogRecord, unknown[]>)
+    const sort = sorting as { field: keyof AuditLogRecord; order: sortDirection }
     setAppliedSort({ [sort.field]: sort.order })
 
-    setPagination(prev => ({
+    setAppliedPagination(prev => ({
       ...prev,
       current: (pagination as Pagination).current,
       pageSize: (pagination as Pagination).pageSize,
@@ -510,7 +346,7 @@ export const AuditLogTableWithFilters = (): ReactElement => {
         columns={columns}
         data={dataSource}
         isLoading={false}
-        pagination={pagination}
+        pagination={appliedPagination}
         rowKey={'logId'}
         onChange={handleTableChange}
       />

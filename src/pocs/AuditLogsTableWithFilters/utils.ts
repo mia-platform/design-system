@@ -22,6 +22,22 @@ export type GlobalFilter = {
   fields: string[]
 }
 
+export type FilterElement = {
+  field: string,
+  filterType: FilterType
+  value: FilterValue
+}
+
+export type sortDirection = 'ascend' | 'descend'
+
+export type Pagination = {
+  current: number,
+  pageSize: number,
+  total: number,
+  defaultPageSize: number,
+  pageSizeOptions: number[],
+}
+
 export class FiltersManager {
   private fieldsFilter: FieldsFilter
   private globalFilter?: GlobalFilter
@@ -87,17 +103,154 @@ export class FiltersManager {
     }
   }
 
-  getFilters(): {fieldsFilters: FieldsFilter, globalFilters?: GlobalFilter} {
-    return {
-      fieldsFilters: this.fieldsFilter,
-      globalFilters: this.globalFilter,
+  buildAppliedFilter(): FilterElement[][] {
+    const filterGroups: FilterElement[][] = []
+
+    if (this.globalFilter) {
+      filterGroups.push(this.globalFilter.fields.map(field => ({
+        field,
+        filterType: this.globalFilter!.filterType,
+        value: this.globalFilter!.value,
+      })))
+    }
+
+    for (const [key, filters] of this.fieldsFilter) {
+      let filterGroup: FilterElement[]
+      for (const filter of filters) {
+        if (Array.isArray(filter.value)) {
+          filterGroup = filter.value.map(val => ({
+            field: key,
+            filterType: filter.filterType,
+            value: val,
+          }))
+        } else {
+          filterGroup = [{
+            field: key,
+            filterType: filter.filterType,
+            value: filter.value,
+          }]
+        }
+        filterGroups.push(filterGroup)
+      }
+    }
+    return filterGroups
+  }
+
+  buildFilterFn(): (record: Record<string, unknown>) => boolean {
+    return (record: Record<string, unknown>) => {
+      const filterGroups = this.buildAppliedFilter()
+      for (const filterGroup of filterGroups) {
+        let blockOk = false
+        for (const filterElement of filterGroup) {
+          // sono in or, basta che una condizione sia vera e tutto è vero
+          const { filterType } = filterElement
+          const value = record[filterElement.field]
+          const filterValue = filterElement.value
+          switch (filterType) {
+          case FilterType.equals:
+            if (value === filterValue) {
+              blockOk = true
+            }
+            break
+          case FilterType.contains:
+            if (typeof value === 'string' && value?.trim().toLowerCase()
+              .includes((filterValue as string).toLowerCase())) {
+              blockOk = true
+            }
+            break
+          case FilterType.after:
+            if (dayjs.isDayjs(value) && !(dayjs(value).isBefore(filterValue))) {
+              blockOk = true
+            }
+            break
+          case FilterType.before:
+            if (dayjs.isDayjs(value) && !(dayjs(value).isAfter(filterValue))) {
+              blockOk = true
+            }
+            break
+          default:
+          }
+          if (blockOk) {
+            break
+          }
+        }
+        if (!blockOk) {
+          return false
+        }
+      }
+      return true
     }
   }
 }
 
-export type FilterElement = {
-  field: string,
-  filterType: FilterType
-  value: FilterValue
+export const buildFilterFn = (filterGroups: FilterElement[][]): (record: Record<string, unknown>) => boolean => {
+  return (record) => {
+    for (const filterGroup of filterGroups) {
+      let blockOk = false
+      for (const filterElement of filterGroup) {
+        // sono in or, basta che una condizione sia vera e tutto è vero
+        const { filterType } = filterElement
+        const value = record[filterElement.field]
+        const filterValue = filterElement.value
+        switch (filterType) {
+        case FilterType.equals:
+          if (value === filterValue) {
+            blockOk = true
+          }
+          break
+        case FilterType.contains:
+          if (typeof value === 'string' && value?.trim().toLowerCase()
+            .includes((filterValue as string).toLowerCase())) {
+            blockOk = true
+          }
+          break
+        case FilterType.after:
+          if (dayjs.isDayjs(value) && !(dayjs(value).isBefore(filterValue))) {
+            blockOk = true
+          }
+          break
+        case FilterType.before:
+          if (dayjs.isDayjs(value) && !(dayjs(value).isAfter(filterValue))) {
+            blockOk = true
+          }
+          break
+        default:
+        }
+        if (blockOk) {
+          break
+        }
+      }
+      if (!blockOk) {
+        return false
+      }
+    }
+    return true
+  }
+}
+
+export const buildSortFn = (sort: Record<string, sortDirection>): ((
+  valueA: Record<string, string>,
+  recordB: Record<string, string>,
+) => number) => {
+  const [[field, direction]] = Object.entries(sort)
+  return (recordA, recordB) => {
+    if (!field || !direction) {
+      return 0
+    }
+    const valueA = recordA[field]
+    const valueB = recordB[field]
+
+    if (!valueA && !valueB) {
+      return 0
+    }
+    if (!valueA) {
+      return direction === 'ascend' ? 1 : -1
+    }
+    if (!valueB) {
+      return direction === 'ascend' ? -1 : 1
+    }
+
+    return direction === 'ascend' ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA)
+  }
 }
 
