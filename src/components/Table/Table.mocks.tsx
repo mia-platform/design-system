@@ -301,7 +301,7 @@ export const WithExternalFiltersAndSorters = (props: TableProps<TableRecord>): R
   )
 }
 
-/* ********* Code for the Audit log Table POC ***************** */
+/* ********* Code for the Logs Table case ***************** */
 
 /* ******** utils for filter, sort, and pagination ******** */
 enum FilterType {
@@ -614,7 +614,7 @@ const SearchDropdown = ({
 
 /** ***** Dropdown Filter component ******** */
 
-/** *****  AuditLogTable component ******** */
+/** *****  LogTable component ******** */
 
 enum Fields {
   time = 'time',
@@ -623,7 +623,7 @@ enum Fields {
   method = 'method',
 }
 
-type AuditLogRecord = {
+type LogRecord = {
   logId: string;
   time: string;
   author: string;
@@ -631,15 +631,15 @@ type AuditLogRecord = {
   method: string;
 };
 
-const filterFiledType: Partial<Record<keyof AuditLogRecord, FilterType>> = {
+const filterFiledType: Partial<Record<keyof LogRecord, FilterType>> = {
   author: FilterType.contains,
 }
 
-const autidLogsColumns = [
+const logsColumns = [
   {
     dataIndex: Fields.time,
     title: 'Time',
-    render: (_value: unknown, record: AuditLogRecord) =>
+    render: (_value: unknown, record: LogRecord) =>
       dayjs(record.time).format('YYYY-MM-DD HH:mm'),
   },
   {
@@ -699,7 +699,7 @@ const autidLogsColumns = [
   },
 ]
 
-const auditLogsData: AuditLogRecord[] = [
+const logsData: LogRecord[] = [
   {
     logId: 'log_id_1',
     time: '2025-01-01T00:00:00.000Z',
@@ -749,8 +749,8 @@ const auditLogsData: AuditLogRecord[] = [
   },
 ]
 
-export const AuditLogTable = (): ReactElement => {
-  const [dataSource, setDataSource] = useState(auditLogsData)
+export const LogsTable = (): ReactElement => {
+  const [dataSource, setDataSource] = useState(logsData)
   const [startDate, setStartDate] = useState<dayjs.Dayjs>()
   const [endDate, setEndDate] = useState<dayjs.Dayjs>()
   const [globalSearch, setGlobalSearch] = useState('')
@@ -759,7 +759,7 @@ export const AuditLogTable = (): ReactElement => {
   const [appliedPagination, setAppliedPagination] = useState<Pagination>({
     current: 1,
     pageSize: 4,
-    total: auditLogsData.length,
+    total: logsData.length,
     defaultPageSize: 4,
     pageSizeOptions: [4, 6],
   })
@@ -787,13 +787,13 @@ export const AuditLogTable = (): ReactElement => {
         filtersManager.addFieldFilter(
           field,
           filterValues as FilterValue[],
-          filterFiledType[field as keyof AuditLogRecord]
+          filterFiledType[field as keyof LogRecord]
         )
       }
     }
 
-    const filteredData = filtersManager.filter(auditLogsData)
-    const sortedData = filtersManager.sort(filteredData, appliedSort) as AuditLogRecord[]
+    const filteredData = filtersManager.filter(logsData)
+    const sortedData = filtersManager.sort(filteredData, appliedSort) as LogRecord[]
     const recordToSkip = (appliedPagination.current! - 1) * appliedPagination.pageSize!
 
     setDataSource(sortedData.slice(recordToSkip))
@@ -898,10 +898,10 @@ export const AuditLogTable = (): ReactElement => {
   const handleTableChange = useCallback((paginationInfo: unknown, filterInfo: unknown, sorting: unknown) => {
     // Remove keys with null values
     const cleanedRecord = Object.fromEntries(
-      Object.entries(filterInfo as Record<keyof AuditLogRecord, unknown[]>).filter(([_key, value]) => value !== null)
+      Object.entries(filterInfo as Record<keyof LogRecord, unknown[]>).filter(([_key, value]) => value !== null)
     )
-    setAppliedFilters(cleanedRecord as Record<keyof AuditLogRecord, unknown[]>)
-    const sort = sorting as { field: keyof AuditLogRecord; order: sortDirection }
+    setAppliedFilters(cleanedRecord as Record<keyof LogRecord, unknown[]>)
+    const sort = sorting as { field: keyof LogRecord; order: sortDirection }
     setAppliedSort({ [sort.field]: sort.order })
 
     setAppliedPagination(prev => ({
@@ -935,7 +935,7 @@ export const AuditLogTable = (): ReactElement => {
         />
       </Space>
       <Table
-        columns={autidLogsColumns}
+        columns={logsColumns}
         data={dataSource}
         isLoading={false}
         pagination={appliedPagination}
@@ -946,6 +946,6 @@ export const AuditLogTable = (): ReactElement => {
   )
 }
 
-/** *****  end AuditLogTable component ******** */
+/** *****  end LogTable component ******** */
 
-/* ********* end Code for the Audit log Table POC ***************** */
+/* ********* end Code for the Log Table case ***************** */

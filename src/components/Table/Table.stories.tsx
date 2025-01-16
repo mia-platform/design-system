@@ -22,7 +22,7 @@ import { action } from '@storybook/addon-actions'
 
 import { Action, RowState as RowStateEnum } from './Table.types'
 import {
-  AuditLogTable,
+  LogsTable,
   TableRecord,
   TableRecordState,
   WithExternalFiltersAndSorters,
@@ -185,5 +185,5 @@ export const FitParentHeight = () : ReactElement => {
 }
 
 export const WithCustomFilters: Story = {
-  decorators: [() => <AuditLogTable />],
+  decorators: [() => <LogsTable />],
 }
