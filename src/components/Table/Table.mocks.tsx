@@ -186,7 +186,7 @@ export const spannedColumns: ColumnType<TableRecord>[] = [
 
 export const scroll = {
   x: 1800,
-  y: 200,
+  y: '100%',
   scrollToFirstRowOnChange: true,
 }
 

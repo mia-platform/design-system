@@ -3,7 +3,7 @@
 exports[`Table Component renders actions correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -18,63 +18,7 @@ exports[`Table Component renders actions correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
-            >
-              <table
-                style="table-layout: fixed; visibility: hidden;"
-              >
-                <colgroup />
-                <thead
-                  class="mia-platform-table-thead"
-                >
-                  <tr>
-                    <th
-                      class="mia-platform-table-cell"
-                      scope="col"
-                    >
-                      Field 1
-                    </th>
-                    <th
-                      class="mia-platform-table-cell"
-                      scope="col"
-                    >
-                      Field 2
-                    </th>
-                    <th
-                      class="mia-platform-table-cell"
-                      scope="col"
-                    >
-                      Field 3
-                    </th>
-                    <th
-                      class="mia-platform-table-cell"
-                      scope="col"
-                    >
-                      Field 4
-                    </th>
-                    <th
-                      class="mia-platform-table-cell"
-                      style="text-align: right;"
-                    />
-                    <th
-                      class="mia-platform-table-cell"
-                      style="text-align: right;"
-                    />
-                    <th
-                      class="mia-platform-table-cell"
-                      style="text-align: right;"
-                    />
-                    <th
-                      class="mia-platform-table-cell"
-                      style="text-align: right;"
-                    />
-                  </tr>
-                </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
+              class="mia-platform-table-content"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -98,6 +42,56 @@ exports[`Table Component renders actions correctly 1`] = `
                     style="width: 0px;"
                   />
                 </colgroup>
+                <thead
+                  class="mia-platform-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="Field 1"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="Field 2"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="Field 3"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="Field 4"
+                    >
+                      Field 4
+                    </th>
+                    <th
+                      class="mia-platform-table-cell"
+                      style="text-align: right;"
+                    />
+                    <th
+                      class="mia-platform-table-cell"
+                      style="text-align: right;"
+                    />
+                    <th
+                      class="mia-platform-table-cell"
+                      style="text-align: right;"
+                    />
+                    <th
+                      class="mia-platform-table-cell"
+                      style="text-align: right;"
+                    />
+                  </tr>
+                </thead>
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -184,22 +178,26 @@ exports[`Table Component renders actions correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -349,22 +347,26 @@ exports[`Table Component renders actions correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -514,22 +516,26 @@ exports[`Table Component renders actions correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -680,22 +686,26 @@ exports[`Table Component renders actions correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -854,7 +864,7 @@ exports[`Table Component renders actions correctly 1`] = `
 exports[`Table Component renders aligned columns correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -869,11 +879,11 @@ exports[`Table Component renders aligned columns correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -881,38 +891,31 @@ exports[`Table Component renders aligned columns correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
                       style="text-align: left;"
+                      title="Left Alignment"
                     >
                       Left Alignment
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
                       style="text-align: center;"
+                      title="Center Alignment"
                     >
                       Center Alignment
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
                       style="text-align: right;"
+                      title="Right Alignment"
                     >
                       Right Alignment
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -954,20 +957,23 @@ exports[`Table Component renders aligned columns correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: left;"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: center;"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: right;"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -977,20 +983,23 @@ exports[`Table Component renders aligned columns correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: left;"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: center;"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: right;"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -1000,20 +1009,23 @@ exports[`Table Component renders aligned columns correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: left;"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: center;"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: right;"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -1023,20 +1035,23 @@ exports[`Table Component renders aligned columns correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: left;"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: center;"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       style="text-align: right;"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -1055,7 +1070,7 @@ exports[`Table Component renders aligned columns correctly 1`] = `
 exports[`Table Component renders bordered table correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -1070,11 +1085,11 @@ exports[`Table Component renders bordered table correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -1082,41 +1097,35 @@ exports[`Table Component renders bordered table correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -1167,22 +1176,26 @@ exports[`Table Component renders bordered table correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -1192,22 +1205,26 @@ exports[`Table Component renders bordered table correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -1217,22 +1234,26 @@ exports[`Table Component renders bordered table correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -1242,22 +1263,26 @@ exports[`Table Component renders bordered table correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -1276,7 +1301,7 @@ exports[`Table Component renders bordered table correctly 1`] = `
 exports[`Table Component renders columns filters and sorters correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -1291,11 +1316,11 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -1303,8 +1328,9 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Filtered (Menu)"
                     >
                       <div
                         class="mia-platform-table-filter-column"
@@ -1342,8 +1368,9 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                       </div>
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Filtered (Tree)"
                     >
                       <div
                         class="mia-platform-table-filter-column"
@@ -1382,9 +1409,10 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     </th>
                     <th
                       aria-sort="ascending"
-                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-column-has-sorters"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis mia-platform-table-column-has-sorters"
                       scope="col"
                       tabindex="0"
+                      title="Sorted"
                     >
                       <div
                         class="mia-platform-table-column-sorters"
@@ -1445,9 +1473,10 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     </th>
                     <th
                       aria-sort="ascending"
-                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-column-has-sorters"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis mia-platform-table-column-has-sorters"
                       scope="col"
                       tabindex="0"
+                      title="Filtered and Sorted"
                     >
                       <div
                         class="mia-platform-table-filter-column"
@@ -1541,16 +1570,6 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -1601,22 +1620,26 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell mia-platform-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell mia-platform-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -1626,22 +1649,26 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell mia-platform-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell mia-platform-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -1651,22 +1678,26 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell mia-platform-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell mia-platform-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -1676,22 +1707,26 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell mia-platform-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell mia-platform-table-column-sort"
+                      class="mia-platform-table-cell mia-platform-table-column-sort mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -1710,7 +1745,7 @@ exports[`Table Component renders columns filters and sorters correctly 1`] = `
 exports[`Table Component renders columns with certain width correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -1725,47 +1760,7 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
-            >
-              <table
-                style="table-layout: fixed; visibility: hidden;"
-              >
-                <colgroup />
-                <thead
-                  class="mia-platform-table-thead"
-                >
-                  <tr>
-                    <th
-                      class="mia-platform-table-cell"
-                      scope="col"
-                    >
-                      20%
-                    </th>
-                    <th
-                      class="mia-platform-table-cell"
-                      scope="col"
-                    >
-                      30%
-                    </th>
-                    <th
-                      class="mia-platform-table-cell"
-                      scope="col"
-                    >
-                      40%
-                    </th>
-                    <th
-                      class="mia-platform-table-cell"
-                      scope="col"
-                    >
-                      10%
-                    </th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
+              class="mia-platform-table-content"
               style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
@@ -1785,6 +1780,40 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
                     style="width: 10%;"
                   />
                 </colgroup>
+                <thead
+                  class="mia-platform-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="20%"
+                    >
+                      20%
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="30%"
+                    >
+                      30%
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="40%"
+                    >
+                      40%
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="10%"
+                    >
+                      10%
+                    </th>
+                  </tr>
+                </thead>
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -1835,22 +1864,26 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -1860,22 +1893,26 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -1885,22 +1922,26 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -1910,22 +1951,26 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -1944,7 +1989,7 @@ exports[`Table Component renders columns with certain width correctly 1`] = `
 exports[`Table Component renders expandable rows correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -1959,11 +2004,11 @@ exports[`Table Component renders expandable rows correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup>
                   <col
@@ -1978,45 +2023,35 @@ exports[`Table Component renders expandable rows correctly 1`] = `
                       class="mia-platform-table-cell mia-platform-table-row-expand-icon-cell"
                     />
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup>
-                  <col
-                    class="mia-platform-table-expand-icon-col"
-                  />
-                </colgroup>
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -2088,22 +2123,26 @@ exports[`Table Component renders expandable rows correctly 1`] = `
                       </span>
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -2135,22 +2174,26 @@ exports[`Table Component renders expandable rows correctly 1`] = `
                       </span>
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -2172,22 +2215,26 @@ exports[`Table Component renders expandable rows correctly 1`] = `
                       </span>
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -2209,22 +2256,26 @@ exports[`Table Component renders expandable rows correctly 1`] = `
                       </span>
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -2314,7 +2365,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
       class="mia-platform-space-item"
     >
       <div
-        class="mia-platform-table-wrapper table"
+        class="mia-platform-table-wrapper table hasPagination"
       >
         <div
           class="mia-platform-spin-nested-loading"
@@ -2329,11 +2380,11 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                 class="mia-platform-table-container"
               >
                 <div
-                  class="mia-platform-table-header mia-platform-table-sticky-holder"
-                  style="overflow: hidden; top: 0px;"
+                  class="mia-platform-table-content"
+                  style="overflow-x: auto; overflow-y: hidden;"
                 >
                   <table
-                    style="table-layout: fixed; visibility: hidden;"
+                    style="width: auto; min-width: 100%; table-layout: auto;"
                   >
                     <colgroup />
                     <thead
@@ -2342,9 +2393,10 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                       <tr>
                         <th
                           aria-label="Field 1"
-                          class="mia-platform-table-cell mia-platform-table-column-has-sorters"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis mia-platform-table-column-has-sorters"
                           scope="col"
                           tabindex="0"
+                          title="Field 1"
                         >
                           <div
                             class="mia-platform-table-column-sorters"
@@ -2405,9 +2457,10 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         </th>
                         <th
                           aria-label="Field 2"
-                          class="mia-platform-table-cell mia-platform-table-column-has-sorters"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis mia-platform-table-column-has-sorters"
                           scope="col"
                           tabindex="0"
+                          title="Field 2"
                         >
                           <div
                             class="mia-platform-table-column-sorters"
@@ -2468,9 +2521,10 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         </th>
                         <th
                           aria-label="Field 3"
-                          class="mia-platform-table-cell mia-platform-table-column-has-sorters"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis mia-platform-table-column-has-sorters"
                           scope="col"
                           tabindex="0"
+                          title="Field 3"
                         >
                           <div
                             class="mia-platform-table-column-sorters"
@@ -2531,9 +2585,10 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         </th>
                         <th
                           aria-label="Field 4"
-                          class="mia-platform-table-cell mia-platform-table-column-has-sorters"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis mia-platform-table-column-has-sorters"
                           scope="col"
                           tabindex="0"
+                          title="Field 4"
                         >
                           <div
                             class="mia-platform-table-column-sorters"
@@ -2594,16 +2649,6 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         </th>
                       </tr>
                     </thead>
-                  </table>
-                </div>
-                <div
-                  class="mia-platform-table-body"
-                  style="overflow-x: auto; overflow-y: hidden;"
-                >
-                  <table
-                    style="width: auto; min-width: 100%; table-layout: auto;"
-                  >
-                    <colgroup />
                     <tbody
                       class="mia-platform-table-tbody"
                     >
@@ -2654,22 +2699,26 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         data-row-key="Value 1"
                       >
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 1"
                         >
                           Value 1
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 1"
                         >
                           Value 1
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 1"
                         >
                           Value 1
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 1"
                         >
                           Value 1
                         </td>
@@ -2679,22 +2728,26 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         data-row-key="Value 2"
                       >
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 2"
                         >
                           Value 2
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 2"
                         >
                           Value 2
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 2"
                         >
                           Value 2
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 2"
                         >
                           Value 2
                         </td>
@@ -2704,22 +2757,26 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         data-row-key="Value 3"
                       >
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 3"
                         >
                           Value 3
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 3"
                         >
                           Value 3
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 3"
                         >
                           Value 3
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 3"
                         >
                           Value 3
                         </td>
@@ -2729,22 +2786,26 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
                         data-row-key="Value 4"
                       >
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 4"
                         >
                           Value 4
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 4"
                         >
                           Value 4
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 4"
                         >
                           Value 4
                         </td>
                         <td
-                          class="mia-platform-table-cell"
+                          class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                          title="Value 4"
                         >
                           Value 4
                         </td>
@@ -2765,7 +2826,7 @@ exports[`Table Component renders external filters and sorters correctly 1`] = `
 exports[`Table Component renders fitParentHEight correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table fitParentHeight"
+    class="mia-platform-table-wrapper table fitParentHeight hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -2780,11 +2841,11 @@ exports[`Table Component renders fitParentHEight correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -2792,41 +2853,35 @@ exports[`Table Component renders fitParentHEight correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -2877,22 +2932,26 @@ exports[`Table Component renders fitParentHEight correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -2902,22 +2961,26 @@ exports[`Table Component renders fitParentHEight correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -2927,22 +2990,26 @@ exports[`Table Component renders fitParentHEight correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -2952,22 +3019,26 @@ exports[`Table Component renders fitParentHEight correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -2986,7 +3057,7 @@ exports[`Table Component renders fitParentHEight correctly 1`] = `
 exports[`Table Component renders footer correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -3001,11 +3072,11 @@ exports[`Table Component renders footer correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -3013,41 +3084,35 @@ exports[`Table Component renders footer correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -3098,22 +3163,26 @@ exports[`Table Component renders footer correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -3123,22 +3192,26 @@ exports[`Table Component renders footer correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -3148,22 +3221,26 @@ exports[`Table Component renders footer correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -3173,22 +3250,26 @@ exports[`Table Component renders footer correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -3214,7 +3295,7 @@ exports[`Table Component renders footer correctly 1`] = `
 exports[`Table Component renders large table correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -3229,11 +3310,11 @@ exports[`Table Component renders large table correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -3241,41 +3322,35 @@ exports[`Table Component renders large table correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -3326,22 +3401,26 @@ exports[`Table Component renders large table correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -3351,22 +3430,26 @@ exports[`Table Component renders large table correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -3376,22 +3459,26 @@ exports[`Table Component renders large table correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -3401,22 +3488,26 @@ exports[`Table Component renders large table correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -3435,7 +3526,7 @@ exports[`Table Component renders large table correctly 1`] = `
 exports[`Table Component renders pagination correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -3450,11 +3541,11 @@ exports[`Table Component renders pagination correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -3462,41 +3553,35 @@ exports[`Table Component renders pagination correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -3547,22 +3632,26 @@ exports[`Table Component renders pagination correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -3572,22 +3661,26 @@ exports[`Table Component renders pagination correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -3597,22 +3690,26 @@ exports[`Table Component renders pagination correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -3622,22 +3719,26 @@ exports[`Table Component renders pagination correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -3901,7 +4002,7 @@ exports[`Table Component renders pagination correctly 1`] = `
 exports[`Table Component renders rows with state correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -3916,11 +4017,11 @@ exports[`Table Component renders rows with state correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -3928,47 +4029,42 @@ exports[`Table Component renders rows with state correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="State"
                     >
                       State
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -4028,27 +4124,32 @@ exports[`Table Component renders rows with state correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Default"
                     >
                       Default
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -4058,27 +4159,32 @@ exports[`Table Component renders rows with state correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Info"
                     >
                       Info
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -4088,27 +4194,32 @@ exports[`Table Component renders rows with state correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Warning"
                     >
                       Warning
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -4118,27 +4229,32 @@ exports[`Table Component renders rows with state correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Error"
                     >
                       Error
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -4148,27 +4264,32 @@ exports[`Table Component renders rows with state correctly 1`] = `
                     data-row-key="Value 5"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Success"
                     >
                       Success
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 5"
                     >
                       Value 5
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 5"
                     >
                       Value 5
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 5"
                     >
                       Value 5
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 5"
                     >
                       Value 5
                     </td>
@@ -4187,7 +4308,7 @@ exports[`Table Component renders rows with state correctly 1`] = `
 exports[`Table Component renders selectable rows correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -4202,11 +4323,11 @@ exports[`Table Component renders selectable rows correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup>
                   <col
@@ -4218,7 +4339,7 @@ exports[`Table Component renders selectable rows correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell mia-platform-table-selection-column mia-platform-table-cell-fix-left mia-platform-table-cell-fix-left-last mia-platform-table-cell-fix-sticky"
+                      class="mia-platform-table-cell mia-platform-table-selection-column mia-platform-table-cell-fix-left mia-platform-table-cell-fix-left-last"
                       scope="col"
                       style="position: sticky; left: 0px;"
                     >
@@ -4245,45 +4366,35 @@ exports[`Table Component renders selectable rows correctly 1`] = `
                       </div>
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup>
-                  <col
-                    class="mia-platform-table-selection-col"
-                  />
-                </colgroup>
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -4364,22 +4475,26 @@ exports[`Table Component renders selectable rows correctly 1`] = `
                       </label>
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -4409,22 +4524,26 @@ exports[`Table Component renders selectable rows correctly 1`] = `
                       </label>
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -4454,22 +4573,26 @@ exports[`Table Component renders selectable rows correctly 1`] = `
                       </label>
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -4499,22 +4622,26 @@ exports[`Table Component renders selectable rows correctly 1`] = `
                       </label>
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -4533,7 +4660,7 @@ exports[`Table Component renders selectable rows correctly 1`] = `
 exports[`Table Component renders small table correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -4548,11 +4675,11 @@ exports[`Table Component renders small table correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -4560,41 +4687,35 @@ exports[`Table Component renders small table correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -4645,22 +4766,26 @@ exports[`Table Component renders small table correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -4670,22 +4795,26 @@ exports[`Table Component renders small table correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -4695,22 +4824,26 @@ exports[`Table Component renders small table correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -4720,22 +4853,26 @@ exports[`Table Component renders small table correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -4754,7 +4891,7 @@ exports[`Table Component renders small table correctly 1`] = `
 exports[`Table Component renders spanned columns correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -4769,11 +4906,11 @@ exports[`Table Component renders spanned columns correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -4781,36 +4918,29 @@ exports[`Table Component renders spanned columns correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       colspan="2"
                       scope="colgroup"
+                      title="Field 2 - Field 3"
                     >
                       Field 2 - Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -4861,22 +4991,26 @@ exports[`Table Component renders spanned columns correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -4886,22 +5020,26 @@ exports[`Table Component renders spanned columns correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -4911,22 +5049,26 @@ exports[`Table Component renders spanned columns correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -4936,22 +5078,26 @@ exports[`Table Component renders spanned columns correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
@@ -4970,7 +5116,7 @@ exports[`Table Component renders spanned columns correctly 1`] = `
 exports[`Table Component renders table correctly 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-table-wrapper table"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
       class="mia-platform-spin-nested-loading"
@@ -4985,11 +5131,11 @@ exports[`Table Component renders table correctly 1`] = `
             class="mia-platform-table-container"
           >
             <div
-              class="mia-platform-table-header mia-platform-table-sticky-holder"
-              style="overflow: hidden; top: 0px;"
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="table-layout: fixed; visibility: hidden;"
+                style="width: auto; min-width: 100%; table-layout: auto;"
               >
                 <colgroup />
                 <thead
@@ -4997,41 +5143,35 @@ exports[`Table Component renders table correctly 1`] = `
                 >
                   <tr>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 1"
                     >
                       Field 1
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 2"
                     >
                       Field 2
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 3"
                     >
                       Field 3
                     </th>
                     <th
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
                       scope="col"
+                      title="Field 4"
                     >
                       Field 4
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-            <div
-              class="mia-platform-table-body"
-              style="overflow-x: auto; overflow-y: hidden;"
-            >
-              <table
-                style="width: auto; min-width: 100%; table-layout: auto;"
-              >
-                <colgroup />
                 <tbody
                   class="mia-platform-table-tbody"
                 >
@@ -5082,22 +5222,26 @@ exports[`Table Component renders table correctly 1`] = `
                     data-row-key="Value 1"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
                     >
                       Value 1
                     </td>
@@ -5107,22 +5251,26 @@ exports[`Table Component renders table correctly 1`] = `
                     data-row-key="Value 2"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
                     >
                       Value 2
                     </td>
@@ -5132,22 +5280,26 @@ exports[`Table Component renders table correctly 1`] = `
                     data-row-key="Value 3"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
                     >
                       Value 3
                     </td>
@@ -5157,22 +5309,26 @@ exports[`Table Component renders table correctly 1`] = `
                     data-row-key="Value 4"
                   >
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>
                     <td
-                      class="mia-platform-table-cell"
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
                     >
                       Value 4
                     </td>

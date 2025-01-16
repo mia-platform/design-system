@@ -32,6 +32,15 @@ const {lightTheme, darkTheme} = themes
  * @param context - The context object containing contextual information.
  * @returns The decorated Story component with the specified theme.
  */
+
+const styles = {
+  height: 'calc(100vh - 30px)', 
+  background: 'rgb(244, 249, 255)', 
+  padding: 16, 
+  overflow: 'auto', 
+  borderRadius: 'var(--shape-border-radius-lg, 8px)'
+}
+
 const withTheme: Decorator = (Story, {globals}) => {
   const { theme: themeKey } = globals
 
@@ -41,7 +50,9 @@ const withTheme: Decorator = (Story, {globals}) => {
   
   return (
     <ThemeProvider theme={theme}>
-      <Story/>
+      <div style={styles}>
+        <Story/>
+      </div>
     </ThemeProvider>
   )
 }

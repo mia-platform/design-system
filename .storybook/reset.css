@@ -38,3 +38,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+.sb-show-main.sb-show-main {
+  background-color: var(--palette-background-primary-200, #eaf3ff) !important;
+}
