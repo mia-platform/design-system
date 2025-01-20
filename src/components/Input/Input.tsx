@@ -84,6 +84,7 @@ export const Input = (
     isFullWidth = defaults.isFullWidth,
     isError,
     inputRef,
+    onBlur,
     onChange,
     placeholder,
     iconLeft,
@@ -183,6 +184,7 @@ export const Input = (
       suffix={iconRight && <Icon component={iconRight} size={DEFAULT_ICON_SIZE} />}
       type={type}
       value={inputValue}
+      onBlur={onBlur}
       onChange={handleChange}
     />
   )

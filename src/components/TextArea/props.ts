@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeEventHandler } from 'react'
+import { ChangeEventHandler, FocusEventHandler } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
 
@@ -60,6 +60,11 @@ export type TextAreaProps = BaseInputProps & {
    * Enables auto size feature.
    */
   autoSize?: boolean | {minRows?: number; maxRows?: number}
+
+  /**
+   * Callback when input loses focus.
+   */
+  onBlur?: FocusEventHandler
 
   /**
    * Callback when user input.
