@@ -45,6 +45,7 @@ export const TextArea = (
     isError,
     inputRef,
     onChange,
+    onBlur,
     placeholder,
     allowClear,
     minLength,
@@ -70,6 +71,7 @@ export const TextArea = (
       placeholder={placeholder}
       rows={rows}
       value={value}
+      onBlur={onBlur}
       onChange={onChange}
     />
   )

@@ -164,6 +164,19 @@ describe('Input Component', () => {
     expect(input.value).toBe(exampleText)
   })
 
+  test('Should call event handler on Blur', async() => {
+    const onBlur = jest.fn()
+
+    render(<Input onBlur={onBlur} />)
+
+    const input = screen.getByRole<HTMLInputElement>('textbox')
+
+    fireEvent.blur(input, { target: { value: exampleText } })
+
+    expect(onBlur).toHaveBeenCalled()
+    expect(input.value).toBe(exampleText)
+  })
+
   test('Allow clear should clear input', () => {
     render(<Input allowClear defaultValue={exampleText} />)
 

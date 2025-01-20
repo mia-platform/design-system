@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChangeEvent } from 'react'
+import { ChangeEvent, FocusEventHandler } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
 import { IconComponent } from '../Icon/Icon.props'
@@ -79,6 +79,11 @@ export type InputProps = BaseInputProps & {
   maxLength?: number
 
   /**
+   * Callback when input loses focus.
+   */
+  onBlur?: FocusEventHandler
+
+  /**
    * Callback when user input.
    */
   onChange?: InputChangeEventHandler
@@ -86,5 +91,4 @@ export type InputProps = BaseInputProps & {
   addonBefore?: InputAddonProps
 
   addonAfter?: InputAddonProps
-
 }
