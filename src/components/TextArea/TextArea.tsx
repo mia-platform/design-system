@@ -52,12 +52,14 @@ export const TextArea = (
     maxLength,
     rows,
     autoFocus,
+    autoSize,
   }: TextAreaProps) : ReactElement => {
   return (
     <BaseInput
       allowClear={allowClear}
       appearance={appearance}
       autoFocus={autoFocus}
+      autoSize={autoSize}
       component={AntInput.TextArea}
       defaultValue={defaultValue}
       id={id}
