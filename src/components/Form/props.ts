@@ -64,7 +64,7 @@ export type FormProps<Values extends Record<string, unknown>> = {
   /**
    * The initial values for the form fields.
    */
-  initialValues?: Values;
+  initialValues?: Partial<Values>;
 
   /**
    * Specifies whether to retain field values when the field is removed from the form. Defaults to `true`.
