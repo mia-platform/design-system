@@ -179,5 +179,10 @@ export type FormItemProps = {
    * Whether the field is required, showing an asterisk and applying validation.
    */
   isRequired?: boolean;
+
+  /**
+   * Whether the field is readonly. For text based input, a default implementation is provided.
+   */
+  isReadOnly?: boolean;
 };
 

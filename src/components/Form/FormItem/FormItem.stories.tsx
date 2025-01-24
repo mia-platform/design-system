@@ -39,12 +39,13 @@ const options = [
   label: `label ${id + 1}`,
 }))
 
-const initalValues = {
+const initialValues = {
   input: 'input',
   textarea: 'textarea',
   number: 1,
   search: options[0].value,
   select: options[0].value,
+  multiselect: [options[0].value, options[1].value],
   checkboxGroup: [options[0].value],
   inputAddon: { before: options[0].value, value: 'text' },
   switch: true,
@@ -58,7 +59,7 @@ const meta = {
   decorators: (story) => {
     const handleFinish = (values: unknown): void => alert(`onFinish:\n${JSON.stringify(values)}`)
     return (
-      <Form initialValues={initalValues} preserve={false} onFinish={handleFinish}>{story()}</Form>
+      <Form initialValues={initialValues} preserve={false} onFinish={handleFinish}>{story()}</Form>
     )
   },
   args: {
@@ -196,5 +197,29 @@ export const Custom: Story = {
         <Button onClick={handleClick}>{`clicked ${value} times`}</Button>
       )
     },
+  },
+}
+
+export const ReadOnlyInput = {
+  args: {
+    name: 'input',
+    isReadOnly: true,
+    children: <InputComponent />,
+  },
+}
+
+export const ReadOnlySelect = {
+  args: {
+    name: 'select',
+    isReadOnly: true,
+    children: <SelectComponent options={options} />,
+  },
+}
+
+export const ReadOnlyMultiSelect = {
+  args: {
+    name: 'multiselect',
+    isReadOnly: true,
+    children: <SelectComponent isMultiple options={options} />,
   },
 }

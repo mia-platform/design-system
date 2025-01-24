@@ -45,12 +45,13 @@ const options = [
 
 const exampleText = 'text'
 
-const initalValues = {
+const initialValues = {
   input: 'input',
   textarea: 'textarea',
   number: 1,
   search: options[0].value,
   select: options[0].value,
+  multiselect: [options[0].value, options[1].value],
   checkboxGroup: [options[0].value],
   inputAddon: { before: options[0].value, value: 'text' },
   switch: true,
@@ -63,7 +64,7 @@ const onValuesChange = jest.fn()
 
 const renderItem = ({ children, ...props }: FormItemProps): RenderResult => (
   render(
-    <Form initialValues={initalValues} preserve={false} onValuesChange={onValuesChange}>
+    <Form initialValues={initialValues} preserve={false} onValuesChange={onValuesChange}>
       <FormItem shouldUpdate {...props}>
         {children}
       </FormItem>
@@ -235,7 +236,7 @@ describe('FormItem Component', () => {
       })
 
       const input = screen.getByRole<HTMLInputElement>('textbox', { name: 'input' })
-      expect(input.value).toEqual(initalValues.input)
+      expect(input.value).toEqual(initialValues.input)
       fireEvent.change(input, { target: { value: exampleText } })
       expect(input.value).toEqual(exampleText)
       expect(onValuesChange).toHaveBeenCalledWith({ input: exampleText }, { input: exampleText })
@@ -248,7 +249,7 @@ describe('FormItem Component', () => {
       })
 
       const input = screen.getByRole<HTMLInputElement>('textbox', { name: 'textarea' })
-      expect(input.value).toEqual(initalValues.textarea)
+      expect(input.value).toEqual(initialValues.textarea)
       fireEvent.change(input, { target: { value: exampleText } })
       expect(input.value).toEqual(exampleText)
       expect(onValuesChange).toHaveBeenCalledWith({ textarea: exampleText }, { textarea: exampleText })
@@ -261,7 +262,7 @@ describe('FormItem Component', () => {
       })
 
       const input = screen.getByRole<HTMLInputElement>('spinbutton', { name: 'number' })
-      expect(input.value).toEqual(String(initalValues.number))
+      expect(input.value).toEqual(String(initialValues.number))
       fireEvent.change(input, { target: { value: 123456 } })
       expect(input.value).toEqual(String(123456))
       expect(onValuesChange).toHaveBeenCalledWith({ number: 123456 }, { number: 123456 })
@@ -382,13 +383,14 @@ describe('FormItem Component', () => {
         valuePropName: 'test',
       })
 
-      const button = screen.getByRole('button', { name: String(initalValues.custom) })
-      expect(within(button).getByText(initalValues.custom)).toBeInTheDocument()
+      const button = screen.getByRole('button', { name: String(initialValues.custom) })
+      expect(within(button).getByText(initialValues.custom)).toBeInTheDocument()
       fireEvent.click(button)
-      expect(within(button).getByText(initalValues.custom + 1)).toBeInTheDocument()
+      expect(within(button).getByText(initialValues.custom + 1)).toBeInTheDocument()
       expect(onValuesChange).toHaveBeenCalledWith(
-        { custom: initalValues.custom + 1 }, {
-          custom: initalValues.custom + 1 })
+        { custom: initialValues.custom + 1 }, {
+          custom: initialValues.custom + 1,
+        })
     })
 
     test('custom input from render function should work properly', () => {
@@ -408,13 +410,14 @@ describe('FormItem Component', () => {
         children: customInput,
       })
 
-      const button = screen.getByRole('button', { name: String(initalValues.custom) })
-      expect(within(button).getByText(initalValues.custom)).toBeInTheDocument()
+      const button = screen.getByRole('button', { name: String(initialValues.custom) })
+      expect(within(button).getByText(initialValues.custom)).toBeInTheDocument()
       fireEvent.click(button)
-      expect(within(button).getByText(initalValues.custom + 1)).toBeInTheDocument()
+      expect(within(button).getByText(initialValues.custom + 1)).toBeInTheDocument()
       expect(onValuesChange).toHaveBeenCalledWith(
-        { custom: initalValues.custom + 1 }, {
-          custom: initalValues.custom + 1 })
+        { custom: initialValues.custom + 1 }, {
+          custom: initialValues.custom + 1,
+        })
     })
 
     test('custom input from render function should work properly if no name is specified', () => {
@@ -425,6 +428,39 @@ describe('FormItem Component', () => {
         children: customInput,
       })
       expect(screen.getByText(exampleText)).toBeInTheDocument()
+    })
+  })
+
+  describe('readOnly', () => {
+    test('read only input should render value as text', () => {
+      renderItem({
+        name: 'input',
+        isReadOnly: true,
+        children: <Input />,
+      })
+      screen.logTestingPlaygroundURL()
+      const paragraph = screen.getByRole('paragraph')
+      expect(paragraph.innerHTML).toEqual(initialValues.input)
+    })
+
+    test('read only select should render selected option label', () => {
+      renderItem({
+        name: 'select',
+        isReadOnly: true,
+        children: <Select options={options} />,
+      })
+      const paragraph = screen.getByRole('paragraph')
+      expect(paragraph.innerHTML).toEqual(options[0].label)
+    })
+
+    test('read only select should render comma separated options labels', () => {
+      renderItem({
+        name: 'multiselect',
+        isReadOnly: true,
+        children: <Select isMultiple={true} options={options} />,
+      })
+      const paragraph = screen.getByRole('paragraph')
+      expect(paragraph.innerHTML).toEqual([options[0].label, options[1].label].join(', '))
     })
   })
 })
