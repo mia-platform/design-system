@@ -204,7 +204,7 @@ export const ReadOnlyInput = {
   args: {
     name: 'input',
     isReadOnly: true,
-    children: <InputComponent/>,
+    children: <InputComponent />,
   },
 }
 
@@ -212,7 +212,7 @@ export const ReadOnlySelect = {
   args: {
     name: 'select',
     isReadOnly: true,
-    children: <SelectComponent options={options}/>,
+    children: <SelectComponent options={options} />,
   },
 }
 
@@ -220,6 +220,6 @@ export const ReadOnlyMultiSelect = {
   args: {
     name: 'multiselect',
     isReadOnly: true,
-    children: <SelectComponent isMultiple options={options}/>,
+    children: <SelectComponent isMultiple options={options} />,
   },
 }

@@ -383,12 +383,12 @@ describe('FormItem Component', () => {
         valuePropName: 'test',
       })
 
-      const button = screen.getByRole('button', {name: String(initialValues.custom)})
+      const button = screen.getByRole('button', { name: String(initialValues.custom) })
       expect(within(button).getByText(initialValues.custom)).toBeInTheDocument()
       fireEvent.click(button)
       expect(within(button).getByText(initialValues.custom + 1)).toBeInTheDocument()
       expect(onValuesChange).toHaveBeenCalledWith(
-        {custom: initialValues.custom + 1}, {
+        { custom: initialValues.custom + 1 }, {
           custom: initialValues.custom + 1,
         })
     })
@@ -410,12 +410,12 @@ describe('FormItem Component', () => {
         children: customInput,
       })
 
-      const button = screen.getByRole('button', {name: String(initialValues.custom)})
+      const button = screen.getByRole('button', { name: String(initialValues.custom) })
       expect(within(button).getByText(initialValues.custom)).toBeInTheDocument()
       fireEvent.click(button)
       expect(within(button).getByText(initialValues.custom + 1)).toBeInTheDocument()
       expect(onValuesChange).toHaveBeenCalledWith(
-        {custom: initialValues.custom + 1}, {
+        { custom: initialValues.custom + 1 }, {
           custom: initialValues.custom + 1,
         })
     })
@@ -436,7 +436,7 @@ describe('FormItem Component', () => {
       renderItem({
         name: 'input',
         isReadOnly: true,
-        children: <Input/>,
+        children: <Input />,
       })
       screen.logTestingPlaygroundURL()
       const paragraph = screen.getByRole('paragraph')
@@ -447,7 +447,7 @@ describe('FormItem Component', () => {
       renderItem({
         name: 'input',
         isReadOnly: true,
-        children: <Select options={options}/>,
+        children: <Select options={options} />,
       })
       const paragraph = screen.getByRole('paragraph')
       expect(paragraph.innerHTML).toEqual(initialValues.select)
@@ -457,7 +457,7 @@ describe('FormItem Component', () => {
       renderItem({
         name: 'multiselect',
         isReadOnly: true,
-        children: <Select isMultiple={true} options={options}/>,
+        children: <Select isMultiple={true} options={options} />,
       })
       const paragraph = screen.getByRole('paragraph')
       expect(paragraph.innerHTML).toEqual([options[0].label, options[1].label].join(', '))

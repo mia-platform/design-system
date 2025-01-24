@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {ReactElement, ReactNode, isValidElement, useCallback, useMemo} from 'react'
+import { ReactElement, ReactNode, isValidElement, useCallback, useMemo } from 'react'
 import { Form as AntForm } from 'antd'
 import { PiBookOpen } from 'react-icons/pi'
 
@@ -26,14 +26,14 @@ import { FormItemProps } from '../props.ts'
 import ICircleFilled from '../../../assets/icons/ICircleFilled.svg'
 import { Icon } from '../../Icon'
 import { Input } from '../../Input'
-import {InputNumber} from '../../InputNumber'
+import { InputNumber } from '../../InputNumber'
 import { RadioGroup } from '../../RadioGroup'
-import {Select} from '../../Select'
-import {SelectProps} from '../../Select/props.ts'
+import { Select } from '../../Select'
+import { SelectProps } from '../../Select/props.ts'
 import { Switch } from '../../Switch'
-import {TextArea} from '../../TextArea'
+import { TextArea } from '../../TextArea'
 import { Tooltip } from '../../Tooltip'
-import {Typography} from '../../Typography/index.ts'
+import { Typography } from '../../Typography/index.ts'
 import log from '../../../utils/log.ts'
 import styles from './FormItem.module.css'
 const defaults = {
@@ -42,34 +42,34 @@ const defaults = {
 }
 
 const getDefaultReadOnlyElement = (element: ReactElement, value: unknown): ReactNode => {
-  const {type, props} = element
+  const { type, props } = element
   switch (type) {
-    case Input:
-    case InputNumber:
-    case TextArea: {
-      return (
-        <Typography.BodyS>
-          {value ? String(value) : '-'}
-        </Typography.BodyS>
-      )
-    }
-    case Select: {
-      const {options} = props as SelectProps
-      const selectedOptions = options.filter(({value: val}) => {
-        return Array.isArray(value) ? value.includes(val) : value === val
-      }) || []
-      const text = selectedOptions
-        .map(({label}) => String(label))
-        .join(', ') || '-'
-      return (
-        <Typography.BodyS>
-          {text}
-        </Typography.BodyS>
-      )
-    }
-    default:
-      log.error(`read-only ${type} is unimplemented: provide your own custom render`)
-      return undefined
+  case Input:
+  case InputNumber:
+  case TextArea: {
+    return (
+      <Typography.BodyS>
+        {value ? String(value) : '-'}
+      </Typography.BodyS>
+    )
+  }
+  case Select: {
+    const { options } = props as SelectProps
+    const selectedOptions = options.filter(({ value: val }) => {
+      return Array.isArray(value) ? value.includes(val) : value === val
+    }) || []
+    const text = selectedOptions
+      .map(({ label }) => String(label))
+      .join(', ') || '-'
+    return (
+      <Typography.BodyS>
+        {text}
+      </Typography.BodyS>
+    )
+  }
+  default:
+    log.error(`read-only ${type} is unimplemented: provide your own custom render`)
+    return undefined
   }
 }
 
