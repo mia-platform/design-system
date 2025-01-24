@@ -445,12 +445,12 @@ describe('FormItem Component', () => {
 
     test('read only select should render selected option label', () => {
       renderItem({
-        name: 'input',
+        name: 'select',
         isReadOnly: true,
         children: <Select options={options} />,
       })
       const paragraph = screen.getByRole('paragraph')
-      expect(paragraph.innerHTML).toEqual(initialValues.select)
+      expect(paragraph.innerHTML).toEqual(options[0].label)
     })
 
     test('read only select should render comma separated options labels', () => {
