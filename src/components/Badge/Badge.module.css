@@ -23,7 +23,7 @@
   width: 100%;
   max-width: inherit;
   padding: var(--spacing-padding-lg, 16px);
-  background: var(--Grey-200, #F2F2F2);
+  background: var(--palette-background-neutral-200, #F2F2F2);
   border-radius: var(--shape-border-radius-lg, 8px);
 
   & .icon {
