@@ -23,6 +23,7 @@ import classNames from 'classnames'
 import { Button } from '../Button/Button'
 import { Dropdown } from '../Dropdown/Dropdown'
 import { Icon } from '../Icon'
+import { OpenChangeInfo } from '../Dropdown/props'
 import { SplitButtonProps } from './props'
 import styles from './SplitButton.module.css'
 
@@ -52,12 +53,16 @@ export const SplitButton = ({
   itemLayout,
   onClick,
   onItemClick,
+  onOpenChange,
   target,
   title,
   type,
 }: SplitButtonProps): ReactElement => {
   const [opened, setOpened] = useState(false)
-  const onOpenChange = useCallback(() => setOpened((prev) => !prev), [])
+  const onDropdownOpenChange = useCallback((open: boolean, info: OpenChangeInfo) => {
+    onOpenChange?.(open, info)
+    setOpened((prev) => !prev)
+  }, [onOpenChange])
 
   return (
     <div className={splitButton}>
@@ -84,7 +89,7 @@ export const SplitButton = ({
         persistSelection={false}
         placement={Dropdown.Placement.BottomRight}
         onClick={onItemClick}
-        onOpenChange={onOpenChange}
+        onOpenChange={onDropdownOpenChange}
       >
         <Button
           className={classNames(

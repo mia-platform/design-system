@@ -209,6 +209,33 @@ exports[`Dropdown Component highlights selectedItems multiple mode renders prope
 </li>
 `;
 
+exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if persistSelection is set to false: after click render Label 1 is not selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
 exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if persistSelection is set to false: after click render Label 1 is still not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-only-child"
@@ -236,7 +263,71 @@ exports[`Dropdown Component highlights selectedItems single mode does not highli
 </li>
 `;
 
+exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if persistSelection is set to false: after click render Label 2 is selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-2"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 2
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          ·
+        </span>
+        <span
+          class="secondaryLabel"
+        >
+          Additional Info 2
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
 exports[`Dropdown Component highlights selectedItems single mode does not highlight elements if persistSelection is set to false: at first render Label 1 is not selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode render and ignores "initialSelectedItems" prop if "persistSelection" is false: after click render Label 1 is still not selected 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"
@@ -293,6 +384,33 @@ exports[`Dropdown Component highlights selectedItems single mode render and igno
 exports[`Dropdown Component highlights selectedItems single mode renders proper highlight 1`] = `
 <li
   class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component highlights selectedItems single mode updates highlight 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-selected mia-platform-dropdown-menu-item-only-child"
   data-menu-id="rc-menu-uuid-test-1"
   role="menuitem"
   tabindex="-1"
@@ -502,6 +620,33 @@ exports[`Dropdown Component label layouts render labels 3`] = `
           class="secondaryLabel danger"
         >
           Additional Info 2
+        </span>
+      </div>
+    </div>
+  </span>
+</li>
+`;
+
+exports[`Dropdown Component with footer renders footer: after click render Label 1 is still not selected 1`] = `
+<li
+  class="mia-platform-dropdown-menu-item mia-platform-dropdown-menu-item-active mia-platform-dropdown-menu-item-only-child"
+  data-menu-id="rc-menu-uuid-test-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="mia-platform-dropdown-menu-title-content"
+  >
+    <div
+      class="itemRowContainer"
+    >
+      <div
+        class="labelsContainer horizontalContainer"
+      >
+        <span
+          class="primaryLabel"
+        >
+          Label 1
         </span>
       </div>
     </div>

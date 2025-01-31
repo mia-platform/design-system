@@ -136,6 +136,25 @@ describe('SplitButton Component', () => {
         domEvent: expect.anything(),
       })
     })
+
+    it('calls onOpenChange when dropdown is triggered', async() => {
+      const onOpenChange = jest.fn()
+      render({ props: { ...defaultProps, onOpenChange } })
+
+      const dropdownButton = screen.getByRole('button', { name: /open dropdown/i })
+      expect(dropdownButton).toBeInTheDocument()
+
+      await userEvent.click(dropdownButton)
+      const firstMenuItem = await screen.findByRole('menuitem', { name: 'Label 1' })
+
+      expect(screen.getAllByRole('menuitem')).toHaveLength(2)
+
+      await userEvent.click(firstMenuItem)
+
+      expect(onOpenChange).toHaveBeenCalledTimes(2)
+      expect(onOpenChange).toHaveBeenNthCalledWith(1, true, { source: 'trigger' })
+      expect(onOpenChange).toHaveBeenNthCalledWith(2, false, { source: 'menu' })
+    })
   })
 })
 
