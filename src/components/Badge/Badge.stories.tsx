@@ -107,7 +107,6 @@ export const Multiline: Story = {
   ],
 }
 
-
 export const Extra: Story = {
   args: {
     ...defaults,
