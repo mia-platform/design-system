@@ -18,7 +18,7 @@
 
 import { MouseEvent, ReactNode } from 'react'
 
-import { DropdownClickEvent, ItemLayout } from '../Dropdown/props'
+import { DropdownClickEvent, ItemLayout, OpenChangeInfo } from '../Dropdown/props'
 import { HTMLType, Hierarchy, Type } from '../Button/Button.types'
 import { SplitButtonItem } from './types'
 
@@ -81,15 +81,20 @@ export type SplitButtonProps = {
   items: SplitButtonItem[]
 
   /**
-   * callback used to notify a click on the main button.
+   * Callback used to notify a click on the main button.
    */
   onClick: (event: MouseEvent) => void,
 
   /**
-   * callback used to notify a click on a dropdown item, see
+   * Callback used to notify a click on a dropdown item, see
    * Dropdown#onClick specification for further details.
    */
   onItemClick: (event: DropdownClickEvent) => void
+
+  /**
+   * Callback used to notify when the open state is changed.
+   */
+  onOpenChange?: (open: boolean, info: OpenChangeInfo) => void
 
   /**
    * Specifies where the linked document will open when the link is clicked.
