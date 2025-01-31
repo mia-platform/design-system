@@ -51,8 +51,8 @@ describe('Badge Component', () => {
     const { asFragment } = render(
       <Badge
         description="Description"
+        hasMultilineDescription
         icon={PiCircleHalfTilt}
-        multiline
         title="Title"
       />
     )

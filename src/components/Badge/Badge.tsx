@@ -34,7 +34,7 @@ export const Badge = ({
   icon: customIcon,
   title: customTitle,
   titleExtra,
-  multiline,
+  hasMultilineDescription,
 }: BadgeProps): ReactElement => {
   const { palette } = useTheme()
 
@@ -55,15 +55,13 @@ export const Badge = ({
 
   const description = useMemo(() => {
     if (!customDescription) { return }
-    if (multiline) {
-      return <Typography.BodyS>{customDescription}</Typography.BodyS>
-    }
+    const defaultEllipsis = { rows: 1, tooltip: { title: customDescription } }
     return (
-      <Typography.BodyS ellipsis={{ rows: 1, tooltip: { title: customDescription } }}>
+      <Typography.BodyS {...!hasMultilineDescription && { ellipsis: defaultEllipsis }}>
         {customDescription}
       </Typography.BodyS>
     )
-  }, [customDescription, multiline])
+  }, [customDescription, hasMultilineDescription])
 
   const extra = useMemo(() => {
     if (!customExtra) { return }

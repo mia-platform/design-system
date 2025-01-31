@@ -95,7 +95,7 @@ export const CustomSubtitle: Story = {
 export const Multiline: Story = {
   args: {
     ...defaults,
-    multiline: true,
+    hasMultilineDescription: true,
     description: 'Maximus tellus congue blandit cras curabitur non. Tempor euismod finibus rhoncus platea blandit enim ipsum dolor sem. Vel tortor cubilia sodales lacus montes enim fames tortor. Non sociosqu primis adipiscing scelerisque inceptos porttitor eu odio penatibus. Laoreet volutpat eros eu mi per rhoncus. Habitasse ac laoreet urna non maecenas. Vulputate cubilia viverra vehicula sollicitudin dictum luctus fames. Efficitur ex suscipit dis sed aliquet, arcu et. Rhoncus turpis ultricies hac habitant bibendum, morbi parturient natoque mattis.',
   },
   decorators: [

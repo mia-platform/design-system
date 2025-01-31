@@ -45,7 +45,7 @@ export type BadgeProps = {
   /**
    * Whether the badge description should be multiline or clipped with ellipsis at the first line.
    * */
-  multiline?: boolean;
+  hasMultilineDescription?: boolean;
 
   /**
    * Additional content to be displayed alongside the badge title (e.g., a tag or an icon).
