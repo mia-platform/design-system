@@ -47,6 +47,20 @@ describe('Badge Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('renders multiline correctly', () => {
+    const { asFragment } = render(
+      <Badge
+        description="Description"
+        icon={PiCircleHalfTilt}
+        multiline
+        title="Title"
+      />
+    )
+
+    expect(screen.getByRole('paragraph')).toBeInTheDocument()
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('renders a badge with an extra', () => {
     const { asFragment } = render(
       <Badge
