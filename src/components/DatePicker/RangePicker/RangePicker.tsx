@@ -16,45 +16,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  NoUndefinedRangeValueType as AntNoUndefinedRangeValueType,
-  RangeValueType as AntRangeValueType,
-} from 'rc-picker/lib/PickerInput/RangePicker'
-import {
-  RangeTimeProps as AntRangeTimeProps,
-} from 'rc-picker/lib/interface'
 import { DatePicker } from 'antd'
-import { Dayjs } from 'dayjs'
 import { ReactNode } from 'react'
 
 import { computeShowTime, defaultDateFormat, defaultTimeFormat } from '../utils'
-import { ShowTimeOptions } from '../types'
+import { RangePickerProps } from '../props'
 
 const { RangePicker: AntdRangePicker } = DatePicker
-
-export type NoUndefinedRangeValueType = AntNoUndefinedRangeValueType<Dayjs>
-export type RangeValueType = AntRangeValueType<Dayjs>
-export type RangeTimeProps = AntRangeTimeProps<Dayjs>
-
-type RangePickerProps = {
-  canClear?: boolean
-  canBeEmpty?: boolean
-  format?: string
-  onChange?: (dates: NoUndefinedRangeValueType | null, dateStrings: [string, string]) => void;
-  placeholder?: [string, string];
-  showTime?: boolean | ShowTimeOptions
-  defaultValue?: RangeValueType
-  isDisabled?: boolean | [boolean, boolean]
-  minDate?: Dayjs
-  maxDate?: Dayjs
-  isStatusError?: boolean
-}
 
 export const defaults: Partial<RangePickerProps> = {
   canClear: true,
   canBeEmpty: true,
   format: defaultDateFormat,
   showTime: false,
+  hasNowButton: false,
 }
 
 export const RangePicker = ({
@@ -64,11 +39,13 @@ export const RangePicker = ({
   placeholder,
   showTime = defaults.showTime,
   format = !showTime ? defaults.format : `${defaults.format} ${defaultTimeFormat}`,
+  value,
   defaultValue,
   isDisabled,
   minDate,
   maxDate,
-  isStatusError,
+  isErrorStatus,
+  hasNowButton = defaults.hasNowButton,
 }: RangePickerProps): ReactNode => {
   return (
     <AntdRangePicker
@@ -81,8 +58,10 @@ export const RangePicker = ({
       minDate={minDate}
       needConfirm={Boolean(showTime)}
       placeholder={placeholder}
+      showNow={hasNowButton}
       showTime={computeShowTime(showTime)}
-      status={isStatusError ? 'error' : ''}
+      status={isErrorStatus ? 'error' : ''}
+      value={value}
       onChange={onChange}
     />
   )

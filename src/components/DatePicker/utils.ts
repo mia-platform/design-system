@@ -5,11 +5,11 @@ export const computeShowTime = (showTime?: boolean | ShowTimeOptions): ShowTime 
     return false
   }
   switch (showTime) {
-  case 'hours':
+  case ShowTimeOptions.Hours:
     return { showHour: true, showMinute: false, showSecond: false }
-  case 'minutes':
+  case ShowTimeOptions.Minutes:
     return { showHour: true, showMinute: true, showSecond: false }
-  case 'seconds':
+  case ShowTimeOptions.Seconds:
     return { showHour: true, showMinute: true, showSecond: true }
   default:
     return { showHour: true, showMinute: true, showSecond: false }

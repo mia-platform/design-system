@@ -4,7 +4,11 @@ import {
 import { Dayjs } from 'dayjs'
 
 export type DisabledDate = AntDisabledDate<Dayjs>
-export type ShowTimeOptions = 'hours' | 'minutes' | 'seconds'
+export enum ShowTimeOptions {
+  Hours = 'hours',
+  Minutes = 'minutes',
+  Seconds = 'seconds'
+}
 
 export type ShowTime = boolean | {
   showHour: boolean;

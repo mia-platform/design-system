@@ -18,26 +18,12 @@
  */
 
 import { DatePicker as AntDatePicker } from 'antd'
-import { Dayjs } from 'dayjs'
 import { ReactNode } from 'react'
 
 import { computeShowTime, defaultDateFormat, defaultTimeFormat } from './utils'
+import { DatePickerProps } from './props'
 import { RangePicker } from './RangePicker/RangePicker'
 import { ShowTimeOptions } from './types'
-
-type DatePickerProps = {
-  canClear?: boolean
-  format?: string
-  onChange?: (date: Dayjs | Dayjs[], dateString: string | string[]) => void;
-  placeholder?: string;
-  showTime?: boolean | ShowTimeOptions
-  defaultValue?: Dayjs
-  isDisabled?: boolean
-  minDate?: Dayjs
-  maxDate?: Dayjs
-  isErrorStatus?: boolean
-  hasNowButton?: boolean
-}
 
 export const defaults: Partial<DatePickerProps> = {
   canClear: true,
@@ -57,7 +43,8 @@ export const DatePicker = ({
   minDate,
   maxDate,
   isErrorStatus,
-  hasNowButton: hasNow = defaults.hasNowButton,
+  hasNowButton = defaults.hasNowButton,
+  value,
 }: DatePickerProps): ReactNode => {
   return (
     <AntDatePicker
@@ -69,12 +56,14 @@ export const DatePicker = ({
       minDate={minDate}
       needConfirm={Boolean(showTime)}
       placeholder={placeholder}
-      showNow={hasNow}
+      showNow={hasNowButton}
       showTime={computeShowTime(showTime)}
       status={isErrorStatus ? 'error' : ''}
+      value={value}
       onChange={onChange}
     />
   )
 }
 
 DatePicker.RangePicker = RangePicker
+DatePicker.ShowTimeOptions = ShowTimeOptions

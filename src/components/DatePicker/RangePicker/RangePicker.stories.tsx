@@ -35,8 +35,16 @@ export const NotAllowEmptyField: Story = {
   args: { canBeEmpty: false },
 }
 
+export const WithTodayButton: Story = {
+  args: { hasNowButton: true },
+}
+
 export const WithTime: Story = {
   args: { showTime: true },
+}
+
+export const WithNowButton: Story = {
+  args: { showTime: true, hasNowButton: true },
 }
 
 export const CustomPlaceholder: Story = {
@@ -44,7 +52,11 @@ export const CustomPlaceholder: Story = {
 }
 
 export const DefaultValue: Story = {
-  args: { defaultValue: [dayjs(), dayjs().add(7, 'day')] },
+  args: { defaultValue: [dayjs().subtract(7, 'days'), dayjs().add(7, 'day')] },
+}
+
+export const CustomFormat: Story = {
+  args: { defaultValue: [dayjs(), dayjs().add(7, 'day')], format: 'YYYY-MM-DD' },
 }
 
 export const Disabled: Story = {
@@ -60,6 +72,6 @@ export const MinMaxDates: Story = {
 }
 
 export const ErrorStatus: Story = {
-  args: { isStatusError: true },
+  args: { isErrorStatus: true },
 }
 

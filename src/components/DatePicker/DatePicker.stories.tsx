@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 
-export const HideTodayButton: Story = {
+export const WithoutTodayButton: Story = {
   args: { hasNowButton: false },
 }
 
@@ -39,7 +39,7 @@ export const WithTime: Story = {
   args: { showTime: true },
 }
 
-export const WithTimeHideNowButton: Story = {
+export const WithoutNowButton: Story = {
   args: { showTime: true, hasNowButton: false },
 }
 
@@ -48,11 +48,15 @@ export const CustomPlaceholder: Story = {
 }
 
 export const DefaultValue: Story = {
-  args: { defaultValue: dayjs().add(7, 'day') },
+  args: { defaultValue: dayjs() },
+}
+
+export const CustomFormat: Story = {
+  args: { defaultValue: dayjs(), format: 'YYYY-MM-DD' },
 }
 
 export const Disabled: Story = {
-  args: { isDisabled: true, defaultValue: dayjs().add(7, 'day') },
+  args: { isDisabled: true, defaultValue: dayjs() },
 }
 
 export const MinMaxDates: Story = {
