@@ -31,12 +31,16 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 
-export const HideToday: Story = {
+export const HideTodayButton: Story = {
   args: { hasNowButton: false },
 }
 
 export const WithTime: Story = {
   args: { showTime: true },
+}
+
+export const WithTimeHideNowButton: Story = {
+  args: { showTime: true, hasNowButton: false },
 }
 
 export const CustomPlaceholder: Story = {
