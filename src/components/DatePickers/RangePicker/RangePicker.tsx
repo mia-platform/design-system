@@ -21,7 +21,7 @@ import { ReactNode } from 'react'
 
 import { ShowTimeOptions, defaultDateFormat, defaultTimeFormat } from '../types'
 import { RangePickerProps } from '../props'
-import { buildShowTime } from '../utils'
+import { convertToAntTimeOptions } from '../utils'
 
 const { RangePicker: AntdRangePicker } = DatePicker
 
@@ -60,7 +60,7 @@ export const RangePicker = ({
       needConfirm={Boolean(showTime)}
       placeholder={placeholder}
       showNow={showNow}
-      showTime={buildShowTime(showTime)}
+      showTime={convertToAntTimeOptions(showTime)}
       status={isErrorStatus ? 'error' : undefined}
       value={value}
       onChange={onChange}

@@ -28,7 +28,7 @@ export enum ShowTimeOptions {
   Seconds = 'seconds'
 }
 
-export type ShowTime = boolean | {
+export type AntShowTimeOptions = boolean | {
   showHour: boolean;
   showMinute: boolean;
   showSecond: boolean;

@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ShowTime, ShowTimeOptions } from './types'
+import { AntShowTimeOptions, ShowTimeOptions } from './types'
 
-export const buildShowTime = (showTime?: boolean | ShowTimeOptions): ShowTime => {
+export const convertToAntTimeOptions = (showTime?: boolean | ShowTimeOptions): AntShowTimeOptions => {
   if (!showTime) {
     return false
   }
