@@ -34,5 +34,12 @@ export type AntShowTimeOptions = boolean | {
   showSecond: boolean;
 }
 
+export type NoUndefinedRangeValueType = [start: Dayjs | null, end: Dayjs | null];
+
+export type RangeValueType = [
+  start: Dayjs | null | undefined,
+  end: Dayjs | null | undefined
+];
+
 export const defaultTimeFormat = 'HH:mm'
 export const defaultDateFormat = 'DD/MM/YYYY'

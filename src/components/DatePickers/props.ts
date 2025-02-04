@@ -16,16 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  NoUndefinedRangeValueType as AntNoUndefinedRangeValueType,
-  RangeValueType as AntRangeValueType,
-} from 'rc-picker/lib/PickerInput/RangePicker'
-import {
-  RangeTimeProps as AntRangeTimeProps,
-} from 'rc-picker/lib/interface'
 import { Dayjs } from 'dayjs'
 
-import { ShowTimeOptions } from './types'
+import { NoUndefinedRangeValueType, RangeValueType, ShowTimeOptions } from './types'
 
 type CommonProps = {
 
@@ -92,10 +85,6 @@ export type DatePickerProps = CommonProps & {
    */
   isDisabled?: boolean
 }
-
-export type NoUndefinedRangeValueType = AntNoUndefinedRangeValueType<Dayjs>
-export type RangeValueType = AntRangeValueType<Dayjs>
-export type RangeTimeProps = AntRangeTimeProps<Dayjs>
 
 export type RangePickerProps = CommonProps & {
 
