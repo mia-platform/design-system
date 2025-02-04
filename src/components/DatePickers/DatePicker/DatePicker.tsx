@@ -21,7 +21,7 @@ import { ReactNode } from 'react'
 
 import { ShowTimeOptions, defaultDateFormat, defaultTimeFormat } from '../types'
 import { DatePickerProps } from '../props'
-import { convertToAntTimeOptions } from '../utils'
+import { convertToAntShowTimeOptions } from '../utils'
 
 export const defaults = {
   allowClear: true,
@@ -55,7 +55,7 @@ export const DatePicker = ({
       needConfirm={Boolean(showTime)}
       placeholder={placeholder}
       showNow={showNow}
-      showTime={convertToAntTimeOptions(showTime)}
+      showTime={convertToAntShowTimeOptions(showTime)}
       status={isErrorStatus ? 'error' : undefined}
       value={value}
       onChange={onChange}

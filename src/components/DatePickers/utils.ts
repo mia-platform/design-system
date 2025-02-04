@@ -18,7 +18,7 @@
 
 import { AntShowTimeOptions, ShowTimeOptions } from './types'
 
-export const convertToAntTimeOptions = (showTime?: boolean | ShowTimeOptions): AntShowTimeOptions => {
+export const convertToAntShowTimeOptions = (showTime?: boolean | ShowTimeOptions): AntShowTimeOptions => {
   if (!showTime) {
     return false
   }
