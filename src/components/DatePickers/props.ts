@@ -28,20 +28,68 @@ import { Dayjs } from 'dayjs'
 import { ShowTimeOptions } from './types'
 
 type CommonProps = {
-  canClear?: boolean
+
+  /**
+   * If false remove the clear button
+   */
+  allowClear?: boolean
+
+  /**
+   * To set the date format, refer to https://day.js.org/docs/en/display/format
+   */
   format?: string
+
+  /**
+   * The minimum date, which also limits the range of panel switching
+   */
   minDate?: Dayjs
+
+  /**
+   * The maximum date, which also limits the range of panel switching
+   */
   maxDate?: Dayjs
+
+  /**
+   * To provide an additional time selection
+   */
   showTime?: boolean | ShowTimeOptions
+
+  /**
+   * Error validation status
+   */
   isErrorStatus?: boolean
-  hasNowButton?: boolean
+
+  /**
+   * Show the fast access of current datetime
+   */
+  showNow?: boolean
 }
 
 export type DatePickerProps = CommonProps & {
+
+  /**
+   * Callback function when the selected datetime changes
+   */
   onChange?: (date: Dayjs | Dayjs[], dateString: string | string[]) => void
+
+  /**
+   * The placeholder of the date input
+   */
   placeholder?: string
+
+  /**
+   * To set default date
+   */
   defaultValue?: Dayjs
+
+  /**
+   * To set date
+   */
   value?: Dayjs
+
+  /**
+   * To disable the datepicker
+   */
   isDisabled?: boolean
 }
 
@@ -50,12 +98,34 @@ export type RangeValueType = AntRangeValueType<Dayjs>
 export type RangeTimeProps = AntRangeTimeProps<Dayjs>
 
 export type RangePickerProps = CommonProps & {
-  canBeEmpty?: boolean
-  format?: string
+
+  /**
+   * Allow to leave start or end date empty
+   */
+  allowEmpty?: boolean
+
+  /**
+   * Callback function when the selected datetime changes
+   */
   onChange?: (dates: NoUndefinedRangeValueType | null, dateStrings: [string, string]) => void
+
+  /**
+   * The placeholder of date input
+   */
   placeholder?: [string, string]
-  showTime?: boolean | ShowTimeOptions
+
+  /**
+   * To set dates
+   */
   value?: RangeValueType
+
+  /**
+   * To set default dates
+   */
   defaultValue?: RangeValueType
+
+  /**
+   * To disable the start or end datepicker
+   */
   isDisabled?: boolean | [boolean, boolean]
 }

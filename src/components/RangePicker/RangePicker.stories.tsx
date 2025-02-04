@@ -19,11 +19,11 @@
 import { Meta, StoryObj } from '@storybook/react'
 import dayjs from 'dayjs'
 
-import { DatePicker } from './DatePicker'
+import { RangePicker } from '../DatePickers/RangePicker'
 
 const meta = {
-  component: DatePicker,
-} satisfies Meta<typeof DatePicker>
+  component: RangePicker,
+} satisfies Meta<typeof RangePicker>
 
 export default meta
 
@@ -31,32 +31,40 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 
-export const WithoutTodayButton: Story = {
-  args: { hasNowButton: false },
+export const NotAllowEmptyField: Story = {
+  args: { allowEmpty: false },
+}
+
+export const WithTodayButton: Story = {
+  args: { showNow: true },
 }
 
 export const WithTime: Story = {
   args: { showTime: true },
 }
 
-export const WithoutNowButton: Story = {
-  args: { showTime: true, hasNowButton: false },
+export const WithNowButton: Story = {
+  args: { showTime: true, showNow: true },
 }
 
 export const CustomPlaceholder: Story = {
-  args: { placeholder: 'Custom placeholder' },
+  args: { placeholder: ['Custom start', 'Custom end'] },
 }
 
 export const DefaultValue: Story = {
-  args: { defaultValue: dayjs() },
+  args: { defaultValue: [dayjs().subtract(7, 'days'), dayjs().add(7, 'day')] },
 }
 
 export const CustomFormat: Story = {
-  args: { defaultValue: dayjs(), format: 'YYYY-MM-DD' },
+  args: { defaultValue: [dayjs(), dayjs().add(7, 'day')], format: 'YYYY-MM-DD' },
 }
 
 export const Disabled: Story = {
-  args: { isDisabled: true, defaultValue: dayjs() },
+  args: { isDisabled: true, defaultValue: [dayjs(), dayjs().add(7, 'day')] },
+}
+
+export const PartiallyDisabled: Story = {
+  args: { isDisabled: [false, true], defaultValue: [dayjs(), dayjs().add(7, 'day')] },
 }
 
 export const MinMaxDates: Story = {

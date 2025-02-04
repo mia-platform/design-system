@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2024 Mia srl
  *
@@ -17,38 +16,42 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { DatePicker as AntDatePicker } from 'antd'
+import { DatePicker } from 'antd'
 import { ReactNode } from 'react'
 
-import { computeShowTime, defaultDateFormat, defaultTimeFormat } from './utils'
-import { DatePickerProps } from './props'
-import { RangePicker } from './RangePicker/RangePicker'
-import { ShowTimeOptions } from './types'
+import { ShowTimeOptions, defaultDateFormat, defaultTimeFormat } from '../types'
+import { RangePickerProps } from '../props'
+import { buildShowTime } from '../utils'
 
-export const defaults: Partial<DatePickerProps> = {
-  canClear: true,
+const { RangePicker: AntdRangePicker } = DatePicker
+
+export const defaults: Partial<RangePickerProps> = {
+  allowClear: true,
+  allowEmpty: true,
   format: defaultDateFormat,
   showTime: false,
-  hasNowButton: true,
+  showNow: false,
 }
 
-export const DatePicker = ({
-  canClear = defaults.canClear,
+export const RangePicker = ({
+  allowClear = defaults.allowClear,
+  allowEmpty = defaults.allowEmpty,
   onChange,
   placeholder,
   showTime = defaults.showTime,
-  format = showTime ? `${defaults.format} ${defaultTimeFormat}` : defaults.format,
+  format = !showTime ? defaults.format : `${defaults.format} ${defaultTimeFormat}`,
+  value,
   defaultValue,
   isDisabled,
   minDate,
   maxDate,
   isErrorStatus,
-  hasNowButton = defaults.hasNowButton,
-  value,
-}: DatePickerProps): ReactNode => {
+  showNow = defaults.showNow,
+}: RangePickerProps): ReactNode => {
   return (
-    <AntDatePicker
-      allowClear={canClear}
+    <AntdRangePicker
+      allowClear={allowClear}
+      allowEmpty={allowEmpty}
       defaultValue={defaultValue}
       disabled={isDisabled}
       format={format}
@@ -56,14 +59,13 @@ export const DatePicker = ({
       minDate={minDate}
       needConfirm={Boolean(showTime)}
       placeholder={placeholder}
-      showNow={hasNowButton}
-      showTime={computeShowTime(showTime)}
-      status={isErrorStatus ? 'error' : ''}
+      showNow={showNow}
+      showTime={buildShowTime(showTime)}
+      status={isErrorStatus ? 'error' : undefined}
       value={value}
       onChange={onChange}
     />
   )
 }
 
-DatePicker.RangePicker = RangePicker
-DatePicker.ShowTimeOptions = ShowTimeOptions
+RangePicker.ShowTimeOptions = ShowTimeOptions

@@ -15,3 +15,6 @@ export type ShowTime = boolean | {
   showMinute: boolean;
   showSecond: boolean;
 }
+
+export const defaultTimeFormat = 'HH:mm'
+export const defaultDateFormat = 'DD/MM/YYYY'

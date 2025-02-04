@@ -33,7 +33,7 @@ export default ({ palette }: Partial<Theme>): ComponentsTheme['DatePicker'] => (
   cellBgDisabled: palette?.action.disabled.main,
   cellHoverBg: palette?.action.alternate.secondary.hover,
 
-  // globali
+  // globals
   colorBgContainerDisabled: palette?.action.disabled.main,
   colorIcon: palette?.text.neutral.subtle,
   colorTextPlaceholder: palette?.text.neutral.subtle,

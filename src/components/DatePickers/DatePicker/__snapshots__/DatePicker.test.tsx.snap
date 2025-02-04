@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatePicker Component renders correctly with canClear=false 1`] = `
+exports[`DatePicker Component renders correctly with allowClear=false 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-picker mia-platform-picker-outlined"
@@ -197,7 +197,7 @@ exports[`DatePicker Component renders correctly with default props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DatePicker Component renders correctly with defaultValue 1`] = `
+exports[`DatePicker Component renders correctly with defaultValue prop 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-picker mia-platform-picker-outlined"
@@ -265,7 +265,7 @@ exports[`DatePicker Component renders correctly with defaultValue 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DatePicker Component renders correctly with isErrorStatus 1`] = `
+exports[`DatePicker Component renders correctly with isErrorStatus prop 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-picker mia-platform-picker-outlined mia-platform-picker-status-error"
@@ -308,7 +308,7 @@ exports[`DatePicker Component renders correctly with isErrorStatus 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DatePicker Component renders correctly with time and custom format 1`] = `
+exports[`DatePicker Component renders correctly with showTime and custom format 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-picker mia-platform-picker-outlined"

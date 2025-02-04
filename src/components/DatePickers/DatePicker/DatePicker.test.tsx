@@ -18,9 +18,9 @@
 
 import dayjs from 'dayjs'
 
-import { render, screen, userEvent, within } from '../../test-utils'
+import { render, screen, userEvent, within } from '../../../test-utils'
 import { DatePicker } from './DatePicker'
-import { ShowTimeOptions } from './types'
+import { ShowTimeOptions } from '../types'
 
 const selectedDay = 15
 const selectedDate = dayjs('2025-02-03').set('date', selectedDay)
@@ -39,12 +39,12 @@ describe('DatePicker Component', () => {
       expect(asFragment()).toMatchSnapshot()
     })
 
-    test('with isErrorStatus', () => {
+    test('with isErrorStatus prop', () => {
       const { asFragment } = render(<DatePicker isErrorStatus />)
       expect(asFragment()).toMatchSnapshot()
     })
 
-    test('with defaultValue', () => {
+    test('with defaultValue prop', () => {
       const { asFragment } = render(<DatePicker defaultValue={selectedDate} />)
       expect(asFragment()).toMatchSnapshot()
     })
@@ -59,37 +59,18 @@ describe('DatePicker Component', () => {
       expect(asFragment()).toMatchSnapshot()
     })
 
-    test('with time and custom format', () => {
+    test('with showTime and custom format', () => {
       const { asFragment } = render(<DatePicker defaultValue={selectedDate} format={'YYYY-MM-DD HH.mm.ss'} showTime />)
       expect(asFragment()).toMatchSnapshot()
     })
 
-    test('with canClear=false', () => {
-      const { asFragment } = render(<DatePicker canClear={false} />)
+    test('with allowClear=false', () => {
+      const { asFragment } = render(<DatePicker allowClear={false} />)
       expect(asFragment()).toMatchSnapshot()
     })
   })
 
-  test('clear input if clicked on clear icon', async() => {
-    const onChange = jest.fn()
-    render(<DatePicker defaultValue={selectedDate} onChange={onChange} />)
-
-    const input = screen.getByRole<HTMLInputElement>('textbox')
-    expect(input.value).toEqual(selectedDateFormatted)
-    const clearIcon = screen.getByRole('img', { name: 'close-circle' })
-    expect(clearIcon).toBeVisible()
-    const calendarIcon = screen.getByRole('img', { name: 'calendar' })
-    expect(calendarIcon).not.toBeVisible()
-    expect(onChange).not.toHaveBeenCalled()
-    await userEvent.click(clearIcon)
-    expect(onChange).toHaveBeenCalledTimes(1)
-    expect(onChange).toHaveBeenCalledWith(null, '')
-    expect(input.value).toEqual('')
-    expect(calendarIcon).toBeVisible()
-    expect(clearIcon).not.toBeVisible()
-  })
-
-  test('calendars show Today button by default', async() => {
+  test('calendar show Today button by default', async() => {
     render(<DatePicker />)
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
@@ -99,8 +80,8 @@ describe('DatePicker Component', () => {
     expect(screen.getByText('Today')).toBeInTheDocument()
   })
 
-  test('calendars does not show Today button if hasNowButton=false', async() => {
-    render(<DatePicker hasNowButton={false} />)
+  test('calendar does not show Today button if showNow=false', async() => {
+    render(<DatePicker showNow={false} />)
 
     const input = screen.getByRole<HTMLInputElement>('textbox')
 
@@ -110,11 +91,10 @@ describe('DatePicker Component', () => {
   })
 
   describe('show Time', () => {
-    test('calendars does not show time selectors and ok button by default', async() => {
+    test('calendar does not show time selectors and ok button by default', async() => {
       render(<DatePicker />)
 
       const input = screen.getByRole<HTMLInputElement>('textbox')
-
       expect(screen.queryByRole('listitem')).not.toBeInTheDocument()
       await userEvent.click(input)
       const lists = screen.getAllByRole('list')
@@ -124,11 +104,10 @@ describe('DatePicker Component', () => {
       expect(within(listItem).queryByRole('button', { name: 'Ok' })).not.toBeInTheDocument()
     })
 
-    test('calendars show time selectors and ok button if showTime=true', async() => {
+    test('calendar shows time selectors and ok button if showTime=true', async() => {
       render(<DatePicker showTime={true} />)
 
       const input = screen.getByRole<HTMLInputElement>('textbox')
-
       expect(screen.queryByRole('list')).not.toBeInTheDocument()
       await userEvent.click(input)
       const lists = screen.getAllByRole('list')
@@ -165,7 +144,7 @@ describe('DatePicker Component', () => {
       expect(lists).toHaveLength(3)
     })
 
-    test('calendars show hours and minutes if showTime=seconds', async() => {
+    test('calendar show hours, minutes and seconds if showTime=seconds', async() => {
       render(<DatePicker showTime={ShowTimeOptions.Seconds} />)
 
       const input = screen.getByRole<HTMLInputElement>('textbox')
@@ -180,54 +159,65 @@ describe('DatePicker Component', () => {
   })
 
   describe('onChange', () => {
-    test('is triggered on calendar click if no show time', async() => {
+    test('is triggered on clear icon click', async() => {
       const onChange = jest.fn()
+      render(<DatePicker defaultValue={selectedDate} onChange={onChange} />)
 
+      const input = screen.getByRole<HTMLInputElement>('textbox')
+      expect(input.value).toEqual(selectedDateFormatted)
+      const clearIcon = screen.getByRole('img', { name: 'close-circle' })
+      expect(clearIcon).toBeVisible()
+      const calendarIcon = screen.getByRole('img', { name: 'calendar' })
+      expect(calendarIcon).not.toBeVisible()
+      expect(onChange).not.toHaveBeenCalled()
+      await userEvent.click(clearIcon)
+      expect(onChange).toHaveBeenCalledTimes(1)
+      expect(onChange).toHaveBeenCalledWith(null, '')
+      expect(input.value).toEqual('')
+      expect(calendarIcon).toBeVisible()
+      expect(clearIcon).not.toBeVisible()
+    })
+
+    test('is triggered on date selection', async() => {
+      const onChange = jest.fn()
       render(<DatePicker onChange={onChange} />)
-      expect(screen.getByRole('img', { name: 'calendar' })).toBeVisible()
 
+      expect(screen.getByRole('img', { name: 'calendar' })).toBeVisible()
       const input = screen.getByRole<HTMLInputElement>('textbox')
       await userEvent.click(input)
       expect(onChange).not.toHaveBeenCalled()
       await userEvent.click(screen.getByText(selectedDay))
       expect(onChange).toHaveBeenCalledTimes(1)
-
       expect(onChange).toHaveBeenCalledWith(selectedDate, selectedDateFormatted)
-
       expect(input.value).toEqual(selectedDateFormatted)
       expect(screen.queryByRole('img', { name: 'calendar' })).not.toBeVisible()
       expect(screen.getByRole('img', { name: 'close-circle' })).toBeVisible()
     })
 
-    test('is triggered on ok click if show time', async() => {
+    test('is triggered on Ok click if showTime=true', async() => {
       const onChange = jest.fn()
-
       render(<DatePicker showTime onChange={onChange} />)
-      expect(screen.getByRole('img', { name: 'calendar' })).toBeVisible()
 
+      expect(screen.getByRole('img', { name: 'calendar' })).toBeVisible()
       const input = screen.getByRole<HTMLInputElement>('textbox')
       await userEvent.click(input)
       expect(onChange).not.toHaveBeenCalled()
       await userEvent.click(screen.getAllByText(selectedDay)[0])
       expect(onChange).not.toHaveBeenCalled()
-
       await userEvent.click(screen.getByRole('button', { name: 'OK' }))
-
       expect(onChange).toHaveBeenCalledTimes(1)
       expect(onChange).toHaveBeenCalledWith(selectedDate, selectedDateTimeFormatted)
-
       expect(input.value).toEqual(selectedDateTimeFormatted)
       expect(screen.queryByRole('img', { name: 'calendar' })).not.toBeVisible()
       expect(screen.getByRole('img', { name: 'close-circle' })).toBeVisible()
     })
   })
 
-  test('minDate and maxDate props disable certain dates', async() => {
+  test('calendar dates are disabled via minDate and maxDate props', async() => {
     const minDate = selectedDate.subtract(1, 'day')
     const maxDate = selectedDate.add(1, 'day')
 
     render(<DatePicker maxDate={maxDate} minDate={minDate} />)
-
     const input = screen.getByRole<HTMLInputElement>('textbox')
     await userEvent.click(input)
     expect(getComputedStyle(screen.getByText(selectedDay - 2).parentElement!).pointerEvents).toBe('none')

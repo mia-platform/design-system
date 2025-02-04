@@ -1,6 +1,6 @@
 import { ShowTime, ShowTimeOptions } from './types'
 
-export const computeShowTime = (showTime?: boolean | ShowTimeOptions): ShowTime => {
+export const buildShowTime = (showTime?: boolean | ShowTimeOptions): ShowTime => {
   if (!showTime) {
     return false
   }
@@ -15,6 +15,3 @@ export const computeShowTime = (showTime?: boolean | ShowTimeOptions): ShowTime 
     return { showHour: true, showMinute: true, showSecond: false }
   }
 }
-
-export const defaultTimeFormat = 'HH:mm'
-export const defaultDateFormat = 'DD/MM/YYYY'

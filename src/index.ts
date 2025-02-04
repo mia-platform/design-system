@@ -25,6 +25,7 @@ import { Card } from './components/Card'
 import { CardSelection } from './components/CardSelection'
 import { Checkbox } from './components/Checkbox'
 import { CheckboxGroup } from './components/CheckboxGroup'
+import { DatePicker } from './components/DatePickers/DatePicker'
 import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
 import { Dropdown } from './components/Dropdown'
@@ -36,6 +37,7 @@ import { InputNumber } from './components/InputNumber'
 import { Menu } from './components/Menu'
 import { Modal } from './components/Modal'
 import { RadioGroup } from './components/RadioGroup'
+import { RangePicker } from './components/DatePickers/RangePicker'
 import { Search } from './components/Search'
 import { SegmentedControl } from './components/SegmentedControl'
 import { Select } from './components/Select'
@@ -60,6 +62,7 @@ export {
   CardSelection,
   Checkbox,
   CheckboxGroup,
+  DatePicker,
   Divider,
   Drawer,
   Dropdown,
@@ -71,6 +74,7 @@ export {
   Menu,
   Modal,
   RadioGroup,
+  RangePicker,
   SegmentedControl,
   Search,
   Select,

@@ -32,11 +32,11 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {}
 
 export const NotAllowEmptyField: Story = {
-  args: { canBeEmpty: false },
+  args: { allowEmpty: false },
 }
 
 export const WithTodayButton: Story = {
-  args: { hasNowButton: true },
+  args: { showNow: true },
 }
 
 export const WithTime: Story = {
@@ -44,7 +44,7 @@ export const WithTime: Story = {
 }
 
 export const WithNowButton: Story = {
-  args: { showTime: true, hasNowButton: true },
+  args: { showTime: true, showNow: true },
 }
 
 export const CustomPlaceholder: Story = {
