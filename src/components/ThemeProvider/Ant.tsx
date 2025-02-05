@@ -82,6 +82,9 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     colorPrimaryActive: palette?.action?.primary?.active,
     colorErrorHover: palette?.action?.danger?.hover,
     colorErrorActive: palette?.action?.danger?.active,
+    colorBgContainerDisabled: palette?.action.disabled.main,
+    colorTextPlaceholder: palette?.text.neutral.subtle,
+    colorErrorBorderHover: palette?.action.danger.hover,
 
     // Typography
     fontFamily: typography?.bodyS?.fontFamily ?? DEFAULT_FONT_FAMILY,
