@@ -37,6 +37,5 @@ export default ({ palette }: Partial<Theme>): ComponentsTheme['DatePicker'] => (
   colorBgContainerDisabled: palette?.action.disabled.main,
   colorIcon: palette?.text.neutral.subtle,
   colorTextPlaceholder: palette?.text.neutral.subtle,
-  colorErrorBorder: palette?.action.danger.default,
   colorErrorBorderHover: palette?.action.danger.hover,
 })
