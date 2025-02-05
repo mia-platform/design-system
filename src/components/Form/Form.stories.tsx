@@ -19,16 +19,19 @@
 import { Fragment, ReactElement } from 'react'
 import { Meta, type StoryObj } from '@storybook/react'
 import { Flex } from 'antd'
+import dayjs from 'dayjs'
 
 import { BodyM } from '../Typography/BodyX/BodyM'
 import { Button } from '../Button'
 import { Card } from '../Card'
 import { Checkbox } from '../Checkbox'
 import { CheckboxGroup } from '../CheckboxGroup'
+import { DatePicker } from '../DatePickers/DatePicker'
 import { Form } from './Form.tsx'
 import { Input } from '../Input'
 import { InputNumber } from '../InputNumber'
 import { RadioGroup } from '../RadioGroup'
+import { RangePicker } from '../DatePickers/RangePicker'
 import { Search } from '../Search'
 import { Select } from '../Select'
 import { Switch } from '../Switch'
@@ -163,6 +166,8 @@ export const ComplexForm: Story = {
       checkbox: true,
       radioGroup: options[0].value,
       custom: 0,
+      date: dayjs('2025-02-04'),
+      rangeDate: [dayjs('2025-02-04'), dayjs('2025-02-08')],
     },
     children: (
       <Fragment>
@@ -234,6 +239,18 @@ export const ComplexForm: Story = {
           ]}
         >
           <Input type={Input.Type.Password} />
+        </Form.Item>
+        <Form.Item
+          name="date"
+          rules={[Form.Validators.required('date is required')]}
+        >
+          <DatePicker />
+        </Form.Item>
+        <Form.Item
+          name="rangeDate"
+          rules={[Form.Validators.required('range date is required')]}
+        >
+          <RangePicker />
         </Form.Item>
         <Form.Item isFullWidth label={<BodyM isBold>Form values:</BodyM>} shouldUpdate>
           {

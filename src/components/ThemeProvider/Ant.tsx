@@ -22,6 +22,7 @@ import { ReactElement, useMemo } from 'react'
 import { DEFAULT_COLOR, DEFAULT_FONT_FAMILY, DEFAULT_FONT_SIZE } from './utils/themeDefaultStyle'
 import ButtonTheme from '../Button/Button.theme'
 import CheckboxTheme from '../Checkbox/Checkbox.theme.ts'
+import DatePickerTheme from '../DatePickers/theme.ts'
 import DividerTheme from '../Divider/Divider.theme'
 import FeedbackMessageTheme from '../FeedbackMessage/FeedbackMessage.theme'
 import InputTheme from '../BaseInput/BaseInput.theme'
@@ -81,6 +82,9 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     colorPrimaryActive: palette?.action?.primary?.active,
     colorErrorHover: palette?.action?.danger?.hover,
     colorErrorActive: palette?.action?.danger?.active,
+    colorBgContainerDisabled: palette?.action.disabled.main,
+    colorTextPlaceholder: palette?.text.neutral.subtle,
+    colorErrorBorderHover: palette?.action.danger.hover,
 
     // Typography
     fontFamily: typography?.bodyS?.fontFamily ?? DEFAULT_FONT_FAMILY,
@@ -114,6 +118,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
     Tag: TagTheme({ palette }),
     Radio: RadioTheme({ palette, shape }),
     Checkbox: CheckboxTheme({ palette, shape }),
+    DatePicker: DatePickerTheme({ palette, shape }),
   },
 })
 
