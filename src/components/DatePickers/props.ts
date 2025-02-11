@@ -51,7 +51,6 @@ type CommonProps = {
    * Show the fast access of current datetime
    */
   showNow?: boolean
-
 }
 
 export type DatePickerProps = CommonProps & {
