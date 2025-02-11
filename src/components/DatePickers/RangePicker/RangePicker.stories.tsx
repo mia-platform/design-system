@@ -68,6 +68,10 @@ export const CustomFormat: Story = {
   args: { defaultValue: [dayjs(), dayjs().add(7, 'day')], format: 'YYYY-MM-DD' },
 }
 
+export const WithTimeAndCustomFormat: Story = {
+  args: { showTime: true, format: 'YYYY-MM-DD HH.mm.ss' },
+}
+
 export const Disabled: Story = {
   args: { isDisabled: true, defaultValue: [dayjs(), dayjs().add(7, 'day')] },
 }
