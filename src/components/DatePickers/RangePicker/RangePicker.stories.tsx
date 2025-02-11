@@ -17,7 +17,7 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
-import dayjs, { Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 
 import { RangePicker } from './RangePicker'
 
