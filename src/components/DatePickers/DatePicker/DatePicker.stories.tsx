@@ -17,9 +17,10 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
-import dayjs from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 
 import { DatePicker } from './DatePicker'
+import { DisabledTimes } from '../types'
 
 const meta = {
   component: DatePicker,
@@ -38,6 +39,67 @@ export const WithoutTodayButton: Story = {
 
 export const WithTime: Story = {
   args: { showTime: true },
+}
+
+export const WithHour: Story = {
+  args: { showTime: { showHour: true } },
+}
+
+export const WithSeconds: Story = {
+  args: { showTime: { showHour: true, showMinute: true, showSecond: true }, format: 'DD/MM/YYYY HH:mm:ss' },
+}
+
+export const WithDefaultTime: Story = {
+  args: { showTime: { defaultOpenValue: dayjs() } },
+}
+
+const hours = Array.from(Array(24).keys())
+const minutes = Array.from(Array(60).keys())
+
+const disabledTimeFn = (date: Dayjs): DisabledTimes => ({
+  disabledHours: () => {
+    if (date.isAfter(dayjs(), 'day')) {
+      return hours.slice()
+    }
+    if (date.isBefore(dayjs(), 'day')) {
+      return []
+    }
+    return hours.filter(hour => hour > dayjs().hour())
+  },
+  disabledMinutes: (hour) => {
+    if (hour === null || hour === undefined) {
+      return minutes.slice()
+    }
+    if (date.isAfter(dayjs(), 'day')) {
+      return minutes.slice()
+    }
+    if (date.isBefore(dayjs(), 'day')) {
+      return []
+    }
+    if (hour < dayjs().hour()) {
+      return []
+    }
+    if (hour > dayjs().hour()) {
+      return minutes.slice()
+    }
+    return minutes.filter(minute => minute > dayjs().minute())
+  },
+})
+
+export const WithDisabledTime: Story = {
+  args: { showTime: {
+    disabledTime: disabledTimeFn,
+  } },
+}
+
+export const WithMaxDateDefaultTimeAndDisabledTime: Story = {
+  args: {
+    maxDate: dayjs(),
+    showTime: {
+      defaultOpenValue: dayjs(),
+      disabledTime: disabledTimeFn,
+    },
+  },
 }
 
 export const WithoutNowButton: Story = {

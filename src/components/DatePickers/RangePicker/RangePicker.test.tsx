@@ -20,10 +20,10 @@ import dayjs from 'dayjs'
 
 import { render, screen, userEvent } from '../../../test-utils'
 import { RangePicker } from './RangePicker'
-import { ShowTimeOptions } from '../types'
 
+const currentDate = dayjs('2025-02-03T15:00:00.000Z')
 const dayOfMonth = 15
-const start = dayjs('2025-02-03').set('date', dayOfMonth)
+const start = dayjs(currentDate).set('date', dayOfMonth)
   .startOf('day')
 const startFormatted = start.format('DD/MM/YYYY')
 const end = start.add(1, 'month')
@@ -35,6 +35,10 @@ const startDateTime = dayjs(start)
 const endDateTime = startDateTime.add(daysToAdd, 'day')
 const startDateTimeFormatted = startDateTime.format('DD/MM/YYYY HH:mm')
 const endDateTimeFormatted = endDateTime.format('DD/MM/YYYY HH:mm')
+
+Date.now = jest.fn().mockImplementation(() => {
+  return currentDate.toDate()
+})
 
 describe('RangePicker Component', () => {
   beforeEach(() => {
@@ -88,17 +92,8 @@ describe('RangePicker Component', () => {
     })
   })
 
-  test('calendars does not show Today button by default', async() => {
+  test('Pickers show Today button by default', async() => {
     render(<RangePicker />)
-
-    const startInput = screen.getAllByRole<HTMLInputElement>('textbox').at(0)!
-    expect(screen.queryByText('Today')).not.toBeInTheDocument()
-    await userEvent.click(startInput)
-    expect(screen.queryByText('Today')).not.toBeInTheDocument()
-  })
-
-  test('calendars show Today button if showNow=true', async() => {
-    render(<RangePicker showNow />)
 
     const startInput = screen.getAllByRole<HTMLInputElement>('textbox').at(0)!
     expect(screen.queryByText('Today')).not.toBeInTheDocument()
@@ -106,9 +101,18 @@ describe('RangePicker Component', () => {
     expect(screen.getByText('Today')).toBeInTheDocument()
   })
 
+  test('Pickers does not show Today button if showNow={false}', async() => {
+    render(<RangePicker showNow={false} />)
+
+    const startInput = screen.getAllByRole<HTMLInputElement>('textbox').at(0)!
+    expect(screen.queryByText('Today')).not.toBeInTheDocument()
+    await userEvent.click(startInput)
+    expect(screen.queryByText('Today')).not.toBeInTheDocument()
+  })
+
   describe('show Time', () => {
-    test('calendar does not show time selectors and ok button by default', async() => {
-      render(<RangePicker showNow />)
+    test('Picker does not show time selectors and ok button by default', async() => {
+      render(<RangePicker />)
 
       const startInput = screen.getAllByRole<HTMLInputElement>('textbox').at(0)!
       expect(screen.queryByRole('listitem')).not.toBeInTheDocument()
@@ -117,7 +121,7 @@ describe('RangePicker Component', () => {
       expect(screen.queryByRole('button', { name: 'Ok' })).not.toBeInTheDocument()
     })
 
-    test('calendar shows time selectors and ok button if showTime=true', async() => {
+    test('Picker shows time selectors and ok button if showTime=true', async() => {
       render(<RangePicker showTime={true} />)
 
       const input = screen.getAllByRole<HTMLInputElement>('textbox').at(0)!
@@ -130,8 +134,8 @@ describe('RangePicker Component', () => {
       expect(screen.getByRole('button', { name: 'OK' })).toBeInTheDocument()
     })
 
-    test('calendar shows only hours if showTime=hours', async() => {
-      render(<RangePicker showTime={ShowTimeOptions.Hours} />)
+    test('Picker correclty shows time picker with only hours', async() => {
+      render(<RangePicker showTime={{ showHour: true }} />)
 
       const input = screen.getAllByRole<HTMLInputElement>('textbox').at(0)!
       expect(screen.queryByRole('list')).not.toBeInTheDocument()
@@ -142,8 +146,8 @@ describe('RangePicker Component', () => {
       expect(lists).toHaveLength(2)
     })
 
-    test('calendar shows hours and minutes if showTime=minutes', async() => {
-      render(<RangePicker showTime={ShowTimeOptions.Minutes} />)
+    test('Picker correclty show time picker with hours and minutes', async() => {
+      render(<RangePicker showTime={{ showHour: true, showMinute: true }} />)
 
       const input = screen.getAllByRole<HTMLInputElement>('textbox').at(0)!
       expect(screen.queryByRole('list')).not.toBeInTheDocument()
@@ -154,8 +158,8 @@ describe('RangePicker Component', () => {
       expect(lists).toHaveLength(3)
     })
 
-    test('calendar shows hours, minutes and seconds if showTime=seconds', async() => {
-      render(<RangePicker showTime={ShowTimeOptions.Seconds} />)
+    test('Picker correctly shows time wiht hours, minutes and seconds', async() => {
+      render(<RangePicker showTime={{ showHour: true, showMinute: true, showSecond: true }} />)
 
       const input = screen.getAllByRole<HTMLInputElement>('textbox').at(0)!
 
@@ -349,7 +353,7 @@ describe('RangePicker Component', () => {
     })
   })
 
-  test('calendar dates are disabled via minDate and maxDate props', async() => {
+  test('Picker dates are disabled via minDate and maxDate props', async() => {
     const minDate = start.subtract(1, 'day')
     const maxDate = end.add(1, 'day')
 
@@ -364,5 +368,45 @@ describe('RangePicker Component', () => {
     expect(getComputedStyle(screen.getAllByText(dayOfMonth + 2).at(1)!.parentElement!).pointerEvents).toBe('none')
     expect(getComputedStyle(screen.getAllByText(dayOfMonth).at(0)!.parentElement!).pointerEvents).not.toBe('none')
     expect(getComputedStyle(screen.getAllByText(dayOfMonth).at(1)!.parentElement!).pointerEvents).not.toBe('none')
+  })
+
+  test('the default time is selected correctly', async() => {
+    // I define dates whith the current time (CT, no start of the day)
+    const startCT = dayjs(currentDate).set('date', dayOfMonth)
+
+    const startDateTimeCT = dayjs(startCT)
+    const endDateTimeCT = startDateTimeCT.add(daysToAdd, 'day')
+    const startDateTimeCTFormatted = startDateTimeCT.format('DD/MM/YYYY HH:mm')
+    const endDateTimeCTFormatted = endDateTimeCT.format('DD/MM/YYYY HH:mm')
+    const onChange = jest.fn()
+
+    render(<RangePicker showTime={{ defaultOpenValue: [currentDate, currentDate] }} onChange={onChange} />)
+    expect(screen.getByRole('img', { name: 'calendar' })).toBeVisible()
+    const inputs = screen.getAllByRole<HTMLInputElement>('textbox')
+    const fromInput = inputs.at(0)!
+    const toInput = inputs.at(1)!
+    await userEvent.click(fromInput)
+    const startDayValues = screen.getAllByText(dayOfMonth)
+    // it finds the day in the calendar, the hour and the minutes
+    expect(startDayValues).toHaveLength(3)
+    expect(onChange).not.toHaveBeenCalled()
+    await userEvent.click(startDayValues.at(0)!)
+    await userEvent.click(screen.getByRole('button', { name: 'OK' }))
+    expect(onChange).not.toHaveBeenCalled()
+    const endDayValues = screen.getAllByText(dayOfMonth + daysToAdd)
+    // it finds the day in the calendar, the hour and the minutes
+    expect(endDayValues).toHaveLength(3)
+    await userEvent.click(endDayValues.at(0)!)
+    expect(onChange).not.toHaveBeenCalled()
+    await userEvent.click(screen.getByRole('button', { name: 'OK' }))
+    expect(onChange).toHaveBeenCalledTimes(1)
+    expect(onChange).toHaveBeenCalledWith(
+      [startDateTimeCT, endDateTimeCT],
+      [startDateTimeCTFormatted, endDateTimeCTFormatted]
+    )
+    expect(fromInput.value).toEqual(startDateTimeCTFormatted)
+    expect(toInput.value).toEqual(endDateTimeCTFormatted)
+    expect(screen.queryByRole('img', { name: 'calendar' })).not.toBeVisible()
+    expect(screen.getByRole('img', { name: 'close-circle' })).toBeVisible()
   })
 })

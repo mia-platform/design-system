@@ -18,7 +18,7 @@
 
 import { Dayjs } from 'dayjs'
 
-import { NoUndefinedRangeValueType, RangeValueType, ShowTimeOptions } from './types'
+import { NoUndefinedRangeValueType, RangeTimeProps, RangeValueType, TimeProps } from './types'
 
 type CommonProps = {
 
@@ -43,11 +43,6 @@ type CommonProps = {
   maxDate?: Dayjs
 
   /**
-   * To provide an additional time selection
-   */
-  showTime?: boolean | ShowTimeOptions
-
-  /**
    * Error validation status
    */
   isErrorStatus?: boolean
@@ -56,6 +51,7 @@ type CommonProps = {
    * Show the fast access of current datetime
    */
   showNow?: boolean
+
 }
 
 export type DatePickerProps = CommonProps & {
@@ -84,6 +80,11 @@ export type DatePickerProps = CommonProps & {
    * To disable the datepicker
    */
   isDisabled?: boolean
+
+  /**
+   * To provide an additional time selection
+   */
+  showTime?: boolean | TimeProps
 }
 
 export type RangePickerProps = CommonProps & {
@@ -117,4 +118,9 @@ export type RangePickerProps = CommonProps & {
    * To disable the start or end datepicker
    */
   isDisabled?: boolean | [boolean, boolean]
+
+  /**
+   * To provide an additional time selection
+   */
+  showTime?: boolean | RangeTimeProps
 }

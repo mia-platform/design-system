@@ -16,12 +16,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactNode, useMemo } from 'react'
 import { DatePicker } from 'antd'
+import { ReactNode } from 'react'
 
-import { ShowTimeOptions, defaultDateFormat, defaultTimeFormat } from '../types'
+import { defaultDateFormat, defaultTimeFormat } from '../types'
 import { RangePickerProps } from '../props'
-import { adaptShowTimeOptions } from '../utils'
 
 const { RangePicker: AntdRangePicker } = DatePicker
 
@@ -30,7 +29,7 @@ export const defaults: Partial<RangePickerProps> = {
   allowEmpty: true,
   format: defaultDateFormat,
   showTime: false,
-  showNow: false,
+  showNow: true,
 }
 
 export const RangePicker = ({
@@ -48,7 +47,6 @@ export const RangePicker = ({
   isErrorStatus,
   showNow = defaults.showNow,
 }: RangePickerProps): ReactNode => {
-  const adaptedShowTime = useMemo(() => adaptShowTimeOptions(showTime), [showTime])
   return (
     <AntdRangePicker
       allowClear={allowClear}
@@ -58,10 +56,9 @@ export const RangePicker = ({
       format={format}
       maxDate={maxDate}
       minDate={minDate}
-      needConfirm={Boolean(showTime)}
       placeholder={placeholder}
       showNow={showNow}
-      showTime={adaptedShowTime}
+      showTime={showTime}
       status={isErrorStatus ? 'error' : undefined}
       value={value}
       onChange={onChange}
@@ -69,4 +66,3 @@ export const RangePicker = ({
   )
 }
 
-RangePicker.ShowTimeOptions = ShowTimeOptions

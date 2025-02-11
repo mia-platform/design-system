@@ -17,7 +17,7 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
-import dayjs from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 
 import { RangePicker } from './RangePicker'
 
@@ -41,6 +41,15 @@ export const WithTodayButton: Story = {
 
 export const WithTime: Story = {
   args: { showTime: true },
+}
+
+export const WithMaxDateAndDefaultTime: Story = {
+  args: {
+    maxDate: dayjs(),
+    showTime: {
+      defaultOpenValue: [dayjs(), dayjs()],
+    },
+  },
 }
 
 export const WithNowButton: Story = {
