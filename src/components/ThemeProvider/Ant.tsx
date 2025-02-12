@@ -66,7 +66,7 @@ const generateAntTheme = ({ palette, typography, shape, spacing }: Partial<Theme
 
   token: {
     // Palette
-    colorBorder: palette?.text?.neutral?.subtler,
+    colorBorder: palette?.action?.secondary?.bold,
     colorPrimary: palette?.primary?.[600],
     colorSuccess: palette?.success?.[600],
     colorInfo: palette?.info?.[600],

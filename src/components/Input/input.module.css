@@ -34,7 +34,7 @@
   }
 
   &:global(.mia-platform-input-group-wrapper) :global(.mia-platform-input-group-addon):has(.inputAddonCheckbox) {
-    background-color: var(--palette-action-seconary-main, #FFFFFF) !important;
+    background-color: var(--palette-action-secondary-main, #FFFFFF) !important;
   }
   &:global(.mia-platform-input-group-wrapper-disabled) :global(.mia-platform-input-group-addon):has(.inputAddonCheckbox) {
     background-color: var(--palette-background-neutral-300, #F9F9F9) !important;
