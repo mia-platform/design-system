@@ -18,7 +18,7 @@
 
 import { Dayjs } from 'dayjs'
 
-import { NoUndefinedRangeValueType, RangeValueType, ShowTimeOptions } from './types'
+import { NoUndefinedRangeValueType, RangeTimeProps, RangeValueType, TimeProps } from './types'
 
 type CommonProps = {
 
@@ -41,11 +41,6 @@ type CommonProps = {
    * The maximum date, which also limits the range of panel switching
    */
   maxDate?: Dayjs
-
-  /**
-   * To provide an additional time selection
-   */
-  showTime?: boolean | ShowTimeOptions
 
   /**
    * Error validation status
@@ -84,6 +79,11 @@ export type DatePickerProps = CommonProps & {
    * To disable the datepicker
    */
   isDisabled?: boolean
+
+  /**
+   * To provide an additional time selection
+   */
+  showTime?: boolean | TimeProps
 }
 
 export type RangePickerProps = CommonProps & {
@@ -117,4 +117,9 @@ export type RangePickerProps = CommonProps & {
    * To disable the start or end datepicker
    */
   isDisabled?: boolean | [boolean, boolean]
+
+  /**
+   * To provide an additional time selection
+   */
+  showTime?: boolean | RangeTimeProps
 }

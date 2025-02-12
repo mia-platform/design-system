@@ -16,17 +16,24 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {
-  DisabledDate as AntDisabledDate,
-} from 'rc-picker/lib/interface'
+import { SharedTimeProps as AntTimeProps } from 'rc-picker'
 import { Dayjs } from 'dayjs'
 
-export type DisabledDate = AntDisabledDate<Dayjs>
-export enum ShowTimeOptions {
-  Hours = 'hours',
-  Minutes = 'minutes',
-  Seconds = 'seconds'
+export type TimeProps = AntTimeProps<Dayjs>
+
+export type DisabledTimes = {
+  disabledHours?: () => number[];
+  disabledMinutes?: (hour: number) => number[];
+  disabledSeconds?: (hour: number, minute: number) => number[];
+  disabledMilliseconds?: (hour: number, minute: number, second: number) => number[];
 }
+
+export type RangeTimeProps = Omit<AntTimeProps<Dayjs>, 'defaultValue' | 'defaultOpenValue' | 'disabledTime'> & {
+    defaultOpenValue?: Dayjs[];
+    disabledTime?: (date: Dayjs, range: 'start' | 'end', info: {
+        from?: Dayjs;
+    }) => DisabledTimes;
+};
 
 export type AntShowTimeOptions = boolean | {
   showHour: boolean;

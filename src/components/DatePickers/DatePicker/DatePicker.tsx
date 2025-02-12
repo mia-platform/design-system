@@ -16,18 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactNode, useMemo } from 'react'
 import { DatePicker as AntDatePicker } from 'antd'
+import { ReactNode } from 'react'
 
-import { ShowTimeOptions, defaultDateFormat, defaultTimeFormat } from '../types'
+import { defaultDateFormat, defaultTimeFormat } from '../types'
 import { DatePickerProps } from '../props'
-import { adaptShowTimeOptions } from '../utils'
 
 export const defaults = {
   allowClear: true,
   format: defaultDateFormat,
   showTime: false,
-  hasNowButton: true,
+  showNow: true,
 }
 
 export const DatePicker = ({
@@ -41,10 +40,9 @@ export const DatePicker = ({
   minDate,
   maxDate,
   isErrorStatus,
-  showNow = defaults.hasNowButton,
+  showNow = defaults.showNow,
   value,
 }: DatePickerProps): ReactNode => {
-  const adaptedShowTime = useMemo(() => adaptShowTimeOptions(showTime), [showTime])
   return (
     <AntDatePicker
       allowClear={allowClear}
@@ -53,10 +51,9 @@ export const DatePicker = ({
       format={format}
       maxDate={maxDate}
       minDate={minDate}
-      needConfirm={Boolean(showTime)}
       placeholder={placeholder}
       showNow={showNow}
-      showTime={adaptedShowTime}
+      showTime={showTime}
       status={isErrorStatus ? 'error' : undefined}
       value={value}
       onChange={onChange}
@@ -64,4 +61,3 @@ export const DatePicker = ({
   )
 }
 
-DatePicker.ShowTimeOptions = ShowTimeOptions
