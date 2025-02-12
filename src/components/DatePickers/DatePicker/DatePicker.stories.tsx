@@ -37,8 +37,40 @@ export const WithoutTodayButton: Story = {
   args: { showNow: false },
 }
 
+export const CustomPlaceholder: Story = {
+  args: { placeholder: 'Custom placeholder' },
+}
+
+export const DefaultValue: Story = {
+  args: { defaultValue: dayjs() },
+}
+
+export const CustomFormat: Story = {
+  args: { defaultValue: dayjs(), format: 'YYYY-MM-DD' },
+}
+
+export const Disabled: Story = {
+  args: { isDisabled: true, defaultValue: dayjs() },
+}
+
+export const MinMaxDates: Story = {
+  args: { minDate: dayjs().subtract(2, 'day'), maxDate: dayjs().add(2, 'day') },
+}
+
+export const ErrorStatus: Story = {
+  args: { isErrorStatus: true },
+}
+
 export const WithTime: Story = {
   args: { showTime: true },
+}
+
+export const WithoutNowButton: Story = {
+  args: { showTime: true, showNow: false },
+}
+
+export const WithTimeAndCustomFormat: Story = {
+  args: { showTime: true, format: 'YYYY-MM-DD HH.mm.ss' },
 }
 
 export const WithHour: Story = {
@@ -51,6 +83,18 @@ export const WithSeconds: Story = {
 
 export const WithDefaultTime: Story = {
   args: { showTime: { defaultOpenValue: dayjs() } },
+}
+
+export const WithDisabledTime: Story = {
+  args: {
+    showTime: {
+      disabledTime: (_date: Dayjs): DisabledTimes => ({
+        disabledHours: () => {
+          return [0, 1, 2, 3, 4, 5, 6, 7, 8, 13, 19, 20, 21, 22, 23]
+        },
+      }),
+    },
+  },
 }
 
 const hours = Array.from(Array(24).keys())
@@ -86,51 +130,12 @@ const disabledTimeFn = (date: Dayjs): DisabledTimes => ({
   },
 })
 
-export const WithDisabledTime: Story = {
-  args: { showTime: {
-    disabledTime: disabledTimeFn,
-  } },
-}
-
-export const WithMaxDateDefaultTimeAndDisabledTime: Story = {
+export const WithMaxDateAndTime: Story = {
   args: {
     maxDate: dayjs(),
     showTime: {
-      defaultOpenValue: dayjs(),
       disabledTime: disabledTimeFn,
     },
   },
-}
-
-export const WithoutNowButton: Story = {
-  args: { showTime: true, showNow: false },
-}
-
-export const CustomPlaceholder: Story = {
-  args: { placeholder: 'Custom placeholder' },
-}
-
-export const DefaultValue: Story = {
-  args: { defaultValue: dayjs() },
-}
-
-export const CustomFormat: Story = {
-  args: { defaultValue: dayjs(), format: 'YYYY-MM-DD' },
-}
-
-export const WithTimeAndCustomFormat: Story = {
-  args: { showTime: true, format: 'YYYY-MM-DD HH.mm.ss' },
-}
-
-export const Disabled: Story = {
-  args: { isDisabled: true, defaultValue: dayjs() },
-}
-
-export const MinMaxDates: Story = {
-  args: { minDate: dayjs().subtract(2, 'day'), maxDate: dayjs().add(2, 'day') },
-}
-
-export const ErrorStatus: Story = {
-  args: { isErrorStatus: true },
 }
 
