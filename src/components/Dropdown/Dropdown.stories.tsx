@@ -199,9 +199,3 @@ export const SelectionIsNotPersisted: Story = {
     persistSelection: false,
   },
 }
-
-export const WithDisabledItem: Story = {
-  args: {
-
-  },
-}
