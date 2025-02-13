@@ -102,6 +102,7 @@ describe('Dropdown Component', () => {
       await userEvent.click(button)
 
       const item = await screen.findByRole('menuitem', { name: 'Disabled Label' })
+      expect(item).toHaveAttribute('aria-disabled', 'true')
       await userEvent.click(item)
 
       await waitFor(() => expect(onClick).not.toHaveBeenCalled())
