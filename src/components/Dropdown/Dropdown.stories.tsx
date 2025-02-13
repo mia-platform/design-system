@@ -63,6 +63,11 @@ const defaults: Partial<DropdownProps> = {
     label: 'with tag',
     secondaryLabel: 'Some additional info 2',
     tag: <Tag>{'Tag'}</Tag>,
+  }, {
+    id: 'id6-disabled',
+    label: 'item disabled',
+    disabled: true,
+    secondaryLabel: 'Some additional info',
   }],
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),
@@ -192,5 +197,11 @@ export const Disabled: Story = {
 export const SelectionIsNotPersisted: Story = {
   args: {
     persistSelection: false,
+  },
+}
+
+export const WithDisabledItem: Story = {
+  args: {
+
   },
 }
