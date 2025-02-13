@@ -91,7 +91,7 @@ describe('Dropdown Component', () => {
       expect(invocation.item).toEqual(items[0])
     })
 
-    it('does not invokes onClick if item is disabled', async() => {
+    it('does not invoke onClick if item is disabled', async() => {
       const onClick = jest.fn()
       const props = {
         ...defaultProps,
