@@ -60,6 +60,11 @@ export type DropdownItem = {
   tag?: ReactNode
 
   /**
+   * Whether menu item is disabled
+   */
+  disabled?: boolean
+
+  /**
    * List of sub-menu items.
    */
   children?: DropdownItem[],

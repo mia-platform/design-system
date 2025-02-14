@@ -40,19 +40,21 @@ const validateTagType = (itemId: string, tag?: ReactNode): void => {
 }
 
 const Label = ({
-  item: { id: itemId, icon, danger, label, secondaryLabel, tag },
+  item: { id: itemId, icon, danger, label, secondaryLabel, tag, disabled },
   layout,
 }: LabelProps): ReactElement => {
   const primaryLabelClassName = useMemo(() => classNames(
     styles.primaryLabel,
     danger ? styles.danger : undefined,
+    disabled ? styles.disabled : undefined,
     layout === ItemLayout.Vertical ? styles.strong : undefined
-  ), [danger, layout])
+  ), [danger, disabled, layout])
 
   const secondaryLabelClassName = useMemo(() => classNames(
     styles.secondaryLabel,
-    danger ? styles.danger : undefined
-  ), [danger])
+    danger ? styles.danger : undefined,
+    disabled ? styles.disabled : undefined,
+  ), [danger, disabled])
 
   const labelsContainerClassName = useMemo(() => classNames(
     styles.labelsContainer,

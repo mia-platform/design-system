@@ -36,6 +36,10 @@
   color: var(--palette-text-neutral-subtle, #898989);
 }
 
+.disabled {
+  color: var(--palette-action-disabled-contrastText, #ACACAC);
+}
+
 .dropdownWrapper {
   & :global(.mia-platform-dropdown-menu-item-danger):hover,
   & :global(.mia-platform-dropdown-menu-item-selected.mia-platform-dropdown-menu-item-danger) {
