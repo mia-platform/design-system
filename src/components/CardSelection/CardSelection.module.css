@@ -112,6 +112,9 @@
   .header {
     flex-direction: row;
   }
+  & .subtitle {
+    text-align: left;
+  }
 }
 
 .header {
