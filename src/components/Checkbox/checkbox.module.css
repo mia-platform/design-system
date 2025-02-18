@@ -19,6 +19,7 @@
 .checkbox {
   margin-inline: 0;
   align-items: flex-start;
+  line-height: 1rem;
 
   & .checkboxContent {
     display: flex;

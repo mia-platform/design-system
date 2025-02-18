@@ -19,6 +19,7 @@
 .radio {
   margin-inline: 0;
   align-items: flex-start;
+  line-height: 1rem;
 
   & .radioContent {
     display: flex;
