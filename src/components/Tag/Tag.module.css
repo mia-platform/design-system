@@ -19,7 +19,7 @@
   &.tagColorBlue {
     background-color: var(---palette-primary-100, #E5F0FC);
     border-color: var(---palette-primary-400, #6DB2FC);
-    color: var(---palette-primary-100, #1261E4);
+    color: var(---palette-primary-600, #1261E4);
   }
   &.tagColorTeal {
     background-color: var(--palette-other-teal-100, #CEF8F2);
@@ -49,7 +49,7 @@
   &.tagColorRed {
     background-color: var(--palette-error-100, #FFEBEB);
     border-color: var(--palette-error-400, #FF807F);
-    color: var(--palette-error-500, #E50020);
+    color: var(--palette-error-600, #E50020);
   }
 
 }
