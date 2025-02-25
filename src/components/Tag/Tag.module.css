@@ -17,9 +17,9 @@
     color: var(--palette-common-grey-600, #636363);
   }
   &.tagColorBlue {
-    background-color: var(---palette-primary-100, #E5F0FC);
-    border-color: var(---palette-primary-400, #6DB2FC);
-    color: var(---palette-primary-600, #1261E4);
+    background-color: var(--palette-primary-100, #E5F0FC);
+    border-color: var(--palette-primary-400, #6DB2FC);
+    color: var(--palette-primary-600, #1261E4);
   }
   &.tagColorTeal {
     background-color: var(--palette-other-teal-100, #CEF8F2);
