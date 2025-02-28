@@ -230,7 +230,7 @@ export type TableProps<RecordType extends GenericRecord> = {
    *
    * The loading UI won't feature the Skeleton but a spinner instead.
    */
-  preventTableUnmountOnLoading?: boolean,
+  preventUnmountOnLoading?: boolean,
 
   /**
    * The key used to identify each row of the table.

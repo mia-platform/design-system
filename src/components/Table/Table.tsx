@@ -89,7 +89,7 @@ export const Table = <RecordType extends GenericRecord>({
   scroll = defaults.scroll,
   rowState,
   hasParentHeight,
-  preventTableUnmountOnLoading,
+  preventUnmountOnLoading,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
   const className = useMemo(() => classnames([
@@ -196,7 +196,7 @@ export const Table = <RecordType extends GenericRecord>({
     tablePagination,
   ])
 
-  if (preventTableUnmountOnLoading) {
+  if (preventUnmountOnLoading) {
     return tableComponent
   }
 

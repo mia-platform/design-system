@@ -79,6 +79,10 @@ export const Loading: Story = {
   args: { ...meta.args, isLoading: true },
 }
 
+export const LoadingWithoutUnmount: Story = {
+  args: { ...meta.args, isLoading: true, preventUnmountOnLoading: true },
+}
+
 export const Bordered: Story = {
   args: { ...meta.args, isBordered: true },
 }
