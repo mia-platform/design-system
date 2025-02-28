@@ -225,6 +225,11 @@ export type TableProps<RecordType extends GenericRecord> = {
    */
   pagination?: Pagination | false,
 
+  /**
+   * This prop prevents the table to be re-mounted whenever the `isLoading` prop value changes.
+   *
+   * The loading UI won't feature the Skeleton but a spinner instead.
+   */
   preventTableUnmountOnLoading?: boolean,
 
   /**
