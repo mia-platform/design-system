@@ -89,6 +89,7 @@ export const Table = <RecordType extends GenericRecord>({
   scroll = defaults.scroll,
   rowState,
   hasParentHeight,
+  preventTableUnmountOnLoading,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
   const className = useMemo(() => classnames([
@@ -148,32 +149,60 @@ export const Table = <RecordType extends GenericRecord>({
     return isValidState ? styles[`${state}State`] : ''
   }, [rowState])
 
+  const tableComponent = useMemo(() => (
+    <AntTable<RecordType>
+      bordered={isBordered}
+      className={className}
+      columns={tableColumns}
+      dataSource={data}
+      expandable={expandable}
+      footer={footer}
+      loading={isLoading}
+      locale={intlLocale}
+      pagination={tablePagination}
+      rowClassName={rowState ? rowClassName : undefined}
+      rowKey={rowKey}
+      rowSelection={rowSelection}
+      scroll={scroll}
+      showHeader
+      showSorterTooltip={false}
+      size={size}
+      sticky={false}
+      tableLayout={layout}
+      virtual={false}
+      onChange={onChange}
+      onHeaderRow={onHeaderRow}
+      onRow={onRow}
+    />
+  ), [
+    className,
+    data,
+    expandable,
+    footer,
+    intlLocale,
+    isBordered,
+    isLoading,
+    layout,
+    onChange,
+    onHeaderRow,
+    onRow,
+    rowClassName,
+    rowKey,
+    rowSelection,
+    rowState,
+    scroll,
+    size,
+    tableColumns,
+    tablePagination,
+  ])
+
+  if (preventTableUnmountOnLoading) {
+    return tableComponent
+  }
+
   return (
     <Skeleton active loading={isLoading}>
-      <AntTable<RecordType>
-        bordered={isBordered}
-        className={className}
-        columns={tableColumns}
-        dataSource={data}
-        expandable={expandable}
-        footer={footer}
-        loading={false}
-        locale={intlLocale}
-        pagination={tablePagination}
-        rowClassName={rowState ? rowClassName : undefined}
-        rowKey={rowKey}
-        rowSelection={rowSelection}
-        scroll={scroll}
-        showHeader
-        showSorterTooltip={false}
-        size={size}
-        sticky={false}
-        tableLayout={layout}
-        virtual={false}
-        onChange={onChange}
-        onHeaderRow={onHeaderRow}
-        onRow={onRow}
-      />
+      {tableComponent}
     </Skeleton>
   )
 }

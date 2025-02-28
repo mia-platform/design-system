@@ -225,6 +225,8 @@ export type TableProps<RecordType extends GenericRecord> = {
    */
   pagination?: Pagination | false,
 
+  preventTableUnmountOnLoading?: boolean,
+
   /**
    * The key used to identify each row of the table.
    *
