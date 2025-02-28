@@ -128,7 +128,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   isBordered?: boolean,
 
   /**
-   * Indicates whether the table is in a loading state (skeleton).
+   * Indicates whether the table is in a loading state.
    */
   isLoading?: boolean,
 
@@ -224,13 +224,6 @@ export type TableProps<RecordType extends GenericRecord> = {
    * @see {@link https://ant.design/components/pagination#api} for advanced configurations.
    */
   pagination?: Pagination | false,
-
-  /**
-   * This prop prevents the table to be re-mounted whenever the `isLoading` prop value changes.
-   *
-   * The loading UI won't feature the Skeleton but a spinner instead.
-   */
-  preventUnmountOnLoading?: boolean,
 
   /**
    * The key used to identify each row of the table.

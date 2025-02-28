@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Table as AntTable, Skeleton } from 'antd'
 import { PiPencilSimpleLine, PiTrash } from 'react-icons/pi'
 import { ReactElement, useCallback, useMemo } from 'react'
+import { Table as AntTable } from 'antd'
 import classnames from 'classnames'
 
 import { Action, ColumnAlignment, ColumnFilterMode, GenericRecord, Layout, RowState, Size, SortOrder } from './Table.types'
@@ -89,7 +89,6 @@ export const Table = <RecordType extends GenericRecord>({
   scroll = defaults.scroll,
   rowState,
   hasParentHeight,
-  preventUnmountOnLoading,
 }: TableProps<RecordType>): ReactElement => {
   const theme = useTheme()
   const className = useMemo(() => classnames([
@@ -149,7 +148,7 @@ export const Table = <RecordType extends GenericRecord>({
     return isValidState ? styles[`${state}State`] : ''
   }, [rowState])
 
-  const tableComponent = useMemo(() => (
+  return (
     <AntTable<RecordType>
       bordered={isBordered}
       className={className}
@@ -174,36 +173,6 @@ export const Table = <RecordType extends GenericRecord>({
       onHeaderRow={onHeaderRow}
       onRow={onRow}
     />
-  ), [
-    className,
-    data,
-    expandable,
-    footer,
-    intlLocale,
-    isBordered,
-    isLoading,
-    layout,
-    onChange,
-    onHeaderRow,
-    onRow,
-    rowClassName,
-    rowKey,
-    rowSelection,
-    rowState,
-    scroll,
-    size,
-    tableColumns,
-    tablePagination,
-  ])
-
-  if (preventUnmountOnLoading) {
-    return tableComponent
-  }
-
-  return (
-    <Skeleton active loading={isLoading}>
-      {tableComponent}
-    </Skeleton>
   )
 }
 
