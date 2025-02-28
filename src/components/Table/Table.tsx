@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Table as AntTable, Skeleton } from 'antd'
 import { PiPencilSimpleLine, PiTrash } from 'react-icons/pi'
 import { ReactElement, useCallback, useMemo } from 'react'
+import { Table as AntTable } from 'antd'
 import classnames from 'classnames'
 
 import { Action, ColumnAlignment, ColumnFilterMode, GenericRecord, Layout, RowState, Size, SortOrder } from './Table.types'
@@ -149,32 +149,30 @@ export const Table = <RecordType extends GenericRecord>({
   }, [rowState])
 
   return (
-    <Skeleton active loading={isLoading}>
-      <AntTable<RecordType>
-        bordered={isBordered}
-        className={className}
-        columns={tableColumns}
-        dataSource={data}
-        expandable={expandable}
-        footer={footer}
-        loading={false}
-        locale={intlLocale}
-        pagination={tablePagination}
-        rowClassName={rowState ? rowClassName : undefined}
-        rowKey={rowKey}
-        rowSelection={rowSelection}
-        scroll={scroll}
-        showHeader
-        showSorterTooltip={false}
-        size={size}
-        sticky={false}
-        tableLayout={layout}
-        virtual={false}
-        onChange={onChange}
-        onHeaderRow={onHeaderRow}
-        onRow={onRow}
-      />
-    </Skeleton>
+    <AntTable<RecordType>
+      bordered={isBordered}
+      className={className}
+      columns={tableColumns}
+      dataSource={data}
+      expandable={expandable}
+      footer={footer}
+      loading={isLoading}
+      locale={intlLocale}
+      pagination={tablePagination}
+      rowClassName={rowState ? rowClassName : undefined}
+      rowKey={rowKey}
+      rowSelection={rowSelection}
+      scroll={scroll}
+      showHeader
+      showSorterTooltip={false}
+      size={size}
+      sticky={false}
+      tableLayout={layout}
+      virtual={false}
+      onChange={onChange}
+      onHeaderRow={onHeaderRow}
+      onRow={onRow}
+    />
   )
 }
 

@@ -128,7 +128,7 @@ export type TableProps<RecordType extends GenericRecord> = {
   isBordered?: boolean,
 
   /**
-   * Indicates whether the table is in a loading state (skeleton).
+   * Indicates whether the table is in a loading state.
    */
   isLoading?: boolean,
 

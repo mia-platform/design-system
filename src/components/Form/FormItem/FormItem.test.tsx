@@ -438,7 +438,6 @@ describe('FormItem Component', () => {
         isReadOnly: true,
         children: <Input />,
       })
-      screen.logTestingPlaygroundURL()
       const paragraph = screen.getByRole('paragraph')
       expect(paragraph.innerHTML).toEqual(initialValues.input)
     })

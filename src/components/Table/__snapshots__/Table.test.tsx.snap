@@ -5347,24 +5347,257 @@ exports[`Table Component renders table correctly 1`] = `
 exports[`Table Component renders table correctly while loading 1`] = `
 <DocumentFragment>
   <div
-    class="mia-platform-skeleton mia-platform-skeleton-active"
+    class="mia-platform-table-wrapper table hasPagination"
   >
     <div
-      class="mia-platform-skeleton-content"
+      class="mia-platform-spin-nested-loading"
     >
-      <h3
-        class="mia-platform-skeleton-title"
-        style="width: 38%;"
-      />
-      <ul
-        class="mia-platform-skeleton-paragraph"
+      <div>
+        <div
+          aria-busy="true"
+          aria-live="polite"
+          class="mia-platform-spin mia-platform-spin-spinning"
+        >
+          <span
+            class="mia-platform-spin-dot-holder"
+          >
+            <span
+              class="mia-platform-spin-dot mia-platform-spin-dot-spin"
+            >
+              <i
+                class="mia-platform-spin-dot-item"
+              />
+              <i
+                class="mia-platform-spin-dot-item"
+              />
+              <i
+                class="mia-platform-spin-dot-item"
+              />
+              <i
+                class="mia-platform-spin-dot-item"
+              />
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="mia-platform-spin-container mia-platform-spin-blur"
       >
-        <li />
-        <li />
-        <li
-          style="width: 61%;"
-        />
-      </ul>
+        <div
+          class="mia-platform-table mia-platform-table-middle mia-platform-table-scroll-horizontal"
+        >
+          <div
+            class="mia-platform-table-container"
+          >
+            <div
+              class="mia-platform-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="width: auto; min-width: 100%; table-layout: auto;"
+              >
+                <colgroup />
+                <thead
+                  class="mia-platform-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="Field 1"
+                    >
+                      Field 1
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="Field 2"
+                    >
+                      Field 2
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="Field 3"
+                    >
+                      Field 3
+                    </th>
+                    <th
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      scope="col"
+                      title="Field 4"
+                    >
+                      Field 4
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="mia-platform-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="mia-platform-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
+                    data-row-key="Value 1"
+                  >
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
+                    >
+                      Value 1
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 1"
+                    >
+                      Value 1
+                    </td>
+                  </tr>
+                  <tr
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
+                    data-row-key="Value 2"
+                  >
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
+                    >
+                      Value 2
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 2"
+                    >
+                      Value 2
+                    </td>
+                  </tr>
+                  <tr
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
+                    data-row-key="Value 3"
+                  >
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
+                    >
+                      Value 3
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 3"
+                    >
+                      Value 3
+                    </td>
+                  </tr>
+                  <tr
+                    class="mia-platform-table-row mia-platform-table-row-level-0"
+                    data-row-key="Value 4"
+                  >
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
+                    >
+                      Value 4
+                    </td>
+                    <td
+                      class="mia-platform-table-cell mia-platform-table-cell-ellipsis"
+                      title="Value 4"
+                    >
+                      Value 4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
