@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import MockDate from 'mockdate'
 import dayjs from 'dayjs'
 
 import { render, screen, userEvent } from '../../../test-utils'
@@ -36,13 +37,14 @@ const endDateTime = startDateTime.add(daysToAdd, 'day')
 const startDateTimeFormatted = startDateTime.format('DD/MM/YYYY HH:mm')
 const endDateTimeFormatted = endDateTime.format('DD/MM/YYYY HH:mm')
 
-Date.now = jest.fn().mockImplementation(() => {
-  return currentDate.toDate()
-})
-
 describe('RangePicker Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
+    MockDate.set(currentDate.toDate())
+  })
+
+  afterEach(() => {
+    MockDate.reset()
   })
 
   describe('renders correctly', () => {

@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import MockDate from 'mockdate'
 import dayjs from 'dayjs'
 
 import { render, screen, userEvent, within } from '../../../test-utils'
@@ -29,13 +30,14 @@ const selectedDate = dayjs(currentDate).set('date', selectedDay)
 const selectedDateFormatted = selectedDate.format('DD/MM/YYYY')
 const selectedDateTimeFormatted = selectedDate.format('DD/MM/YYYY HH:mm')
 
-Date.now = jest.fn().mockImplementation(() => {
-  return currentDate.toDate()
-})
-
 describe('DatePicker Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
+    MockDate.set(currentDate.toDate())
+  })
+
+  afterEach(() => {
+    MockDate.reset()
   })
 
   describe('renders correctly', () => {
