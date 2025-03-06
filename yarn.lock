@@ -2625,6 +2625,7 @@ __metadata:
     jest-transformer-svg: "npm:^2.0.2"
     jest-watch-typeahead: "npm:^2.2.2"
     lodash-es: "npm:^4.17.21"
+    mockdate: "npm:^3.0.5"
     react: "npm:^18.3.0"
     react-dom: "npm:^18.3.1"
     react-icons: "npm:^5.3.0"
@@ -12351,6 +12352,13 @@ __metadata:
     pkg-types: "npm:^1.2.0"
     ufo: "npm:^1.5.4"
   checksum: 10/c28e9f32cfc7b204e4d089a9af01b6af30547f39dd97244486fe208523c1453828b694430ebfa2d06297116861d464f150d3273040bf5e11ef5a357958f142d5
+  languageName: node
+  linkType: hard
+
+"mockdate@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "mockdate@npm:3.0.5"
+  checksum: 10/ff74f43f56a12e1339e838aee623e37b6e4c378173905697f2a006a5c581eea9c71da54fcea76c27e7e744422e49395c668932bf09e67f024841240ffef91fd2
   languageName: node
   linkType: hard
 
