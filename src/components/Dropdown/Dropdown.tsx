@@ -65,16 +65,13 @@ export const Dropdown = ({
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
   const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
-  const updateSelectedItems = useCallback(
-    (itemId: string) => {
-      if (!persistSelection) {
-        return
-      }
+  const updateSelectedItems = useCallback((itemId: string) => {
+    if (!persistSelection) {
+      return
+    }
 
-      setSelectedItems(prevItems => (multiple ? pushOrRemove(prevItems, itemId) : [itemId]))
-    },
-    [multiple, persistSelection]
-  )
+    setSelectedItems(prevItems => (multiple ? pushOrRemove(prevItems, itemId) : [itemId]))
+  }, [multiple, persistSelection])
 
   const onAntdMenuClick = useCallback(
     (antdEvent: AntdMenuClickEvent) => {
@@ -103,7 +100,7 @@ export const Dropdown = ({
 
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
     const clonedMenu = React.cloneElement(menu as ReactElement, { style: { boxShadow: 'none' } })
-    const scrollableStyle = { maxHeight: menuItemsMaxHeight, overflow: 'scroll' }
+    const scrollableStyle = { maxHeight: menuItemsMaxHeight, overflow: 'auto' }
     if (!hookedFooter) {
       return (
         <div className={styles.dropdownRenderWrapper} style={scrollableStyle}>
