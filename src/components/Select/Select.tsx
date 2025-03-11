@@ -43,15 +43,14 @@ export const defaults = {
 
 const menuItemSelectedIcon = <Icon component={PiCheck} size={16} />
 
-const tagRender = ({ value, onClose, closable }: {
+const tagRender = ({ label, onClose, closable }: {
   label: React.ReactNode;
-  value: string;
   closable: boolean;
   onClose: (event?: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }): ReactElement => {
   return (
     <Tag closeIcon={closable} isBordered onClose={onClose}>
-      {value}
+      {label}
     </Tag>
   )
 }
@@ -69,6 +68,8 @@ export const Select = <ValueType, >(
     placeholder,
     allowClear,
     options,
+    maxTagCount,
+    maxTagPlaceholder,
     inputRef,
     autoFocus,
     onChange,
@@ -104,6 +105,9 @@ export const Select = <ValueType, >(
       isError={isError}
       isFullWidth={isFullWidth}
       isReadOnly={isReadOnly}
+      maxTagCount={maxTagCount}
+      // This placeholder depends to tagRender prop
+      maxTagPlaceholder={maxTagPlaceholder}
       menuItemSelectedIcon={menuItemSelectedIcon}
       mode={isMultiple ? 'multiple' : undefined}
       options={options}

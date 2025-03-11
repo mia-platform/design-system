@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import type { SelectProps as AntdSelectProps } from 'antd'
 import { ReactNode } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
@@ -62,6 +63,16 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
    * If allow to remove input content with clear icon.
    */
   allowClear?: boolean
+
+  /**
+   * If allow to remove input content with clear icon.
+   */
+  maxTagCount?: number | 'responsive',
+
+  /**
+   * Placeholder for not showing tags when maxTagCount is passed
+   */
+  maxTagPlaceholder?: AntdSelectProps['maxTagPlaceholder'],
 
   /**
    * Callback when user input.
