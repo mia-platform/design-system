@@ -154,7 +154,7 @@ describe('Input Component', () => {
 
     render(
       <Select
-        defaultValue={[options[0].value]}
+        defaultValue={[options[0].value, options[1].value, options[2].value]}
         isMultiple
         maxTagCount={1}
         maxTagPlaceholder={`number of collapsed tag: ${options.length - 1}`}
