@@ -16,9 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactNode } from 'react'
-// eslint-disable-next-line sort-imports
 import type { SelectProps as AntdSelectProps } from 'antd'
+import { ReactNode } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
 import { SearchSelectHandler } from '../Search/props'

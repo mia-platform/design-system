@@ -148,7 +148,7 @@ describe('Input Component', () => {
     expect(onChange).toHaveBeenCalledWith([], [])
   })
 
-  test('Should call select handlers onChange and onDeselect on tag click if multiple', async() => {
+  test('Should show tag placeholder if in multiple mode', async() => {
     const onDeselect = jest.fn()
     const onChange = jest.fn()
 
