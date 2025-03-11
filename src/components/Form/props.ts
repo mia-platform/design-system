@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FormItemProps as AntFormItemProps, FormProps as AntFormProps, FormInstance } from 'antd'
+import { FormItemProps as AntFormItemProps, FormInstance } from 'antd'
 import { CSSProperties, ReactElement, ReactNode } from 'react'
 
 import { IconComponent } from '../Icon/Icon.props.ts'
@@ -27,6 +27,15 @@ export type RenderProps = {
   form?: FormInstance,
   value?: unknown;
   onChange?: (value: unknown) => void
+}
+
+export type FormError<Values extends Record<string, unknown>> = {
+  values: Values;
+  errorFields: {
+    name: (string | number)[];
+    errors: string[];
+  }[];
+  outOfDate: boolean;
 }
 
 export type FormProps<Values extends Record<string, unknown>> = {
@@ -80,17 +89,17 @@ export type FormProps<Values extends Record<string, unknown>> = {
   /**
    * Callback triggered when the form values change.
    */
-  onValuesChange?: AntFormProps<Values>['onValuesChange'];
+  onValuesChange?: (changedValues: unknown, values: Values, form: FormInstance<Values>) => void;
 
   /**
    * Callback triggered when the form is successfully submitted.
    */
-  onFinish?: AntFormProps<Values>['onFinish'];
+  onFinish?: (values: Values, form: FormInstance<Values>) => void;
 
   /**
    * Callback triggered when form submission fails validation.
    */
-  onFinishFailed?: AntFormProps<Values>['onFinishFailed'];
+  onFinishFailed?: (errorInfo: FormError<Values>, form: FormInstance<Values>) => void;
 }
 
 export type FormItemProps = {
