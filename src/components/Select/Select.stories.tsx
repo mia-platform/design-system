@@ -112,6 +112,18 @@ export const Multiple: Story = {
   },
 }
 
+export const MultipleWithMaxTagCount: Story = {
+  args: {
+    options,
+    isMultiple: true,
+    defaultValue: [options[0].value, options[1].value, options[2].value, options[3].value],
+    maxTagCount: 2,
+    maxTagPlaceholder: (omittedValues) => {
+      return <span>{`${omittedValues.length}+...`}</span>
+    },
+  },
+}
+
 export const MultipleDefaultValue: Story = {
   args: {
     defaultValue: [options[0].value, options[1].value],

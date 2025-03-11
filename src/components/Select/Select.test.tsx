@@ -147,4 +147,24 @@ describe('Input Component', () => {
     expect(onDeselect).toHaveBeenCalledWith(options[0].value, options[0])
     expect(onChange).toHaveBeenCalledWith([], [])
   })
+
+  test('Should call select handlers onChange and onDeselect on tag click if multiple', async() => {
+    const onDeselect = jest.fn()
+    const onChange = jest.fn()
+
+    render(
+      <Select
+        defaultValue={[options[0].value]}
+        isMultiple
+        maxTagCount={1}
+        maxTagPlaceholder={`number of collapsed tag: ${options.length - 1}`}
+        options={options}
+        onChange={onChange}
+        onDeselect={onDeselect}
+      />
+    )
+
+    const placeholder = screen.getByText(`number of collapsed tag: ${options.length - 1}`)
+    expect(placeholder).toBeVisible()
+  })
 })
