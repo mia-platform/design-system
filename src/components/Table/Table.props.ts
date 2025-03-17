@@ -18,9 +18,10 @@
 
 /* eslint-disable max-len */
 
+import { FilterValue, SorterResult, TableCurrentDataSource } from 'antd/es/table/interface'
 import { HTMLAttributes, ReactElement } from 'react'
 
-import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, RowState, Scroll, Size, TableAction, UserAction } from './Table.types'
+import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, RowState, Scroll, Size, TableAction } from './Table.types'
 
 export type TableProps<RecordType extends GenericRecord> = {
 
@@ -156,10 +157,10 @@ export type TableProps<RecordType extends GenericRecord> = {
    * @param extra - Additional information including current data source and the triggered user action.
    */
   onChange?: (
-    pagination: unknown,
-    filters: unknown,
-    sorter: unknown,
-    extra: { currentDataSource: readonly RecordType[], action: UserAction }
+    pagination: Pagination,
+    filters: Record<string, FilterValue | null>,
+    sorter: SorterResult<RecordType> | SorterResult<RecordType>[],
+    extra: TableCurrentDataSource<RecordType>
   ) => void,
 
   /**
