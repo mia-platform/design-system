@@ -19,8 +19,9 @@
 /* eslint-disable max-len */
 
 import { HTMLAttributes, ReactElement } from 'react'
+import { TableProps as AntdTableProps } from 'antd'
 
-import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, RowState, Scroll, Size, TableAction, UserAction } from './Table.types'
+import { ColumnType, ExpandableConfig, GenericRecord, Layout, Locale, Pagination, RowSelection, RowState, Scroll, Size, TableAction } from './Table.types'
 
 export type TableProps<RecordType extends GenericRecord> = {
 
@@ -155,12 +156,7 @@ export type TableProps<RecordType extends GenericRecord> = {
    * @param sorter - The sorting configuration.
    * @param extra - Additional information including current data source and the triggered user action.
    */
-  onChange?: (
-    pagination: unknown,
-    filters: unknown,
-    sorter: unknown,
-    extra: { currentDataSource: readonly RecordType[], action: UserAction }
-  ) => void,
+  onChange?: AntdTableProps<RecordType>['onChange']
 
   /**
    * Callback function for customizing the header row of the table.
