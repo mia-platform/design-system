@@ -135,10 +135,10 @@ describe('Form Component', () => {
             id={id}
             submitButton={false}
           >
-            <Form.Item isRequired name="firstName">
+            <Form.Item name="firstName" rules={[Form.Validators.required()]}>
               <Input />
             </Form.Item>
-            <Form.Item isRequired name="lastName">
+            <Form.Item name="lastName" rules={[Form.Validators.required()]}>
               <Input />
             </Form.Item>
           </Form>

@@ -22,7 +22,6 @@ import { PiBookOpen } from 'react-icons/pi'
 
 import { Button } from '../../Button'
 import { Checkbox } from '../../Checkbox'
-import { Form } from '../Form.tsx'
 import { FormItemProps } from '../props.ts'
 import ICircleFilled from '../../../assets/icons/ICircleFilled.svg'
 import { Icon } from '../../Icon'
@@ -206,13 +205,6 @@ export const FormItem = (
     }
   }, [extraIconProp, extraProp])
 
-  const customizedRules = useMemo(() => {
-    if (isRequired) {
-      return [Form.Validators.required(), ...rules || []]
-    }
-    return rules || []
-  }, [isRequired, rules])
-
   return (
     <AntForm.Item
       {...defaultFormItemProps}
@@ -224,7 +216,7 @@ export const FormItem = (
       label={label}
       name={name}
       required={isRequired}
-      rules={customizedRules}
+      rules={rules}
       style={style}
     >
       {inputElement}
