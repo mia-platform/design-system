@@ -78,6 +78,11 @@ export type ModalProps = {
   isVisible?: boolean,
 
   /**
+   * Specify a function that will be called when modal is closed completely.
+   */
+  afterClose?: () => void,
+
+  /**
    * Function performed at the click of the modal close (X) button. Typically one of the actions performed by
    * this function will be the `closeModal` of the `useModal` hook to ensure the effective closure of the modal.
    */
