@@ -32,6 +32,11 @@ export type RenderProps = {
 export type FormProps<Values extends Record<string, unknown>> = {
 
   /**
+   * See how to use https://ant.design/components/form#formuseforminstance
+   */
+  form?: FormInstance;
+
+  /**
    * A unique identifier for the form.
    */
   id?: string;

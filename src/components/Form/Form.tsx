@@ -38,6 +38,7 @@ export const Form = <Values extends Record<string, unknown>, >({
   submitButton: submitButtonProp = defaults.submitButton,
   layout = defaults.layout,
   columns = defaults.columns,
+  form,
   gap = defaults.gap,
   id,
   initialValues,
@@ -55,6 +56,7 @@ export const Form = <Values extends Record<string, unknown>, >({
 
   return (
     <AntForm<Values>
+      form={form}
       id={id}
       initialValues={initialValues}
       layout={layout}
@@ -80,3 +82,4 @@ Form.Layout = Layout
 Form.Item = FormItem
 Form.SubmitButton = SubmitButton
 Form.Validators = Validators
+Form.useForm = AntForm.useForm

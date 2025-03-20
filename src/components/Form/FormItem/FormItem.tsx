@@ -36,6 +36,7 @@ import { Tooltip } from '../../Tooltip'
 import { Typography } from '../../Typography/index.ts'
 import log from '../../../utils/log.ts'
 import styles from './FormItem.module.css'
+
 const defaults = {
   span: 1,
   isFullWidth: false,

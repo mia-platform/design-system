@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 /**
  * Copyright 2024 Mia srl
  *
@@ -16,7 +17,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Fragment, ReactElement } from 'react'
+import { Fragment, ReactElement, useState } from 'react'
 import { Meta, type StoryObj } from '@storybook/react'
 import { Flex } from 'antd'
 import dayjs from 'dayjs'
@@ -149,6 +150,47 @@ export const WithValidation: Story = {
       </Form.Item>
     ),
   },
+}
+
+export const UseFormInstance = (): ReactElement => {
+  const [formValues, setFormValues] = useState()
+  const [formValuesError, setFormValuesError] = useState()
+  const [form] = Form.useForm()
+
+  return (
+    <>
+      <code>{JSON.stringify(formValues || formValuesError, null, 2)}</code>
+      <br />
+      <br />
+      <Card>
+        <Form form={form} id="my-form" submitButton={false}>
+          <Form.Item isRequired name="firstName">
+            <Input />
+          </Form.Item>
+          <Form.Item isRequired name="lastName">
+            <Input />
+          </Form.Item>
+        </Form>
+      </Card>
+      <br />
+      <Button
+        hierarchy={Button.Hierarchy.Primary}
+        onClick={() => {
+          form.validateFields()
+            .then((values) => {
+              setFormValuesError(undefined)
+              setFormValues(values)
+            })
+            .catch(({ errorFields }) => {
+              setFormValues(undefined)
+              setFormValuesError(errorFields)
+            })
+        }}
+      >
+        {'Save from the form instance method'}
+      </Button>
+    </>
+  )
 }
 
 export const ComplexForm: Story = {
