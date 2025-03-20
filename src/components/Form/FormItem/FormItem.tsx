@@ -22,6 +22,7 @@ import { PiBookOpen } from 'react-icons/pi'
 
 import { Button } from '../../Button'
 import { Checkbox } from '../../Checkbox'
+import { Form } from '../Form.tsx'
 import { FormItemProps } from '../props.ts'
 import ICircleFilled from '../../../assets/icons/ICircleFilled.svg'
 import { Icon } from '../../Icon'
@@ -36,6 +37,7 @@ import { Tooltip } from '../../Tooltip'
 import { Typography } from '../../Typography/index.ts'
 import log from '../../../utils/log.ts'
 import styles from './FormItem.module.css'
+
 const defaults = {
   span: 1,
   isFullWidth: false,
@@ -204,6 +206,13 @@ export const FormItem = (
     }
   }, [extraIconProp, extraProp])
 
+  const customizedRules = useMemo(() => {
+    if (isRequired) {
+      return [Form.Validators.required(), ...rules || []]
+    }
+    return rules || []
+  }, [isRequired, rules])
+
   return (
     <AntForm.Item
       {...defaultFormItemProps}
@@ -215,7 +224,7 @@ export const FormItem = (
       label={label}
       name={name}
       required={isRequired}
-      rules={rules}
+      rules={customizedRules}
       style={style}
     >
       {inputElement}

@@ -21,7 +21,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   & > .card {
-    flex-grow: 1;
+    flex: 1;
   }
 }
 
@@ -29,7 +29,7 @@
   position: relative;
   display: flex;
   & > span, .content {
-    flex-grow: 1;
+    flex: 1;
   }
   &:after {
     display: none;

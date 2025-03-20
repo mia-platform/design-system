@@ -20,6 +20,7 @@ import { Fragment, ReactElement } from 'react'
 import { screen, waitFor } from '@testing-library/react'
 import { fireEvent } from '@testing-library/dom'
 
+import { Button } from '../Button/Button.tsx'
 import { Form } from './Form.tsx'
 import { Input } from '../Input'
 import { render } from '../../test-utils.tsx'
@@ -106,6 +107,49 @@ describe('Form Component', () => {
     await waitFor(async() => {
       expect(onFinishFailed).toHaveBeenCalled()
     })
+
+    expect(await screen.findAllByText('The field is required')).toHaveLength(2)
+  })
+
+  test('should fails test using instance if the form is not valid', async() => {
+    const InlineForm = (): ReactElement => {
+      const [form] = Form.useForm()
+      const id = 'the-form'
+      const onClick = (): void => {
+        form.validateFields()
+          .then(() => {
+            throw new Error('Promise should not resolve')
+          })
+          .catch(({ errorFields }) => {
+            expect(errorFields).toEqual([
+              { 'errors': ['The field is required'], 'name': ['firstName'], 'warnings': [] },
+              { 'errors': ['The field is required'], 'name': ['lastName'], 'warnings': [] },
+            ])
+          })
+      }
+
+      return (
+        <>
+          <Form
+            form={form}
+            id={id}
+            submitButton={false}
+          >
+            <Form.Item isRequired name="firstName">
+              <Input />
+            </Form.Item>
+            <Form.Item isRequired name="lastName">
+              <Input />
+            </Form.Item>
+          </Form>
+          <Button onClick={onClick} >{'Submit'}</Button>
+        </>
+      )
+    }
+
+    render(<InlineForm />)
+    const button = screen.getByRole('button', { name: 'Submit' })
+    fireEvent.click(button)
 
     expect(await screen.findAllByText('The field is required')).toHaveLength(2)
   })
