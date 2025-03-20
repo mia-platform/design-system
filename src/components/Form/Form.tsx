@@ -16,12 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ReactElement, useMemo } from 'react'
+import { ReactElement, useCallback, useMemo } from 'react'
 import { Form as AntForm } from 'antd'
 
 import * as Validators from './Validators'
+import { FormError, FormProps } from './props.ts'
 import { FormItem } from './FormItem/FormItem.tsx'
-import { FormProps } from './props.ts'
 import { Layout } from './types.ts'
 import { SubmitButton } from './SubitButton/SubmitButton.tsx'
 
@@ -46,12 +46,32 @@ export const Form = <Values extends Record<string, unknown>, >({
   onFinish,
   onFinishFailed,
 }: FormProps<Values>): ReactElement => {
+  const [form] = AntForm.useForm<Values>()
+
   const style = useMemo(() => ({
     display: 'grid',
     gridTemplate: `auto / repeat(${columns}, 1fr)`,
     gap: `${gap}px`,
     ...styleProp,
   }), [columns, gap, styleProp])
+
+  const handleFinish = useCallback((values: Values) => {
+    if (onFinish) {
+      onFinish(values, form)
+    }
+  }, [form, onFinish])
+
+  const handleFinishFailed = useCallback((errorInfo: FormError<Values>) => {
+    if (onFinishFailed) {
+      onFinishFailed(errorInfo, form)
+    }
+  }, [form, onFinishFailed])
+
+  const handleValuesChange = useCallback((changedValues: unknown, values: Values) => {
+    if (onValuesChange) {
+      onValuesChange(changedValues, values, form)
+    }
+  }, [form, onValuesChange])
 
   return (
     <AntForm<Values>
@@ -60,9 +80,9 @@ export const Form = <Values extends Record<string, unknown>, >({
       layout={layout}
       preserve={preserve}
       style={style}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      onValuesChange={onValuesChange}
+      onFinish={handleFinish}
+      onFinishFailed={handleFinishFailed}
+      onValuesChange={handleValuesChange}
     >
       {children}
       {
