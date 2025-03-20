@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactNode } from 'react'
+
 import { asideFixed, asideOpenable, docLink, footer, footerCustom, title } from './Modal.mocks'
 import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
 import { Modal } from '.'
@@ -96,6 +98,27 @@ describe('Modal Component', () => {
     expect(screen.queryByRole('button', { name: /Close/i })).not.toBeInTheDocument()
 
     expect(baseElement).toMatchSnapshot()
+  })
+
+  test('calls onAfterClose on modal hiding', async() => {
+    const afterClose = jest.fn()
+    const containerWithModalVisible = (isVisible: boolean): ReactNode => (
+      <>
+        <div data-testid="container-div-test-id" id="container-div" style={{ padding: 24 }} />
+        <Modal
+          {...props}
+          getContainer={() => document.getElementById('container-div') || document.body}
+          isVisible={isVisible}
+          onAfterClose={afterClose}
+        />
+      </>
+    )
+    const { rerender } = render(containerWithModalVisible(true))
+    rerender(containerWithModalVisible(false))
+
+    await waitFor(() => {
+      expect(afterClose).toHaveBeenCalled()
+    })
   })
 
   test('renders modal with body full width', async() => {
