@@ -80,7 +80,7 @@ export type ModalProps = {
   /**
    * Specify a function that will be called when modal is closed completely.
    */
-  afterClose?: () => void,
+  onAfterClose?: () => void,
 
   /**
    * Function performed at the click of the modal close (X) button. Typically one of the actions performed by

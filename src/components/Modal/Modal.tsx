@@ -61,7 +61,7 @@ export const Modal = ({
   isClosable = defaults.isClosable,
   isMaskClosable = defaults.isMaskClosable,
   isVisible = defaults.isVisible,
-  afterClose,
+  onAfterClose,
   onCloseClick,
   size = defaults.size,
   title,
@@ -81,7 +81,7 @@ export const Modal = ({
 
   return (
     <AntModal
-      afterClose={afterClose}
+      afterClose={onAfterClose}
       centered
       className={modalClassNames}
       closable={isClosable}

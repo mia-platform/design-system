@@ -100,16 +100,16 @@ describe('Modal Component', () => {
     expect(baseElement).toMatchSnapshot()
   })
 
-  test('calls afterClose on modal hiding', async() => {
+  test('calls onAfterClose on modal hiding', async() => {
     const afterClose = jest.fn()
     const containerWithModalVisible = (isVisible: boolean): ReactNode => (
       <>
         <div data-testid="container-div-test-id" id="container-div" style={{ padding: 24 }} />
         <Modal
           {...props}
-          afterClose={afterClose}
           getContainer={() => document.getElementById('container-div') || document.body}
           isVisible={isVisible}
+          onAfterClose={afterClose}
         />
       </>
     )
