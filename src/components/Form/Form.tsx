@@ -83,3 +83,4 @@ Form.Item = FormItem
 Form.SubmitButton = SubmitButton
 Form.Validators = Validators
 Form.useForm = AntForm.useForm
+Form.useFormInstance = AntForm.useFormInstance
