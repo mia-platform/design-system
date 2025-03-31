@@ -26,7 +26,7 @@ import styles from './BodyX.module.css'
 
 const { Paragraph: AntParagraph } = AntTypography
 
-const { bodyS, bodyM, bodyL, bold, main, subtle } = styles
+const { bodyS, bodyM, bodyL, bold, subtle } = styles
 
 const { S, M, L } = Size
 
@@ -34,7 +34,6 @@ export const defaults = {
   copyable: false,
   ellipsis: false,
   isBold: false,
-  hierarchy: Hierarchy.Main,
 }
 
 /**
@@ -47,7 +46,7 @@ export const BodyX = ({
   children,
   copyable = defaults.copyable,
   ellipsis = defaults.ellipsis,
-  hierarchy = defaults.hierarchy,
+  hierarchy,
   isBold = defaults.isBold,
   size,
 }: BodyXProps & BodyXSize): ReactElement => {
@@ -58,7 +57,6 @@ export const BodyX = ({
   ]), [size])
   const hierarchyClassName = useMemo(() => classnames([
     hierarchy === Hierarchy.Bold && bold,
-    hierarchy === Hierarchy.Main && main,
     hierarchy === Hierarchy.Subtle && subtle,
   ]), [hierarchy])
   const bodyClassName = useMemo(() => classnames([
@@ -68,7 +66,7 @@ export const BodyX = ({
 
   return (
     <AntParagraph
-      className= {bodyClassName}
+      className={bodyClassName}
       copyable={copyable}
       ellipsis={ellipsis}
       role={'paragraph'}

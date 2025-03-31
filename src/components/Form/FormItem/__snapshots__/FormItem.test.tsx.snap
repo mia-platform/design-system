@@ -58,7 +58,7 @@ exports[`FormItem Component snapshots renders checkbox FormItem correctly 1`] = 
                     class="checkboxContent"
                   >
                     <div
-                      class="mia-platform-typography bodyS main"
+                      class="mia-platform-typography bodyS"
                       role="paragraph"
                     >
                       label
@@ -170,7 +170,7 @@ exports[`FormItem Component snapshots renders checkboxGroup FormItem correctly 1
                         class="checkboxContent"
                       >
                         <div
-                          class="mia-platform-typography bodyS main"
+                          class="mia-platform-typography bodyS"
                           role="paragraph"
                         >
                           label 1
@@ -198,7 +198,7 @@ exports[`FormItem Component snapshots renders checkboxGroup FormItem correctly 1
                         class="checkboxContent"
                       >
                         <div
-                          class="mia-platform-typography bodyS main"
+                          class="mia-platform-typography bodyS"
                           role="paragraph"
                         >
                           label 2
@@ -226,7 +226,7 @@ exports[`FormItem Component snapshots renders checkboxGroup FormItem correctly 1
                         class="checkboxContent"
                       >
                         <div
-                          class="mia-platform-typography bodyS main"
+                          class="mia-platform-typography bodyS"
                           role="paragraph"
                         >
                           label 3
@@ -1113,7 +1113,7 @@ exports[`FormItem Component snapshots renders radioGroup FormItem correctly 1`] 
                         class="radioContent"
                       >
                         <div
-                          class="mia-platform-typography bodyS main"
+                          class="mia-platform-typography bodyS"
                           role="paragraph"
                         >
                           label 1
@@ -1141,7 +1141,7 @@ exports[`FormItem Component snapshots renders radioGroup FormItem correctly 1`] 
                         class="radioContent"
                       >
                         <div
-                          class="mia-platform-typography bodyS main"
+                          class="mia-platform-typography bodyS"
                           role="paragraph"
                         >
                           label 2
@@ -1169,7 +1169,7 @@ exports[`FormItem Component snapshots renders radioGroup FormItem correctly 1`] 
                         class="radioContent"
                       >
                         <div
-                          class="mia-platform-typography bodyS main"
+                          class="mia-platform-typography bodyS"
                           role="paragraph"
                         >
                           label 3

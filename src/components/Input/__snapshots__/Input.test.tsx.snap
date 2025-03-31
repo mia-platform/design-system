@@ -38,7 +38,7 @@ exports[`Input Component AddonAfterCheckbox renders correctly 1`] = `
                 class="checkboxContent"
               >
                 <div
-                  class="mia-platform-typography bodyS main"
+                  class="mia-platform-typography bodyS"
                   role="paragraph"
                 >
                   test
@@ -189,7 +189,7 @@ exports[`Input Component AddonBeforeCheckbox renders correctly 1`] = `
                 class="checkboxContent"
               >
                 <div
-                  class="mia-platform-typography bodyS main"
+                  class="mia-platform-typography bodyS"
                   role="paragraph"
                 >
                   test
@@ -346,7 +346,7 @@ exports[`Input Component AddonCheckboxDisabled renders correctly 1`] = `
                 class="checkboxContent"
               >
                 <div
-                  class="mia-platform-typography bodyS main"
+                  class="mia-platform-typography bodyS"
                   role="paragraph"
                 >
                   test
@@ -400,7 +400,7 @@ exports[`Input Component AddonCheckboxError renders correctly 1`] = `
                 class="checkboxContent"
               >
                 <div
-                  class="mia-platform-typography bodyS main"
+                  class="mia-platform-typography bodyS"
                   role="paragraph"
                 >
                   test

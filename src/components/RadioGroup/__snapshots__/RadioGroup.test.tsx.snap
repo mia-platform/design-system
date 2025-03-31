@@ -29,7 +29,7 @@ exports[`RadioGroup renders correctly horizontal 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               option 1
@@ -57,7 +57,7 @@ exports[`RadioGroup renders correctly horizontal 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               option 2
@@ -100,7 +100,7 @@ exports[`RadioGroup renders correctly when disabled 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               option 1
@@ -129,7 +129,7 @@ exports[`RadioGroup renders correctly when disabled 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               option 2
@@ -171,7 +171,7 @@ exports[`RadioGroup renders correctly with base props 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               option 1
@@ -199,7 +199,7 @@ exports[`RadioGroup renders correctly with base props 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               option 2
@@ -241,13 +241,13 @@ exports[`RadioGroup renders correctly with descriptions 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               option 1
             </div>
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               description 1
@@ -275,13 +275,13 @@ exports[`RadioGroup renders correctly with descriptions 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               option 2
             </div>
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               description 2
@@ -324,7 +324,7 @@ exports[`RadioGroup renders correctly with partially disabled options 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               disabled option
@@ -352,7 +352,7 @@ exports[`RadioGroup renders correctly with partially disabled options 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               enabled option
@@ -380,7 +380,7 @@ exports[`RadioGroup renders correctly with partially disabled options 1`] = `
             class="radioContent"
           >
             <div
-              class="ant-typography bodyS main css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               another enabled option

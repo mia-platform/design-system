@@ -88,7 +88,7 @@ exports[`Feedback Component renders a feedback with a badge 1`] = `
             </h3>
           </div>
           <div
-            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS main"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
             role="paragraph"
           >
             Badge subtitle
@@ -205,7 +205,7 @@ exports[`Feedback Component renders a feedback with a description 1`] = `
           class="description"
         >
           <div
-            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-multiple-line bodyS main"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-multiple-line bodyS"
             role="paragraph"
           >
             Description

@@ -38,10 +38,6 @@
   color: var(--palette-text-neutral-bold, #464646);
 }
 
-/* This class is empty because the main color is managed via Ant Theme */
-.main {
-}
-
 .subtle {
   color: var(--palette-text-neutral-subtle, #898989);
 }

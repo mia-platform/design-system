@@ -41,7 +41,7 @@ exports[`Badge Component renders a badge with an extra 1`] = `
         </h3>
       </div>
       <div
-        class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS main"
+        class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
         role="paragraph"
       >
         Description
@@ -106,7 +106,7 @@ exports[`Badge Component renders a badge with description 1`] = `
         </h3>
       </div>
       <div
-        class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS main"
+        class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS"
         role="paragraph"
       >
         Description
@@ -202,7 +202,7 @@ exports[`Badge Component renders multiline correctly 1`] = `
         </h3>
       </div>
       <div
-        class="mia-platform-typography bodyS main"
+        class="mia-platform-typography bodyS"
         role="paragraph"
       >
         Description

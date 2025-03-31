@@ -26,7 +26,7 @@ exports[`SubmitButton Component renders correctly with a custom label passed as 
                 class="buttonText"
               >
                 <div
-                  class="mia-platform-typography bodyM main"
+                  class="mia-platform-typography bodyM"
                   role="paragraph"
                 >
                   test
@@ -60,7 +60,7 @@ exports[`SubmitButton Component renders correctly with a render function passed 
             class="mia-platform-form-item-control-input-content"
           >
             <div
-              class="mia-platform-typography bodyM main"
+              class="mia-platform-typography bodyM"
               role="paragraph"
             >
               test

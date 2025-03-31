@@ -27,7 +27,7 @@ exports[`CardSelection Tests renders CheckboxDisabled correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -108,7 +108,7 @@ exports[`CardSelection Tests renders CheckboxDisabled correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -189,7 +189,7 @@ exports[`CardSelection Tests renders CheckboxDisabled correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -460,7 +460,7 @@ exports[`CardSelection Tests renders HorizontalCheckbox correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -540,7 +540,7 @@ exports[`CardSelection Tests renders HorizontalCheckbox correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -620,7 +620,7 @@ exports[`CardSelection Tests renders HorizontalCheckbox correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -710,7 +710,7 @@ exports[`CardSelection Tests renders HorizontalRadio correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -790,7 +790,7 @@ exports[`CardSelection Tests renders HorizontalRadio correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -870,7 +870,7 @@ exports[`CardSelection Tests renders HorizontalRadio correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -961,7 +961,7 @@ exports[`CardSelection Tests renders RadioDisabled correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -1042,7 +1042,7 @@ exports[`CardSelection Tests renders RadioDisabled correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -1123,7 +1123,7 @@ exports[`CardSelection Tests renders RadioDisabled correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -1394,7 +1394,7 @@ exports[`CardSelection Tests renders VerticalCheckbox correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -1474,7 +1474,7 @@ exports[`CardSelection Tests renders VerticalCheckbox correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -1554,7 +1554,7 @@ exports[`CardSelection Tests renders VerticalCheckbox correctly 1`] = `
           class="checkboxContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -1644,7 +1644,7 @@ exports[`CardSelection Tests renders VerticalRadio correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -1724,7 +1724,7 @@ exports[`CardSelection Tests renders VerticalRadio correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
@@ -1804,7 +1804,7 @@ exports[`CardSelection Tests renders VerticalRadio correctly 1`] = `
           class="radioContent"
         >
           <div
-            class="mia-platform-typography bodyS main"
+            class="mia-platform-typography bodyS"
             role="paragraph"
           >
             <div
