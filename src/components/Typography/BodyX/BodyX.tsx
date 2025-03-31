@@ -68,7 +68,7 @@ export const BodyX = ({
 
   return (
     <AntParagraph
-      className= {bodyClassName}
+      className={bodyClassName}
       copyable={copyable}
       ellipsis={ellipsis}
       role={'paragraph'}
