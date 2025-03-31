@@ -33,3 +33,9 @@ export type BodyXSize = {
    */
   size: Size,
 }
+
+export enum Hierarchy {
+  Bold = 'bold',
+  Main = 'main',
+  Subtle = 'subtle'
+}

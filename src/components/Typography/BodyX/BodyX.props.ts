@@ -19,6 +19,7 @@
 import { ReactNode } from 'react'
 
 import { CopyConfig, EllipsisConfig } from '../Typography.types'
+import { Hierarchy } from './BodyX.types'
 
 export type BodyXProps = {
 
@@ -63,8 +64,17 @@ export type BodyXProps = {
    */
   ellipsis?: boolean | EllipsisConfig,
 
+   /**
+   * Displays text in different color based on hierarchy:
+   * - bold: uses variable --palette-text-neutral-bold to display a darker text, for high-priority text
+   * - main: currently has no color assigned, since the main color for text should be managed via Ant Theme
+   * - subtle: uses variable --palette-text-neutral-subtle to display a lighter text, for low-priority text
+   */
+  hierarchy?: Hierarchy,
+
   /**
    * Whether the body font weight is bold.
    */
   isBold?: boolean,
+
 }
