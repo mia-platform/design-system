@@ -61,7 +61,7 @@ exports[`Radio renders correctly with label, value and description props 1`] = `
           label test
         </div>
         <div
-          class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+          class="ant-typography bodyS subtle css-dev-only-do-not-override-5wsri9"
           role="paragraph"
         >
           description test

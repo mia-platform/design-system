@@ -21,6 +21,7 @@ import { ReactElement } from 'react'
 import classNames from 'classnames'
 
 import { BodyS } from '../../../Typography/BodyX/BodyS'
+import { Hierarchy } from '../../../Typography/BodyX/BodyX.types'
 import { RadioProps } from '../../props'
 import styles from './index.module.css'
 
@@ -56,7 +57,7 @@ export const Radio = <T, >({
           <BodyS>{children}</BodyS>
         )}
         {description && (
-          <BodyS>{description}</BodyS>
+          <BodyS hierarchy={Hierarchy.Subtle}>{description}</BodyS>
         )}
       </div>
     </AntRadio>

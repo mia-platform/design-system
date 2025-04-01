@@ -247,7 +247,7 @@ exports[`RadioGroup renders correctly with descriptions 1`] = `
               option 1
             </div>
             <div
-              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS subtle css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               description 1
@@ -281,7 +281,7 @@ exports[`RadioGroup renders correctly with descriptions 1`] = `
               option 2
             </div>
             <div
-              class="ant-typography bodyS css-dev-only-do-not-override-5wsri9"
+              class="ant-typography bodyS subtle css-dev-only-do-not-override-5wsri9"
               role="paragraph"
             >
               description 2
