@@ -22,6 +22,7 @@ import classnames from 'classnames'
 
 import { BodyS } from '../Typography/BodyX/BodyS'
 import { CheckboxProps } from './props'
+import { Hierarchy } from '../Typography/BodyX/BodyX.types'
 import styles from './checkbox.module.css'
 
 export const defaults = {
@@ -68,7 +69,7 @@ export const Checkbox = <T = never, >({
           <BodyS>{children}</BodyS>
         )}
         {description && (
-          <BodyS>{description}</BodyS>
+          <BodyS hierarchy={Hierarchy.Subtle}>{description}</BodyS>
         )}
       </div>
     </AntCheckbox>

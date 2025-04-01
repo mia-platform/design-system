@@ -36,5 +36,5 @@ export type BodyXSize = {
 
 export enum Hierarchy {
   Bold = 'bold',
-  Subtle = 'subtle'
+  Subtle = 'subtle',
 }

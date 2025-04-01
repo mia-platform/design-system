@@ -22,6 +22,7 @@ import type { SwitchSize } from 'antd/es/switch'
 import classNames from 'classnames'
 
 import { BodyS } from '../Typography/BodyX/BodyS'
+import { Hierarchy } from '../Typography/BodyX/BodyX.types'
 import { Size } from './Switch.types'
 import { SwitchProps } from './Switch.props'
 import styles from './Switch.module.css'
@@ -82,7 +83,7 @@ export const Switch = ({
       {
         text && description && (
           <div className={descriptionClassName}>
-            <BodyS>{description}</BodyS>
+            <BodyS hierarchy={Hierarchy.Subtle}>{description}</BodyS>
           </div>
         )
       }
