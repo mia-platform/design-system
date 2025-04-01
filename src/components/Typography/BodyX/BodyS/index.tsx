@@ -18,9 +18,13 @@
 
 import { ReactElement } from 'react'
 
+import { Hierarchy, Size } from '../BodyX.types'
 import { BodyX } from '../BodyX'
 import { BodyXProps } from '../BodyX.props'
 
 export const BodyS = (props: BodyXProps): ReactElement => {
   return <BodyX {...props} size={BodyX.Size.S} />
 }
+
+BodyS.Hierarchy = Hierarchy
+BodyS.Size = Size

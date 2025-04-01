@@ -20,13 +20,13 @@ import { ReactElement, useMemo } from 'react'
 import { Typography as AntTypography } from 'antd'
 import classnames from 'classnames'
 
-import { BodyXSize, Size } from './BodyX.types'
+import { BodyXSize, Hierarchy, Size } from './BodyX.types'
 import { BodyXProps } from './BodyX.props'
 import styles from './BodyX.module.css'
 
 const { Paragraph: AntParagraph } = AntTypography
 
-const { bodyS, bodyM, bodyL } = styles
+const { bodyS, bodyM, bodyL, bold, subtle } = styles
 
 const { S, M, L } = Size
 
@@ -46,14 +46,23 @@ export const BodyX = ({
   children,
   copyable = defaults.copyable,
   ellipsis = defaults.ellipsis,
+  hierarchy,
   isBold = defaults.isBold,
   size,
 }: BodyXProps & BodyXSize): ReactElement => {
-  const bodyClassName = useMemo(() => classnames([
+  const sizeClassName = useMemo(() => classnames([
     size === S && bodyS,
     size === M && bodyM,
     size === L && bodyL,
   ]), [size])
+  const hierarchyClassName = useMemo(() => classnames([
+    hierarchy === Hierarchy.Bold && bold,
+    hierarchy === Hierarchy.Subtle && subtle,
+  ]), [hierarchy])
+  const bodyClassName = useMemo(() => classnames([
+    sizeClassName,
+    hierarchyClassName,
+  ]), [sizeClassName, hierarchyClassName])
 
   return (
     <AntParagraph
@@ -69,3 +78,4 @@ export const BodyX = ({
 }
 
 BodyX.Size = Size
+BodyX.Hierarchy = Hierarchy
