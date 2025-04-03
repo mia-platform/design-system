@@ -17,6 +17,7 @@
  */
 
 import type { SelectProps as AntdSelectProps } from 'antd'
+import { FlattenOptionData } from 'rc-select/lib/interface'
 import { ReactNode } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
@@ -25,6 +26,7 @@ import { SearchSelectHandler } from '../Search/props'
 export type SelectItem<ValueType> = {
   value: ValueType
   label?: ReactNode
+  [name: string]: unknown;
 }
 
 export type SelectChangeHandler<ValueType> = (
@@ -36,6 +38,11 @@ export type SelectSelectHandler<ValueType> = (
     value: ValueType extends (infer E)[] ? E : ValueType,
     option: SelectItem<ValueType>
   ) => void
+
+export type OptionRender<ValueType> = (
+  option: FlattenOptionData<SelectItem<ValueType>>,
+  info: {index: number}
+) => ReactNode
 
 export type SelectProps<ValueType = unknown> = BaseInputProps & {
 
@@ -50,7 +57,7 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
   value?: ValueType
 
   /**
-   * The default valute for the input.
+   * The default value for the input.
    */
   defaultValue?: ValueType
 
@@ -99,4 +106,8 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
    */
   isMultiple?: boolean
 
+  /**
+   * Customize the rendering dropdown options.
+   */
+  optionRender?: OptionRender<ValueType>
 }

@@ -16,6 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactNode } from 'react'
 import { within } from '@testing-library/react'
 
 import { render, screen, userEvent } from '../../test-utils'
@@ -166,5 +167,45 @@ describe('Input Component', () => {
 
     const placeholder = screen.getByText(`number of collapsed tag: ${options.length - 1}`)
     expect(placeholder).toBeVisible()
+  })
+
+  test('Should use option render opening the select dropdown', async() => {
+    const optionsWithDescription = [
+      ...Array(5).keys(),
+    ].map((id) => ({
+      value: `Custom value ${id + 1}`,
+      id: `value ${id + 1}`,
+      description: `description ${id + 1}`,
+    }))
+    render(
+      <Select
+        defaultValue={optionsWithDescription[0].id}
+        optionRender={(option) => (
+          <span>
+            {option.data.value}
+            {' - '}
+            {option.data.description as ReactNode}
+          </span>
+        )}
+        options={optionsWithDescription}
+      />
+    )
+
+    const defaultSelection = screen.getByTitle('value 1')
+    expect(defaultSelection).toBeInTheDocument()
+
+    const input = screen.getByRole<HTMLInputElement>('combobox')
+    await userEvent.click(input)
+
+    expect(screen.getByTitle('Custom value 1')).toBeInTheDocument()
+    expect(screen.getByText(/description 1/i)).toBeInTheDocument()
+    expect(screen.getByTitle('Custom value 2')).toBeInTheDocument()
+    expect(screen.getByText(/description 2/i)).toBeInTheDocument()
+    expect(screen.getByTitle('Custom value 3')).toBeInTheDocument()
+    expect(screen.getByText(/description 3/i)).toBeInTheDocument()
+    expect(screen.getByTitle('Custom value 4')).toBeInTheDocument()
+    expect(screen.getByText(/description 4/i)).toBeInTheDocument()
+    expect(screen.getByTitle('Custom value 5')).toBeInTheDocument()
+    expect(screen.getByText(/description 5/i)).toBeInTheDocument()
   })
 })
