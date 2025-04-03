@@ -77,6 +77,7 @@ export const Select = <ValueType, >(
     onSelect,
     onDeselect,
     isMultiple,
+    optionRender,
   }: SelectProps<ValueType>) : ReactElement => {
   const [open, setOpen] = useState(false)
 
@@ -110,6 +111,7 @@ export const Select = <ValueType, >(
       maxTagPlaceholder={maxTagPlaceholder}
       menuItemSelectedIcon={menuItemSelectedIcon}
       mode={isMultiple ? 'multiple' : undefined}
+      optionRender={optionRender}
       options={options}
       placeholder={placeholder}
       popupMatchSelectWidth={false}

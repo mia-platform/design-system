@@ -19,6 +19,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { FaDiamond } from 'react-icons/fa6'
 import { Flex } from 'antd'
+import { ReactNode } from 'react'
 
 import { Icon } from '../Icon'
 import { Select } from '.'
@@ -40,6 +41,7 @@ const options = [
   ...Array(5).keys(),
 ].map((id) => ({
   value: `value ${id + 1}`,
+  description: 'A description',
 }))
 
 export const Default: Story = {
@@ -138,5 +140,20 @@ export const MultipleDisabled: Story = {
     options,
     isMultiple: true,
     isDisabled: true,
+  },
+}
+
+export const CustomOptionRenderInDropdown: Story = {
+  args: {
+    defaultValue: options[0].value,
+    options,
+    optionRender: (option: {value?: ReactNode, description?: string}) => {
+      return (
+        <Flex align="center" gap={8}>
+          <Icon component={FaDiamond} size={16} />
+          <Typography.BodyM isBold>{option.value}</Typography.BodyM>
+        </Flex>
+      )
+    },
   },
 }
