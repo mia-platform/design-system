@@ -20,6 +20,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { FaDiamond } from 'react-icons/fa6'
 import { Flex } from 'antd'
 import { ReactNode } from 'react'
+import { action } from '@storybook/addon-actions'
 
 import { Icon } from '../Icon'
 import { Select } from '.'
@@ -155,5 +156,19 @@ export const CustomOptionRenderInDropdown: Story = {
         </Flex>
       )
     },
+  },
+}
+
+export const WithSearch: Story = {
+  args: {
+    options,
+    onSearch: action('onSearch'),
+  },
+}
+
+export const WithFilter: Story = {
+  args: {
+    options,
+    filterOption: true,
   },
 }

@@ -78,6 +78,9 @@ export const Select = <ValueType, >(
     onDeselect,
     isMultiple,
     optionRender,
+    onSearch,
+    filterOption,
+    optionFilterProp,
   }: SelectProps<ValueType>) : ReactElement => {
   const [open, setOpen] = useState(false)
 
@@ -100,6 +103,7 @@ export const Select = <ValueType, >(
       className={className}
       component={AntSelect}
       defaultValue={defaultValue}
+      filterOption={filterOption}
       id={id}
       inputRef={inputRef}
       isDisabled={isDisabled}
@@ -111,11 +115,12 @@ export const Select = <ValueType, >(
       maxTagPlaceholder={maxTagPlaceholder}
       menuItemSelectedIcon={menuItemSelectedIcon}
       mode={isMultiple ? 'multiple' : undefined}
+      optionFilterProp={optionFilterProp}
       optionRender={optionRender}
       options={options}
       placeholder={placeholder}
       popupMatchSelectWidth={false}
-      showSearch={false}
+      showSearch={Boolean(onSearch || filterOption)}
       suffixIcon={suffixIcon}
       tagRender={tagRender}
       value={value}
@@ -123,6 +128,7 @@ export const Select = <ValueType, >(
       onClear={onClear}
       onDeselect={onDeselect}
       onDropdownVisibleChange={setOpen}
+      onSearch={onSearch}
       onSelect={onSelect}
     />
   )
