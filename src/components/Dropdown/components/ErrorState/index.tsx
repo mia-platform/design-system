@@ -23,7 +23,7 @@ import { IconPosition, Size } from '../../../Button/Button.types'
 import { Button } from '../../../Button'
 import { Icon } from '../../../Icon'
 import { Typography } from '../../../Typography'
-import styles from './errorstate.module.css'
+import styles from './errorState.module.css'
 
 const { BodyS } = Typography
 
