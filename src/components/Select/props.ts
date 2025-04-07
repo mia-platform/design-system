@@ -16,10 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement, ReactNode } from 'react'
 import type { SelectProps as AntdSelectProps } from 'antd'
 import { FilterFunc } from 'rc-select/lib/Select'
 import { FlattenOptionData } from 'rc-select/lib/interface'
-import { ReactNode } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
 import { SearchSelectHandler } from '../Search/props'
@@ -130,4 +130,9 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
    * The prop name to filter options. Default is 'value'.
    */
   optionFilterProp?: string
+
+  /**
+   * Customize the rendering of the dropdown.
+   */
+  dropdownRender?: (menu: ReactNode) => ReactElement
 }

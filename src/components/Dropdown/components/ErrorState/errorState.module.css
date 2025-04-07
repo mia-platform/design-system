@@ -1,0 +1,12 @@
+.error {
+  & > svg {
+    color:  var(--palette-error-500, #FF5453) !important;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px;
+}

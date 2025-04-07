@@ -24,6 +24,7 @@ import classnames from 'classnames'
 import { BaseInput, defaults as baseInputDefaults } from '../BaseInput/BaseInput'
 import { SelectItem, SelectProps } from './props'
 import { Appearance } from '../BaseInput/types'
+import { Dropdown } from '../Dropdown'
 import { Icon } from '../Icon'
 import { Tag } from '../Tag/Tag'
 import styles from './select.module.css'
@@ -81,6 +82,7 @@ export const Select = <ValueType, >(
     onSearch,
     filterOption,
     optionFilterProp,
+    dropdownRender,
   }: SelectProps<ValueType>) : ReactElement => {
   const [open, setOpen] = useState(false)
 
@@ -103,6 +105,7 @@ export const Select = <ValueType, >(
       className={className}
       component={AntSelect}
       defaultValue={defaultValue}
+      dropdownRender={dropdownRender}
       filterOption={filterOption}
       id={id}
       inputRef={inputRef}
@@ -135,3 +138,5 @@ export const Select = <ValueType, >(
 }
 
 Select.Appearance = Appearance
+Select.Loader = Dropdown.Loader
+Select.ErrorState = Dropdown.ErrorState

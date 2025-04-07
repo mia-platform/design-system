@@ -24,7 +24,9 @@ import { AntdMenuClickEvent, AntdMenuItem, AntdMenuItems, Placement, antdSourceM
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
 import { Footer, useFooterWithHookedActions } from './components/Footer'
 import { Divider } from '../Divider'
+import { ErrorState } from './components/ErrorState'
 import Label from './components/Label'
+import { Loader } from './components/Loader'
 import styles from './dropdown.module.css'
 import { useTheme } from '../../hooks/useTheme'
 
@@ -161,6 +163,8 @@ export const Dropdown = ({
 Dropdown.ItemLayout = ItemLayout
 Dropdown.Trigger = DropdownTrigger
 Dropdown.Placement = Placement
+Dropdown.Loader = Loader
+Dropdown.ErrorState = ErrorState
 
 function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems {
   return items.map<AntdMenuItem>((item: DropdownItem) => ({

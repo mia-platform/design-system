@@ -17,13 +17,15 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
+import { ReactNode, useCallback, useState } from 'react'
 import { FaDiamond } from 'react-icons/fa6'
 import { Flex } from 'antd'
-import { ReactNode } from 'react'
 import { action } from '@storybook/addon-actions'
 
+import { Dropdown } from '../Dropdown'
 import { Icon } from '../Icon'
 import { Select } from '.'
+import { SelectProps } from './props'
 import { Typography } from '../Typography'
 
 const meta = {
@@ -159,10 +161,66 @@ export const CustomOptionRenderInDropdown: Story = {
   },
 }
 
+const searchOptions = [
+  ...Array(5).keys(),
+].map((id) => ({
+  value: `another ${id + 1}`,
+  description: 'A description',
+}))
+
 export const WithSearch: Story = {
   args: {
     options,
     onSearch: action('onSearch'),
+  },
+  // eslint-disable-next-line func-name-matching
+  render: function Render(args: SelectProps) {
+    const [actualOptions, setActualOptions] = useState(args.options)
+    const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState('')
+
+    const onSearch = useCallback(async(value: string) => {
+      if (value.startsWith('err')) {
+        setError('this error message')
+        setIsLoading(false)
+        return
+      }
+      setIsLoading(true)
+      await new Promise((resolve) => {
+        setTimeout(resolve, 1000)
+      })
+      setIsLoading(false)
+      setActualOptions(value.length > 0 ? searchOptions : options)
+      action('onSearch')(value)
+    }, [])
+
+    const dropdownRender = useCallback((menu: ReactNode) => {
+      return (
+        <>
+          {!isLoading && !error ? menu : null}
+          {isLoading && !error ? <Dropdown.Loader /> : null}
+          {error ? (
+            <Dropdown.ErrorState
+              message="An error occurred"
+              onRetry={() => {
+                setError('')
+                action('onRetry')()
+              }}
+            />
+          ) : null}
+        </>
+      )
+    }, [isLoading, error])
+
+    return (
+      <Select
+        {...args}
+        dropdownRender={dropdownRender}
+        options={actualOptions}
+        placeholder="Search 'err' for error state, and another for loading other options"
+        onSearch={onSearch}
+      />
+    )
   },
 }
 

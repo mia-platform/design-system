@@ -270,4 +270,22 @@ describe('Select Component', () => {
     expect(filterOption).toHaveBeenNthCalledWith(4, '5', options[3])
     expect(filterOption).toHaveBeenNthCalledWith(5, '5', options[4])
   })
+
+  test('Should render dropdown render content', async() => {
+    render(
+      <Select
+        dropdownRender={(menu) => (
+          <div>
+            <span>Custom content</span>
+            {menu}
+          </div>
+        )}
+        options={options}
+      />
+    )
+    const input = screen.getByRole<HTMLInputElement>('combobox')
+    await userEvent.click(input)
+
+    expect(screen.getByText('Custom content')).toBeInTheDocument()
+  })
 })
