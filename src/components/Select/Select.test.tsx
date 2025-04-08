@@ -28,7 +28,7 @@ const options = [
   value: `value ${id + 1}`,
 }))
 
-describe('Input Component', () => {
+describe('Select Component', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
@@ -207,5 +207,85 @@ describe('Input Component', () => {
     expect(screen.getByText(/description 4/i)).toBeInTheDocument()
     expect(screen.getByTitle('Custom value 5')).toBeInTheDocument()
     expect(screen.getByText(/description 5/i)).toBeInTheDocument()
+  })
+
+  test('Should call onSearch when typing', async() => {
+    const onSearch = jest.fn()
+    render(
+      <Select
+        options={options}
+        onSearch={onSearch}
+      />
+    )
+    const input = screen.getByRole<HTMLInputElement>('combobox')
+    await userEvent.click(input)
+
+    await userEvent.type(input, 'test')
+    expect(input).toHaveValue('test')
+
+    expect(onSearch).toHaveBeenCalledTimes(4)
+    expect(onSearch).toHaveBeenNthCalledWith(1, 't')
+    expect(onSearch).toHaveBeenNthCalledWith(2, 'te')
+    expect(onSearch).toHaveBeenNthCalledWith(3, 'tes')
+    expect(onSearch).toHaveBeenNthCalledWith(4, 'test')
+  })
+
+  test('Should filter option when filterOption set to true', async() => {
+    render(
+      <Select
+        filterOption
+        options={options}
+      />
+    )
+    const input = screen.getByRole<HTMLInputElement>('combobox')
+    await userEvent.click(input)
+
+    await userEvent.type(input, '5')
+    expect(input).toHaveValue('5')
+
+    expect(screen.getByTitle('value 5')).toBeInTheDocument()
+    expect(screen.queryByTitle('value 1')).not.toBeInTheDocument()
+  })
+
+  test('Should filter option when filterOption set to a function', async() => {
+    const filterOption = jest.fn((input, option) => {
+      return option.value.toLowerCase().includes(input.toLowerCase())
+    })
+    render(
+      <Select
+        filterOption={filterOption}
+        options={options}
+      />
+    )
+    const input = screen.getByRole<HTMLInputElement>('combobox')
+    await userEvent.click(input)
+
+    await userEvent.type(input, '5')
+    expect(input).toHaveValue('5')
+
+    expect(filterOption).toHaveBeenCalledTimes(options.length)
+    expect(filterOption).toHaveBeenNthCalledWith(1, '5', options[0])
+    expect(filterOption).toHaveBeenNthCalledWith(2, '5', options[1])
+    expect(filterOption).toHaveBeenNthCalledWith(3, '5', options[2])
+    expect(filterOption).toHaveBeenNthCalledWith(4, '5', options[3])
+    expect(filterOption).toHaveBeenNthCalledWith(5, '5', options[4])
+  })
+
+  test('Should render dropdown render content', async() => {
+    render(
+      <Select
+        dropdownRender={(menu) => (
+          <div>
+            <span>Custom content</span>
+            {menu}
+          </div>
+        )}
+        options={options}
+      />
+    )
+    const input = screen.getByRole<HTMLInputElement>('combobox')
+    await userEvent.click(input)
+
+    expect(screen.getByText('Custom content')).toBeInTheDocument()
   })
 })

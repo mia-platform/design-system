@@ -16,9 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { ReactElement, ReactNode } from 'react'
 import type { SelectProps as AntdSelectProps } from 'antd'
+import { FilterFunc } from 'rc-select/lib/Select'
 import { FlattenOptionData } from 'rc-select/lib/interface'
-import { ReactNode } from 'react'
 
 import { BaseInputProps } from '../BaseInput/props'
 import { SearchSelectHandler } from '../Search/props'
@@ -43,6 +44,8 @@ export type OptionRender<ValueType> = (
   option: FlattenOptionData<SelectItem<ValueType>>,
   info: {index: number}
 ) => ReactNode
+
+export type FilterOption<ValueType> = boolean | FilterFunc<SelectItem<ValueType>>
 
 export type SelectProps<ValueType = unknown> = BaseInputProps & {
 
@@ -102,6 +105,11 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
   onDeselect?: SelectSelectHandler<ValueType>
 
   /**
+   * Callback function that is fired when input changed.
+   */
+  onSearch?: (value: string) => void
+
+  /**
    * If multiple values are allowed.
    */
   isMultiple?: boolean
@@ -110,4 +118,21 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
    * Customize the rendering dropdown options.
    */
   optionRender?: OptionRender<ValueType>
+
+  /**
+   * If true, filter options by input, if function, filter options against it.
+   * The function will receive two arguments, inputValue and option, if the function
+   * returns true, the option will be included in the filtered set; otherwise, it will be excluded.
+   */
+  filterOption?: FilterOption<ValueType>
+
+  /**
+   * The prop name to filter options. Default is 'value'.
+   */
+  optionFilterProp?: string
+
+  /**
+   * Customize the rendering of the dropdown.
+   */
+  dropdownRender?: (menu: ReactNode) => ReactElement
 }

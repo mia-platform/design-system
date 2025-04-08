@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input Component Borderless renders correctly 1`] = `
+exports[`Select Component Borderless renders correctly 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-select mia-platform-select-borderless input fullWidth select mia-platform-select-single mia-platform-select-show-arrow"
@@ -59,7 +59,7 @@ exports[`Input Component Borderless renders correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input Component Disabled renders correctly 1`] = `
+exports[`Select Component Disabled renders correctly 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-select mia-platform-select-outlined input fullWidth disabled select disabled mia-platform-select-single mia-platform-select-show-arrow mia-platform-select-disabled"
@@ -119,7 +119,7 @@ exports[`Input Component Disabled renders correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input Component Error renders correctly 1`] = `
+exports[`Select Component Error renders correctly 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-select mia-platform-select-outlined mia-platform-select-status-error input fullWidth select mia-platform-select-single mia-platform-select-show-arrow"
@@ -178,7 +178,7 @@ exports[`Input Component Error renders correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input Component Read only renders correctly 1`] = `
+exports[`Select Component Read only renders correctly 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-select mia-platform-select-outlined input fullWidth readonly select readOnly mia-platform-select-single mia-platform-select-show-arrow"
@@ -220,7 +220,7 @@ exports[`Input Component Read only renders correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Input Component renders correctly 1`] = `
+exports[`Select Component renders correctly 1`] = `
 <DocumentFragment>
   <div
     class="mia-platform-select mia-platform-select-outlined input fullWidth select mia-platform-select-single mia-platform-select-show-arrow"
