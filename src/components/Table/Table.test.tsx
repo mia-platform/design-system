@@ -16,9 +16,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { PiRocket } from 'react-icons/pi'
+
 import { Action, RowState } from './Table.types'
 import { TableRecordState, WithExternalFiltersAndSorters, alignedColumns, columns, columnsState, customActions, data, dataState, expandable, filteredAndSortedColumns, footer, hugeData, pagination, rowKey, rowSelection, sizedColumns, spannedColumns } from './Table.mocks'
 import { fireEvent, render, screen, waitFor, within } from '../../test-utils'
+import { Icon } from '../Icon'
 import { Table } from '.'
 
 describe('Table Component', () => {
@@ -212,6 +215,36 @@ describe('Table Component', () => {
     fireEvent.click(overviewButton)
     expect(onOverview).toHaveBeenCalledTimes(1)
     expect(onOverview).toHaveBeenCalledWith(props.data[3], 3, expect.any(Object))
+  })
+
+  test('renders actions with customized button correctly', async() => {
+    const onEditRow = jest.fn()
+    const onDeleteRow = jest.fn()
+
+    const actions = [
+      {
+        dataIndex: 'detail',
+        icon: (<Icon color="currentColor" component={PiRocket} size={16} />),
+        isPrimary: true,
+        isFilled: true,
+        label: 'My Action',
+        onClick: jest.fn(),
+      },
+    ]
+
+    render(
+      <Table
+        {...props}
+        actions={actions}
+        onDeleteRow={onDeleteRow}
+        onEditRow={onEditRow}
+      />
+    )
+
+    const editButtons = screen.getAllByRole('button', { name: 'My Action' })
+
+    expect(editButtons).toHaveLength(props.data.length)
+    expect(editButtons[0]).toMatchSnapshot()
   })
 
   test('renders edit and delete action correctly when passing onClick in action', async() => {

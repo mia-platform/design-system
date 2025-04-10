@@ -76,6 +76,9 @@ export type CustomAction<RecordType extends GenericRecord> = {
   icon?: ReactNode,
   isDanger?: boolean,
   isDisabled?: (record: RecordType, index?: number) => boolean | boolean,
+  isFilled?: boolean,
+  isPrimary?: boolean,
+  label?: ReactNode
   onClick?: (record: RecordType, index: number | undefined, event: React.MouseEvent<Element, MouseEvent>) => void,
   title?: ReactNode
 }
