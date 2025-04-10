@@ -18,6 +18,7 @@
 
 /* eslint-disable  react/no-multi-comp */
 import type { Meta, StoryObj } from '@storybook/react'
+import { PiRocket } from 'react-icons/pi'
 import { ReactElement } from 'react'
 import { action } from '@storybook/addon-actions'
 
@@ -45,6 +46,7 @@ import {
   spannedColumns,
 } from './Table.mocks'
 import { Card } from '../Card'
+import { Icon } from '../Icon'
 import { Table } from '.'
 import { defaults } from './Table'
 
@@ -121,6 +123,22 @@ export const Actions: Story = {
     }),
     onEditRow: action('edit'),
     onDeleteRow: action('delete'),
+  },
+}
+
+export const CustomActionButton: Story = {
+  args: {
+    ...meta.args,
+    actions: [
+      {
+        dataIndex: 'detail',
+        icon: (<Icon color="currentColor" component={PiRocket} size={16} />),
+        isPrimary: true,
+        isFilled: true,
+        label: 'My Action',
+        onClick: action('clicked action'),
+      },
+    ],
   },
 }
 

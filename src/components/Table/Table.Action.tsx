@@ -18,6 +18,7 @@
 
 import { ColumnAlignment, GenericRecord, TableAction } from './Table.types'
 import { Button } from '../Button'
+import { Hierarchy } from '../Button/Button.types'
 import styles from './Table.module.css'
 
 const { action } = styles
@@ -28,9 +29,16 @@ export const getAction = <RecordType extends GenericRecord>({
   icon,
   isDanger,
   isDisabled,
+  isFilled,
+  isPrimary,
+  label,
   onClick,
   title,
 }: TableAction<RecordType>): object => {
+  const hierarchy = computHierarchy(isPrimary, isDanger)
+
+  const buttonType = isFilled ? Button.Type.Filled : Button.Type.Ghost
+
   return {
     title,
     dataIndex,
@@ -38,15 +46,23 @@ export const getAction = <RecordType extends GenericRecord>({
     render: (_: unknown, record: RecordType, index: number | undefined) => (
       <div className={action}>
         <Button
-          hierarchy={isDanger ? Button.Hierarchy.Danger : Button.Hierarchy.Neutral}
+          hierarchy={hierarchy}
           icon={icon}
           isDisabled={typeof isDisabled === 'function' ? isDisabled(record, index) : isDisabled}
-          type={Button.Type.Ghost}
+          type={buttonType}
           onClick={(event) => onClick?.(record, index, event)}
-        />
+        >
+          {label}
+        </Button>
       </div>
     ),
     align: ColumnAlignment.Right,
     width: '0px',
   }
+}
+
+function computHierarchy(isPrimary?: boolean, isDanger?: boolean): Hierarchy {
+  if (isPrimary) { return Button.Hierarchy.Primary }
+  if (isDanger) { return Button.Hierarchy.Danger }
+  return Button.Hierarchy.Neutral
 }
