@@ -17,7 +17,7 @@
  */
 
 import { Meta, StoryObj } from '@storybook/react'
-import { ReactNode, useCallback, useState } from 'react'
+import { ReactElement, ReactNode, useCallback, useState } from 'react'
 import { FaDiamond } from 'react-icons/fa6'
 import { Flex } from 'antd'
 import { action } from '@storybook/addon-actions'
@@ -28,8 +28,20 @@ import { Select } from '.'
 import { SelectProps } from './props'
 import { Typography } from '../Typography'
 
+const { Hierarchy } = Typography.BodyS
+
+const WrappedSelect = (props: SelectProps): ReactElement => {
+  return (
+    <div style={{ width: '50%' }}>
+      <Select
+        {...props}
+      />
+    </div>
+  )
+}
+
 const meta = {
-  component: Select,
+  component: WrappedSelect,
   args: {
     placeholder: 'Placeholder...',
   },
@@ -44,7 +56,7 @@ const options = [
   ...Array(5).keys(),
 ].map((id) => ({
   value: `value ${id + 1}`,
-  description: 'A description',
+  description: `A very ${'long '.repeat(120)} description`,
 }))
 
 export const Default: Story = {
@@ -150,11 +162,21 @@ export const CustomOptionRenderInDropdown: Story = {
   args: {
     defaultValue: options[0].value,
     options,
-    optionRender: (option: {value?: ReactNode, description?: string}) => {
+    optionRender: (option) => {
+      const optionData = option.data as { description?: string }
       return (
-        <Flex align="center" gap={8}>
-          <Icon component={FaDiamond} size={16} />
-          <Typography.BodyM isBold>{option.value}</Typography.BodyM>
+        <Flex
+          gap={8}
+          vertical
+          wrap
+        >
+          <Flex gap={8}>
+            <Icon component={FaDiamond} size={16} />
+            <Typography.BodyM isBold>{option.value}</Typography.BodyM>
+          </Flex>
+          {optionData.description
+            ? <Typography.BodyS ellipsis={{ rows: 4, tooltip: true }} hierarchy={Hierarchy.Subtle}><span style={{ minWidth: 0, wordBreak: 'break-word', whiteSpace: 'normal' }}>{optionData.description}</span></Typography.BodyS>
+            : null}
         </Flex>
       )
     },

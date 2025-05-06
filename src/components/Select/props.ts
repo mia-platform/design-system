@@ -135,4 +135,11 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
    * Customize the rendering of the dropdown.
    */
   dropdownRender?: (menu: ReactNode) => ReactElement
+
+  /**
+   * Determine whether the popup menu and the select input are the same width.
+   * Default set min-width same as input. Will ignore when value less than select width.
+   * false will disable virtual scroll
+   */
+  popupMatchSelectWidth?: boolean | number
 }
