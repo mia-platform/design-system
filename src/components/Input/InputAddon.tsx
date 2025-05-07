@@ -79,6 +79,7 @@ export const InputAddon = ({
         <Select
           isDisabled={isDisabled}
           isFullWidth={false}
+          popupMatchSelectWidth={false}
           onChange={onChange}
           {...props}
         />

@@ -39,7 +39,7 @@ type Story = StoryObj<typeof meta>
 const selectOptions = [
   ...Array(5).keys(),
 ].map((id) => ({
-  value: `value ${id + 1}`,
+  value: `value very very long ${id + 1}`,
 }))
 
 export const Default: Story = {
