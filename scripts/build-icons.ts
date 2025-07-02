@@ -68,7 +68,7 @@ async function setup(): Promise<void> {
 
 /**
  * Declaration (`.d.ts`) files of ReactIcons icons have a problem where the `IconType` type is imported from `lib.mjs`
- * instead of simply `lib`. This stops projects using the library from correctly resolve the types thus causing
+ * instead of simply `lib`. This stops projects using the library from correctly resolving the types, thus causing
  * errors.
  *
  * This function transforms the icons declaration files while they are extracted, and fixes the type import.
