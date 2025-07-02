@@ -19,17 +19,20 @@
 /* eslint-disable no-console */
 
 import { Cheerio, load } from 'cheerio'
-import { type TarOptionsWithAliasesAsyncNoFile, extract } from 'tar'
+import { ReadEntry, type TarOptionsWithAliasesAsyncNoFile, extract } from 'tar'
 import { Element } from 'domhandler'
 import { IconTree } from 'react-icons'
+import { Transform } from 'node:stream'
 import camelcase from 'camelcase'
-import fs from 'fs/promises'
+import fs from 'node:fs/promises'
 import { glob } from 'glob'
-import https from 'https'
-import path from 'path'
-import url from 'url'
+import https from 'node:https'
+import path from 'node:path'
+import url from 'node:url'
 
-const REACT_ICONS_VERSION = '5.3.0'
+import packageJson from '../package.json' with { type: 'json' }
+
+const REACT_ICONS_VERSION = packageJson.dependencies['react-icons'].replace(/^[\^~=]/, '')
 
 const MIA_IP_PREFIX = 'mi'
 const FEATHER_IP_PREFIX = 'fi'
@@ -63,6 +66,38 @@ async function setup(): Promise<void> {
   await Promise.all(promises)
 }
 
+/**
+ * Declaration (`.d.ts`) files of ReactIcons icons have a problem where the `IconType` type is imported from `lib.mjs`
+ * instead of simply `lib`. This stops projects using the library from correctly resolving the types, thus causing
+ * errors.
+ *
+ * This function transforms the icons declaration files while they are extracted, and fixes the type import.
+ *
+ * @param {ReadEntry} entry The original stream
+ * @returns {Transform | false} The transformed stream, or `false` if the origina stream is to be used
+ */
+function fixReactIconsDeclarationFiles(entry: ReadEntry): Transform | false {
+  const entryPath = path.parse(entry.path)
+  if (entryPath.dir === 'lib' || entryPath.ext !== '.ts') { return false }
+
+  let content = ''
+
+  const transformStream = new Transform({
+    transform(chunk, _, callback) {
+      content += chunk.toString()
+      callback()
+    },
+
+    flush(callback) {
+      const transformedContent = content.replace(/\.\.\/lib\/index\.mjs/g, '../lib')
+      this.push(transformedContent)
+      callback()
+    },
+  })
+
+  return entry.pipe(transformStream)
+}
+
 async function downloadReactIconsPackage(): Promise<void> {
   const pkgUrl = `https://github.com/react-icons/react-icons/releases/download/v${REACT_ICONS_VERSION}/react-icons-all-files-${REACT_ICONS_VERSION}.tgz`
 
@@ -70,6 +105,7 @@ async function downloadReactIconsPackage(): Promise<void> {
     cwd: outDir,
     filter: (entryPath) => REACT_ICONS_PACKAGES.some((pkgName) => entryPath.startsWith(`package/${pkgName}`)),
     strip: 1,
+    transform: fixReactIconsDeclarationFiles,
   }
 
   const urlToCall = await new Promise<string>((resolve, reject) => {
@@ -163,7 +199,7 @@ async function buildMiaIcons(): Promise<void> {
 
     const declarationsFilePath = path.resolve(miaIconsPackageDir, `${iconName}.d.ts`)
     const declarationsTemplate = `// THIS FILE IS AUTO GENERATED\n`
-    + `import { IconType } from '../lib/index.mjs'\n`
+    + `import { IconType } from '../lib'\n`
     + `export declare const ${iconName}: IconType;\n`
 
     await fs.writeFile(esmFilePath, esmTemplate, 'utf-8')
@@ -233,7 +269,7 @@ async function main(): Promise<void> {
 
 try {
   await main()
-  console.log('✔️ Icons built correctly')
+  console.log('✓ Icons built correctly')
 } catch (error) {
   console.error('Error building icons', error)
   throw error

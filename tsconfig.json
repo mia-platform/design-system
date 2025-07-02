@@ -25,10 +25,6 @@
     /* Plugins */
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  },
   "include": [
     "src",
     "scripts",
