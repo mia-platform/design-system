@@ -52,7 +52,8 @@
     "@fontsource/inter": "^5.1.0",
     "antd": "5.21.1",
     "lodash-es": "^4.17.21",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "react-live": "^4.1.8"
   },
   "peerDependencies": {
     "react": "^18.3.0",
