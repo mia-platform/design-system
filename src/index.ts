@@ -25,6 +25,7 @@ import { Card } from './components/Card'
 import { CardSelection } from './components/CardSelection'
 import { Checkbox } from './components/Checkbox'
 import { CheckboxGroup } from './components/CheckboxGroup'
+import { CodeEditor } from './components/CodeEditor'
 import { DatePicker } from './components/DatePickers/DatePicker'
 import { Divider } from './components/Divider'
 import { Drawer } from './components/Drawer'
@@ -62,6 +63,7 @@ export {
   CardSelection,
   Checkbox,
   CheckboxGroup,
+  CodeEditor,
   DatePicker,
   Divider,
   Drawer,
