@@ -83,6 +83,7 @@ export const Select = <ValueType, >(
     filterOption,
     optionFilterProp,
     dropdownRender,
+    popupMatchSelectWidth,
   }: SelectProps<ValueType>) : ReactElement => {
   const [open, setOpen] = useState(false)
 
@@ -122,7 +123,7 @@ export const Select = <ValueType, >(
       optionRender={optionRender}
       options={options}
       placeholder={placeholder}
-      popupMatchSelectWidth={false}
+      popupMatchSelectWidth={popupMatchSelectWidth}
       showSearch={Boolean(onSearch || filterOption)}
       suffixIcon={suffixIcon}
       tagRender={tagRender}

@@ -135,4 +135,9 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
    * Customize the rendering of the dropdown.
    */
   dropdownRender?: (menu: ReactNode) => ReactElement
+
+  /**
+   * Whether dropdown's width should match the select's width. Defaults to true.
+   */
+  popupMatchSelectWidth?: boolean
 }

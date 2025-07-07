@@ -22,6 +22,7 @@ import { FaDiamond } from 'react-icons/fa6'
 import { Flex } from 'antd'
 import { action } from '@storybook/addon-actions'
 
+import { Card } from '../Card'
 import { Dropdown } from '../Dropdown'
 import { Icon } from '../Icon'
 import { Select } from '.'
@@ -230,3 +231,30 @@ export const WithFilter: Story = {
     filterOption: true,
   },
 }
+
+export const WithLongLabelsInCard: Story = {
+  args: {
+    options: [
+      { value: 'short1', label: 'Short option' },
+      { value: 'short2', label: 'Another short' },
+      {
+        value: 'long',
+        label: 'This is a very long option label that should test how the select component handles text that exceeds the normal width and potentially wraps or truncates in the dropdown menu interface',
+      },
+      { value: 'short3', label: 'Normal option' },
+      {
+        value: 'long2',
+        label: 'Another extremely long option label with even more text to demonstrate various edge cases and ensure proper rendering behavior across different screen sizes and container widths',
+      },
+    ],
+    placeholder: 'Select an option',
+  },
+  decorators: [
+    (Story) => (
+      <Card>
+        <Story />
+      </Card>
+    ),
+  ],
+}
+
