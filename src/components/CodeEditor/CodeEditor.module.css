@@ -18,7 +18,7 @@
 
 .codeEditor {
   border: 1px solid var(--palette-action-secondary-bold, #CDCDCD);
-  border-radius: 4px;
+  border-radius: var(--shape-border-radius-md, 4px);
 }
 
 .codeEditor :global(.prism-code) {
