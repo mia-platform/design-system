@@ -1,6 +1,5 @@
 
 .select {
-
   & :global(.mia-platform-select-arrow) {
     color:  var(--palette-text-neutral-main, #636363);;
   }
@@ -49,5 +48,4 @@
     background-color: var(--palette-background-neutral-200, #F2F2F2);
     border-color: var(--palette-action-disabled-bold, #E5E5E5);
   }
-
 }

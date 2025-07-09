@@ -143,4 +143,14 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
    * Setting this to `false` will disable the virtual scroll
    */
   popupMatchSelectWidth?: boolean | number
+
+  /**
+   * Parent Node which the selector should be rendered to. Default to body.
+  */
+  getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement
+
+  /**
+   * The position where the selection box pops up
+   */
+  placement?: 'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight'
 }
