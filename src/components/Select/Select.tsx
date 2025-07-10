@@ -86,6 +86,7 @@ export const Select = <ValueType, >(
     popupMatchSelectWidth,
     getPopupContainer,
     placement,
+    className: classNameProp,
   }: SelectProps<ValueType>) : ReactElement => {
   const [open, setOpen] = useState(false)
 
@@ -94,7 +95,8 @@ export const Select = <ValueType, >(
     isMultiple && styles.multiple,
     isDisabled && styles.disabled,
     isReadOnly && styles.readOnly,
-  ]), [isDisabled, isMultiple, isReadOnly])
+    classNameProp,
+  ]), [isDisabled, isMultiple, isReadOnly, classNameProp])
 
   const suffixIcon = useMemo(() => !isReadOnly && (
     <Icon component={open ? PiCaretUp : PiCaretDown} size={DEFAULT_ICON_SIZE} />
