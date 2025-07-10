@@ -153,4 +153,9 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
    * The position where the selection box pops up
    */
   placement?: 'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight'
+
+  /**
+   * Classes for the select.
+   */
+  className?: string
 }
