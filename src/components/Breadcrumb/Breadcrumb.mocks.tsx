@@ -20,9 +20,8 @@ import { PiBasket, PiCircleHalfTiltLight, PiShoppingCart } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { BreadcrumbProps } from './Breadcrumb.props'
-import { Icon } from '../Icon'
 
-export const breadcrumbIcon = <Icon color="black" component={PiCircleHalfTiltLight} size={16} />
+export const breadcrumbIcon = PiCircleHalfTiltLight
 export const breadcrumbLabel = 'Text'
 
 export const defaultProps: BreadcrumbProps = {
@@ -30,16 +29,16 @@ export const defaultProps: BreadcrumbProps = {
     {
       onClick: action('click'),
       label: 'Orders',
-      icon: <Icon color="black" component={PiShoppingCart} size={16} />,
+      icon: PiShoppingCart,
     },
     {
       menu: {
         onClick: action('click'),
         activeKey: '1',
         items: [
-          { key: '1', label: 'Order #1', icon: <Icon color="black" component={PiBasket} size={16} /> },
-          { key: '2', label: 'Order #2', icon: <Icon color="black" component={PiBasket} size={16} /> },
-          { key: '3', label: 'Order #3', icon: <Icon color="black" component={PiBasket} size={16} /> },
+          { key: '1', label: 'Order #1', icon: PiBasket },
+          { key: '2', label: 'Order #2', icon: PiBasket },
+          { key: '3', label: 'Order #3', icon: PiBasket },
         ],
       },
     },
@@ -72,6 +71,65 @@ export const withMenuProps: BreadcrumbProps = {
         ],
         onDropdownVisibleChange: action('dropdown open'),
         onClick: action('click'),
+      },
+    },
+    {
+      icon: breadcrumbIcon,
+      label: 'Not clickable button',
+      menu: {
+        items: [
+          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
+          { key: 'sibling-2', label: 'Sibling 2' },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+      },
+    },
+    {
+      label: 'With search',
+      menu: {
+        items: [
+          { key: 'orders', label: 'Orders', icon: breadcrumbIcon },
+          { key: 'shipping', label: 'Shipping', icon: breadcrumbIcon },
+          { key: 'refunds', label: 'Refunds', icon: breadcrumbIcon },
+          { key: 'packaging', label: 'Packaging', icon: breadcrumbIcon },
+          { key: 'storage', label: 'Storage', icon: breadcrumbIcon },
+          { key: 'office', label: 'Office', icon: breadcrumbIcon },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+        search: { allowClear: true },
+      },
+    },
+    {
+      menu: {
+        activeKey: 'sibling-1',
+        items: [
+          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
+          { key: 'sibling-2', label: 'Sibling 2' },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+      },
+    },
+  ],
+}
+
+export const withSeachButtonMenuProps: BreadcrumbProps = {
+  items: [
+    {
+      onClick: action('click'),
+      icon: breadcrumbIcon,
+      label: 'Clickable button',
+      menu: {
+        items: [
+          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
+          { key: 'sibling-2', label: 'Sibling 2' },
+          { key: 'sibling-3', label: 'Sibling 3 with a very long text that should be ellipsed at some point' },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+        search: { allowClear: true },
       },
     },
     {

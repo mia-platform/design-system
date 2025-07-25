@@ -18,12 +18,14 @@
 
 import { ReactNode } from 'react'
 
+import { IconComponent } from '../Icon/Icon.props'
+
 export type BreadcrumbItemMenuItem = {
 
   /**
    * Icon to be displayed alongside the menu item.
    */
-  icon?: ReactNode;
+  icon?: IconComponent;
 
   /**
    * Unique key for the menu item.
@@ -102,7 +104,7 @@ export type BreadcrumbItemType = {
   /**
    * Icon to be displayed alongside the breadcrumb item.
    */
-  icon?: ReactNode;
+  icon?: IconComponent;
 
   /**
    * Unique key for the breadcrumb item.

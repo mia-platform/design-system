@@ -18,9 +18,9 @@
 
 .breadcrumb {
   /* TODO: these CSS variables are missing in DS */
-  --item-bg: var(--palette-background-neutral, #89898914);
+  --item-bg: transparent;
   --item-bg-hover: var(--palette-action-alternate-secondary-hover, #8989891F);
-  --item-bg-active: var(--palette-action-alternate-secondary-selected, #8989893D);
+  --item-bg-active: var(--palette-action-alternate-primary-selected, #1890FF29);
   --item-bg-transition: background-color 0.25s ease-in-out;
 
   width: 100%;
@@ -31,12 +31,6 @@
     justify-content: flex-start;
     align-items: center;
     gap: var(--spacing-gap-xs, 4px);
-
-    & .breadcrumbItemLast {
-      & .breadcrumbItemLabelText {
-        font-weight: var(--typography-bodyLBold-fontWeight, 600);
-      }
-    }
 
     & .breadcrumbItemButton {
       display: flex;

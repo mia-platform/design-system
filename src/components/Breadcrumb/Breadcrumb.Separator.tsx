@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { PiCaretRight } from 'react-icons/pi'
 import { ReactElement } from 'react'
+import { RxSlash } from 'react-icons/rx'
 
 import { Icon } from '../Icon'
 import { useTheme } from '../../hooks/useTheme'
@@ -37,8 +37,8 @@ export const BreadcrumbSeparator = (): ReactElement => {
     <div style={separatorStyle}>
       <Icon
         aria-label={'Breadcrumb separator'}
-        color={palette?.common?.grey?.[600]}
-        component={PiCaretRight}
+        color={palette?.text?.neutral?.subtler}
+        component={RxSlash}
         size={BREADCRUMB_SEPARATOR_SIZE}
       />
     </div>
