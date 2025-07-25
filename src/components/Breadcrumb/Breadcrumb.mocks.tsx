@@ -62,7 +62,7 @@ export const withMenuProps: BreadcrumbProps = {
     {
       onClick: action('click'),
       icon: breadcrumbIcon,
-      label: 'Clickable button',
+      label: 'Button + menu',
       menu: {
         items: [
           { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
@@ -76,17 +76,9 @@ export const withMenuProps: BreadcrumbProps = {
     {
       icon: breadcrumbIcon,
       label: 'Not clickable button',
-      menu: {
-        items: [
-          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
-          { key: 'sibling-2', label: 'Sibling 2' },
-        ],
-        onDropdownVisibleChange: action('dropdown open'),
-        onClick: action('click'),
-      },
     },
     {
-      label: 'With search',
+      label: 'Menu',
       menu: {
         items: [
           { key: 'orders', label: 'Orders', icon: breadcrumbIcon },
@@ -98,7 +90,6 @@ export const withMenuProps: BreadcrumbProps = {
         ],
         onDropdownVisibleChange: action('dropdown open'),
         onClick: action('click'),
-        search: { allowClear: true },
       },
     },
     {
@@ -115,12 +106,12 @@ export const withMenuProps: BreadcrumbProps = {
   ],
 }
 
-export const withSeachButtonMenuProps: BreadcrumbProps = {
+export const withSearchableMenuProps: BreadcrumbProps = {
   items: [
     {
       onClick: action('click'),
       icon: breadcrumbIcon,
-      label: 'Clickable button',
+      label: 'Button + menu',
       menu: {
         items: [
           { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
@@ -135,17 +126,9 @@ export const withSeachButtonMenuProps: BreadcrumbProps = {
     {
       icon: breadcrumbIcon,
       label: 'Not clickable button',
-      menu: {
-        items: [
-          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
-          { key: 'sibling-2', label: 'Sibling 2' },
-        ],
-        onDropdownVisibleChange: action('dropdown open'),
-        onClick: action('click'),
-      },
     },
     {
-      label: 'With search',
+      label: 'Menu',
       menu: {
         items: [
           { key: 'orders', label: 'Orders', icon: breadcrumbIcon },

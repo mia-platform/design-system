@@ -21,7 +21,7 @@ import { cloneDeep, set } from 'lodash-es'
 import { useCallback, useMemo, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
-import { collapsedProps, controlledProps, defaultProps, loadingProps, uncontrolledProps, withMenuProps, withSeachButtonMenuProps, withSeachMenuProps, withoutMenuProps } from './Breadcrumb.mocks'
+import { collapsedProps, controlledProps, defaultProps, loadingProps, uncontrolledProps, withMenuProps, withSearchableMenuProps, withoutMenuProps } from './Breadcrumb.mocks'
 import { Breadcrumb } from './Breadcrumb'
 import { BreadcrumbItemMenu } from './Breadcrumb.types'
 import { Card } from '../Card'
@@ -33,7 +33,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const DefaultWithoutCard: Story = {
+export const Default: Story = {
   args: defaultProps,
   decorators: [
     (_, { args, id }) => {
@@ -47,48 +47,14 @@ export const DefaultWithoutCard: Story = {
   ],
 }
 
-export const Default: Story = {
-  args: defaultProps,
-  decorators: [
-    (_, { args, id }) => {
-      return (
-        <Card>
-          <Breadcrumb
-            {...args}
-            getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}
-          />
-        </Card>
-      )
-    },
-  ],
-}
-
 export const WithoutMenu: Story = {
   args: withoutMenuProps,
   decorators: [
     (_, { args }) => {
       return (
-        <Card>
-          <Breadcrumb
-            {...args}
-          />
-        </Card>
-      )
-    },
-  ],
-}
-
-export const WithSearchButtonMenu: Story = {
-  args: withSeachButtonMenuProps,
-  decorators: [
-    (_, { args, id }) => {
-      return (
-        <Card>
-          <Breadcrumb
-            {...args}
-            getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}
-          />
-        </Card>
+        <Breadcrumb
+          {...args}
+        />
       )
     },
   ],
@@ -96,6 +62,20 @@ export const WithSearchButtonMenu: Story = {
 
 export const WithMenu: Story = {
   args: withMenuProps,
+  decorators: [
+    (_, { args, id }) => {
+      return (
+        <Breadcrumb
+          {...args}
+          getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}
+        />
+      )
+    },
+  ],
+}
+
+export const WithSearchableMenu: Story = {
+  args: withSearchableMenuProps,
   decorators: [
     (_, { args, id }) => {
       return (
@@ -131,13 +111,11 @@ export const Uncontrolled: Story = {
       }, [activeKey, args, onSubItemClick])
 
       return (
-        <Card>
-          <Breadcrumb
-            {...args}
-            getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}
-            items={items}
-          />
-        </Card>
+        <Breadcrumb
+          {...args}
+          getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}
+          items={items}
+        />
       )
     },
   ],
@@ -148,12 +126,10 @@ export const Controlled: Story = {
   decorators: [
     (_, { args }) => {
       return (
-        <Card>
-          <Breadcrumb
-            {...args}
-            getPopupContainer={() => window.document.getElementById('storybook-root') ?? document.body}
-          />
-        </Card>
+        <Breadcrumb
+          {...args}
+          getPopupContainer={() => window.document.getElementById('storybook-root') ?? document.body}
+        />
       )
     },
   ],
@@ -164,11 +140,9 @@ export const Loading: Story = {
   decorators: [
     (_, { args }) => {
       return (
-        <Card>
-          <Breadcrumb
-            {...args}
-          />
-        </Card>
+        <Breadcrumb
+          {...args}
+        />
       )
     },
   ],
@@ -178,14 +152,12 @@ export const Collapsed: Story = {
   decorators: [
     (_, { args, id }) => {
       return (
-        <Card>
-          <div style={{ width: 550, border: '1px dashed #029CFD', overflow: 'hidden' }}>
-            <Breadcrumb
-              {...args}
-              getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}
-            />
-          </div>
-        </Card>
+        <div style={{ width: 550, border: '1px dashed #029CFD', overflow: 'hidden' }}>
+          <Breadcrumb
+            {...args}
+            getPopupContainer={() => window.document.getElementById(`anchor--${id}`) ?? document.body}
+          />
+        </div>
       )
     },
   ],
