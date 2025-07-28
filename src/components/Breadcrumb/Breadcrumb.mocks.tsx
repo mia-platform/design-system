@@ -21,7 +21,6 @@ import { action } from '@storybook/addon-actions'
 
 import { BreadcrumbProps } from './Breadcrumb.props'
 import { Button } from '../Button'
-import { Dropdown } from '../Dropdown'
 
 export const breadcrumbIcon = PiCircleHalfTiltLight
 export const breadcrumbLabel = 'Text'
@@ -108,17 +107,7 @@ export const withMenuProps: BreadcrumbProps = {
   ],
 }
 
-const footerContent = (
-  <Dropdown
-    items={[
-      { id: '1', label: 'item 1' },
-      { id: '2', label: 'item 2' },
-    ]}
-    onClick={(ev) => alert(`clicked menu footer dropdown ${ev.item?.label}`)}
-  >
-    <Button isBlock >{'open'}</Button>
-  </Dropdown>
-)
+const footerContent = (<Button isBlock>{'Footer component'}</Button>)
 
 export const withMenuFooterProps: BreadcrumbProps = {
   items: [
@@ -149,9 +138,7 @@ export const withMenuFooterProps: BreadcrumbProps = {
         ],
         onDropdownVisibleChange: action('dropdown open'),
         onClick: action('click'),
-        footer: <Button isBlock onClick={(_) => alert('clicked footer button')}>
-          {'click'}
-        </Button>,
+        footer: footerContent,
       },
     },
   ],
