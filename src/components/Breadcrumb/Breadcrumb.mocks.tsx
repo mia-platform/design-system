@@ -20,6 +20,8 @@ import { PiBasket, PiCircleHalfTiltLight, PiShoppingCart } from 'react-icons/pi'
 import { action } from '@storybook/addon-actions'
 
 import { BreadcrumbProps } from './Breadcrumb.props'
+import { Button } from '../Button'
+import { Dropdown } from '../Dropdown'
 
 export const breadcrumbIcon = PiCircleHalfTiltLight
 export const breadcrumbLabel = 'Text'
@@ -101,6 +103,55 @@ export const withMenuProps: BreadcrumbProps = {
         ],
         onDropdownVisibleChange: action('dropdown open'),
         onClick: action('click'),
+      },
+    },
+  ],
+}
+
+const footerContent = (
+  <Dropdown
+    items={[
+      { id: '1', label: 'item 1' },
+      { id: '2', label: 'item 2' },
+    ]}
+    onClick={(ev) => alert(`clicked menu footer dropdown ${ev.item?.label}`)}
+  >
+    <Button isBlock >{'open'}</Button>
+  </Dropdown>
+)
+
+export const withMenuFooterProps: BreadcrumbProps = {
+  items: [
+    { label: 'text 1' },
+    {
+      icon: breadcrumbIcon,
+      label: 'Menu',
+      menu: {
+        items: [
+          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
+          { key: 'sibling-2', label: 'Sibling 2' },
+          { key: 'sibling-3', label: 'Sibling 3 with a very long text that should be ellipsed at some point' },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+        footer: footerContent,
+      },
+    },
+    {
+      onClick: action('click'),
+      icon: breadcrumbIcon,
+      label: 'Button + menu',
+      menu: {
+        items: [
+          { key: 'sibling-1', label: 'Sibling 1', icon: breadcrumbIcon },
+          { key: 'sibling-2', label: 'Sibling 2' },
+          { key: 'sibling-3', label: 'Sibling 3 with a very long text that should be ellipsed at some point' },
+        ],
+        onDropdownVisibleChange: action('dropdown open'),
+        onClick: action('click'),
+        footer: <Button isBlock onClick={(_) => alert('clicked footer button')}>
+          {'click'}
+        </Button>,
       },
     },
   ],

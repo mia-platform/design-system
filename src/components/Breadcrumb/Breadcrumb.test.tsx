@@ -19,6 +19,7 @@
 import { fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from '../../test-utils'
 import { Breadcrumb } from '.'
 import { BreadcrumbProps } from './Breadcrumb.props'
+import { Button } from '../Button'
 import { breadcrumbIcon } from './Breadcrumb.mocks'
 
 describe('Breadcrumb Component', () => {
@@ -244,5 +245,39 @@ describe('Breadcrumb Component', () => {
 
     fireEvent.click(screen.getAllByText('Text 8')[1])
     expect(onDropdownVisibleChangeMock).toHaveBeenCalledTimes(1)
+  })
+
+  test('renders a breadcrumb item menu with custom footer', () => {
+    const onDropdownVisibleChangeMock = jest.fn()
+    const onFooterButtonClick = jest.fn()
+    const props: BreadcrumbProps = { items: [
+      { label: 'Text 1' },
+      {
+        icon: breadcrumbIcon,
+        label: 'Text 2',
+        menu: {
+          onDropdownVisibleChange: onDropdownVisibleChangeMock,
+          items: [
+            { key: 'item-1', label: 'Item 1' },
+            { key: 'item-2', label: 'Item 2' },
+          ],
+          footer: <Button onClick={onFooterButtonClick}>{'Footer button'}</Button>,
+        },
+      }] }
+
+    const { asFragment } = render(<Breadcrumb {...props} />)
+    expect(asFragment()).toMatchSnapshot()
+
+    const [dropdownButton] = screen.getAllByText('Text 2')
+    fireEvent.click(dropdownButton)
+
+    expect(onDropdownVisibleChangeMock).toHaveBeenNthCalledWith(1, true)
+    expect(screen.getByText('Item 1')).toBeInTheDocument()
+    expect(screen.getByText('Item 2')).toBeInTheDocument()
+
+    const [footerButton] = screen.getAllByText('Footer button')
+    expect(onFooterButtonClick).toHaveBeenCalledTimes(0)
+    fireEvent.click(footerButton)
+    expect(onFooterButtonClick).toHaveBeenCalledTimes(1)
   })
 })

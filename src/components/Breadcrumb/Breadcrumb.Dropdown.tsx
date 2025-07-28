@@ -23,6 +23,7 @@ import { debounce } from 'lodash-es'
 
 import { BreadcrumbItemMenu, BreadcrumbItemMenuItem, BreadcrumbItemType, SearchOptions } from './Breadcrumb.types'
 import { BodyS } from '../Typography/BodyX/BodyS'
+import { Divider } from '../Divider'
 import { Icon } from '../Icon'
 import { buildMenuItemKey } from './Breadcrumb.utils'
 import styles from './Breadcrumb.module.css'
@@ -41,7 +42,7 @@ export const getSearchOption = <K extends keyof SearchOptions, >(search: Breadcr
 
 export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactElement => {
   const [searchValue, setSearchValue] = useState('')
-  const { palette } = useTheme()
+  const { palette, spacing } = useTheme()
 
   const filteredItems = useMemo<BreadcrumbItemMenuItem[]>(() => {
     if (!item.menu?.items) { return [] }
@@ -117,6 +118,18 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
               </BodyS>
             </div>
           )
+      }
+      {
+        Boolean(item.menu?.footer) && (
+          <div className={styles.dropdownMenuFooter}>
+            <div className={styles.footerDivider}>
+              <Divider margin={spacing?.margin?.none} />
+            </div>
+            <div>
+              {item.menu!.footer}
+            </div>
+          </div>
+        )
       }
     </div>
   )

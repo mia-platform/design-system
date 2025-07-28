@@ -97,6 +97,11 @@ export type BreadcrumbItemMenu = {
    * Text to show if menu is empty or search matched no elements. Defaults to "No items".
    */
   emptyText?: string
+
+  /**
+   * Custom footer content to display at the bottom of the menu dropdown.
+   */
+  footer?: ReactNode
 }
 
 export type BreadcrumbItemType = {

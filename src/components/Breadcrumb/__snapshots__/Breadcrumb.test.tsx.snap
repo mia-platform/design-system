@@ -120,6 +120,155 @@ exports[`Breadcrumb Component renders a breadcrumb in loading state 2`] = `
 </DocumentFragment>
 `;
 
+exports[`Breadcrumb Component renders a breadcrumb item menu with custom footer 1`] = `
+<DocumentFragment>
+  <div
+    class="breadcrumb"
+  >
+    <div
+      class="breadcrumbItems"
+    >
+      <div
+        class="breadcrumbItemButton breadcrumbItemButtonSegmented breadcrumbItemButtonNoInteraction"
+      >
+        <div
+          class="breadcrumbItemLabel"
+        >
+          <div
+            class="breadcrumbItemLabelText"
+          >
+            <div
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS subtle"
+              role="paragraph"
+            >
+              Text 1
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="width: 16px; height: 16px;"
+      >
+        <svg
+          aria-label="Breadcrumb separator"
+          color="#acacac"
+          fill="none"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(172, 172, 172);"
+          viewBox="0 0 15 15"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M4.10876 14L9.46582 1H10.8178L5.46074 14H4.10876Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <div
+        class="mia-platform-dropdown-trigger breadcrumbItemButton breadcrumbItemButtonConnected"
+      >
+        <svg
+          color="#636363"
+          fill="currentColor"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(99, 99, 99);"
+          viewBox="0 0 256 256"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+          />
+        </svg>
+        <div
+          class="breadcrumbItemLabelText"
+        >
+          <h2
+            aria-label="Text 2"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+            style="color: rgb(70, 70, 70);"
+          >
+            Text 2
+          </h2>
+        </div>
+        <svg
+          aria-label="caret-full-down"
+          data-file-name="SvgCaretFullDown"
+        />
+      </div>
+    </div>
+    <div
+      class="breadcrumbItems breadcrumbHidden"
+    >
+      <div
+        class="breadcrumbItemButton breadcrumbItemButtonSegmented breadcrumbItemButtonNoInteraction"
+      >
+        <div
+          class="breadcrumbItemLabel"
+        >
+          <div
+            class="breadcrumbItemLabelText"
+          >
+            <div
+              class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line bodyS subtle"
+              role="paragraph"
+            >
+              Text 1
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mia-platform-dropdown-trigger breadcrumbItemButton breadcrumbItemButtonConnected"
+      >
+        <svg
+          color="#636363"
+          fill="currentColor"
+          height="16"
+          role="img"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(99, 99, 99);"
+          viewBox="0 0 256 256"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M200.12,55.88A102,102,0,1,0,55.88,200.13,102,102,0,1,0,200.12,55.88ZM90,209.62a89.61,89.61,0,0,1-21.23-13.89L90,174.49Zm32,8.16a90,90,0,0,1-20-3.58V162.49l20-20Zm32-3.58a89.8,89.8,0,0,1-20,3.58V130.49l20-20Zm32-17.4a89.45,89.45,0,0,1-20,12.83V98.49l20-20ZM60.27,187.24a90,90,0,0,1,127-127ZM198,184.57V71.43a90,90,0,0,1,0,113.14Z"
+          />
+        </svg>
+        <div
+          class="breadcrumbItemLabelText"
+        >
+          <h2
+            aria-label="Text 2"
+            class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h2"
+            role="h2"
+            style="color: rgb(70, 70, 70);"
+          >
+            Text 2
+          </h2>
+        </div>
+        <svg
+          aria-label="caret-full-down"
+          data-file-name="SvgCaretFullDown"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Breadcrumb Component renders a breadcrumb with collapsed items 1`] = `
 <DocumentFragment>
   <div

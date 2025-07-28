@@ -246,4 +246,10 @@
       }
     }
   }
+
+  & .dropdownMenuFooter {
+    & .footerDivider {
+        padding: var(--spacing-padding-xs, 4px) 0;
+    }
+  }
 }
