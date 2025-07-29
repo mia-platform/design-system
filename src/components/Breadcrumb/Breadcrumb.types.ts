@@ -18,12 +18,14 @@
 
 import { ReactNode } from 'react'
 
+import { IconComponent } from '../Icon/Icon.props'
+
 export type BreadcrumbItemMenuItem = {
 
   /**
    * Icon to be displayed alongside the menu item.
    */
-  icon?: ReactNode;
+  icon?: IconComponent;
 
   /**
    * Unique key for the menu item.
@@ -95,6 +97,11 @@ export type BreadcrumbItemMenu = {
    * Text to show if menu is empty or search matched no elements. Defaults to "No items".
    */
   emptyText?: string
+
+  /**
+   * Custom footer content to display at the bottom of the menu dropdown.
+   */
+  footer?: ReactNode
 }
 
 export type BreadcrumbItemType = {
@@ -102,7 +109,7 @@ export type BreadcrumbItemType = {
   /**
    * Icon to be displayed alongside the breadcrumb item.
    */
-  icon?: ReactNode;
+  icon?: IconComponent;
 
   /**
    * Unique key for the breadcrumb item.

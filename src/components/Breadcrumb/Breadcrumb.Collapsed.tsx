@@ -27,6 +27,7 @@ import { BreadcrumbSeparator } from './Breadcrumb.Separator'
 import { Icon } from '../Icon'
 import { buildItemKey } from './Breadcrumb.utils'
 import styles from './Breadcrumb.module.css'
+import { useTheme } from '../../hooks/useTheme'
 
 type ItemType = Exclude<MenuProps['items'], undefined>[number]
 
@@ -39,6 +40,7 @@ type Props = {
 export const BREADCRUMB_COLLAPSED_WIDTH = 32
 
 export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer, items }: Props): ReactElement => {
+  const { palette } = useTheme()
   const menuItems = useMemo<ItemType[]>(() => {
     return items.map<ItemType>((item, idx) => {
       const maybeSubItem = item.menu?.items?.find(({ key }) => key && key === item.menu?.activeKey)
@@ -53,11 +55,18 @@ export const BreadcrumbCollapsed = ({ isLoading, getDropdownContainer, items }: 
             {labelText}
           </BodyS>
         ),
-        icon: labelIcon ? <div>{labelIcon}</div> : undefined,
-        onClick: ({ domEvent }) => item.onClick?.(domEvent as React.MouseEvent<Element, MouseEvent>),
+        icon: labelIcon ? (
+          <Icon
+            color={palette?.text.neutral.subtle}
+            component={labelIcon}
+            size={16}
+          />
+        ) : undefined,
+        onClick: ({ domEvent }) =>
+          item.onClick?.(domEvent as React.MouseEvent<Element, MouseEvent>),
       }
     })
-  }, [items])
+  }, [items, palette?.text.neutral.subtle])
 
   const dropdown = useMemo(() => {
     return (

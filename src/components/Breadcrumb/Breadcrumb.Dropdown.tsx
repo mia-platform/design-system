@@ -23,9 +23,11 @@ import { debounce } from 'lodash-es'
 
 import { BreadcrumbItemMenu, BreadcrumbItemMenuItem, BreadcrumbItemType, SearchOptions } from './Breadcrumb.types'
 import { BodyS } from '../Typography/BodyX/BodyS'
+import { Divider } from '../Divider'
 import { Icon } from '../Icon'
 import { buildMenuItemKey } from './Breadcrumb.utils'
 import styles from './Breadcrumb.module.css'
+import { useTheme } from '../../hooks/useTheme'
 
 type ItemType = Exclude<MenuProps['items'], undefined>[number]
 
@@ -40,6 +42,7 @@ export const getSearchOption = <K extends keyof SearchOptions, >(search: Breadcr
 
 export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactElement => {
   const [searchValue, setSearchValue] = useState('')
+  const { palette, spacing } = useTheme()
 
   const filteredItems = useMemo<BreadcrumbItemMenuItem[]>(() => {
     if (!item.menu?.items) { return [] }
@@ -52,14 +55,20 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
   const menuItems = useMemo(() => filteredItems.map<ItemType>((menuItemData, currentIndex) => {
     return {
       key: buildMenuItemKey(menuItemData, currentIndex),
-      icon: menuItemData?.icon,
+      icon: menuItemData?.icon && (
+        <Icon
+          color={palette?.text.neutral.subtle}
+          component={menuItemData.icon}
+          size={16}
+        />
+      ),
       label: (
         <BodyS ellipsis={{ rows: 1, tooltip: menuItemData?.label }}>
           {menuItemData?.label}
         </BodyS>
       ),
     }
-  }), [filteredItems])
+  }), [filteredItems, palette?.text.neutral.subtle])
 
   return (
     <div className={styles.dropdownMenuContainer}>
@@ -109,6 +118,18 @@ export const BreadcrumbItemMenuDropdown = ({ item, setOpen }: Props): ReactEleme
               </BodyS>
             </div>
           )
+      }
+      {
+        Boolean(item.menu?.footer) && (
+          <div className={styles.dropdownMenuFooter}>
+            <div className={styles.footerDivider}>
+              <Divider margin={spacing?.margin?.none} />
+            </div>
+            <div>
+              {item.menu!.footer}
+            </div>
+          </div>
+        )
       }
     </div>
   )
