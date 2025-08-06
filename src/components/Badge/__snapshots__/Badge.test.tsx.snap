@@ -65,6 +65,33 @@ exports[`Badge Component renders a badge with an extra 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Badge Component renders a badge with custom icon and title 1`] = `
+<DocumentFragment>
+  <div
+    class="badge"
+  >
+    <img
+      src="https://www.w3schools.com/images/lamp.jpg"
+    />
+    <div
+      class="content"
+    >
+      <div
+        class="title"
+      >
+        <h3
+          aria-label="Title"
+          class="mia-platform-typography mia-platform-typography-ellipsis mia-platform-typography-ellipsis-single-line h3"
+          role="h3"
+        >
+          Title
+        </h3>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Badge Component renders a badge with description 1`] = `
 <DocumentFragment>
   <div

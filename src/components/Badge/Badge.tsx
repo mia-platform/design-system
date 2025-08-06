@@ -38,11 +38,17 @@ export const Badge = ({
 }: BadgeProps): ReactElement => {
   const { palette } = useTheme()
 
-  const icon = useMemo(() => (
-    <div className={styles.icon} data-testid="badge-icon">
-      <Icon color={palette.text.neutral.subtle} component={customIcon} size={48} />
-    </div>
-  ), [customIcon, palette.text.neutral.subtle])
+  const icon = useMemo(() => {
+    if (typeof customIcon === 'function') {
+      return (
+        <div className={styles.icon} data-testid="badge-icon">
+          <Icon color={palette.text.neutral.subtle} component={customIcon} size={48} />
+        </div>
+      )
+    }
+
+    return customIcon
+  }, [customIcon, palette.text.neutral.subtle])
 
   const title = useMemo(() => (
     <div className={styles.title}>
