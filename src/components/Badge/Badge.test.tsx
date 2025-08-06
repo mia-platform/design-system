@@ -34,6 +34,13 @@ describe('Badge Component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('renders a badge with custom icon and title', () => {
+    const { asFragment } = render(<Badge icon={<img src="https://www.w3schools.com/images/lamp.jpg" />} title="Title" />)
+
+    expect(screen.getByText('Title')).toBeVisible()
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('renders a badge with description', () => {
     const { asFragment } = render(
       <Badge

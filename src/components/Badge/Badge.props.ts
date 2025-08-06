@@ -35,7 +35,7 @@ export type BadgeProps = {
   /**
    * The icon component to render within the badge.
    */
-  icon: IconComponent;
+  icon: IconComponent | ReactNode;
 
   /**
    * The main title text, it displays formatted text or customized content within the badge.
