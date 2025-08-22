@@ -2703,7 +2703,7 @@ __metadata:
     "@storybook/addon-essentials": "npm:^7.6.17"
     "@storybook/addon-interactions": "npm:^7.6.17"
     "@storybook/addon-links": "npm:^7.6.17"
-    "@storybook/addon-onboarding": "npm:^1.0.11"
+    "@storybook/addon-onboarding": "npm:^9.1.3"
     "@storybook/blocks": "npm:^7.6.17"
     "@storybook/manager-api": "npm:^7.6.17"
     "@storybook/react": "npm:^7.6.17"
@@ -4006,16 +4006,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-onboarding@npm:^1.0.11":
-  version: 1.0.11
-  resolution: "@storybook/addon-onboarding@npm:1.0.11"
-  dependencies:
-    "@storybook/telemetry": "npm:^7.1.0"
-    react-confetti: "npm:^6.1.0"
+"@storybook/addon-onboarding@npm:^9.1.3":
+  version: 9.1.3
+  resolution: "@storybook/addon-onboarding@npm:9.1.3"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/c3bf9e5616a4c049150dec698f4bdc1086c8def2323efb815f195bdd5cd807a3ee22dfcae6c8b8b83ed83179be835a1c7fbfe8fce6beb04255ae555cb957d790
+    storybook: ^9.1.3
+  checksum: 10/a7036271eb11476b39de16f0456589bacfc963c0a10f7358fc6c56ade4f93e08b1b4755e484757f3315bdd6a1dfbb7c0d9eedbfa8ad6940c8b4a65711010727f
   languageName: node
   linkType: hard
 
@@ -4584,7 +4580,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/telemetry@npm:7.6.19, @storybook/telemetry@npm:^7.1.0":
+"@storybook/telemetry@npm:7.6.19":
   version: 7.6.19
   resolution: "@storybook/telemetry@npm:7.6.19"
   dependencies:
@@ -14189,17 +14185,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-confetti@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "react-confetti@npm:6.1.0"
-  dependencies:
-    tween-functions: "npm:^1.2.0"
-  peerDependencies:
-    react: ^16.3.0 || ^17.0.1 || ^18.0.0
-  checksum: 10/33423767c42362b29e0c8fd09f60bcf40d64aeb721fd63564f85c61357706a6080563ec40f33435d210d5b5b1af7277aef4545deccf771d08785a3cb19749470
-  languageName: node
-  linkType: hard
-
 "react-docgen-typescript@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
@@ -16075,13 +16060,6 @@ __metadata:
   bin:
     tsx: dist/cli.mjs
   checksum: 10/62f40d06a41deebd51690b086f4387d842a826542639b6a26fd6cf09158c6b44956ca9d9088146330ab0622587b2329981cc3584b89025040f3aa100c50ac13c
-  languageName: node
-  linkType: hard
-
-"tween-functions@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "tween-functions@npm:1.2.0"
-  checksum: 10/f145f39187aacfe6e3c6bfe8452be4061a569b8e1e75c28169c55b7cdf519daa1877c79a8a2cdc902b68f49b67b8478f34818ff02529d27ae5aa0545e7fbdc06
   languageName: node
   linkType: hard
 
