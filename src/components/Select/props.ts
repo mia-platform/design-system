@@ -111,7 +111,7 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
   onSearch?: (value: string) => void
 
   /**
-   * @deprecated
+   * @deprecated use the `mode` property to use the Select with multiple selection
    * If multiple values are allowed.
    */
   isMultiple?: boolean
