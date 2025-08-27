@@ -98,7 +98,7 @@ describe('Select Component', () => {
 
     render(
       <Select
-        isMultiple
+        mode={Select.Mode.Multiple}
         options={options}
         onChange={onChange}
         onSelect={onSelect}
@@ -127,6 +127,26 @@ describe('Select Component', () => {
     )
   })
 
+  test('Should call select handlers onChange and onSelect if tag mode is set', async() => {
+    const onChange = jest.fn()
+
+    render(
+      <Select
+        mode={Select.Mode.Tags}
+        options={[]}
+        tokenSeparators={[',']}
+        onChange={onChange}
+      />
+    )
+
+    const input = screen.getByRole<HTMLInputElement>('combobox')
+    await userEvent.type(input, 'value 1,')
+    await userEvent.type(input, 'value 2,')
+
+    expect(onChange).toHaveBeenNthCalledWith(1, ['value 1'], [{}])
+    expect(onChange).toHaveBeenNthCalledWith(2, ['value 1', 'value 2'], [{}, {}])
+  })
+
   test('Should call select handlers onChange and onDeselect on tag click if multiple', async() => {
     const onDeselect = jest.fn()
     const onChange = jest.fn()
@@ -134,7 +154,7 @@ describe('Select Component', () => {
     render(
       <Select
         defaultValue={[options[0].value]}
-        isMultiple
+        mode={Select.Mode.Multiple}
         options={options}
         onChange={onChange}
         onDeselect={onDeselect}
@@ -156,9 +176,9 @@ describe('Select Component', () => {
     render(
       <Select
         defaultValue={[options[0].value, options[1].value, options[2].value]}
-        isMultiple
         maxTagCount={1}
         maxTagPlaceholder={`number of collapsed tag: ${options.length - 1}`}
+        mode={Select.Mode.Multiple}
         options={options}
         onChange={onChange}
         onDeselect={onDeselect}

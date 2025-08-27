@@ -26,6 +26,7 @@ import { SelectItem, SelectProps } from './props'
 import { Appearance } from '../BaseInput/types'
 import { Dropdown } from '../Dropdown'
 import { Icon } from '../Icon'
+import { Mode } from './Select.types'
 import { Tag } from '../Tag/Tag'
 import styles from './select.module.css'
 
@@ -78,6 +79,8 @@ export const Select = <ValueType, >(
     onSelect,
     onDeselect,
     isMultiple,
+    mode,
+    tokenSeparators,
     optionRender,
     onSearch,
     filterOption,
@@ -92,11 +95,11 @@ export const Select = <ValueType, >(
 
   const className = useMemo(() => classnames([
     styles.select,
-    isMultiple && styles.multiple,
+    (isMultiple || mode === Select.Mode.Multiple) && styles.multiple,
     isDisabled && styles.disabled,
     isReadOnly && styles.readOnly,
     classNameProp,
-  ]), [isDisabled, isMultiple, isReadOnly, classNameProp])
+  ]), [isMultiple, mode, isDisabled, isReadOnly, classNameProp])
 
   const suffixIcon = useMemo(() => !isReadOnly && (
     <Icon component={open ? PiCaretUp : PiCaretDown} size={DEFAULT_ICON_SIZE} />
@@ -123,7 +126,7 @@ export const Select = <ValueType, >(
       // This placeholder depends to tagRender prop
       maxTagPlaceholder={maxTagPlaceholder}
       menuItemSelectedIcon={menuItemSelectedIcon}
-      mode={isMultiple ? 'multiple' : undefined}
+      mode={isMultiple ? 'multiple' : mode}
       optionFilterProp={optionFilterProp}
       optionRender={optionRender}
       options={options}
@@ -133,6 +136,7 @@ export const Select = <ValueType, >(
       showSearch={Boolean(onSearch || filterOption)}
       suffixIcon={suffixIcon}
       tagRender={tagRender}
+      tokenSeparators={tokenSeparators}
       value={value}
       onChange={onChange}
       onClear={onClear}
@@ -144,6 +148,7 @@ export const Select = <ValueType, >(
   )
 }
 
+Select.Mode = Mode
 Select.Appearance = Appearance
 Select.Loader = Dropdown.Loader
 Select.ErrorState = Dropdown.ErrorState

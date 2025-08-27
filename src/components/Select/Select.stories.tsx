@@ -24,6 +24,7 @@ import { action } from '@storybook/addon-actions'
 
 import { Dropdown } from '../Dropdown'
 import { Icon } from '../Icon'
+import { Mode } from './Select.types'
 import { Select } from '.'
 import { SelectProps } from './props'
 import { Typography } from '../Typography'
@@ -121,18 +122,33 @@ export const CustomLabels: Story = {
   },
 }
 
-export const Multiple: Story = {
+export const ModeMultiple: Story = {
   args: {
     options,
-    isMultiple: true,
+    mode: Mode.Multiple,
     defaultValue: 'Multiple',
+  },
+}
+
+export const ModeTags: Story = {
+  args: {
+    options: [],
+  },
+  render: (args) => {
+    return (
+      <WrappedSelect
+        {...args}
+        mode={Mode.Tags}
+        tokenSeparators={[',']}
+      />
+    )
   },
 }
 
 export const MultipleWithMaxTagCount: Story = {
   args: {
     options,
-    isMultiple: true,
+    mode: Mode.Multiple,
     defaultValue: [options[0].value, options[1].value, options[2].value, options[3].value],
     maxTagCount: 2,
     maxTagPlaceholder: (omittedValues) => {
@@ -145,7 +161,7 @@ export const MultipleDefaultValue: Story = {
   args: {
     defaultValue: [options[0].value, options[1].value],
     options,
-    isMultiple: true,
+    mode: Mode.Multiple,
   },
 }
 
@@ -153,7 +169,7 @@ export const MultipleDisabled: Story = {
   args: {
     defaultValue: [options[0].value, options[1].value],
     options,
-    isMultiple: true,
+    mode: Mode.Multiple,
     isDisabled: true,
   },
 }

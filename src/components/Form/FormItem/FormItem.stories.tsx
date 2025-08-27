@@ -220,6 +220,6 @@ export const ReadOnlyMultiSelect = {
   args: {
     name: 'multiselect',
     isReadOnly: true,
-    children: <SelectComponent isMultiple options={options} />,
+    children: <SelectComponent mode={SelectComponent.Mode.Multiple} options={options} />,
   },
 }
