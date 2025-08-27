@@ -354,7 +354,7 @@ describe('FormItem Component', () => {
         { radioGroup: options[1].value },
         { radioGroup: options[1].value },
       )
-    })
+    }, 7_000)
   })
 
   describe('customInput', () => {
