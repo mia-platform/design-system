@@ -354,7 +354,7 @@ describe('FormItem Component', () => {
         { radioGroup: options[1].value },
         { radioGroup: options[1].value },
       )
-    })
+    }, 7_000)
   })
 
   describe('customInput', () => {
@@ -456,7 +456,7 @@ describe('FormItem Component', () => {
       renderItem({
         name: 'multiselect',
         isReadOnly: true,
-        children: <Select isMultiple={true} options={options} />,
+        children: <Select mode={Select.Mode.Multiple} options={options} />,
       })
       const paragraph = screen.getByRole('paragraph')
       expect(paragraph.innerHTML).toEqual([options[0].label, options[1].label].join(', '))

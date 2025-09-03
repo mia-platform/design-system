@@ -22,6 +22,7 @@ import { FilterFunc } from 'rc-select/lib/Select'
 import { FlattenOptionData } from 'rc-select/lib/interface'
 
 import { BaseInputProps } from '../BaseInput/props'
+import { Mode } from './Select.types'
 import { SearchSelectHandler } from '../Search/props'
 
 export type SelectItem<ValueType> = {
@@ -110,9 +111,20 @@ export type SelectProps<ValueType = unknown> = BaseInputProps & {
   onSearch?: (value: string) => void
 
   /**
+   * @deprecated use the `mode` property to use the Select with multiple selection
    * If multiple values are allowed.
    */
   isMultiple?: boolean
+
+  /**
+   * If tags mode is enabled.
+   */
+  mode?: Mode
+
+  /**
+   * Separator used to tokenize (es: ","), only applies when mode="tags"
+   */
+  tokenSeparators?: string[]
 
   /**
    * Customize the rendering dropdown options.
