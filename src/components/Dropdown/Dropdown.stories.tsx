@@ -72,6 +72,7 @@ const defaults: Partial<DropdownProps> = {
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),
   onOpenChange: action('on open change'),
+  // onSearch: undefined,
 }
 
 const meta = {
@@ -199,3 +200,17 @@ export const SelectionIsNotPersisted: Story = {
     persistSelection: false,
   },
 }
+
+export const Searchable: Story = {
+  args: {
+    isSearchable: true,
+  },
+}
+
+export const SerchableWithOnSearch: Story = {
+  args: {
+    isSearchable: true,
+    onSearch: (ev) => { console.log(ev) },
+  },
+}
+

@@ -229,14 +229,14 @@ export type DropdownProps = {
    *    (e.g. the dropdown is closing because a menu item was clicked)
    * @returns
    */
-   onOpenChange?: (open: boolean, info: OpenChangeInfo) => void
+  onOpenChange?: (open: boolean, info: OpenChangeInfo) => void
 
    /**
     * To set the container of the dropdown menu.
     * The default behavior is to create a div element and append it at the end of the body,
     *  but you can reset it to the scrolling area and make a relative reposition.
     */
-   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement,
+  getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement,
 
   /**
    * The placement of the dropdown menu, one of:
@@ -247,4 +247,9 @@ export type DropdownProps = {
    * Defaults to `Placement.BottomLeft`
    */
    placement?: Placement
+
+  isSearchable?: boolean
+  onSearch?: (query: string) => void
+  searchDebounce?: number
+  searchPlaceholder?: string
 }

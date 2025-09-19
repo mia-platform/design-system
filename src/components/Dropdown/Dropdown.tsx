@@ -16,15 +16,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
-import { Dropdown as AntdDropdown } from 'antd'
+import { Dropdown as AntdDropdown, Input } from 'antd'
+import React, { ReactElement, ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
+import { PiMagnifyingGlass } from 'react-icons/pi'
 import classNames from 'classnames'
+import { useDebounce } from 'use-debounce'
 
 import { AntdMenuClickEvent, AntdMenuItem, AntdMenuItems, Placement, antdSourceMap } from './types'
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
 import { Footer, useFooterWithHookedActions } from './components/Footer'
 import { Divider } from '../Divider'
 import { ErrorState } from './components/ErrorState'
+import { Icon } from '../Icon'
 import Label from './components/Label'
 import { Loader } from './components/Loader'
 import styles from './dropdown.module.css'
@@ -54,6 +57,10 @@ export const Dropdown = ({
   multiple,
   persistSelection = true,
   placement = defaults.placement,
+  isSearchable = false,
+  onSearch,
+  searchDebounce = 300,
+  searchPlaceholder = 'Search...',
 }: DropdownProps): ReactElement => {
   const { spacing } = useTheme()
 
@@ -62,7 +69,6 @@ export const Dropdown = ({
 
   const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
 
-  const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(items, itemLayout), [itemLayout, items])
   /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
@@ -84,6 +90,42 @@ export const Dropdown = ({
     [itemFinderMemo, onClick, updateSelectedItems]
   )
 
+  const [searchTerm, setSearchTerm] = useState('')
+  const [debouncedSearchTerm] = useDebounce(searchTerm, searchDebounce)
+
+  useEffect(() => {
+    if (isSearchable && onSearch) {
+      onSearch(debouncedSearchTerm)
+    }
+  }, [debouncedSearchTerm, isSearchable, onSearch])
+
+  const filteredItems = useMemo(() => {
+    if (onSearch) { return items }
+    console.log('after onSearch')
+
+    if (!searchTerm) { return items }
+    const lower = searchTerm.toLowerCase()
+
+    const filterRecursively = (list: DropdownItem[]): DropdownItem[] => {
+      console.log('filterRecursively')
+      return list
+        .map(item => ({
+          ...item,
+          children: item.children ? filterRecursively(item.children) : undefined,
+        }))
+        .filter(item =>
+          item.label?.toString().toLowerCase()
+            .includes(lower)
+          || item.id.toLowerCase().includes(lower)
+          || (item.children && item.children.length > 0)
+        )
+    }
+
+    return filterRecursively(items)
+  }, [items, searchTerm, onSearch])
+
+  const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(filteredItems, itemLayout), [filteredItems, itemLayout])
+
   /**
    * This function is used to forcibly close the dropdown without controlling
    * the `open` state via prop.
@@ -103,9 +145,27 @@ export const Dropdown = ({
   const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
     const clonedMenu = React.cloneElement(menu as ReactElement, { style: { boxShadow: 'none' } })
     const scrollableStyle = { maxHeight: menuItemsMaxHeight, overflow: 'auto' }
+
+    const searchBox = (
+      <div style={{ padding: '8px' }}>
+        <Input
+          allowClear
+          placeholder={searchPlaceholder}
+          prefix={<Icon component={PiMagnifyingGlass} />}
+          size="small"
+          value={searchTerm}
+          onChange={ev => {
+            console.log('onchange')
+            setSearchTerm(ev.target.value)
+          }}
+        />
+      </div>
+    )
+
     if (!hookedFooter) {
       return (
         <div className={styles.dropdownRenderWrapper} style={scrollableStyle}>
+          {isSearchable && searchBox}
           {clonedMenu}
         </div>
       )
@@ -113,6 +173,7 @@ export const Dropdown = ({
 
     return (
       <div className={styles.dropdownRenderWrapper}>
+        {isSearchable && searchBox}
         <div style={scrollableStyle}>{clonedMenu}</div>
         <div className={styles.footerDivider}>
           <Divider margin={spacing?.margin?.none} />
@@ -120,7 +181,7 @@ export const Dropdown = ({
         <Footer footer={hookedFooter} />
       </div>
     )
-  }, [hookedFooter, menuItemsMaxHeight, spacing])
+  }, [hookedFooter, isSearchable, menuItemsMaxHeight, searchPlaceholder, searchTerm, spacing?.margin?.none])
 
   const menu = useMemo(() => ({
     items: antdItems,
