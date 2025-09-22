@@ -2754,7 +2754,6 @@ __metadata:
     tsx: "npm:^4.20.3"
     typescript: "npm:^5.3.3"
     typescript-plugin-css-modules: "npm:^5.1.0"
-    use-debounce: "npm:^10.0.6"
     vite: "npm:^5.4.12"
     vite-plugin-dts: "npm:^4.3.0"
     vite-plugin-svgr: "npm:^4.3.0"
@@ -16522,15 +16521,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 10/3be76eae71b52ab233b4fde974eddeff72e67e6723100a0c0297df4b0d60daabedfa706ffb314d0a52645f2c1235e50fdbd53d99f374eb5df68c74d412e98a9b
-  languageName: node
-  linkType: hard
-
-"use-debounce@npm:^10.0.6":
-  version: 10.0.6
-  resolution: "use-debounce@npm:10.0.6"
-  peerDependencies:
-    react: "*"
-  checksum: 10/d28cc3d688cdb3dfbcab05c1b6ff763764ff4b298fa7598e534e7b255d4ac41cb1a24b1725c31420bac3b570418be630df460a6fcefd57c2cb0f5189264e1a7b
   languageName: node
   linkType: hard
 
