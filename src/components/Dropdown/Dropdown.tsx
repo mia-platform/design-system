@@ -65,7 +65,7 @@ export const Dropdown = ({
   errorMessage = 'An error occurred',
   onRetry,
 }: DropdownProps): ReactElement => {
-  const { spacing } = useTheme()
+  const { spacing, palette } = useTheme()
 
   const uniqueOverlayClassName = useMemo(() => `dropdown-overlay-${crypto.randomUUID()}`, [])
   const uniqueDropdownClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
@@ -166,7 +166,7 @@ export const Dropdown = ({
             placeholder={searchPlaceholder}
             suffix={
               <PiMagnifyingGlass
-                color={'currentColor'}
+                color={palette.action.secondary.contrastText}
                 height={12}
                 width={12}
               />
@@ -178,7 +178,11 @@ export const Dropdown = ({
 
       let dropdownBody = clonedMenu
       if (isLoading) {
-        dropdownBody = <Loader />
+        dropdownBody = (
+          <div style={{ padding: spacing.padding.sm }}>
+            <Loader />
+          </div>
+        )
       } else if (hasError) {
         dropdownBody = (
           <ErrorState
@@ -220,9 +224,11 @@ export const Dropdown = ({
       itemsToRender.length,
       menuItemsMaxHeight,
       onRetry,
+      palette.action.secondary.contrastText,
       searchPlaceholder,
       searchTerm,
       spacing?.margin?.none,
+      spacing.padding.sm,
     ]
   )
 
