@@ -31,7 +31,9 @@ const styles = {
 }
 
 export const EmptyState = (): ReactElement => {
-  return <div style={styles.container}>
-    <NoData aria-label="no data" role="img" />
-  </div>
+  return (
+    <div style={styles.container}>
+      <NoData aria-label="no data" role="img" />
+    </div>
+  )
 }

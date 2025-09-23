@@ -109,14 +109,11 @@ export const Dropdown = ({
             ? filterRecursively(item.children)
             : undefined,
         }))
-        .filter(
-          (item) =>
-            (typeof item.label !== 'string'
-              && typeof item.label !== 'number')
-            || item.label?.toString().toLowerCase()
-              .includes(lower)
-            || (item.children && item.children.length > 0)
-        )
+        .filter((item) => (
+            (typeof item.label !== 'string' && typeof item.label !== 'number') || 
+            item.label?.toString().toLowerCase().includes(lower) || 
+            (item.children && item.children.length > 0)
+        ))
     }
 
     const filteredItems = filterRecursively(items)
