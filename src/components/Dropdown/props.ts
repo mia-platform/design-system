@@ -248,25 +248,25 @@ export type DropdownProps = {
    */
   placement?: Placement
 
-/**
- * Enables a search input for filtering items in the component.
- *
- * - If `onSearch` is **not** provided, the component applies its own
- *   built-in filtering (case-insensitive substring match on string labels).
- * - If `onSearch` **is** provided, filtering is delegated to the parent
- *   component via the callback.
- */
-isSearchable?: boolean
+  /**
+   * Enables a search input for filtering items in the component.
+   *
+   * - If `onSearch` is **not** provided, the component applies its own
+   *   built-in filtering (case-insensitive substring match on string labels).
+   * - If `onSearch` **is** provided, filtering is delegated to the parent
+   *   component via the callback.
+   */
+  isSearchable?: boolean
 
-/**
- * Called when the user submits a search query.
- *
- * Providing this prop overrides the component's built-in filtering logic,
- * allowing the parent component to handle search behavior.
- *
- * @param query - The text entered by the user into the search input.
- */
-onSearch?: (query: string) => void
+  /**
+   * Called when the user submits a search query.
+   *
+   * Providing this prop overrides the component's built-in filtering logic,
+   * allowing the parent component to handle search behavior.
+   *
+   * @param query - The text entered by the user into the search input.
+   */
+  onSearch?: (query: string) => void
 
   /**
    * Placeholder text to show inside the search input.

@@ -209,7 +209,26 @@ export const Searchable: Story = {
   },
 }
 
-export const SerchableWithOnSearch: Story = {
+export const WithSearchAndFooter: Story = {
+  args: {
+    isSearchable: true,
+    footer: {
+      top: <Typography.BodyM>{'Top description'}</Typography.BodyM>,
+      bottom: <Typography.BodyM>{'Bottom description'}</Typography.BodyM>,
+      actions: [{
+        icon: <Icon component={PiAcorn} size={16} />,
+        label: 'OK',
+        onClick: action('footer button click'),
+      }, {
+        icon: <Icon component={PiNut} size={16} />,
+        label: 'NOT OK',
+        onClick: action('footer button 2 click'),
+      }],
+    },
+  },
+}
+
+export const SerchPerformedByExternalComponent: Story = {
   args: {
     items: [
       {

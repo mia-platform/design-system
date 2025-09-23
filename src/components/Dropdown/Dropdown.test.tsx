@@ -485,7 +485,7 @@ describe('Dropdown Component', () => {
   })
 
   describe('with search', () => {
-    test('search input is visible if isSearchable is true', async() => {
+    test('shows search input when isSearchable is true', async() => {
       renderDropdown({ props: { ...defaultProps, isSearchable: true } })
       const button = screen.getByText('test-trigger-button')
       await userEvent.click(button)
@@ -494,7 +494,7 @@ describe('Dropdown Component', () => {
       expect(searchInput).toBeInTheDocument()
     })
 
-    test('the search input takes the correct placeholder true', async() => {
+    test('uses the correct placeholder text for the search input', async() => {
       const customPlaceholder = 'Find an item...'
       renderDropdown({ props: { ...defaultProps, isSearchable: true, searchPlaceholder: customPlaceholder } })
       const button = screen.getByText('test-trigger-button')
@@ -504,7 +504,7 @@ describe('Dropdown Component', () => {
       expect(searchInput).toBeInTheDocument()
     })
 
-    test('the items are filtered correclty without onSearch prop', async() => {
+    test('filters items correctly when no onSearch prop is provided', async() => {
       const customItems = [
         { id: 'apple', label: 'Apple' },
         { id: 'banana', label: 'Banana' },
@@ -531,7 +531,61 @@ describe('Dropdown Component', () => {
       expect(screen.queryByText('Orange')).toBeInTheDocument()
     })
 
-    test('the clear search button works correcty', async() => {
+    test('does not perform filtering when onSearch prop is provided', async() => {
+      const onSearch = jest.fn()
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+        { id: 'orange', label: 'Orange' },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      // const searchInput = screen.getByRole('textbox', { name: 'Search...' })
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'non-existent')
+
+      await waitFor(() => expect(onSearch).toHaveBeenCalledTimes(12))
+
+      // All original items should still be visible because filtering is external
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+      expect(screen.getByText('Orange')).toBeInTheDocument()
+    })
+
+    test('does not filter items with React node labels', async() => {
+      const customItems = [
+        { id: 'apple', label: <span>{'Apple'}</span> },
+        { id: 'banana', label: <span>{'Banana'}</span> },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch: undefined } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      // const searchInput = screen.getByRole('textbox', { name: 'Search...' })
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'a')
+
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+    })
+
+    test('triggers onSearch on input change', async() => {
+      const onSearch = jest.fn()
+      renderDropdown({ props: { ...defaultProps, isSearchable: true, onSearch } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'a')
+      await userEvent.type(searchInput, 'b')
+
+      await waitFor(() => expect(onSearch).toHaveBeenCalledTimes(2))
+      expect(onSearch).toHaveBeenLastCalledWith('ab')
+    })
+
+    test('resets search on clear button click', async() => {
       const customItems = [
         { id: 'apple', label: 'Apple' },
         { id: 'banana', label: 'Banana' },
@@ -558,38 +612,7 @@ describe('Dropdown Component', () => {
       expect(screen.getByText('Orange')).toBeInTheDocument()
     })
 
-    test('the items are not filtered if the labels are react nodes', async() => {
-      const customItems = [
-        { id: 'apple', label: <span>{'Apple'}</span> },
-        { id: 'banana', label: <span>{'Banana'}</span> },
-      ]
-      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch: undefined } })
-      const button = screen.getByText('test-trigger-button')
-      await userEvent.click(button)
-
-      // const searchInput = screen.getByRole('textbox', { name: 'Search...' })
-      const searchInput = screen.getByRole('textbox')
-      await userEvent.type(searchInput, 'a')
-
-      expect(screen.getByText('Apple')).toBeInTheDocument()
-      expect(screen.getByText('Banana')).toBeInTheDocument()
-    })
-
-    test('the onSearch prop is called on search input change', async() => {
-      const onSearch = jest.fn()
-      renderDropdown({ props: { ...defaultProps, isSearchable: true, onSearch } })
-      const button = screen.getByText('test-trigger-button')
-      await userEvent.click(button)
-
-      const searchInput = screen.getByRole('textbox')
-      await userEvent.type(searchInput, 'a')
-      await userEvent.type(searchInput, 'b')
-
-      await waitFor(() => expect(onSearch).toHaveBeenCalledTimes(2))
-      expect(onSearch).toHaveBeenLastCalledWith('ab')
-    })
-
-    test('the clear search works correctly with onSearch', async() => {
+    test('triggers onSearch correctly on clear button click', async() => {
       const onSearch = jest.fn()
       renderDropdown({ props: { ...defaultProps, isSearchable: true, onSearch } })
       const button = screen.getByText('test-trigger-button')
@@ -606,30 +629,7 @@ describe('Dropdown Component', () => {
       expect(onSearch).toHaveBeenLastCalledWith('')
     })
 
-    test('the items are not filtered if the onSearch prop is passed', async() => {
-      const onSearch = jest.fn()
-      const customItems = [
-        { id: 'apple', label: 'Apple' },
-        { id: 'banana', label: 'Banana' },
-        { id: 'orange', label: 'Orange' },
-      ]
-      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch } })
-      const button = screen.getByText('test-trigger-button')
-      await userEvent.click(button)
-
-      // const searchInput = screen.getByRole('textbox', { name: 'Search...' })
-      const searchInput = screen.getByRole('textbox')
-      await userEvent.type(searchInput, 'non-existent')
-
-      await waitFor(() => expect(onSearch).toHaveBeenCalledTimes(12))
-
-      // All original items should still be visible because filtering is external
-      expect(screen.getByText('Apple')).toBeInTheDocument()
-      expect(screen.getByText('Banana')).toBeInTheDocument()
-      expect(screen.getByText('Orange')).toBeInTheDocument()
-    })
-
-    test('the empty state state is shown if there are no items matching the research', async() => {
+    test('shows the empty state if there are no items matching the research', async() => {
       const customItems = [
         { id: 'apple', label: 'Apple' },
         { id: 'banana', label: 'Banana' },

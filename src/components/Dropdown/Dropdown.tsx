@@ -269,6 +269,7 @@ Dropdown.Trigger = DropdownTrigger
 Dropdown.Placement = Placement
 Dropdown.Loader = Loader
 Dropdown.ErrorState = ErrorState
+Dropdown.EmptyState = EmptyState
 
 function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems {
   return items.map<AntdMenuItem>((item: DropdownItem) => ({
