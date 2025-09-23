@@ -16,19 +16,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
-import { Dropdown as AntdDropdown } from 'antd'
+import { Input as AntInput, Dropdown as AntdDropdown } from 'antd'
+import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
+import { PiMagnifyingGlass } from 'react-icons/pi'
 import classNames from 'classnames'
 
 import { AntdMenuClickEvent, AntdMenuItem, AntdMenuItems, Placement, antdSourceMap } from './types'
 import { DropdownClickEvent, DropdownItem, DropdownProps, DropdownTrigger, ItemLayout } from './props'
 import { Footer, useFooterWithHookedActions } from './components/Footer'
+import { BaseInput } from '../BaseInput'
 import { Divider } from '../Divider'
+import { EmptyState } from './components/EmptyState'
 import { ErrorState } from './components/ErrorState'
+import { Icon } from '../Icon'
 import Label from './components/Label'
 import { Loader } from './components/Loader'
 import styles from './dropdown.module.css'
 import { useTheme } from '../../hooks/useTheme'
+
+const ICON_SIZE = 12 as never
 
 export const defaults = {
   itemLayout: ItemLayout.Horizontal,
@@ -54,15 +60,21 @@ export const Dropdown = ({
   multiple,
   persistSelection = true,
   placement = defaults.placement,
+  isSearchable = false,
+  onSearch,
+  searchPlaceholder = 'Search...',
+  isLoading = false,
+  hasError = false,
+  errorMessage = 'An error occurred',
+  onRetry,
 }: DropdownProps): ReactElement => {
-  const { spacing } = useTheme()
+  const { spacing, palette } = useTheme()
 
   const uniqueOverlayClassName = useMemo(() => `dropdown-overlay-${crypto.randomUUID()}`, [])
   const uniqueDropdownClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
   const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
 
-  const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(items, itemLayout), [itemLayout, items])
   /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
@@ -84,6 +96,36 @@ export const Dropdown = ({
     [itemFinderMemo, onClick, updateSelectedItems]
   )
 
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const itemsToRender = useMemo(() => {
+    if (onSearch || !searchTerm) {
+      return items
+    }
+
+    const lower = searchTerm.toLowerCase()
+    const filterRecursively = (list: DropdownItem[]): DropdownItem[] => {
+      return list
+        .map((item) => ({
+          ...item,
+          children: item.children
+            ? filterRecursively(item.children)
+            : undefined,
+        }))
+        .filter((item) => (
+          (typeof item.label !== 'string' && typeof item.label !== 'number')
+            || item.label?.toString().toLowerCase()
+              .includes(lower)
+            || (item.children && item.children.length > 0)
+        ))
+    }
+
+    const filteredItems = filterRecursively(items)
+    return filteredItems
+  }, [items, onSearch, searchTerm])
+
+  const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(itemsToRender, itemLayout), [itemsToRender, itemLayout])
+
   /**
    * This function is used to forcibly close the dropdown without controlling
    * the `open` state via prop.
@@ -100,27 +142,97 @@ export const Dropdown = ({
   }, [uniqueDropdownClassName])
   const hookedFooter = useFooterWithHookedActions({ footer, hook: footerActionHook })
 
-  const dropdownRender = useCallback((menu: ReactNode): ReactNode => {
-    const clonedMenu = React.cloneElement(menu as ReactElement, { style: { boxShadow: 'none' } })
-    const scrollableStyle = { maxHeight: menuItemsMaxHeight, overflow: 'auto' }
-    if (!hookedFooter) {
-      return (
-        <div className={styles.dropdownRenderWrapper} style={scrollableStyle}>
-          {clonedMenu}
+  const handleSearchInputChange = useCallback((ev: ChangeEvent<HTMLInputElement> | undefined) => {
+    const value = ev?.target?.value || ''
+    setSearchTerm(value)
+    onSearch?.(value)
+  }, [onSearch])
+
+  const dropdownRender = useCallback(
+    (menu: ReactNode): ReactNode => {
+      const clonedMenu = React.cloneElement(menu as ReactElement, {
+        style: { boxShadow: 'none' },
+      })
+      const scrollableStyle = {
+        maxHeight: menuItemsMaxHeight,
+        overflow: 'auto',
+      }
+
+      const searchBox = (
+        <div style={{ padding: spacing.gap.sm }}>
+          <BaseInput
+            allowClear
+            component={AntInput}
+            isFullWidth
+            placeholder={searchPlaceholder}
+            suffix={
+              <Icon
+                color={palette.action.secondary.contrastText}
+                component={PiMagnifyingGlass}
+                size={ICON_SIZE}
+              />
+            }
+            onChange={handleSearchInputChange}
+          />
         </div>
       )
-    }
 
-    return (
-      <div className={styles.dropdownRenderWrapper}>
-        <div style={scrollableStyle}>{clonedMenu}</div>
-        <div className={styles.footerDivider}>
-          <Divider margin={spacing?.margin?.none} />
+      let dropdownBody = clonedMenu
+      if (isLoading) {
+        dropdownBody = (
+          <div style={{ padding: spacing.padding.sm }}>
+            <Loader />
+          </div>
+        )
+      } else if (hasError) {
+        dropdownBody = (
+          <ErrorState
+            message={errorMessage}
+            onRetry={() => onRetry?.(searchTerm)}
+          />
+        )
+      } else if (itemsToRender.length === 0) {
+        dropdownBody = <EmptyState />
+      }
+
+      if (!hookedFooter) {
+        return (
+          <div className={styles.dropdownRenderWrapper}>
+            {isSearchable && searchBox}
+            <div style={scrollableStyle}>{dropdownBody}</div>
+          </div>
+        )
+      }
+
+      return (
+        <div className={styles.dropdownRenderWrapper}>
+          {isSearchable && searchBox}
+          <div style={scrollableStyle}>{dropdownBody}</div>
+          <div className={styles.footerDivider}>
+            <Divider margin={spacing?.margin?.none} />
+          </div>
+          <Footer footer={hookedFooter} />
         </div>
-        <Footer footer={hookedFooter} />
-      </div>
-    )
-  }, [hookedFooter, menuItemsMaxHeight, spacing])
+      )
+    },
+    [
+      errorMessage,
+      handleSearchInputChange,
+      hasError,
+      hookedFooter,
+      isLoading,
+      isSearchable,
+      itemsToRender.length,
+      menuItemsMaxHeight,
+      onRetry,
+      palette.action.secondary.contrastText,
+      searchPlaceholder,
+      searchTerm,
+      spacing.gap.sm,
+      spacing?.margin?.none,
+      spacing.padding.sm,
+    ]
+  )
 
   const menu = useMemo(() => ({
     items: antdItems,
@@ -165,6 +277,7 @@ Dropdown.Trigger = DropdownTrigger
 Dropdown.Placement = Placement
 Dropdown.Loader = Loader
 Dropdown.ErrorState = ErrorState
+Dropdown.EmptyState = EmptyState
 
 function itemsAdapter(items: DropdownItem[], layout: ItemLayout): AntdMenuItems {
   return items.map<AntdMenuItem>((item: DropdownItem) => ({

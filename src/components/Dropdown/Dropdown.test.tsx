@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/* eslint-disable max-lines */
+
 import { DropdownItem, DropdownProps, DropdownTrigger, OpenChangeInfoSource } from './props'
 import { RenderResult, render, screen, userEvent, waitFor } from '../../test-utils'
 import { Button } from '../Button'
@@ -440,6 +442,207 @@ describe('Dropdown Component', () => {
       expect(screen.getByRole('menu')).toBeInTheDocument()
       await await userEvent.click(footerActionButton)
       await waitFor(() => expect(screen.queryByRole('menu')).toBeNull())
+    })
+  })
+
+  describe('dropdown body states', () => {
+    test('the error state is shown if hasError is true and onRetry is triggered correctly', async() => {
+      const onRetry = jest.fn()
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, hasError: true, onRetry } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      expect(screen.getByText('An error occurred')).toBeInTheDocument()
+      const retryButton = screen.getByRole('button', { name: /retry/i })
+
+      expect(retryButton).toBeInTheDocument()
+      userEvent.click(retryButton)
+      await waitFor(() => expect(onRetry).toHaveBeenCalledTimes(1))
+    })
+
+    test('the loading state is shown if isLoading', async() => {
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isLoading: true } })
+      expect(screen.queryByText('Apple')).not.toBeInTheDocument()
+      expect(screen.queryByText('Banana')).not.toBeInTheDocument()
+    })
+
+    test('the empty state state is shown if there are no items matching the research', async() => {
+      const customItems:DropdownItem[] = []
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch: undefined } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      expect(screen.getByRole('img', { name: 'no data' })).toBeInTheDocument()
+    })
+  })
+
+  describe('with search', () => {
+    test('shows search input when isSearchable is true', async() => {
+      renderDropdown({ props: { ...defaultProps, isSearchable: true } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      expect(searchInput).toBeInTheDocument()
+    })
+
+    test('uses the correct placeholder text for the search input', async() => {
+      const customPlaceholder = 'Find an item...'
+      renderDropdown({ props: { ...defaultProps, isSearchable: true, searchPlaceholder: customPlaceholder } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByPlaceholderText(customPlaceholder)
+      expect(searchInput).toBeInTheDocument()
+    })
+
+    test('filters items correctly when no onSearch prop is provided', async() => {
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+        { id: 'orange', label: 'Orange' },
+        { id: 'cherry', label: 'Cherry' },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch: undefined } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'A')
+
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+      expect(screen.queryByText('Cherry')).not.toBeInTheDocument()
+      expect(screen.getByText('Orange')).toBeInTheDocument()
+
+      await userEvent.type(searchInput, 'n')
+
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+      expect(screen.queryByText('Apple')).not.toBeInTheDocument()
+      expect(screen.queryByText('Cherry')).not.toBeInTheDocument()
+      expect(screen.queryByText('Orange')).toBeInTheDocument()
+    })
+
+    test('does not perform filtering when onSearch prop is provided', async() => {
+      const onSearch = jest.fn()
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+        { id: 'orange', label: 'Orange' },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'non-existent')
+
+      await waitFor(() => expect(onSearch).toHaveBeenCalledTimes(12))
+
+      // All original items should still be visible because filtering is external
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+      expect(screen.getByText('Orange')).toBeInTheDocument()
+    })
+
+    test('does not filter items with React node labels', async() => {
+      const customItems = [
+        { id: 'apple', label: <span>{'Apple'}</span> },
+        { id: 'banana', label: <span>{'Banana'}</span> },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch: undefined } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'a')
+
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+    })
+
+    test('triggers onSearch on input change', async() => {
+      const onSearch = jest.fn()
+      renderDropdown({ props: { ...defaultProps, isSearchable: true, onSearch } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'a')
+      await userEvent.type(searchInput, 'b')
+
+      await waitFor(() => expect(onSearch).toHaveBeenCalledTimes(2))
+      expect(onSearch).toHaveBeenLastCalledWith('ab')
+    })
+
+    test('resets search on clear button click', async() => {
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+        { id: 'orange', label: 'Orange' },
+        { id: 'cherry', label: 'Cherry' },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch: undefined } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'A')
+
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+      expect(screen.queryByText('Cherry')).not.toBeInTheDocument()
+      expect(screen.getByText('Orange')).toBeInTheDocument()
+
+      await userEvent.click(screen.getByRole('img', { name: 'close-circle' }))
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+      expect(screen.getByText('Cherry')).toBeInTheDocument()
+      expect(screen.getByText('Orange')).toBeInTheDocument()
+    })
+
+    test('triggers onSearch correctly on clear button click', async() => {
+      const onSearch = jest.fn()
+      renderDropdown({ props: { ...defaultProps, isSearchable: true, onSearch } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'a')
+
+      await waitFor(() => expect(onSearch).toHaveBeenCalledTimes(1))
+      expect(onSearch).toHaveBeenCalledWith('a')
+
+      userEvent.click(screen.getByRole('img', { name: 'close-circle' }))
+      await waitFor(() => expect(onSearch).toHaveBeenCalledTimes(2))
+      expect(onSearch).toHaveBeenLastCalledWith('')
+    })
+
+    test('shows the empty state if there are no items matching the research', async() => {
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true, onSearch: undefined } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'non-existent')
+
+      expect(screen.queryByText('Apple')).not.toBeInTheDocument()
+      expect(screen.queryByText('Banana')).not.toBeInTheDocument()
+      screen.logTestingPlaygroundURL()
+
+      expect(screen.getByRole('img', { name: 'no data' })).toBeInTheDocument()
     })
   })
 })

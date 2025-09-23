@@ -18,11 +18,13 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 import { PiAcorn, PiNut, PiWarning } from 'react-icons/pi'
+import { useCallback, useEffect, useState } from 'react'
 import { action } from '@storybook/addon-actions'
+import { debounce } from 'lodash-es'
 
+import { DropdownClickEvent, DropdownProps } from './props'
 import { Button } from '../Button'
 import { Dropdown } from '.'
-import { DropdownProps } from './props'
 import { Icon } from '../Icon'
 import { Placement } from './types'
 import { Tag } from '../Tag'
@@ -72,6 +74,7 @@ const defaults: Partial<DropdownProps> = {
   children: <Button >{'click me'}</Button>,
   onClick: action('on click'),
   onOpenChange: action('on open change'),
+  onSearch: undefined,
 }
 
 const meta = {
@@ -199,3 +202,133 @@ export const SelectionIsNotPersisted: Story = {
     persistSelection: false,
   },
 }
+
+export const Searchable: Story = {
+  args: {
+    isSearchable: true,
+  },
+}
+
+export const WithSearchAndFooter: Story = {
+  args: {
+    isSearchable: true,
+    footer: {
+      top: <Typography.BodyM>{'Top description'}</Typography.BodyM>,
+      bottom: <Typography.BodyM>{'Bottom description'}</Typography.BodyM>,
+      actions: [{
+        icon: <Icon component={PiAcorn} size={16} />,
+        label: 'OK',
+        onClick: action('footer button click'),
+      }, {
+        icon: <Icon component={PiNut} size={16} />,
+        label: 'NOT OK',
+        onClick: action('footer button 2 click'),
+      }],
+    },
+  },
+}
+
+export const SerchPerformedByExternalComponent: Story = {
+  args: {
+    items: [
+      {
+        id: 'conversation-1',
+        label: 'Conversation #1',
+      },
+      {
+        id: 'conversation-2',
+        label: 'Conversation #2',
+      },
+      {
+        id: 'conversation-3',
+        label: 'Conversation #3',
+      },
+      {
+        id: 'conversation-4',
+        label: 'Conversation #4',
+      },
+      {
+        id: 'conversation-5',
+        label: 'Conversation #5',
+      },
+      {
+        id: 'conversation-6',
+        label: 'Cherry',
+      },
+      {
+        id: 'conversation-7',
+        label: 'Orange',
+      },
+      {
+        id: 'conversation-7',
+        label: 'Apple',
+      },
+      {
+        id: 'conversation-9',
+        label: 'Banana',
+      },
+    ],
+    isSearchable: true,
+  },
+  // eslint-disable-next-line func-name-matching
+  render: function Render(args: DropdownProps) {
+    const [filteredItems, setFilteredItems] = useState(args.items)
+    const [isLoading, setIsLoading] = useState(false)
+    const [hasError, setHasError] = useState(false)
+
+    const handleClick = useCallback((ev: DropdownClickEvent) => {
+      action('onClick')(ev)
+    }, [])
+
+    const handleSearch = useCallback((search:string, isRetry = false) => {
+      setIsLoading(true)
+      setTimeout(() => {
+        if (isRetry) {
+          setHasError(false)
+        } else if (search === 'err') {
+          setHasError(true)
+          setIsLoading(false)
+          return
+        }
+        const res = args.items.filter(
+          (item) => {
+            return !search
+              || (item
+              && (item.label as string).toLowerCase().includes(search.toLowerCase()))
+          }
+        )
+        setFilteredItems(res)
+        setIsLoading(false)
+      }, (1000))
+      action('onSearch')(search)
+    }, [args.items])
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const debouncedSearch = useCallback(debounce((value) => handleSearch(value), 500)
+      , [handleSearch])
+
+    useEffect(() => {
+      return () => {
+        debouncedSearch?.cancel()
+      }
+    }, [debouncedSearch])
+
+    return (
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Dropdown
+          hasError={hasError}
+          isLoading={isLoading}
+          isSearchable
+          items={filteredItems}
+          searchPlaceholder={"Type 'err' for error state"}
+          onClick={handleClick}
+          onRetry={(search: string) => handleSearch(search, true)}
+          onSearch={debouncedSearch}
+        >
+          <Button>{'Click me'}</Button>
+        </Dropdown>
+      </div>
+    )
+  },
+}
+
