@@ -303,9 +303,9 @@ export const SerchPerformedByExternalComponent: Story = {
       action('onSearch')(search)
     }, [args.items])
 
-    const debouncedSearch = useMemo(() => {
-      return debounce((value) => handleSearch(value), 500)
-    }, [handleSearch])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const debouncedSearch = useCallback(debounce((value) => handleSearch(value), 500)
+      , [handleSearch])
 
     useEffect(() => {
       return () => {
