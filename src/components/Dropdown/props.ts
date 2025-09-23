@@ -45,6 +45,9 @@ export type DropdownItem = {
 
   /**
    * The label to be displayed for the item.
+   *
+   * When the automatic dropdown search is enabled via the `isSearchable` prop,
+   * it will only filter items whose label is a **string** or a **number**.
    */
   label: ReactNode,
 
