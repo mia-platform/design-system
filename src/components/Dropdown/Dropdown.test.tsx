@@ -542,7 +542,6 @@ describe('Dropdown Component', () => {
       const button = screen.getByText('test-trigger-button')
       await userEvent.click(button)
 
-      // const searchInput = screen.getByRole('textbox', { name: 'Search...' })
       const searchInput = screen.getByRole('textbox')
       await userEvent.type(searchInput, 'non-existent')
 
@@ -563,7 +562,6 @@ describe('Dropdown Component', () => {
       const button = screen.getByText('test-trigger-button')
       await userEvent.click(button)
 
-      // const searchInput = screen.getByRole('textbox', { name: 'Search...' })
       const searchInput = screen.getByRole('textbox')
       await userEvent.type(searchInput, 'a')
 
