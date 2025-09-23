@@ -18,7 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 import { PiAcorn, PiNut, PiWarning } from 'react-icons/pi'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { debounce } from 'lodash-es'
 
