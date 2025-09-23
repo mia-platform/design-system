@@ -28,10 +28,13 @@ import { BaseInput } from '../BaseInput'
 import { Divider } from '../Divider'
 import { EmptyState } from './components/EmptyState'
 import { ErrorState } from './components/ErrorState'
+import { Icon } from '../Icon'
 import Label from './components/Label'
 import { Loader } from './components/Loader'
 import styles from './dropdown.module.css'
 import { useTheme } from '../../hooks/useTheme'
+
+const ICON_SIZE = 12 as never
 
 export const defaults = {
   itemLayout: ItemLayout.Horizontal,
@@ -110,9 +113,10 @@ export const Dropdown = ({
             : undefined,
         }))
         .filter((item) => (
-            (typeof item.label !== 'string' && typeof item.label !== 'number') || 
-            item.label?.toString().toLowerCase().includes(lower) || 
-            (item.children && item.children.length > 0)
+          (typeof item.label !== 'string' && typeof item.label !== 'number')
+            || item.label?.toString().toLowerCase()
+              .includes(lower)
+            || (item.children && item.children.length > 0)
         ))
     }
 
@@ -155,17 +159,17 @@ export const Dropdown = ({
       }
 
       const searchBox = (
-        <div style={{ padding: '8px' }}>
+        <div style={{ padding: spacing.gap.sm }}>
           <BaseInput
             allowClear
             component={AntInput}
             isFullWidth
             placeholder={searchPlaceholder}
             suffix={
-              <PiMagnifyingGlass
+              <Icon
                 color={palette.action.secondary.contrastText}
-                height={12}
-                width={12}
+                component={PiMagnifyingGlass}
+                size={ICON_SIZE}
               />
             }
             onChange={handleSearchInputChange}
@@ -224,6 +228,7 @@ export const Dropdown = ({
       palette.action.secondary.contrastText,
       searchPlaceholder,
       searchTerm,
+      spacing.gap.sm,
       spacing?.margin?.none,
       spacing.padding.sm,
     ]

@@ -22,7 +22,7 @@ import NoData from '../../assets/no-data.svg'
 
 const styles = {
   container: {
-    height: 136,
+    minHeight: 112,
     display: 'flex',
     width: '100%',
     alignItems: 'center',
