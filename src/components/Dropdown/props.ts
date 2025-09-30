@@ -101,6 +101,21 @@ export type FooterAction = {
   onClick: () => void
 }
 
+export type DropdownHeader = {
+
+  /**
+   * Content displayed **above** the search input (if visible via `isSerchable` prop).
+   * if the search input is not visible should be provided only one of `top` or `bottom` props.
+   */
+  top?: ReactNode
+
+  /**
+   * Content displayed **below** the search input (if visible via `isSerchable` prop).
+   * if the search input is not visible should be provided only one of `top` or `bottom` props.
+   */
+  bottom?: ReactNode
+}
+
 export type DropdownFooter = {
 
   /**
@@ -162,6 +177,11 @@ export type DropdownProps = {
    * The ReactElement used as anchor to trigger the Dropdown visibility.
    */
   children?: ReactElement
+
+  /**
+   * Optional header configuration.
+   */
+  header?: DropdownHeader
 
   /**
    * Optional footer configuration.

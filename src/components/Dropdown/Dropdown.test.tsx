@@ -405,6 +405,62 @@ describe('Dropdown Component', () => {
     })
   })
 
+  describe('with header', () => {
+    it('renders top header', async() => {
+      const props: DropdownProps = {
+        ...defaultProps,
+        header: {
+          top: <div data-testid="header-top-id">{'some custom header top description'}</div>,
+        },
+      }
+      renderDropdown({ props })
+
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const header = await screen.findByTestId('header-top-id')
+      expect(header).toBeInTheDocument()
+    })
+
+    it('renders bottom header', async() => {
+      const props: DropdownProps = {
+        ...defaultProps,
+        header: {
+          bottom: <div data-testid="header-bottom-id">{'some custom header bottom description'}</div>,
+        },
+      }
+      renderDropdown({ props })
+
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const header = await screen.findByTestId('header-bottom-id')
+      expect(header).toBeInTheDocument()
+    })
+
+    it('renders top and bottom header and search input', async() => {
+      const props: DropdownProps = {
+        ...defaultProps,
+        isSearchable: true,
+        header: {
+          top: <div data-testid="header-top-id">{'some custom header top description'}</div>,
+          bottom: <div data-testid="header-bottom-id">{'some custom header bottom description'}</div>,
+        },
+      }
+      renderDropdown({ props })
+
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      expect(searchInput).toBeInTheDocument()
+      const headerTop = await screen.findByTestId('header-top-id')
+      expect(headerTop).toBeInTheDocument()
+      const headerBottom = await screen.findByTestId('header-bottom-id')
+      expect(headerBottom).toBeInTheDocument()
+    })
+  })
+
   describe('with footer', () => {
     it('renders footer', async() => {
       const props: DropdownProps = {
