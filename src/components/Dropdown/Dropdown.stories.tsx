@@ -209,23 +209,11 @@ export const Searchable: Story = {
   },
 }
 
-export const WithSearchAndFooter: Story = {
-  args: {
-    isSearchable: true,
-    footer: {
-      top: <Typography.BodyM>{'Top description'}</Typography.BodyM>,
-      bottom: <Typography.BodyM>{'Bottom description'}</Typography.BodyM>,
-      actions: [{
-        icon: <Icon component={PiAcorn} size={16} />,
-        label: 'OK',
-        onClick: action('footer button click'),
-      }, {
-        icon: <Icon component={PiNut} size={16} />,
-        label: 'NOT OK',
-        onClick: action('footer button 2 click'),
-      }],
-    },
-  },
+const header = {
+  bottom: <div style={{ marginTop: '4px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+    <div style={{ width: '100%', height: '1px', background: '#F2F2F2' }} />
+    <div style={{ color: '#898989', fontSize: '14px' }}>Latest 20 conversations (86 total)</div>
+  </div>,
 }
 
 export const SerchPerformedByExternalComponent: Story = {
@@ -260,7 +248,7 @@ export const SerchPerformedByExternalComponent: Story = {
         label: 'Orange',
       },
       {
-        id: 'conversation-7',
+        id: 'conversation-8',
         label: 'Apple',
       },
       {
@@ -293,7 +281,7 @@ export const SerchPerformedByExternalComponent: Story = {
         const res = args.items.filter(
           (item) => {
             return !search
-              || (item
+            || (item
               && (item.label as string).toLowerCase().includes(search.toLowerCase()))
           }
         )
@@ -329,6 +317,35 @@ export const SerchPerformedByExternalComponent: Story = {
         </Dropdown>
       </div>
     )
+  },
+}
+
+export const WithHeader: Story = {
+  args: {
+    header: { top: <div>custom header</div> },
+  },
+}
+
+export const WithSearchAndBottomHeader: Story = {
+  args: {
+    isSearchable: true,
+    header: {
+      bottom: <div style={{ marginTop: '4px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <div style={{ width: '100%', height: '1px', background: '#F2F2F2' }} />
+        <div style={{ color: '#898989' }}>Custom bottom header</div>
+      </div>,
+    },
+  },
+}
+
+export const WithSearchAndTopHeader: Story = {
+  args: {
+    isSearchable: true,
+    header: {
+      top: <div style={{ marginBottom: '4px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <div style={{ color: '#898989' }}>Custom top header</div>
+      </div>,
+    },
   },
 }
 

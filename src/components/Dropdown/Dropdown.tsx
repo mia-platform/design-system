@@ -47,6 +47,7 @@ export const defaults = {
 export const Dropdown = ({
   autoFocus,
   children,
+  header,
   footer,
   isDisabled,
   itemLayout = defaults.itemLayout,
@@ -148,18 +149,11 @@ export const Dropdown = ({
     onSearch?.(value)
   }, [onSearch])
 
-  const dropdownRender = useCallback(
-    (menu: ReactNode): ReactNode => {
-      const clonedMenu = React.cloneElement(menu as ReactElement, {
-        style: { boxShadow: 'none' },
-      })
-      const scrollableStyle = {
-        maxHeight: menuItemsMaxHeight,
-        overflow: 'auto',
-      }
-
-      const searchBox = (
-        <div style={{ padding: spacing.gap.sm }}>
+  const headerComponent = useMemo(
+    () => (
+      <div style={{ padding: spacing.gap.sm, paddingBottom: spacing.gap.xs }}>
+        {header?.top}
+        {isSearchable && (
           <BaseInput
             allowClear
             component={AntInput}
@@ -172,10 +166,36 @@ export const Dropdown = ({
                 size={ICON_SIZE}
               />
             }
+            value={searchTerm}
             onChange={handleSearchInputChange}
           />
-        </div>
-      )
+        )}
+        {header?.bottom}
+      </div>
+    ),
+    [
+      handleSearchInputChange,
+      header?.bottom,
+      header?.top,
+      isSearchable,
+      palette.action.secondary.contrastText,
+      searchPlaceholder,
+      searchTerm,
+      spacing.gap.sm,
+      spacing.gap.xs,
+    ]
+  )
+
+  const dropdownRender = useCallback(
+    (menu: ReactNode): ReactNode => {
+      const clonedMenu = React.cloneElement(menu as ReactElement, {
+        style: { boxShadow: 'none' },
+      })
+      const scrollableStyle = {
+        maxHeight: menuItemsMaxHeight,
+        overflow: 'auto',
+        borderRadius: 'inherit',
+      }
 
       let dropdownBody = clonedMenu
       if (isLoading) {
@@ -198,7 +218,7 @@ export const Dropdown = ({
       if (!hookedFooter) {
         return (
           <div className={styles.dropdownRenderWrapper}>
-            {isSearchable && searchBox}
+            {headerComponent}
             <div style={scrollableStyle}>{dropdownBody}</div>
           </div>
         )
@@ -206,7 +226,7 @@ export const Dropdown = ({
 
       return (
         <div className={styles.dropdownRenderWrapper}>
-          {isSearchable && searchBox}
+          {headerComponent}
           <div style={scrollableStyle}>{dropdownBody}</div>
           <div className={styles.footerDivider}>
             <Divider margin={spacing?.margin?.none} />
@@ -217,18 +237,14 @@ export const Dropdown = ({
     },
     [
       errorMessage,
-      handleSearchInputChange,
       hasError,
+      headerComponent,
       hookedFooter,
       isLoading,
-      isSearchable,
       itemsToRender.length,
       menuItemsMaxHeight,
       onRetry,
-      palette.action.secondary.contrastText,
-      searchPlaceholder,
       searchTerm,
-      spacing.gap.sm,
       spacing?.margin?.none,
       spacing.padding.sm,
     ]
@@ -246,12 +262,19 @@ export const Dropdown = ({
 
   const onOpenChangeInternal = useCallback(
     (open: boolean, info: { source: 'trigger' | 'menu' }) => {
+      if (!open && isSearchable && searchTerm) {
+        setSearchTerm('')
+        if (onSearch) {
+          onSearch('')
+        }
+      }
+
       if (!onOpenChange) {
         return
       }
       onOpenChange(open, { source: antdSourceMap[info.source] })
     },
-    [onOpenChange]
+    [isSearchable, onOpenChange, onSearch, searchTerm]
   )
 
   return (
