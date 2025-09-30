@@ -209,13 +209,6 @@ export const Searchable: Story = {
   },
 }
 
-const header = {
-  bottom: <div style={{ marginTop: '4px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-    <div style={{ width: '100%', height: '1px', background: '#F2F2F2' }} />
-    <div style={{ color: '#898989', fontSize: '14px' }}>Latest 20 conversations (86 total)</div>
-  </div>,
-}
-
 export const SerchPerformedByExternalComponent: Story = {
   args: {
     items: [
