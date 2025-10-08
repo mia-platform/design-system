@@ -79,6 +79,8 @@ export const Dropdown = ({
   /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
+  const [searchTerm, setSearchTerm] = useState('')
+
   const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
   const updateSelectedItems = useCallback((itemId: string) => {
     if (!persistSelection) {
@@ -93,11 +95,12 @@ export const Dropdown = ({
       const itemClickEvent: DropdownClickEvent = eventAdapter(antdEvent, itemFinderMemo)
       updateSelectedItems(itemClickEvent.id)
       onClick(itemClickEvent)
+      if (isSearchable && searchTerm) {
+        setSearchTerm('')
+      }
     },
-    [itemFinderMemo, onClick, updateSelectedItems]
+    [isSearchable, itemFinderMemo, onClick, searchTerm, updateSelectedItems]
   )
-
-  const [searchTerm, setSearchTerm] = useState('')
 
   const itemsToRender = useMemo(() => {
     if (onSearch || !searchTerm) {
@@ -151,27 +154,29 @@ export const Dropdown = ({
 
   const headerComponent = useMemo(
     () => (
-      <div style={{ padding: spacing.gap.sm, paddingBottom: spacing.gap.xs }}>
+      <>
         {header?.top}
         {isSearchable && (
-          <BaseInput
-            allowClear
-            component={AntInput}
-            isFullWidth
-            placeholder={searchPlaceholder}
-            suffix={
-              <Icon
-                color={palette.action.secondary.contrastText}
-                component={PiMagnifyingGlass}
-                size={ICON_SIZE}
-              />
-            }
-            value={searchTerm}
-            onChange={handleSearchInputChange}
-          />
+          <div style={{ padding: spacing.gap.sm, paddingBottom: spacing.gap.xs }}>
+            <BaseInput
+              allowClear
+              component={AntInput}
+              isFullWidth
+              placeholder={searchPlaceholder}
+              suffix={
+                <Icon
+                  color={palette.action.secondary.contrastText}
+                  component={PiMagnifyingGlass}
+                  size={ICON_SIZE}
+                />
+              }
+              value={searchTerm}
+              onChange={handleSearchInputChange}
+            />
+          </div>
         )}
         {header?.bottom}
-      </div>
+      </>
     ),
     [
       handleSearchInputChange,
@@ -264,9 +269,6 @@ export const Dropdown = ({
     (open: boolean, info: { source: 'trigger' | 'menu' }) => {
       if (!open && isSearchable && searchTerm) {
         setSearchTerm('')
-        if (onSearch) {
-          onSearch('')
-        }
       }
 
       if (!onOpenChange) {
@@ -274,7 +276,7 @@ export const Dropdown = ({
       }
       onOpenChange(open, { source: antdSourceMap[info.source] })
     },
-    [isSearchable, onOpenChange, onSearch, searchTerm]
+    [isSearchable, onOpenChange, searchTerm]
   )
 
   return (
