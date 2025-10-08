@@ -303,6 +303,7 @@ export const SerchPerformedByExternalComponent: Story = {
           items={filteredItems}
           searchPlaceholder={"Type 'err' for error state"}
           onClick={handleClick}
+          onOpenChange={(isOpen) => isOpen && handleSearch('')}
           onRetry={(search: string) => handleSearch(search, true)}
           onSearch={debouncedSearch}
         >
@@ -323,7 +324,7 @@ export const WithSearchAndBottomHeader: Story = {
   args: {
     isSearchable: true,
     header: {
-      bottom: <div style={{ marginTop: '4px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+      bottom: <div style={{ padding: '4px 8px 0 8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
         <div style={{ width: '100%', height: '1px', background: '#F2F2F2' }} />
         <div style={{ color: '#898989' }}>Custom bottom header</div>
       </div>,
