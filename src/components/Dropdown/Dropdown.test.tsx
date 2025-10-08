@@ -459,6 +459,77 @@ describe('Dropdown Component', () => {
       const headerBottom = await screen.findByTestId('header-bottom-id')
       expect(headerBottom).toBeInTheDocument()
     })
+
+    it('clears search when dropdown is closed and reopened', async() => {
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+        { id: 'orange', label: 'Orange' },
+      ]
+      renderDropdown({ props: { ...defaultProps, items: customItems, isSearchable: true } })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'app')
+
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.queryByText('Banana')).not.toBeInTheDocument()
+
+      // Close dropdown by clicking on the button again
+      await userEvent.click(button)
+      await waitFor(() => expect(screen.queryByRole('textbox')).not.toBeInTheDocument())
+
+      // Reopen dropdown
+      await userEvent.click(button)
+      const newSearchInput = screen.getByRole('textbox')
+
+      expect(newSearchInput).toHaveValue('')
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+      expect(screen.getByText('Orange')).toBeInTheDocument()
+    })
+
+    it('clears search when dropdown is reopened after item is selected and', async() => {
+      const onClick = jest.fn()
+      const customItems = [
+        { id: 'apple', label: 'Apple' },
+        { id: 'banana', label: 'Banana' },
+        { id: 'orange', label: 'Orange' },
+      ]
+      renderDropdown({
+        props: {
+          ...defaultProps,
+          items: customItems,
+          isSearchable: true,
+          onClick,
+        },
+      })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const searchInput = screen.getByRole('textbox')
+      await userEvent.type(searchInput, 'app')
+
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.queryByText('Banana')).not.toBeInTheDocument()
+
+      const appleItem = screen.getByRole('menuitem', { name: 'Apple' })
+      await userEvent.click(appleItem)
+      await waitFor(() => expect(onClick).toHaveBeenCalled())
+
+      // Dropdown should close after selection
+      await waitFor(() => expect(screen.queryByRole('textbox')).not.toBeInTheDocument())
+
+      // Reopen dropdown
+      await userEvent.click(button)
+      const newSearchInput = screen.getByRole('textbox')
+
+      expect(newSearchInput).toHaveValue('')
+      expect(screen.getByText('Apple')).toBeInTheDocument()
+      expect(screen.getByText('Banana')).toBeInTheDocument()
+      expect(screen.getByText('Orange')).toBeInTheDocument()
+    })
   })
 
   describe('with footer', () => {
