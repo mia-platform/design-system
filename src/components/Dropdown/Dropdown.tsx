@@ -68,6 +68,9 @@ export const Dropdown = ({
   hasError = false,
   errorMessage = 'An error occurred',
   onRetry,
+  enableInfiniteScrolling,
+  onScrollReachBottom, // Add this prop
+  scrollThreshold = 50, // Optional: distance from bottom to trigger (in pixels)
 }: DropdownProps): ReactElement => {
   const { spacing, palette } = useTheme()
 
@@ -191,6 +194,31 @@ export const Dropdown = ({
     ]
   )
 
+  const prevScrollTopRef = React.useRef<number>(0)
+  const hasTriggeredRef = React.useRef<boolean>(false)
+
+  const handleScroll = useCallback((event: React.UIEvent<HTMLDivElement>) => {
+    if (!onScrollReachBottom) { return }
+
+    const { scrollTop, scrollHeight, clientHeight } = event.currentTarget
+    const distanceFromBottom = scrollHeight - scrollTop - clientHeight
+    const isScrollingDown = scrollTop > prevScrollTopRef.current
+
+    prevScrollTopRef.current = scrollTop
+
+    if (isScrollingDown && distanceFromBottom <= scrollThreshold) {
+      if (!hasTriggeredRef.current) {
+        hasTriggeredRef.current = true
+        onScrollReachBottom()
+      }
+    }
+  }, [onScrollReachBottom, scrollThreshold])
+
+  // Reset the trigger flag when items change (new items received)
+  React.useEffect(() => {
+    hasTriggeredRef.current = false
+  }, [items])
+
   const dropdownRender = useCallback(
     (menu: ReactNode): ReactNode => {
       const clonedMenu = React.cloneElement(menu as ReactElement, {
@@ -224,7 +252,9 @@ export const Dropdown = ({
         return (
           <div className={styles.dropdownRenderWrapper}>
             {headerComponent}
-            <div style={scrollableStyle}>{dropdownBody}</div>
+            <div style={scrollableStyle} onScroll={handleScroll}>
+              {dropdownBody}
+            </div>
           </div>
         )
       }
@@ -232,7 +262,9 @@ export const Dropdown = ({
       return (
         <div className={styles.dropdownRenderWrapper}>
           {headerComponent}
-          <div style={scrollableStyle}>{dropdownBody}</div>
+          <div style={scrollableStyle} onScroll={handleScroll}>
+            {dropdownBody}
+          </div>
           <div className={styles.footerDivider}>
             <Divider margin={spacing?.margin?.none} />
           </div>
@@ -242,6 +274,7 @@ export const Dropdown = ({
     },
     [
       errorMessage,
+      handleScroll,
       hasError,
       headerComponent,
       hookedFooter,

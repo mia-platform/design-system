@@ -320,4 +320,10 @@ export type DropdownProps = {
    * @param query - The last search query string, if available.
    */
   onRetry?: (query: string) => void
+
+  enableInfiniteScrolling?: boolean
+
+  onScrollReachBottom?: () => void
+
+  scrollThreshold?: number
 };

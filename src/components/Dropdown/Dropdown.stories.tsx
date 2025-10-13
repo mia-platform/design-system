@@ -22,7 +22,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { debounce } from 'lodash-es'
 
-import { DropdownClickEvent, DropdownProps } from './props'
+import { DropdownClickEvent, DropdownItem, DropdownProps } from './props'
 import { Button } from '../Button'
 import { Dropdown } from '.'
 import { Icon } from '../Icon'
@@ -305,6 +305,76 @@ export const SerchPerformedByExternalComponent: Story = {
           onClick={handleClick}
           onOpenChange={(isOpen) => isOpen && handleSearch('')}
           onRetry={(search: string) => handleSearch(search, true)}
+          onSearch={debouncedSearch}
+        >
+          <Button>{'Click me'}</Button>
+        </Dropdown>
+      </div>
+    )
+  },
+}
+
+const generateItems = (search: string, page: number): DropdownItem[] => {
+  return Array.from({ length: 10 }, (_, i) => {
+    const elNumber = ((page - 1) * 10) + i + 1
+    const id = `conversation-${elNumber}`
+    return {
+      id,
+      label: `Conversation ${search} #${elNumber}`,
+    }
+  })
+}
+
+export const WithInfiniteScrolling: Story = {
+
+  // eslint-disable-next-line func-name-matching
+  render: function Render() {
+    const [filteredItems, setFilteredItems] = useState<DropdownItem[]>([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [currentPage, setCurrentPage] = useState(1)
+
+    const handleClick = useCallback((ev: DropdownClickEvent) => {
+      action('onClick')(ev)
+    }, [])
+
+    const fetchItems = useCallback((search: string, page: number): void => {
+      setIsLoading(true)
+      setTimeout(() => {
+        setFilteredItems(generateItems(search, page))
+        setIsLoading(false)
+      }, 300)
+    }, [])
+
+    const handleSearch = useCallback((search:string) => {
+      fetchItems(search, currentPage)
+      action('onSearch')(search)
+    }, [currentPage, fetchItems])
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const debouncedSearch = useCallback(debounce((value) => handleSearch(value), 300)
+      , [handleSearch])
+
+    useEffect(() => {
+      return () => {
+        debouncedSearch?.cancel()
+      }
+    }, [debouncedSearch])
+
+    const handleScrollReachBottom = (): void => {
+      console.log('onScrollReachBottom')
+      action('onScrollReachBottom')()
+    }
+
+    return (
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Dropdown
+          enableInfiniteScrolling
+          isLoading={isLoading}
+          isSearchable
+          items={filteredItems}
+          onClick={handleClick}
+          onOpenChange={(isOpen) => isOpen && handleSearch('')}
+          onScrollReachBottom={handleScrollReachBottom}
           onSearch={debouncedSearch}
         >
           <Button>{'Click me'}</Button>
