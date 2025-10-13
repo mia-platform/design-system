@@ -19,7 +19,7 @@
 /* eslint-disable max-lines */
 
 import { DropdownItem, DropdownProps, DropdownTrigger, OpenChangeInfoSource } from './props'
-import { RenderResult, render, screen, userEvent, waitFor } from '../../test-utils'
+import { RenderResult, act, fireEvent, render, screen, userEvent, waitFor } from '../../test-utils'
 import { Button } from '../Button'
 import { Dropdown } from './Dropdown'
 
@@ -770,6 +770,180 @@ describe('Dropdown Component', () => {
       screen.logTestingPlaygroundURL()
 
       expect(screen.getByRole('img', { name: 'no data' })).toBeInTheDocument()
+    })
+  })
+
+  describe('infinite scrolling', () => {
+    const infiniteScrollItems: DropdownItem[] = Array.from({ length: 20 }, (_, i) => ({
+      id: `item-${i + 1}`,
+      label: `Item ${i + 1}`,
+    }))
+
+    const defaultInfiniteScrollProps: DropdownProps = {
+      ...defaultProps,
+      items: infiniteScrollItems,
+      isInfiniteScrollEnabled: true,
+      menuItemsMaxHeight: 200,
+    }
+
+    const mockScrollProperties = (element: HTMLElement, scrollTop: number, scrollHeight = 400, clientHeight = 200) => {
+      Object.defineProperty(element, 'scrollTop', {
+        value: scrollTop,
+        configurable: true,
+        writable: true,
+      })
+      Object.defineProperty(element, 'scrollHeight', {
+        value: scrollHeight,
+        configurable: true,
+      })
+      Object.defineProperty(element, 'clientHeight', {
+        value: clientHeight,
+        configurable: true,
+      })
+    }
+
+    test('calls onScrollEndReached when scrolling near bottom', async() => {
+      const onScrollEndReached = jest.fn()
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onScrollEndReached,
+        scrollThreshold: 32,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      mockScrollProperties(scrollContainer, 360, 400, 200)
+
+      act(() => {
+        fireEvent.scroll(scrollContainer)
+      })
+
+      await waitFor(() => expect(onScrollEndReached).toHaveBeenCalledTimes(1))
+    })
+
+    test('does not call onScrollEndReached when scrolling up', async() => {
+      const onScrollEndReached = jest.fn()
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onScrollEndReached,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 100)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 50)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      expect(onScrollEndReached).not.toHaveBeenCalled()
+    })
+
+    test('does not call onScrollEndReached multiple times for same scroll position', async() => {
+      const onScrollEndReached = jest.fn()
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onScrollEndReached,
+        scrollThreshold: 32,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 360)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 365)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      await waitFor(() => expect(onScrollEndReached).toHaveBeenCalledTimes(1))
+    })
+
+    test('appends incremental items to existing items', async() => {
+      const incrementalItems: DropdownItem[] = [
+        { id: 'additional-1', label: 'Additional Item 1' },
+        { id: 'additional-2', label: 'Additional Item 2' },
+      ]
+
+      const props = {
+        ...defaultInfiniteScrollProps,
+        incrementalItems,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      expect(screen.getByText('Item 1')).toBeInTheDocument()
+      expect(screen.getByText('Item 20')).toBeInTheDocument()
+
+      expect(screen.getByText('Additional Item 1')).toBeInTheDocument()
+      expect(screen.getByText('Additional Item 2')).toBeInTheDocument()
+    })
+
+    test('respects custom scroll threshold', async() => {
+      const onScrollEndReached = jest.fn()
+      const customThreshold = 50
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onScrollEndReached,
+        scrollThreshold: customThreshold,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 350, 400, 200)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      await waitFor(() => expect(onScrollEndReached).toHaveBeenCalledTimes(1))
+    })
+
+    test('does not trigger onScrollEndReached when infinite scrolling is disabled', async() => {
+      const onScrollEndReached = jest.fn()
+      const props = {
+        ...defaultProps,
+        items: infiniteScrollItems,
+        isInfiniteScrollEnabled: false,
+        onScrollEndReached,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 360)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      expect(onScrollEndReached).not.toHaveBeenCalled()
     })
   })
 })
