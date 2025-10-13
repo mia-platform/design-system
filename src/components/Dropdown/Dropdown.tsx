@@ -17,7 +17,7 @@
  */
 
 import { Input as AntInput, Dropdown as AntdDropdown, Skeleton } from 'antd'
-import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
+import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { PiMagnifyingGlass } from 'react-icons/pi'
 import classNames from 'classnames'
 
@@ -68,26 +68,30 @@ export const Dropdown = ({
   hasError = false,
   errorMessage = 'An error occurred',
   onRetry,
-  enableInfiniteScrolling,
-  onScrollReachBottom,
-  isLoadingAdditionalItems = false,
-  additionalItems,
+  isInfiniteScrollEnabled: enableInfiniteScrolling,
+  onScrollEndReached,
+  isLoadingIncrementalItems = false,
+  incrementalItems,
+  scrollThreshold = 32,
 }: DropdownProps): ReactElement => {
   const { spacing, palette } = useTheme()
+
+  const [searchTerm, setSearchTerm] = useState('')
+  const [itemsToRender, setItemsToRender] = useState<DropdownItem[]>([])
+  const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
+  const [isScrollable, setIsScrollable] = useState(false)
+
+  const prevScrollTopRef = useRef<number>(0)
+  const scrollEndWasReached = useRef<boolean>(false)
 
   const uniqueOverlayClassName = useMemo(() => `dropdown-overlay-${crypto.randomUUID()}`, [])
   const uniqueDropdownClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
-  const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
-
   /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
-  const [searchTerm, setSearchTerm] = useState('')
+  const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
 
-  const [itemsToRender, setItemsToRender] = useState<DropdownItem[]>([])
-
-  const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
   const updateSelectedItems = useCallback((itemId: string) => {
     if (!persistSelection) {
       return
@@ -127,12 +131,14 @@ export const Dropdown = ({
             ? filterRecursively(item.children)
             : undefined,
         }))
-        .filter((item) => (
-          (typeof item.label !== 'string' && typeof item.label !== 'number')
-      || item.label?.toString().toLowerCase()
-        .includes(lower)
-      || (item.children && item.children.length > 0)
-        ))
+        .filter(
+          (item) =>
+            (typeof item.label !== 'string'
+              && typeof item.label !== 'number')
+            || item.label?.toString().toLowerCase()
+              .includes(lower)
+            || (item.children && item.children.length > 0)
+        )
     }
 
     const filteredItems = filterRecursively(items)
@@ -140,14 +146,16 @@ export const Dropdown = ({
   }, [items, onSearch, searchTerm, enableInfiniteScrolling])
 
   useEffect(() => {
-    setItemsToRender(items)
-  }, [items])
+    if (onSearch || enableInfiniteScrolling) {
+      setItemsToRender(items)
+    }
+  }, [enableInfiniteScrolling, items, onSearch])
 
   useEffect(() => {
-    if (additionalItems && additionalItems.length > 0) {
-      setItemsToRender(currItems => [...currItems, ...additionalItems])
+    if (enableInfiniteScrolling && incrementalItems && incrementalItems.length > 0) {
+      setItemsToRender(currItems => [...currItems, ...incrementalItems])
     }
-  }, [additionalItems])
+  }, [incrementalItems, enableInfiniteScrolling])
 
   const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(itemsToRender, itemLayout), [itemsToRender, itemLayout])
 
@@ -212,21 +220,13 @@ export const Dropdown = ({
     ]
   )
 
-  const prevScrollTopRef = React.useRef<number>(0)
-  const hasTriggeredRef = React.useRef<boolean>(false)
-
-  const scrollContainerRef = React.useRef<HTMLDivElement>(null)
-
-  // Reset the trigger flag when items change (new items received)
-  React.useEffect(() => {
-    hasTriggeredRef.current = false
-  }, [additionalItems])
+  useEffect(() => {
+    scrollEndWasReached.current = false
+  }, [incrementalItems])
 
   const handleScroll = useCallback((event: React.UIEvent<HTMLDivElement>) => {
-    if (!onScrollReachBottom) { return }
+    if (!onScrollEndReached) { return }
 
-    // distance from bottom to trigger (in pixels)
-    const scrollThreshold = 32
     const { scrollTop, scrollHeight, clientHeight } = event.currentTarget
 
     const distanceFromBottom = scrollHeight - scrollTop - clientHeight
@@ -235,12 +235,32 @@ export const Dropdown = ({
     prevScrollTopRef.current = scrollTop
 
     if (isScrollingDown && distanceFromBottom <= scrollThreshold) {
-      if (!hasTriggeredRef.current) {
-        hasTriggeredRef.current = true
-        onScrollReachBottom()
+      if (!scrollEndWasReached.current) {
+        scrollEndWasReached.current = true
+        onScrollEndReached()
       }
     }
-  }, [onScrollReachBottom])
+  }, [onScrollEndReached, scrollThreshold])
+
+  const scrollContainerRef = useCallback((node: HTMLDivElement | null) => {
+    if (node) {
+      const checkScrollable = (): void => {
+        const hasScroll = node.scrollHeight > node.clientHeight
+        setIsScrollable(hasScroll)
+      }
+
+      checkScrollable()
+
+      const observer = new MutationObserver(checkScrollable)
+      observer.observe(node, {
+        childList: true,
+        subtree: true,
+        attributes: false,
+      })
+
+      return () => observer.disconnect()
+    }
+  }, [])
 
   const dropdownRender = useCallback(
     (menu: ReactNode): ReactNode => {
@@ -252,10 +272,6 @@ export const Dropdown = ({
         overflow: 'auto',
         borderRadius: 'inherit',
       }
-
-      const isScrollVisible = scrollContainerRef.current
-        && scrollContainerRef.current.scrollHeight
-          > scrollContainerRef.current.clientHeight
 
       let dropdownBody = clonedMenu
       if (isLoading) {
@@ -273,16 +289,12 @@ export const Dropdown = ({
         )
       } else if (itemsToRender.length === 0) {
         dropdownBody = <EmptyState />
-      } else if (
-        enableInfiniteScrolling
-        && itemsToRender.length > 0
-        && isScrollVisible
-      ) {
+      } else if (enableInfiniteScrolling && isScrollable) {
         dropdownBody = (
           <>
             {clonedMenu}
             <div style={{ height: '32px', padding: '4px 8px 16px 8px' }}>
-              {isLoadingAdditionalItems && (
+              {isLoadingIncrementalItems && (
                 <Skeleton
                   active
                   paragraph={{ rows: 1, width: '100%' }}
@@ -298,7 +310,11 @@ export const Dropdown = ({
         return (
           <div className={styles.dropdownRenderWrapper}>
             {headerComponent}
-            <div ref={scrollContainerRef} style={scrollableStyle} onScroll={handleScroll}>
+            <div
+              ref={scrollContainerRef}
+              style={scrollableStyle}
+              onScroll={handleScroll}
+            >
               {dropdownBody}
             </div>
           </div>
@@ -308,7 +324,11 @@ export const Dropdown = ({
       return (
         <div className={styles.dropdownRenderWrapper}>
           {headerComponent}
-          <div ref={scrollContainerRef} style={scrollableStyle} onScroll={handleScroll}>
+          <div
+            ref={scrollContainerRef}
+            style={scrollableStyle}
+            onScroll={handleScroll}
+          >
             {dropdownBody}
           </div>
           <div className={styles.footerDivider}>
@@ -324,15 +344,17 @@ export const Dropdown = ({
       hasError,
       itemsToRender.length,
       enableInfiniteScrolling,
+      isScrollable,
       hookedFooter,
       headerComponent,
+      scrollContainerRef,
       handleScroll,
       spacing?.margin?.none,
       spacing.padding.sm,
       errorMessage,
       onRetry,
       searchTerm,
-      isLoadingAdditionalItems,
+      isLoadingIncrementalItems,
     ]
   )
 

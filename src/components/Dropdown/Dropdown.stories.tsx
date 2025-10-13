@@ -75,7 +75,7 @@ const defaults: Partial<DropdownProps> = {
   onClick: action('on click'),
   onOpenChange: action('on open change'),
   onSearch: undefined,
-  onScrollReachBottom: undefined,
+  onScrollEndReached: undefined,
 }
 
 const meta = {
@@ -316,9 +316,10 @@ export const SerchPerformedByExternalComponent: Story = {
 }
 
 const generateItems = (search: string, page: number): DropdownItem[] => {
+  const ELM_NUMBER = 10
   let filteredItems: DropdownItem[] = []
   if (page === 1) {
-    filteredItems = Array.from({ length: 10 }, (_, i) => {
+    filteredItems = Array.from({ length: ELM_NUMBER }, (_, i) => {
       const elNumber = i + 1
       const id = `conversation-${elNumber}`
       return {
@@ -330,8 +331,8 @@ const generateItems = (search: string, page: number): DropdownItem[] => {
 
   return [
     ...filteredItems,
-    ...Array.from({ length: 10 - filteredItems.length }, (_, i) => {
-      const elNumber = ((page - 1) * 10) + i + 1
+    ...Array.from({ length: ELM_NUMBER - filteredItems.length }, (_, i) => {
+      const elNumber = ((page - 1) * ELM_NUMBER) + i + 1
       const id = `conversation-${elNumber}`
       return {
         id,
@@ -341,15 +342,14 @@ const generateItems = (search: string, page: number): DropdownItem[] => {
 }
 
 export const WithInfiniteScrolling: Story = {
-
   // eslint-disable-next-line func-name-matching
   render: function Render() {
     const [items, setItems] = useState<DropdownItem[]>([])
     const [isLoading, setIsLoading] = useState(false)
-    const [currentPage, setCurrentPage] = useState(1)
     const [additionalItems, setAdditionalItems] = useState<DropdownItem[]>([])
     const [isLoadingAdditionalItems, setIsLoadingAdditionalItems] = useState(false)
     const currentSearch = useRef('')
+    const currentPage = useRef(1)
 
     const handleClick = useCallback((ev: DropdownClickEvent) => {
       action('onClick')(ev)
@@ -361,29 +361,28 @@ export const WithInfiniteScrolling: Story = {
         setTimeout(() => {
           setAdditionalItems(generateItems(search, page))
           setIsLoadingAdditionalItems(false)
-        }, 1000)
+        }, 500)
       } else {
         setIsLoading(true)
         setTimeout(() => {
           setItems(generateItems(search, page))
           setIsLoading(false)
-        }, 1000)
+        }, 500)
       }
     }, [])
 
     const handleSearch = useCallback((search:string) => {
       currentSearch.current = search
-      if (currentPage === 1) {
-        fetchItems(search, currentPage)
-      } else {
-        setCurrentPage(1)
+      if (currentPage.current !== 1) {
+        currentPage.current = 1
       }
+      fetchItems(currentSearch.current, currentPage.current)
       action('onSearch')(search)
-    }, [currentPage, fetchItems])
+    }, [fetchItems])
 
     useEffect(() => {
-      fetchItems(currentSearch.current, currentPage)
-    }, [currentPage, currentSearch, fetchItems])
+      fetchItems(currentSearch.current, currentPage.current)
+    }, [currentPage, fetchItems])
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedSearch = useCallback(debounce((value) => handleSearch(value), 300)
@@ -397,21 +396,22 @@ export const WithInfiniteScrolling: Story = {
 
     const handleScrollReachBottom = (): void => {
       action('onScrollReachBottom')()
-      setCurrentPage(prevPage => prevPage + 1)
+      currentPage.current += 1
+      fetchItems(currentSearch.current, currentPage.current)
     }
 
     return (
       <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Dropdown
-          additionalItems={additionalItems}
-          enableInfiniteScrolling
+          incrementalItems={additionalItems}
+          isInfiniteScrollEnabled
           isLoading={isLoading}
-          isLoadingAdditionalItems={isLoadingAdditionalItems}
+          isLoadingIncrementalItems={isLoadingAdditionalItems}
           isSearchable
           items={items}
           onClick={handleClick}
           onOpenChange={(isOpen) => isOpen && handleSearch('')}
-          onScrollReachBottom={handleScrollReachBottom}
+          onScrollEndReached={handleScrollReachBottom}
           onSearch={debouncedSearch}
         >
           <Button>{'Click me'}</Button>
