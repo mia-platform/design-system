@@ -325,5 +325,7 @@ export type DropdownProps = {
 
   onScrollReachBottom?: () => void
 
-  scrollThreshold?: number
+  isLoadingAdditionalItems?: boolean
+
+  additionalItems?: DropdownItem[]
 };

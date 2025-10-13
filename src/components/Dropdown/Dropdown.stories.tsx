@@ -18,7 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 import { PiAcorn, PiNut, PiWarning } from 'react-icons/pi'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { debounce } from 'lodash-es'
 
@@ -75,6 +75,7 @@ const defaults: Partial<DropdownProps> = {
   onClick: action('on click'),
   onOpenChange: action('on open change'),
   onSearch: undefined,
+  onScrollReachBottom: undefined,
 }
 
 const meta = {
@@ -315,40 +316,74 @@ export const SerchPerformedByExternalComponent: Story = {
 }
 
 const generateItems = (search: string, page: number): DropdownItem[] => {
-  return Array.from({ length: 10 }, (_, i) => {
-    const elNumber = ((page - 1) * 10) + i + 1
-    const id = `conversation-${elNumber}`
-    return {
-      id,
-      label: `Conversation ${search} #${elNumber}`,
-    }
-  })
+  let filteredItems: DropdownItem[] = []
+  if (page === 1) {
+    filteredItems = Array.from({ length: 10 }, (_, i) => {
+      const elNumber = i + 1
+      const id = `conversation-${elNumber}`
+      return {
+        id,
+        label: `Conversation #${elNumber}`,
+      }
+    }).filter(el => !search || el.label.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+  }
+
+  return [
+    ...filteredItems,
+    ...Array.from({ length: 10 - filteredItems.length }, (_, i) => {
+      const elNumber = ((page - 1) * 10) + i + 1
+      const id = `conversation-${elNumber}`
+      return {
+        id,
+        label: `Conversation ${search} #${elNumber}`,
+      }
+    })]
 }
 
 export const WithInfiniteScrolling: Story = {
 
   // eslint-disable-next-line func-name-matching
   render: function Render() {
-    const [filteredItems, setFilteredItems] = useState<DropdownItem[]>([])
+    const [items, setItems] = useState<DropdownItem[]>([])
     const [isLoading, setIsLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
+    const [additionalItems, setAdditionalItems] = useState<DropdownItem[]>([])
+    const [isLoadingAdditionalItems, setIsLoadingAdditionalItems] = useState(false)
+    const currentSearch = useRef('')
 
     const handleClick = useCallback((ev: DropdownClickEvent) => {
       action('onClick')(ev)
     }, [])
 
     const fetchItems = useCallback((search: string, page: number): void => {
-      setIsLoading(true)
-      setTimeout(() => {
-        setFilteredItems(generateItems(search, page))
-        setIsLoading(false)
-      }, 300)
+      if (page > 1) {
+        setIsLoadingAdditionalItems(true)
+        setTimeout(() => {
+          setAdditionalItems(generateItems(search, page))
+          setIsLoadingAdditionalItems(false)
+        }, 1000)
+      } else {
+        setIsLoading(true)
+        setTimeout(() => {
+          setItems(generateItems(search, page))
+          setIsLoading(false)
+        }, 1000)
+      }
     }, [])
 
     const handleSearch = useCallback((search:string) => {
-      fetchItems(search, currentPage)
+      currentSearch.current = search
+      if (currentPage === 1) {
+        fetchItems(search, currentPage)
+      } else {
+        setCurrentPage(1)
+      }
       action('onSearch')(search)
     }, [currentPage, fetchItems])
+
+    useEffect(() => {
+      fetchItems(currentSearch.current, currentPage)
+    }, [currentPage, currentSearch, fetchItems])
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedSearch = useCallback(debounce((value) => handleSearch(value), 300)
@@ -361,17 +396,19 @@ export const WithInfiniteScrolling: Story = {
     }, [debouncedSearch])
 
     const handleScrollReachBottom = (): void => {
-      console.log('onScrollReachBottom')
       action('onScrollReachBottom')()
+      setCurrentPage(prevPage => prevPage + 1)
     }
 
     return (
       <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Dropdown
+          additionalItems={additionalItems}
           enableInfiniteScrolling
           isLoading={isLoading}
+          isLoadingAdditionalItems={isLoadingAdditionalItems}
           isSearchable
-          items={filteredItems}
+          items={items}
           onClick={handleClick}
           onOpenChange={(isOpen) => isOpen && handleSearch('')}
           onScrollReachBottom={handleScrollReachBottom}
@@ -381,12 +418,6 @@ export const WithInfiniteScrolling: Story = {
         </Dropdown>
       </div>
     )
-  },
-}
-
-export const WithHeader: Story = {
-  args: {
-    header: { top: <div>custom header</div> },
   },
 }
 

@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Input as AntInput, Dropdown as AntdDropdown } from 'antd'
-import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
+import { Input as AntInput, Dropdown as AntdDropdown, Skeleton } from 'antd'
+import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
 import { PiMagnifyingGlass } from 'react-icons/pi'
 import classNames from 'classnames'
 
@@ -69,8 +69,9 @@ export const Dropdown = ({
   errorMessage = 'An error occurred',
   onRetry,
   enableInfiniteScrolling,
-  onScrollReachBottom, // Add this prop
-  scrollThreshold = 50, // Optional: distance from bottom to trigger (in pixels)
+  onScrollReachBottom,
+  isLoadingAdditionalItems = false,
+  additionalItems,
 }: DropdownProps): ReactElement => {
   const { spacing, palette } = useTheme()
 
@@ -83,6 +84,8 @@ export const Dropdown = ({
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
   const [searchTerm, setSearchTerm] = useState('')
+
+  const [itemsToRender, setItemsToRender] = useState<DropdownItem[]>([])
 
   const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
   const updateSelectedItems = useCallback((itemId: string) => {
@@ -105,9 +108,14 @@ export const Dropdown = ({
     [isSearchable, itemFinderMemo, onClick, searchTerm, updateSelectedItems]
   )
 
-  const itemsToRender = useMemo(() => {
-    if (onSearch || !searchTerm) {
-      return items
+  useEffect(() => {
+    if (Boolean(onSearch) || enableInfiniteScrolling) {
+      return
+    }
+
+    if (!searchTerm) {
+      setItemsToRender(items)
+      return
     }
 
     const lower = searchTerm.toLowerCase()
@@ -121,15 +129,25 @@ export const Dropdown = ({
         }))
         .filter((item) => (
           (typeof item.label !== 'string' && typeof item.label !== 'number')
-            || item.label?.toString().toLowerCase()
-              .includes(lower)
-            || (item.children && item.children.length > 0)
+      || item.label?.toString().toLowerCase()
+        .includes(lower)
+      || (item.children && item.children.length > 0)
         ))
     }
 
     const filteredItems = filterRecursively(items)
-    return filteredItems
-  }, [items, onSearch, searchTerm])
+    setItemsToRender(filteredItems)
+  }, [items, onSearch, searchTerm, enableInfiniteScrolling])
+
+  useEffect(() => {
+    setItemsToRender(items)
+  }, [items])
+
+  useEffect(() => {
+    if (additionalItems && additionalItems.length > 0) {
+      setItemsToRender(currItems => [...currItems, ...additionalItems])
+    }
+  }, [additionalItems])
 
   const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(itemsToRender, itemLayout), [itemsToRender, itemLayout])
 
@@ -197,10 +215,20 @@ export const Dropdown = ({
   const prevScrollTopRef = React.useRef<number>(0)
   const hasTriggeredRef = React.useRef<boolean>(false)
 
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null)
+
+  // Reset the trigger flag when items change (new items received)
+  React.useEffect(() => {
+    hasTriggeredRef.current = false
+  }, [additionalItems])
+
   const handleScroll = useCallback((event: React.UIEvent<HTMLDivElement>) => {
     if (!onScrollReachBottom) { return }
 
+    // distance from bottom to trigger (in pixels)
+    const scrollThreshold = 32
     const { scrollTop, scrollHeight, clientHeight } = event.currentTarget
+
     const distanceFromBottom = scrollHeight - scrollTop - clientHeight
     const isScrollingDown = scrollTop > prevScrollTopRef.current
 
@@ -212,12 +240,7 @@ export const Dropdown = ({
         onScrollReachBottom()
       }
     }
-  }, [onScrollReachBottom, scrollThreshold])
-
-  // Reset the trigger flag when items change (new items received)
-  React.useEffect(() => {
-    hasTriggeredRef.current = false
-  }, [items])
+  }, [onScrollReachBottom])
 
   const dropdownRender = useCallback(
     (menu: ReactNode): ReactNode => {
@@ -229,6 +252,10 @@ export const Dropdown = ({
         overflow: 'auto',
         borderRadius: 'inherit',
       }
+
+      const isScrollVisible = scrollContainerRef.current
+        && scrollContainerRef.current.scrollHeight
+          > scrollContainerRef.current.clientHeight
 
       let dropdownBody = clonedMenu
       if (isLoading) {
@@ -246,13 +273,32 @@ export const Dropdown = ({
         )
       } else if (itemsToRender.length === 0) {
         dropdownBody = <EmptyState />
+      } else if (
+        enableInfiniteScrolling
+        && itemsToRender.length > 0
+        && isScrollVisible
+      ) {
+        dropdownBody = (
+          <>
+            {clonedMenu}
+            <div style={{ height: '32px', padding: '4px 8px 16px 8px' }}>
+              {isLoadingAdditionalItems && (
+                <Skeleton
+                  active
+                  paragraph={{ rows: 1, width: '100%' }}
+                  title={false}
+                />
+              )}
+            </div>
+          </>
+        )
       }
 
       if (!hookedFooter) {
         return (
           <div className={styles.dropdownRenderWrapper}>
             {headerComponent}
-            <div style={scrollableStyle} onScroll={handleScroll}>
+            <div ref={scrollContainerRef} style={scrollableStyle} onScroll={handleScroll}>
               {dropdownBody}
             </div>
           </div>
@@ -262,7 +308,7 @@ export const Dropdown = ({
       return (
         <div className={styles.dropdownRenderWrapper}>
           {headerComponent}
-          <div style={scrollableStyle} onScroll={handleScroll}>
+          <div ref={scrollContainerRef} style={scrollableStyle} onScroll={handleScroll}>
             {dropdownBody}
           </div>
           <div className={styles.footerDivider}>
@@ -273,18 +319,20 @@ export const Dropdown = ({
       )
     },
     [
-      errorMessage,
-      handleScroll,
-      hasError,
-      headerComponent,
-      hookedFooter,
-      isLoading,
-      itemsToRender.length,
       menuItemsMaxHeight,
-      onRetry,
-      searchTerm,
+      isLoading,
+      hasError,
+      itemsToRender.length,
+      enableInfiniteScrolling,
+      hookedFooter,
+      headerComponent,
+      handleScroll,
       spacing?.margin?.none,
       spacing.padding.sm,
+      errorMessage,
+      onRetry,
+      searchTerm,
+      isLoadingAdditionalItems,
     ]
   )
 
