@@ -18,11 +18,11 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 import { PiAcorn, PiNut, PiWarning } from 'react-icons/pi'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { debounce } from 'lodash-es'
 
-import { DropdownClickEvent, DropdownProps } from './props'
+import { DropdownClickEvent, DropdownItem, DropdownProps } from './props'
 import { Button } from '../Button'
 import { Dropdown } from '.'
 import { Icon } from '../Icon'
@@ -75,6 +75,7 @@ const defaults: Partial<DropdownProps> = {
   onClick: action('on click'),
   onOpenChange: action('on open change'),
   onSearch: undefined,
+  onLoadMoreItems: undefined,
 }
 
 const meta = {
@@ -314,9 +315,109 @@ export const SerchPerformedByExternalComponent: Story = {
   },
 }
 
-export const WithHeader: Story = {
-  args: {
-    header: { top: <div>custom header</div> },
+const generateItems = (search: string, page: number): DropdownItem[] => {
+  const ELM_NUMBER = 10
+  let filteredItems: DropdownItem[] = []
+  if (page === 1) {
+    filteredItems = Array.from({ length: ELM_NUMBER }, (_, i) => {
+      const elNumber = i + 1
+      const id = `conversation-${elNumber}`
+      return {
+        id,
+        label: `Conversation #${elNumber}`,
+      }
+    }).filter(el => !search || el.label.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+  }
+
+  return [
+    ...filteredItems,
+    ...Array.from({ length: ELM_NUMBER - filteredItems.length }, (_, i) => {
+      const elNumber = ((page - 1) * ELM_NUMBER) + i + 1
+      const id = `conversation-${elNumber}`
+      return {
+        id,
+        label: `Conversation ${search} #${elNumber}`,
+      }
+    })]
+}
+
+export const WithInfiniteScrolling: Story = {
+  // eslint-disable-next-line func-name-matching
+  render: function Render() {
+    const [items, setItems] = useState<DropdownItem[]>([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [isLoadingAdditionalItems, setIsLoadingAdditionalItems] = useState(false)
+    const currentSearch = useRef('')
+    const currentPage = useRef(1)
+
+    const handleClick = useCallback((ev: DropdownClickEvent) => {
+      action('onClick')(ev)
+    }, [])
+
+    const fetchItems = useCallback((search: string, page: number): void => {
+      if (page > 1) {
+        setIsLoadingAdditionalItems(true)
+      } else {
+        setIsLoading(true)
+      }
+      setTimeout(() => {
+        setIsLoadingAdditionalItems(false)
+        setIsLoading(false)
+        if (page > 1) {
+          setItems(prevItems => [...prevItems, ...generateItems(search, page)])
+        } else {
+          setItems(generateItems(search, page))
+        }
+        setIsLoading(false)
+      }, 500)
+    }, [])
+
+    const handleSearch = useCallback((search:string) => {
+      currentSearch.current = search
+      if (currentPage.current !== 1) {
+        currentPage.current = 1
+      }
+      fetchItems(currentSearch.current, currentPage.current)
+      action('onSearch')(search)
+    }, [fetchItems])
+
+    useEffect(() => {
+      fetchItems(currentSearch.current, currentPage.current)
+    }, [currentPage, fetchItems])
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const debouncedSearch = useCallback(debounce((value) => handleSearch(value), 300)
+      , [handleSearch])
+
+    useEffect(() => {
+      return () => {
+        debouncedSearch?.cancel()
+      }
+    }, [debouncedSearch])
+
+    const handleScrollReachBottom = (): void => {
+      action('onScrollReachBottom')()
+      currentPage.current += 1
+      fetchItems(currentSearch.current, currentPage.current)
+    }
+
+    return (
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Dropdown
+          isInfiniteScrollEnabled
+          isLoading={isLoading}
+          isLoadingMoreItems={isLoadingAdditionalItems}
+          isSearchable
+          items={items}
+          onClick={handleClick}
+          onLoadMoreItems={handleScrollReachBottom}
+          onOpenChange={(isOpen) => isOpen && handleSearch('')}
+          onSearch={debouncedSearch}
+        >
+          <Button>{'Click me'}</Button>
+        </Dropdown>
+      </div>
+    )
   },
 }
 

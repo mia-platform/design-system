@@ -19,7 +19,7 @@
 /* eslint-disable max-lines */
 
 import { DropdownItem, DropdownProps, DropdownTrigger, OpenChangeInfoSource } from './props'
-import { RenderResult, render, screen, userEvent, waitFor } from '../../test-utils'
+import { RenderResult, act, fireEvent, render, screen, userEvent, waitFor } from '../../test-utils'
 import { Button } from '../Button'
 import { Dropdown } from './Dropdown'
 
@@ -770,6 +770,189 @@ describe('Dropdown Component', () => {
       screen.logTestingPlaygroundURL()
 
       expect(screen.getByRole('img', { name: 'no data' })).toBeInTheDocument()
+    })
+  })
+
+  describe('infinite scrolling', () => {
+    const infiniteScrollItems: DropdownItem[] = Array.from({ length: 10 }, (_, i) => ({
+      id: `item-${i + 1}`,
+      label: `Item ${i + 1}`,
+    }))
+
+    const defaultInfiniteScrollProps: DropdownProps = {
+      ...defaultProps,
+      items: infiniteScrollItems,
+      isInfiniteScrollEnabled: true,
+      menuItemsMaxHeight: 200,
+    }
+
+    afterEach(() => {
+      delete (HTMLElement.prototype as unknown as { scrollTop?: number }).scrollTop
+      delete (HTMLElement.prototype as unknown as { scrollHeight?: number }).scrollHeight
+      delete (HTMLElement.prototype as unknown as { clientHeight?: number }).clientHeight
+    })
+
+    const mockScrollProperties = (
+      element: HTMLElement,
+      scrollTop: number,
+      scrollHeight = 400,
+      clientHeight = 200
+    ): void => {
+      Object.defineProperty(element, 'scrollTop', {
+        value: scrollTop,
+        configurable: true,
+        writable: true,
+      })
+      Object.defineProperty(element, 'scrollHeight', {
+        value: scrollHeight,
+        configurable: true,
+      })
+      Object.defineProperty(element, 'clientHeight', {
+        value: clientHeight,
+        configurable: true,
+      })
+    }
+
+    test('shows existing items when isLoadingMoreItems is true', async() => {
+      const props = {
+        ...defaultInfiniteScrollProps,
+        isLoadingMoreItems: true,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      // Verify existing items are visible during loading
+      expect(screen.getByText('Item 1')).toBeInTheDocument()
+      expect(screen.getByText('Item 5')).toBeInTheDocument()
+      expect(screen.getByText('Item 10')).toBeInTheDocument()
+
+      // Verify all menu items are accessible
+      const menuItems = screen.getAllByRole('menuitem')
+      expect(menuItems).toHaveLength(10)
+    })
+
+    test('calls onLoadMoreItems when scrolling near bottom', async() => {
+      const onLoadMoreItems = jest.fn()
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onLoadMoreItems,
+        scrollThreshold: 32,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      mockScrollProperties(scrollContainer, 360, 400, 200)
+
+      act(() => {
+        fireEvent.scroll(scrollContainer)
+      })
+
+      await waitFor(() => expect(onLoadMoreItems).toHaveBeenCalledTimes(1))
+    })
+
+    test('does not call onLoadMoreItems when scrolling up', async() => {
+      const onLoadMoreItems = jest.fn()
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onLoadMoreItems,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 100)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 50)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      expect(onLoadMoreItems).not.toHaveBeenCalled()
+    })
+
+    test('does not call onLoadMoreItems multiple times for same scroll position', async() => {
+      const onLoadMoreItems = jest.fn()
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onLoadMoreItems,
+        scrollThreshold: 32,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 360)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 365)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      await waitFor(() => expect(onLoadMoreItems).toHaveBeenCalledTimes(1))
+    })
+
+    test('respects custom scroll threshold', async() => {
+      const onLoadMoreItems = jest.fn()
+      const customThreshold = 50
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onLoadMoreItems,
+        scrollThreshold: customThreshold,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 350, 400, 200)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      await waitFor(() => expect(onLoadMoreItems).toHaveBeenCalledTimes(1))
+    })
+
+    test('does not trigger onLoadMoreItems when infinite scrolling is disabled', async() => {
+      const onLoadMoreItems = jest.fn()
+      const props = {
+        ...defaultProps,
+        items: infiniteScrollItems,
+        isInfiniteScrollEnabled: false,
+        onLoadMoreItems,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      const scrollContainer = screen.getByRole('menu').parentElement!
+
+      act(() => {
+        mockScrollProperties(scrollContainer, 360)
+        fireEvent.scroll(scrollContainer)
+      })
+
+      expect(onLoadMoreItems).not.toHaveBeenCalled()
     })
   })
 })

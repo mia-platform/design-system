@@ -320,4 +320,31 @@ export type DropdownProps = {
    * @param query - The last search query string, if available.
    */
   onRetry?: (query: string) => void
+
+  /**
+   * Enables infinite scrolling functionality for the dropdown.
+   * When enabled, the `onScrollEndReached` callback will be triggered
+   * when the user scrolls near the bottom of the items list.
+   */
+  isInfiniteScrollEnabled?: boolean
+
+  /**
+   * Callback fired when the user scrolls near the bottom of the dropdown items.
+   * It is used to load more items for infinite scrolling.
+   * Only triggered when `isInfiniteScrollEnabled` is true.
+   */
+  onLoadMoreItems?: () => void
+
+  /**
+   * In the inifinite scroll situation indicates whether additional items are currently being loaded.
+   * When true, a loading skeleton is displayed at the bottom of the dropdown to provide visual feedback.
+   */
+  isLoadingMoreItems?: boolean
+
+  /**
+   * Distance in pixels from the bottom of the scrollable area
+   * that triggers the `onLoadMoreItems` callback.
+   * Defaults to 32 pixels.
+   */
+  scrollThreshold?: number
 };

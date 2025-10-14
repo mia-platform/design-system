@@ -16,8 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Input as AntInput, Dropdown as AntdDropdown } from 'antd'
-import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react'
+import { Input as AntInput, Dropdown as AntdDropdown, Skeleton } from 'antd'
+import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { PiMagnifyingGlass } from 'react-icons/pi'
 import classNames from 'classnames'
 
@@ -68,20 +68,28 @@ export const Dropdown = ({
   hasError = false,
   errorMessage = 'An error occurred',
   onRetry,
+  isInfiniteScrollEnabled,
+  onLoadMoreItems,
+  isLoadingMoreItems = false,
+  scrollThreshold = 32,
 }: DropdownProps): ReactElement => {
   const { spacing, palette } = useTheme()
+
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
+  const [isScrollable, setIsScrollable] = useState(false)
+
+  const prevScrollTopRef = useRef<number>(0)
+  const scrollEndWasReached = useRef<boolean>(false)
 
   const uniqueOverlayClassName = useMemo(() => `dropdown-overlay-${crypto.randomUUID()}`, [])
   const uniqueDropdownClassName = useMemo(() => `dropdown-${crypto.randomUUID()}`, [])
 
-  const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
-
   /* istanbul ignore next */
   const innerNode = useMemo(() => (children ? <span>{children}</span> : null), [children])
 
-  const [searchTerm, setSearchTerm] = useState('')
+  const itemFinderMemo = useCallback((id: string) => itemFinder(items, id), [items])
 
-  const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
   const updateSelectedItems = useCallback((itemId: string) => {
     if (!persistSelection) {
       return
@@ -103,7 +111,7 @@ export const Dropdown = ({
   )
 
   const itemsToRender = useMemo(() => {
-    if (onSearch || !searchTerm) {
+    if (Boolean(onSearch) || isInfiniteScrollEnabled || !searchTerm) {
       return items
     }
 
@@ -116,17 +124,19 @@ export const Dropdown = ({
             ? filterRecursively(item.children)
             : undefined,
         }))
-        .filter((item) => (
-          (typeof item.label !== 'string' && typeof item.label !== 'number')
+        .filter(
+          (item) =>
+            (typeof item.label !== 'string'
+              && typeof item.label !== 'number')
             || item.label?.toString().toLowerCase()
               .includes(lower)
             || (item.children && item.children.length > 0)
-        ))
+        )
     }
 
     const filteredItems = filterRecursively(items)
     return filteredItems
-  }, [items, onSearch, searchTerm])
+  }, [items, onSearch, searchTerm, isInfiniteScrollEnabled])
 
   const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(itemsToRender, itemLayout), [itemsToRender, itemLayout])
 
@@ -191,6 +201,50 @@ export const Dropdown = ({
     ]
   )
 
+  useEffect(() => {
+    if (!isLoadingMoreItems) {
+      scrollEndWasReached.current = false
+    }
+  }, [isLoadingMoreItems])
+
+  const handleScroll = useCallback((event: React.UIEvent<HTMLDivElement>) => {
+    if (!onLoadMoreItems || !isInfiniteScrollEnabled) { return }
+
+    const { scrollTop, scrollHeight, clientHeight } = event.currentTarget
+
+    const distanceFromBottom = scrollHeight - scrollTop - clientHeight
+    const isScrollingDown = scrollTop > prevScrollTopRef.current
+
+    prevScrollTopRef.current = scrollTop
+
+    if (isScrollingDown && distanceFromBottom <= scrollThreshold) {
+      if (!scrollEndWasReached.current) {
+        scrollEndWasReached.current = true
+        onLoadMoreItems()
+      }
+    }
+  }, [isInfiniteScrollEnabled, onLoadMoreItems, scrollThreshold])
+
+  const scrollContainerRef = useCallback((node: HTMLDivElement | null) => {
+    if (node) {
+      const checkScrollable = (): void => {
+        const hasScroll = node.scrollHeight > node.clientHeight
+        setIsScrollable(hasScroll)
+      }
+
+      checkScrollable()
+
+      const observer = new MutationObserver(checkScrollable)
+      observer.observe(node, {
+        childList: true,
+        subtree: true,
+        attributes: false,
+      })
+
+      return () => observer.disconnect()
+    }
+  }, [])
+
   const dropdownRender = useCallback(
     (menu: ReactNode): ReactNode => {
       const clonedMenu = React.cloneElement(menu as ReactElement, {
@@ -218,13 +272,34 @@ export const Dropdown = ({
         )
       } else if (itemsToRender.length === 0) {
         dropdownBody = <EmptyState />
+      } else if (isInfiniteScrollEnabled && isScrollable) {
+        dropdownBody = (
+          <>
+            {clonedMenu}
+            <div style={{ height: '32px', padding: '4px 8px 16px 8px' }}>
+              {isLoadingMoreItems && (
+                <Skeleton
+                  active
+                  paragraph={{ rows: 1, width: '100%' }}
+                  title={false}
+                />
+              )}
+            </div>
+          </>
+        )
       }
 
       if (!hookedFooter) {
         return (
           <div className={styles.dropdownRenderWrapper}>
             {headerComponent}
-            <div style={scrollableStyle}>{dropdownBody}</div>
+            <div
+              ref={scrollContainerRef}
+              style={scrollableStyle}
+              onScroll={handleScroll}
+            >
+              {dropdownBody}
+            </div>
           </div>
         )
       }
@@ -232,7 +307,13 @@ export const Dropdown = ({
       return (
         <div className={styles.dropdownRenderWrapper}>
           {headerComponent}
-          <div style={scrollableStyle}>{dropdownBody}</div>
+          <div
+            ref={scrollContainerRef}
+            style={scrollableStyle}
+            onScroll={handleScroll}
+          >
+            {dropdownBody}
+          </div>
           <div className={styles.footerDivider}>
             <Divider margin={spacing?.margin?.none} />
           </div>
@@ -241,17 +322,22 @@ export const Dropdown = ({
       )
     },
     [
-      errorMessage,
-      hasError,
-      headerComponent,
-      hookedFooter,
-      isLoading,
-      itemsToRender.length,
       menuItemsMaxHeight,
-      onRetry,
-      searchTerm,
+      isLoading,
+      hasError,
+      itemsToRender.length,
+      isInfiniteScrollEnabled,
+      isScrollable,
+      hookedFooter,
+      headerComponent,
+      scrollContainerRef,
+      handleScroll,
       spacing?.margin?.none,
       spacing.padding.sm,
+      errorMessage,
+      onRetry,
+      searchTerm,
+      isLoadingMoreItems,
     ]
   )
 
