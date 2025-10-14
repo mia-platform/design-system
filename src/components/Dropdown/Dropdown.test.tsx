@@ -786,7 +786,18 @@ describe('Dropdown Component', () => {
       menuItemsMaxHeight: 200,
     }
 
-    const mockScrollProperties = (element: HTMLElement, scrollTop: number, scrollHeight = 400, clientHeight = 200) => {
+    afterEach(() => {
+      delete (HTMLElement.prototype as unknown as { scrollTop?: number }).scrollTop
+      delete (HTMLElement.prototype as unknown as { scrollHeight?: number }).scrollHeight
+      delete (HTMLElement.prototype as unknown as { clientHeight?: number }).clientHeight
+    })
+
+    const mockScrollProperties = (
+      element: HTMLElement,
+      scrollTop: number,
+      scrollHeight = 400,
+      clientHeight = 200
+    ): void => {
       Object.defineProperty(element, 'scrollTop', {
         value: scrollTop,
         configurable: true,
