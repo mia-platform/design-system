@@ -363,7 +363,11 @@ export const WithInfiniteScrolling: Story = {
       setTimeout(() => {
         setIsLoadingAdditionalItems(false)
         setIsLoading(false)
-        setItems(prevItems => [...prevItems, ...generateItems(search, page)])
+        if (page > 1) {
+          setItems(prevItems => [...prevItems, ...generateItems(search, page)])
+        } else {
+          setItems(generateItems(search, page))
+        }
         setIsLoading(false)
       }, 500)
     }, [])
