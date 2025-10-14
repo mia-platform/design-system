@@ -774,7 +774,7 @@ describe('Dropdown Component', () => {
   })
 
   describe('infinite scrolling', () => {
-    const infiniteScrollItems: DropdownItem[] = Array.from({ length: 20 }, (_, i) => ({
+    const infiniteScrollItems: DropdownItem[] = Array.from({ length: 10 }, (_, i) => ({
       id: `item-${i + 1}`,
       label: `Item ${i + 1}`,
     }))
@@ -813,11 +813,31 @@ describe('Dropdown Component', () => {
       })
     }
 
-    test('calls onScrollEndReached when scrolling near bottom', async() => {
-      const onScrollEndReached = jest.fn()
+    test('shows existing items when isLoadingMoreItems is true', async() => {
       const props = {
         ...defaultInfiniteScrollProps,
-        onScrollEndReached,
+        isLoadingMoreItems: true,
+      }
+
+      renderDropdown({ props })
+      const button = screen.getByText('test-trigger-button')
+      await userEvent.click(button)
+
+      // Verify existing items are visible during loading
+      expect(screen.getByText('Item 1')).toBeInTheDocument()
+      expect(screen.getByText('Item 5')).toBeInTheDocument()
+      expect(screen.getByText('Item 10')).toBeInTheDocument()
+
+      // Verify all menu items are accessible
+      const menuItems = screen.getAllByRole('menuitem')
+      expect(menuItems).toHaveLength(10)
+    })
+
+    test('calls onLoadMoreItems when scrolling near bottom', async() => {
+      const onLoadMoreItems = jest.fn()
+      const props = {
+        ...defaultInfiniteScrollProps,
+        onLoadMoreItems,
         scrollThreshold: 32,
       }
 
@@ -833,14 +853,14 @@ describe('Dropdown Component', () => {
         fireEvent.scroll(scrollContainer)
       })
 
-      await waitFor(() => expect(onScrollEndReached).toHaveBeenCalledTimes(1))
+      await waitFor(() => expect(onLoadMoreItems).toHaveBeenCalledTimes(1))
     })
 
-    test('does not call onScrollEndReached when scrolling up', async() => {
-      const onScrollEndReached = jest.fn()
+    test('does not call onLoadMoreItems when scrolling up', async() => {
+      const onLoadMoreItems = jest.fn()
       const props = {
         ...defaultInfiniteScrollProps,
-        onScrollEndReached,
+        onLoadMoreItems,
       }
 
       renderDropdown({ props })
@@ -859,14 +879,14 @@ describe('Dropdown Component', () => {
         fireEvent.scroll(scrollContainer)
       })
 
-      expect(onScrollEndReached).not.toHaveBeenCalled()
+      expect(onLoadMoreItems).not.toHaveBeenCalled()
     })
 
-    test('does not call onScrollEndReached multiple times for same scroll position', async() => {
-      const onScrollEndReached = jest.fn()
+    test('does not call onLoadMoreItems multiple times for same scroll position', async() => {
+      const onLoadMoreItems = jest.fn()
       const props = {
         ...defaultInfiniteScrollProps,
-        onScrollEndReached,
+        onLoadMoreItems,
         scrollThreshold: 32,
       }
 
@@ -886,37 +906,15 @@ describe('Dropdown Component', () => {
         fireEvent.scroll(scrollContainer)
       })
 
-      await waitFor(() => expect(onScrollEndReached).toHaveBeenCalledTimes(1))
-    })
-
-    test('appends incremental items to existing items', async() => {
-      const incrementalItems: DropdownItem[] = [
-        { id: 'additional-1', label: 'Additional Item 1' },
-        { id: 'additional-2', label: 'Additional Item 2' },
-      ]
-
-      const props = {
-        ...defaultInfiniteScrollProps,
-        incrementalItems,
-      }
-
-      renderDropdown({ props })
-      const button = screen.getByText('test-trigger-button')
-      await userEvent.click(button)
-
-      expect(screen.getByText('Item 1')).toBeInTheDocument()
-      expect(screen.getByText('Item 20')).toBeInTheDocument()
-
-      expect(screen.getByText('Additional Item 1')).toBeInTheDocument()
-      expect(screen.getByText('Additional Item 2')).toBeInTheDocument()
+      await waitFor(() => expect(onLoadMoreItems).toHaveBeenCalledTimes(1))
     })
 
     test('respects custom scroll threshold', async() => {
-      const onScrollEndReached = jest.fn()
+      const onLoadMoreItems = jest.fn()
       const customThreshold = 50
       const props = {
         ...defaultInfiniteScrollProps,
-        onScrollEndReached,
+        onLoadMoreItems,
         scrollThreshold: customThreshold,
       }
 
@@ -931,16 +929,16 @@ describe('Dropdown Component', () => {
         fireEvent.scroll(scrollContainer)
       })
 
-      await waitFor(() => expect(onScrollEndReached).toHaveBeenCalledTimes(1))
+      await waitFor(() => expect(onLoadMoreItems).toHaveBeenCalledTimes(1))
     })
 
-    test('does not trigger onScrollEndReached when infinite scrolling is disabled', async() => {
-      const onScrollEndReached = jest.fn()
+    test('does not trigger onLoadMoreItems when infinite scrolling is disabled', async() => {
+      const onLoadMoreItems = jest.fn()
       const props = {
         ...defaultProps,
         items: infiniteScrollItems,
         isInfiniteScrollEnabled: false,
-        onScrollEndReached,
+        onLoadMoreItems,
       }
 
       renderDropdown({ props })
@@ -954,7 +952,7 @@ describe('Dropdown Component', () => {
         fireEvent.scroll(scrollContainer)
       })
 
-      expect(onScrollEndReached).not.toHaveBeenCalled()
+      expect(onLoadMoreItems).not.toHaveBeenCalled()
     })
   })
 })

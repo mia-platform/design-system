@@ -330,28 +330,20 @@ export type DropdownProps = {
 
   /**
    * Callback fired when the user scrolls near the bottom of the dropdown items.
-   * This is typically used to load more items for infinite scrolling.
+   * It is used to load more items for infinite scrolling.
    * Only triggered when `isInfiniteScrollEnabled` is true.
    */
-  onScrollEndReached?: () => void
+  onLoadMoreItems?: () => void
 
   /**
-   * Additional items to append to the existing dropdown items.
-   * These items are typically loaded asynchronously and added to the dropdown
-   * when infinite scrolling loads more data.
+   * In the inifinite scroll situation indicates whether additional items are currently being loaded.
+   * When true, a loading skeleton is displayed at the bottom of the dropdown to provide visual feedback.
    */
-  incrementalItems?: DropdownItem[]
-
-  /**
-   * Indicates whether additional items are currently being loaded.
-   * When true, a loading skeleton is displayed at the bottom of the dropdown
-   * to provide visual feedback during the loading process.
-   */
-  isLoadingIncrementalItems?: boolean
+  isLoadingMoreItems?: boolean
 
   /**
    * Distance in pixels from the bottom of the scrollable area
-   * that triggers the `onScrollEndReached` callback.
+   * that triggers the `onLoadMoreItems` callback.
    * Defaults to 32 pixels.
    */
   scrollThreshold?: number

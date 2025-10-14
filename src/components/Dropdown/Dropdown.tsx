@@ -69,15 +69,13 @@ export const Dropdown = ({
   errorMessage = 'An error occurred',
   onRetry,
   isInfiniteScrollEnabled,
-  onScrollEndReached,
-  isLoadingIncrementalItems = false,
-  incrementalItems,
+  onLoadMoreItems,
+  isLoadingMoreItems = false,
   scrollThreshold = 32,
 }: DropdownProps): ReactElement => {
   const { spacing, palette } = useTheme()
 
   const [searchTerm, setSearchTerm] = useState('')
-  const [itemsToRender, setItemsToRender] = useState<DropdownItem[]>([])
   const [selectedItems, setSelectedItems] = useState<string[]>(persistSelection ? initialSelectedItems : [])
   const [isScrollable, setIsScrollable] = useState(false)
 
@@ -112,14 +110,9 @@ export const Dropdown = ({
     [isSearchable, itemFinderMemo, onClick, searchTerm, updateSelectedItems]
   )
 
-  useEffect(() => {
-    if (Boolean(onSearch) || isInfiniteScrollEnabled) {
-      return
-    }
-
-    if (!searchTerm) {
-      setItemsToRender(items)
-      return
+  const itemsToRender = useMemo(() => {
+    if (Boolean(onSearch) || isInfiniteScrollEnabled || !searchTerm) {
+      return items
     }
 
     const lower = searchTerm.toLowerCase()
@@ -142,20 +135,8 @@ export const Dropdown = ({
     }
 
     const filteredItems = filterRecursively(items)
-    setItemsToRender(filteredItems)
+    return filteredItems
   }, [items, onSearch, searchTerm, isInfiniteScrollEnabled])
-
-  useEffect(() => {
-    if (onSearch || isInfiniteScrollEnabled) {
-      setItemsToRender(items)
-    }
-  }, [isInfiniteScrollEnabled, items, onSearch])
-
-  useEffect(() => {
-    if (isInfiniteScrollEnabled && incrementalItems && incrementalItems.length > 0) {
-      setItemsToRender(currItems => [...currItems, ...incrementalItems])
-    }
-  }, [incrementalItems, isInfiniteScrollEnabled])
 
   const antdItems = useMemo<AntdMenuItems>(() => itemsAdapter(itemsToRender, itemLayout), [itemsToRender, itemLayout])
 
@@ -221,11 +202,13 @@ export const Dropdown = ({
   )
 
   useEffect(() => {
-    scrollEndWasReached.current = false
-  }, [incrementalItems])
+    if (!isLoadingMoreItems) {
+      scrollEndWasReached.current = false
+    }
+  }, [isLoadingMoreItems])
 
   const handleScroll = useCallback((event: React.UIEvent<HTMLDivElement>) => {
-    if (!onScrollEndReached || !isInfiniteScrollEnabled) { return }
+    if (!onLoadMoreItems || !isInfiniteScrollEnabled) { return }
 
     const { scrollTop, scrollHeight, clientHeight } = event.currentTarget
 
@@ -237,10 +220,10 @@ export const Dropdown = ({
     if (isScrollingDown && distanceFromBottom <= scrollThreshold) {
       if (!scrollEndWasReached.current) {
         scrollEndWasReached.current = true
-        onScrollEndReached()
+        onLoadMoreItems()
       }
     }
-  }, [isInfiniteScrollEnabled, onScrollEndReached, scrollThreshold])
+  }, [isInfiniteScrollEnabled, onLoadMoreItems, scrollThreshold])
 
   const scrollContainerRef = useCallback((node: HTMLDivElement | null) => {
     if (node) {
@@ -294,7 +277,7 @@ export const Dropdown = ({
           <>
             {clonedMenu}
             <div style={{ height: '32px', padding: '4px 8px 16px 8px' }}>
-              {isLoadingIncrementalItems && (
+              {isLoadingMoreItems && (
                 <Skeleton
                   active
                   paragraph={{ rows: 1, width: '100%' }}
@@ -354,7 +337,7 @@ export const Dropdown = ({
       errorMessage,
       onRetry,
       searchTerm,
-      isLoadingIncrementalItems,
+      isLoadingMoreItems,
     ]
   )
 

@@ -75,7 +75,7 @@ const defaults: Partial<DropdownProps> = {
   onClick: action('on click'),
   onOpenChange: action('on open change'),
   onSearch: undefined,
-  onScrollEndReached: undefined,
+  onLoadMoreItems: undefined,
 }
 
 const meta = {
@@ -346,7 +346,6 @@ export const WithInfiniteScrolling: Story = {
   render: function Render() {
     const [items, setItems] = useState<DropdownItem[]>([])
     const [isLoading, setIsLoading] = useState(false)
-    const [additionalItems, setAdditionalItems] = useState<DropdownItem[]>([])
     const [isLoadingAdditionalItems, setIsLoadingAdditionalItems] = useState(false)
     const currentSearch = useRef('')
     const currentPage = useRef(1)
@@ -358,17 +357,15 @@ export const WithInfiniteScrolling: Story = {
     const fetchItems = useCallback((search: string, page: number): void => {
       if (page > 1) {
         setIsLoadingAdditionalItems(true)
-        setTimeout(() => {
-          setAdditionalItems(generateItems(search, page))
-          setIsLoadingAdditionalItems(false)
-        }, 500)
       } else {
         setIsLoading(true)
-        setTimeout(() => {
-          setItems(generateItems(search, page))
-          setIsLoading(false)
-        }, 500)
       }
+      setTimeout(() => {
+        setIsLoadingAdditionalItems(false)
+        setIsLoading(false)
+        setItems(prevItems => [...prevItems, ...generateItems(search, page)])
+        setIsLoading(false)
+      }, 500)
     }, [])
 
     const handleSearch = useCallback((search:string) => {
@@ -403,15 +400,14 @@ export const WithInfiniteScrolling: Story = {
     return (
       <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Dropdown
-          incrementalItems={additionalItems}
           isInfiniteScrollEnabled
           isLoading={isLoading}
-          isLoadingIncrementalItems={isLoadingAdditionalItems}
+          isLoadingMoreItems={isLoadingAdditionalItems}
           isSearchable
           items={items}
           onClick={handleClick}
+          onLoadMoreItems={handleScrollReachBottom}
           onOpenChange={(isOpen) => isOpen && handleSearch('')}
-          onScrollEndReached={handleScrollReachBottom}
           onSearch={debouncedSearch}
         >
           <Button>{'Click me'}</Button>
